@@ -1,0 +1,57 @@
+.bottom_nav
+{
+    width: 100vw;
+
+    margin: 0;
+    padding: 1vw;
+    left: 0;
+
+    background-color: lightgrey;
+
+}
+#bottom_nav_links
+{
+    display: flex;
+    flex-direction: row;
+}
+#bottom_nav_links > div
+{
+    flex: 1;
+    justify-self: space-between;
+}
+#bottom_nav_links > div > button, #bottom_nav_links > div > button:link, #bottom_nav_links > div > button:visited
+{
+    border: none;
+    outline: 0;
+    background-color: white;
+
+}
+#bottom_nav_links > div > p, #bottom_line > a
+{
+    font-size: 1em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+#bottom_line > a
+{
+    margin-right: 2vw;
+}
+
+
+@media only screen and (max-width: 800px)
+{
+    #bottom_nav
+    {
+        text-align: center;
+    }
+    #bottom_nav_links
+    {
+        flex-direction: column;
+        
+    }
+    #bottom_line
+    {
+        display: flex;
+        flex-direction: column;
+    }
+}
