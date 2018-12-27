@@ -5,7 +5,7 @@ import { AlertService } from '../../_services';
 
 @Component({
     // tslint:disable-next-line:component-selector
-    selector: 'alert',
+    selector: 'app-alert',
     templateUrl: 'alert.component.html'
 })
 
