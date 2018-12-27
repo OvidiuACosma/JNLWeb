@@ -1,0 +1,17 @@
+.container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.card-login{
+    width: 55vh;
+    margin: 2px;
+    text-align: center;
+
+}
+
+.textbox {
+    width: 45vh;
+    margin: 0 auto;
+}
