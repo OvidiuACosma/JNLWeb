@@ -1,3 +1,35 @@
-<p>
-  search works!
-</p>
+<style>
+    #search_bar_div {display: none;}
+        #bar > #search_bar_div { display: none; }
+        #barg:focus > #search_bar_div { display: block; }</style>
+<div id="bar">
+
+    <!--SEARCH BAR-->
+    <div id="search_bar_div">
+       <form id="search_bar">
+           <input type="text" placeholder="Search for a product, brand, news, reference"/>
+           <button>x</button>
+       </form>
+   </div>
+       
+   <!--TOP BAR-->
+   <div id="top_bar">
+       <div id="menu_logo">
+           <a href="" id="menu_button">≡</a>
+           <img alt="JNL" src="assets/Images/Common/JNLLogo.jpg" id="logo" height="30vh"/>
+       </div>
+    
+
+       <div id="top_buttons">
+           <span>
+               <a class="top_button" id="search_btn">Search</a>
+           </span>
+           <span>
+               <a routerLink="/contact" class="top_button">Contact</a>
+           </span>
+           <span>
+               <a class="top_button">EN</a>
+           </span>
+       </div>
+   </div>
+   </div>

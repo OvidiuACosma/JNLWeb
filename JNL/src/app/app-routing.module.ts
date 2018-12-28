@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './Main';
+import { HomeComponent, ContactComponent } from './Main';
 import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
 
@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch : 'full' },
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }

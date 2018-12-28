@@ -1,9 +1,13 @@
+bottom_nav > div
+{
+    font-size: 0.8em;
+}
 .bottom_nav
 {
     width: 100vw;
 
     margin: 0;
-    padding: 1vw;
+    padding: 0.7vw;
     left: 0;
 
     background-color: lightgrey;
@@ -16,7 +20,7 @@
 }
 #bottom_nav_links > div
 {
-    flex: 1;
+    flex: 1 1;
     justify-self: space-between;
 }
 #bottom_nav_links > div > button, #bottom_nav_links > div > button:link, #bottom_nav_links > div > button:visited
@@ -34,7 +38,34 @@
 }
 #bottom_line > a
 {
-    margin-right: 2vw;
+    margin-right: 1vw;
+}
+#fb_in
+{
+}
+#news_letter
+{
+    
+    background-color: white;
+    border: 1px solid black;
+
+    max-width: 200px;
+}
+#news_letter > input
+{
+    border: 0;
+    padding: 0.2em;
+    margin: 0;
+
+    width: 10vw;
+
+
+}
+#news_letter > button
+{
+    border: 0;
+    background-color: white;
+    float: right;
 }
 
 
@@ -44,6 +75,7 @@
     #bottom_nav
     {
         text-align: center;
+        padding: 0.7vw;
     }
     #bottom_nav_links
     {
