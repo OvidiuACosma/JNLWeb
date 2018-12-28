@@ -1,3 +1,11 @@
+#search_bar_div
+{
+    
+}
+#search_bar_div:hover
+{
+    margin-top: 0px;
+}
 #search_bar
 {
     top: 0;
@@ -15,9 +23,7 @@
     transition: 0.5s;
 
 }
-#search_bar_div
-{
-}
+
 /*TEXT SEARCH*/
 #search_bar >  input
 {
@@ -133,6 +139,8 @@
     padding-left: 2vw;
     margin: auto;
 }
+
+
 
 
 @media only screen and (max-width: 800px)

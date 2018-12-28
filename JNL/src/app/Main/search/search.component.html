@@ -1,7 +1,4 @@
-<style>
-    #search_bar_div {display: none;}
-        #bar > #search_bar_div { display: none; }
-        #barg:focus > #search_bar_div { display: block; }</style>
+
 <div id="bar">
 
     <!--SEARCH BAR-->
@@ -15,8 +12,9 @@
    <!--TOP BAR-->
    <div id="top_bar">
        <div id="menu_logo">
-           <a href="" id="menu_button">≡</a>
+           <a id="menu_button"(blur)="hideMe()">≡</a>
            <img alt="JNL" src="assets/Images/Common/JNLLogo.jpg" id="logo" height="30vh"/>
+          
        </div>
     
 
@@ -24,6 +22,7 @@
            <span>
                <a class="top_button" id="search_btn">Search</a>
            </span>
+
            <span>
                <a routerLink="/contact" class="top_button">Contact</a>
            </span>

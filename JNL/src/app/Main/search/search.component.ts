@@ -12,4 +12,8 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  hideMe() {
+    console.log('hideMe');
+  }
+
 }
