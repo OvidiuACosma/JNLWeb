@@ -4,7 +4,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LegalComponent, GDPRComponent, CreditsComponent } from './Extras';
-import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent } from './Main';
+import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent, SearchResultsComponent } from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent } from './Std';
 import { ProductSearchComponent, ProductComponent } from './Products';
@@ -39,7 +39,8 @@ import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers'
     ProductSearchComponent,
     ProductComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
