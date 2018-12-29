@@ -2,25 +2,30 @@
 <div id="bar">
 
     <!--SEARCH BAR-->
-    <div id="search_bar_div">
+    <!--<div id="search_bar_div">
        <form id="search_bar">
            <input type="text" placeholder="Search for a product, brand, news, reference"/>
            <button>x</button>
        </form>
-   </div>
+   </div>-->
        
    <!--TOP BAR-->
    <div id="top_bar">
        <div id="menu_logo">
-           <a id="menu_button"(blur)="hideMe()">≡</a>
-           <img alt="JNL" src="assets/Images/Common/JNLLogo.jpg" id="logo" height="30vh"/>
-          
+            <a id="menu_button">≡</a>
+            <!--<a routerLink="/home" class="imageLink">-->
+                <img class="imageLink" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo.jpg" height="28vh"
+                    (click)="goHome()"/>
+            <!--</a>-->
        </div>
     
 
        <div id="top_buttons">
            <span>
-               <a class="top_button" id="search_btn">Search</a>
+               <a class="top_button" id="search_btn" *ngIf="!searchMode" 
+                (click)="goSearchMode()">Search</a>
+               <input type="search" class="searchInput" placeholder="Search..." autofocus="autofocus" *ngIf="searchMode"
+                (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
            </span>
 
            <span>

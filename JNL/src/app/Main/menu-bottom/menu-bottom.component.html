@@ -1,13 +1,17 @@
 <nav class="bottom_nav">
   <div id="bottom_nav_links">
       <div>
-        <p>Les Produits</p>
-        <a>Chercher</a><br>
-        <a>Telecharger</a>
+        <p class="columnHead">
+          <a routerLink="products">Les Produits</a>
+        </p>
+        <a routerLink="products">Chercher</a><br>
+        <a routerLink="products">Telecharger</a>
       </div>
       
       <div>
-        <p>Les Marques</p>
+        <p class="columnHead">
+          <a routerLink="marques">Les Marques</a>
+        </p>
         <a>JNL Collection</a><br>
         <a>Vanhamme</a><br>
         <a>Emanuel Ungaro Home</a><br>
@@ -15,20 +19,26 @@
       </div>
       
       <div>
-        <p>Le Savoir-Faire</p>
-        <a>L'Atelier</a><br>
-        <a>La Fabrication</a><br>
+        <p class="columnHead">
+          <a routerLink="savoirFaire">Le Savoir-Faire</a>
+        </p>
+        <a routerLink="savoirFaire" fragment="atelier">L'Atelier</a><br>
+        <a routerLink="savoirFaire" fragment="fabrication">La Fabrication</a><br>
       </div>
 
       <div>
-        <p>Les Services</p>
+        <p class="columnHead">
+          <a routerLink="services">Les Services</a>
+        </p>
         <a>L'Expertise</a><br>
         <a>Le Sur Mesure</a><br>
         <a>Votre Projet</a><br>
       </div>
 
       <div>
-        <p>Le Groupe</p>
+        <p class="columnHead">
+          <a routerLink="jnlGroup">Le Groupe</a>
+        </p>
         <a>L'Histoire</a><br>
         <a>L'Equipe</a><br>
         <a>L'Engagement</a><br>
@@ -37,7 +47,9 @@
       </div>
       
       <div>
-        <p>Presse</p>
+        <p class="columnHead">
+          <a routerLink="press">Presse</a>
+        </p>
         <a>Banque Images</a><br>
         <a>Catalogues</a><br>
         <a>Press Kit</a><br>
@@ -45,9 +57,14 @@
       </div>
 
       <div id="fb_in">
-        <p>Nous Suivre</p>
-        <a><img alt="JNL Collection Instagram" src="assets/Images/Common/InstagramIcon.png" height="30vh"></a>&nbsp;&nbsp;
-        <a href="https://www.facebook.com/JNLCollectionWorldwilde/"><img alt="JNL Collection Facebook" src="assets/Images/Common/FacebookIcon.png" height="30vh"></a><br>
+        <p class="columnHead">Nous Suivre</p>
+        <a href="https://www.instagram.com/jnl_design/" target="_blank">
+          <img alt="JNL Collection Instagram" src="assets/Images/Common/InstagramIcon.png" height="30vh">
+        </a>&nbsp;&nbsp;
+        <a href="https://www.facebook.com/JNLCollectionWorldwilde/" target="_blank">
+          <img alt="JNL Collection Facebook" src="assets/Images/Common/FacebookIcon.png" height="30vh">
+        </a>
+        <br>
 
         <p>Newsletter</p>
         <form id="news_letter">
@@ -60,8 +77,8 @@
 
   <div id="bottom_line">
       <br>
-      <a>Mentions Legales</a>
-      <a>Politique de Confidentialite</a>
-      <a>Credits</a>
+      <a routerLink="/legal">Mentions Legales</a>
+      <a routerLink="/gdpr">Politique de Confidentialite</a>
+      <a routerLink="/credits">Credits</a>
   </div>
 </nav>

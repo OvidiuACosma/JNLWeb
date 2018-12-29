@@ -1,68 +1,77 @@
-bottom_nav > div
-{
-    font-size: 0.8em;
+a:hover {
+    color: #777;
 }
-.bottom_nav
-{
-    width: 100vw;
 
-    margin: 0;
-    padding: 0.7vw;
-    left: 0;
-
-    background-color: lightgrey;
-
-}
-#bottom_nav_links
-{
-    display: flex;
-    flex-direction: row;
-}
-#bottom_nav_links > div
-{
-    flex: 1 1;
-    justify-self: space-between;
-}
-#bottom_nav_links > div > button, #bottom_nav_links > div > button:link, #bottom_nav_links > div > button:visited
-{
-    border: none;
-    outline: 0;
-    background-color: white;
-
-}
-#bottom_nav_links > div > p, #bottom_line > a
-{
-    font-size: 1em;
+.columnHead {
+    font-size: .9em;
     margin-bottom: 1em;
     text-transform: uppercase;
 }
-#bottom_line > a
+
+.bottom_nav > div
 {
+    font-size: 0.8em;
+    color: #212529;
+}
+
+.bottom_nav {
+    width: 100vw;
+    margin: 0;
+    padding: 0.7vw;
+    left: 0;
+    background-color: lightgrey;
+}
+
+#bottom_nav_links {
+    display: flex;
+    flex-direction: row;
+}
+
+#bottom_nav_links > div {
+    flex: 1 1;
+    justify-self: space-between;
+}
+
+#bottom_nav_links > div > button, #bottom_nav_links > div > button:link, #bottom_nav_links > div > button:visited {
+    border: none;
+    outline: 0;
+    background-color: white;
+}
+
+#bottom_nav_links > div > p, #bottom_line > a {
+    font-size: .9em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+#bottom_nav_links > div > a {
+    font-size: .9em;
+    margin-bottom: 1em;
+}
+
+#bottom_line > a {
     margin-right: 1vw;
 }
-#fb_in
-{
+
+#fb_in {
+    text-decoration: none;
 }
-#news_letter
-{
-    
+
+#news_letter {
     background-color: white;
     border: 1px solid black;
 
     max-width: 200px;
 }
-#news_letter > input
-{
+
+#news_letter > input {
     border: 0;
     padding: 0.2em;
     margin: 0;
-
     width: 10vw;
-
-
 }
-#news_letter > button
-{
+
+#news_letter > button {
     border: 0;
     background-color: white;
     float: right;
@@ -72,18 +81,17 @@ bottom_nav > div
 
 @media only screen and (max-width: 800px)
 {
-    #bottom_nav
-    {
+    #bottom_nav {
         text-align: center;
         padding: 0.7vw;
     }
-    #bottom_nav_links
-    {
+
+    #bottom_nav_links {
         flex-direction: column;
         
     }
-    #bottom_line
-    {
+
+    #bottom_line {
         display: flex;
         flex-direction: column;
     }

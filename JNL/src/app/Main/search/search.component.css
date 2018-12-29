@@ -1,7 +1,17 @@
-#search_bar_div
-{
-    
+.imageLink {
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+} 
+
+.searchInput {
+    border: solid 1px #888;
 }
+
+.searchInput:focus {
+    outline: none;
+}
+
 #search_bar_div:hover
 {
     margin-top: 0px;
