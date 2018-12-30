@@ -46,3 +46,9 @@ a:hover {
     src: url('/assets/Fonts/Atak-Regular.otf'),
     url('/assets/Fonts/Atak-Regular.otf'); /* IE */
     }
+
+@font-face {
+    font-family: "PlacardMT-Condensed";
+    src: url('/assets/Fonts/placard-condensed.ttf'),
+    url('/assets/Fonts/placard-condensed.ttf'); /* IE */
+ }

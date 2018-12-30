@@ -1,6 +1,6 @@
 h1
 {
-    font-family: Impact;
+    font-family: PlacardMT-Condensed;
     font-size: 4em;
 
 }
@@ -28,6 +28,8 @@ h1
 {
     text-align: center;
     padding: 5vw;
+
+    font-family: Atak-Light;
 }
 hr
 {
@@ -41,7 +43,7 @@ hr
     width: 100vw;
     height: 100vh;
 
-    background-color: lightblue;
+    background-image: url("/assets/Images/Home/_MGL0055-HDR.jpg");
 
     display: flex;
 }
@@ -158,6 +160,8 @@ hr
 
     text-align: left;
     text-justify: justify;
+
+    font-family: Atak-Regular;
 }
 .actualites_img
 {
@@ -165,7 +169,7 @@ hr
 }
 .more_links
 {
-    font-weight: bold;
+    font-family: Atak-Bold;
 }
 #actualites > div > p >span {
     font-size: 1.5em;
@@ -173,9 +177,18 @@ hr
 #actualites_arrows
 {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
 }
 #actualites_arrows > a
 {
     margin: auto;
+    font-size: 5em;
+}
+#actualites_arrows > a:nth-child(1)
+{   
+    margin-left: 0px;
+}
+#actualites_arrows > a:nth-child(2)
+{   
+    margin-right: 0px;
 }
