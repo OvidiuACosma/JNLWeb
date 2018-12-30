@@ -1,6 +1,107 @@
-.first_picture
+h1
 {
+    font-family: Impact;
+    font-size: 4em;
+
+    background-image: url("assets\Images\Home\product_exmaple.jpg");
+}
+.home_links
+{
+    border: 1px solid orange;
+    padding: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+}
+.gallery_buttons
+{
+    height: 100vh;
+    width: 10vw;
+    display: flex;
+}
+.gallery_buttons > div
+{
+    margin: auto;
+
+    font-size: 5em;
+}
+.main_divs
+{
+    text-align: center;
+}
+
+
+
+#first_picture
+{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: lightblue;
+
+    display: flex;
+}
+#first_picture > div
+{
+    margin: auto;
+}
+#first_picture > div > img
+{
+
+    height: 20vh;
+}
+#first_picture > div > p
+{
+    text-align: center;
+    font-size: 5em;
+}
+
+
+#une_histoire
+{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: white;
+
+    display: flex;
+}
+#une_histoire > div
+{
+    margin: auto;
+    padding: 20%;
+
+    text-align: center;
+}
+#une_histoire > div > p
+{
+    font-size: 1.2em;
+}
+
+
+
+#les_marques
+{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: lightgrey;
+
+    display: flex;
+    flex-direction: row;
+}
+#marques_main
+{
+    display: flex;
+    flex-direction: column;
+}
+#marques_main > h1
+{
+    margin: auto;
+}
+#marques_list
+{
+    margin: auto;
     width: 100%;
-    height: 100%;
 
 }
