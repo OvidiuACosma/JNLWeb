@@ -7,7 +7,7 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 })
 export class MenuComponent implements OnInit, OnChanges {
 
-  @Input() menuBarOpen = false;
+  @Input() isCollapsed = false;
 
   constructor() { }
 
@@ -19,6 +19,7 @@ export class MenuComponent implements OnInit, OnChanges {
   }
 
   toggleMenuBar() {
-    this.menuBarOpen = !this.menuBarOpen;
+    this.isCollapsed = !this.isCollapsed;
+    console.log('NavBarStatus changed: ', this.isCollapsed);
   }
 }

@@ -14,8 +14,8 @@
     flex-direction: row;
     justify-content: center;
 
-    margin-left: -100vw;
-    transition: 0.7s;
+    /* margin-left: -100vw; */
+    transition: .7s;
 }
 #side_nav:hover
 {

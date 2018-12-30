@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Router } from '@angular/router';
 import { query } from '@angular/core/src/render3';
@@ -9,6 +9,8 @@ import { query } from '@angular/core/src/render3';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+
+  @Output() toggleNavBar = new EventEmitter();
 
   public searchMode = false;
 
@@ -32,5 +34,9 @@ export class SearchComponent implements OnInit {
 
   goHome() {
     this.router.navigate(['/home']);
+  }
+
+  toggleNav() {
+    this.toggleNavBar.emit(null);
   }
 }

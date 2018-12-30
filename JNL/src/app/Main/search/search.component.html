@@ -12,11 +12,9 @@
    <!--TOP BAR-->
    <div id="top_bar">
        <div id="menu_logo">
-            <a id="menu_button">≡</a>
-            <!--<a routerLink="/home" class="imageLink">-->
-                <img class="imageLink" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo.jpg" height="28vh"
-                    (click)="goHome()"/>
-            <!--</a>-->
+            <span id="menu_button" (click)="toggleNav()">≡</span>
+            <img class="imageLink" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo.jpg" height="28vh"
+                (click)="goHome()"/>
        </div>
     
 

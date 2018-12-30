@@ -12,140 +12,114 @@
     outline: none;
 }
 
-#search_bar_div:hover
-{
+#search_bar_div:hover {
     margin-top: 0px;
 }
-#search_bar
-{
+
+#search_bar {
     top: 0;
     left: 0;
     width: 100%;
     min-height: 60px;
     height: auto;
-
     /*position:  fixed;*/
-
     z-index: 1;
-
     background-color: lightgray;
-
     transition: 0.5s;
-
 }
 
 /*TEXT SEARCH*/
-#search_bar >  input
-{
+#search_bar >  input {
     width: 97vw;
     min-height: 60px;
     height: auto;
-
     padding-left: 5vw;
-
     border: 0;
-
     background-color:lightgray;
 }
-#search_bar >  input:focus
-{
+
+#search_bar >  input:focus {
     outline: none;
 }
-/*CLEAR BUTTON*/
-#search_bar > button
-{
-    border: 0;  
 
+/*CLEAR BUTTON*/
+#search_bar > button {
+    border: 0;  
     background-color: black;
     border-radius: 100%;
     box-sizing: border-box;
-
     padding-left: 0.6em;
     padding-right: 0.6em;
-
     text-align: center;
-
     color: white;
 }
-#search_bar >form > button:focus
-{
+
+#search_bar >form > button:focus {
     outline: 0;
 }
-#search_bar > button:hover
-{
+
+#search_bar > button:hover {
     outline: 0;
-
     background-color: darkgrey;
-
     cursor: pointer;
 }
 
 /*TOP MENU BAR*/
-#top_bar
-{
+#top_bar {
     top: 0;
     left: 0;
     width: 100%;
     min-height: 60px;
     height: auto;
-
     padding: 0px;
-
     /*position: fixed;*/
-
     background-color: white;
     color: grey;
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
 /*SEARCH CONTACT LANG*/
-#top_buttons
-{
+#top_buttons {
     width: auto;
-
     display: inline-flex;
     flex-wrap: wrap;
 }
-#top_buttons > span
-{
+
+#top_buttons > span {
     flex: 0 0 auto;
-    
     width: auto;
-
     margin: 0 20px 0 0;
-
     text-align: center; 
     text-decoration: none;
     color: black;
 }
-#top_buttons > span > a:link, #top_buttons > span > a:visited
-{
+
+#top_buttons > span > a:link, #top_buttons > span > a:visited {
     text-decoration: none;
     color: black;
 }
-#top_buttons > span >a:hover
-{
+
+#top_buttons > span >a:hover {
     color: darkgrey;
 }
+
 /*MENU BUTTON*/
-#menu_button, #menu_button:link, #menu_button:visited
-{
+#menu_button, #menu_button:link, #menu_button:visited {
     text-decoration: none;
     color: black;
-
     font-size: 2em;
+    cursor: pointer;
 }
-#menu_logo
-{
+
+#menu_logo {
     display: flex;
     margin: auto;
-    margin-left: 2vw;
+    margin-left: 1vw;
 }
-#logo
-{
+
+#logo {
     padding-left: 2vw;
     margin: auto;
 }
@@ -156,38 +130,34 @@
 @media only screen and (max-width: 800px)
 {
     /*TOP BAR*/
-    #top_bar
-    {
+    #top_bar {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
         padding: 0;
     }
-    #menu_logo
-    {
+
+    #menu_logo {
         margin: auto;
         display: inline-flex;
-        
         align-items: center;
         justify-content: space-evenly;
     }
-    #top_buttons
-    {
+
+    #top_buttons {
         flex-direction: column-reverse;
         margin-top: 40px;
     }
-    #top_buttons > span
-    {
+
+    #top_buttons > span {
         /**/background-color: grey;
         width: 100vw;
         margin: 0;
     }
     
     /*SEARCH BAR*/
-    #search_bar >  input
-    {
+    #search_bar >  input  {
         width: 90vw;
     }
 }
