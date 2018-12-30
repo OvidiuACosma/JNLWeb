@@ -1,4 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +11,7 @@ export class MenuComponent implements OnInit, OnChanges {
 
   @Input() isCollapsed = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,6 +22,10 @@ export class MenuComponent implements OnInit, OnChanges {
 
   toggleMenuBar() {
     this.isCollapsed = !this.isCollapsed;
-    console.log('NavBarStatus changed: ', this.isCollapsed);
+  }
+
+  goProducts() {
+    this.router.navigate(['/products']);
+    this.toggleMenuBar();
   }
 }
