@@ -6,10 +6,12 @@ h1
 }
 .home_links
 {
-    border: 1px solid orange;
+    border: 1.5px solid #DBBB76;
     padding: 0.3em;
     padding-left: 1em;
     padding-right: 1em;
+
+    font-size: 1em;
     
 }
 .gallery_buttons
@@ -23,17 +25,17 @@ h1
     margin: auto;
 
     font-size: 5em;
+    font-family: Atak-Regular;
 }
 .main_divs
 {
     text-align: center;
-    padding: 5vw;
 
     font-family: Atak-Light;
 }
 hr
 {
-    border: 0.5px solid orange;
+    border: 0.5px solid #DBBB76;
 }
 
 
@@ -43,7 +45,8 @@ hr
     width: 100vw;
     height: 100vh;
 
-    background-image: url("/assets/Images/Home/_MGL0055-HDR.jpg");
+    background-image: url("/assets/Images/Home/homebg.png");
+    background-size: cover;
 
     display: flex;
 }
@@ -60,12 +63,15 @@ hr
 {
     text-align: center;
     font-size: 5em;
+
+    color: white;
 }
 
 
 #une_histoire
 {
     width: 100vw;
+    height: 558px;
 
     background-color: white;
 
@@ -74,23 +80,29 @@ hr
 #une_histoire > div
 {
     margin: auto;
-    padding: 20%;
+    padding-left: 245px;
+    padding-right: 245px;
 
     text-align: center;
 }
 #une_histoire > div > p
 {
-    font-size: 1.2em;
+    font-size: 1.6em;
+    line-height: 1.24em;
 }
-
+#une_histoire > div > p > a
+{
+    font-size: 0.6em;
+}
 
 
 #les_marques
 {
     width: 100vw;
-    height: 100vh;
+    height: 724px;
 
-    background-color: lightgrey;
+    background-color: #D3D3D3;
+    color: black;
 
     display: flex;
     flex-direction: row;
@@ -131,10 +143,13 @@ hr
 
     display: flex;
     flex-direction: row;
+
+    padding-left: 245px;
+    padding-right: 245px;
 }
 #marques_show > p
 {
-    width: 30%;
+    width: 60%;
     margin: auto;
 
     text-align: left;
@@ -144,9 +159,15 @@ hr
 {
     height: 60vh;
 
-    float: right;
+    float: left;
 }
 
+#actualites
+{
+    padding-top: 120px; 
+    padding-left: 50px; 
+    padding-right: 50px; 
+}
 #actualites > div
 {
     display: flex;
@@ -157,6 +178,7 @@ hr
     width: 20vw;
 
     margin: auto;
+    margin-top: 0px;
 
     text-align: left;
     text-justify: justify;
@@ -183,6 +205,8 @@ hr
 {
     margin: auto;
     font-size: 5em;
+    line-height: 1em;
+    font-family: Atak-Regular;
 }
 #actualites_arrows > a:nth-child(1)
 {   
@@ -191,4 +215,77 @@ hr
 #actualites_arrows > a:nth-child(2)
 {   
     margin-right: 0px;
+}
+
+#savoir
+{
+    margin: 55px;
+
+    height: 805px;
+    width: 100%;
+}
+#savoir > div
+{
+    width: 1255px;
+    height: 100%;
+    background-image: url("/assets/Images/Home/pencil.png");
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+}
+#savoir > div > h1
+{
+    margin: auto;
+    margin-bottom: 0px;
+    color: white;
+}
+#savoir > div > a
+{
+    margin: auto;
+    margin-top: 40px;
+    color: white;
+}
+
+#projets
+{
+    margin-bottom: 200px;
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+}
+#projets > div
+{
+    margin: auto;
+}
+#projets > div > div > div
+{
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+#projets > div > div > div > img
+{
+    margin: auto;
+    width: 855px;
+}
+#projets > div > div > div > h2
+{
+    margin: auto;
+    width: 855px;
+}
+ h3
+{
+    margin: auto;
+    width: 780px;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+}
+#projets > .gallery_buttons
+{
+    text-align: right;
 }
