@@ -1,6 +1,10 @@
 a:hover {
     color: #777;
 }
+input:focus, button:focus
+{
+    outline: none;
+}
 
 .columnHead {
     font-size: .9em;

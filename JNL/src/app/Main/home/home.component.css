@@ -173,9 +173,18 @@ hr
 #actualites_arrows
 {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
 }
 #actualites_arrows > a
 {
     margin: auto;
+    font-size: 5em;
+}
+#actualites_arrows > a:nth-child(1)
+{   
+    margin-left: 0px;
+}
+#actualites_arrows > a:nth-child(2)
+{   
+    margin-right: 0px;
 }
