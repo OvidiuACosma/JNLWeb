@@ -104,4 +104,38 @@ h1
     margin: auto;
     width: 100%;
 
+<<<<<<< HEAD
 }
+=======
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+}
+#marques_list > a
+{
+    margin: auto;
+}
+#marques_show
+{
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+#marques_show > p
+{
+    width: 30%;
+    margin: auto;
+
+    text-align: left;
+}
+.marques_img
+{
+    width: 200px;
+    height: 200px;
+
+    float: right;
+}
+>>>>>>> cosmina
