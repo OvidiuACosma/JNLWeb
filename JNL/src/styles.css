@@ -14,3 +14,35 @@ a:hover {
     color: #888;
     cursor: pointer;
 }
+
+/* FONTS */
+
+@font-face {
+    font-family: "Atak-Bold";
+    src: url('/assets/Fonts/Atak-Bold.otf'),
+    url('/assets/Fonts/Atak-Bold.otf'); /* IE */
+    }
+
+@font-face {
+    font-family: "Atak-Light";
+    src: url('/assets/Fonts/Atak-Light.otf'),
+    url('/assets/Fonts/Atak-Light.otf'); /* IE */
+    }
+
+@font-face {
+    font-family: "Atak-LightItalic";
+    src: url('/assets/Fonts/Atak-LightItalic.otf'),
+    url('/assets/Fonts/Atak-LightItalic.otf'); /* IE */
+    }
+
+@font-face {
+    font-family: "Atak-Medium";
+    src: url('/assets/Fonts/Atak-Medium.otf'),
+    url('/assets/Fonts/Atak-Medium.otf'); /* IE */
+    }
+
+@font-face {
+    font-family: "Atak-Regular";
+    src: url('/assets/Fonts/Atak-Regular.otf'),
+    url('/assets/Fonts/Atak-Regular.otf'); /* IE */
+    }
