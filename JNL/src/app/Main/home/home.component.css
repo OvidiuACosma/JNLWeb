@@ -3,7 +3,6 @@ h1
     font-family: Impact;
     font-size: 4em;
 
-    background-image: url("assets\Images\Home\product_exmaple.jpg");
 }
 .home_links
 {
@@ -28,6 +27,11 @@ h1
 .main_divs
 {
     text-align: center;
+    padding: 5vw;
+}
+hr
+{
+    border: 0.5px solid orange;
 }
 
 
@@ -60,7 +64,6 @@ h1
 #une_histoire
 {
     width: 100vw;
-    height: 100vh;
 
     background-color: white;
 
@@ -103,7 +106,7 @@ h1
 {
     margin: auto;
     width: 100%;
-
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -113,6 +116,12 @@ h1
 #marques_list > a
 {
     margin: auto;
+
+    font-size: 1.5em;
+}
+#marques_list > a:hover
+{
+    text-decoration: underline;
 }
 #marques_show
 {
@@ -127,11 +136,46 @@ h1
     margin: auto;
 
     text-align: left;
+    font-size: 1.2em;
 }
 .marques_img
 {
-    width: 200px;
-    height: 200px;
+    height: 60vh;
 
     float: right;
+}
+
+#actualites > div
+{
+    display: flex;
+    flex-direction: row;
+}
+#actualites > div > p
+{
+    width: 20vw;
+
+    margin: auto;
+
+    text-align: left;
+    text-justify: justify;
+}
+.actualites_img
+{
+    width: 100%;
+}
+.more_links
+{
+    font-weight: bold;
+}
+#actualites > div > p >span {
+    font-size: 1.5em;
+}
+#actualites_arrows
+{
+    display: flex;
+    flex-direction: row;
+}
+#actualites_arrows > a
+{
+    margin: auto;
 }
