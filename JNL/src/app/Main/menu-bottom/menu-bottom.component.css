@@ -15,6 +15,9 @@ a:hover {
 }
 
 .bottom_nav {
+
+    position: absolute;
+
     width: 100vw;
     margin: 0;
     padding: 0.7vw;
