@@ -6,6 +6,7 @@ a:hover {
     font-size: .9em;
     margin-bottom: 1em;
     text-transform: uppercase;
+    font-family: "Atak-Light", sans-serif;
 }
 
 .bottom_nav > div
@@ -50,10 +51,12 @@ a:hover {
 #bottom_nav_links > div > a {
     font-size: .9em;
     margin-bottom: 1em;
+    font-family: "Atak-Light", sans-serif;
 }
 
 #bottom_line > a {
     margin-right: 1vw;
+    font-family: "Atak-Light", sans-serif;
 }
 
 #fb_in {
