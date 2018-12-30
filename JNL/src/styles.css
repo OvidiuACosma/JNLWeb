@@ -14,3 +14,10 @@ a:hover {
     color: #888;
     cursor: pointer;
 }
+
+/* FONTS */
+
+@font-face {
+    font-family: MyFont;
+    src: url('/assets/Fonts/MyFont.ttf');
+    }
