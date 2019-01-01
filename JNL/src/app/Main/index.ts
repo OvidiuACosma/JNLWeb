@@ -1,4 +1,4 @@
-export * from './Home/home.component';
+export * from './home/home.component';
 export * from './search/search.component';
 export * from './menu/menu.component';
 export * from './menu-bottom/menu-bottom.component';

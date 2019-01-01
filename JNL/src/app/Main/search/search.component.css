@@ -12,6 +12,12 @@
     outline: none;
 }
 
+#bar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
 #search_bar_div:hover {
     margin-top: 0px;
 }
