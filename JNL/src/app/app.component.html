@@ -1,19 +1,21 @@
 <div>
+  <div class="search-bar">
+    <app-search (toggleNavBar)="toggleNav()"></app-search>
+  </div>
+</div>
+
+<div class="menu">
   <app-menu [toggleNavBar]="toggleNavBar"></app-menu>
 </div>
 
-<div>
-  <div class="searchBar">
-    <app-search (toggleNavBar)="toggleNav()"></app-search>
-  </div>
-
+<div class="main">
   <div>
     <app-alert></app-alert>
   </div>
   <div class="router-outlet">
     <router-outlet></router-outlet>
   </div>
-  <div>
+  <div class="menu-bottom">
     <app-menu-bottom></app-menu-bottom>
   </div>
 </div>
