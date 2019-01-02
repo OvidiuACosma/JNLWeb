@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataExchangeService } from 'src/app/_services';
 
 @Component({
   selector: 'app-menu',
@@ -11,17 +12,22 @@ export class MenuComponent implements OnInit, OnChanges {
   @Input() toggleNavBar = false;
   isCollapsed = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private dataex: DataExchangeService) { }
 
   ngOnInit() {
+    this.dataex.currentNavBarStatus
+    .subscribe(status => {
+      this.isCollapsed = !status;
+    });
   }
 
   ngOnChanges() {
-    this.toggleMenuBar();
+    // this.toggleMenuBar();
   }
 
   toggleMenuBar() {
-    this.isCollapsed = !this.isCollapsed;
+    this.dataex.setNavBarStatus(this.isCollapsed);
   }
 
   goProducts() {

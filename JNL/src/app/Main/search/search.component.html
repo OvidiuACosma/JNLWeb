@@ -1,15 +1,14 @@
 <div id="bar">
    <div id="top-bar">
        <div id="menu-logo">
-            <span id="menu-button" (click)="toggleNav()">≡</span>
+            <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()"></span>
             <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo.jpg"
                 (click)="goHome()"/>
        </div>
-    
 
        <div id="top_buttons">
            <span>
-               <a class="top-button" id="search_btn" *ngIf="!searchMode" 
+               <a class="top-button" *ngIf="!searchMode" 
                 (click)="goSearchMode()">Search</a>
                <input type="search" class="searchInput" placeholder="Search..." autofocus="autofocus" *ngIf="searchMode"
                 (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">

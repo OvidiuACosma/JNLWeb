@@ -43,7 +43,7 @@
     margin-right: 0px;
     display: flex;
     flex-direction: column;
-
+    cursor: pointer;
     width: 40vw;
 }
 #side_nav_links > div
