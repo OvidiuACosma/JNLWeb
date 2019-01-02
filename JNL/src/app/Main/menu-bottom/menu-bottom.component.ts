@@ -12,4 +12,7 @@ export class MenuBottomComponent implements OnInit {
   ngOnInit() {
   }
 
+  ScrollTop() {
+    window.scrollTo(0, 0);
+  }
 }

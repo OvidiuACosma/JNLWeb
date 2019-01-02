@@ -4,6 +4,12 @@ h1
     font-size: 4em;
 
 }
+
+hr
+{
+    border: 0.5px solid #DBBB76;
+}
+
 .home_links
 {
     border: 1.5px solid #DBBB76;
@@ -38,15 +44,9 @@ h1
     font-family: Atak-Light;
 
 }
-hr
-{
-    border: 0.5px solid #DBBB76;
-}
 
 
-
-#first_picture
-{
+#first_picture {
     width: 100vw;
     height: 100vh;
 
@@ -55,15 +55,16 @@ hr
 
     display: flex;
 }
-#first_picture > div
-{
+
+#first_picture > div {
     margin: auto;
 }
-#first_picture > div > img
-{
+
+#first_picture > div > img {
 
     height: 20vh;
 }
+
 #first_picture > div > p
 {
     text-align: center;

@@ -11,10 +11,6 @@
     z-index: 899;
 }
 
-.alert {
-    position: relative;
-}
-
 .main {
     display: block;
     top: 60px;
