@@ -9,7 +9,7 @@
     border: solid 1px #888;
 }
 
-.searchInput:focus {
+.searchInput:focus, input:focus {
     outline: none;
 }
 
@@ -21,6 +21,8 @@
     position: fixed;
     top: 0px;
     width: 100%;
+
+    font-family: Atak Regular;
 }
 
 #search_bar_div:hover {

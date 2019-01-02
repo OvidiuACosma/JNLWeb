@@ -44,7 +44,10 @@ hr
     font-family: Atak-Light;
 
 }
-
+.marques_selected
+{
+    text-decoration: underline !important;
+}
 
 #first_picture {
     width: 100vw;
@@ -100,7 +103,6 @@ hr
 {
     font-size: 0.6em;
 }
-
 
 #les_marques
 {
@@ -239,7 +241,7 @@ hr
     margin: auto;
     width: 1255px;
     height: 100%;
-    background-image: url("/assets/Images/Home/pencil.png");
+    background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
 
     display: flex;
