@@ -27,11 +27,16 @@ h1
     font-size: 5em;
     font-family: Atak-Regular;
 }
+.gallery_buttons > div > img
+{
+    width: 2vw;
+}
 .main_divs
 {
     text-align: center;
 
     font-family: Atak-Light;
+
 }
 hr
 {
@@ -45,7 +50,7 @@ hr
     width: 100vw;
     height: 100vh;
 
-    background-image: url("/assets/Images/Home/homebg.png");
+    background-image: url("/assets/Images/Home/HM_main.png");
     background-size: cover;
 
     display: flex;
@@ -216,16 +221,21 @@ hr
 {   
     margin-right: 0px;
 }
+#actualites_arrows > a > img
+{
+    width: 2vw;
+}
 
 #savoir
 {
     margin: 55px;
 
     height: 805px;
-    width: 100%;
+    display: flex;
 }
 #savoir > div
 {
+    margin: auto;
     width: 1255px;
     height: 100%;
     background-image: url("/assets/Images/Home/pencil.png");
