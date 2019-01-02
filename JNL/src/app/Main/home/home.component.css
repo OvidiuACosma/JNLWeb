@@ -38,6 +38,10 @@ h1
     font-family: Atak-Light;
 
 }
+.marques_selected
+{
+    text-decoration: underline !important;
+}
 hr
 {
     border: 0.5px solid #DBBB76;
@@ -238,7 +242,7 @@ hr
     margin: auto;
     width: 1255px;
     height: 100%;
-    background-image: url("/assets/Images/Home/pencil.png");
+    background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
 
     display: flex;
