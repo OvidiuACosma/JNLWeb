@@ -82,6 +82,10 @@
 #menu-image-div{
     display: flex;
 }
+#side_nav > span
+{
+    text-align: left;
+}
 
 @media only screen and (max-width: 800px)
 {
