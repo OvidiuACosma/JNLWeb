@@ -57,6 +57,7 @@ hr
 
     background-image: url("/assets/Images/Home/HM_main.png");
     background-size: cover;
+    background-position: center center;
 
     display: flex;
 }
@@ -236,17 +237,20 @@ hr
 #savoir
 {
     margin: 55px;
-
+    height: 55vw;
     min-height: 805px;
     display: flex;
 }
 #savoir > div
 {
     margin: auto;
-    width: 1255px;
-    height: 100vh;
+    width: 87vw;
+    /*width: 1255px;*/
+
+    height: 48.5vw;
     background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
+    background-position: center center;
 
     display: flex;
     flex-direction: column;
@@ -266,7 +270,7 @@ hr
 
 #projets
 {
-    margin-bottom: 200px;
+    margin-bottom: 14vw;
     width: 100%;
 
     text-align: center;
@@ -287,17 +291,17 @@ hr
 #projets > div > div > div > img
 {
     margin: auto;
-    width: 855px;
+    height: 35vw;
 }
 #projets > div > div > div > h2
 {
     margin: auto;
-    width: 855px;
+    width: 55.5vw;
 }
  h3
 {
     margin: auto;
-    width: 780px;
+    width: 54vw;
     font-size: 26px;
 
     font-family: Atak-Medium;
