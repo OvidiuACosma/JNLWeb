@@ -19,6 +19,10 @@ export class DataExchangeService {
   private subjectBrowser = new BehaviorSubject<String>('');
   currentBrowser = this.subjectBrowser.asObservable();
 
+  // NavBar Status
+  private subjectNavBarStatus = new BehaviorSubject<boolean>(false);
+  currentNavBarStatus = this.subjectNavBarStatus.asObservable();
+
   constructor() { }
 
   public changeMessage(message: string) {
@@ -31,5 +35,9 @@ export class DataExchangeService {
 
   public setCurrentBrowser(browser: String) {
     this.subjectBrowser.next(browser);
+  }
+
+  public setNavBarStatus(status: boolean) {
+    this.subjectNavBarStatus.next(status);
   }
 }
