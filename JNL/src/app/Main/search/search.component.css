@@ -9,7 +9,7 @@
     border: solid 1px #888;
 }
 
-.searchInput:focus, input:focus {
+.searchInput:focus, input:focus, a:focus {
     outline: none;
 }
 

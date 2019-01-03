@@ -348,6 +348,7 @@ hr
     #les_marques
     {
         width: 100vw;
+        padding: 10px;
 
         background-color: #D3D3D3;
         color: black;
@@ -361,9 +362,16 @@ hr
         flex-direction: column;
         flex-wrap: wrap;
     }
+    #marques_main > h1
+    {
+        margin: 0px;
+        margin-top: 10px;
+    }
     #marques_list
     {
         margin: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
         width: 80vw;
         
         display: flex;
@@ -381,27 +389,34 @@ hr
 
     #marques_show
     {
-        margin: auto;
+        margin: 0px;
 
-        display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
 
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0px !important;
+        padding-right: 0px  !important;
     }
     #marques_show > p
     {
-        width: 60%;
+        width: 100%;
         margin: auto;
 
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
         font-size: 1.2em;
+    }
+    #marques_show > p > a{
+        width: fit-content;
+        margin: auto;
     }
     .marques_img
     {
-        height: 60vh;
-
-        float: left;
+        margin: auto;
+        height: 40vw;
     }
 
     #actualites
@@ -412,117 +427,77 @@ hr
     }
     #actualites > div
     {
-        display: flex;
-        flex-direction: row;
+        display: block;
     }
     #actualites > div > p
     {
-        width: 20vw;
-
-        margin: auto;
-        margin-top: 0px;
-
-        text-align: left;
-        text-justify: justify;
-
-        font-family: Atak-Regular;
+        display: none;
     }
+    #actualites > div > p:first-child
+    {
+        display: block;
+        width: 100%;
 
-    #actualites > div > p >span {
-        font-size: 1.5em;
+        text-align: center;
     }
     #actualites_arrows
     {
-        display: flex;
-        justify-content: space-between;
+        display: none;
     }
+
     #actualites_arrows > a
     {
-        margin: auto;
-        font-size: 5em;
-        line-height: 1em;
-        font-family: Atak-Regular;
-    }
-    #actualites_arrows > a:nth-child(1)
-    {   
-        margin-left: 0px;
-    }
-    #actualites_arrows > a:nth-child(2)
-    {   
-        margin-right: 0px;
-    }
-    #actualites_arrows > a > img
-    {
-        width: 2vw;
+        display: none;
     }
 
     #savoir
     {
-        margin: 55px;
-        height: 55vw;
-        min-height: 805px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        width: 100vw;
+        height: auto;
+        min-height: 200px;
         display: flex;
     }
     #savoir > div
     {
-        margin: auto;
-        width: 87vw;
-        /*width: 1255px;*/
-
-        height: 48.5vw;
-        background-image: url("/assets/Images/Home/HM_video.png");
-        background-size: cover;
-        background-position: center center;
-
-        display: flex;
-        flex-direction: column;
-    }
-    #savoir > div > h1
-    {
-        margin: auto;
-        margin-bottom: 0px;
-        color: white;
-    }
-    #savoir > div > a
-    {
-        margin: auto;
-        margin-top: 40px;
-        color: white;
+        margin: 0px;
+        width: 100%;
+        height: 200px;
     }
 
     #projets
     {
         margin-bottom: 14vw;
-        width: 100%;
+        width: 100vw;
+        height: auto;
+        padding: 10px;
 
         text-align: center;
 
         display: flex;
-    }
-
-    #projets > div > div > div
-    {
-        display: flex;
-        flex-direction: column;
-
-        text-align: center;
     }
     #projets > div > div > div > img
     {
         margin: auto;
-        height: 35vw;
+        width: 80vw;
+        height: auto;
     }
     #projets > div > div > div > h2
     {
         margin: auto;
         width: 55.5vw;
     }
-    h3
+    #projets h3
     {
-        margin: auto;
-        width: 54vw;
-        font-size: 26px;
+        margin: 0px;
+        text-align: center;
+        width: auto;
+        font-size: 1.2em;
+        padding: 20px;
 
         font-family: Atak-Medium;
     }
+
 }
