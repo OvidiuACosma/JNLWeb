@@ -375,7 +375,7 @@ hr
         width: 80vw;
         
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         align-content: space-between;
         justify-content: center;

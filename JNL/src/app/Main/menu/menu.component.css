@@ -41,6 +41,7 @@
     margin: auto;
     margin-left: 0px;
     margin-top: 2em;
+    padding-left: 5vw;
     display: flex;
     flex-direction: column;
     cursor: pointer;
