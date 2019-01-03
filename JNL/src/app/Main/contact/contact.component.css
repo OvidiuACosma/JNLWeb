@@ -125,6 +125,11 @@ select
     background-color: #E9D6AC;
 }
 
+.contact_form > div{
+    margin: auto;
+    text-align: left;
+}
+
 
 @media only screen and (max-width: 800px){
     .contact_div > p{
