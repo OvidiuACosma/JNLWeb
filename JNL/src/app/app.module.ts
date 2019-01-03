@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LegalComponent, GDPRComponent, CreditsComponent } from './Extras';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent, SearchResultsComponent } from './Main';
 import { AlertComponent } from './_directives';
-import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent } from './Std';
+import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent, MarqueComponent } from './Std';
 import { ProductSearchComponent, ProductComponent } from './Products';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -40,7 +40,8 @@ import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers'
     ProductComponent,
     LoginComponent,
     RegisterComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    MarqueComponent
   ],
   imports: [
     BrowserModule,
