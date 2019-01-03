@@ -82,6 +82,7 @@ hr
 #une_histoire
 {
     width: 100vw;
+    height: 39vw;
     min-height: 558px;
 
     background-color: white;
@@ -91,8 +92,8 @@ hr
 #une_histoire > div
 {
     margin: auto;
-    padding-left: 245px;
-    padding-right: 245px;
+    padding-left: 17vw;
+    padding-right: 17vw;
 
     text-align: center;
 }
@@ -109,6 +110,7 @@ hr
 #les_marques
 {
     width: 100vw;
+    height: 50vw;
     min-height: 724px;
 
     background-color: #D3D3D3;
