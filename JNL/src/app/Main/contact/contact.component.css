@@ -11,40 +11,52 @@
     color: black;
   }
 
+h1{
+    font-family: PlacardMT-Condensed;
+    font-size: 4em;
+    margin-bottom: 3vh;
+    text-transform: uppercase;
+}
+
+textarea{
+    margin: auto;
+    background-color: #F6EEDD;
+    border: none;
+    width: 45vw;
+    outline: none;
+}
+
+
 .contact_div
 {
     text-align: center;
 
-    width: 60vw;
-    margin: auto;
     margin-bottom: 5vh;
+    font-family: Atak-Regular;
+    font-size: 20px;
+}
+.contact_div > p{
+    font-family: Atak-Medium;
+    font-size: 26px;
+    padding-left: 275px;
+    padding-right: 275px;
 }
 .contact_form
 {
     width: 90%;
     margin: auto;
+    margin-top: 4.8vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
-.contact_form:focus, .contact_form > input:focus
+.contact_form:focus, .contact_form > input:focus, textarea:focus, select:focus
 {
     outline: none;
 }
 .contact_form > input
-{ 
-    width: 100%;
-
-    background-color: white;
-
-    border: none;
-    border-bottom: 1.5px solid black;
-
-    margin-right: 3em;
-    
-    margin-top: 1.7em;
-    padding-bottom: 0.7em;
-
-}
-.contact_form > div > input,  .contact_form > div > select:nth-child(n+1)
 {
+    margin: auto;
     -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none; 
@@ -52,21 +64,17 @@
     outline: none;
     border: hidden;
 
-    width: 45%;
+    width: 45vw;
+    background-color: transparent;
 
-    background-color: white;
 
     border: none;
     border-bottom: 1.5px solid black;
 
-    margin-right: 10%;
-    margin-top: 1.7em;
-    padding-bottom: 0.7em;
+    margin-top: 1.5vw;
+    padding-bottom: 0px;
 }
-.contact_form > div > input:nth-child(2)
-{
-    margin-right: 0px; 
-}
+
 .contact_top
 {
     margin: auto;
@@ -79,38 +87,40 @@
     align-content: center;
 
 }
-.contact_top > select
+select
 {
+    margin: auto;
     -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none;  
 
-    
-
-    width: 20% !important;
-
-    background-color: white;
+    width: 45vw;
+    background-color: transparent;
 
     border: none;
     border-bottom: 1.5px solid black;
 
-    margin-right: 10% !important;
     margin-bottom: 1em;
+    margin-top: 4vw;
 
 
     
 }
-.contact_top > select:nth-child(2)
-{
-    margin-right: 0px !important; 
-}
 .contact_form > button
 {
-    background-color: black;
-    color: white;
+    text-transform: uppercase;
 
-    margin-top: 3em;
+    margin: auto;
+    background-color: white;
+    color: black;
+
+    margin-top: 5.3em;
+    margin-bottom: 4em;
     border: none;
 
     width: 20%;
+}
+.contact_div > div{
+    width: 100vw;
+    background-color: #E9D6AC;
 }
