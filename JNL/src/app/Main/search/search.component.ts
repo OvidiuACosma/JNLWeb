@@ -40,6 +40,11 @@ export class SearchComponent implements OnInit {
   toggleNav() {
     this.toggleNavBar.emit(null);
     this.dataex.setNavBarStatus(!this.navBarStatus);
+    this.ScrollTop();
+  }
+
+  ScrollTop() {
+    window.scrollTo(0, 0);
   }
 
   getNavbarButton() {
