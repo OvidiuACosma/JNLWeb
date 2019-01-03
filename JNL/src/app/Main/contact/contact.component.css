@@ -50,7 +50,7 @@ textarea{
     flex-direction: column;
     align-content: center;
 }
-.contact_form:focus, .contact_form > input:focus, textarea:focus, select:focus
+.contact_form:focus, .contact_form > input:focus, textarea:focus, select:focus, button:focus
 {
     outline: none;
 }
@@ -123,4 +123,17 @@ select
 .contact_div > div{
     width: 100vw;
     background-color: #E9D6AC;
+}
+
+
+@media only screen and (max-width: 800px){
+    .contact_div > p{
+        font-size: 1em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    input, select, textarea{
+        width: 90vw !important;
+    }
 }
