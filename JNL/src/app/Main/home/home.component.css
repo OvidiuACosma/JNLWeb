@@ -310,3 +310,224 @@ hr
 {
     text-align: right;
 }
+
+
+@media only screen and (max-width: 800px){
+
+    .gallery_buttons > div{
+        padding: 1vw;
+    }
+
+    .gallery_buttons > div > img{
+        width: 2vw;
+        min-width: 20px;
+    }
+
+
+    #une_histoire
+    {
+        height: 100% !important;
+        padding: 0px;
+    }
+    #une_histoire > div
+    {
+        margin: auto;
+
+        text-align: center;
+    }
+    #une_histoire > div > p
+    {
+        font-size: 1.2em;
+        line-height: 1.24em;
+    }
+    #une_histoire > div > p > a
+    {
+        font-size: 0.8em;
+    }
+
+    #les_marques
+    {
+        width: 100vw;
+        height: 50vw;
+        min-height: 724px;
+
+        background-color: #D3D3D3;
+        color: black;
+
+        display: flex;
+        flex-direction: row;
+    }
+    #marques_main
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    #marques_main > h1
+    {
+        margin: auto;
+    }
+    #marques_list
+    {
+        margin: auto;
+        width: 800px;
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content: center;
+    }
+    #marques_list > a
+    {
+        margin: auto;
+
+        font-size: 1.5em;
+    }
+
+    #marques_show
+    {
+        margin: auto;
+
+        display: flex;
+        flex-direction: row;
+
+        padding-left: 245px;
+        padding-right: 245px;
+    }
+    #marques_show > p
+    {
+        width: 60%;
+        margin: auto;
+
+        text-align: left;
+        font-size: 1.2em;
+    }
+    .marques_img
+    {
+        height: 60vh;
+
+        float: left;
+    }
+
+    #actualites
+    {
+        padding-top: 120px; 
+        padding-left: 50px; 
+        padding-right: 50px; 
+    }
+    #actualites > div
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    #actualites > div > p
+    {
+        width: 20vw;
+
+        margin: auto;
+        margin-top: 0px;
+
+        text-align: left;
+        text-justify: justify;
+
+        font-family: Atak-Regular;
+    }
+
+    #actualites > div > p >span {
+        font-size: 1.5em;
+    }
+    #actualites_arrows
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    #actualites_arrows > a
+    {
+        margin: auto;
+        font-size: 5em;
+        line-height: 1em;
+        font-family: Atak-Regular;
+    }
+    #actualites_arrows > a:nth-child(1)
+    {   
+        margin-left: 0px;
+    }
+    #actualites_arrows > a:nth-child(2)
+    {   
+        margin-right: 0px;
+    }
+    #actualites_arrows > a > img
+    {
+        width: 2vw;
+    }
+
+    #savoir
+    {
+        margin: 55px;
+        height: 55vw;
+        min-height: 805px;
+        display: flex;
+    }
+    #savoir > div
+    {
+        margin: auto;
+        width: 87vw;
+        /*width: 1255px;*/
+
+        height: 48.5vw;
+        background-image: url("/assets/Images/Home/HM_video.png");
+        background-size: cover;
+        background-position: center center;
+
+        display: flex;
+        flex-direction: column;
+    }
+    #savoir > div > h1
+    {
+        margin: auto;
+        margin-bottom: 0px;
+        color: white;
+    }
+    #savoir > div > a
+    {
+        margin: auto;
+        margin-top: 40px;
+        color: white;
+    }
+
+    #projets
+    {
+        margin-bottom: 14vw;
+        width: 100%;
+
+        text-align: center;
+
+        display: flex;
+    }
+
+    #projets > div > div > div
+    {
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+    }
+    #projets > div > div > div > img
+    {
+        margin: auto;
+        height: 35vw;
+    }
+    #projets > div > div > div > h2
+    {
+        margin: auto;
+        width: 55.5vw;
+    }
+    h3
+    {
+        margin: auto;
+        width: 54vw;
+        font-size: 26px;
+
+        font-family: Atak-Medium;
+    }
+}
