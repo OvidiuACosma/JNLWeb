@@ -348,8 +348,6 @@ hr
     #les_marques
     {
         width: 100vw;
-        height: 50vw;
-        min-height: 724px;
 
         background-color: #D3D3D3;
         color: black;
@@ -361,15 +359,12 @@ hr
     {
         display: flex;
         flex-direction: column;
-    }
-    #marques_main > h1
-    {
-        margin: auto;
+        flex-wrap: wrap;
     }
     #marques_list
     {
         margin: auto;
-        width: 800px;
+        width: 80vw;
         
         display: flex;
         flex-direction: row;
@@ -391,8 +386,8 @@ hr
         display: flex;
         flex-direction: row;
 
-        padding-left: 245px;
-        padding-right: 245px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     #marques_show > p
     {
