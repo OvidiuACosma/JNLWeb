@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'searchResults/:searchText', component: SearchResultsComponent },
 
-  { path: 'products', component: ProductComponent },
+  { path: 'product', component: ProductComponent },
+  { path: 'products', component: ProductSearchComponent },
   { path: 'productSearch', component: ProductSearchComponent },
 
   { path: 'jnlGroup', component: JnlGroupComponent },
