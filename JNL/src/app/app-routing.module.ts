@@ -4,7 +4,7 @@ import { HomeComponent, ContactComponent, SearchResultsComponent } from './Main'
 import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { CreditsComponent, GDPRComponent, LegalComponent } from './Extras';
-import { ProductSearchComponent } from './Products';
+import { ProductSearchComponent, ProductComponent } from './Products';
 import { JnlGroupComponent, MarquesComponent, PressComponent, SavoirFaireComponent, ServicesComponent } from './Std';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'searchResults/:searchText', component: SearchResultsComponent },
 
-  { path: 'products', component: ProductSearchComponent },
+  { path: 'products', component: ProductComponent },
   { path: 'productSearch', component: ProductSearchComponent },
 
   { path: 'jnlGroup', component: JnlGroupComponent },

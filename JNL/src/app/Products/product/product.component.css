@@ -1,0 +1,10 @@
+#famille{
+    text-align: left;
+}
+#marque{
+    text-align: right;
+}
+hr{
+    border-width: 1px;
+    border-style: solid;
+}
