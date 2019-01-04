@@ -1,0 +1,121 @@
+h1{
+    font-family: PlacardMT-Condensed;
+    font-size: 4em;
+    margin-bottom: 3vh;
+}
+h2{
+    font-family: Atak-Regular;
+    font-size: 50px;
+}
+h3{
+    text-transform: uppercase;
+    font-family: Atak-Regular;
+    color: #DBBB76;
+    font-size: 20px;
+
+    margin-bottom: 1.5vw;
+}
+
+
+.location{
+    font-family: Atak-Regular;
+    font-size: 17px;
+
+    margin-bottom: 5.5vw;
+}
+.marques_selected{
+    text-decoration: underline !important;
+}
+
+.marques-gold, .marques-gold:link, .marques-gold:visited{
+    color: #DBBB76 !important;
+}
+
+.home_links
+{
+    border: 1.5px solid #DBBB76;
+    padding: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    font-size: 1em;
+
+    text-transform: uppercase;
+    
+}
+
+.marques-image{
+    width: 76vw;
+
+    margin-top: 1.6vw;
+    margin-bottom: 4.2vw;
+}
+
+.les-marques-main{
+    text-align: center;
+    display: flex;
+}
+
+.les-marques-main > div{
+    margin: auto;
+}
+
+.location{
+    text-align: center;
+
+    font-family: Atak-Regular;
+    font-size: 17px;
+}
+
+.histoire
+{
+    width: 100vw;
+    min-height: 558px;
+
+    background-color: white;
+
+    display: flex;
+}
+.histoire > div
+{
+    margin: auto;
+    padding-left: 245px;
+    padding-right: 245px;
+
+    text-align: center;
+}
+.histoire > div > p
+{
+    font-size: 1.6em;
+    line-height: 1.24em;
+}
+.histoire > div > p > a
+{
+    font-size: 0.6em;
+}
+
+
+#marques_list{
+    width: 73vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 7.5vw;
+}
+
+#marques_list > a{
+    margin: auto;
+
+    font-size: 1.5em;
+}
+
+#marques_list > a:hover{
+    text-decoration: underline;
+}
+
+

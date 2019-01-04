@@ -40,11 +40,11 @@
 {
     margin: auto;
     margin-left: 0px;
-    margin-right: 0px;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    width: 40vw;
+    width: 50vw;
 }
 #side_nav_links > div
 {
@@ -55,7 +55,11 @@
 
     margin: auto;
 
-    margin-top: 2vh;
+    margin-bottom: 2em;
+}
+#side_nav_links > div:nth-child(7)
+{
+    margin-bottom: 5em;
 }
 #side_nav_links > div > a
 {
@@ -81,6 +85,11 @@
 
 #menu-image-div{
     display: flex;
+    width: 50vw;
+}
+#side_nav > span
+{
+    text-align: left;
 }
 
 @media only screen and (max-width: 800px)

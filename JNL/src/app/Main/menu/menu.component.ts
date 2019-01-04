@@ -34,4 +34,18 @@ export class MenuComponent implements OnInit, OnChanges {
     this.router.navigate(['/products']);
     this.toggleMenuBar();
   }
+
+  NavigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.ScrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+    this.toggleMenuBar();
+  }
+
+  ScrollTop() {
+    window.scrollTo(0, 0);
+  }
 }

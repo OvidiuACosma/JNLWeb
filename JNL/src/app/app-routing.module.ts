@@ -5,7 +5,7 @@ import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { CreditsComponent, GDPRComponent, LegalComponent } from './Extras';
 import { ProductSearchComponent, ProductComponent } from './Products';
-import { JnlGroupComponent, MarquesComponent, PressComponent, SavoirFaireComponent, ServicesComponent } from './Std';
+import { JnlGroupComponent, MarquesComponent, PressComponent, SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch : 'full' },
@@ -20,6 +20,7 @@ const routes: Routes = [
 
   { path: 'jnlGroup', component: JnlGroupComponent },
   { path: 'marques', component: MarquesComponent },
+  { path: 'marque/:marque', component: MarqueComponent },
   { path: 'press', component: PressComponent },
   { path: 'savoirFaire', component: SavoirFaireComponent },
   { path: 'services', component: ServicesComponent },

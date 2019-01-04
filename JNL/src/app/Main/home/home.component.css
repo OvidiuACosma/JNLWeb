@@ -18,6 +18,8 @@ hr
     padding-right: 1em;
 
     font-size: 1em;
+
+    text-transform: uppercase;
     
 }
 .gallery_buttons
@@ -55,6 +57,7 @@ hr
 
     background-image: url("/assets/Images/Home/HM_main.png");
     background-size: cover;
+    background-position: center center;
 
     display: flex;
 }
@@ -80,7 +83,8 @@ hr
 #une_histoire
 {
     width: 100vw;
-    height: 558px;
+    height: 39vw;
+    min-height: 558px;
 
     background-color: white;
 
@@ -89,8 +93,8 @@ hr
 #une_histoire > div
 {
     margin: auto;
-    padding-left: 245px;
-    padding-right: 245px;
+    padding-left: 17vw;
+    padding-right: 17vw;
 
     text-align: center;
 }
@@ -107,7 +111,8 @@ hr
 #les_marques
 {
     width: 100vw;
-    height: 724px;
+    height: 50vw;
+    min-height: 724px;
 
     background-color: #D3D3D3;
     color: black;
@@ -232,17 +237,20 @@ hr
 #savoir
 {
     margin: 55px;
-
-    height: 805px;
+    height: 55vw;
+    min-height: 805px;
     display: flex;
 }
 #savoir > div
 {
     margin: auto;
-    width: 1255px;
-    height: 100%;
+    width: 87vw;
+    /*width: 1255px;*/
+
+    height: 48.5vw;
     background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
+    background-position: center center;
 
     display: flex;
     flex-direction: column;
@@ -262,7 +270,7 @@ hr
 
 #projets
 {
-    margin-bottom: 200px;
+    margin-bottom: 14vw;
     width: 100%;
 
     text-align: center;
@@ -283,17 +291,17 @@ hr
 #projets > div > div > div > img
 {
     margin: auto;
-    width: 855px;
+    height: 35vw;
 }
 #projets > div > div > div > h2
 {
     margin: auto;
-    width: 855px;
+    width: 55.5vw;
 }
  h3
 {
     margin: auto;
-    width: 780px;
+    width: 54vw;
     font-size: 26px;
 
     font-family: Atak-Medium;
@@ -301,4 +309,195 @@ hr
 #projets > .gallery_buttons
 {
     text-align: right;
+}
+
+
+@media only screen and (max-width: 800px){
+
+    .gallery_buttons > div{
+        padding: 1vw;
+    }
+
+    .gallery_buttons > div > img{
+        width: 2vw;
+        min-width: 20px;
+    }
+
+
+    #une_histoire
+    {
+        height: 100% !important;
+        padding: 0px;
+    }
+    #une_histoire > div
+    {
+        margin: auto;
+
+        text-align: center;
+    }
+    #une_histoire > div > p
+    {
+        font-size: 1.2em;
+        line-height: 1.24em;
+    }
+    #une_histoire > div > p > a
+    {
+        font-size: 0.8em;
+    }
+
+    #les_marques
+    {
+        width: 100vw;
+        padding: 10px;
+
+        background-color: #D3D3D3;
+        color: black;
+
+        display: flex;
+        flex-direction: row;
+    }
+    #marques_main
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #marques_main > h1
+    {
+        margin: 0px;
+        margin-top: 10px;
+    }
+    #marques_list
+    {
+        margin: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 80vw;
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content: center;
+    }
+    #marques_list > a
+    {
+        margin: auto;
+
+        font-size: 1.5em;
+    }
+
+    #marques_show
+    {
+        margin: 0px;
+
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+
+        padding-left: 0px !important;
+        padding-right: 0px  !important;
+    }
+    #marques_show > p
+    {
+        width: 100%;
+        margin: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+        font-size: 1.2em;
+    }
+    #marques_show > p > a{
+        width: fit-content;
+        margin: auto;
+    }
+    .marques_img
+    {
+        margin: auto;
+        height: 40vw;
+    }
+
+    #actualites
+    {
+        padding-top: 120px; 
+        padding-left: 50px; 
+        padding-right: 50px; 
+    }
+    #actualites > div
+    {
+        display: block;
+    }
+    #actualites > div > p
+    {
+        display: none;
+    }
+    #actualites > div > p:first-child
+    {
+        display: block;
+        width: 100%;
+
+        text-align: center;
+    }
+    #actualites_arrows
+    {
+        display: none;
+    }
+
+    #actualites_arrows > a
+    {
+        display: none;
+    }
+
+    #savoir
+    {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        width: 100vw;
+        height: auto;
+        min-height: 200px;
+        display: flex;
+    }
+    #savoir > div
+    {
+        margin: 0px;
+        width: 100%;
+        height: 200px;
+    }
+
+    #projets
+    {
+        margin-bottom: 14vw;
+        width: 100vw;
+        height: auto;
+        padding: 10px;
+
+        text-align: center;
+
+        display: flex;
+    }
+    #projets > div > div > div > img
+    {
+        margin: auto;
+        width: 80vw;
+        height: auto;
+    }
+    #projets > div > div > div > h2
+    {
+        margin: auto;
+        width: 55.5vw;
+    }
+    #projets h3
+    {
+        margin: 0px;
+        text-align: center;
+        width: auto;
+        font-size: 1.2em;
+        padding: 20px;
+
+        font-family: Atak-Medium;
+    }
+
 }
