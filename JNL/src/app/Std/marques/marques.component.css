@@ -1,13 +1,14 @@
-h1{
+h1 {
     font-family: PlacardMT-Condensed;
     font-size: 4em;
     margin-bottom: 3vh;
 }
-h2{
+h2 {
     font-family: Atak-Regular;
     font-size: 50px;
 }
-h3{
+
+h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
@@ -17,13 +18,13 @@ h3{
 }
 
 
-.location{
+.location {
     font-family: Atak-Regular;
     font-size: 17px;
 
     margin-bottom: 5.5vw;
 }
-.marques_selected{
+.marques_selected {
     text-decoration: underline !important;
 }
 
@@ -37,26 +38,25 @@ h3{
     font-size: 1em;
 
     text-transform: uppercase;
-    
 }
 
-.marques-image{
+.marques-image {
     width: 76vw;
 
     margin-top: 1.6vw;
     margin-bottom: 4.2vw;
 }
 
-.les-marques-main{
+.les-marques-main {
     text-align: center;
     display: flex;
 }
 
-.les-marques-main > div{
+.les-marques-main > div {
     margin: auto;
 }
 
-.location{
+.location {
     text-align: center;
 
     font-family: Atak-Regular;
@@ -83,7 +83,7 @@ h3{
     text-align: center;
 }
 
-#marques_list > a{
+#marques_list > a {
     margin: auto;
 
     font-size: 1.5em;
@@ -91,7 +91,7 @@ h3{
     left: 0;
 }
 
-#marques_list > a:hover{
+#marques_list > a:hover {
     text-decoration: underline;
 }
 
@@ -108,4 +108,8 @@ h3{
         font-size: 1.5em;
         left: 0;
     }
+#jnl, #vanhamme, #ungaro, #luz {
+    margin-top: -60px;
+    padding-top: 60px;
+}
 }

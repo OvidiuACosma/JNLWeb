@@ -11,50 +11,50 @@
       
       <div>
         <p class="columnHead">
-          <a routerLink="marques">Les Marques</a>
+          <a (click)="NavigateTo('marques')">Les Marques</a>
         </p>
-        <a>JNL Collection</a><br>
-        <a>Vanhamme</a><br>
-        <a>Emanuel Ungaro<br>Home</a><br>
-        <a>Luz Interiors</a><br>
+        <a (click)="NavigateTo('marques', 'jnl')">JNL Collection</a><br>
+        <a (click)="NavigateTo('marques', 'vanhamme')">Vanhamme</a><br>
+        <a (click)="NavigateTo('marques', 'ungaro')">Emanuel Ungaro<br>Home</a><br>
+        <a (click)="NavigateTo('marques', 'luz')">Luz Interiors</a><br>
       </div>
       
       <div>
         <p class="columnHead">
-          <a routerLink="savoirFaire">Le Savoir-Faire</a>
+          <a (click)="NavigateTo('savoirFaire')">Le Savoir-Faire</a>
         </p>
-        <a routerLink="savoirFaire" fragment="atelier">L'Atelier</a><br>
-        <a routerLink="savoirFaire" fragment="fabrication">La Fabrication</a><br>
+        <a (click)="NavigateTo('savoirFaire', 'atelier')">L'Atelier</a><br>
+        <a (click)="NavigateTo('savoirFaire', 'fabrication')">La Fabrication</a><br>
       </div>
 
       <div>
         <p class="columnHead">
-          <a routerLink="services">Les Services</a>
+          <a (click)="NavigateTo('services')">Les Services</a>
         </p>
-        <a>L'Expertise</a><br>
-        <a>Le Sur Mesure</a><br>
-        <a>Votre Projet</a><br>
+        <a (click)="NavigateTo('services', 'expertise')">L'Expertise</a><br>
+        <a (click)="NavigateTo('services', 'surMesure')">Le Sur Mesure</a><br>
+        <a (click)="NavigateTo('services', 'votreProjet')">Votre Projet</a><br>
       </div>
 
       <div>
         <p class="columnHead">
-          <a routerLink="jnlGroup">Le Groupe</a>
+          <a (click)="NavigateTo('jnlGroup')">Le Groupe</a>
         </p>
-        <a>L'Histoire</a><br>
-        <a>L'Equipe</a><br>
-        <a>L'Engagement</a><br>
-        <a>Les Archives</a><br>
-        <a>Les references</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'histoire')">L'Histoire</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'equipe')">L'Equipe</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'engagement')">L'Engagement</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'archives')">Les Archives</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'references')">Les references</a><br>
       </div>
       
       <div>
         <p class="columnHead">
-          <a routerLink="press">Presse</a>
+          <a (click)="NavigateTo('press')">Presse</a>
         </p>
-        <a>Banque Images</a><br>
-        <a>Catalogues</a><br>
-        <a>Press Kit</a><br>
-        <a>Parutions</a><br>
+        <a (click)="NavigateTo('press', 'banqueImages')">Banque Images</a><br>
+        <a (click)="NavigateTo('press', 'catalogues')">Catalogues</a><br>
+        <a (click)="NavigateTo('press', 'pressKit')">Press Kit</a><br>
+        <a (click)="NavigateTo('press', 'parutions')">Parutions</a><br>
       </div>
     </div>
 
@@ -79,8 +79,8 @@
 
   <div id="bottom_line">
       <br>
-      <a routerLink="/legal">Mentions Legales</a>
-      <a routerLink="/gdpr">Politique de Confidentialite</a>
-      <a routerLink="/credits">Credits</a>
+      <a (click)="NavigateTo('legal')">Mentions Legales</a>
+      <a (click)="NavigateTo('gdpr')">Politique de Confidentialite</a>
+      <a (click)="NavigateTo('credits')">Credits</a>
   </div>
 </nav>

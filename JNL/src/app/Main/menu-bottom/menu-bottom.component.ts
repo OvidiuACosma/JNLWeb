@@ -13,9 +13,13 @@ export class MenuBottomComponent implements OnInit {
   ngOnInit() {
   }
 
-  NavigateTo(target: string) {
-    this.router.navigate([target]);
-    this.ScrollTop();
+  NavigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.ScrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
   }
 
   ScrollTop() {

@@ -1,3 +1,5 @@
-<p>
-  product-search works!
-</p>
+<div>
+  <input name="productName" type="text" [(ngModel)]="product">
+  <br><br>
+  <input (click)="GoToProduct()" type="button" value="Search">
+</div>

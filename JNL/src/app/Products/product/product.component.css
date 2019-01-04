@@ -1,0 +1,33 @@
+#header{
+    display:flex;
+}
+#famille{
+    text-align: left;
+    margin-left: 10px;
+    width: 50%;
+}
+#marque{
+    text-align: right;
+    margin-right: 10px;
+    width: 50%;
+}
+hr{
+    border-width: 1px;
+    border-style: solid;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#container{
+    margin-left: 10px;
+}
+
+#productImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_img{
+    max-width:50%;
+    max-height:50%;
+}
