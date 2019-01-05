@@ -122,8 +122,8 @@ hr {
 
 #les_marques {
     width: 100vw;
-    height: 50vw;
-    min-height: 724px;
+    height: auto; /*50vw;*/
+    min-height: 50vw; /*724px;*/
 
     background-color: #D3D3D3;
     color: black;
@@ -155,7 +155,7 @@ hr {
 #marques_list > a {
     margin: auto;
 
-    font-size: 1.5em;
+    font-size: 1.88vw; /*1.5em;*/
 }
 
 #marques_list > a:hover {
@@ -177,7 +177,7 @@ hr {
     margin: auto;
 
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.5vw; /*1.2em;*/
 }
 
 .marques_img {
