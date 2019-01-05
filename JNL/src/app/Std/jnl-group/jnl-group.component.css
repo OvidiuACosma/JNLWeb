@@ -132,24 +132,6 @@ h4{
     width: 29vw;
 }
 
-.gallery-flex {
-    display: flex;
-    flex-direction: column !important;
-    margin-left: 0px !important;
-}
-.gallery-flex > div {
-    width: 33.9vw !important;
-    margin: 0px;
-    margin-left: 0vw !important;
-    
-    display: flex;
-    flex-direction: row !important;
-}
-.gallery-flex > img {
-    height: 29vw !important;
-    width: 29vw !important;
-}
-
 
 
 
@@ -200,7 +182,7 @@ h4{
 }
 
 #equipe > div > div{
-    margin: auto;
+    margin: 0px;
     margin-top: 0px;
 
     width: 34vw;
@@ -213,7 +195,6 @@ h4{
 
 #equipe > div > div > p {
     margin: auto;
-    width: 25.3vw;
 
     font-family: Atak-Regular;
     font-size: 16px;
@@ -238,6 +219,214 @@ h4{
 }
 
 
+
+
+.gallery-flex {
+    width: 76vw;
+
+    display: flex;
+    flex-direction: column !important;
+
+    margin-top: 8.7vw;
+}
+
+.equipe-card {
+    width: 76vw;
+    height: 29vw;
+
+    margin: 0px !important;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.equipe-card > img {
+    margin: auto;
+    margin-top: 0px !important;
+}
+
+.equipe-card > div {
+    margin: auto;
+    margin-top: 0px  !important;
+
+    width: 47vw;
+
+    padding: 3vw;
+    padding-right: 0px;
+
+    text-align: left !important;
+}
+
+.equipe-card > div > h4 {
+    
+    text-align: left !important;
+    margin-top: 0px  !important;
+}
+
+.equipe-radio {
+    margin: auto;
+    width: 76vw !important;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.equipe-radio > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    height: 15px;
+    width: 15px;
+
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+    display: inline-block;
+
+    margin-right: 0.5em;
+    margin-top: 10px;
+    outline: none;
+
+    background-color: #BFBFBF;
+}
+
+.equipe-radio > input:hover {
+    
+    background-color: grey;
+}
+
+.equipe-radio > input:checked {
+    
+    background-color: rgb(46, 46, 46);
+}
+
+
+
+
+#les-projets {
+    margin: auto;
+    
+    margin-top: 14.2vw;
+    width: 76vw;
+}
+
+#les-projets > p {
+    text-align: center;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+
+    margin: auto;
+    width: 49.2vw;
+}
+
+.gallery
+{
+    margin-bottom: 14vw;
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+}
+
+.gallery > div
+{
+    margin: auto;
+}
+
+.gallery > div > div > div
+{
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.gallery > div > div > div > img
+{
+    margin: auto;
+    height: 35vw;
+}
+
+.gallery > div > div > div > h2
+{
+    margin: auto;
+    width: 55.5vw;
+}
+
+.gallery > div > div > div > h4
+{
+    margin-top: 20px;
+}
+
+.gallery_buttons
+{
+    height: 100vh;
+    width: 10vw;
+    display: flex;
+}
+.gallery_buttons > div
+{
+    margin: auto;
+
+    font-size: 5em;
+    font-family: Atak-Regular;
+}
+.gallery_buttons > div > img
+{
+    width: 2vw;
+}
+
+#archives {
+    width: auto;
+
+    margin-left: 7.8vw;
+    margin-right: 7.8vw;
+}
+
+#archives > div {
+    margin: auto;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 80.4vw;
+
+}
+
+#archives > div > div {
+    
+    margin-top: 3vw;
+    margin-right: 3vw;
+
+    height: 20.2vw;
+    width: 23.5vw;
+
+    background-color: #DBBB76;
+
+    display: flex;
+}
+
+#archives > div > div > span {
+    
+    margin: auto;
+
+    font-family: PlacardMT-Condensed;
+    font-size: 73px;
+}
+
+
+#gallery-div {
+    margin: auto;
+}
 
 
 @media only screen and (max-width: 800px)
