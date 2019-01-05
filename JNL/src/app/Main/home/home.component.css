@@ -55,7 +55,7 @@ hr
     width: 100vw;
     height: 100vh;
 
-    background-image: url("/assets/Images/Home/HM_main.png");
+    background-image: url("/assets/Images/Home/HM_main.jpg");
     background-size: cover;
     background-position: center center;
 
@@ -68,7 +68,7 @@ hr
 
 #first_picture > div > img {
 
-    height: 20vh;
+    height: 13vh;
 }
 
 #first_picture > div > p
@@ -89,6 +89,9 @@ hr
     background-color: white;
 
     display: flex;
+    
+    margin-top: -60px;
+    padding-top: 60px;
 }
 #une_histoire > div
 {
