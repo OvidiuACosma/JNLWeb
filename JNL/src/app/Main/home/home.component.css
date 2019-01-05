@@ -168,8 +168,8 @@ hr {
     display: flex;
     flex-direction: row;
 
-    padding-left: 245px;
-    padding-right: 245px;
+    /*padding-left: 245px;
+    padding-right: 245px;*/
 }
 
 #marques_show > p {
@@ -178,12 +178,21 @@ hr {
 
     text-align: left;
     font-size: 1.2em;
+    
 }
+#marques_show > p:first-child {
+    width: 40%;
+    margin: auto;
+
+    text-align: right;
+    
+}
+
 
 .marques_img {
     height: 60vh;
 
-    float: left;
+    right: 0;
 }
 
 #actualites {
@@ -386,6 +395,8 @@ hr {
         margin: auto;
 
         font-size: 1.5em;
+        margin-right: 20px;
+        left: 0;
     }
 
     #marques_show {
@@ -409,6 +420,7 @@ hr {
         text-align: center;
         font-size: 1.2em;
     }
+
 
     #marques_show > p > a{
         width: fit-content;
