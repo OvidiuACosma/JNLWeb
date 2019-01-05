@@ -1,15 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewChecked {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
   }
 
+  ngAfterViewChecked() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        this.navigateToAnchor(fragment);
+      } else {
+          window.scrollTo(0, 0);
+        }
+    });
+  }
+
+  navigateToAnchor(fragment: string) {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+  }
+
+  navigateTo(target: string) {
+    this.router.navigate([target]);
+    this.ScrollTop();
+  }
+
+  ScrollTop() {
+    window.scrollTo(0, 0);
+  }
 }

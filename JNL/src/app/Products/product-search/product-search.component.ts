@@ -16,7 +16,6 @@ export class ProductSearchComponent implements OnInit {
   }
 
   GoToProduct() {
-    // console.log('Product: ', this.product);
     this.router.navigate(['product', {product: this.product}]);
   }
 

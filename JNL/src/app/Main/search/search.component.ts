@@ -30,6 +30,7 @@ export class SearchComponent implements OnInit {
     this.searchMode = !this.searchMode;
     if (text) {
     this.router.navigate(['/searchResults', text]);
+    this.ScrollTop();
     }
   }
 

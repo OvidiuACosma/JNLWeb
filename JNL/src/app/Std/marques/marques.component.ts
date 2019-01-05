@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-marques',
@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MarquesComponent implements OnInit, AfterViewChecked {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,5 +29,10 @@ export class MarquesComponent implements OnInit, AfterViewChecked {
     if (element) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
+  }
+
+  navigateToMarque(marque: string) {
+    this.router.navigate(['/marque', marque]);
+    window.scrollTo(0, 0);
   }
 }
