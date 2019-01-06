@@ -1,27 +1,19 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewChecked {
+export class HomeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
-  }
-
-  ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        this.navigateToAnchor(fragment);
-      } else {
-          window.scrollTo(0, 0);
-        }
-    });
   }
 
   navigateToAnchor(fragment: string) {
@@ -38,5 +30,9 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
   ScrollTop() {
     window.scrollTo(0, 0);
+  }
+
+  setActiveSlide(index: number) {
+    console.log('Active Slide:', index);
   }
 }

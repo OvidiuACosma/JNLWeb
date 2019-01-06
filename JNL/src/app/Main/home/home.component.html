@@ -23,10 +23,6 @@
 </div>
 
 <div id="les_marques" class="main_divs">
-  <a class="gallery_buttons">
-    <div><img alt="JNL Collection" src="assets\Images\Common\arrow_left.png"></div>
-  </a>
-
   <div id="marques_main">
       <h1>LES MARQUES</h1>
 
@@ -37,22 +33,89 @@
         <a>LUZ INTERIORS</a>
       </div>
 
-      <div id="marques_show">
-        <p><img class="marques_img" src="/assets/Images/Home/HM_chaise.png"></p>
-        <p>
-            Jeux de motifs, matières précieuses,
-            finitions délicates…<br>
-            Ungaro Home dévoile sans détours
-            les codes d’une opulence
-            contemporaine au chic imparable.<br><br>
-          <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
-        </p>
-      </div>
-  </div>
+      <div id='carousel-custom' class='carousel slide carousel-marques' data-ride='carousel'>
+        <div class="carousel-inner">
+            <div class='carousel-item active'>
+              <div class="container">
+                <div class="carousel-item-image">
+                  <img src='/assets/Images/Home/HM_JNL.png' alt='JNL Collection' class="slide-image">
+                </div>
+                <p class="marque-text">
+                      Subtil mélange entre le grand classicisme<br>
+                      et les inspirations avant-gardistes,<br>
+                      JNL Collection joue la carte de la personnalisation<br>
+                      et de l’éclectisme afin de sublimer les intérieurs.<br><br>
+                    <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                </p>
+              </div>
+            </div>
 
-  <a class="gallery_buttons">
-    <div><img alt="JNL Collection" src="assets\Images\Common\arrow_right.png"></div>
-  </a>
+            <div class='carousel-item' active="setActiveSlide(1)">
+              <div class="container">
+                <div class="carousel-item-image">
+                  <img src='/assets/Images/Home/HM_VANHAMME.png' alt='Vanhamme Collection' class="slide-image">
+                </div>
+                <p class="marque-text">
+                    Véritable explorateur de l’assise,<br>
+                    la maison Vanhamme traverse les tendances<br>
+                    comme elle a su traverser les âges.<br>
+                    L’incroyable travail de ses artisans est une ode<br>
+                    au confort et à l’art de s’assoir.<br><br>
+                  <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                </p>
+              </div>
+            </div>
+            <div class='carousel-item'>
+              <div class="container">
+                <div class="carousel-item-image">
+                  <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
+                </div>
+                <p class="marque-text">
+                    Jeux de motifs, matières précieuses,<br>
+                    finitions délicates...<br>
+                    Ungaro Home dévoile sans détours<br>
+                    les codes d’une opulence contemporaine<br>
+                    au chic imparable.<br><br>
+                  <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                </p>
+              </div>
+            </div>
+            <div class='carousel-item'>
+              <div class="container">
+                <div class="carousel-item-image">
+                  <img src='/assets/Images/Home/HM_LUZ.png' alt='LUZ-INTERIORS Collectionn' class="slide-image">
+                </div>
+                <p class="marque-text">
+                  <br>
+                    Subtil mélange entre le grand classicisme<br>
+                    et les inspirations avant-gardistes,<br>
+                    JNL Collection joue la carte de la personnalisation<br>
+                    et de l’éclectisme afin de sublimer les intérieurs.<br><br>
+                  <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                </p>
+              </div>
+            </div>
+        </div>
+        
+        <!-- Controls -->
+        <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
+            <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next'>
+            <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+            <span class="sr-only">Next</span>
+        </a>
+      
+      <!-- Indicators -->
+      <ol class='carousel-indicators'>
+          <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>JNL Collection</span></li>
+          <li data-target='#carousel-custom' data-slide-to='1'><span>Vanhamme</span></li>
+          <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaron</span></li>
+          <li data-target='#carousel-custom' data-slide-to='3'><span>Luz-Interiors</span></li>
+      </ol>
+    </div>
+  </div>
 </div>
 
 <div id="actualites"  class="main_divs">

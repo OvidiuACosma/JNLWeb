@@ -17,6 +17,7 @@ import { DataExchangeService, ConfigService, AlertService, AuthenticationService
 import { AuthGuard } from './_guards';
 import { BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers'
     HttpClientModule,
     routing,
     ReactiveFormsModule,
-    DeviceDetectorModule.forRoot()
+    DeviceDetectorModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [
     DataExchangeService,
