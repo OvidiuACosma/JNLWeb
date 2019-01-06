@@ -1,0 +1,468 @@
+h1 {
+    font-family: PlacardMT-Condensed;
+    font-size: 4em;
+    margin-bottom: 3vh;
+
+    text-align: center;
+}
+h2 {
+    margin-top: 5.9vw;
+    font-family: Atak-Light;
+    font-size: 50px;
+
+    text-align: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: Atak-Regular;
+    color: #DBBB76;
+    font-size: 20px;
+
+    margin-bottom: 1.5vw;
+    text-align: center;
+}
+h4{
+    margin: auto;
+    width: 54vw;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+
+
+.marques_selected {
+    text-decoration: underline !important;
+}
+
+.marques-image {
+    width: 76vw;
+
+    margin: auto;
+    margin-top: 1.6vw;
+    margin-bottom: 4.2vw;
+}
+
+.les-marques-main {
+    display: flex;
+    margin: auto;
+    width: 100vw;
+}
+
+.les-marques-main > div {
+    margin: auto;
+    left: 0;
+    width: 100vw;
+
+    text-align: center;
+}
+
+.location {
+    text-align: center;
+
+    font-family: Atak-Regular;
+    font-size: 17px;
+}
+
+.full-image {
+    margin-top: 11.4vw;
+    left: 0;
+    width: 100vw;
+    height: auto;
+
+}
+
+.quote-bar {
+    margin-left: -12vw !important;
+    margin-top: 7.6vw !important;
+    width: 100vw  !important;
+    left: 0;
+
+    display: flex;
+    flex-direction: column  !important;
+
+    background-color: #C6C6C6;
+
+    padding: 11.7vw;
+    padding-top: 4.2vw;
+    padding-bottom: 4.2vw;
+}
+.quote-bar > p {
+    font-family: Atak-LightItalic;
+    font-size: 26px;
+}
+.quote-bar > h4 {
+    font-family: Atak-Bold;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+
+.image-parag {
+    width: 76vw;
+    height: 39vw;
+
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-between;
+
+    margin-left: 12vw;
+    margin-bottom: 0px;
+
+    text-align: left;
+}
+
+.image-parag > p {
+    margin: auto;
+    margin-top: 0px;
+
+    padding-right: 7.8vw;
+
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+}
+
+.image-parag > img {
+    margin: auto;
+    margin-top: 0px;
+    width: 29vw;
+}
+
+
+
+
+#marques_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
+    width: 73vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 7.5vw;
+    text-align: center;
+}
+
+#marques_list > a {
+    margin: auto;
+
+    font-size: 1.5em;
+    margin-right: 20px;
+    left: 0;
+}
+
+#marques_list > a:hover {
+    text-decoration: underline;
+}
+
+
+#equipe {
+
+    width: 76vw;
+    margin-left: 12vw;
+}
+#equipe > div {
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+
+
+    text-align: center;
+}
+
+#equipe > div > div{
+    margin: 0px;
+    margin-top: 0px;
+
+    width: 34vw;
+
+    font-family: Atak-Regular;
+    font-size: 16px;
+
+    text-align: center;
+}
+
+#equipe > div > div > p {
+    margin: auto;
+
+    font-family: Atak-Regular;
+    font-size: 16px;
+}
+
+#equipe > div > div > h4 {
+    width: auto;
+    margin: auto;
+
+    margin-top: 2.2vw; 
+    margin-bottom: 2.2vw;
+}
+
+#equipe > div > div > img {
+    margin-top: 4vw;
+    width: 28.9vw;
+}
+
+#engagement .image-parag > p {
+    padding-right: 0px;
+    padding-left: 7.8vw;
+}
+
+
+
+
+.gallery-flex {
+    width: 76vw;
+
+    display: flex;
+    flex-direction: column !important;
+
+    margin-top: 8.7vw;
+}
+
+.equipe-card {
+    width: 76vw;
+    height: 29vw;
+
+    margin: 0px !important;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.equipe-card > img {
+    margin: auto;
+    margin-top: 0px !important;
+}
+
+.equipe-card > div {
+    margin: auto;
+    margin-top: 0px  !important;
+
+    width: 47vw;
+
+    padding: 3vw;
+    padding-right: 0px;
+    padding-top: 0px;
+
+    text-align: left !important;
+}
+
+.equipe-card > div > h4 {
+    
+    text-align: left !important;
+    margin-top: 0px  !important;
+}
+
+.equipe-radio {
+    margin: auto;
+    width: 76vw !important;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.equipe-radio > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    height: 15px;
+    width: 15px;
+
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+    display: inline-block;
+
+    margin-right: 0.5em;
+    margin-top: 10px;
+    outline: none;
+
+    background-color: #BFBFBF;
+}
+
+.equipe-radio > input:hover {
+    
+    background-color: grey;
+}
+
+.equipe-radio > input:checked {
+    
+    background-color: rgb(46, 46, 46);
+}
+
+
+
+
+#les-projets {
+    margin: auto;
+    
+    margin-top: 14.2vw;
+    width: 76vw;
+}
+
+#les-projets > p {
+    text-align: center;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+
+    margin: auto;
+    width: 49.2vw;
+}
+
+.gallery
+{
+    margin-bottom: 14vw;
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+}
+
+.gallery > div
+{
+    margin: auto;
+}
+
+.gallery > div > div > div
+{
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.gallery > div > div > div > img
+{
+    margin: auto;
+    height: 35vw;
+}
+
+.gallery > div > div > div > h2
+{
+    margin: auto;
+    width: 55.5vw;
+}
+
+.gallery > div > div > div > h4
+{
+    margin-top: 20px;
+}
+
+.gallery_buttons
+{
+    height: 100vh;
+    width: 10vw;
+    display: flex;
+}
+.gallery_buttons > div
+{
+    margin: auto;
+
+    font-size: 5em;
+    font-family: Atak-Regular;
+}
+.gallery_buttons > div > img
+{
+    width: 2vw;
+}
+
+#archives {
+    width: auto;
+
+    margin-left: 7.8vw;
+    margin-right: 7.8vw;
+}
+
+#archives > div {
+    margin: auto;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 80.4vw;
+
+}
+
+#archives > div > div {
+    
+    margin-top: 3vw;
+    margin-right: 3vw;
+
+    height: 20.2vw;
+    width: 23.5vw;
+
+    background-color: #DBBB76;
+
+    display: flex;
+}
+
+#archives > div > div > span {
+    
+    margin: auto;
+
+    font-family: PlacardMT-Condensed;
+    font-size: 73px;
+}
+
+
+#gallery-div {
+    margin: auto;
+}
+
+
+@media only screen and (max-width: 800px)
+{
+    #marques_list {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    #marques_list > a{
+        margin: auto;
+    
+        font-size: 1.5em;
+        left: 0;
+    }
+
+
+    #equipe > div > div {
+        width: 70vw;
+        margin: auto;
+    }
+
+    #equipe > div {
+
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+    
+    
+        text-align: center;
+    }
+
+}
+#jnl, #vanhamme, #ungaro, #luz {
+    margin-top: -60px;
+    padding-top: 60px;
+}

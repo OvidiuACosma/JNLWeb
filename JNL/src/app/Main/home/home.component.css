@@ -249,8 +249,8 @@ hr {
     display: flex;
     flex-direction: row;
 
-    padding-left: 245px;
-    padding-right: 245px;
+    /*padding-left: 245px;
+    padding-right: 245px;*/
 }
 
 #marques_show > p {
@@ -258,10 +258,30 @@ hr {
     margin: auto;
 
     text-align: left;
+<<<<<<< HEAD
     font-size: 1.5vw; /*1.2em;*/
 }
 
 
+=======
+    font-size: 1.2em;
+    
+}
+#marques_show > p:first-child {
+    width: 40%;
+    margin: auto;
+
+    text-align: right;
+    
+}
+
+
+.marques_img {
+    height: 60vh;
+
+    right: 0;
+}
+>>>>>>> 11b317c8884f6c2b6c0a989fd056a44d74650cab
 
 #actualites {
     padding-top: 120px; 
@@ -453,7 +473,7 @@ hr {
         width: 80vw;
         
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         align-content: space-between;
         justify-content: center;
@@ -463,6 +483,8 @@ hr {
         margin: auto;
 
         font-size: 1.5em;
+        margin-right: 20px;
+        left: 0;
     }
 
     #marques_show {
@@ -486,6 +508,7 @@ hr {
         text-align: center;
         font-size: 1.2em;
     }
+
 
     #marques_show > p > a{
         width: fit-content;

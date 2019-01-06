@@ -28,11 +28,8 @@ h3 {
     text-decoration: underline !important;
 }
 
-.marques-gold, .marques-gold:link, .marques-gold:visited {
-    color: #DBBB76 !important;
-}
-
-.home_links {
+.home_links
+{
     border: 1.5px solid #DBBB76;
     padding: 0.3em;
     padding-left: 1em;
@@ -70,6 +67,9 @@ h3 {
 
 
 #marques_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
     width: 73vw;
     
     display: flex;
@@ -80,18 +80,35 @@ h3 {
     justify-content: center;
 
     margin-bottom: 7.5vw;
+    text-align: center;
 }
 
 #marques_list > a {
     margin: auto;
 
     font-size: 1.5em;
+    margin-right: 20px;
+    left: 0;
 }
 
 #marques_list > a:hover {
     text-decoration: underline;
 }
 
+@media only screen and (max-width: 800px)
+{
+    #marques_list {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    #marques_list > a{
+        margin: auto;
+    
+        font-size: 1.5em;
+        left: 0;
+    }
+}
 #jnl, #vanhamme, #ungaro, #luz {
     margin-top: -60px;
     padding-top: 60px;
