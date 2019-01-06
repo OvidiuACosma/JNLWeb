@@ -23,16 +23,20 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  navigateTo(target: string) {
-    this.router.navigate([target]);
-    this.ScrollTop();
+  navigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.ScrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
   }
 
   ScrollTop() {
     window.scrollTo(0, 0);
   }
 
-  setActiveSlide(index: number) {
+  log(index: number) {
     console.log('Active Slide:', index);
   }
 }

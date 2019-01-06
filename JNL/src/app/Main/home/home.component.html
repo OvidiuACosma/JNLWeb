@@ -2,7 +2,7 @@
   <div>
     <img alt="JNL Collection" src="assets\Images\Home\HM_JNL_Logo.png">
     <p>
-      <a routerLink="/home" fragment="une_histoire">
+      <a (click)="navigateToAnchor('une_histoire')">
         <img alt="arrow_down" src="assets\Images\Common\arrow_down.png">
       </a>
     </p>
@@ -26,12 +26,12 @@
   <div id="marques_main">
       <h1>LES MARQUES</h1>
 
-      <div id="marques_list">
+      <!--<div id="marques_list">
         <a>JNL COLLECTION</a>
         <a>VANHAMME</a>
         <a>EMANUEL UNGARO HOME</a>
         <a>LUZ INTERIORS</a>
-      </div>
+      </div>-->
 
       <div id='carousel-custom' class='carousel slide carousel-marques' data-ride='carousel'>
         <div class="carousel-inner">
@@ -45,7 +45,7 @@
                       et les inspirations avant-gardistes,<br>
                       JNL Collection joue la carte de la personnalisation<br>
                       et de l’éclectisme afin de sublimer les intérieurs.<br><br>
-                    <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                    <a class="home_links" (click)="navigateTo('marques', 'jnl')">DÉCOUVRIR L’UNIVERS </a>
                 </p>
               </div>
             </div>
@@ -61,7 +61,7 @@
                     comme elle a su traverser les âges.<br>
                     L’incroyable travail de ses artisans est une ode<br>
                     au confort et à l’art de s’assoir.<br><br>
-                  <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                  <a class="home_links" (click)="navigateTo('marques', 'vanhamme')">DÉCOUVRIR L’UNIVERS </a>
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@
                     Ungaro Home dévoile sans détours<br>
                     les codes d’une opulence contemporaine<br>
                     au chic imparable.<br><br>
-                  <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                  <a class="home_links" (click)="navigateTo('marques', 'ungaro')">DÉCOUVRIR L’UNIVERS </a>
                 </p>
               </div>
             </div>
@@ -87,11 +87,11 @@
                 </div>
                 <p class="marque-text">
                   <br>
-                    Subtil mélange entre le grand classicisme<br>
-                    et les inspirations avant-gardistes,<br>
-                    JNL Collection joue la carte de la personnalisation<br>
-                    et de l’éclectisme afin de sublimer les intérieurs.<br><br>
-                  <a class="home_links">DÉCOUVRIR L’UNIVERS </a>
+                  Luz Interiors propose une collection<br>
+                  empreinte d’intemporalité, pensée<br>
+                   pour habiller chambres et espaces de convivialité<br>
+                  en toute simplicité.<br><br>
+                  <a class="home_links" (click)="navigateTo('marques', 'luz')">DÉCOUVRIR L’UNIVERS</a>
                 </p>
               </div>
             </div>
@@ -111,7 +111,7 @@
       <ol class='carousel-indicators'>
           <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>JNL Collection</span></li>
           <li data-target='#carousel-custom' data-slide-to='1'><span>Vanhamme</span></li>
-          <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaron</span></li>
+          <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaro Home</span></li>
           <li data-target='#carousel-custom' data-slide-to='3'><span>Luz-Interiors</span></li>
       </ol>
     </div>
