@@ -69,18 +69,19 @@ hr {
 .carousel-item-image {
     float: left;
     margin-right: 1vw;
-    padding-left: 5vw;
+    padding-left: 4vw;
 }
 
 .slide-image {
-    width: 38vw;
+    width: 34vw;
     height: auto;
+    /* border: solid 1px #000; */
 }
 
-.marques_img {
+/* .marques_img {
     height: 50vh;
     float: left;
-}
+} */
 
 .carousel-indicators {
     margin-bottom: 67vh;
@@ -110,7 +111,7 @@ hr {
 .marque-text
  {
      /* width: 80%; */
-     padding-top: 10vh;
+     padding-top: 6vw;
      margin: auto;
      text-align: left;
      font-size: 1.5vw;
