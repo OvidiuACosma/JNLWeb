@@ -1,6 +1,6 @@
 <div id="header">
   <div id='famille'>
-    Buffet
+    Meuble
   </div>
   <div id='marque'>
     JNL Collection
@@ -15,6 +15,35 @@
     MESE01
   </div>
   <div id="productImg">
-    <!-- <img alt="" clas="product_img" src="assets\Images\Products\JNL\Meuble\Meuble Sellier_01.jpg"> -->
+    <img class="img-fluid" src="assets\Images\Products\JNL\Meuble\Meuble Sellier_01.jpg" alt="" > 
   </div>
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" (click)="setDetail(0)">DESCRIPTION</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="setDetail(1)">COLOURS AND FINISHES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="setDetail(2)">DIMENSIONS AND CAD</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="setDetail(3)">CATALOGUES</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PDF</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">&agrave; t&eacute;l&eacute;charger</a>
+        <a class="dropdown-item" href="#">envoyer par mail</a>
+      </div>
+    </li>
+  
+  </ul>
+  <br>
+  <br>
+  <app-product-description *ngIf="detail==='description'"></app-product-description>
+  <app-product-mat-fin *ngIf="detail==='matFin'"></app-product-mat-fin>
+  <app-product-dimensions *ngIf="detail==='dimensions'"></app-product-dimensions>
+  <app-product-catalogues *ngIf="detail==='catalogues'"></app-product-catalogues>
+
 </div>

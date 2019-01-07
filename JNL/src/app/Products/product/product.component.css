@@ -3,31 +3,26 @@
 }
 #famille{
     text-align: left;
-    margin-left: 10px;
+    margin-left: 20px;
     width: 50%;
 }
 #marque{
     text-align: right;
-    margin-right: 10px;
+    margin-right: 20px;
     width: 50%;
 }
 hr{
     border-width: 1px;
     border-style: solid;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 #container{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 #productImg{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.product_img{
-    max-width:50%;
-    max-height:50%;
 }

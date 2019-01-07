@@ -7,7 +7,8 @@ import { LegalComponent, GDPRComponent, CreditsComponent } from './Extras';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent, SearchResultsComponent } from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent, MarqueComponent } from './Std';
-import { ProductSearchComponent, ProductComponent } from './Products';
+import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
+         ProductDimensionsComponent, ProductCataloguesComponent } from './Products';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -42,7 +43,11 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     LoginComponent,
     RegisterComponent,
     SearchResultsComponent,
-    MarqueComponent
+    MarqueComponent,
+    ProductDescriptionComponent,
+    ProductMatFinComponent,
+    ProductDimensionsComponent,
+    ProductCataloguesComponent
   ],
   imports: [
     BrowserModule,

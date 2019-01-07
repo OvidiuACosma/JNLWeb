@@ -4,7 +4,8 @@ import { HomeComponent, ContactComponent, SearchResultsComponent } from './Main'
 import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { CreditsComponent, GDPRComponent, LegalComponent } from './Extras';
-import { ProductSearchComponent, ProductComponent } from './Products';
+import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
+         ProductDimensionsComponent, ProductCataloguesComponent} from './Products';
 import { JnlGroupComponent, MarquesComponent, PressComponent, SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'products', component: ProductSearchComponent },
   { path: 'productSearch', component: ProductSearchComponent },
+  { path: 'description', component: ProductDescriptionComponent },
+  { path: 'matFin', component: ProductMatFinComponent },
+  { path: 'dimensions', component: ProductDimensionsComponent },
+  { path: 'catalogues', component: ProductCataloguesComponent},
 
   { path: 'jnlGroup', component: JnlGroupComponent },
   { path: 'marques', component: MarquesComponent },
