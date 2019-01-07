@@ -430,6 +430,14 @@ h4{
     padding-top: 60px;
 }
 
+#projets > p {
+    font-family: Atak-Regular;
+    font-size: 20px;
+
+    width: 48.4vw;
+    margin: auto;
+}
+
 @media only screen and (max-width: 800px)
 {
     #marques_list {
@@ -459,6 +467,13 @@ h4{
     
     
         text-align: center;
+    }
+
+    #projets > p {
+        font-family: Atak-Regular;
+        font-size: 20px;
+    
+        width: 90vw
     }
 
 }
