@@ -17,9 +17,9 @@ hr {
 
 .home_links {
     border: 1.5px solid #DBBB76;
-    padding: 0.3em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: .38vw; /*0.3em;*/
+    padding-left: 1.25vw; /*1em;*/
+    padding-right: 1.25vw; /*1em;*/
 
     font-size: 1.25vw;
     text-transform: uppercase;
@@ -53,13 +53,14 @@ hr {
 
 .carousel-marques {
     width: 100%;
-    height: 60vh;
-    padding-top: 5vh;
+    height: 37.78vw; /*60vh;*/
+    padding-top: 3.15vw; /*5vh;*/
 }
 
 .carousel-arrows {
     height: 4vw;
     width: 2vw;
+    margin-top: -11vw;
 }
 
 .carousel-item-content {
@@ -84,9 +85,9 @@ hr {
 } */
 
 .carousel-indicators {
-    margin-bottom: 67vh;
-    margin-left: 4%;
-    margin-right: 4%;
+    margin-bottom: 38vw; /*67vh;*/
+    margin-left: 10%;
+    margin-right: 10%;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -209,19 +210,8 @@ hr {
 #les_marques {
     width: 100vw;
     height: auto; /*50vw;*/
-    min-height: 50vw; /*724px;*/
-
-    background-color: #D3D3D3;
-    color: black;
-
-    display: flex;
-    flex-direction: row;
-}
-
-#les_marques1 {
-    width: 100vw;
-    height: auto; /*50vw;*/
-    min-height: 50vw; /*724px;*/
+    /*min-height: 40vw; 724px;*/
+    max-height: 50vw;
 
     background-color: #D3D3D3;
     color: black;
@@ -238,7 +228,8 @@ hr {
 
 #marques_main > h1 {
     margin: auto;
-    margin-bottom: 18vh;
+    margin-top: 1.2vw;
+    margin-bottom: 10vw;
 }
 
 /* #marques_list {
@@ -434,6 +425,7 @@ hr {
     #les_marques {
         width: 100vw;
         padding: 10px;
+        height: auto;
 
         background-color: #D3D3D3;
         color: black;
@@ -449,7 +441,7 @@ hr {
     }
 
     #marques_main > h1 {
-        margin: 0px;
+        margin: 0;
         margin-top: 10px;
     }
 
@@ -487,8 +479,8 @@ hr {
     }
 
     #actualites {
-        padding-top: 120px; 
-        padding-left: 50px; 
+        padding-top: 8.33vw; /*120px; */
+        padding-left: 3.47vw; /*50px; */
         padding-right: 50px; 
     }
 
