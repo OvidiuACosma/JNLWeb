@@ -124,12 +124,14 @@ h4{
 
     font-family: Atak-Regular;
     font-size: 1.4vw;
+    line-height: 1.2;
 }
 
 .image-parag > img {
     margin: auto;
     margin-top: 0px;
     width: 29vw;
+    height: auto;
 }
 
 
