@@ -26,15 +26,19 @@
     <div id="produits_main">
         <h1>LES PRODUITS</h1>
         <div id='carousel-custom' class='carousel slide carousel-produits' data-ride='carousel'>
+          
+        <!-- Indicators -->
+        <ol class='carousel-indicators'>
+            <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>CANAPÉS</span></li>
+            <li data-target='#carousel-custom' data-slide-to='1'><span>FAUTEUILS</span></li>
+            <li data-target='#carousel-custom' data-slide-to='2'><span>CHAISES</span></li>
+        </ol>
           <div class="carousel-inner">
               <div class='carousel-item active'>
                 <div class="container">
                   <div class="carousel-item-image">
                     <img src='/assets/Images/Marque_V/MKV_pic2.png' alt='JNL Collection' class="slide-image">
                   </div>
-                  <p class="produits-text">
-                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
-                  </p>
                 </div>
               </div>
   
@@ -43,9 +47,6 @@
                   <div class="carousel-item-image">
                     <img src='/assets/Images/Home/HM_VANHAMME.png' alt='Vanhamme Collection' class="slide-image">
                   </div>
-                  <p class="produits-text">
-                    <a class="home_links" (click)="navigateTo('marques', 'vanhamme')">VOIR TOUS LES ASSISES </a>
-                  </p>
                 </div>
               </div>
               <div class='carousel-item'>
@@ -53,19 +54,6 @@
                   <div class="carousel-item-image">
                     <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
                   </div>
-                  <p class="produits-text">
-                    <a class="home_links" (click)="navigateTo('marques', 'ungaro')">VOIR TOUS LES ASSISES </a>
-                  </p>
-                </div>
-              </div>
-              <div class='carousel-item'>
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='/assets/Images/Home/HM_LUZ.png' alt='LUZ-INTERIORS Collectionn' class="slide-image">
-                  </div>
-                  <p class="produits-text">
-                    <a class="home_links" (click)="navigateTo('marques', 'luz')">VOIR TOUS LES ASSISES </a>
-                  </p>
                 </div>
               </div>
           </div>
@@ -79,13 +67,67 @@
               <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
               <span class="sr-only">Next</span>
           </a>
-        
-        <!-- Indicators -->
-        <ol class='carousel-indicators'>
-            <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>CANAPÉS</span></li>
-            <li data-target='#carousel-custom' data-slide-to='1'><span>FAUTEUILS</span></li>
-            <li data-target='#carousel-custom' data-slide-to='2'><span>CHAISES</span></li>
-        </ol>
+          
+          <p class="voir">
+            <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
+          </p>
       </div>
     </div>
   </div>
+
+  <div class="flex-div">
+    <div>
+      <img alt="JNL Collection" src="assets\Images\Marque_V\MKV_pic3.jpg">
+      <span> L’ART DE S’ASSOIR</span>
+      <p>
+          Encore conçues dans les ateliers originels, les créations Van Hamme interpellent 
+          de premier abord par l’extrême qualité de leur fabrication. La passion palpable 
+          de ses artisans – menuisiers, garnisseurs ou couturiers – fait toute la force de 
+          la collection. L’incroyable travail de l’homme sur le confort de l’assise, le galbe 
+          délicieux du dossier, ou la délicatesse de l’accoudoir est une ode au confort et à 
+          l’art de s’assoir. La signature Van Hamme transparait à travers le choix subtil et 
+          audacieux de ses matières et finitions qui font la part belle aux velours palatine, 
+          laiton patiné et autres bois nobles à l’instar du chêne et de l’érable. 
+      </p>
+    </div>
+
+    <div>
+      <div>
+        <h6>ICONIQUE</h6>
+        <span>L'EXCESSIF</span>
+      </div>
+      <img alt="JNL Collection" src="assets\Images\Marque_V\MKV_pic4.png">
+      <p>
+          Comme son nom l’indique, ce fauteuil joue la carte de la sur-dimension.<br> 
+          116 centimètres de sophistication sur 140 d’artisanat, tel est son exquis 
+          format, imaginé dans un design si robuste qu’il paraît comme taillé dans la 
+          pierre. A leur façon, ses revêtements imposent également un style hors-norme, 
+          à l’image de l’effet marbré très actuel de l’un, et des dessins radicalement 
+          abstraits de l’autre.
+      </p>
+    </div>
+  </div>
+
+    <h6>DÉCOUVREZ LES AUTRES MARQUES</h6>
+    <div class="flex-div" id="autres">
+      <p><span>JNL COLLECTION</span></p>
+      <p><span>LUZ INTERIORS</span></p>
+      <p><span>EMANUEL UNGARO HOME</span></p>
+    </div>
+
+
+    
+    <div id="other-links">
+      <div>
+        <img  alt="JNL Collection" src="assets/Images/Common/GP_link.jpg">
+        <h4>LE GROUPE</h4>
+      </div>
+      <div>
+        <img  alt="JNL Collection" src="assets/Images/Common/SF_link.jpg">
+        <h4>LE SAVOIR-FAIRE</h4>
+      </div>
+      <div>
+        <img  alt="JNL Collection" src="assets/Images/Common/SV_link.jpg">
+        <h4>LES SERVICES</h4>
+      </div>
+    </div>

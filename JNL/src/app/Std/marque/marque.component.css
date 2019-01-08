@@ -4,6 +4,8 @@ h1{
     margin-bottom: 3vh;
 
     text-transform: uppercase;
+
+    text-align: center !important;
 }
 h2{
     font-family: Atak-Regular;
@@ -16,6 +18,23 @@ h3{
     font-size: 20px;
 
     margin-bottom: 1.5vw;
+}
+h4{
+    margin: auto;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+h6 {
+    margin-top: 1.7vw;
+
+    font-family: Atak-Bold;
+    font-size: 18px;
+
+    text-align: center;
 }
 
 
@@ -39,6 +58,7 @@ h3{
 
     display: flex;
     justify-content: space-between;
+
 }
 
 .home_links
@@ -47,10 +67,12 @@ h3{
     padding: 0.3em;
     padding-left: 1em;
     padding-right: 1em;
+    height: auto;
 
     font-size: 1em;
 
     text-transform: uppercase;
+    
     
 }
 
@@ -124,6 +146,7 @@ h3{
 .container {
     display: flex;
     flex-direction: column;
+    height: auto;
 }
 
 
@@ -153,7 +176,7 @@ h3{
 
 #les_produits {
     width: 100vw;
-    padding: 10px;
+    padding: 0px;
     height: auto;
 
     background-color: #D3D3D3;
@@ -172,7 +195,7 @@ h3{
 }
 
 #produits_main > h1 {
-    margin: 0;
+    margin: auto;
     margin-top: 10px;
 }
 
@@ -193,14 +216,17 @@ h3{
 }
 
 .carousel-item-image {
-    float: left;
-    margin-right: 1vw;
+    text-align: center;
+    margin-right: 4vw;
     padding-left: 4vw;
 }
 
 .slide-image {
-    width: 34vw;
+    text-align: center;
+    max-width: 34vw;
     height: auto;
+    max-height: 28.5vw;
+    margin: auto;
     /* border: solid 1px #000; */
 }
 
@@ -210,11 +236,14 @@ h3{
 } */
 
 .carousel-indicators {
-    margin-bottom: 38vw; /*67vh;*/
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 28.5vw;
+    margin: auto;
+
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
+
+    margin-bottom: 5.5vw;
 }
 
 .carousel-indicators > li {
@@ -222,7 +251,13 @@ h3{
     width: auto;
     text-transform: uppercase;
     text-indent: 0;
-    font-size: 1.88vw;
+    font-size: 1.8vw;
+
+    font-family: Atak-Light;
+}
+
+.carousel-indicators > li:hover {
+    text-decoration: underline;
 }
 
 .carousel-indicators > span {
@@ -231,18 +266,128 @@ h3{
 
 .carousel-indicators .active > span{
     text-decoration: underline;
-    color: #555;
+    color: black;
 }
 
 .produits-text
  {
      /* width: 80%; */
      padding-top: 6vw;
+     height: auto;
      margin: auto;
      text-align: center;
      font-size: 1.5vw;
  }
 
+.voir {
+    margin: auto;
+    margin-top: 4.1vw;
+    text-align: center;
+}
+
+.flex-div {
+    width: 80.1vw;
+    margin: auto;
+    margin-bottom: 8.1vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-div > div {
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    width: 35.1vw;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-div > div > img{
+    width: 35.1vw;
+    margin-bottom: 1.7vw;
+}
+
+.flex-div > div > span{
+
+    font-family: Atak-Light;
+    font-size: 20px;
+}
+
+.flex-div > div > p {
+    margin-top: 1.7vw;
+
+    font-family: Atak-Regular;
+    font-size: 16px;
+}
+
+
+.flex-div > div > div > span{
+
+    font-family: Atak-Light;
+    font-size: 20px;
+}
+
+.flex-div > div:nth-child(2) {
+    background-color: #EAD6AD;
+
+    align-content: space-around;
+}
+
+.flex-div > div:nth-child(2) > img{
+    width: 33vw;
+    margin: auto;
+}
+
  #les_produits {
      margin-bottom: 5vw;
+     height: auto;
  }
+
+ #autres {
+    width: 83vw;
+    height: 6vw;
+    margin: auto;
+
+    justify-content: space-between;
+ }
+
+ #autres > p {
+     background-color: #D3D3D3 !important;
+     width: 27vw !important;
+     text-align: center !important;
+
+     display: flex;
+ }
+
+ #autres > p > span {
+    margin: auto;
+
+    font-family: Atak-Light;
+    font-size: 26px;
+}
+
+#other-links {
+    width: 82.8vw;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#other-links > div {
+    width: 24.7vw;
+    margin: auto;
+}
+
+#other-links > div > img {
+    width: 24.7vw;
+    height: auto;
+}
