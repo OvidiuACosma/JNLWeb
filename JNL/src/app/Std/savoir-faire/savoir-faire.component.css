@@ -1,4 +1,325 @@
+h1 {
+    font-family: PlacardMT-Condensed;
+    font-size: 4em;
+    margin-bottom: 3vh;
+
+    text-align: center;
+}
+h2 {
+    margin-top: 5.9vw;
+    font-family: Atak-Light;
+    font-size: 50px;
+
+    text-align: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: Atak-Regular;
+    color: #DBBB76;
+    font-size: 20px;
+
+    margin-bottom: 1.5vw;
+    text-align: center;
+}
+h4{
+    margin: auto;
+    width: 54vw;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+h5 {
+    font-family: Atak-Regular;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.marques_selected {
+    text-decoration: underline !important;
+}
+
+.marques-image {
+    width: 76vw;
+
+    margin: auto;
+    margin-top: 1.6vw;
+    margin-bottom: 4.2vw;
+}
+
+.les-marques-main {
+    display: flex;
+    margin: auto;
+    width: 100vw;
+}
+
+.les-marques-main > div {
+    margin: auto;
+    left: 0;
+    width: 100vw;
+
+    text-align: center;
+}
+
+.location {
+    text-align: center;
+
+    font-family: Atak-Regular;
+    font-size: 17px;
+}
+
+.full-image {
+    margin-top: 11.4vw;
+    left: 0;
+    width: 100vw;
+    height: auto;
+
+}
+
+.ateliers-flex {
+    width: 68.5vw;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ateliers-flex > div {
+    width: 31.2vw;
+    margin: auto;
+    margin-top: 13.1vw;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ateliers-flex > div > div > img {
+    width: 31.2vw;
+    margin: 0px !important;
+}
+
+
+.ateliers-flex > div > div {
+    
+    font-family: Atak-LightItalic;
+    font-size: 26px;
+} 
+.ateliers-flex > div > div > span {
+
+    font-family: Atak-Bold;
+    font-size: 16px;
+} 
+
+.ateliers-flex > div > div > h5 {
+    margin-bottom: 2em;
+}
+
+.ateliers-flex > div:nth-child(2) > div:first-child {
+    margin-top: 0px !important;
+    margin-bottom: 10.8vw;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+    text-align: left;
+} 
+
+
+
+.gallery-flex {
+    width: 81.9vw;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column !important;
+
+    margin-top: 5.3vw;
+}
+
+.equipe-card {
+    width: 82vw;
+    height: 28.3vw;
+
+    margin: 0px !important;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.equipe-card > img {
+    width: 48vw;
+    margin: auto;
+    margin-top: 0px !important;
+}
+
+.equipe-card > div {
+    margin: auto;
+    height: 28.3vw;
+    margin-top: 0px  !important;
+
+    background-color: #D3D3D3;
+
+    width: 34vw;
+    display: flex;
+
+    padding: 3.5vw;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+
+    text-align: center !important;
+}
+
+.equipe-card > div > p {
+    margin: auto;
+}
+
+.equipe-card > div > p > span {
+    
+    font-family: Atak-Light;
+    font-size: 26px;
+}
+
+.equipe-card > div > h4 {
+    
+    text-align: left !important;
+    margin-top: 0px  !important;
+}
+
+.equipe-radio {
+    margin: auto;
+    width: 76vw !important;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.equipe-radio > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    height: 15px;
+    width: 15px;
+
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+    display: inline-block;
+
+    margin-right: 0.5em;
+    margin-top: 10px;
+    outline: none;
+
+    background-color: #BFBFBF;
+}
+
+.equipe-radio > input:hover {
+    
+    background-color: grey;
+}
+
+.equipe-radio > input:checked {
+    
+    background-color: rgb(46, 46, 46);
+}
+
+#services {
+    margin-top: 6.7vw;
+    margin-bottom: 5.2vw;
+}
+
+#services > img {
+    width: 25.8vw;
+    margin: auto;
+    margin-top: 5vw;
+}
+
+#services > h4 {
+    margin-top: 0px;
+}
+
+
+#marques_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
+    width: 30vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 4vw;
+    text-align: center;
+}
+
+#marques_list > a {
+    margin: auto;
+
+    font-size: 1.5em;
+    /* margin-right: 20px; */
+    left: 0;
+}
+
+#marques_list > a:hover {
+    text-decoration: underline;
+}
+
 #atelier, #fabrication {
     margin-top: -60px;
     padding-top: 60px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    #atelier > h4 {
+        width: 90vw;
+    }
+
+    .ateliers-flex {
+        flex-direction: column;
+    }
+
+    .ateliers-flex > div {
+        width: 70vw;
+    }
+    
+    .ateliers-flex > div > div > img {
+        width: 70vw;
+    }
+
+    .equipe-card {
+        flex-direction: column;
+        height: auto;
+        width: 80vw;
+    }
+
+    .equipe-card > div {
+        height: auto;
+        width: 80vw;
+    }
+
+    .equipe-card > img {
+        height: auto;
+        width: 80vw;
+    }
+
+    #services > h4 {
+        width: 80vw;
+    }
 }
