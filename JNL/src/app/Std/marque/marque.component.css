@@ -1,6 +1,6 @@
 h1{
     font-family: PlacardMT-Condensed;
-    font-size: 4em;
+    font-size: 4.4vw;
     margin-bottom: 3vh;
 
     text-transform: uppercase;
@@ -9,19 +9,19 @@ h1{
 }
 h2{
     font-family: Atak-Regular;
-    font-size: 50px;
+    font-size: 3.5vw;
 }
 h3{
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
-    font-size: 20px;
+    font-size: 1.39vw;
 
     margin-bottom: 1.5vw;
 }
 h4{
     margin: auto;
-    font-size: 26px;
+    font-size: 1.8vw;
 
     font-family: Atak-Medium;
 
@@ -32,7 +32,7 @@ h6 {
     margin-top: 1.7vw;
 
     font-family: Atak-Bold;
-    font-size: 18px;
+    font-size: 1.2vw;
 
     text-align: center;
 }
@@ -40,7 +40,7 @@ h6 {
 
 .location{
     font-family: Atak-Regular;
-    font-size: 17px;
+    font-size: 1.2vw;
 
     margin-bottom: 5.5vw;
 }
@@ -64,12 +64,12 @@ h6 {
 .home_links
 {
     border: 1.5px solid #DBBB76;
-    padding: 0.3em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0.3vw;
+    padding-left: 1.1vw;
+    padding-right: 1.1vw;
     height: auto;
 
-    font-size: 1em;
+    font-size: 1.1vw;
 
     text-transform: uppercase;
     
@@ -96,7 +96,7 @@ h6 {
     text-align: center;
 
     font-family: Atak-Regular;
-    font-size: 17px;
+    font-size: 1.2vw;
 }
 
 .heritage
@@ -110,9 +110,8 @@ h6 {
 }
 .heritage > div
 {
+    width: 69.5vw;
     margin: auto;
-    padding-left: 245px;
-    padding-right: 245px;
 
     text-align: center;
 }
@@ -125,7 +124,7 @@ h6 {
     margin: auto;
 
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
 
     margin-bottom: 5vw;
 }
@@ -196,7 +195,7 @@ h6 {
 
 #produits_main > h1 {
     margin: auto;
-    margin-top: 10px;
+    margin-top: 0.7vw;
 }
 
 .carousel-produits {
@@ -317,21 +316,21 @@ h6 {
 .flex-div > div > span{
 
     font-family: Atak-Light;
-    font-size: 20px;
+    font-size: 1.4vw;
 }
 
 .flex-div > div > p {
     margin-top: 1.7vw;
 
     font-family: Atak-Regular;
-    font-size: 16px;
+    font-size: 1.1vw;
 }
 
 
 .flex-div > div > div > span{
 
     font-family: Atak-Light;
-    font-size: 20px;
+    font-size: 1.4vw;
 }
 
 .flex-div > div:nth-child(2) {
@@ -354,6 +353,7 @@ h6 {
     width: 83vw;
     height: 6vw;
     margin: auto;
+    margin-bottom: 6.98vw;
 
     justify-content: space-between;
  }
@@ -370,12 +370,13 @@ h6 {
     margin: auto;
 
     font-family: Atak-Light;
-    font-size: 26px;
+    font-size: 1.8vw;
 }
 
 #other-links {
-    width: 82.8vw;
+    width: 83vw;
     margin: auto;
+    margin-bottom: 6.98vw;
 
     display: flex;
     flex-direction: row;
@@ -383,11 +384,13 @@ h6 {
 }
 
 #other-links > div {
-    width: 24.7vw;
-    margin: auto;
+    width: 27vw;
 }
 
 #other-links > div > img {
-    width: 24.7vw;
-    height: auto;
+    width: 27vw;
+}
+
+#other-links > div > h4 {
+    margin-top: 1vw;
 }
