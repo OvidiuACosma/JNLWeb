@@ -4,7 +4,8 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LegalComponent, GDPRComponent, CreditsComponent } from './Extras';
-import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent, SearchResultsComponent } from './Main';
+import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
+         SearchResultsComponent, PageNotFoundComponent } from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
          MarqueComponent, ActualiteComponent } from './Std';
@@ -49,7 +50,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ProductMatFinComponent,
     ProductDimensionsComponent,
     ProductCataloguesComponent,
-    ActualiteComponent
+    ActualiteComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

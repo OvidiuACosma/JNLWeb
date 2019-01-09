@@ -17,5 +17,4 @@ export class MarqueComponent implements OnInit {
       this.marque = params['marque'];
     });
   }
-
 }
