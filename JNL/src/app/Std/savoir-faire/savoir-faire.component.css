@@ -115,6 +115,7 @@ h5 {
 
     font-family: Atak-Bold;
     font-size: 16px;
+
 } 
 
 .ateliers-flex > div > div > h5 {
@@ -142,7 +143,7 @@ h5 {
     margin-top: 5.3vw;
 }
 
-.equipe-card {
+.carousel-inner {
     width: 82vw;
     height: 28.3vw;
 
@@ -152,13 +153,21 @@ h5 {
     flex-direction: row;
 }
 
-.equipe-card > img {
-    width: 48vw;
+.slide-image {
+    
+    width: 100%;
+    height: 100%;
+    max-width: 48vw;
+    max-height: 28.3vw;
+
+    object-fit: cover;
+
     margin: auto;
+    margin-left: 0px;
     margin-top: 0px !important;
 }
 
-.equipe-card > div {
+.steps-text {
     margin: auto;
     height: 28.3vw;
     margin-top: 0px  !important;
@@ -176,14 +185,15 @@ h5 {
     text-align: center !important;
 }
 
-.equipe-card > div > p {
+.steps-text > p {
     margin: auto;
 }
 
-.equipe-card > div > p > span {
+.steps-text > p > span {
     
     font-family: Atak-Light;
     font-size: 26px;
+    text-transform: uppercase;
 }
 
 .equipe-card > div > h4 {
@@ -286,6 +296,158 @@ h5 {
 }
 
 
+
+
+
+
+
+.carousel-marques {
+    width: 100%;
+    height: 37.78vw; /*60vh;*/
+    padding-top: 3.15vw; /*5vh;*/
+
+    
+    width: 81.9vw;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column !important;
+
+    margin-top: 5.3vw;
+
+}
+
+.carousel-control-prev, .carousel-control-next {
+    display: flex;
+    width: 5vw !important;
+}
+
+.carousel-arrows {
+    height: 4vw;
+    width: 2vw;
+    margin-top: auto;
+}
+
+
+.carousel-arrows {
+    margin-top: auto;
+}
+
+.carousel-item-content {
+    width: 80%;
+}
+
+.carousel-item-image {
+    float: left;
+    margin-right: 1vw;
+    padding-left: 0px;
+
+}
+
+
+/* .marques_img {
+    height: 50vh;
+    float: left;
+} */
+
+.carousel-indicators {
+    width: auto;
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 5vw;
+}
+
+.carousel-indicators > li {
+    height: 0;
+    width: auto;
+    text-transform: uppercase;
+    text-indent: 0;
+    font-size: 1.88vw;
+}
+
+.carousel-indicators > span {
+    color: #555;
+}
+
+.carousel-indicators .active > span{
+    background-color: #555;
+}
+
+.carousel-indicators .active {
+    background-color: rgb(46, 46, 46);
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    height: 15px;
+    width: 15px;
+
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+    display: inline-block;
+
+    margin-right: 0.5em;
+    margin-top: 2vw;
+    outline: none;
+
+    background-color: #BFBFBF;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    padding: 0px;
+
+    font-family: Atak-Regular;
+    font-size: 16px;
+}
+.steps-text
+ {
+     /* width: 80%; */
+     padding-top: 6vw;
+     text-align: left;
+     font-size: 20px;
+
+    margin-top: 0px  !important;
+
+    width: 47vw;
+
+    padding: 3vw;
+
+    text-align: center !important;
+ }
+
+.group-text > span {
+    
+    text-align: left !important;
+    margin-top: 0px  !important;
+    
+    margin: auto;
+    width: 54vw;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 800px) {
     #atelier > h4 {
         width: 90vw;
@@ -297,24 +459,26 @@ h5 {
 
     .ateliers-flex > div {
         width: 70vw;
+        flex-direction: column;
     }
     
     .ateliers-flex > div > div > img {
         width: 70vw;
     }
 
-    .equipe-card {
+
+    .container {
         flex-direction: column;
         height: auto;
         width: 80vw;
     }
 
-    .equipe-card > div {
+    .steps-text {
         height: auto;
         width: 80vw;
     }
 
-    .equipe-card > img {
+    .slide-image{
         height: auto;
         width: 80vw;
     }

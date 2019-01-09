@@ -1,7 +1,8 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @Component({
   selector: 'app-savoir-faire',
@@ -10,7 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class SavoirFaireComponent implements OnInit, AfterViewChecked {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {}
 

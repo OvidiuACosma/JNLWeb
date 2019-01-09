@@ -47,7 +47,6 @@ h4{
 }
 
 .les-marques-main {
-    display: flex;
     margin: auto;
     width: 100vw;
 }
@@ -467,9 +466,15 @@ h4{
 }
 
 .slide-image {
-    width: 28vw;
+    /*width: 28vw;
     height: auto;
-    /* border: solid 1px #000; */
+     border: solid 1px #000; */
+
+    
+    width: 100%;
+    max-width: 28vw;
+
+    object-fit: cover;
 }
 
 /* .marques_img {
@@ -522,7 +527,7 @@ input[type="radio"] {
     display: inline-block;
 
     margin-right: 0.5em;
-    margin-top: 5vw;
+    margin-top: 2vw;
     outline: none;
 
     background-color: #BFBFBF;
@@ -570,7 +575,9 @@ input[type="radio"] {
     text-align: center;
 }
 
-
+#carousel-projets {
+    margin-bottom: 10vw;
+}
 
 #carousel-projets .container {
     flex-direction: column;
@@ -582,6 +589,7 @@ input[type="radio"] {
 
 #carousel-projets > div > div > div > h4 {
     width: 60vw;
+    padding-bottom: 0px;
 }
 
 #carousel-projets > div > div > div > div > .slide-image {
@@ -590,6 +598,11 @@ input[type="radio"] {
 
 #carousel-projets > .carousel-indicators {
     position: relative;
+    margin-top: 2vw !important;
+}
+
+#carousel-projets > .carousel-indicators > input[type="radio"] {
+    margin-top: 0vw !important;
 }
 
 
@@ -691,7 +704,7 @@ input[type="radio"] {
     }
 
     .slide-image {
-        width: 70vw;
+        max-width: 70vw;
         margin: auto;
         text-align: center;
     }
