@@ -101,28 +101,31 @@ h4{
 
 
 .image-parag {
-    width: 76vw;
-    height: 39vw;
+    width: 80vw;
+    margin: auto;
+    height: auto;
 
     display: flex;
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-between;
 
-    margin-left: 12vw;
+    /*margin-left: 12vw;*/
     margin-bottom: 0px;
 
     text-align: left;
+
 }
 
 .image-parag > p {
+    width: 50vw;
     margin: auto;
     margin-top: 0px;
 
     padding-right: 7.8vw;
 
     font-family: Atak-Regular;
-    font-size: 1.4vw;
+    font-size: 20px;
     line-height: 1.2;
 }
 
@@ -170,8 +173,10 @@ h4{
 #equipe {
     width: 76vw;
     margin-left: 12vw;
+    text-align: center;
 }
 #equipe > div {
+    margin: auto;
 
     display: flex;
     flex-direction: row;
@@ -216,6 +221,10 @@ h4{
 #engagement .image-parag > p {
     padding-right: 0px;
     padding-left: 7.8vw;
+}
+
+#engagement {
+    height: auto;
 }
 
 
@@ -433,6 +442,7 @@ h4{
 
 .carousel-control-prev, .carousel-control-next {
     display: flex;
+    width: 5vw !important;
 }
 
 .carousel-arrows {
@@ -472,6 +482,7 @@ h4{
     margin: auto;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 5vw;
 }
 
 .carousel-indicators > li {
@@ -511,7 +522,7 @@ input[type="radio"] {
     display: inline-block;
 
     margin-right: 0.5em;
-    margin-top: 10px;
+    margin-top: 5vw;
     outline: none;
 
     background-color: #BFBFBF;
@@ -531,7 +542,7 @@ input[type="radio"] {
      /* width: 80%; */
      padding-top: 6vw;
      text-align: left;
-     font-size: 1.5vw;
+     font-size: 20px;
 
     margin-top: 0px  !important;
 
@@ -620,5 +631,82 @@ input[type="radio"] {
         width: 90vw
     }
 
+    .marques-image {
+        width: 100vw;
+        height: auto;
+    }
+
+    h4 {
+        width: 80vw;
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+
+        text-align: center !important;
+    }
+
+    .image-parag {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    
+    .image-parag > p {
+        width: 80vw;
+        padding-right: 0px !important; 
+        padding-top: 5vw; 
+        padding-bottom: 5vw;
+    }
+
+
+    .image-parag > img {
+        width: 80vw;
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 70vw;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .carousel-marques {
+        height: auto;
+    }
+
+    .group-text {
+        text-align: center !important;
+        width: 70vw;
+        padding: 0px;
+    }
+
+    .group-img {
+        width: 70vw !important;
+    }
+
+    #equipe > div {
+        width: 70vw;
+    }
+
+    .slide-image {
+        width: 70vw;
+        margin: auto;
+        text-align: center;
+    }
+
+    
+    .carousel-item-image {
+        width: 70vw;
+        margin-right: 0vw;
+        padding-left: 0vw;
+    }
+
+    
+    #engagement .image-parag > p {
+        padding-right: 0px;
+        padding-left: 0vw;
+    }
 }
 
