@@ -1,49 +1,59 @@
-<div id="header">
-  <div id='famille'>
-    Meuble
-  </div>
-  <div id='marque'>
-    JNL Collection
-  </div>
-</div>
-<hr>
-<div id="container">
-  <div id="model">
-    Sellier
-  </div>
-  <div id="code">
-    MESE01
-  </div>
-  <div id="productImg">
-    <img class="img-fluid" src="assets\Images\Products\JNL\Meuble\Meuble Sellier_01.jpg" alt="" > 
-  </div>
-  <ul class="nav nav-tabs nav-justified" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" role="tab" (click)="setDetail(0)">DESCRIPTION</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" role="tab" (click)="setDetail(1)">COLOURS AND FINISHES</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" role="tab" (click)="setDetail(2)">DIMENSIONS AND CAD</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" role="tab" (click)="setDetail(3)">CATALOGUES</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PDF</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">&agrave; t&eacute;l&eacute;charger</a>
-        <a class="dropdown-item" href="#">envoyer par mail</a>
+<br>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="product-main">
+      <div id="header">
+        <div id='famille'>
+          <h3>Meuble</h3>
+        </div>
+        <div id='marque'>
+          <h3>JNL Collection</h3>
+        </div>
       </div>
-    </li>
-  
-  </ul>
-  <br>
-  <br>
-  <app-product-description *ngIf="detail==='description'"></app-product-description>
-  <app-product-mat-fin *ngIf="detail==='matFin'"></app-product-mat-fin>
-  <app-product-dimensions *ngIf="detail==='dimensions'"></app-product-dimensions>
-  <app-product-catalogues *ngIf="detail==='catalogues'"></app-product-catalogues>
+      <hr>
+      <div id="container">
+        <div id="model">
+          <h3>Sellier</h3>
+        </div>
+        <div id="code">
+          <h3>MESE01</h3>
+        </div>
+        <div id="productImg">
+          <img class="img-fluid" src="assets\Images\Products\JNL\Meuble\Meuble Sellier_01.jpg" alt="">
+        </div>
+        <ul class="nav nav-tabs nav-justified flex-column flex-md-row" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link flex-md-fill text-md-center active" data-toggle="tab" role="tab" (click)="setDetail(0)">DESCRIPTION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link flex-md-fill text-md-center" data-toggle="tab" role="tab" (click)="setDetail(1)">COLOURS AND FINISHES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link flex-md-fill text-md-center" data-toggle="tab" role="tab" (click)="setDetail(2)">DIMENSIONS AND CAD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link flex-md-fill text-md-center" data-toggle="tab" role="tab" (click)="setDetail(3)">CATALOGUES</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link flex-md-fill text-md-center dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="true">PDF</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">&agrave; t&eacute;l&eacute;charger</a>
+              <a class="dropdown-item" href="#">envoyer par mail</a>
+            </div>
+          </li>
 
+        </ul>
+        <br>
+        <br>
+        <app-product-description *ngIf="detail==='description'"></app-product-description>
+        <app-product-mat-fin *ngIf="detail==='matFin'"></app-product-mat-fin>
+        <app-product-dimensions *ngIf="detail==='dimensions'"></app-product-dimensions>
+        <app-product-catalogues *ngIf="detail==='catalogues'"></app-product-catalogues>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-1"></div>
 </div>
