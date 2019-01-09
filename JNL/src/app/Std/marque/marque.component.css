@@ -102,7 +102,8 @@ h6 {
 .heritage
 {
     width: 100vw;
-    min-height: 558px;
+    padding-top: 7vw;
+    padding-bottom: 7vw;
 
     background-color: white;
 
@@ -324,6 +325,8 @@ h6 {
 
     font-family: Atak-Regular;
     font-size: 1.1vw;
+
+    padding: 1.3vw;
 }
 
 
@@ -393,4 +396,67 @@ h6 {
 
 #other-links > div > h4 {
     margin-top: 1vw;
+}
+
+#other-links > div:hover {
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 800px) {
+    
+    .heritage > div {
+        width: 80vw;
+    }
+
+    .heritage > div > p{
+        width: auto;
+    }
+
+    .flex-div {
+        flex-direction: column;
+    }
+
+    .flex-div > div {
+        width: 80vw;
+    }
+    
+    .flex-div > div > img {
+        
+        text-align: center;
+        margin: auto;
+        margin-bottom: 1.7vw;
+    }
+
+    #other-links {
+        flex-direction: column;
+    }
+
+    #other-links > div {
+        width: 80vw;
+    }
+    
+    #other-links > div > img {
+        width: 80vw;
+    }
+
+    .home-links-flex {
+        flex-direction: column;
+        height: 12vw;
+        width: 60vw;
+    }
+
+    #autres {
+        width: 83vw;
+        height: 20vw;
+    }
+
+    #autres > p {
+        background-color: #D3D3D3 !important;
+        width: 80vw !important;
+        height: 20vw;
+        text-align: center !important;
+   
+        display: flex;
+    }
 }
