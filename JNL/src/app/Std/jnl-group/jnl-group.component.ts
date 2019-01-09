@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @Component({
   selector: 'app-jnl-group',

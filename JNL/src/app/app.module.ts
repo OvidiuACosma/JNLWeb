@@ -4,9 +4,11 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LegalComponent, GDPRComponent, CreditsComponent } from './Extras';
-import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent, SearchResultsComponent } from './Main';
+import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
+         SearchResultsComponent, PageNotFoundComponent } from './Main';
 import { AlertComponent } from './_directives';
-import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent, MarqueComponent } from './Std';
+import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
+         MarqueComponent, ActualiteComponent } from './Std';
 import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
          ProductDimensionsComponent, ProductCataloguesComponent } from './Products';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -47,7 +49,9 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ProductDescriptionComponent,
     ProductMatFinComponent,
     ProductDimensionsComponent,
-    ProductCataloguesComponent
+    ProductCataloguesComponent,
+    ActualiteComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

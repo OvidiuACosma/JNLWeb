@@ -35,5 +35,4 @@ export class MarqueComponent implements OnInit {
   ScrollTop() {
     window.scrollTo(0, 0);
   }
-
 }

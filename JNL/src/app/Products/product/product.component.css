@@ -1,28 +1,22 @@
+html *
+{
+   font-family: Atak-Regular !important;
+}
 #header{
     display:flex;
 }
 #famille{
     text-align: left;
-    margin-left: 20px;
-    width: 50%;
+    width: 50%; 
 }
 #marque{
     text-align: right;
-    margin-right: 20px;
-    width: 50%;
+    width: 50%; 
+}
+.product-main> div {
+    margin: auto;
 }
 hr{
     border-width: 1px;
     border-style: solid;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-#container{
-    margin-left: 20px;
-}
-
-#productImg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

@@ -2,3 +2,11 @@
     color: #fff;
     background-color: lightgrey;
 }
+hr{
+    border-width: 1px;
+    border-style: solid;
+}
+img{
+    width: 120px;
+    height: 120px;
+}
