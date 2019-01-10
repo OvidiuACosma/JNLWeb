@@ -23,7 +23,7 @@ export class MarqueComponent implements OnInit {
     });
   }
 
-  NavigateTo(target: string, fragment: string = '') {
+  navigateTo(target: string, fragment: string = '') {
     if (fragment === '') {
       this.router.navigate([target]);
       this.ScrollTop();
