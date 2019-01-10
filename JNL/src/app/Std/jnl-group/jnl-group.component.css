@@ -118,7 +118,7 @@ h4{
 
 }
 
-.image-parag > p {
+.image-parag > div > p {
     width: 50vw;
     margin: auto;
     margin-top: 0px;
@@ -126,7 +126,7 @@ h4{
     padding-right: 7.8vw;
 
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.41vw;
     line-height: 1.2;
 }
 
@@ -652,7 +652,7 @@ input[type="radio"] {
     }
 
     
-    .image-parag > p {
+    .image-parag > div > p {
         width: 80vw;
         padding-right: 0px !important; 
         padding-top: 5vw; 
@@ -660,7 +660,7 @@ input[type="radio"] {
     }
 
 
-    .image-parag > img {
+    .image-parag > div > img {
         width: 80vw;
         height: auto;
     }
