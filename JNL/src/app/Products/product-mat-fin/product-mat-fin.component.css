@@ -6,7 +6,29 @@ hr{
     border-width: 1px;
     border-style: solid;
 }
-img{
+.img-button{
     width: 120px;
     height: 120px;
 }
+.pagination > li > a, .pagination > li > span { 
+    color: #000; 
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background-color: lightgrey;
+    border-color: lightgrey;
+    color:#fff;
+}
+
+/* workaround to fix bootstrap`s modal bug in Angular
+   Without this fix the background will cover the modal. */
+.modal{
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+.modal-backdrop{
+    position: relative;
+  }

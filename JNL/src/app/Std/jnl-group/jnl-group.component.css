@@ -118,7 +118,7 @@ h4{
 
 }
 
-.image-parag > div >  p {
+.image-parag > div > p {
     width: 50vw;
     margin: auto;
     margin-top: 0px;
@@ -126,7 +126,7 @@ h4{
     padding-right: 7.8vw;
 
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.41vw;
     line-height: 1.2;
 }
 
