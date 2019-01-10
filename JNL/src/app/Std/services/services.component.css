@@ -190,6 +190,7 @@ textarea{
 
 .contact_div
 {
+    background-color: #E9D6AC;
     width: 100vw;
     left: 0;
 
@@ -200,7 +201,8 @@ textarea{
 
     font-family: Atak-Regular;
     font-size: 20px;
-    padding: 3.7vw;
+    padding-top: 3.7vw;
+    
 }
 
 .contact_div > h2 {
@@ -311,7 +313,6 @@ button
 
 #votre {
     width: 100vw;
-    background-color: #E9D6AC;
 }
 
 .contact_form > div {
@@ -347,6 +348,10 @@ button
     justify-content: space-between;
 }
 
+#expertise, #sur_mesure, #votre {
+    margin-top: -60px;
+    padding-top: 60px;
+}
 
 @media only screen and (max-width: 800px){
     .contact_div > p{
