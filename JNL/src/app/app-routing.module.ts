@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent, ContactComponent, SearchResultsComponent } from './Main';
+import { HomeComponent, ContactComponent, SearchResultsComponent, PageNotFoundComponent } from './Main';
 import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { CreditsComponent, GDPRComponent, LegalComponent } from './Extras';
@@ -37,7 +37,7 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

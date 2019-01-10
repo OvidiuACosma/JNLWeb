@@ -47,18 +47,19 @@ h4{
 }
 
 .les-marques-main {
-    display: flex;
+    /* display: flex; */
     margin: auto;
     width: 100vw;
+    text-align: center;
 }
 
-.les-marques-main > div {
+/* .les-marques-main > div {
     margin: auto;
     left: 0;
     width: 100vw;
 
     text-align: center;
-}
+} */
 
 .location {
     text-align: center;
@@ -76,7 +77,6 @@ h4{
 }
 
 .quote-bar {
-    margin-left: -12vw !important;
     margin-top: 7.6vw !important;
     width: 100vw  !important;
     left: 0;
@@ -102,38 +102,44 @@ h4{
 
 
 .image-parag {
-    width: 76vw;
-    height: 39vw;
+    width: 80vw;
+    margin: auto;
+    height: auto;
 
     display: flex;
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-between;
 
-    margin-left: 12vw;
+    /*margin-left: 12vw;*/
     margin-bottom: 0px;
 
     text-align: left;
+
 }
 
-.image-parag > p {
+.image-parag > div > p {
+    width: 50vw;
     margin: auto;
     margin-top: 0px;
 
     padding-right: 7.8vw;
 
     font-family: Atak-Regular;
-    font-size: 1.4vw;
+    font-size: 1.41vw;
     line-height: 1.2;
 }
 
-.image-parag > img {
+.image-parag > div> img {
     margin: auto;
-    margin-top: 0px;
-    width: 29vw;
+    margin-top: 0;
     height: auto;
+    width: 29vw; 
 }
 
+.group-img {
+    width: 34vw !important;
+}
 
 
 
@@ -158,7 +164,6 @@ h4{
     margin: auto;
 
     font-size: 1.5em;
-    margin-right: 20px;
     left: 0;
 }
 
@@ -169,8 +174,10 @@ h4{
 #equipe {
     width: 76vw;
     margin-left: 12vw;
+    text-align: center;
 }
 #equipe > div {
+    margin: auto;
 
     display: flex;
     flex-direction: row;
@@ -195,6 +202,8 @@ h4{
 
     font-family: Atak-Regular;
     font-size: 16px;
+
+    text-align: justify;
 }
 
 #equipe > div > div > h4 {
@@ -213,6 +222,10 @@ h4{
 #engagement .image-parag > p {
     padding-right: 0px;
     padding-left: 7.8vw;
+}
+
+#engagement {
+    height: auto;
 }
 
 
@@ -270,28 +283,7 @@ h4{
     justify-content: center;
 }
 
-.equipe-radio > input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-
-    height: 15px;
-    width: 15px;
-
-    border: none;
-    border-radius: 100%;
-
-    cursor: pointer;
-    display: inline-block;
-
-    margin-right: 0.5em;
-    margin-top: 10px;
-    outline: none;
-
-    background-color: #BFBFBF;
-}
+ 
 
 .equipe-radio > input:hover {
     
@@ -430,6 +422,10 @@ h4{
     padding-top: 60px;
 }
 
+#projets {
+    margin-bottom: 25vw;
+}
+
 #projets > p {
     font-family: Atak-Regular;
     font-size: 20px;
@@ -437,6 +433,166 @@ h4{
     width: 48.4vw;
     margin: auto;
 }
+
+
+.carousel-marques {
+    width: 100%;
+    height: 37.78vw; /*60vh;*/
+    padding-top: 3.15vw; /*5vh;*/
+}
+
+.carousel-control-prev, .carousel-control-next {
+    display: flex;
+    width: 5vw !important;
+}
+
+.carousel-arrows {
+    height: 4vw;
+    width: 2vw;
+    margin-top: auto;
+}
+
+
+.carousel-arrows {
+    margin-top: auto;
+}
+
+.carousel-item-content {
+    width: 80%;
+}
+
+.carousel-item-image {
+    float: left;
+    margin-right: 1vw;
+    padding-left: 4vw;
+}
+
+.slide-image {
+    width: 28vw;
+    height: auto;
+    /* border: solid 1px #000; */
+}
+
+/* .marques_img {
+    height: 50vh;
+    float: left;
+} */
+
+.carousel-indicators {
+    width: 10vw;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 5vw;
+}
+
+.carousel-indicators > li {
+    height: 0;
+    width: auto;
+    text-transform: uppercase;
+    text-indent: 0;
+    font-size: 1.88vw;
+}
+
+.carousel-indicators > span {
+    color: #555;
+}
+
+.carousel-indicators .active > span{
+    background-color: #555;
+}
+
+.carousel-indicators .active {
+    background-color: rgb(46, 46, 46);
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    height: 15px;
+    width: 15px;
+
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+    display: inline-block;
+
+    margin-right: 0.5em;
+    margin-top: 5vw;
+    outline: none;
+
+    background-color: #BFBFBF;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+
+    width: 78vw;
+
+    font-family: Atak-Regular;
+    font-size: 16px;
+}
+.group-text
+ {
+     /* width: 80%; */
+     padding-top: 6vw;
+     text-align: left;
+     font-size: 20px;
+
+    margin-top: 0px  !important;
+
+    width: 47vw;
+
+    padding: 3vw;
+    padding-right: 0px;
+    padding-top: 0px;
+
+    text-align: left !important;
+ }
+
+.group-text > span {
+    
+    text-align: left !important;
+    margin-top: 0px  !important;
+    
+    margin: auto;
+    width: 54vw;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+
+
+
+#carousel-projets .container {
+    flex-direction: column;
+}
+
+#carousel-projets > div > div > div > h2 {
+    margin-top: 0px !important;
+}
+
+#carousel-projets > div > div > div > h4 {
+    width: 60vw;
+}
+
+#carousel-projets > div > div > div > div > .slide-image {
+    width: 60vw;
+}
+
+#carousel-projets > .carousel-indicators {
+    position: relative;
+}
+
 
 @media only screen and (max-width: 800px)
 {
@@ -476,5 +632,82 @@ h4{
         width: 90vw
     }
 
+    .marques-image {
+        width: 100vw;
+        height: auto;
+    }
+
+    h4 {
+        width: 80vw;
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+
+        text-align: center !important;
+    }
+
+    .image-parag {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    
+    .image-parag > div > p {
+        width: 80vw;
+        padding-right: 0px !important; 
+        padding-top: 5vw; 
+        padding-bottom: 5vw;
+    }
+
+
+    .image-parag > div > img {
+        width: 80vw;
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 70vw;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .carousel-marques {
+        height: auto;
+    }
+
+    .group-text {
+        text-align: center !important;
+        width: 70vw;
+        padding: 0px;
+    }
+
+    .group-img {
+        width: 70vw !important;
+    }
+
+    #equipe > div {
+        width: 70vw;
+    }
+
+    .slide-image {
+        width: 70vw;
+        margin: auto;
+        text-align: center;
+    }
+
+    
+    .carousel-item-image {
+        width: 70vw;
+        margin-right: 0vw;
+        padding-left: 0vw;
+    }
+
+    
+    #engagement .image-parag > p {
+        padding-right: 0px;
+        padding-left: 0vw;
+    }
 }
 

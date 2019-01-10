@@ -8,10 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MarquesComponent implements OnInit, AfterViewChecked {
 
+  public marque: string;
+
   constructor(private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.marque = params['marque'];
+    });
   }
 
   ngAfterViewChecked() {
