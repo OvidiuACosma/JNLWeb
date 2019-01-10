@@ -2,6 +2,27 @@ h1 {
     font-family: PlacardMT-Condensed;
     font-size: 4em;
     margin-bottom: 3vh;
+
+    text-align: center;
+}
+
+h2 {
+    margin-top: 5.9vw;
+    font-family: Atak-Light;
+    font-size: 50px;
+
+    text-align: center;
+}
+
+h4 {
+    margin: auto;
+    width: 58.3vw;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
 }
 
 .first-image {
@@ -10,4 +31,331 @@ h1 {
     margin: auto;
     margin-top: 1.6vw;
     margin-bottom: 4.2vw;
+}
+
+.les-marques-main {
+    margin: auto;
+    width: 100vw;
+}
+
+.les-marques-main > div {
+    margin: auto;
+    left: 0;
+    width: 100vw;
+
+    text-align: center;
+}
+
+.quote-bar {
+    margin-top: 7.6vw !important;
+    width: 100vw  !important;
+    left: 0;
+
+    display: flex;
+    flex-direction: column  !important;
+
+    background-color: #C6C6C6;
+    position: relative;
+
+    padding: 11.7vw;
+    padding-top: 4.2vw;
+    padding-bottom: 4.2vw;
+}
+
+.quote-bar > p {
+    font-family: Atak-LightItalic;
+    font-size: 26px;
+}
+
+.quote-bar > h4 {
+    font-family: Atak-Bold;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+.sur-flex {
+    width: 76vw;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    text-align: left;
+}
+
+.sur-flex > div {
+    width: 31.2vw;
+    margin: auto;
+    margin-top: 7.9vw;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sur-flex > div > div > img {
+    width: 31.2vw;
+    margin: 0px !important;
+}
+
+
+.sur-flex > div > div {
+    
+    font-family: Atak-Regular;
+    font-size: 20px;
+} 
+.sur-flex > div > div > span {
+
+    font-family: Atak-Bold;
+    font-size: 16px;
+
+} 
+
+.sur-flex > div > div > h5 {
+    margin-bottom: 2em;
+}
+
+.sur-flex > div:nth-child(2) > div:first-child {
+    margin-top: 0px !important;
+    margin-bottom: 10.8vw;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+    text-align: left;
+} 
+
+
+
+
+
+
+#services_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
+    width: 50vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 4vw;
+    text-align: center;
+}
+
+#services_list > a {
+    margin: auto;
+
+    font-size: 1.5em;
+    margin-right: 20px;
+    left: 0;
+}
+
+#services_list > a:last-child {
+    margin-right: 0px;
+}
+
+#services_list > a:hover {
+    text-decoration: underline;
+}
+
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+  }
+
+textarea{
+    margin: auto;
+    background-color: #F6EEDD;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+
+.contact_div
+{
+    width: 100vw;
+    left: 0;
+
+    text-align: center;
+
+    margin-bottom: 5vh;
+    margin-top: 7vw;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+    padding: 3.7vw;
+}
+
+.contact_div > h2 {
+    margin-top: 0;
+}
+
+.contact_div > div > p {
+    font-family: Atak-Regular;
+    font-size: 20px;
+    text-align: center;
+}
+.contact_form
+{
+    width: 72.6vw;
+    margin: auto;
+    margin-top: 4.8vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    text-align: left;
+}
+.contact_form:focus, input:focus, textarea:focus, select:focus, button:focus
+{
+    outline: none;
+}
+input
+{
+    margin: auto;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+
+    outline: none;
+    border: hidden;
+
+    width: 100%;
+    background-color: transparent;
+
+
+    border: none;
+    border-bottom: 1.5px solid black;
+
+    margin-top: 1.5vw;
+    padding-bottom: 0px;
+}
+
+input[type="checkbox"]
+{
+    margin: auto;
+
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox; 
+
+    outline: none;
+    border: hidden;
+
+    width: auto;
+
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 5px;
+}
+
+label {
+    margin: 0px;
+}
+
+
+#checks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+select
+{
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;  
+
+    width: 100%;
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 1.5px solid black;
+
+    margin-bottom: 1em;
+
+}
+button
+{
+    text-transform: uppercase;
+
+    margin: auto;
+    background-color: white;
+    color: black;
+
+    margin-top: 5.3em;
+    margin-bottom: 4em;
+    border: none;
+
+    width: 20%;
+}
+
+
+#votre {
+    width: 100vw;
+    background-color: #E9D6AC;
+}
+
+.contact_form > div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+
+    width: 72.7vw;
+    margin: auto;
+}
+
+.contact_form > div > div:first-child{
+    width: 34vw;
+    margin-top: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact_form > div > div:last-child > input:first-child{
+    margin-top: 0px;
+}
+
+.contact_form > div > div:last-child{
+    width: 30vw;
+    margin-top: 0px;
+
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 800px){
+    .contact_div > p{
+        font-size: 1em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    input, select, textarea{
+        width: 90vw !important;
+    }
 }

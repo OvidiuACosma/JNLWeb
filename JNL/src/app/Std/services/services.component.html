@@ -1,23 +1,142 @@
-<div>
-    <h1>LES SERVICES </h1>
+<div class="les-marques-main">
+  <h1>LES SERVICES </h1>
 
+  <div id="services_list">
+    <a routerLink="/services" fragment="expertise">L'EXPERTISE</a>
+    <a routerLink="/services" fragment="sur_mesure">LE SUR-MESURE</a>
+    <a routerLink="/services" fragment="votre">VOTRE PROJET</a>
+  </div>
 
-    <div id="services_list">
-      <a routerLink="/services" fragment="expertise">L'EXPERTISE'</a>
-      <a routerLink="/services" fragment="sur_mesure">LE SUR-MESURE</a>
-      <a routerLink="/services" fragment="votre">VOTRE PROJET</a>
+  <div id="expertise">
+    <img class="first-image" alt="JNL Collection" src="assets/Images/Services/SV_pic1.jpg">
+
+    <div>
+      <h2>Notre expertise</h2>
+      <h4>
+        Chez JNL, nous mettons notre expertise et savoir-faire centenaires au service 
+        de vos projets architecturaux les plus prestigieux en vous offrant un accompagnement 
+        personnalisé et une offre de solutions sur mesure, du dessin à la fabrication.  
+      </h4>
     </div>
 
-    <div id="expertise">
-      <img class="first-image" alt="JNL Collection" src="assets/Images/Services/SV_pic1.jpg">
+    <div class="quote-bar">
+      <p>« Nous abordons chaque projet à travers le prisme de nos clients : l’échange 
+        avec eux représente le cœur de notre travail. A nous ensuite de concrétiser 
+        leurs désirs en les orientant vers des choix de matières exceptionnelles et des 
+        finitions somptueuses »
+      </p>
+      <h4>DOMINIQUE WAXMANN, CEO</h4>
     </div>
+  </div>
 
+
+  
+  <div id="sur_mesure">
+    <h2>Un service de conseil sur mesure</h2>
+
+    <div class="sur-flex">
+      <div>
+
+          <div>Forts d’une expertise unique dans la réalisation de mobilier 
+            haut-de-gamme et exclusif, notre groupe s’est enrichi d’un pôle 
+            de conseil au sein duquel nous posons un regard global et stratégique 
+            sur vos projets. La qualité de la démarche repose essentiellement sur 
+            l’écoute et la compréhension de vos besoins précis. Cet instant 
+            d’échange et de dialogue est crucial tant il nous permet par la suite 
+            de formuler le rendu détaillé de vos attentes et de poser les contours 
+            des différentes étapes qui donneront forme au projet. 
+
+          </div>
+          
+          <div>
+              <img alt="JNL Collection" src="assets/Images/Services/SV_pic2.jpg">
+          </div>
+      </div>
+
+      <div>
+
+          <div>
+              <img alt="JNL Collection" src="assets/Images/Services/SV_pic3.jpg">
+              <h5>Lorem ipsum dolor sit amet.</h5>
+          </div>
+
+          <div>
+              Grâce au savoir-faire de nos ateliers, nous concevons des pièces de 
+              mobilier et des accessoires uniques réalisés sur mesure. À travers 
+              une multitude de combinaisons de matériaux, de finitions, de teintes 
+              et de formats, nous imaginons avec vous les intérieurs exceptionnels 
+              de demain. Avec une qualité d’exécution toujours préservée, nos ateliers 
+              s’adaptent et artisans s’adaptent à votre demande : des critères de 
+              surface à la typologie de vos lieux, chaque donnée est prise en compte 
+              afin de traduire en matière et en couleur votre vision de l’art de vivre. 
+
+          </div>
+      </div>
+  </div>
+  </div>
+
+  
+  <div id="votre">
     
-    <div id="sur_mesure">
-      
-    </div>
+  <div class="contact_div">
+      <h2>Votre projet</h2>
+      <p>Contactez ici l’équipe JNL Conseil, dédiée à la réalisation des projets sur mesure.<br> 
+          Nous reviendrons vers vous dans les plus brefs délais. 
+        </p>
+      <form class="contact_form">
+        <div>
+          <div>
+            <select>
+              <option selected disabled>Type de projet* 🡫</option>
+              <option>Sujet 1</option>
+              <option>Sujet 2</option>
+              <option>Sujet 3</option>
+            </select>
+            <br>
 
-    
-    <div id="votre">
-      
+            <div>
+              <span>Pouvez vous preciser?</span><br>
+              <textarea placeholder="Votre message*" rows="4" required maxlength="500"></textarea><br>
+              <span>Max 500 caractères.</span>
+            </div>
+
+            <div>
+              <span>Sélectionnez les marques qui vous intéressent:</span>
+              <div id="checks">
+                <div>
+                  <input type="checkbox" id="jnl"><label for="jnl">JNL Collection</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="ungaro"><label for="ungaro">Emanuel Ungaro</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="luz"><label for="luz">Luz Interiors</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="vanhamme"><label for="vanhamme">Vanhamme</label>
+                </div>
+              </div>
+          </div>
+          </div>
+          <div>
+            <input placeholder="Prenom*" reaquired/>
+            <input placeholder="Nom*" required/>
+            <input placeholder="Société*" required/>
+            <input placeholder="Poste*" required/>
+            <input placeholder="Pays*" required/>
+            <input placeholder="Adresse"/>
+            <input placeholder="Ville*" required/>
+            <input placeholder="Province"/>
+            <input placeholder="Code Postal*"/>
+            <input placeholder="Email*" required/>
+          </div>
+       </div>
+
+        <br>
+
+        <button>ENVOYER</button>
+      </form>
     </div>
+  </div>
+
+</div>
