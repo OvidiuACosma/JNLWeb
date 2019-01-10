@@ -144,8 +144,8 @@ h5 {
 }
 
 .carousel-inner {
-    width: 82vw;
-    height: 28.3vw;
+    width: 90vw;
+    height: 30vw;
 
     margin: 0px !important;
 
@@ -157,39 +157,52 @@ h5 {
     
     width: 100%;
     height: 100%;
-    max-width: 48vw;
-    max-height: 28.3vw;
+    max-width: 58vw;
+    max-height: 30vw;
 
     object-fit: cover;
 
-    margin: auto;
     margin-left: 0px;
     margin-top: 0px !important;
+
+    text-align: left;
+    float: left;
+
+    
+    position: absolute;
+    left: 0;
 }
 
 .steps-text {
-    margin: auto;
-    height: 28.3vw;
     margin-top: 0px  !important;
 
     background-color: #D3D3D3;
 
-    width: 34vw;
-    display: flex;
+    width: 32vw;
+    height: 30vw;
 
-    padding: 3.5vw;
+    padding: 3vw;
 
     font-family: Atak-Regular;
     font-size: 20px;
 
     text-align: center !important;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    
+    position: absolute;
+    right: 0;
 }
 
-.steps-text > p {
+.steps-text > div {
     margin: auto;
 }
 
-.steps-text > p > span {
+.steps-text > div > span {
     
     font-family: Atak-Light;
     font-size: 26px;
@@ -307,7 +320,7 @@ h5 {
     padding-top: 3.15vw; /*5vh;*/
 
     
-    width: 81.9vw;
+    width: 90vw;
     margin: auto;
 
     display: flex;
@@ -334,12 +347,11 @@ h5 {
 }
 
 .carousel-item-content {
-    width: 80%;
+    width: 90vw;
 }
 
 .carousel-item-image {
     float: left;
-    margin-right: 1vw;
     padding-left: 0px;
 
 }
@@ -356,7 +368,9 @@ h5 {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    margin-top: 5vw;
+    margin-top: 1vw;
+
+    position: relative;
 }
 
 .carousel-indicators > li {
@@ -406,27 +420,12 @@ input[type="radio"] {
     display: flex;
     flex-direction: row;
 
-    width: 100%;
+    width: 100vw;
     padding: 0px;
 
     font-family: Atak-Regular;
     font-size: 16px;
 }
-.steps-text
- {
-     /* width: 80%; */
-     padding-top: 6vw;
-     text-align: left;
-     font-size: 20px;
-
-    margin-top: 0px  !important;
-
-    width: 47vw;
-
-    padding: 3vw;
-
-    text-align: center !important;
- }
 
 .group-text > span {
     
@@ -441,6 +440,7 @@ input[type="radio"] {
 
     margin-top: 3.3vw;
     text-align: center;
+
 }
 
 
@@ -474,16 +474,29 @@ input[type="radio"] {
     }
 
     .steps-text {
-        height: auto;
         width: 80vw;
+        height: 40vw;
+        position: relative;
+        top:0;
     }
 
     .slide-image{
         height: auto;
-        width: 80vw;
+        max-width: 80vw;
+        position: relative;
+        top:0;
     }
 
     #services > h4 {
         width: 80vw;
+    }
+
+    .carousel-inner {
+        flex-direction: column;
+        height: 80vw;
+    }
+
+    .carousel-marques {
+        height: 80vw;
     }
 }
