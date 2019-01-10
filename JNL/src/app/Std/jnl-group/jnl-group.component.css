@@ -440,7 +440,12 @@ h4{
 
 .carousel-control-prev, .carousel-control-next {
     display: flex;
-    width: 5vw !important;
+}
+
+
+.carousel-control-prev > img , .carousel-control-next > img {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .carousel-arrows {

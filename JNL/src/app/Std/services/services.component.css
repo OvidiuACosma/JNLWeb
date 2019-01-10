@@ -1,0 +1,13 @@
+h1 {
+    font-family: PlacardMT-Condensed;
+    font-size: 4em;
+    margin-bottom: 3vh;
+}
+
+.first-image {
+    width: 76vw;
+
+    margin: auto;
+    margin-top: 1.6vw;
+    margin-bottom: 4.2vw;
+}

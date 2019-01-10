@@ -23,6 +23,13 @@ export class MarqueComponent implements OnInit {
     });
   }
 
+  navigateToAnchor(fragment: string) {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+  }
+
   navigateTo(target: string, fragment: string = '') {
     if (fragment === '') {
       this.router.navigate([target]);
