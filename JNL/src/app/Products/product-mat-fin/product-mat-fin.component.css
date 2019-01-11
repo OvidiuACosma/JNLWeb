@@ -1,18 +1,22 @@
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: lightgrey;
-}
 hr{
     border-width: 1px;
     border-style: solid;
 }
-.img-button{
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: lightgrey;
+}
+
+.img-button {
     width: 120px;
     height: 120px;
 }
+
 .pagination > li > a, .pagination > li > span { 
     color: #000; 
 }
+
 .pagination > .active > a,
 .pagination > .active > a:focus,
 .pagination > .active > a:hover,
@@ -23,15 +27,25 @@ hr{
     border-color: lightgrey;
     color:#fff;
 }
+/*
 .modal-dialog {
-    width: 322px;
+    width: 322px; 
 }
-
+*/
 /* workaround to fix bootstrap`s modal bug in Angular
    Without this fix the dark background will cover the modal. */
-.modal{
+.modal {
     background-color: rgba(0, 0, 0, 0.3);
   }
-.modal-backdrop{
+
+.modal-backdrop {
     position: relative;
+  }
+
+  #garnissage-detail {
+      margin: 5px;
+  }
+
+  label {
+      margin: 0px !important;
   }
