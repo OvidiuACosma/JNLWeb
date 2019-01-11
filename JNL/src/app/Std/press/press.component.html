@@ -1,3 +1,32 @@
-<p>
-  press works!
-</p>
+<div class="presse-main">
+  <h1>PRESSE</h1>
+
+  <div id="press_list">
+    <a routerLink="/services" fragment="banqueImages">BANQUE IMAGES</a>
+    <a routerLink="/services" fragment="catalogues">CATALOGUES</a>
+    <a routerLink="/services" fragment="pressKit">PRESS KIT</a>
+    <a routerLink="/services" fragment="parutions">PARUTIONS</a>
+  </div>
+
+  <div>
+    <h4>
+        Mauris at massa vestibulum, eleifend quam dignissim, auctor
+        nulla. Vestibulum ac justo tempor enim fringilla efficitur sit
+        amet eu orci. Morbi at condimentum libero.  
+    </h4>
+    <img class="first-image" alt="JNL Collection" src="assets/Images/Services/SV_pic1.jpg">
+  </div>
+
+  <div id="banqueImages">
+    <h2>Banque Images</h2>
+
+    <div class="four-flex">
+      <div>
+        <img alt="JNL Collection" src="assets/Images/Presse/PS_jnl.jpg">
+        <spna>JNL Collection</spna>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+      </div>
+    </div>
+  </div>
+</div>

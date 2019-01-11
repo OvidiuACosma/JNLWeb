@@ -120,28 +120,60 @@ h4{
 }
 
 .image-parag > div > p {
-    width: 50vw;
-    margin: auto;
+    /*width: 50vw;*/
+    /*margin: auto;*/
     margin-top: 0px;
+    height: 40vw;
 
-    padding-right: 7.8vw;
+    padding-right: 4vw;
 
     font-family: Atak-Regular;
     font-size: 1.41vw;
     line-height: 1.2;
 }
 
+#impg2 {
+    height: 35vw;
+}
+
+#impg2 > div > p {
+    
+    padding-right: 0px;
+    padding-left: 4vw;
+    max-height: 35vw;
+}
+
+#impg2 > div > img {
+    max-height: 35vw;
+}
+
+
 .image-parag > div > img {
-    margin: auto;
+    /*margin: auto;*/
     margin-top: 0;
-    height: auto;
-    width: 24vw; 
+    /*width: 24vw;*/ 
+    width: auto;
+    max-height: 40vw;
 }
 
 .group-img {
     width: 34vw !important;
 }
 
+.proj-flex {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+    text-align: left;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+
+    margin: auto;
+    width: 80vw;
+
+}
 
 
 #marques_list {
@@ -227,6 +259,7 @@ h4{
 
 #engagement {
     height: auto;
+    margin-bottom: 5vw;
 }
 
 

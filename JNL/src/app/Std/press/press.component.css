@@ -1,0 +1,86 @@
+h1 {
+    font-family: PlacardMT-Condensed;
+    font-size: 4em;
+    margin-bottom: 3vh;
+
+    text-align: center;
+}
+
+h2 {
+    margin-top: 5.9vw;
+    font-family: Atak-Light;
+    font-size: 50px;
+
+    text-align: center;
+}
+
+h4 {
+    margin: auto;
+    width: 58.3vw;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+
+
+.presse-main {
+    margin: auto;
+    width: 100vw;
+}
+
+.presse-main > div {
+    margin: auto;
+    left: 0;
+    width: 100vw;
+
+    text-align: center;
+}
+
+#presse_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
+    width: 50vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 4vw;
+    text-align: center;
+}
+
+#presse_list > a {
+    margin: auto;
+
+    font-size: 1.5em;
+    margin-right: 20px;
+    left: 0;
+}
+
+#presse_list > a:last-child {
+    margin-right: 0px;
+}
+
+#presse_list > a:hover {
+    text-decoration: underline;
+}
+
+
+.first-image {
+    width: 76vw;
+
+    margin: auto;
+    margin-top: 1.6vw;
+    margin-bottom: 4.2vw;
+}
+
+.four-flex {
+    display: flex;
+}
