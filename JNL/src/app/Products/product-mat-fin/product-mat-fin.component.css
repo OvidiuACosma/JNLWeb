@@ -23,9 +23,12 @@ hr{
     border-color: lightgrey;
     color:#fff;
 }
+.modal-dialog {
+    width: 322px;
+}
 
 /* workaround to fix bootstrap`s modal bug in Angular
-   Without this fix the background will cover the modal. */
+   Without this fix the dark background will cover the modal. */
 .modal{
     background-color: rgba(0, 0, 0, 0.3);
   }
