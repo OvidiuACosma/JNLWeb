@@ -87,11 +87,12 @@ hr {
 } */
 
 .carousel-indicators {
-    margin-bottom: 38vw; /*67vh;*/
     margin-left: 10%;
     margin-right: 10%;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    position: relative;
 }
 
 .carousel-indicators > li {
@@ -231,7 +232,6 @@ hr {
 #marques_main > h1 {
     margin: auto;
     margin-top: 1.2vw;
-    margin-bottom: 10vw;
 }
 
 /* #marques_list {
@@ -404,6 +404,7 @@ hr {
     }
 
 
+
     #une_histoire {
         height: 100% !important;
         padding: 0px;
@@ -439,7 +440,6 @@ hr {
     #marques_main {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
     }
 
     #marques_main > h1 {
@@ -527,23 +527,24 @@ hr {
 
     #projets {
         margin-bottom: 14vw;
-        width: 90vw;
+        width: 100vw;
         height: auto;
-        padding: 10px;
 
         text-align: center;
 
         display: flex;
+        align-content: space-between;
     }
 
     #projets > div > div > div > img {
         margin: auto;
         width: 80vw;
         height: auto;
+        text-align: center;
     }
     #projets > div > div > div > h2 {
         margin: auto;
-        width: 55.5vw;
+        width: 80vw;
     }
 
     #projets h3 {
@@ -551,7 +552,15 @@ hr {
         text-align: center;
         width: auto;
         font-size: 1.2em;
-        padding: 20px;
         font-family: Atak-Medium;
+    }
+
+    #projets > div > div > div {
+        width: 80vw;
+    }
+
+    #projets > div {
+        margin: 0px;
+        width: 80vw;
     }
 }
