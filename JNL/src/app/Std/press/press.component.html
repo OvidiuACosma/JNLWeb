@@ -1,20 +1,41 @@
 <div class="presse-main">
   <h1>PRESSE</h1>
 
-  <div id="press_list">
-    <a routerLink="/services" fragment="banqueImages">BANQUE IMAGES</a>
+  <div id="presse_list">
     <a routerLink="/services" fragment="catalogues">CATALOGUES</a>
+    <a routerLink="/services" fragment="banqueImages">BANQUE IMAGES</a>
     <a routerLink="/services" fragment="pressKit">PRESS KIT</a>
     <a routerLink="/services" fragment="parutions">PARUTIONS</a>
   </div>
 
   <div>
-    <h4>
-        Mauris at massa vestibulum, eleifend quam dignissim, auctor
-        nulla. Vestibulum ac justo tempor enim fringilla efficitur sit
-        amet eu orci. Morbi at condimentum libero.  
-    </h4>
-    <img class="first-image" alt="JNL Collection" src="assets/Images/Services/SV_pic1.jpg">
+    <img class="first-image" alt="JNL Collection" src="assets/Images/Presse/PS_pic1.jpg">
+  </div>
+
+  <div id="catalogues">
+    <h2>Catalogues</h2>
+
+    <div class="four-flex">
+      <div>
+        <img alt="JNL Collection" src="assets/Images/Presse/PS_jnlcolB.jpg">
+        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+      </div>
+
+      <div>
+        <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhammeB.jpg">
+        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+      </div>
+
+      <div>
+        <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaroB.jpg">
+        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+      </div>
+
+      <div>
+        <img alt="Luz Interiors" src="assets/Images/Presse/PS_luzB.jpg">
+        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+      </div>
+    </div>
   </div>
 
   <div id="banqueImages">
@@ -22,11 +43,159 @@
 
     <div class="four-flex">
       <div>
-        <img alt="JNL Collection" src="assets/Images/Presse/PS_jnl.jpg">
-        <spna>JNL Collection</spna>
+        <img alt="JNL Collection" src="assets/Images/Presse/PS_JNL.jpg">
+        <span>JNL Collection</span>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+      </div>
+
+      <div>
+        <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhamme.jpg">
+        <span>Vanhamme</span>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+      </div>
+
+      <div>
+        <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaro.jpg">
+        <span>Emanuel Ungaro Home</span>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+      </div>
+
+      <div>
+        <img alt="Luz Interiors" src="assets/Images/Presse/PS_luz.jpg">
+        <span>Luz Interiors</span>
         <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
         <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
       </div>
     </div>
+
+    <div id="pressKit">
+      <h2>Communiqués de presse</h2>
+  
+      <div class="four-flex">
+        <div>
+          <img alt="JNL Collection" src="assets/Images/Presse/PS_jnlY.jpg">
+          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        </div>
+        <div>
+          <img alt="JNL Collection" src="assets/Images/Presse/PS_jnlcolY.jpg">
+          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        </div>
+  
+        <div>
+          <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhammeY.jpg">
+          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        </div>
+      </div>
+      
+      <div class="four-flex">
+        <div>
+          <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaroY.jpg">
+          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        </div>
+  
+        <div>
+          <img alt="Luz Interiors" src="assets/Images/Presse/PS_luzY.jpg">
+          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="parutions">
+      <h2>Parutions</h2>
+    </div>
+
+    <div id='carousel-parutions' class='carousel slide carousel-marques' data-ride='carousel'>
+
+        <div class='carousel-indicators'>
+            <input type="radio" name="ind-parutions" data-target='#carousel-parutions' data-slide-to='0' class='active'>
+            <input type="radio" name="ind-parutions" data-target='#carousel-parutions' data-slide-to='1'>
+            <input type="radio" name="ind-parutions" data-target='#carousel-parutions' data-slide-to='2'>
+            <input type="radio" name="ind-parutions" data-target='#carousel-parutions' data-slide-to='3'>
+            <input type="radio" name="ind-parutions" data-target='#carousel-parutions' data-slide-to='4'>
+          </div>
+
+      <div class="carousel-inner">
+          <div class='carousel-item active'>
+            <div class="container">
+              <div class="carousel-item-image">
+                  <img src='/assets/Images/Savoir/SF_pic8.jpg' alt='JNL Collection' class="slide-image">
+              </div>
+              <div class="parutions-text">
+                  <div>
+                      Lorem ipsum dolor sit amet.
+                  </div>  
+              </div>
+            </div>
+          </div>
+
+          <div class='carousel-item' active="setActiveSlide(1)">
+              <div class="container">
+                  <div class="carousel-item-image">
+                      <img src='/assets/Images/Savoir/SF_pic4.jpg' alt='JNL Collection' class="slide-image">
+                  </div>
+                  <div class="parutions-text">     
+                    <div>             
+                        Lorem ipsum dolor sit amet.
+                      </div>
+
+                  </div>
+                </div>
+          </div>
+          <div class='carousel-item'>
+              <div class="container">
+                  <div class="carousel-item-image">
+                       <img src='/assets/Images/Savoir/SF_pic2.jpg' alt='JNL Collection' class="slide-image">
+                  </div>
+                  <div class="parutions-text">
+                      <div>
+                          Lorem ipsum dolor sit amet.
+                      </div>  
+                  </div>
+                </div>
+          </div>
+          <div class='carousel-item'>
+              <div class="container">
+                  <div class="carousel-item-image">
+                      <img src='/assets/Images/Savoir/SF_pic1.jpg' alt='JNL Collection' class="slide-image">
+                  </div>
+                  <div class="parutions-text">
+                      <div>
+                          Lorem ipsum dolor sit amet.
+                      </div> 
+                  </div>
+                  </div>
+          </div>
+          <div class='carousel-item'>
+              <div class="container">
+                  <div class="carousel-item-image">
+                      <img src='/assets/Images/Savoir/SF_pic4.jpg' alt='JNL Collection' class="slide-image">
+                  </div>
+                  <div class="parutions-text">
+                      <div>
+                          Lorem ipsum dolor sit amet.
+                      </div>  
+                  </div>
+                  </div>
+          </div>
+      </div>
+      
+      <!-- Controls 
+      <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
+          <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next'>
+          <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+          <span class="sr-only">Next</span>
+      </a>-->
+
+      
+   
+  </div>
+  <!--CAROUSEL-->
   </div>
 </div>
