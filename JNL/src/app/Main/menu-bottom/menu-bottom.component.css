@@ -93,27 +93,86 @@ input:focus, button:focus {
     align-items: flex-start;
 }
 
-
+.bottom-nav-mob {
+    display: none;
+}
 
 @media only screen and (max-width: 800px)
 {
-    #bottom_nav {
-        text-align: center;
-        padding: 0.7vw;
+    .bottom_nav {
+        display: none;
     }
 
-    #bottom_nav_links {
-        flex-direction: column;
-        
-    }
-    
-    #bottom-inline
-    {
-        flex-direction: column;
+    .bottom-nav-mob {
+        display: block;
     }
 
-    #bottom_line {
+    .bottom-nav-mob {
+        background-color: lightgrey;
+
+        width: 100vw;
+        height: 100%;
+
         display: flex;
         flex-direction: column;
+
+        padding: 5vw
+    }
+
+    .mob-2flex {
+        width: 100vw;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .mob-2flex > div:first-child {
+        width: 30vw;
+        display: flex;
+        margin-right: 5vw;
+        left: 0;
+    }
+
+    .mob-2flex > div:last-child {
+        width: 60vw;
+        display: flex;
+    }
+
+    .mob-2flex > div > div {
+        margin-top: 0;
+    }
+
+    #news_letter{
+        max-width: 55vw;
+    }
+
+    #news_letter > input {
+        width: 40vw;
+    }
+
+    #news_letter > button {
+        padding: 0px;
+        padding-top: 4px;
+        padding-right: 4px;
+    }
+
+    p, a {
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    .mob-links {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-family: "Atak-Light", sans-serif;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mob-links > a {
+        text-align: center;
+        margin-top: 20px;
     }
 }
