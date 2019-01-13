@@ -5,6 +5,7 @@ h1 {
 
     text-align: center;
 }
+
 h2 {
     margin-top: 5.9vw;
     font-family: Atak-Light;
@@ -22,6 +23,7 @@ h3 {
     margin-bottom: 1.5vw;
     text-align: center;
 }
+
 h4{
     margin: auto;
     width: 54vw;
@@ -130,8 +132,6 @@ h5 {
     font-size: 20px;
     text-align: left;
 } 
-
-
 
 .gallery-flex {
     width: 81.9vw;
@@ -480,7 +480,7 @@ input[type="radio"] {
         top:0;
     }
 
-    .slide-image{
+    .slide-image {
         height: auto;
         max-width: 80vw;
         position: relative;

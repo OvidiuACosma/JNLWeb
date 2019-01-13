@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { DataExchangeService } from 'src/app/_services';
 
 
 @Component({
@@ -10,10 +11,14 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 })
 export class HomeComponent implements OnInit {
 
+  language: string;
+
   constructor(private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private dataex: DataExchangeService) { }
 
   ngOnInit() {
+    this.language = this.dataex.getLanguage();
   }
 
   navigateToAnchor(fragment: string) {
