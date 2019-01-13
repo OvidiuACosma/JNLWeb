@@ -11,8 +11,12 @@ export class TranslationService {
 
   constructor(private http: HttpClient) { }
 
-  public getTextSearch() {
+  public getTextSearch(): Observable<any> {
     return this.http.get(`${this.urlAssets}/Main/search.json`);
+  }
+
+  public getTextHome(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Main/home.json`);
   }
 
 }

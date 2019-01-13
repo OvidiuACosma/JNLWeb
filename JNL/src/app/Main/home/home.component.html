@@ -11,13 +11,9 @@
 
 <div id="une_histoire"  class="main_divs">
   <div>
-    <h1>UNE HISTOIRE DE CRÉATION</h1>
-    <p>Au cœur de ses propres ateliers européens, le groupe JNL a insufflé
-          un vent d’exclusivité sur son processus de fabrication grâce à son talent
-          pour le sur-mesure. Qu’ils soient garnisseurs, ébénistes, sculpteurs,
-          ferronniers ou techniciens, ses artisans perpétuent un art ancestral qui
-          confère un cachet unique à chacune des créations.<br><br>
-      <a class="home_links" (click)="navigateTo('jnlGroup')">DÉCOUVRIR LE GROUPE </a>
+    <h1>{{text.histoireTitle}}</h1>
+    <p>{{text.histoireText}}<br><br>
+      <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.histoireButtonText}}</a>
     </p>
   </div>
 </div>

@@ -13,9 +13,9 @@ export class SearchComponent implements OnInit {
 
   @Output() toggleNavBar = new EventEmitter();
 
-  language: string;
-  languages: string[];
-  text: any;
+  public language: string;
+  languages: string[] = ['EN', 'FR'];
+  public text: any;
   public searchMode = false;
   public navBarStatus = true;
 
@@ -26,11 +26,11 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.dataex.currentNavBarStatus
     .subscribe(status => this.navBarStatus = status);
-    this.languages = ['EN', 'FR'];
-    if (!this.dataex.getLanguage()) {
-      this.dataex.setLanguage('EN');
-    }
-    this.language = this.dataex.getLanguage();
+    this.dataex.currentLanguage
+    .subscribe(lang => {
+      this.language = lang;
+      // this.getText(lang);
+    });
     this.getText(this.language);
   }
 
@@ -39,7 +39,6 @@ export class SearchComponent implements OnInit {
     .subscribe(data => {
       const res = data[0];
       this.getLanguageText(res);
-      console.log('Text: ', this.text);
     });
   }
 
@@ -99,6 +98,7 @@ export class SearchComponent implements OnInit {
 
   onChangeLanguage(lang: any) {
     this.language = lang;
+    this.dataex.setLanguage(lang);
     this.getText(this.language);
   }
 }

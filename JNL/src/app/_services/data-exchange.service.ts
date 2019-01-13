@@ -26,9 +26,8 @@ export class DataExchangeService {
   currentNavBarStatus = this.subjectNavBarStatus.asObservable();
 
   // Language
-  public getLanguage() {
-    return this.language;
-  }
+  private subjectLanguage = new BehaviorSubject<string>('EN');
+  currentLanguage = this.subjectLanguage.asObservable();
 
   constructor() { }
 
@@ -49,6 +48,6 @@ export class DataExchangeService {
   }
 
   public setLanguage(language: string) {
-    this.language = language;
+    this.subjectLanguage.next(language);
   }
 }
