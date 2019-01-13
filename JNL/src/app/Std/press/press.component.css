@@ -1,0 +1,313 @@
+h1 {
+    font-family: PlacardMT-Condensed;
+    font-size: 4em;
+    margin-bottom: 3vh;
+
+    text-align: center;
+}
+
+h2 {
+    margin-top: 5.9vw;
+    margin-bottom: 5.6vw;
+    font-family: Atak-Light;
+    font-size: 50px;
+
+    text-align: center;
+}
+
+h4 {
+    margin: auto;
+    width: 58.3vw;
+    font-size: 26px;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+
+
+.presse-main {
+    margin: auto;
+    width: 100vw;
+}
+
+.presse-main > div {
+    margin: auto;
+    left: 0;
+    width: 100vw;
+
+    text-align: center;
+}
+
+
+.home_links {
+    border: 1.5px solid #DBBB76;
+    padding: .38vw; /*0.3em;*/
+    padding-left: 1.25vw; /*1em;*/
+    padding-right: 1.25vw; /*1em;*/
+
+    font-size: 1.25vw;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+
+#presse_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
+    width: 50vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 4vw;
+    text-align: center;
+}
+
+#presse_list > a {
+    margin: auto;
+
+    font-size: 1.5em;
+    margin-right: 20px;
+    left: 0;
+}
+
+#presse_list > a:last-child {
+    margin-right: 0px;
+}
+
+#presse_list > a:hover {
+    text-decoration: underline;
+}
+
+
+.first-image {
+    width: 100vw;
+
+    left: 0;
+    margin-top: 1.6vw;
+    margin-bottom: 4.2vw;
+}
+
+
+.four-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 67.9vw;
+    margin: auto;
+}
+
+.four-flex > div {
+    margin: auto;
+    width: 15.8vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.four-flex > div > img {
+    width: 15.8vw;
+    margin-bottom: 1.9vw;
+}
+
+.four-flex > div > span {
+    font-family: Atak-Light;
+    font-size: 26px;
+
+    width: 15.8vw;
+    word-wrap: normal;
+
+    height: 12.5vw;
+}
+
+#pressKit > .four-flex {
+    width: 50.7vw;
+}
+
+#pressKit > .four-flex:last-child {
+    margin-top: 2.8vw;
+    width: 33.7vw;
+}
+
+
+.carousel-inner {
+
+    margin: 0px !important;
+
+    display: flex;
+}
+
+#blogCarousel {
+    height: 80vw;
+    margin: auto;
+}
+
+.row {
+    margin: auto;
+}
+.slide-image {
+    width: 100%;
+    height: 100%;
+    min-width: 23.8vw;
+    max-height: 35.7vw;
+
+    object-fit: cover;
+
+    margin-left: 30px;
+
+    text-align: left;
+    float: left;
+    
+    position: relative;
+}
+.carousel-marques {
+    width: 100%;
+    height: 53.5vw; /*60vh;*/
+    padding-top: 3.15vw; /*5vh;*/
+
+    
+    width: 23.8vw;
+
+    margin: auto;
+    margin-top: 5.3vw;
+
+}
+
+.carousel-control-prev, .carousel-control-next {
+    display: flex;
+    width: 5vw !important;
+}
+
+.carousel-arrows {
+    height: 4vw;
+    width: 2vw;
+    margin-top: auto;
+}
+
+
+.carousel-arrows {
+    margin-top: auto;
+}
+
+.carousel-item-content {
+    width: 23.7vw;
+}
+
+.carousel-item-image {
+    float: left;
+    padding-left: 0px;
+
+}
+
+
+/* .marques_img {
+    height: 50vh;
+    float: left;
+} */
+
+.carousel-indicators {
+    width: auto;
+    margin: auto;
+    margin-bottom: 2.8vw;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 1vw;
+
+    position: relative;
+}
+
+.carousel-indicators > li {
+    height: 0;
+    width: auto;
+    text-transform: uppercase;
+    text-indent: 0;
+    font-size: 1.88vw;
+}
+
+.carousel-indicators > span {
+    color: #555;
+}
+
+.carousel-indicators .active > span{
+    background-color: #555;
+}
+
+.carousel-indicators .active {
+    background-color: rgb(46, 46, 46);
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    height: 15px;
+    width: 15px;
+
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+    display: inline-block;
+
+    margin-right: 0.5em;
+    outline: none;
+
+    background-color: #BFBFBF;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    padding: 0px;
+
+    font-family: Atak-Regular;
+    font-size: 16px;
+}
+
+.parutions-text {
+
+    width: 23.7vw;
+
+    padding-top: 3vw;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+
+    text-align: left;
+    text-transform: uppercase;
+    
+}
+
+.parutions-text > div {
+    margin: auto;
+}
+
+.parutions-text > div > span {
+    
+    font-family: Atak-Light;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 800px) {
+    .parutions-text {
+        width: 80vw;
+        height: 40vw;
+        position: relative;
+        top:0;
+    }
+}

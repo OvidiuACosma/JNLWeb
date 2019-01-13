@@ -1,10 +1,10 @@
-<div class="les-marques-main">
+<div class="les-services-main">
   <h1>LES SERVICES </h1>
 
   <div id="services_list">
     <a routerLink="/services" fragment="expertise">L'EXPERTISE</a>
-    <a routerLink="/services" fragment="sur_mesure">LE SUR-MESURE</a>
-    <a routerLink="/services" fragment="votre">VOTRE PROJET</a>
+    <a routerLink="/services" fragment="surMesure">LE SUR-MESURE</a>
+    <a routerLink="/services" fragment="votreProjet">VOTRE PROJET</a>
   </div>
 
   <div id="expertise">
@@ -31,7 +31,7 @@
 
 
   
-  <div id="sur_mesure">
+  <div id="surMesure">
     <h2>Un service de conseil sur mesure</h2>
 
     <div class="sur-flex">
@@ -57,7 +57,6 @@
 
           <div>
               <img alt="JNL Collection" src="assets/Images/Services/SV_pic3.jpg">
-              <h5>Lorem ipsum dolor sit amet.</h5>
           </div>
 
           <div>
@@ -76,7 +75,7 @@
   </div>
 
   
-  <div id="votre">
+  <div id="votreProjets">
     
   <div class="contact_div">
       <h2>Votre projet</h2>
@@ -86,17 +85,18 @@
       <form class="contact_form">
         <div>
           <div>
+            <div>
             <select>
               <option selected disabled>Type de projet* 🡫</option>
               <option>Sujet 1</option>
               <option>Sujet 2</option>
               <option>Sujet 3</option>
             </select>
-            <br>
+          </div>
 
             <div>
               <span>Pouvez vous preciser?</span><br>
-              <textarea placeholder="Votre message*" rows="4" required maxlength="500"></textarea><br>
+              <textarea placeholder="Votre message*" rows="6" required maxlength="500"></textarea><br>
               <span>Max 500 caractères.</span>
             </div>
 
@@ -104,19 +104,23 @@
               <span>Sélectionnez les marques qui vous intéressent:</span>
               <div id="checks">
                 <div>
-                  <input type="checkbox" id="jnl"><label for="jnl">JNL Collection</label>
+                  <div>
+                    <input type="checkbox" id="jnl"><label for="jnl">JNL Collection</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="luz"><label for="luz">Luz Interiors</label>
+                  </div>
+              </div>
+              <div>
+                <div>
+                 <input type="checkbox" id="ungaro"><label for="ungaro">Emanuel Ungaro</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="ungaro"><label for="ungaro">Emanuel Ungaro</label>
-              </div>
-              <div>
-                  <input type="checkbox" id="luz"><label for="luz">Luz Interiors</label>
-              </div>
-              <div>
                   <input type="checkbox" id="vanhamme"><label for="vanhamme">Vanhamme</label>
                 </div>
               </div>
-          </div>
+              </div>  
+            </div>
           </div>
           <div>
             <input placeholder="Prenom*" reaquired/>

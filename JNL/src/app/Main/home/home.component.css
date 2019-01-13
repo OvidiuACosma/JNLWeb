@@ -26,9 +26,11 @@ hr {
 }
 
 .gallery_buttons {
-    height: 100vh;
+    height: 100%;
     width: 10vw;
     display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .gallery_buttons > div {
@@ -525,7 +527,7 @@ hr {
 
     #projets {
         margin-bottom: 14vw;
-        width: 100vw;
+        width: 90vw;
         height: auto;
         padding: 10px;
 
