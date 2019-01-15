@@ -132,9 +132,6 @@ h4{
     line-height: 1.2;
 }
 
-#impg2 {
-    height: 35vw;
-}
 
 #impg2 > div > p {
     
@@ -580,6 +577,8 @@ input[type="radio"] {
 
     font-family: Atak-Regular;
     font-size: 1.1vw;
+
+    padding: 0px;
 }
 .group-text
  {
@@ -732,7 +731,11 @@ input[type="radio"] {
 
     .image-parag > div > img {
         width: 80vw;
-        max-height: 100%;
+        max-height: 100% !important;
+    }
+
+    .proj-flex {
+        flex-direction: column;
     }
 
     .container {

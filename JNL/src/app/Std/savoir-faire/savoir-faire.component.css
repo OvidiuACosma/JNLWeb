@@ -41,6 +41,12 @@ h5 {
     margin-bottom: 0px;
 }
 
+
+video {
+    width: 87.3vw;
+    height: 51.5vw;
+}
+
 .marques_selected {
     text-decoration: underline !important;
 }
@@ -469,19 +475,20 @@ input[type="radio"] {
 
     .container {
         flex-direction: column;
-        height: auto;
+        height: 121.7vw !important;
         width: 80vw;
     }
 
     .steps-text {
         width: 80vw;
-        height: 40vw;
+        height: 80vw;
         position: relative;
         top:0;
     }
 
     .slide-image {
         height: auto;
+        min-width: 80vw;
         max-width: 80vw;
         position: relative;
         top:0;
@@ -493,10 +500,10 @@ input[type="radio"] {
 
     .carousel-inner {
         flex-direction: column;
-        height: 80vw;
+        height: 180vw;
     }
 
     .carousel-marques {
-        height: 80vw;
+        height: 128.7vw;
     }
 }

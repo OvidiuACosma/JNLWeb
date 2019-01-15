@@ -128,14 +128,7 @@ h4 {
     height: 12.5vw;
 }
 
-#pressKit > .four-flex {
-    width: 50.7vw;
-}
 
-#pressKit > .four-flex:last-child {
-    margin-top: 2.8vw;
-    width: 33.7vw;
-}
 
 
 .carousel-inner {
@@ -276,6 +269,10 @@ input[type="radio"] {
 
     font-family: Atak-Regular;
     font-size: 16px;
+}
+
+#parutions {
+    margin-bottom: 5vw;
 }
 
 .parutions-text {

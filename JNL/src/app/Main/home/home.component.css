@@ -1,6 +1,8 @@
 h1 {
     font-family: PlacardMT-Condensed;
     font-size: 5.03vw; /* 4em; */
+
+    text-transform: uppercase;
 }
 
 h3 {
@@ -292,6 +294,8 @@ hr {
 
 .more_links {
     font-family: Atak-Bold;
+
+    text-transform: uppercase;
 }
 
 #actualites > div > p >span {
@@ -323,16 +327,18 @@ hr {
 }
 
 #savoir {
-    margin: 55px;
+    margin: auto;
+    width: 87.3vw;
     height: 55vw;
-    min-height: 805px;
     display: flex;
+
+    color: white;
 }
 
-#savoir > div {
+/*#savoir > div {
     margin: auto;
     width: 87vw;
-    /*width: 1255px;*/
+    /*width: 1255px;
 
     height: 48.5vw;
     background-image: url("/assets/Images/Home/HM_video.png");
@@ -341,6 +347,25 @@ hr {
 
     display: flex;
     flex-direction: column;
+}*/
+
+#savoir > div:last-child {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 87.3vw;
+    height: 51.5vw;
+    margin: auto;
+}
+
+#savoir > div:last-child > div {
+    margin: auto;
+}
+
+video {
+    width: 87.3vw;
+    height: 51.5vw;
+    margin: auto;
 }
 
 #savoir > div > h1 {
@@ -393,6 +418,10 @@ hr {
 
 
 @media only screen and (max-width: 800px){
+
+    h1 {
+        font-size: 9.7vw;
+    }
 
     .gallery_buttons > div {
         padding: 1vw;
@@ -482,8 +511,8 @@ hr {
 
     #actualites {
         padding-top: 8.33vw; /*120px; */
-        padding-left: 3.47vw; /*50px; */
-        padding-right: 50px; 
+        /*padding-left: 3.47vw; /*50px; */
+       /* padding-right: 50px; */
     }
 
     #actualites > div {
@@ -520,9 +549,13 @@ hr {
     }
 
     #savoir > div {
-        margin: 0px;
-        width: 100%;
-        height: 200px;
+        margin: auto;
+        width: 100vw;
+    }
+
+    #savoir > div {
+        margin: auto;
+        width: 100vw !important;
     }
 
     #projets {
@@ -562,5 +595,60 @@ hr {
     #projets > div {
         margin: 0px;
         width: 80vw;
+    }
+
+    .container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .marque-text {
+        padding-top: 0px;
+    }
+
+    .carousel-marques {
+        height: auto;
+    }
+
+    #les_marques {
+        min-height: 145.5vw;
+        max-height: 145.5vw !important;
+    }
+
+    .marque-text{
+        text-align: center;
+    }
+
+    #une_histoire {
+        padding: 7.8vw;
+        padding-top: 15.5vw;
+        padding-bottom: 15.5vw;
+    }
+
+    #une_histoire > div {
+        padding: 0px;
+    }
+
+    .slide-image {
+        width: 58.9vw;
+    }
+
+    video {
+        width: 100vw;
+        height: auto;
+    }
+
+    .marque-text {
+        font-size: 4.2vw;
+    }
+
+    .home_links {
+        font-size: 3.9vw;
+    }
+
+    #actualites > div > p >span {
+        font-size: 3.6vw;
     }
 }

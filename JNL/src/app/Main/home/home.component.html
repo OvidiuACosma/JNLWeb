@@ -20,7 +20,7 @@
 
 <div id="les_marques" class="main_divs">
   <div id="marques_main">
-      <h1>LES MARQUES</h1>
+      <h1>{{text.marquesTitle}}</h1>
       <div id='carousel-custom' class='carousel slide carousel-marques' data-ride='carousel'>
          <!-- Indicators -->
       <ol class='carousel-indicators'>
@@ -35,13 +35,13 @@
                 <div class="carousel-item-image">
                   <img src='/assets/Images/Home/HM_JNL.png' alt='JNL Collection' class="slide-image">
                 </div>
-                <p class="marque-text">
-                      Subtil mélange entre le grand classicisme<br>
+                <div class="marque-text">
+                      <p>Subtil mélange entre le grand classicisme<br>
                       et les inspirations avant-gardistes,<br>
                       JNL Collection joue la carte de la personnalisation<br>
-                      et de l’éclectisme afin de sublimer les intérieurs.<br><br>
-                    <a class="home_links" (click)="navigateTo('marques', 'jnl')">DÉCOUVRIR L’UNIVERS </a>
-                </p>
+                      et de l’éclectisme afin de sublimer les intérieurs.</p><br><br>
+                    <a class="home_links" (click)="navigateTo('marques', 'jnl')">{{text.marquesButtonText}}</a>
+                </div>
               </div>
             </div>
 
@@ -56,7 +56,7 @@
                     comme elle a su traverser les âges.<br>
                     L’incroyable travail de ses artisans est une ode<br>
                     au confort et à l’art de s’assoir.<br><br>
-                  <a class="home_links" (click)="navigateTo('marques', 'vanhamme')">DÉCOUVRIR L’UNIVERS </a>
+                  <a class="home_links" (click)="navigateTo('marques', 'vanhamme')">{{text.marquesButtonText}}</a>
                 </p>
               </div>
             </div>
@@ -71,7 +71,7 @@
                     Ungaro Home dévoile sans détours<br>
                     les codes d’une opulence contemporaine<br>
                     au chic imparable.<br><br>
-                  <a class="home_links" (click)="navigateTo('marques', 'ungaro')">DÉCOUVRIR L’UNIVERS </a>
+                  <a class="home_links" (click)="navigateTo('marques', 'ungaro')">{{text.marquesButtonText}}</a>
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@
                   empreinte d’intemporalité, pensée<br>
                    pour habiller chambres et espaces de convivialité<br>
                   en toute simplicité.<br><br>
-                  <a class="home_links" (click)="navigateTo('marques', 'luz')">DÉCOUVRIR L’UNIVERS</a>
+                  <a class="home_links" (click)="navigateTo('marques', 'luz')">{{text.marquesButtonText}}</a>
                 </p>
               </div>
             </div>
@@ -107,7 +107,7 @@
 </div>
 
 <div id="actualites"  class="main_divs">
-  <h1>ACTUALITÉS</h1>
+  <h1>{{text.actualitesTitle}}</h1>
   <hr>
   <div>
     <p>
@@ -123,18 +123,7 @@
       veniam, quis nostrud exerci tation
       ullamcorper suscipit.<br><br>
       
-      <a class="more_links">+ LIRE LA SUITE</a>
-    </p>
-
-    <p>
-        <span>Lampe Sylvie</span><br>
-  
-      <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic2.png"><br><br>
-      Dolore magna aliquam erat volutpat.
-      Ut wisi enim ad minim veniam, quis
-      nostrud exerci tation ullamcorper
-      suscipit lobortis nisl ut aliquip ex ea
-      commodo conse.
+      <a class="more_links">+ {{text.readButton}}</a>
     </p>
 
     <p>
@@ -149,7 +138,7 @@
       suscipit lobortis nisl ut aliquip ex ea
       com Ut wisi enim ad minim veniam,
       quis nostrud exerci tation .<br><br>
-      <a class="more_links">+ LIRE LA SUITE</a>
+      <a class="more_links">+ {{text.readButton}}</a>
     </p>
 
     <p>
@@ -161,7 +150,7 @@
       nostrud exerci tation ullamcorper
       suscipit lobortis nisl ut aliquip ex ea
       commodo conse.<br><br>
-       <a class="more_links">+ LIRE LA SUITE</a>
+       <a class="more_links">+ {{text.readButton}}</a>
      </p>
   </div>
   
@@ -177,13 +166,13 @@
 
 <div id="savoir">
   <div>
-      <video width="320" height="240" controls>
-          <source src="assets\Videos\JNL_video.mp4" type="video/mp4">
+      <video width="87.3vw" height="33.3vw">
+          <source src="\assets\Video\JNL_video.mp4" type="video/mp4">
       </video>
   </div>
   <div>
-   <h1>LE SAVOIR FAIRE</h1>
-   <a class="home_links" (click)="navigateTo('savoirFaire')">DÉCOUVRIR LES ATELIERS</a>
+      <h1>LE SAVOIR FAIRE</h1>
+      <a class="home_links" (click)="navigateTo('savoirFaire')">DÉCOUVRIR LES ATELIERS</a>
   </div>
 </div>
 

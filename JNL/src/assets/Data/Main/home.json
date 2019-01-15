@@ -3,12 +3,22 @@
         "EN": {
             "histoireTitle": "ARTISANS OF DECORATION SINCE 1992",
             "histoireText": "At the heart of their own European studios, the JNL group has blown a breath of exclusivity over its manufacturing process while attracting great names in architecture; thanks to their talent for tailor-made design and development of one-of-a-kind pieces. Whether they are skilled upholsterers, carpenters, sculptors, metalworkers or technicians, their craftsmen perpetuate an ancestral art that gives a unique charm to each of its creations.",
-            "histoireButtonText": "discover the gruop"
+            "histoireButtonText": "discover the group",
+            "marquesTitle": "BRANDS",
+            "marquesJNL": "Subtil mélange entre le grand classicisme <br>et les inspirations avant-gardistes,<br>JNL Collection joue la carte de la personnalisation<br>et de l’éclectisme afin de sublimer les intérieurs.",
+            "marquesButtonText": "Discover the universe",
+            "actualitesTitle": "News",
+            "readButton": "read more"
         },
         "FR": {
             "histoireTitle": "UNE HISTOIRE DE CRÉATION",
             "histoireText": "Au cœur de ses propres ateliers européens, le groupe JNL a insufflé un vent d’exclusivité sur son processus de fabrication grâce à son talent pour le sur-mesure. Qu’ils soient garnisseurs, ébénistes, sculpteurs, ferronniers ou techniciens, ses artisans perpétuent un art ancestral qui confère un cachet unique à chacune des créations.",
-            "histoireButtonText": "découvrir le groupe"
+            "histoireButtonText": "découvrir le groupe",
+            "marquesTitle": "LES MARQUES",
+            "marquesJNL": "Subtil mélange entre le grand classicisme<br>et les inspirations avant-gardistes,<br>JNL Collection joue la carte de la personnalisation<br>et de l’éclectisme afin de sublimer les intérieurs.",
+            "marquesButtonText": "DÉCOUVRIR L’UNIVERS",
+            "actualitesTitle": "ACTUALITÉS",
+            "readButton": "lire la suite"
         }
     }
 ]
