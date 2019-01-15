@@ -73,8 +73,8 @@ hr {
 
 .carousel-item-image {
     float: left;
-    margin-right: 1vw;
-    padding-left: 4vw;
+    /*margin-right: 1vw;
+    padding-left: 4vw;*/
 }
 
 .slide-image {
@@ -89,8 +89,12 @@ hr {
 } */
 
 .carousel-indicators {
-    margin-left: 10%;
-    margin-right: 10%;
+   /* margin-left: 10%;
+    margin-right: 10%;*/
+
+    margin: auto;
+
+    width: 72.2vw;
     justify-content: space-between;
     flex-wrap: wrap;
 
@@ -122,6 +126,16 @@ hr {
      text-align: left;
      font-size: 1.5vw;
  }
+
+ .container2 {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .container2 > h2:first-child {
+     text-transform: uppercase;
+ }
+
 /* :host >>> .carousel-control-prev-icon {
     background-image: url("/assets/Images/Common/arrow_left.png");
     height: 4vw;
@@ -280,7 +294,7 @@ hr {
     width: 20vw;
 
     margin: auto;
-    margin-top: 0px;
+    margin-bottom: 0px;
 
     text-align: left;
     text-justify: justify;
@@ -335,10 +349,11 @@ hr {
     color: white;
 }
 
-/*#savoir > div {
+/*NO VIDEO*/
+#savoir > div:first-child {
     margin: auto;
     width: 87vw;
-    /*width: 1255px;
+    /*width: 1255px;*/
 
     height: 48.5vw;
     background-image: url("/assets/Images/Home/HM_video.png");
@@ -347,7 +362,7 @@ hr {
 
     display: flex;
     flex-direction: column;
-}*/
+}
 
 #savoir > div:last-child {
     position: absolute;
@@ -381,7 +396,6 @@ video {
 }
 
 #projets {
-    margin-bottom: 14vw;
     width: 100%;
 
     text-align: center;
@@ -417,10 +431,48 @@ video {
 }
 
 
+#carousel-projets {
+    width: 73.8vw;
+    height: auto;
+    margin: auto;
+    margin-bottom: 5vw;
+}
+
+.container2 {
+    text-align: center;
+    height: auto;
+}
+
+.container2 > .projets-text {
+    width: 59.3vw;
+    margin: auto;
+    font-family: Atak-Medium;
+    font-size: 1.8vw;
+
+}
+
+.container2 > div > img {
+    width: 59.3vw
+}
+
+.container2 > h2:nth-child(2) {
+    width: 59.3vw;
+    margin: auto;
+}
+
+#carousel-projets > a {
+    width: 3.1vw;
+    min-width: 20px;
+
+    padding-top: 20%;
+}
+
 @media only screen and (max-width: 800px){
 
     h1 {
         font-size: 9.7vw;
+        margin: auto;
+        text-align: center;
     }
 
     .gallery_buttons > div {
@@ -593,8 +645,7 @@ video {
     }
 
     #projets > div {
-        margin: 0px;
-        width: 80vw;
+        width: 100vw;
     }
 
     .container {

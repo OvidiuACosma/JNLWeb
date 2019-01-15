@@ -19,7 +19,21 @@
             "readButton": "read more",
 
             "savoirTitle": "Know-how",
-            "savoirButton": "Discover the workshops"
+            "savoirButton": "Discover the workshops",
+
+            "projetsTitle": "Projects",
+
+            "projetsCity1": "London",
+            "projets1": "Residential",
+            "projetsDescription1": "In partnership with interior design architect Shalini Misra",
+
+            "projetsCity2": "Paris",
+            "projets2": "Residential",
+            "projetsDescription2": "In partnership with interior design architect xxxx",
+
+            "projetsCity3": "Reims",
+            "projets3": "Royal Champagne Hotel & Spa",
+            "projetsDescription3": "Photo credit : MRTRIPPER"
         },
         "FR": {
             "histoireTitle": "UNE HISTOIRE DE CRÉATION",
@@ -40,7 +54,21 @@
             "readButton": "lire la suite",
 
             "savoirTitle": "Le savoir faire",
-            "savoirButton": "DÉCOUVRIR LES ATELIERS"
+            "savoirButton": "DÉCOUVRIR LES ATELIERS",
+
+            "projetsTitle": "Projets",
+
+            "projetsCity1": "Londres",
+            "projets1": "Résidentiel",
+            "projetsDescription1": "Projet réalisé en collaboration avec l’architecte d’intérieur Shalini Misra",
+
+            "projetsCity2": "London",
+            "projets2": "Résidentiel",
+            "projetsDescription2": "Projet réalisé en collaboration avec l’architecte d’intérieur xxx",
+
+            "projetsCity3": "Reims",
+            "projets3": "Royal Champagne Hotel & Spa",
+            "projetsDescription3": "Crédit photos : MRTRIPPER"
         }
     }
 ]
