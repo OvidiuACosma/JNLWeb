@@ -36,10 +36,7 @@
                   <img src='/assets/Images/Home/HM_JNL.png' alt='JNL Collection' class="slide-image">
                 </div>
                 <div class="marque-text">
-                      <p>Subtil mélange entre le grand classicisme<br>
-                      et les inspirations avant-gardistes,<br>
-                      JNL Collection joue la carte de la personnalisation<br>
-                      et de l’éclectisme afin de sublimer les intérieurs.</p><br><br>
+                      <p [innerHTML]="text.marquesJNL"></p><br><br>
                     <a class="home_links" (click)="navigateTo('marques', 'jnl')">{{text.marquesButtonText}}</a>
                 </div>
               </div>
@@ -50,14 +47,11 @@
                 <div class="carousel-item-image">
                   <img src='/assets/Images/Home/HM_VANHAMME.png' alt='Vanhamme Collection' class="slide-image">
                 </div>
-                <p class="marque-text">
-                    Véritable explorateur de l’assise,<br>
-                    la maison Vanhamme traverse les tendances<br>
-                    comme elle a su traverser les âges.<br>
-                    L’incroyable travail de ses artisans est une ode<br>
-                    au confort et à l’art de s’assoir.<br><br>
+                <div class="marque-text">
+                  <p [innerHTML]="text.marquesVanhamme"></p>
+                    <br><br>
                   <a class="home_links" (click)="navigateTo('marques', 'vanhamme')">{{text.marquesButtonText}}</a>
-                </p>
+                </div>
               </div>
             </div>
             <div class='carousel-item'>
@@ -65,14 +59,10 @@
                 <div class="carousel-item-image">
                   <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
                 </div>
-                <p class="marque-text">
-                    Jeux de motifs, matières précieuses,<br>
-                    finitions délicates...<br>
-                    Ungaro Home dévoile sans détours<br>
-                    les codes d’une opulence contemporaine<br>
-                    au chic imparable.<br><br>
+                <div class="marque-text">
+                  <p [innerHTML]="text.marquesUngaro"></p><br><br>
                   <a class="home_links" (click)="navigateTo('marques', 'ungaro')">{{text.marquesButtonText}}</a>
-                </p>
+                </div>
               </div>
             </div>
             <div class='carousel-item'>
@@ -80,13 +70,10 @@
                 <div class="carousel-item-image">
                   <img src='/assets/Images/Home/HM_LUZ.png' alt='LUZ-INTERIORS Collectionn' class="slide-image">
                 </div>
-                <p class="marque-text">
-                  Luz Interiors propose une collection<br>
-                  empreinte d’intemporalité, pensée<br>
-                   pour habiller chambres et espaces de convivialité<br>
-                  en toute simplicité.<br><br>
+                <div class="marque-text">
+                    <p [innerHTML]="text.marquesLuz"></p><br><br>
                   <a class="home_links" (click)="navigateTo('marques', 'luz')">{{text.marquesButtonText}}</a>
-                </p>
+                </div>
               </div>
             </div>
         </div>
@@ -111,45 +98,23 @@
   <hr>
   <div>
     <p>
-      <span>Maison&Objet 2019</span><br>
+      <span>{{text.actualites1}}</span><br>
 
       <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1.png"><br><br>
-
-      Lorem ipsum dolor sit amet, consectetuer
-      adipiscing elit, sed diam nonummy
-      nibh euismod tincidunt ut
-      laoreet dolore magna aliquam erat
-      volutpat. Ut wisi enim ad minim
-      veniam, quis nostrud exerci tation
-      ullamcorper suscipit.<br><br>
-      
       <a class="more_links">+ {{text.readButton}}</a>
     </p>
 
     <p>
-        <span>Partenariat</span><br>
+        <span>{{text.actualites2}}</span><br>
   
       <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3.png"><br><br>
-      Aliquam ipsum dolor sit amet,
-      consectetuer adipiscing elit, sed
-      diam nonummy nibh euismod tincidunt
-      ut laoreet dolore magna aliquam
-      erat volutpat. Ullamcorper
-      suscipit lobortis nisl ut aliquip ex ea
-      com Ut wisi enim ad minim veniam,
-      quis nostrud exerci tation .<br><br>
       <a class="more_links">+ {{text.readButton}}</a>
     </p>
 
     <p>
-        <span>Hôtel Panache</span><br>
+        <span>{{text.actualites3}}</span><br>
   
       <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic4.png"><br><br>
-      Dolore magna aliquam erat volutpat.
-      Ut wisi enim ad minim veniam, quis
-      nostrud exerci tation ullamcorper
-      suscipit lobortis nisl ut aliquip ex ea
-      commodo conse.<br><br>
        <a class="more_links">+ {{text.readButton}}</a>
      </p>
   </div>
@@ -171,8 +136,8 @@
       </video>
   </div>
   <div>
-      <h1>LE SAVOIR FAIRE</h1>
-      <a class="home_links" (click)="navigateTo('savoirFaire')">DÉCOUVRIR LES ATELIERS</a>
+      <h1>{{text.savoirTitle}}</h1>
+      <a class="home_links" (click)="navigateTo('savoirFaire')">{{text.savoirButton}}</a>
   </div>
 </div>
 

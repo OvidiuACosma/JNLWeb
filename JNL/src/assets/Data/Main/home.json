@@ -4,21 +4,43 @@
             "histoireTitle": "ARTISANS OF DECORATION SINCE 1992",
             "histoireText": "At the heart of their own European studios, the JNL group has blown a breath of exclusivity over its manufacturing process while attracting great names in architecture; thanks to their talent for tailor-made design and development of one-of-a-kind pieces. Whether they are skilled upholsterers, carpenters, sculptors, metalworkers or technicians, their craftsmen perpetuate an ancestral art that gives a unique charm to each of its creations.",
             "histoireButtonText": "discover the group",
+
             "marquesTitle": "BRANDS",
-            "marquesJNL": "Subtil mélange entre le grand classicisme <br>et les inspirations avant-gardistes,<br>JNL Collection joue la carte de la personnalisation<br>et de l’éclectisme afin de sublimer les intérieurs.",
+            "marquesJNL": "The spirit embodied by the JNL Collection is a subtle blend of great classicism and avant-garde inspiration. The brand uses personalization and eclecticism to create ultimately sublime interiors. ",
+            "marquesVanhamme": "As a true explorer in the art of seating, the Van Hamme brand has gone through trends as it has gone through the ages. The incredible work of its craftsmen brought to the comfort of a seat is an ode to the art of sitting.",
+            "marquesUngaro": "Sophisticated motifs, precious materials, and delicate finishes...<br>Emanuel Ungaro Home unveils its home designs in unstoppably chic and contemporary opulence.",
+            "marquesLuz": "Luz Interiors offers a timeless collection, designed to enliven any space with simplicity and conviviality. The simplest things are often the most complex to design.",
             "marquesButtonText": "Discover the universe",
+            
             "actualitesTitle": "News",
-            "readButton": "read more"
+            "actualites1": "Maison & Objet 2019",
+            "actualites2": "Welcome Tiger Lily rugs",
+            "actualites3": "The new gougé",
+            "readButton": "read more",
+
+            "savoirTitle": "Know-how",
+            "savoirButton": "Discover the workshops"
         },
         "FR": {
             "histoireTitle": "UNE HISTOIRE DE CRÉATION",
             "histoireText": "Au cœur de ses propres ateliers européens, le groupe JNL a insufflé un vent d’exclusivité sur son processus de fabrication grâce à son talent pour le sur-mesure. Qu’ils soient garnisseurs, ébénistes, sculpteurs, ferronniers ou techniciens, ses artisans perpétuent un art ancestral qui confère un cachet unique à chacune des créations.",
             "histoireButtonText": "découvrir le groupe",
+
             "marquesTitle": "LES MARQUES",
             "marquesJNL": "Subtil mélange entre le grand classicisme<br>et les inspirations avant-gardistes,<br>JNL Collection joue la carte de la personnalisation<br>et de l’éclectisme afin de sublimer les intérieurs.",
+            "marquesVanhamme": "Véritable explorateur de l’assise, la maison Vanhamme traverse les tendances comme elle a su traverser les âges. L’incroyable travail de ses artisans est une ode au confort et à l’art de s’assoir.",
+            "marquesUngaro": "Jeux de motifs, matières précieuses, finitions délicates...<br>Ungaro Home dévoile sans détours les codes d’une opulence contemporaine au chic imparable.",
+            "marquesLuz": "Luz Interiors propose une collection empreinte d’intemporalité, pensée pour habiller chambres et espaces de convivialité en toute simplicité.",
             "marquesButtonText": "DÉCOUVRIR L’UNIVERS",
+
             "actualitesTitle": "ACTUALITÉS",
-            "readButton": "lire la suite"
+            "actualites1": "Maison & Objet 2019",
+            "actualites2": "Les tapis Tiger Lily chez JNL",
+            "actualites3": "Le nouveau gougé",
+            "readButton": "lire la suite",
+
+            "savoirTitle": "Le savoir faire",
+            "savoirButton": "DÉCOUVRIR LES ATELIERS"
         }
     }
 ]
