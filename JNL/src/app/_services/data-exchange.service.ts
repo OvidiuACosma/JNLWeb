@@ -8,6 +8,8 @@ import { User } from '../_models';
 })
 export class DataExchangeService {
 
+  private language: string;
+
   private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable();
 
@@ -22,6 +24,10 @@ export class DataExchangeService {
   // NavBar Status
   private subjectNavBarStatus = new BehaviorSubject<boolean>(false);
   currentNavBarStatus = this.subjectNavBarStatus.asObservable();
+
+  // Language
+  private subjectLanguage = new BehaviorSubject<string>('EN');
+  currentLanguage = this.subjectLanguage.asObservable();
 
   constructor() { }
 
@@ -39,5 +45,9 @@ export class DataExchangeService {
 
   public setNavBarStatus(status: boolean) {
     this.subjectNavBarStatus.next(status);
+  }
+
+  public setLanguage(language: string) {
+    this.subjectLanguage.next(language);
   }
 }

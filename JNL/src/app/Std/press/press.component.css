@@ -303,6 +303,11 @@ input[type="radio"] {
     text-transform: uppercase;
 }
 
+#catalogues, #banqueImages, #pressKit, #parutions {
+    margin-top: -60px;
+    padding-top: 60px;
+}
+
 @media only screen and (max-width: 800px) {
     .parutions-text {
         width: 80vw;

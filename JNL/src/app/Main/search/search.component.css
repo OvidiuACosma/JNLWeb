@@ -17,6 +17,21 @@
     text-transform: uppercase;
 }
 
+.select-lang {
+    border: 0px none;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 110%;
+    padding: 10%;
+}
+
+/* For IE10 */
+.select-lang::-ms-expand {
+    display: none;
+  }
+
 #bar {
     position: fixed;
     top: 0px;
