@@ -1,5 +1,5 @@
 a:hover {
-    color: #777;
+    color: white !important;
 }
 input:focus, button:focus {
     outline: none;
@@ -73,6 +73,7 @@ input:focus, button:focus {
     border: 1px solid black;
 
     max-width: 250px;
+    padding: 0.1vw;
 }
 
 #news_letter > input {
@@ -86,6 +87,9 @@ input:focus, button:focus {
     border: 0;
     background-color: white;
     float: right;
+    padding: 0px;
+    padding-top: 4px;
+    padding-right: 4px;
 }
 #bottom-inline
 {
@@ -174,5 +178,14 @@ input:focus, button:focus {
     .mob-links > a {
         text-align: center;
         margin-top: 20px;
+    }
+
+    .columnHead {
+        font-size: 3vw;
+    }
+
+    #mobile-social {
+        width: 95px;
+        margin: auto;
     }
 }

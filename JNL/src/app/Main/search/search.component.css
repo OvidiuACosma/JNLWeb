@@ -24,7 +24,7 @@
     -moz-appearance: none;
     appearance: none;
     width: 110%;
-    padding: 10%;
+    padding-right: 20px;
 }
 
 /* For IE10 */
@@ -150,40 +150,51 @@
     margin: auto;
 }
 
+#mob-searchbar {
+    display: none;
+}
 
 
 
 @media only screen and (max-width: 800px)
 {
     /*TOP BAR*/
-    #top-bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
+    #bar {
+        display: none;
     }
 
-    #menu-logo {
-        margin: auto;
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    #top_buttons {
-        flex-direction: column-reverse;
-        margin-top: 40px;
-    }
-
-    #top_buttons > span {
-        /**/background-color: grey;
+    #mob-searchbar {
         width: 100vw;
-        margin: 0;
+        max-width: 100%;
+        height: 60px;
+        display: block;
+        background-color: #121A2D;
+        color: white !important;
+
+        padding: 20px;
+
+        display: flex;
+        justify-content: space-between;
     }
-    
-    /*SEARCH BAR*/
-    #search_bar >  input  {
-        width: 90vw;
+
+    #menu-button {
+        color: white !important;
+        margin-top: -5px;
     }
+
+    .top-button {
+        font-family: 'FontAwesome';
+        content: "\faSearch";
+        color: white !important;
+    }
+
+    #loupe {
+        padding-right: 10px;
+    }
+
+    .image-link {
+        height: 19PX;
+    }
+
+
 }

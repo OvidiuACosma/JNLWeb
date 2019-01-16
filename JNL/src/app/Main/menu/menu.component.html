@@ -1,13 +1,13 @@
 <nav id="side_nav" *ngIf="!isCollapsed">
     <div id="side_nav_links">
         <div>
-            <span (click)="NavigateTo('products')">Les Produits</span>
-            <a (click)="NavigateTo('products')">Chercher</a>
-            <a (click)="NavigateTo('products')">Telecharger</a>
+            <span (click)="NavigateTo('products')">{{text.produits}}</span>
+            <a (click)="NavigateTo('products')">{{text.chercher}}</a>
+            <a (click)="NavigateTo('products')">{{text.telecharger}}</a>
         </div>
         
         <div>
-            <span (click)="NavigateTo('marques')">Les Marques</span>
+            <span (click)="NavigateTo('marques')">{{text.marques}}</span>
             <a (click)="NavigateTo('marques', 'jnl')">JNL Collection</a>
             <a (click)="NavigateTo('marques', 'vanhamme')">Vanhamme</a>
             <a (click)="NavigateTo('marques', 'ungaro')">Emanuel Ungaro Home</a>
@@ -15,38 +15,37 @@
         </div>
         
         <div>
-            <span (click)="NavigateTo('savoirFaire')">Le Savoir-Faire</span>
-            <a (click)="NavigateTo('savoirFaire', 'atelier')">L'Atelier</a>
-            <a (click)="NavigateTo('savoirFaire', 'fabrication')">La Fabrication</a>
+            <span (click)="NavigateTo('savoirFaire')">{{text.savoir}}</span>
+            <a (click)="NavigateTo('savoirFaire', 'atelier')">{{text.atelier}}</a>
+            <a (click)="NavigateTo('savoirFaire', 'fabrication')">{{text.fabrication}}</a>
         </div>
 
         <div>
-            <span (click)="NavigateTo('services')">Les Services</span>
-            <a (click)="NavigateTo('services', 'expertise')">L'Expertise</a>
-            <a (click)="NavigateTo('services', 'surMesure')">Le Sur Mesure</a>
-            <a (click)="NavigateTo('services', 'votreProjet')">Votre Projet</a>
+            <span (click)="NavigateTo('services')">{{text.services}}</span>
+            <a (click)="NavigateTo('services', 'expertise')">{{text.expertise}}</a>
+            <a (click)="NavigateTo('services', 'surMesure')">{{text.surmesure}}</a>
+            <a (click)="NavigateTo('services', 'votreProjet')">{{text.votreprojet}}</a>
         </div>
 
         <div>
-            <span (click)="NavigateTo('jnlGroup')">Le Groupe</span>
-            <a (click)="NavigateTo('jnlGroup', 'histoire')">L'Histoire</a>
-            <a (click)="NavigateTo('jnlGroup', 'equipe')">L'Equipe</a>
-            <a (click)="NavigateTo('jnlGroup', 'engagement')">L'Engagement</a>
-            <a (click)="NavigateTo('jnlGroup', 'projets')">Les Projets</a>
-            <a (click)="NavigateTo('jnlGroup', 'archives')">Les Archives</a>
+            <span (click)="NavigateTo('jnlGroup')">{{text.groupe}}</span>
+            <a (click)="NavigateTo('jnlGroup', 'histoire')">{{text.histoire}}</a>
+            <a (click)="NavigateTo('jnlGroup', 'equipe')">{{text.equipe}}</a>
+            <a (click)="NavigateTo('jnlGroup', 'engagement')">{{text.engagement}}</a>
+            <a (click)="NavigateTo('jnlGroup', 'projets')">{{text.projets}}</a>
+            <a (click)="NavigateTo('jnlGroup', 'archives')">{{text.archives}}</a>
             
         </div>
         
         <div>
-            <span (click)="NavigateTo('press')">Presse</span>
-            <a (click)="NavigateTo('press', 'banqueImages')">Banque Images</a>
-            <a (click)="NavigateTo('press', 'catalogues')">Catalogues</a>
-            <a (click)="NavigateTo('press', 'pressKit')">Press Kit</a>
-            <a (click)="NavigateTo('press', 'parutions')">Parutions</a>
+            <span (click)="NavigateTo('press')">{{text.presse}}</span>
+            <a (click)="NavigateTo('press', 'catalogues')">{{text.catalogues}}</a>
+            <a (click)="NavigateTo('press', 'banqueImages')">{{text.banque}}</a>
+            <a (click)="NavigateTo('press', 'parutions')">{{text.parutions}}</a>
         </div>
         
         <div>
-            <span (click)="NavigateTo('contact')">Contact</span>
+            <span (click)="NavigateTo('contact')">{{text.contact}}</span>
         </div>
         <div>  
           <a href="https://www.instagram.com/jnl_design/" target="_blank"><img alt="JNL Collection Instagram" 
@@ -58,9 +57,9 @@
     
 
         <div id="side_bottom_line">
-            <a (click)="NavigateTo('legal')">Mentions Legales</a>
-            <a (click)="NavigateTo('gdpr')">Politique de Confidentialite</a><br>
-            <a (click)="NavigateTo('credits')">Credits</a>
+            <a (click)="NavigateTo('legal')">{{text.mentions}}</a>
+            <a (click)="NavigateTo('gdpr')">{{text.politique}}</a><br>
+            <a (click)="NavigateTo('credits')">{{text.credits}}</a>
         </div>
     </div>
 

@@ -26,3 +26,15 @@
        </div>
    </div>
    </div>
+
+   <div id="mob-searchbar"> 
+       <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()"></span>
+       <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
+        <span>
+            <i class="fa fa-search" aria-hidden="true" id="loupe"></i>
+            <a class="top-button" *ngIf="!searchMode" 
+                (click)="goSearchMode()"></a>
+            <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
+                (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
+        </span>
+   </div>

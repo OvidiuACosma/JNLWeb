@@ -100,6 +100,10 @@
     text-align: left;
 }
 
+a:focus, img:focus {
+    outline: none;
+}
+
 @media only screen and (max-width: 800px)
 {
     #menu-image-div {
@@ -112,5 +116,13 @@
 
     #side_nav_links {
         width: 100vw;
+    }
+
+    #side_nav {
+        padding-top: 7vw; 
+    }
+
+    #side_nav_links > div > a {
+        margin: 0px;
     }
 }

@@ -25,6 +25,23 @@ h4 {
     text-align: center;
 }
 
+
+video {
+    width: 87.3vw;
+    height: 51.5vw;
+}
+
+/*NO VIDEO*/
+video {
+    margin: auto;
+    width: 87vw;
+
+    height: 48.5vw;
+    background-image: url("/assets/Images/Home/HM_video.png");
+    background-size: cover;
+    background-position: center center;
+}
+
 .first-image {
     width: 76vw;
 
@@ -319,7 +336,7 @@ button
 }
 
 
-#votreProjets {
+#votreProjet {
     width: 100vw;
 }
 
@@ -356,7 +373,7 @@ button
     justify-content: space-between;
 }
 
-#expertise, #surMesure, #votreProjets {
+#expertise, #surMesure, #votreProjet {
     margin-top: -60px;
     padding-top: 60px;
 }
@@ -376,8 +393,16 @@ button
         word-wrap: normal;
     }
 
+    h4 {
+        width: 80vw;
+    }
+
     button {
         margin-top: 0px;
+    }
+
+    input {
+        margin-top: 20px;
     }
 
     .sur-flex {

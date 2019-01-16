@@ -3,15 +3,15 @@
   <div id="bottom_nav_links">
       <div>
         <p class="columnHead">
-          <a (click)="NavigateTo('products')">Les Produits</a>
+          <a (click)="NavigateTo('products')">{{text.produits}}</a>
         </p>
-        <a (click)="NavigateTo('products')">Chercher</a><br>
-        <a (click)="NavigateTo('products')">Telecharger</a>
+        <a (click)="NavigateTo('products')">{{text.chercher}}</a><br>
+        <a (click)="NavigateTo('products')">{{text.telecharger}}</a>
       </div>
       
       <div>
         <p class="columnHead">
-          <a (click)="NavigateTo('marques')">Les Marques</a>
+          <a (click)="NavigateTo('marques')">{{text.marques}}</a>
         </p>
         <a (click)="NavigateTo('marques', 'jnl')">JNL Collection</a><br>
         <a (click)="NavigateTo('marques', 'vanhamme')">Vanhamme</a><br>
@@ -21,46 +21,45 @@
       
       <div>
         <p class="columnHead">
-          <a (click)="NavigateTo('savoirFaire')">Le Savoir-Faire</a>
+          <a (click)="NavigateTo('savoirFaire')">{{text.savoir}}</a>
         </p>
-        <a (click)="NavigateTo('savoirFaire', 'atelier')">L'Atelier</a><br>
-        <a (click)="NavigateTo('savoirFaire', 'fabrication')">La Fabrication</a><br>
+        <a (click)="NavigateTo('savoirFaire', 'atelier')">{{text.atelier}}</a><br>
+        <a (click)="NavigateTo('savoirFaire', 'fabrication')">{{text.fabrication}}</a><br>
       </div>
 
       <div>
         <p class="columnHead">
-          <a (click)="NavigateTo('services')">Les Services</a>
+          <a (click)="NavigateTo('services')">{{text.services}}</a>
         </p>
-        <a (click)="NavigateTo('services', 'expertise')">L'Expertise</a><br>
-        <a (click)="NavigateTo('services', 'surMesure')">Le Sur Mesure</a><br>
-        <a (click)="NavigateTo('services', 'votreProjet')">Votre Projet</a><br>
+        <a (click)="NavigateTo('services', 'expertise')">{{text.expertise}}</a><br>
+        <a (click)="NavigateTo('services', 'surMesure')">{{text.surmesure}}</a><br>
+        <a (click)="NavigateTo('services', 'votreProjet')">{{text.votreprojet}}</a><br>
       </div>
 
       <div>
         <p class="columnHead">
-          <a (click)="NavigateTo('jnlGroup')">Le Groupe</a>
+          <a (click)="NavigateTo('jnlGroup')">{{text.groupe}}</a>
         </p>
-        <a (click)="NavigateTo('jnlGroup', 'histoire')">L'Histoire</a><br>
-        <a (click)="NavigateTo('jnlGroup', 'equipe')">L'Equipe</a><br>
-        <a (click)="NavigateTo('jnlGroup', 'engagement')">L'Engagement</a><br>
-        <a (click)="NavigateTo('jnlGroup', 'projets')">Les Projets</a><br>
-        <a (click)="NavigateTo('jnlGroup', 'archives')">Les Archives</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'histoire')">{{text.histoire}}</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'equipe')">{{text.equipe}}</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'engagement')">{{text.engagement}}</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'projets')">{{text.projets}}</a><br>
+        <a (click)="NavigateTo('jnlGroup', 'archives')">{{text.archives}}</a><br>
         
       </div>
       
       <div>
         <p class="columnHead">
-          <a (click)="NavigateTo('press')">Presse</a>
+          <a (click)="NavigateTo('press')">{{text.presse}}</a>
         </p>
-        <a (click)="NavigateTo('press', 'banqueImages')">Banque Images</a><br>
-        <a (click)="NavigateTo('press', 'catalogues')">Catalogues</a><br>
-        <a (click)="NavigateTo('press', 'pressKit')">Press Kit</a><br>
-        <a (click)="NavigateTo('press', 'parutions')">Parutions</a><br>
+        <a (click)="NavigateTo('press', 'catalogues')">{{text.catalogues}}</a><br>
+        <a (click)="NavigateTo('press', 'banqueImages')">{{text.banque}}</a><br>
+        <a (click)="NavigateTo('press', 'parutions')">{{text.parutions}}</a><br>
       </div>
     </div>
 
       <div id="fb_in">
-        <p class="columnHead">Nous Suivre</p>
+        <p class="columnHead">{{text.suivre}}</p>
         <a href="https://www.instagram.com/jnl_design/" target="_blank">
           <img alt="JNL Collection Instagram" src="assets/Images/Common/InstagramIcon.png" height="30vh">
         </a>&nbsp;&nbsp;
@@ -69,9 +68,9 @@
         </a>
         <br>
 
-        <p class="columnHead">Newsletter</p>
+        <p class="columnHead">{{text.newsletter}}</p>
         <form id="news_letter">
-            <input type="email" placeholder="Enter your email"/>
+            <input type="email" placeholder="{{text.email}}"/>
             <button>&#10095;</button>
         </form>
         <br>
@@ -80,9 +79,9 @@
 
   <div id="bottom_line">
       <br>
-      <a (click)="NavigateTo('legal')">Mentions Legales</a>
-      <a (click)="NavigateTo('gdpr')">Politique de Confidentialite</a>
-      <a (click)="NavigateTo('credits')">Credits</a>
+      <a (click)="NavigateTo('legal')">{{text.mentions}}</a>
+      <a (click)="NavigateTo('gdpr')">{{text.politique}}</a>
+      <a (click)="NavigateTo('credits')">{{text.credits}}</a>
   </div>
 </nav>
 
@@ -90,28 +89,30 @@
   <div class="mob-2flex">
     <div>
       <div>
-        <p class="columnHead">Nous Suivre</p>
-        <a href="https://www.instagram.com/jnl_design/" target="_blank">
-          <img alt="JNL Collection Instagram" src="assets/Images/Common/InstagramIcon.png" height="40vw">
-        </a>&nbsp;&nbsp;
-        <a href="https://www.facebook.com/JNLCollectionWorldwilde/" target="_blank">
-          <img alt="JNL Collection Facebook" src="assets/Images/Common/FacebookIcon.png" height="40vw"><br>
-        </a>
+        <p class="columnHead">{{text.suivre}}</p>
+        <div id="mobile-social">
+          <a href="https://www.instagram.com/jnl_design/" target="_blank">
+            <img alt="JNL Collection Instagram" src="assets/Images/Common/InstagramIcon.png" height="40vw">
+          </a>&nbsp;&nbsp;
+          <a href="https://www.facebook.com/JNLCollectionWorldwilde/" target="_blank">
+            <img alt="JNL Collection Facebook" src="assets/Images/Common/FacebookIcon.png" height="40vw"><br>
+          </a>
+        </div>
       </div>
     </div>
     <div>
       <div>
-        <p class="columnHead">Newsletter</p>
+        <p class="columnHead">{{text.newsletter}}</p>
         <form id="news_letter">
-            <input type="email" placeholder="Enter your email"/>
+            <input type="email" placeholder="{{text.email}}"/>
             <button>&#10095;</button>
         </form>
       </div>
     </div>
   </div>
   <div class="mob-links">
-      <a (click)="NavigateTo('legal')">Mentions Legales</a>
-      <a (click)="NavigateTo('gdpr')">Politique de Confidentialite</a>
-      <a (click)="NavigateTo('credits')">Credits</a>
+      <a (click)="NavigateTo('legal')">{{text.mentions}}</a>
+      <a (click)="NavigateTo('gdpr')">{{text.politique}}</a>
+      <a (click)="NavigateTo('credits')">{{text.credits}}</a>
   </div>
 </nav>
