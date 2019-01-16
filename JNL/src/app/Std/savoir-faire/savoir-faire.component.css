@@ -45,6 +45,15 @@ h5 {
 video {
     width: 87.3vw;
     height: 51.5vw;
+    /*NO VIDEO */
+
+    margin: auto;
+    width: 87vw;
+
+    height: 48.5vw;
+    background-image: url("/assets/Images/Home/HM_video.png");
+    background-size: cover;
+    background-position: center center;
 }
 
 .marques_selected {
@@ -455,33 +464,39 @@ input[type="radio"] {
 
 
 @media only screen and (max-width: 800px) {
+
+    h4 {
+        width: 80vw;
+    }
+    
     #atelier > h4 {
         width: 90vw;
     }
 
     .ateliers-flex {
         flex-direction: column;
+        width: 80vw;
     }
 
     .ateliers-flex > div {
-        width: 70vw;
+        width: 80vw;
         flex-direction: column;
     }
     
     .ateliers-flex > div > div > img {
-        width: 70vw;
+        width: 80vw;
     }
 
 
     .container {
         flex-direction: column;
-        height: 121.7vw !important;
+        height: 141.7vw !important;
         width: 80vw;
     }
 
     .steps-text {
         width: 80vw;
-        height: 80vw;
+        height: 100vw;
         position: relative;
         top:0;
     }
@@ -504,6 +519,6 @@ input[type="radio"] {
     }
 
     .carousel-marques {
-        height: 128.7vw;
+        height: 148.7vw;
     }
 }

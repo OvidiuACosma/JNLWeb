@@ -19,4 +19,8 @@ export class TranslationService {
     return this.http.get(`${this.urlAssets}/Main/home.json`);
   }
 
+  public getTextMenu(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Main/menu.json`);
+  }
+
 }

@@ -1,0 +1,81 @@
+[
+    {
+        "EN": {
+            "produits": "Products",
+            "chercher": "Finder",
+            "telecharger": "Download",
+
+            "marques": "Brands",
+
+            "savoir": "Kow-How",
+            "atelier": "Workshop",
+            "fabrication": "Production",
+
+            "services": "Services",
+            "expertise": "Expertise",
+            "surmesure": "Tailor-Made Approach",
+            "votreprojet": "Your Project",
+
+            "groupe": "Group",
+            "histoire": "About",
+            "equipe": "People",
+            "engagement": "Commitment",
+            "projets": "Projects",
+            "archives": "Archives",
+
+            "presse": "Press",
+            "catalogues": "Catalogues",
+            "banque": "Image Bank",
+            "parutions": "Review",
+
+            "contact": "Contact",
+
+            "mentions": "Legal Notices",
+            "politique": "Privacy Policy",
+            "credits": "Credits",
+
+            "suivre": "Follow Us",
+            "newsletter": "Newsletter",
+            "email": "Enter your email"
+
+        },
+        "FR": {
+            "produits": "Produits",
+            "chercher": "Chercher",
+            "telecharger": "Télécharger",
+
+            "marques": "Les Marques",
+
+            "savoir": "Le Savoir-Faire",
+            "atelier": "L'Atelier",
+            "fabrication": "La Fabrication",
+
+            "services": "Les Services",
+            "expertise": "L'Expertise",
+            "surmesure": "Le Sur Mesure",
+            "votreprojet": "Votre Projet",
+
+            "groupe": "Le Groupe",
+            "histoire": "L'Histoire",
+            "equipe": "L'Equipe",
+            "engagement": "L'Engagement",
+            "projets": "Les Projets",
+            "archives": "Les Archives",
+
+            "presse": "Presse",
+            "catalogues": "Catalogues",
+            "banque": "Banque Images",
+            "parutions": "Parutions",
+
+            "contact": "Contact",
+
+            "mentions": "Mentions Légales",
+            "politique": "Politique de Confidentialité",
+            "credits": "Crédits",
+
+            "suivre": "Nous Suivre",
+            "newsletter": "Newsletter",
+            "email": "Votre e-mail"
+        }
+    }
+]

@@ -279,6 +279,10 @@ hr {
     font-size: 1.5vw; /*1.2em;*/
 }
 
+.container > .carousel-item-image > .slide-image {
+    margin-top: 3vw;
+}
+
 #actualites {
     padding-top: 120px; 
     padding-left: 50px; 

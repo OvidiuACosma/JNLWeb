@@ -140,6 +140,7 @@ h6 {
     width: 100vw;
     height: auto;
 
+
 }
 
 
@@ -422,14 +423,25 @@ h6 {
     margin: 0;
 }
 
+
 @media only screen and (max-width: 800px) {
     
+    h1 {
+        font-size: 9.7vw;
+    }
+
+    h2 {
+        font-size: 5.6vw;
+    }
+
+
     .heritage > div {
         width: 80vw;
     }
 
     .heritage > div > p{
         width: auto;
+        font-size: 4.2vw;
     }
 
     .flex-div {
@@ -441,7 +453,7 @@ h6 {
     }
     
     .flex-div > div > img {
-        
+        width: 80vw !important;
         text-align: center;
         margin: auto;
         margin-bottom: 1.7vw;
@@ -459,23 +471,50 @@ h6 {
         width: 80vw;
     }
 
+
+
     .home-links-flex {
         flex-direction: column;
-        height: 12vw;
         width: 60vw;
+        font-size: 0.8em;
+    }
+
+    .home-links-flex > a , .home_links {
+        font-size: 1.1em;
+        margin-bottom: 10px;
     }
 
     #autres {
         width: 83vw;
-        height: 20vw;
+        height: auto;
     }
 
     #autres > p {
         background-color: #D3D3D3 !important;
         width: 80vw !important;
-        height: 20vw;
+        height: 10vw;
         text-align: center !important;
    
         display: flex;
+    }
+
+    .carousel-indicators {
+        width: 80vw;
+    }
+
+    .carousel-indicators > li {
+        font-size: 0.8em;
+    }
+
+    .carousel-produits {
+        height: 60vw;
+    }
+
+    .flex-div > div > p, .flex-div > div > span, h6, .flex-div > div > div > span {
+        font-size: 4.2vw;
+    }
+
+    #autres > p > span {
+        font-size: 4.2vw;
     }
 }

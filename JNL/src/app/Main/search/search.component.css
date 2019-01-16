@@ -24,7 +24,7 @@
     -moz-appearance: none;
     appearance: none;
     width: 110%;
-    padding: 10%;
+    padding-right: 20px;
 }
 
 /* For IE10 */
