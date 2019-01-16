@@ -17,7 +17,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
 import { routing } from './app-routing.module';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { DataExchangeService, ConfigService, AlertService, AuthenticationService, UserService,
-         TranslationService } from './_services';
+         TranslationService, ProductsService} from './_services';
 import { AuthGuard } from './_guards';
 import { BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
@@ -71,6 +71,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     AuthGuard,
     AuthenticationService,
     TranslationService,
+    ProductsService,
     UserService,
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
