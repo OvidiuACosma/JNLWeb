@@ -22,48 +22,17 @@
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
           <b>---Tissus</b>
-          <br>
-          <div>
-            lista
-            <ul>
-              <li *ngFor="let tissu of tissus">
-                  {{tissu.CodeProd}}
-              </li>
-            </ul>
+          <div class="clear"></div>
+          <div class="row text-lg-left">
+            <div class="col-lg-2 col-md-4 col-6 text-center"  *ngFor="let tissu of tissus">
+              <a id="thumbnail-img" data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
+                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\{{tissu.codeProd | uppercase }}.jpg" alt="">
+              </a>
+              {{tissu.model}}
+              <div class="clear"></div>
+            </div>
           </div>
-          <div class="row text-center text-lg-left">
-            <div class="col-lg-2 col-md-4 col-6">
-              <a data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\GA10KO02.jpg" alt="">
-              </a>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-              <a data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\GA10KO02.jpg" alt="">
-              </a>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-              <a data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\GA10KO02.jpg" alt="">
-              </a>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-              <a data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\GA10KO02.jpg" alt="">
-              </a>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-              <a data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\GA10KO02.jpg" alt="">
-              </a>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-              <a data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\GA10KO02.jpg" alt="">
-              </a>
-            </div>
 
-          </div>
           <nav>
             <ul class="pagination pagination-sm justify-content-center">
               <li class="page-item disabled">
