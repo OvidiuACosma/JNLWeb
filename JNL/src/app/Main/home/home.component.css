@@ -1,6 +1,8 @@
 h1 {
     font-family: PlacardMT-Condensed;
     font-size: 5.03vw; /* 4em; */
+
+    text-transform: uppercase;
 }
 
 h3 {
@@ -71,8 +73,8 @@ hr {
 
 .carousel-item-image {
     float: left;
-    margin-right: 1vw;
-    padding-left: 4vw;
+    /*margin-right: 1vw;
+    padding-left: 4vw;*/
 }
 
 .slide-image {
@@ -87,11 +89,16 @@ hr {
 } */
 
 .carousel-indicators {
-    margin-bottom: 38vw; /*67vh;*/
-    margin-left: 10%;
-    margin-right: 10%;
+   /* margin-left: 10%;
+    margin-right: 10%;*/
+
+    margin: auto;
+
+    width: 72.2vw;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    position: relative;
 }
 
 .carousel-indicators > li {
@@ -119,6 +126,16 @@ hr {
      text-align: left;
      font-size: 1.5vw;
  }
+
+ .container2 {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .container2 > h2:first-child {
+     text-transform: uppercase;
+ }
+
 /* :host >>> .carousel-control-prev-icon {
     background-image: url("/assets/Images/Common/arrow_left.png");
     height: 4vw;
@@ -231,7 +248,6 @@ hr {
 #marques_main > h1 {
     margin: auto;
     margin-top: 1.2vw;
-    margin-bottom: 10vw;
 }
 
 /* #marques_list {
@@ -263,6 +279,10 @@ hr {
     font-size: 1.5vw; /*1.2em;*/
 }
 
+.container > .carousel-item-image > .slide-image {
+    margin-top: 3vw;
+}
+
 #actualites {
     padding-top: 120px; 
     padding-left: 50px; 
@@ -278,7 +298,7 @@ hr {
     width: 20vw;
 
     margin: auto;
-    margin-top: 0px;
+    margin-bottom: 0px;
 
     text-align: left;
     text-justify: justify;
@@ -292,6 +312,8 @@ hr {
 
 .more_links {
     font-family: Atak-Bold;
+
+    text-transform: uppercase;
 }
 
 #actualites > div > p >span {
@@ -323,13 +345,16 @@ hr {
 }
 
 #savoir {
-    margin: 55px;
+    margin: auto;
+    width: 87.3vw;
     height: 55vw;
-    min-height: 805px;
     display: flex;
+
+    color: white;
 }
 
-#savoir > div {
+/*NO VIDEO*/
+#savoir > div:first-child {
     margin: auto;
     width: 87vw;
     /*width: 1255px;*/
@@ -341,6 +366,25 @@ hr {
 
     display: flex;
     flex-direction: column;
+}
+
+#savoir > div:last-child {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 87.3vw;
+    height: 51.5vw;
+    margin: auto;
+}
+
+#savoir > div:last-child > div {
+    margin: auto;
+}
+
+video {
+    width: 87.3vw;
+    height: 51.5vw;
+    margin: auto;
 }
 
 #savoir > div > h1 {
@@ -356,7 +400,6 @@ hr {
 }
 
 #projets {
-    margin-bottom: 14vw;
     width: 100%;
 
     text-align: center;
@@ -392,7 +435,49 @@ hr {
 }
 
 
+#carousel-projets {
+    width: 73.8vw;
+    height: auto;
+    margin: auto;
+    margin-bottom: 5vw;
+}
+
+.container2 {
+    text-align: center;
+    height: auto;
+}
+
+.container2 > .projets-text {
+    width: 59.3vw;
+    margin: auto;
+    font-family: Atak-Medium;
+    font-size: 1.8vw;
+
+}
+
+.container2 > div > img {
+    width: 59.3vw
+}
+
+.container2 > h2:nth-child(2) {
+    width: 59.3vw;
+    margin: auto;
+}
+
+#carousel-projets > a {
+    width: 3.1vw;
+    min-width: 20px;
+
+    padding-top: 20%;
+}
+
 @media only screen and (max-width: 800px){
+
+    h1 {
+        font-size: 9.7vw;
+        margin: auto;
+        text-align: center;
+    }
 
     .gallery_buttons > div {
         padding: 1vw;
@@ -402,6 +487,7 @@ hr {
         width: 2vw;
         min-width: 20px;
     }
+
 
 
     #une_histoire {
@@ -439,7 +525,6 @@ hr {
     #marques_main {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
     }
 
     #marques_main > h1 {
@@ -482,8 +567,8 @@ hr {
 
     #actualites {
         padding-top: 8.33vw; /*120px; */
-        padding-left: 3.47vw; /*50px; */
-        padding-right: 50px; 
+        /*padding-left: 3.47vw; /*50px; */
+       /* padding-right: 50px; */
     }
 
     #actualites > div {
@@ -520,30 +605,35 @@ hr {
     }
 
     #savoir > div {
-        margin: 0px;
-        width: 100%;
-        height: 200px;
+        margin: auto;
+        width: 100vw;
+    }
+
+    #savoir > div {
+        margin: auto;
+        width: 100vw !important;
     }
 
     #projets {
         margin-bottom: 14vw;
-        width: 90vw;
+        width: 100vw;
         height: auto;
-        padding: 10px;
 
         text-align: center;
 
         display: flex;
+        align-content: space-between;
     }
 
     #projets > div > div > div > img {
         margin: auto;
         width: 80vw;
         height: auto;
+        text-align: center;
     }
     #projets > div > div > div > h2 {
         margin: auto;
-        width: 55.5vw;
+        width: 80vw;
     }
 
     #projets h3 {
@@ -551,7 +641,69 @@ hr {
         text-align: center;
         width: auto;
         font-size: 1.2em;
-        padding: 20px;
         font-family: Atak-Medium;
+    }
+
+    #projets > div > div > div {
+        width: 80vw;
+    }
+
+    #projets > div {
+        width: 100vw;
+    }
+
+    .container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .marque-text {
+        padding-top: 0px;
+    }
+
+    .carousel-marques {
+        height: auto;
+    }
+
+    #les_marques {
+        min-height: 145.5vw;
+        max-height: 145.5vw !important;
+    }
+
+    .marque-text{
+        text-align: center;
+    }
+
+    #une_histoire {
+        padding: 7.8vw;
+        padding-top: 15.5vw;
+        padding-bottom: 15.5vw;
+    }
+
+    #une_histoire > div {
+        padding: 0px;
+    }
+
+    .slide-image {
+        width: 58.9vw;
+    }
+
+    video {
+        width: 100vw;
+        height: auto;
+    }
+
+    .marque-text {
+        font-size: 4.2vw;
+    }
+
+    .home_links {
+        font-size: 3.9vw;
+    }
+
+    #actualites > div > p >span {
+        font-size: 3.6vw;
     }
 }

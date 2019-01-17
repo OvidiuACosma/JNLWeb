@@ -132,9 +132,6 @@ h4{
     line-height: 1.2;
 }
 
-#impg2 {
-    height: 35vw;
-}
 
 #impg2 > div > p {
     
@@ -413,6 +410,8 @@ h4{
 
     margin-left: 7.8vw;
     margin-right: 7.8vw;
+
+    margin-bottom: 5vw;
 }
 
 #archives > div {
@@ -580,6 +579,8 @@ input[type="radio"] {
 
     font-family: Atak-Regular;
     font-size: 1.1vw;
+
+    padding: 0px;
 }
 .group-text
  {
@@ -662,6 +663,33 @@ input[type="radio"] {
 
 @media only screen and (max-width: 800px)
 {
+    h2 {
+        font-size: 7.6vw;
+    }
+    h3 {
+        font-size: 3.8vw;
+    }
+    h4 {
+        font-size: 3.8vw;
+        width: 80vw;
+        margin-top: 10vw;
+
+        text-align: center !important;
+    }
+    span {
+        font-size: 4.2vw;
+    }
+
+    .quote-bar > h4 {
+        font-size: 4.2vw;
+    }
+
+    .image-parag > div > p {
+        font-size: 4.2vw !important;
+        margin-bottom: 5vw;
+        height: auto;
+    }
+
     .les-marques-main {
         font-size: 200% !important;
     }
@@ -681,6 +709,10 @@ input[type="radio"] {
     #equipe > div > div {
         width: 70vw;
         margin: auto;
+    }
+
+    #equipe > div > div > p, .group-text, .quote-bar > p {
+        font-size: 4.2vw;
     }
 
     #equipe > div {
@@ -705,12 +737,6 @@ input[type="radio"] {
         height: auto;
     }
 
-    h4 {
-        width: 80vw;
-        margin-top: 10vw;
-
-        text-align: center !important;
-    }
 
     .image-parag {
         width: 80vw;
@@ -732,7 +758,11 @@ input[type="radio"] {
 
     .image-parag > div > img {
         width: 80vw;
-        max-height: 100%;
+        max-height: 100% !important;
+    }
+
+    .proj-flex {
+        flex-direction: column;
     }
 
     .container {
@@ -778,6 +808,14 @@ input[type="radio"] {
     #engagement .image-parag > p {
         padding-right: 0px;
         padding-left: 0vw;
+    }
+
+    #impg2 > div > p{
+        max-height: 100%;
+    }
+
+    .proj-flex {
+        font-size: 4.2vw;
     }
 }
 

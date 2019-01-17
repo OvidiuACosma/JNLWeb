@@ -6,7 +6,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
 import { CreditsComponent, GDPRComponent, LegalComponent } from './Extras';
 import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
          ProductDimensionsComponent, ProductCataloguesComponent} from './Products';
-import { JnlGroupComponent, MarquesComponent, PressComponent, SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
+import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
+  SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch : 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'productDimensions', component: ProductDimensionsComponent },
   { path: 'productCatalogues', component: ProductCataloguesComponent},
 
+  { path: 'actualites', component: ActualiteComponent },
   { path: 'jnlGroup', component: JnlGroupComponent },
   { path: 'marques', component: MarquesComponent },
   { path: 'marque/:marque', component: MarqueComponent },
