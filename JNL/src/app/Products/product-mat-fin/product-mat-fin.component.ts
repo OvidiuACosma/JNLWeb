@@ -10,6 +10,7 @@ export class ProductMatFinComponent implements OnInit {
 
   public detail = 'tissu';
   public tissus: any[];
+  public source: 'assets\Images\Products\JNL\Garnissage\Tissu\GA10KO02_Print.jpg';
 
   constructor(private productsService: ProductsService) { }
 
