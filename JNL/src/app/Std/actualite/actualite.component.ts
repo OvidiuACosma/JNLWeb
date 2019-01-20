@@ -12,4 +12,6 @@ export class ActualiteComponent implements OnInit {
   ngOnInit() {
   }
 
+  navigateTo(comp: string) {
+  }
 }

@@ -46,7 +46,7 @@ export class ProductMatFinComponent implements OnInit {
     this.productsService.getTissus()
     .subscribe(tissus => {
         this.tissus = tissus;
-        console.log('TISSUS: ', tissus);
+       // console.log('TISSUS: ', tissus);
     });
   }
 

@@ -28,6 +28,10 @@ hr{
     color:#fff;
 }
 
+.clear{
+    height: 20px;
+}
+
 /* workaround to fix bootstrap`s modal bug in Angular
    Without this fix the dark background will cover the modal. */
 .modal {
@@ -40,6 +44,10 @@ hr{
 
   #garnissage-detail {
       margin: 5px;
+  }
+
+  #thumbnail-img {
+      margin-bottom: 0px !important;
   }
 
   label {
