@@ -8,7 +8,7 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
   styleUrls: ['./jnl-group.component.css']
 })
 export class JnlGroupComponent implements OnInit, AfterViewChecked {
- 
+
   language: string;
   text: any;
 
