@@ -3,9 +3,19 @@
     100% {margin-left:0px;}
 }
 
+@-webkit-keyframes slidein {
+    0%   {-webkit-margin-start:-1500px;}
+    100% {-webkit-margin-start:0px;}
+}
+
 @keyframes fadein {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+    0% {-webkit-opacity: 0;}
+    100% {-webkit-opacity: 1;}
 }
 
 .menu_image {

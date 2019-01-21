@@ -6,7 +6,7 @@ h1 {
 }
 h2 {
     font-family: Atak-Regular;
-    font-size: 50px;
+    font-size: 3.5vw;
 }
 
 h3 {
@@ -99,6 +99,9 @@ h3 {
 
 @media only screen and (max-width: 800px)
 {
+    h2 {
+        font-size: 7.9vw;
+    }
     #marques_list {
         flex-direction: column;
         flex-wrap: nowrap;
