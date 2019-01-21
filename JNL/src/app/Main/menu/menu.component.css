@@ -46,7 +46,10 @@
     font-family: Atak-Regular;
 
     animation-name: fadein; /* see above @slidein*/
+    -webkit-animation-name: fadein;
+    transition: fadein .8s;
     animation-duration: .8s;
+    -webkit-animation-duration: .8s;
 }
 
 #side_nav:hover {
