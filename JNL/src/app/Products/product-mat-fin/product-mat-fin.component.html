@@ -1,3 +1,41 @@
+<!-- MODAL -->
+<div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
+  aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">{{tissuModel}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="garnissage-detail">
+          <div class="card col-6" style="width: 25rem;">
+            <img [src]="source" class="card-img-top" alt="...">
+            <!--
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+          </div>
+          -->
+          </div>
+          <div col-6>
+            <ul style="list-style-type:none">
+              <li><b>Name: </b><label>{{tissuModel}}</label></li>
+              <li><b>Code: </b><label>{{tissuCodeProd}}</label></li>
+              <li><b>Dimensions: </b><label>{{tissuDimensions}}</label></li>
+              <li><b>Composition: </b><label>{{tissuCompositionFR}}</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTAINER -->
 <div id="container">
   <h5><b>Mati&egrave;res &amp; Finitions</b></h5>
   <hr>
@@ -23,10 +61,11 @@
         <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
           <b>---Tissus</b>
           <div class="clear"></div>
-          <div class="row text-lg-left">
-            <div class="col-lg-2 col-md-4 col-6 text-center"  *ngFor="let tissu of tissus">
-              <a id="thumbnail-img" data-toggle="modal" data-target="#garnissageModal" class="d-block mb-4">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\{{tissu.codeProd | uppercase }}.jpg" alt="">
+          <div *ngIf="detail==='tissu'" class="row text-lg-left">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let tissu of tissus">
+              <a id="thumbnail-img" data-toggle="modal" data-target="#garnissageModal" class="d-block">
+                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\{{tissu.codeProd | uppercase }}.jpg"
+                  alt="" [attr.data-tissuid]="tissu.id-1" (click)="setTissuID($event)">
               </a>
               {{tissu.model}}
               <div class="clear"></div>
@@ -71,40 +110,4 @@
     </div>
   </div>
   <br>
-</div>
-
-<div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
-  aria-hidden="true" data-backdrop="false">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Kong Scarlet</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row" id="garnissage-detail">
-          <div class="card" style="width: 25rem;">
-            <img [src]="source" class="card-img-top" alt="...">
-            <!--
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
-            </div>
-            -->
-          </div>
-          <div>
-            <ul style="list-style-type:none">
-              <li><b>Name: </b><label>Kong Scarlet</label></li>
-              <li><b>Code: </b><label>GA10KO02</label></li>
-              <li><b>Dimensions: </b><label>138 cm Raccord 0</label></li>
-              <li><b>Composition: </b><label>55% PA 29% PE 16% CO</label></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
