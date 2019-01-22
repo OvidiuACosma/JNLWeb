@@ -9,7 +9,7 @@ h1 {
 h2 {
     margin-top: 5.9vw;
     font-family: Atak-Light;
-    font-size: 50px;
+    font-size: 3.5vw;
 
     text-align: center;
 }
@@ -17,7 +17,7 @@ h2 {
 h4 {
     margin: auto;
     width: 58.3vw;
-    font-size: 26px;
+    font-size: 1.8vw;
 
     font-family: Atak-Medium;
 
@@ -81,12 +81,12 @@ video {
 
 .quote-bar > p {
     font-family: Atak-LightItalic;
-    font-size: 26px;
+    font-size: 1.8vw;
 }
 
 .quote-bar > h4 {
     font-family: Atak-Bold;
-    font-size: 14px;
+    font-size: 1vw;
     margin-top: 0px;
 }
 
@@ -121,12 +121,12 @@ video {
 .sur-flex > div > div {
     
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
 } 
 .sur-flex > div > div > span {
 
     font-family: Atak-Bold;
-    font-size: 16px;
+    font-size: 1.1vw;
 
 } 
 
@@ -139,7 +139,7 @@ video {
     margin-bottom: 10.8vw;
 
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
     text-align: left;
 } 
 
@@ -228,7 +228,7 @@ textarea{
 
 .contact_div > div > p {
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
     text-align: center;
 }
 .contact_form
@@ -440,4 +440,58 @@ button
     .contact_form > div > div:first-child {
         margin-bottom: 5vw;
     }
+
+
+
+
+
+
+
+    h2 {
+        font-size: 13.9vw;
+    }
+    
+    h4 {
+        font-size: 5.2vw;
+    }
+    
+    
+    .quote-bar > p {
+        font-family: Atak-LightItalic;
+        font-size: 7.2vw;
+    }
+    
+    .quote-bar > h4 {
+        font-size: 3.9vw;
+    }
+    
+    .sur-flex > div > div {
+        font-size: 5.5vw;
+    } 
+    .sur-flex > div > div > span {
+        font-size: 4.4vw;
+    
+    } 
+    
+    .sur-flex > div:nth-child(2) > div:first-child {
+        font-size: 5.5vw; 
+    } 
+    
+    
+    
+    
+    
+    
+   
+    .contact_div
+    {
+        font-size: 5.5vw;
+        
+    }
+    
+   
+    .contact_div > div > p {
+        font-size: 5.5vw;
+    }
+   
 }

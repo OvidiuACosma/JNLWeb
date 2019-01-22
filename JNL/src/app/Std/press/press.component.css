@@ -10,7 +10,7 @@ h2 {
     margin-top: 5.9vw;
     margin-bottom: 5.6vw;
     font-family: Atak-Light;
-    font-size: 50px;
+    font-size: 3.5vw;
 
     text-align: center;
 }
@@ -18,7 +18,7 @@ h2 {
 h4 {
     margin: auto;
     width: 58.3vw;
-    font-size: 26px;
+    font-size: 1.8vw;
 
     font-family: Atak-Medium;
 
@@ -124,7 +124,7 @@ h4 {
 
 .four-flex > div > span {
     font-family: Atak-Light;
-    font-size: 26px;
+    font-size: 1.8vw;
 
     width: 15.8vw;
     word-wrap: normal;
@@ -286,7 +286,7 @@ input[type="radio"] {
     padding-top: 3vw;
 
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
 
     text-align: left;
     text-transform: uppercase;
@@ -300,7 +300,7 @@ input[type="radio"] {
 .parutions-text > div > span {
     
     font-family: Atak-Light;
-    font-size: 26px;
+    font-size: 1.8vw;
     text-transform: uppercase;
 }
 
@@ -315,5 +315,22 @@ input[type="radio"] {
         height: 40vw;
         position: relative;
         top:0;
+    }
+
+    h2 {
+        font-size: 13.9vw;
+    }
+
+    h4 {
+        font-size: 7.2vw;
+    }
+
+
+    .parutions-text {
+        font-size: 5.5vw;
+    }
+
+    .parutions-text > div > span {
+        font-size: 7.2vw;
     }
 }
