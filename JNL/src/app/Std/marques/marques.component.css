@@ -1,9 +1,10 @@
 h1 {
     font-family: PlacardMT-Condensed;
-    font-size: 4em;
+    font-size: 5.03vw; /*4em;*/
     margin-bottom: 3vh;
     text-transform: uppercase;
 }
+
 h2 {
     font-family: Atak-Regular;
     font-size: 3.5vw;
@@ -13,11 +14,10 @@ h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
-    font-size: 20px;
+    font-size: 1.6vw; /*20px;*/
 
     margin-bottom: 1.5vw;
 }
-
 
 .location {
     font-family: Atak-Regular;
@@ -25,6 +25,7 @@ h3 {
 
     margin-bottom: 5.5vw;
 }
+
 .marques_selected {
     text-decoration: underline !important;
 }
@@ -33,10 +34,10 @@ h3 {
 {
     border: 1.5px solid #DBBB76;
     padding: 0.3em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1.35vw;
+    padding-right: 1.35vw;
 
-    font-size: 1em;
+    font-size: 1.35vw; /*1em;*/
 
     text-transform: uppercase;
 }
@@ -70,7 +71,7 @@ h3 {
 #marques_list {
     margin: auto;
     font-family: Atak-Light;
-    font-size: 1em;
+    font-size: 1.2vw; /*1em;*/
     width: 73vw;
     
     display: flex;
@@ -99,9 +100,10 @@ h3 {
 
 @media only screen and (max-width: 800px)
 {
-    h2 {
-        font-size: 7.9vw;
-    }
+    /*h2 {
+        font-size: 3.5vw;7.9vw;
+    }*/
+
     #marques_list {
         flex-direction: column;
         flex-wrap: nowrap;
