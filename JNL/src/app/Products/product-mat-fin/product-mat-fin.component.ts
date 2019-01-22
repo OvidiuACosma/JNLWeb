@@ -11,9 +11,18 @@ export class ProductMatFinComponent implements OnInit {
   public detail = 'tissu';
   public tissus: any[];
 
+  // data used in the modal
+  public source = '';
+  public tissuModel = '';
+  public tissuCodeProd = '';
+  public tissuDimensions = '';
+  public tissuCompositionFR = '';
+
+
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
+    this.detail = 'tissu';
   }
 
   setDetail(index: number) {
@@ -42,13 +51,27 @@ export class ProductMatFinComponent implements OnInit {
         this.detail = 'miroir';
         break;
       }
+      default: {
+        this.detail = 'tissu';
+      }
     }
+
     this.productsService.getTissus()
     .subscribe(tissus => {
         this.tissus = tissus;
-       // console.log('TISSUS: ', tissus);
+        // console.log('TISSUS: ', tissus[0].model);
     });
   }
+
+  setTissuID(event) {
+    const tissuID = event.target.dataset.tissuid;
+    this.tissuModel = this.tissus[tissuID].model;
+    this.tissuCodeProd = this.tissus[tissuID].codeProd.toUpperCase();
+    this.tissuDimensions = this.tissus[tissuID].dimensions;
+    this.tissuCompositionFR = this.tissus[tissuID].compositionFR;
+    this.source = 'assets\\Images\\Products\\JNL\\Garnissage\\Tissu\\' + this.tissuCodeProd + '_Print.jpg';
+    // console.log(event.target.dataset.tissuid);
+ }
 
   closeModal() {
     const modal = document.getElementById('garnissageModal');

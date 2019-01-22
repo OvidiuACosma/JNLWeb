@@ -1,8 +1,11 @@
-hr{
+hr {
     border-width: 1px;
     border-style: solid;
 }
-
+ ul {
+    margin-left: 10px;
+    padding: 0px !important;
+ }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: lightgrey;
@@ -42,12 +45,16 @@ hr{
     position: relative;
   }
 
-  #garnissage-detail {
-      margin: 5px;
+.modal-body {
+    padding: 0px !important;
+}
+
+.card {
+      padding: 0px !important;
   }
 
-  #thumbnail-img {
-      margin-bottom: 0px !important;
+  #garnissage-detail {
+      margin: 5px;
   }
 
   label {
