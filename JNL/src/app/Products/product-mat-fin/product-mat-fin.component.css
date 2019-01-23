@@ -3,7 +3,8 @@ hr {
     border-style: solid;
 }
 
- ul {
+/* data list from modal */
+ul {
     margin-left: 10px;
     padding: 0px !important;
  }
@@ -56,6 +57,10 @@ hr {
 }
 
 .card {
+    padding: 0px !important;
+}
+
+#thumbnail-container {
     padding: 0px !important;
 }
 
