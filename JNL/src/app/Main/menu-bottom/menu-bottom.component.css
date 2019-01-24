@@ -13,7 +13,8 @@ input:focus, button:focus {
 }
 
 .bottom_nav > div {
-    font-size: 1.1px;
+    font-size: 1.1vw;
+    letter-spacing: 0.1vw;
     color: #212529;
 }
 

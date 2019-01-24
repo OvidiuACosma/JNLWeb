@@ -32,7 +32,7 @@
           <a (click)="NavigateTo('services')">{{text.services}}</a>
         </p>
         <a (click)="NavigateTo('services', 'expertise')">{{text.expertise}}</a><br>
-        <a (click)="NavigateTo('services', 'surMesure')">{{text.surmesure}}</a><br>
+        <a (click)="NavigateTo('services', 'surMesure')" [innerHTML]="text.surmesureBottom"></a><br>
         <a (click)="NavigateTo('services', 'votreProjet')">{{text.votreprojet}}</a><br>
       </div>
 
