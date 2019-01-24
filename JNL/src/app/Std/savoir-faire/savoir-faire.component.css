@@ -9,7 +9,7 @@ h1 {
 h2 {
     margin-top: 5.9vw;
     font-family: Atak-Light;
-    font-size: 50px;
+    font-size: 3.5vw;
 
     text-align: center;
 }
@@ -18,7 +18,7 @@ h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
-    font-size: 20px;
+    font-size: 1.4vw;
 
     margin-bottom: 1.5vw;
     text-align: center;
@@ -27,7 +27,7 @@ h3 {
 h4{
     margin: auto;
     width: 54vw;
-    font-size: 26px;
+    font-size: 1.8vw;
 
     font-family: Atak-Medium;
 
@@ -36,7 +36,7 @@ h4{
 }
 h5 {
     font-family: Atak-Regular;
-    font-size: 16px;
+    font-size: 1.1vw;
     text-align: left;
     margin-bottom: 0px;
 }
@@ -126,12 +126,12 @@ video {
 .ateliers-flex > div > div {
     
     font-family: Atak-LightItalic;
-    font-size: 26px;
+    font-size: 1.8vw;
 } 
 .ateliers-flex > div > div > span {
 
     font-family: Atak-Bold;
-    font-size: 16px;
+    font-size: 1.1vw;
 
 } 
 
@@ -144,7 +144,7 @@ video {
     margin-bottom: 10.8vw;
 
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
     text-align: left;
 } 
 
@@ -199,7 +199,7 @@ video {
     padding: 3vw;
 
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
 
     text-align: center !important;
 
@@ -220,7 +220,7 @@ video {
 .steps-text > div > span {
     
     font-family: Atak-Light;
-    font-size: 26px;
+    font-size: 1.8vw;
     text-transform: uppercase;
 }
 
@@ -449,7 +449,7 @@ input[type="radio"] {
     
     margin: auto;
     width: 54vw;
-    font-size: 26px;
+    font-size: 1.8vw;
 
     font-family: Atak-Medium;
 
@@ -520,5 +520,60 @@ input[type="radio"] {
 
     .carousel-marques {
         height: 148.7vw;
+    }
+
+    
+    h2 {
+        font-size: 13.9vw;
+    }
+    
+    h3 {
+        font-size: 5.5vw;
+    }
+    
+    h4{
+        font-size: 5.2vw;
+    }
+    h5 {
+        font-size: 4.4vw;
+    }
+    
+    
+    .location {
+        font-size: 4.7vw;
+    }
+    
+    
+    .ateliers-flex > div > div {
+        font-size: 6.2vw;
+    } 
+    .ateliers-flex > div > div > span {
+        font-size: 4.4vw;
+    
+    } 
+    
+    .ateliers-flex > div:nth-child(2) > div:first-child {
+        font-size: 5.5vw;
+    } 
+    
+    
+    .steps-text {
+        font-size: 5.5vw;
+    }
+ 
+    
+    .steps-text > div > span {
+        font-size: 7.2vw;
+    }
+    
+    
+    
+    .container {
+        font-size: 4.4vw;
+    }
+    
+    .group-text > span {
+        font-size: 7.2vw;
+    
     }
 }

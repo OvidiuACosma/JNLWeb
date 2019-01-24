@@ -21,7 +21,7 @@ h3 {
 
 .location {
     font-family: Atak-Regular;
-    font-size: 17px;
+    font-size: 1.1vw;
 
     margin-bottom: 5.5vw;
 }
@@ -62,7 +62,7 @@ h3 {
     text-align: center;
 
     font-family: Atak-Regular;
-    font-size: 17px;
+    font-size: 1.1vw;
 }
 
 
@@ -114,6 +114,10 @@ h3 {
     
         font-size: 1.5em;
         left: 0;
+    }
+
+    .location {
+        font-size: 4.7vw;
     }
 }
 
