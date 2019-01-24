@@ -2,19 +2,20 @@
   <div class="search-bar">
     <app-search (toggleNavBar)="toggleNav()"></app-search>
   </div>
-</div>
+  <span style="background-color: #121A2D; width: 15px"></span>
+  <span>
+    <div class="menu">
+      <app-menu [toggleNavBar]="toggleNavBar"></app-menu>
+    </div>
 
-<div class="menu">
-  <app-menu [toggleNavBar]="toggleNavBar"></app-menu>
+    <div class="main">
+      <app-alert></app-alert>
+      <div class="router-outlet">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="menu-bottom">
+        <app-menu-bottom></app-menu-bottom>
+      </div>
+    </div>
+  </span>
 </div>
-
-<div class="main">
-  <app-alert></app-alert>
-  <div class="router-outlet">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="menu-bottom">
-    <app-menu-bottom></app-menu-bottom>
-  </div>
-</div>
-
