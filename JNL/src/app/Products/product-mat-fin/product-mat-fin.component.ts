@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/_services';
+import { ProductsService, PagerService } from 'src/app/_services';
 
 @Component({
   selector: 'app-product-mat-fin',
@@ -11,6 +11,12 @@ export class ProductMatFinComponent implements OnInit {
   public detail = 'tissu';
   public tissus: any[];
 
+  // pager object
+  pager: any = {};
+
+  // paged items
+  pagedItems: any[];
+
   // data used in the modal
   public source = '';
   public tissuModel = '';
@@ -19,11 +25,27 @@ export class ProductMatFinComponent implements OnInit {
   public tissuCompositionFR = '';
 
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService,
+              private pagerService: PagerService) { }
 
   ngOnInit() {
-    this.detail = 'tissu';
+    this.productsService.getTissus()
+    .subscribe(tissus => {
+        this.tissus = tissus;
+        // console.log('TISSUS: ', this.tissus.length);
+
+        // initialize to page 1
+        this.setPage(1);
+    });
   }
+
+  setPage(page: number) {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(this.tissus.length, page);
+
+    // get current page of items
+    this.pagedItems = this.tissus.slice(this.pager.startIndex, this.pager.endIndex + 1);
+}
 
   setDetail(index: number) {
     switch (index) {
@@ -55,12 +77,6 @@ export class ProductMatFinComponent implements OnInit {
         this.detail = 'tissu';
       }
     }
-
-    this.productsService.getTissus()
-    .subscribe(tissus => {
-        this.tissus = tissus;
-        // console.log('TISSUS: ', tissus[0].model);
-    });
   }
 
   setTissuID(event) {
@@ -80,8 +96,8 @@ export class ProductMatFinComponent implements OnInit {
     window.onclick = function (event) {
       if (event.target === modal) {
         modal.style.display = 'none';
+        document.getElementById('thumbnail-img').focus();
       }
     };
   }
-
 }
