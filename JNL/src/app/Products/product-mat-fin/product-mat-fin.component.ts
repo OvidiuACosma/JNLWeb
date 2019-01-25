@@ -10,6 +10,8 @@ export class ProductMatFinComponent implements OnInit {
 
   public detail = 'tissu';
   public tissus: any[];
+  public cuirs: any[];
+  public similiCuirs: any[];
 
   // pager object
   pager: any = {};
@@ -29,12 +31,29 @@ export class ProductMatFinComponent implements OnInit {
               private pagerService: PagerService) { }
 
   ngOnInit() {
+
+    // get Tissus
     this.productsService.getTissus()
     .subscribe(tissus => {
-        this.tissus = tissus;
         // console.log('TISSUS: ', this.tissus.length);
-
+        this.tissus = tissus;
         // initialize to page 1
+        this.setPage(1);
+    });
+
+    // get Cuirs
+    this.productsService.getCuirs()
+    .subscribe(cuirs => {
+        this.cuirs = cuirs;
+        // console.log('CUIRS: ', this.cuirs.length);
+        // initialize to page 1
+        this.setPage(1);
+    });
+
+    // get Simili Cuirs
+    this.productsService.getCuirs()
+    .subscribe(similiCuirs => {
+        this.similiCuirs = similiCuirs;
         this.setPage(1);
     });
   }
@@ -95,8 +114,8 @@ export class ProductMatFinComponent implements OnInit {
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target === modal) {
-        modal.style.display = 'none';
-        document.getElementById('thumbnail-img').focus();
+        // modal.style.display = 'none';
+        document.getElementById('thumbnail-img').click();
       }
     };
   }
