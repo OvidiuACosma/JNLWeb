@@ -6,7 +6,7 @@ h1 {
 }
 
 h2 {
-    font-size: 4.2vw;
+    font-size: 1.2vw;
 }
 
 h3 {
@@ -18,7 +18,7 @@ h3 {
 }
 
 h4 {
-    font-size: 3.2vw;
+    font-size: 1.2vw;
 }
 
 hr {
@@ -494,6 +494,9 @@ video {
         text-align: center;
     }
 
+    h4 {
+        font-size: 3.2vw;
+    }
     .gallery_buttons > div {
         padding: 1vw;
     }

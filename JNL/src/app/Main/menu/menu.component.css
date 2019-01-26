@@ -141,5 +141,6 @@ a:focus, img:focus {
 
     #side_nav_links > div > a {
         margin: 0px;
+        font-size: 3.5vw;
     }
 }
