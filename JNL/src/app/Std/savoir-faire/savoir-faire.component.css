@@ -1,6 +1,6 @@
 h1 {
     font-family: PlacardMT-Condensed;
-    font-size: 4em;
+    font-size: 5.03vw;
     margin-bottom: 3vh;
 
     text-align: center;
@@ -136,7 +136,7 @@ video {
 } 
 
 .ateliers-flex > div > div > h5 {
-    margin-bottom: 2em;
+    margin-bottom: 2vw;
 }
 
 .ateliers-flex > div:nth-child(2) > div:first-child {
@@ -292,7 +292,7 @@ video {
 #marques_list {
     margin: auto;
     font-family: Atak-Light;
-    font-size: 1em;
+    font-size: 1.1vw;
     width: 30vw;
     
     display: flex;
@@ -304,12 +304,13 @@ video {
 
     margin-bottom: 4vw;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #marques_list > a {
     margin: auto;
 
-    font-size: 1.5em;
+    font-size: 2vw;
     /* margin-right: 20px; */
     left: 0;
 }

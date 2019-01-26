@@ -5,12 +5,20 @@ h1 {
     text-transform: uppercase;
 }
 
+h2 {
+    font-size: 4.2vw;
+}
+
 h3 {
     margin: auto;
     width: 54vw;
     font-size: 26px;
 
     font-family: Atak-Medium;
+}
+
+h4 {
+    font-size: 3.2vw;
 }
 
 hr {

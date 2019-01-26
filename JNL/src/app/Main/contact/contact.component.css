@@ -13,7 +13,7 @@
 
 h1{
     font-family: PlacardMT-Condensed;
-    font-size: 4em;
+    font-size: 5.03vw;
     margin-bottom: 3vh;
     text-transform: uppercase;
 }
@@ -33,11 +33,11 @@ textarea{
 
     margin-bottom: 5vh;
     font-family: Atak-Regular;
-    font-size: 20px;
+    font-size: 1.4vw;
 }
 .contact_div > p{
     font-family: Atak-Medium;
-    font-size: 26px;
+    font-size: 1.8vw;
     padding-left: 275px;
     padding-right: 275px;
 }
@@ -118,7 +118,6 @@ select
     margin-bottom: 4em;
     border: none;
 
-    width: 20%;
 }
 .contact_div > div{
     width: 100vw;
@@ -133,12 +132,36 @@ select
 
 @media only screen and (max-width: 800px){
     .contact_div > p{
-        font-size: 1em;
+        font-size: 4.4vw;
         padding-left: 10px;
         padding-right: 10px;
     }
 
     input, select, textarea{
         width: 90vw !important;
+        font-size: 3.5vw;
+    }
+
+
+
+
+    h1{
+        font-size: 9.7vw;
+    }
+    
+    
+    .contact_div{
+        font-size: 4.2vw;
+    }
+    .contact_div > p{
+        font-size: 4.2vw;
+    }
+
+    .contact_form > button {
+        margin-top: 0px;
+    }
+
+    .contact_form > input {
+        margin-top: 5vw;
     }
 }

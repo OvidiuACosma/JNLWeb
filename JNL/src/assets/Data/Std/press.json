@@ -1,0 +1,26 @@
+[
+    {
+        "EN": {
+            "press": "PRESS",
+            "bank": "Image bank",
+            "catalog": "Catalogues",
+            "review": "Review",
+            "interiors": "Interiors",
+            "products": "Products",
+            "download": "Download",
+            "pressReleases": "Press Releases",
+            "pressReview": "Press Review"
+        },
+        "FR": { 
+            "press": "PRESSE",
+            "bank": "Banque Images",
+            "catalog": "Catalogues",
+            "review": "Parutions",
+            "interiors": "Ambiances",
+            "products": "Produits",
+            "download": "TÉLÉCHARGER",
+            "pressReleases": "Press releases",
+            "pressReview": "Press Review"
+        }
+    }
+]

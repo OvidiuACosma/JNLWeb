@@ -1,10 +1,10 @@
 <div class="presse-main">
-  <h1>PRESSE</h1>
+  <h1>{{text.press}}</h1>
 
   <div id="presse_list">
-    <a routerLink="/press" fragment="catalogues">CATALOGUES</a>
-    <a routerLink="/press" fragment="banqueImages">BANQUE IMAGES</a>
-    <a routerLink="/press" fragment="parutions">PARUTIONS</a>
+    <a routerLink="/press" fragment="catalogues">{{text.catalog}}</a>
+    <a routerLink="/press" fragment="banqueImages">{{text.bank}}</a>
+    <a routerLink="/press" fragment="parutions">{{text.review}}</a>
   </div>
 
   <div>
@@ -12,61 +12,61 @@
   </div>
 
   <div id="catalogues">
-    <h2>Catalogues</h2>
+    <h2>{{text.catalog}}</h2>
 
     <div class="four-flex">
       <div>
         <img alt="JNL Collection" src="assets/Images/Presse/PS_jnlcolB.jpg">
-        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
       </div>
 
       <div>
         <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhammeB.jpg">
-        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
       </div>
 
       <div>
         <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaroB.jpg">
-        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
       </div>
 
       <div>
         <img alt="Luz Interiors" src="assets/Images/Presse/PS_luzB.jpg">
-        <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
       </div>
     </div>
   </div>
 
   <div id="banqueImages">
-    <h2>Banque Images</h2>
+    <h2>{{text.bank}}</h2>
 
     <div class="four-flex">
       <div>
         <img alt="JNL Collection" src="assets/Images/Presse/PS_JNL.jpg">
         <span>JNL Collection</span>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.interiors}}</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.products}}</a>
       </div>
 
       <div>
         <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhamme.jpg">
         <span>Vanhamme</span>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.interiors}}</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.products}}</a>
       </div>
 
       <div>
         <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaro.jpg">
         <span>Emanuel Ungaro Home</span>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.interiors}}</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.products}}</a>
       </div>
 
       <div>
         <img alt="Luz Interiors" src="assets/Images/Presse/PS_luz.jpg">
         <span>Luz Interiors</span>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">AMBIANCES</a>
-        <a class="home_links" (click)="navigateTo('jnlGroup')">PRODUITS</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.interiors}}</a>
+        <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.products}}</a>
       </div>
     </div>
   </div>
@@ -74,27 +74,27 @@
 
     
     <div id="parutions">
-      <h2>Parutions</h2>
+      <h2>{{text.review}}</h2>
   
       <div class="four-flex">
         <div>
           <img alt="JNL Collection" src="assets/Images/Presse/PS_jnlcolY.jpg">
-          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+          <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
         </div>
   
         <div>
           <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhammeY.jpg">
-          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+          <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
         </div>
 
         <div>
           <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaroY.jpg">
-          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+          <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
         </div>
   
         <div>
           <img alt="Luz Interiors" src="assets/Images/Presse/PS_luzY.jpg">
-          <a class="home_links" (click)="navigateTo('jnlGroup')">Télécharger</a>
+          <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.download}}</a>
         </div>
     </div>
     </div>

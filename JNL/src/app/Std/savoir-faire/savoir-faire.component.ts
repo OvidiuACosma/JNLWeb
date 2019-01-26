@@ -29,7 +29,7 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
   }
 
   getText(lang: string) {
-    this.textService.getTextHome()
+    this.textService.getTextSavoir()
     .subscribe(data => {
       const res = data[0];
       this.getLanguageText(res);
@@ -51,7 +51,6 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
           break;
         }
       }
-      console.log('Home text:' , this.text);
   }
 
 

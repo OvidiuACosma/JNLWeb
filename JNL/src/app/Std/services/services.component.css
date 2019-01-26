@@ -1,9 +1,11 @@
 h1 {
     font-family: PlacardMT-Condensed;
-    font-size: 4em;
+    font-size: 5.03vw;
     margin-bottom: 3vh;
 
     text-align: center;
+
+    text-transform: uppercase;
 }
 
 h2 {
@@ -171,6 +173,8 @@ video {
     font-size: 1.5em;
     margin-right: 20px;
     left: 0;
+
+    text-transform: uppercase;
 }
 
 #services_list > a:last-child {
@@ -332,7 +336,7 @@ button
     margin-bottom: 4em;
     border: none;
 
-    width: 20%;
+    /*width: 20%;*/
 }
 
 
@@ -391,6 +395,7 @@ button
         margin-right: auto;
         width: 80vw;
         word-wrap: normal;
+        font-size: 7.6vw !important;
     }
 
     h4 {
@@ -448,7 +453,7 @@ button
 
 
     h2 {
-        font-size: 13.9vw;
+        font-size: 7.6vw;
     }
     
     h4 {

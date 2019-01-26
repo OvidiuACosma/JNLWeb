@@ -1,0 +1,44 @@
+[
+    {
+        "EN": {
+            "services": "Services",
+            "expertise": "Expertise",
+            "surMesure": "Tailor-Made Approach",
+            "project": "Your project",
+
+            "expertiseTitle": "Our expertise",
+            "expertiseText": "At JNL, we put our century-old expertise and know-how to service for your most prestigious architectural projects by offering you personalized support and a range of tailor-made solutions, from design to manufacturing.",
+
+            "quote": "«We approach each project by putting ourselves in our client’s shoes: exchanging information with them is the core of our collaboration. It is then up to us to make their wishes come true by orienting their choices towards exceptional materials and luxurious finishes.»",
+            
+            "consultingTitle": "A tailor-made consulting services",
+            "consultingText1": "Endowed with a unique expertise in producing high-end and exclusive furniture, our group has enhanced our services with a consulting center that will approach any personal project from a global and strategic viewpoint. The quality of this approach is essentially based on listening and understanding your specific needs. This moment of dialogue and sharing information is crucial, as it allows us to formulate a detailed description of your expectations and outline the various stages that will give shape to your project.",
+            "consultingText2": "Thanks to our workshop’s know-how, we are capable of designing unique made-to-measure furniture and accessories. Through a multitude of material combinations, finishes, colors, and formats, we work with you to create the exceptional interiors of tomorrow. Ever maintaining high-quality performance standards, our workshop and craftsmen alike adapt to your requests : from surface criteria to setting and location, each piece of data is taken into account and translated into the materials and colors you had envisioned.",
+            
+            "projectTitle": "Your  project",
+            "projectText": "Send your request here, our dedicated team will process your request in the shortest possible timeframe."
+
+
+        },
+    "FR": { 
+        "services": "LES SERVICES",
+        "expertise": "L’EXPERTISE",
+        "surMesure": "LE SUR-MESURE",
+        "project": "VOTRE PROJET",
+
+        "expertiseTitle": "Notre expertise",
+        "expertiseText": "Chez JNL, nous mettons notre expertise et savoir-faire centenaires au service de vos projets architecturaux les plus prestigieux en vous offrant un accompagnement personnalisé et une offre de solutions sur mesure, du dessin à la fabrication.",
+
+        "quote": "«Nous abordons chaque projet à travers le prisme de nos clients : l’échange avec eux représente le coeur de notre travail. A nous ensuite de concrétiser leurs désirs en les orientant vers des choix de matières exceptionnelles et des finitions somptueuses»",
+        
+        "consultingTitle": "Un service de conseil sur mesure",
+        "consultingText1": "Forts d’une expertise unique dans la réalisation de mobilier haut-de-gamme et exclusif, notre groupe s’est enrichi d’un pôle de conseil au sein duquel nous posons un regard global et stratégique sur vos projets. La qualité de la démarche repose essentiellement sur l’écoute et la compréhension de vos besoins précis. Cet instant d’échange et de dialogue est crucial tant il nous permet par la suite de formuler le rendu détaillé de vos attentes et de poser les contours des différentes étapes qui donneront forme au projet.",
+        "consultingText2": "Grâce au savoir-faire de nos ateliers, nous concevons des pièces de mobilier et des accessoires uniques réalisés sur mesure. À travers une multitude de combinaisons de matériaux, de finitions, de teintes et de formats, nous imaginons avec vous les intérieurs exceptionnels de demain. Avec une qualité d’exécution toujours préservée, nos ateliers s’adaptent et artisans s’adaptent à votre demande : des critères de surface à la typologie de vos lieux, chaque donnée est prise en compte afin de traduire en matière et en couleur votre vision de l’art de vivre.",
+        
+        "projectTitle": "Votre projet",
+        "projectText": "Contactez ici l’équipe JNL Conseil, dédiée à la réalisation des projets sur mesure. Nous reviendrons vers vous dans les plus brefs délais."
+
+
+     }
+    }
+]

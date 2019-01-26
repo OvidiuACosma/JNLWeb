@@ -32,7 +32,7 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
   }
 
   getText(lang: string) {
-    this.textService.getTextHome()
+    this.textService.getTextServices()
     .subscribe(data => {
       const res = data[0];
       this.getLanguageText(res);

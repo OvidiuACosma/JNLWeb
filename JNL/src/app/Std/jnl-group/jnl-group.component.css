@@ -1,6 +1,6 @@
 h1 {
     font-family: PlacardMT-Condensed;
-    font-size: 4.5vw;
+    font-size: 5.03vw;
     margin-bottom: 3vh;
 
     text-align: center;
@@ -193,7 +193,7 @@ h4{
 #marques_list > a {
     margin: auto;
 
-    font-size: 1.5em;
+    font-size: 2vw;
     left: 0;
 }
 
@@ -663,6 +663,9 @@ input[type="radio"] {
 
 @media only screen and (max-width: 800px)
 {
+    h1 {
+        font-size: 9.7vw;
+    }
     h2 {
         font-size: 7.6vw;
     }
@@ -701,6 +704,7 @@ input[type="radio"] {
     
     #marques_list > a{
         margin: auto;
+        font-size: 4.5vw;
     
         left: 0;
     }
