@@ -28,4 +28,12 @@ export class ProductsService {
   public getTissus(): Observable<any> {
     return this.http.get(`${this.urlAssets}/Products/tissus.json`);
   }
+
+  public getCuirs(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Products/cuirs.json`);
+  }
+
+  public getSimiliCuirs(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Products/similiCuirs.json`);
+  }
 }
