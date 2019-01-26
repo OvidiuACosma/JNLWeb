@@ -1,6 +1,6 @@
 h1 {
     font-family: PlacardMT-Condensed;
-    font-size: 4em;
+    font-size: 5.03vw;
     margin-bottom: 3vh;
 
     text-align: center;
@@ -77,6 +77,8 @@ h4 {
     font-size: 1.5em;
     margin-right: 20px;
     left: 0;
+
+    text-transform: uppercase;
 }
 
 #presse_list > a:first-child {
@@ -318,7 +320,7 @@ input[type="radio"] {
     }
 
     h2 {
-        font-size: 13.9vw;
+        font-size: 7.6vw;
     }
 
     h4 {

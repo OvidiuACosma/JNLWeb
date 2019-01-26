@@ -24,39 +24,27 @@ export class TranslationService {
   }
 
   public getTextMarques(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/marques.json`);
+    return this.http.get(`${this.urlAssets}/Std/marques.json`);
   }
 
-  public getTextJnl(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/jnl.json`);
-  }
-
-  public getTextVanhamme(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/vanhamme.json`);
-  }
-
-  public getTextUngaro(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/ungaro.json`);
-  }
-
-  public getTextLuz(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/luz.json`);
+  public getTextMarque(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Std/marque.json`);
   }
 
   public getTextSavoir(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/savoir.json`);
+    return this.http.get(`${this.urlAssets}/Std/savoir.json`);
   }
 
   public getTextServices(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/services.json`);
+    return this.http.get(`${this.urlAssets}/Std/services.json`);
   }
 
   public getTextGroupe(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/groupe.json`);
+    return this.http.get(`${this.urlAssets}/Std/group.json`);
   }
 
   public getTextPresse(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/presse.json`);
+    return this.http.get(`${this.urlAssets}/Std/press.json`);
   }
 
   public getTextContact(): Observable<any> {

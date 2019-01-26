@@ -60,7 +60,7 @@
 #side_nav_links {
     margin: auto;
     margin-left: 0px;
-    margin-top: 2em;
+    margin-top: 60px;
     padding-left: 5vw;
     display: flex;
     flex-direction: column;
@@ -125,6 +125,10 @@ a:focus, img:focus {
 
     #side_nav_links > div {
         flex-direction: column;
+    }
+
+    #side_nav_links > div > span {
+        font-size: 7.2vw;
     }
 
     #side_nav_links {

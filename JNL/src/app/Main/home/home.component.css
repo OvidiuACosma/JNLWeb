@@ -5,12 +5,20 @@ h1 {
     text-transform: uppercase;
 }
 
+h2 {
+    font-size: 4.2vw;
+}
+
 h3 {
     margin: auto;
     width: 54vw;
     font-size: 26px;
 
     font-family: Atak-Medium;
+}
+
+h4 {
+    font-size: 3.2vw;
 }
 
 hr {
@@ -183,7 +191,7 @@ hr {
 
 #first_picture > div > p {
     text-align: center;
-    font-size: 5em;
+    font-size: 5.5vw;
 }
 
 #first_picture > div > p > a> img {
@@ -230,7 +238,7 @@ hr {
     width: 100vw;
     height: auto; /*50vw;*/
     /*min-height: 40vw; 724px;*/
-    max-height: 50vw;
+    /*max-height: 50vw;*/
 
     background-color: #D3D3D3;
     color: black;
@@ -327,7 +335,7 @@ hr {
 
 #actualites_arrows > a {
     margin: auto;
-    font-size: 5em;
+    font-size: 1.7vw;
     line-height: 1em;
     font-family: Atak-Regular;
 }
@@ -471,6 +479,12 @@ video {
     padding-top: 20%;
 }
 
+.container {
+    display: flex;
+    align-content: space-around;
+
+    max-width: 80vw;
+}
 
 @media only screen and (max-width: 800px){
 
@@ -503,12 +517,12 @@ video {
     }
 
     #une_histoire > div > p {
-        font-size: 1.2em;
+        font-size: 4.2vw;
         line-height: 1.24em;
     }
 
     #une_histoire > div > p > a {
-        font-size: 0.8em;
+        font-size: 3.3vw;
     }
 
     #les_marques {
@@ -552,7 +566,7 @@ video {
         flex-direction: column;
 
         text-align: center;
-        font-size: 1.2em;
+        font-size: 5.3vw;
     }
 
 
@@ -641,7 +655,7 @@ video {
         margin: 0px;
         text-align: center;
         width: auto;
-        font-size: 1.2em;
+        font-size: 5.3vw;
         font-family: Atak-Medium;
     }
 
@@ -669,8 +683,8 @@ video {
     }
 
     #les_marques {
-        min-height: 145.5vw;
-        max-height: 145.5vw !important;
+       /* min-height: 145.5vw;
+        max-height: 145.5vw !important;*/
     }
 
     .marque-text{

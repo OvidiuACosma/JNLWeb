@@ -4,8 +4,8 @@
 
 
       <div id="marques_list">
-        <a routerLink="/savoirFaire" fragment="atelier">LES ATELIERS</a>
-        <a routerLink="/savoirFaire" fragment="fabrication">LA FABRICATION</a>
+        <a routerLink="/savoirFaire" fragment="atelier">{{text.ateliers}}</a>
+        <a routerLink="/savoirFaire" fragment="fabrication">{{text.fabrication}}</a>
       </div>
 
       <div id="video">
@@ -16,12 +16,9 @@
 
 
 <div id="atelier">
-    <h2>Les ateliers</h2>
-    <h3>Entre tradition et innovation : une histoire de création.</h3>
-    <h4>Au cœur de ses propres ateliers européens, le groupe JNL a insufflé 
-        un vent d’exclusivité sur son processus de fabrication et a su séduire
-         les grands noms de l’architecture grâce à son talent <strong>du</strong> sur mesure 
-        et la réalisation de pièces uniques. </h4>
+    <h2>{{text.ateliers}}</h2>
+    <h3>{{text.subText}}</h3>
+    <h4>{{text.firstText}}</h4>
     <img class="full-image" alt="JNL Collection" src="assets/Images/Savoir/SF_pic4.jpg">
 
     <div class="ateliers-flex">
@@ -87,8 +84,8 @@
 
 </div>
 <div id="fabrication">
-    <h2>La fabrication</h2>
-    <h3>EN 5 étapes</h3>
+    <h2>{{text.fabrication}}</h2>
+    <h3>{{text.steps}}</h3>
 
     
     <!--CAROUSEL-->
@@ -102,9 +99,8 @@
                     <div class="steps-text">
                         <div>
                             1<br>
-                            <span>LE DESSIN</span><br><br>
-                            Les premières lignes du projet se définissent avec votre accord 
-                            et posent les bases du processus créatif.
+                            <span>{{text.step1Title}}</span><br><br>
+                            {{text.step1Text}}
                         </div>  
                     </div>
                   </div>
@@ -118,9 +114,8 @@
                         <div class="steps-text">
                             <div>
                                 2<br>
-                                <span>LES matériaux</span><br><br>                             
-                                Guidé par les inspirations et les références fournies au préalable, 
-                                JNL recherche puis sélectionne les matières et tissus qui composeront la création.
+                                <span>{{text.step2Title}}</span><br><br>
+                                {{text.step2Text}}
                             </div>
   
                         </div>
@@ -134,9 +129,8 @@
                         <div class="steps-text">
                             <div>
                                 3<br>
-                                <span>LE Prototypage</span><br><br>
-                                Hautement expérimentale, cette phase ajuste l’ouvrage selon les 
-                                volumes et la résistance de certains matériaux.
+                                <span>{{text.step3Title}}</span><br><br>
+                                {{text.step3Text}}
                             </div>  
                         </div>
                       </div>
@@ -149,9 +143,8 @@
                         <div class="steps-text">
                             <div>
                                 4<br>
-                                <span>LE modèle final </span><br><br>
-                                Le meuble définitif est testé puis approuvé par les artisans. 
-                                Il quitte ensuite l’atelier afin d’être acheminé jusqu’au client.
+                                <span>{{text.step4Title}}</span><br><br>
+                                {{text.step4Text}}
                             </div> 
                         </div>
                         </div>
@@ -164,11 +157,8 @@
                         <div class="steps-text">
                             <div>
                                 5<br>
-                                <span>L’accompagnement</span><br><br>
-                                Pour assurer leur durabilité, chaque création bénéficie d’un 
-                                service après-vente de qualité. A cette occasion, les ateliers 
-                                s’engagent à entretenir, consolider ou réparer les meubles pour 
-                                mieux leur offrir une seconde vie.
+                                <span>{{text.step5Title}}</span><br><br>
+                                {{text.step5Text}}
                             </div>  
                         </div>
                         </div>
@@ -197,9 +187,7 @@
         <!--CAROUSEL-->
 
 
-        <h4>Chaque étape de la fabrication peut être soumise à une demande de 
-                personnalisation pour un résultat sur mesure.
-            </h4>
+        <h4>{{text.stepsText}}</h4>
 
 
     <div id="services" routerLink="/services">

@@ -2,12 +2,48 @@
     {
         "EN": {
             "ateliers": "Workshops",
-            "fabrication": ""
+            "fabrication": "Fabrication",
 
+            "subText": "Between tradition and innovation : a story of passion",
+            "firstText": "At the heart of their own European workshops, the JNL group has blown a breath of exclusivity over its manufacturing process while attracting great names in architecture; thanks to their talent for tailor-made design and development of one-of-a-kind pieces.",
+
+            "steps": "5 STAGES IN MANUFACTURING",
+            "step1Title": "The design",
+            "step1Text": "The first lines of the project are drawn according to the client’s wishes and lay the foundations for the creative process.",
+            "step2Title": "The materials",
+            "step2Text": "Guided by inspirations and references provided beforehand, JNL researches and then hand selects the raw materials and fabrics that will shape the creation.",
+            "step3Title": "Protoyping",
+            "step3Text": "A highly experimental phase, this stage in the process is necessary to adjust the work depending on the volume and strength of certain materials.",
+            "step4Title": "The final model",
+            "step4Text": "The final piece of furniture is tested and approved by its artisans.  It then leaves the workshop to be sent to the customer.",
+            "step5Title": "Maintenance",
+            "step5Text": "To ensure increased longevity, each creation benefits from a quality after-sales service. The workshops are committed to maintaining, reinforcing or repairing the furniture to better provide for a second life.",
+            
+            "stepsText": "Each step in the manufacturing process may be subject to a custom request for a custom result."
 
         },
     "FR": { 
-        "ateliers": "Les  Ateliers"
+             "ateliers": "Les ateliers",
+            "fabrication": "La fabrication",
+
+            "subText": "ENTRE TRADITION ET INNOVATION : UNE HISTOIRE DE CRÉATION.",
+            "firstText": "Au cœur de ses propres ateliers européens, le groupe JNL a insufflé un vent d’exclusivité sur son processus de fabrication et a su séduire les grands noms de l’architecture grâce à son talent du sur mesure et la réalisation de pièces uniques.",
+
+            
+            "steps": "En 5 étapes",
+            "step1Title": "Le dessin",
+            "step1Text": "Les premières lignes du projet se définissent avec l’accord du client et posent les bases du processus créatif.",
+            "step2Title": "The matériaux",
+            "step2Text": "Guidé par les inspirations et les références fournies au préalable, JNL recherche puis sélectionne les matières et tissus qui composeront la création.",
+            "step3Title": "Le protoypage",
+            "step3Text": "hautement expérimentale, cette phase ajuste l’ouvrage selon les volumes et la résistance de certains matériaux.",
+            "step4Title": "Le modèle final",
+            "step4Text": "Le meuble définitif est testé puis approuvé par les artisans.  Il quitte ensuite l’atelier afin d’être acheminé jusqu’au client.",
+            "step5Title": "L'accompagnament",
+            "step5Text": "Pour assurer leur durabilité, chaque création bénéficie d’un service après-vente de qualité. A cette occasion, les ateliers s’engagent à entretenir, consolider ou réparer les meubles pour mieux leur offrir une seconde vie.",
+            
+            "stepsText": "Chaque étape de la fabrication peut être soumise à une demande de personnalisation pour un résultat sur-mesure."
+
      }
     }
 ]

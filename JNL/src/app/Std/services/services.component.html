@@ -1,31 +1,26 @@
 <div class="les-services-main">
-  <h1>LES SERVICES </h1>
+  <h1>{{text.services}}</h1>
 
   <div id="services_list">
-    <a routerLink="/services" fragment="expertise">L'EXPERTISE</a>
-    <a routerLink="/services" fragment="surMesure">LE SUR-MESURE</a>
-    <a routerLink="/services" fragment="votreProjet">VOTRE PROJET</a>
+    <a routerLink="/services" fragment="expertise">{{text.expertise}}</a>
+    <a routerLink="/services" fragment="surMesure">{{text.surMesure}}</a>
+    <a routerLink="/services" fragment="votreProjet">{{text.project}}</a>
   </div>
 
   <div>
-      <video width="87.3vw" height="33.3vw">
+      <video width="87.3vw" height="33.3vw" controls>
           <source src="\assets\Video\JNL_video.mp4" type="video/mp4">
       </video>
 
     <div  id="expertise">
-      <h2>Notre expertise</h2>
+      <h2>{{text.exeprtiseTitle}}</h2>
       <h4>
-        Chez JNL, nous mettons notre expertise et savoir-faire centenaires au service 
-        de vos projets architecturaux les plus prestigieux en vous offrant un accompagnement 
-        personnalisé et une offre de solutions sur mesure, du dessin à la fabrication.  
+        {{text.expertiseText}}  
       </h4>
     </div>
 
     <div class="quote-bar">
-      <p>«Nous abordons chaque projet à travers le prisme de nos clients: l’échange 
-        avec eux représente le cœur de notre travail. A nous ensuite de concrétiser 
-        leurs désirs en les orientant vers des choix de matières exceptionnelles et des 
-        finitions somptueuses»
+      <p>{{text.quote}}
       </p>
       <h4>DOMINIQUE WAXMANN, CEO</h4>
     </div>
@@ -34,19 +29,12 @@
 
   
   <div id="surMesure">
-    <h2>Un service de conseil sur mesure</h2>
+    <h2>{{text.consultingTitle}}</h2>
 
     <div class="sur-flex">
       <div>
 
-          <div>Forts d’une expertise unique dans la réalisation de mobilier 
-            haut-de-gamme et exclusif, notre groupe s’est enrichi d’un pôle 
-            de conseil au sein duquel nous posons un regard global et stratégique 
-            sur vos projets. La qualité de la démarche repose essentiellement sur 
-            l’écoute et la compréhension de vos besoins précis. Cet instant 
-            d’échange et de dialogue est crucial tant il nous permet par la suite 
-            de formuler le rendu détaillé de vos attentes et de poser les contours 
-            des différentes étapes qui donneront forme au projet. 
+          <div>{{text.consultingText1}} 
 
           </div>
           
@@ -62,14 +50,7 @@
           </div>
 
           <div>
-              Grâce au savoir-faire de nos ateliers, nous concevons des pièces de 
-              mobilier et des accessoires uniques réalisés sur mesure. À travers 
-              une multitude de combinaisons de matériaux, de finitions, de teintes 
-              et de formats, nous imaginons avec vous les intérieurs exceptionnels 
-              de demain. Avec une qualité d’exécution toujours préservée, nos ateliers 
-              s’adaptent et artisans s’adaptent à votre demande : des critères de 
-              surface à la typologie de vos lieux, chaque donnée est prise en compte 
-              afin de traduire en matière et en couleur votre vision de l’art de vivre. 
+             {{text.consultingText2}} 
 
           </div>
       </div>
@@ -80,9 +61,8 @@
   <div id="votreProjet">
     
   <div class="contact_div">
-      <h2>Votre projet</h2>
-      <p>Contactez ici l’équipe JNL Conseil, dédiée à la réalisation des projets sur mesure.<br> 
-          Nous reviendrons vers vous dans les plus brefs délais. 
+      <h2>{{text.projectTitle}}</h2>
+      <p>{{text.projectText}} 
         </p>
       <form class="contact_form">
         <div>
