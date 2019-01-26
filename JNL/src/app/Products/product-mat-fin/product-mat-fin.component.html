@@ -3,7 +3,7 @@
   <h5><b>Mati&egrave;res &amp; Finitions</b></h5>
   <hr>
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-xl-2 col-sm-3">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
           aria-controls="v-pills-tissu" aria-selected="true" (click)="setDetail(0)">Tissus</a>
@@ -19,16 +19,18 @@
           aria-selected="false" (click)="setDetail(5)">Miroir</a>
       </div>
     </div>
-    <div class="col-sm-9">
+    <div class="col-xl-10 col-sm-9">
       <div class="tab-content" id="v-pills-tabContent">
+        <!-- TISSUS TAB------------------------->
         <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
           <b>---Tissus</b>
           <div class="clear"></div>
           <div class="row text-lg-left">
             <!-- paged item-------------------->
-            <div class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let tissu of pagedItems">
-              <a id="thumbnail-img" data-toggle="modal" data-target="#garnissageModal" class="d-block">
-                <img class="img-fluid img-button" src="assets\Images\Products\JNL\Garnissage\Tissu\{{tissu.codeProd | uppercase }}.jpg"
+            <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let tissu of pagedItems">
+              <a class="d-block">
+                <img  id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal" 
+                  src="assets\Images\Products\JNL\Garnissage\Tissu\{{tissu.codeProd | uppercase }}.jpg"
                   alt="" [attr.data-tissuid]="tissu.id-1" (click)="setTissuID($event)">
               </a>
               {{tissu.model}}
@@ -58,9 +60,26 @@
           </ul>
         </div>
 
+        <!-- CUIRS TAB------------------------->
         <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
           <b>---Cuirs</b>
+          <div class="clear"></div>
+          <div class="row text-lg-left">
+            <!-- paged item-------------------->
+            <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let cuir of cuirs">
+              <a class="d-block">
+                <img  id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal" 
+                  src="assets\Images\Products\JNL\Garnissage\Cuir\{{cuir.codeProd | uppercase }}.jpg"
+                  alt="" [attr.data-tissuid]="cuir.id-1" (click)="setCuirID($event)">
+              </a>
+              {{cuir.model}}
+              <div class="clear"></div>
+            </div>
+            <!---------------------------------->
+          </div>
+          <div class="clear"></div>
         </div>
+
         <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
           <b>---Metal</b>
         </div>
@@ -94,12 +113,12 @@
             <div class="card col-6" style="width: 25rem;">
               <img [src]="source" class="card-img-top" alt="...">
               <!--
-        <div class="card-body">
+          <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card's content.</p>
-        </div>
-        -->
+          card's content.</p>
+          </div>
+          -->
             </div>
             <div col-6>
               <ul style="list-style-type:none">
