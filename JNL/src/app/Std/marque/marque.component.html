@@ -3,21 +3,15 @@
 
   <div id="first_picture">
       <div>
-    <img class="full-image" alt="JNL Collection" src="assets/Images/Marque_V/MKV_pic1.jpg">
+    <img class="full-image" alt="JNL Collection" src={{text.marqueImgSrc}}>
       </div>
   </div>
   
   <div id="go-up">
   <div class="heritage" id="heritage">
     <div>
-      <h2>L’héritage en étendard</h2><br>
-      <p>Véritable explorateur de l’assise, la marque Van Hamme rejoint le groupe JNL en
-        2007. C’est pourtant en 1895, à Bruxelles, que cet atelier a vu le jour sous l’égide de
-        l’exigent Jean Van Hamme. Le talent de ses artisans belges a, au fil du temps,
-        suscité l’intérêt des plus grandes familles ainsi que des architectes et décorateurs
-        de renom, notamment attirés par l’excellence de son service sur mesure. Fort de
-        cette réputation acquise durant cinq générations, la marque exporte désormais
-        dans le monde entier son sens inné de l’artisanat et du confortable.</p>
+      <h2>{{text.sectionTitle}}</h2><br>
+      <p [innerHTML]="text.sectionText"></p>
       <div class="home-links-flex">
         <a class="home_links">VOIR TOUS LES PRODUITS</a>
         <a class="home_links">TÉLÉCHARGER LE CATALOGUE</a>
@@ -82,33 +76,17 @@
   <div class="flex-div">
     <div>
       <img alt="JNL Collection" src="assets\Images\Marque_V\MKV_pic3.jpg">
-      <span> L’ART DE S’ASSOIR</span>
-      <p>
-          Encore conçues dans les ateliers originels, les créations Van Hamme interpellent 
-          de premier abord par l’extrême qualité de leur fabrication. La passion palpable 
-          de ses artisans – menuisiers, garnisseurs ou couturiers – fait toute la force de 
-          la collection. L’incroyable travail de l’homme sur le confort de l’assise, le galbe 
-          délicieux du dossier, ou la délicatesse de l’accoudoir est une ode au confort et à 
-          l’art de s’assoir. La signature Van Hamme transparait à travers le choix subtil et 
-          audacieux de ses matières et finitions qui font la part belle aux velours palatine, 
-          laiton patiné et autres bois nobles à l’instar du chêne et de l’érable. 
-      </p>
+      <span>{{text.leftTitle}}</span>
+      <p [innerHTML]="text.leftText"></p>
     </div>
 
     <div>
       <div>
         <h6>ICONIQUE</h6>
-        <span>L'EXCESSIF</span>
+        <span>{{text.rightTitle}}</span>
       </div>
       <img alt="JNL Collection" src="assets\Images\Marque_V\MKV_pic4.png">
-      <p>
-          Comme son nom l’indique, ce fauteuil joue la carte de la sur-dimension.<br> 
-          116 centimètres de sophistication sur 140 d’artisanat, tel est son exquis 
-          format, imaginé dans un design si robuste qu’il paraît comme taillé dans la 
-          pierre. A leur façon, ses revêtements imposent également un style hors-norme, 
-          à l’image de l’effet marbré très actuel de l’un, et des dessins radicalement 
-          abstraits de l’autre.
-      </p>
+      <p [innerHTML]="text.rightText"></p>
     </div>
   </div>
 

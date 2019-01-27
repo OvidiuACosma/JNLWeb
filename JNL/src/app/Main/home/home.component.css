@@ -6,7 +6,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2vw;
+    font-size: 3.2vw;
 }
 
 h3 {
@@ -685,10 +685,6 @@ video {
         height: auto;
     }
 
-    #les_marques {
-       /* min-height: 145.5vw;
-        max-height: 145.5vw !important;*/
-    }
 
     .marque-text{
         text-align: center;

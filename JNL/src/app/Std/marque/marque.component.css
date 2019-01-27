@@ -319,6 +319,8 @@ h6 {
 
     font-family: Atak-Light;
     font-size: 1.4vw;
+
+    text-transform: uppercase;
 }
 
 .flex-div > div > p {

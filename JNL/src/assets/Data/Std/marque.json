@@ -3,6 +3,8 @@
         "EN": {
             "JNL": {
                 "collectionTitle": "JNL Collection",
+               
+                "marqueImgSrc": "assets/Images/Marques/MK_picJNL.jpg",
 
                 "sectionTitle": "Le classicisme réinventé.",
                 "sectionText": "Founded in 1992, the spirit embodied by the JNL Collection is a subtle blend of great classicism and avant-garde inspiration. Ancestral know-how is harmoniously met with the latest state-of-the-art techniques to bring a soul to each of its creations. The JNL Collection uses personalization and eclecticism to create ultimately sublime interiors.<br><br>Each artisan, whether a woodworker, sculptor, or upholsterer, is guided by a taste for innovation all while respecting century old methods. They are able to bring together surprising combinations of materials, such as <strong>stainless steel</strong> combined with <strong>flattened bamboo</strong> or <strong>lush velvet</strong> combined with <strong>polished veneer</strong>. This contrasting effect continues on pieces such as <strong>armchairs with pure geometric lines</strong> rubbing shoulders with <strong>wood crafted sofas</strong> made with infinitely fine precision.",
@@ -15,6 +17,8 @@
             },
             "VANHAMME": {
                 "collectionTitle": "Vanhamme",
+               
+                "marqueImgSrc": "assets/Images/Marques/MK_picVanhamme.jpg",
 
                 "sectionTitle": "L’héritage en étendard",
                 "sectionText": "As a true explorer in the art of seating, the Van Hamme brand joined the JNL group in 2007. However, it was in 1895, in the city of Brussels, that this workshop was created under the auspices of the talented Jean Van Hamme. Their Belgian craftsmen’s talent has, over the years, aroused the interest of great families, renowned architects, and decorators, all particularly attracted by the excellence of its tailor-made services. Having acquired such a reputation over five generations, the brand now exports its innate sense of craftsmanship and comfort all over the world. ",
@@ -27,6 +31,8 @@
             },
             "UNGARO": {
                 "collectionTitle": "Emanuel Ungaro Home",
+               
+                "marqueImgSrc": "assets/Images/Marques/MK_picUngaro.jpg",
 
                 "sectionTitle": "Entre mode et mobilier",
                 "sectionText": "Originally from Italy, Emanuel Ungaro founded his eponymous brand in 1965. The whole world fell in admiration with his mastery of drapery and innate sense of color. Thanks to their unequalled know-how in the field of luxury furniture, JNL was entrusted with the creation of the designer's home line and sought inspiration from the brand's archived treasures to design a state-of-the-art haute couture collection. Sophisticated motifs, precious materials, and delicate finishes... Ungaro Home unveils its home designs in unstoppably chic and contemporary opulence. ",
@@ -39,6 +45,8 @@
             },
             "LUZ": {
                 "collectionTitle": "Luz Interiors",
+               
+                "marqueImgSrc": "assets/Images/Marques/MK_picLuz.jpg",
 
                 "sectionTitle": "La duceour minimale",
                 "sectionText": "Luz Interiors offers a timeless collection, designed to enliven any space with simplicity and conviviality. All furnishings, from seats to lighting are furnished out of high-quality materials and reflect the minimalist aesthetics that have been catalysts of the brand’s success. Their keen sense of detail and robust designs have undoubtedly contributed to the brand’s reputation, which has been meeting the standards and expectations of an international clientele since 1995. ",
@@ -53,6 +61,8 @@
     "FR": {
         "JNL": {
             "collectionTitle": "JNL Collection",
+               
+            "marqueImgSrc": "assets/Images/Marques/MK_picJNL.jpg",
 
             "sectionTitle": "Le classicisme réinventé",
             "sectionText": "Né en 1992, l’esprit JNL Collection est un subtil mélange entre le grand classicisme et des inspirations avant-gardistes. Les savoir-faire ancestraux s’accordent avec les techniques de pointe et font vibrer chacune de ses créations. Proposant une multitude de finitions, JNL Collection joue la carte de la personnalisation et de l’éclectisme afin de sublimer les intérieurs.<br><br>Qu’ils soient ébénistes, sculpteurs ou garnisseurs, chaque artisan de la marque respecte des méthodes ancestrales tout en étant guidés par le goût de l’innovation. Ils osent ainsi des combinaisons étonnantes de matériaux, tels que <strong>l’acier inoxydable</strong> associé au <strong>bambou déroulé</strong> – fierté de la maison – ou un <strong>luxuriant velours</strong> couplé à du <strong>placage poli</strong>. Les effets de contraste se poursuivent également dans les formes, où des <strong>fauteuils aux lignes pures et géométriques</strong> côtoient des <strong>canapés à la boiserie travaillée</strong> avec une infinie précision. ",
@@ -65,6 +75,8 @@
         },
         "VANHAMME": {
             "collectionTitle": "Vanhamme",
+               
+            "marqueImgSrc": "assets/Images/Marques/MK_picVanhamme.jpg",
 
             "sectionTitle": "L’héritage en étendard",
             "sectionText": "Véritable explorateur de l’assise, la marque Van Hamme rejoint le groupe JNL en 2007. C’est pourtant en 1895, à Bruxelles, que cet atelier a vu le jour sous l’égide de l’exigent Jean Van Hamme. Le talent de ses artisans belges a, au fil du temps, suscité l’intérêt des plus grandes familles ainsi que des architectes et décorateurs de renom, notamment attirés par l’excellence de son service sur mesure. Fort de cette réputation acquise durant cinq générations, la marque exporte désormais dans le monde entier son sens inné de l’artisanat et du confortable.",
@@ -77,6 +89,8 @@
         },
         "UNGARO": {
             "collectionTitle": "Emanuel Ungaro Home",
+               
+            "marqueImgSrc": "assets/Images/Marques/MK_picUngaro.jpg",
 
             "sectionTitle": "Entre mode et mobilier",
             "sectionText": "Originaire d’Italie, Emanuel Ungaro fonde sa marque éponyme en 1965. Le monde entier tombe dès lors en admiration devant sa maîtrise du drapé et son sens inné de la couleur. Grâce à son savoir-faire inimitable en matière de mobilier de luxe, JNL s’est vu confié la réalisation de la ligne maison du créateur et, inspiré par les trésors d’archives de la marque, signe une collection très haute couture. Jeux de motifs, matières précieuses, finitions délicates… Ungaro Home dévoile sans détours les codes d’une opulence contemporaine au chic imparable. ",
@@ -89,6 +103,8 @@
         },
         "LUZ": {
             "collectionTitle": "Luz Interiors",
+               
+            "marqueImgSrc": "assets/Images/Marques/MK_picLuz.jpg",
 
             "sectionTitle": "La douceur minimale",
             "sectionText": "Luz Interiors propose une collection empreinte d’intemporalité, pensée pour habiller chambres et espaces de convivialité en toute simplicité. Entièrement conçus à partir de matériaux de haute qualité, meubles, sièges et luminaires renvoient à une esthétique minimaliste qui fait le succès de la marque. Son sens aigu du détail et la robustesse de son design contribuent sans nul doute au rayonnement de la maison qui, depuis 1995, parvient à répondre aux attentes des clients internationaux les plus exigeants.",
