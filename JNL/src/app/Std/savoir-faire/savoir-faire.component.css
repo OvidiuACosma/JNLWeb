@@ -324,6 +324,26 @@ video {
     padding-top: 60px;
 }
 
+#savoir {
+    margin: auto;
+    width: 87.3vw;
+    height: 55vw;
+    display: flex;
+
+    color: white;
+}
+
+#savoir > div:first-child {
+    margin: auto;
+    width: 87vw;
+    /*width: 1255px;*/
+
+    height: 48.5vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 
@@ -523,20 +543,23 @@ input[type="radio"] {
         height: 148.7vw;
     }
 
-    
+    h1 {
+        font-size: 9.7vw;
+    }
+
     h2 {
-        font-size: 13.9vw;
+        font-size: 5.6vw;
     }
     
     h3 {
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     }
     
     h4{
-        font-size: 5.2vw;
+        font-size: 4.2vw;
     }
     h5 {
-        font-size: 4.4vw;
+        font-size: 3.4vw;
     }
     
     
@@ -546,35 +569,35 @@ input[type="radio"] {
     
     
     .ateliers-flex > div > div {
-        font-size: 6.2vw;
+        font-size: 4.2vw;
     } 
     .ateliers-flex > div > div > span {
-        font-size: 4.4vw;
+        font-size: 3.4vw;
     
     } 
     
     .ateliers-flex > div:nth-child(2) > div:first-child {
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     } 
     
     
     .steps-text {
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     }
  
     
     .steps-text > div > span {
-        font-size: 7.2vw;
+        font-size: 6.2vw;
     }
     
     
     
     .container {
-        font-size: 4.4vw;
+        font-size: 3.4vw;
     }
     
     .group-text > span {
-        font-size: 7.2vw;
+        font-size: 6.2vw;
     
     }
 }

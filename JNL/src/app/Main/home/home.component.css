@@ -368,9 +368,10 @@ hr {
     /*width: 1255px;*/
 
     height: 48.5vw;
+    /*
     background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center center;*/
 
     display: flex;
     flex-direction: column;

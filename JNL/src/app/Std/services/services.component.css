@@ -382,6 +382,26 @@ button
     padding-top: 60px;
 }
 
+#services {
+    margin: auto;
+    width: 87.3vw;
+    height: 55vw;
+    display: flex;
+
+    color: white;
+}
+
+#services > div:first-child {
+    margin: auto;
+    width: 87vw;
+    /*width: 1255px;*/
+
+    height: 48.5vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 800px){
     .contact_div > p{
         font-size: 1em;
@@ -390,12 +410,16 @@ button
         margin-right: auto;
     }
 
+    h1 {
+        font-size: 9.7vw;
+    }
+
     h2 {
         margin-left: auto;
         margin-right: auto;
         width: 80vw;
         word-wrap: normal;
-        font-size: 7.6vw !important;
+        font-size: 5.6vw !important;
     }
 
     h4 {
@@ -453,17 +477,17 @@ button
 
 
     h2 {
-        font-size: 7.6vw;
+        font-size: 5.6vw;
     }
     
     h4 {
-        font-size: 5.2vw;
+        font-size: 4.2vw;
     }
     
     
     .quote-bar > p {
         font-family: Atak-LightItalic;
-        font-size: 7.2vw;
+        font-size: 4.2vw;
     }
     
     .quote-bar > h4 {
@@ -471,7 +495,7 @@ button
     }
     
     .sur-flex > div > div {
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     } 
     .sur-flex > div > div > span {
         font-size: 4.4vw;
@@ -479,7 +503,7 @@ button
     } 
     
     .sur-flex > div:nth-child(2) > div:first-child {
-        font-size: 5.5vw; 
+        font-size: 4.5vw; 
     } 
     
     
@@ -490,13 +514,18 @@ button
    
     .contact_div
     {
-        font-size: 5.5vw;
+        font-size: 4.5vw;
         
     }
     
    
     .contact_div > div > p {
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     }
+
+    #services_list > a {
+        margin: 0px;
+    }
+
    
 }

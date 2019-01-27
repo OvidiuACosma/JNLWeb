@@ -335,4 +335,8 @@ input[type="radio"] {
     .parutions-text > div > span {
         font-size: 7.2vw;
     }
+
+    #presse_list > a {
+        margin: 0px;
+    }
 }
