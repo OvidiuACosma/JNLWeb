@@ -382,11 +382,13 @@ hr {
     display: flex;
     flex-direction: column;
     width: 87.3vw;
-    height: 51.5vw;
+    height: auto;
     margin: auto;
+    margin-top: 20%;
+    margin-bottom: 25%;
 }
 
-#savoir > div:last-child > div {
+#savoir > div:last-child > div{
     margin: auto;
 }
 
@@ -720,5 +722,9 @@ video {
 
     #actualites > div > p >span {
         font-size: 3.6vw;
+    }
+    #savoir > div:last-child {
+        margin-top: 5%;
+        margin-bottom: 0px;
     }
 }
