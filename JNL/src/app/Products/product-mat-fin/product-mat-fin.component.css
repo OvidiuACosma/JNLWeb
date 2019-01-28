@@ -67,3 +67,8 @@ ul {
 #garnissage-detail {
     margin: 5px;
 }
+
+.test {
+    display: flex;
+    flex-wrap: wrap;
+}
