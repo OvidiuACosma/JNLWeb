@@ -26,7 +26,7 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
     this.dataex.currentLanguage
     .subscribe(lang => {
-      this.language = lang;
+      this.language = lang || 'EN';
       this.getText(lang);
     });
   }
@@ -40,21 +40,22 @@ export class PressComponent implements OnInit, AfterViewChecked {
   }
 
   getLanguageText(res: any) {
-    switch (this.language) {
-        case 'EN': {
-          this.text = res['EN'];
-          break;
-          }
-        case 'FR': {
-          this.text = res['FR'];
-          break;
-        }
-        default: {
-          this.text = res['EN'];
-          break;
-        }
-      }
-      console.log('Home text:' , this.text);
+    this.text = res[this.language.toUpperCase()];
+    // switch (this.language) {
+    //     case 'EN': {
+    //       this.text = res['EN'];
+    //       break;
+    //       }
+    //     case 'FR': {
+    //       this.text = res['FR'];
+    //       break;
+    //     }
+    //     default: {
+    //       this.text = res['EN'];
+    //       break;
+    //     }
+    //   }
+    //   console.log('Home text:' , this.text);
   }
 
   ngAfterViewChecked() {
