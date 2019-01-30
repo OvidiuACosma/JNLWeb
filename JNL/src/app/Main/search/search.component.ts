@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
     .subscribe(status => this.navBarStatus = status);
     this.dataex.currentLanguage
     .subscribe(lang => {
-      this.language = lang;
+      this.language = lang || 'EN';
       // this.getText(lang);
     });
     this.getText(this.language);
@@ -43,20 +43,21 @@ export class SearchComponent implements OnInit {
   }
 
   getLanguageText(res: any) {
-    switch (this.language) {
-        case 'EN': {
-          this.text = res['EN'];
-          break;
-          }
-        case 'FR': {
-          this.text = res['FR'];
-          break;
-        }
-        default: {
-          this.text = res['EN'];
-          break;
-        }
-      }
+    this.text = res[this.language.toUpperCase()];
+    // switch (this.language) {
+    //     case 'EN': {
+    //       this.text = res['EN'];
+    //       break;
+    //       }
+    //     case 'FR': {
+    //       this.text = res['FR'];
+    //       break;
+    //     }
+    //     default: {
+    //       this.text = res['EN'];
+    //       break;
+    //     }
+    //   }
   }
 
   goSearchMode() {
