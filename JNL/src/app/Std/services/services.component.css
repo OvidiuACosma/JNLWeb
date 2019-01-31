@@ -208,6 +208,10 @@ textarea{
     outline: none;
 }
 
+i {
+    outline: none;
+}
+
 
 .contact_div
 {
@@ -295,7 +299,7 @@ label {
 
 
 #checks {
-    width: 70%;
+    /* width: 70%; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
