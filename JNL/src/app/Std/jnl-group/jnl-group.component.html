@@ -23,8 +23,9 @@
               
             </p>
           </div>
-          <div>
-            <img alt="JNL Collection" src="assets/Images/Groupe/GP_vertical.jpg">
+          <div class="respo_img" id="img1">&nbsp;
+            <!-- <img alt="JNL Collection">
+            <img alt="JNL Collection" src="assets/Images/Groupe/GP_vertical.jpg"> -->
           </div>
         </div>
 
@@ -181,9 +182,10 @@
         <h2>{{text.engagementTitle}}</h2>
         <h3>{{text.engagementSub}}</h3>
         <div class='image-parag' id="impg2">
-          <div>
-            <img class="marques-image" alt="JNL Collection" src="assets/Images/Groupe/GP_leaf.jpg">
-          </div>
+            <div class="respo_img" id="img2">&nbsp;
+                <!-- <img alt="JNL Collection">
+                <img alt="JNL Collection" src="assets/Images/Groupe/GP_leaf.jpg"> -->
+              </div>
           <div>
             <p [innerHTML]="text.engagementText">
             </p>
@@ -222,7 +224,7 @@
                     <h2>{{text.projetsCity2}}</h2>
                     <h2>{{text.projets2}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Groupe\PJ_London.jpeg' alt='JNL Collection' class="slide-image">
+                     <img src='assets\Images\Projects\PJ_London.jpeg' alt='JNL Collection' class="slide-image">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -236,7 +238,7 @@
                     <h2>{{text.projetsCity1}}</h2>
                     <h2>{{text.projets1}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Groupe\PJ_Reims.jpeg' alt='JNL Collection' class="slide-image">
+                     <img src='assets\Images\Projects\PJ_Reims.jpeg' alt='JNL Collection' class="slide-image">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -278,7 +280,7 @@
         <h2>Les Archives</h2>
         <h3>XXXXXX</h3>
         <div>
-          <div>
+          <div data-toggle="modal" data-target="#archivesModal" id="clickme">
             <span>
               2017
             </span>
@@ -317,6 +319,76 @@
         </div>
       </div>
 
+      
+<!---->
+      <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
+      aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">2017 Archives</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel'>
+                  <div class="carousel-inner">
+                      <div class='carousel-item active'>
+                        <div class="container2">
+                        <div class="carousel-item-image2">
+                          <img src='\assets\Images\Projects\PJ_Paris.jpeg' alt='JNL Collection' class="slide-image">
+                        </div>
+                        </div>
+                      </div>
+          
+                      <div class='carousel-item' active="setActiveSlide(1)">
+                          <div class="container2">
+                          <div class="carousel-item-image2">
+                            <img src='\assets\Images\Projects\PJ_London.jpeg' alt='JNL Collection1' class="slide-image">
+                          </div>
+                          </div>
+                      </div>
+                      <div class='carousel-item'>
+                          <div class="container2">
+                          <div class="carousel-item-image2">
+                            <img src='\assets\Images\Projects\PJ_Reims.jpeg' alt='JNL Collection2' class="slide-image">
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Controls -->
+                  <a class='carousel-control-prev' data-target="#carousel-archives" data-slide='prev'>
+                      <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+                      <span class="sr-only">Previous</span>
+                  </a>
+                  <a class='carousel-control-next' data-target="#carousel-archives" data-slide='next'>
+                      <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+                      <span class="sr-only">Next</span>
+                  </a>
+
+                  <!-- 
+                <div class='carousel-indicators'>
+                    <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='0' class='active'>
+                    <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='1'>
+                    <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='2'>
+                  </div>
+                
+                <ol class='carousel-indicators'>
+                    <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>JNL Collection</span></li>
+                    <li data-target='#carousel-custom' data-slide-to='1'><span>Vanhamme</span></li>
+                    <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaro Home</span></li>
+                    <li data-target='#carousel-custom' data-slide-to='3'><span>Luz-Interiors</span></li>
+                </ol>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!---->
+
       <!--
       <div id="gallery-div">
         <div class="gallery">
@@ -346,5 +418,6 @@
       </div>
     </div>
   -->
+
   </div>
 </div>
