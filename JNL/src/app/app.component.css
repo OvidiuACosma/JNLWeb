@@ -11,10 +11,22 @@
     z-index: 899;
 }
 
+.menu-blue {
+    background-color: #121A2D; 
+    top: 60px;
+    width: 3%;
+}
+
+.content {
+    top: 60px;
+    z-index: 801;
+    width: 97%;
+}
+
 .main {
     display: block;
-    top: 60px;
-    position: relative;
+    /*top: 60px;
+    position: relative;*/
     z-index: 800;
 }
 
@@ -22,6 +34,6 @@
     min-height: 50vh;
 }
 
-menu-bottom {
-    position: relative;
+.menu-bottom {
+    /* position: relative; */
 }
