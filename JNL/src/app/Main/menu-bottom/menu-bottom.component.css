@@ -21,7 +21,7 @@ input:focus, button:focus {
 .bottom_nav {
 
     padding: 55px 55px 15px 55px;
-    position: absolute;
+    /* position: absolute; */
 
     width: 100vw;
     margin: 0;
