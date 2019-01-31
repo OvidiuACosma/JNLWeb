@@ -23,7 +23,7 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
     this.dataex.currentLanguage
     .subscribe(lang => {
-      this.language = lang;
+      this.language = lang || 'EN';
       this.getText(lang);
     });
   }
@@ -37,20 +37,21 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
   }
 
   getLanguageText(res: any) {
-    switch (this.language) {
-        case 'EN': {
-          this.text = res['EN'];
-          break;
-          }
-        case 'FR': {
-          this.text = res['FR'];
-          break;
-        }
-        default: {
-          this.text = res['EN'];
-          break;
-        }
-      }
+    this.text = res[this.language.toUpperCase()];
+    // switch (this.language) {
+    //     case 'EN': {
+    //       this.text = res['EN'];
+    //       break;
+    //       }
+    //     case 'FR': {
+    //       this.text = res['FR'];
+    //       break;
+    //     }
+    //     default: {
+    //       this.text = res['EN'];
+    //       break;
+    //     }
+    //   }
   }
 
 

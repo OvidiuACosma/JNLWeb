@@ -8,7 +8,7 @@ import { ProductsService, PagerService } from 'src/app/_services';
 })
 export class ProductMatFinComponent implements OnInit {
 
-  public detail = 'tissu';
+  public matCategory = 'tissu';
   public tissus: any[];
   public cuirs: any[];
   public similiCuirs: any[];
@@ -17,96 +17,139 @@ export class ProductMatFinComponent implements OnInit {
   pager: any = {};
 
   // paged items
-  pagedItems: any[];
+  tissuPagedItems: any[];
+  cuirPagedItems: any[];
+  similiPagedItems: any[];
+
+  // page size (number of thumbnails) for pager
+  pageSize: number;
 
   // data used in the modal
-  public source = '';
-  public tissuModel = '';
-  public tissuCodeProd = '';
-  public tissuDimensions = '';
-  public tissuCompositionFR = '';
+  public imgSource = '';
+  public garnissageModel = '';
+  public garnissageCode = '';
+  public garnissageDimensions = '';
+  public garnissageCompositionFR = '';
 
 
   constructor(private productsService: ProductsService,
-              private pagerService: PagerService) { }
+    private pagerService: PagerService) { }
 
   ngOnInit() {
 
     // get Tissus
     this.productsService.getTissus()
-    .subscribe(tissus => {
-        // console.log('TISSUS: ', this.tissus.length);
+      .subscribe(tissus => {
         this.tissus = tissus;
         // initialize to page 1
         this.setPage(1);
-    });
+      });
 
     // get Cuirs
     this.productsService.getCuirs()
-    .subscribe(cuirs => {
+      .subscribe(cuirs => {
         this.cuirs = cuirs;
-        // console.log('CUIRS: ', this.cuirs.length);
-        // initialize to page 1
-        this.setPage(1);
-    });
+      });
 
     // get Simili Cuirs
-    this.productsService.getCuirs()
-    .subscribe(similiCuirs => {
+    this.productsService.getSimiliCuirs()
+      .subscribe(similiCuirs => {
         this.similiCuirs = similiCuirs;
-        this.setPage(1);
-    });
+      });
+
+    this.setPageSize();
   }
 
-  setPage(page: number) {
-    // get pager object from service
-    this.pager = this.pagerService.getPager(this.tissus.length, page);
-
-    // get current page of items
-    this.pagedItems = this.tissus.slice(this.pager.startIndex, this.pager.endIndex + 1);
-}
-
-  setDetail(index: number) {
-    switch (index) {
-      case 0: {
-        this.detail = 'tissu';
+  setCategory(category: string) {
+    switch (category) {
+      case 'tissu': {
+        this.matCategory = 'tissu';
+        this.setPage(1);
         break;
       }
-      case 1: {
-        this.detail = 'cuir';
+      case 'cuir': {
+        this.matCategory = 'cuir';
+        this.setPage(1);
         break;
       }
-      case 2: {
-        this.detail = 'metal';
+      case 'similicuir': {
+        this.matCategory = 'similicuir';
+        this.setPage(1);
         break;
-      }
-      case 3: {
-        this.detail = 'bois';
-        break;
-      }
-      case 4: {
-        this.detail = 'verre';
-        break;
-      }
-      case 5: {
-        this.detail = 'miroir';
-        break;
-      }
-      default: {
-        this.detail = 'tissu';
       }
     }
   }
 
-  setTissuID(event) {
-    const tissuID = event.target.dataset.tissuid;
-    this.tissuModel = this.tissus[tissuID].model;
-    this.tissuCodeProd = this.tissus[tissuID].codeProd.toUpperCase();
-    this.tissuDimensions = this.tissus[tissuID].dimensions;
-    this.tissuCompositionFR = this.tissus[tissuID].compositionFR;
-    this.source = 'assets\\Images\\Products\\JNL\\Garnissage\\Tissu\\' + this.tissuCodeProd + '_Print.jpg';
-    // console.log(event.target.dataset.tissuid);
- }
+  // set number of thumbnails per page
+  setPageSize() {
+    const cssWidth: number = window.innerWidth;
+    // xl
+    if (cssWidth >= 1200) {
+      this.pageSize = 24;
+    // lg
+    } else if (cssWidth < 1200 && cssWidth >= 992) {
+      this.pageSize = 16;
+    // md
+    } else if (cssWidth < 992 && cssWidth >= 768) {
+      this.pageSize = 12;
+    // sm
+    } else if (cssWidth < 768) {
+      this.pageSize = 8;
+    }
+  }
+
+  setPage(page: number) {
+    if (this.matCategory === 'tissu') {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(this.tissus.length, page, this.pageSize);
+
+    // get current page of items
+    this.tissuPagedItems = this.tissus.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    } else if (this.matCategory === 'cuir') {
+      this.pager = this.pagerService.getPager(this.cuirs.length, page, this.pageSize);
+      this.cuirPagedItems = this.cuirs.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  } else if (this.matCategory === 'similicuir') {
+    this.pager = this.pagerService.getPager(this.similiCuirs.length, page, this.pageSize);
+    this.similiPagedItems = this.similiCuirs.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+}
+
+  onResize() {
+    this.setPageSize();
+    this.setPage(1);
+  }
+
+  sendDataToModal(event) {
+    const garnissageID = event.target.dataset.garnissageid;
+    const material = event.target.dataset.material.toUpperCase();
+
+    switch (material) {
+      case 'TISSU': {
+        this.garnissageModel = this.tissus[garnissageID].model;
+        this.garnissageCode = this.tissus[garnissageID].codeProd.toUpperCase();
+        this.garnissageDimensions = this.tissus[garnissageID].dimensions;
+        this.garnissageCompositionFR = this.tissus[garnissageID].compositionFR;
+        this.imgSource = 'assets\\Images\\Products\\JNL\\Garnissage\\Tissu\\' + this.garnissageCode + '_Print.jpg';
+        break;
+      }
+      case 'CUIR': {
+        this.garnissageModel = this.cuirs[garnissageID].model;
+        this.garnissageCode = this.cuirs[garnissageID].codeProd.toUpperCase();
+        this.garnissageDimensions = this.cuirs[garnissageID].dimensions;
+        this.garnissageCompositionFR = this.cuirs[garnissageID].compositionFR;
+        this.imgSource = 'assets\\Images\\Products\\JNL\\Garnissage\\Cuir\\' + this.garnissageCode + '_Print.jpg';
+        break;
+      }
+      case 'SIMILI CUIR': {
+        this.garnissageModel = this.similiCuirs[garnissageID].model;
+        this.garnissageCode = this.similiCuirs[garnissageID].codeProd.toUpperCase();
+        this.garnissageDimensions = this.similiCuirs[garnissageID].dimensions;
+        this.garnissageCompositionFR = this.similiCuirs[garnissageID].compositionFR;
+        this.imgSource = 'assets\\Images\\Products\\JNL\\Garnissage\\SimiliCuir\\' + this.garnissageCode + '_Print.jpg';
+        break;
+      }
+    }
+  }
 
   closeModal() {
     const modal = document.getElementById('garnissageModal');
@@ -114,7 +157,6 @@ export class ProductMatFinComponent implements OnInit {
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target === modal) {
-        // modal.style.display = 'none';
         document.getElementById('thumbnail-img').click();
       }
     };
