@@ -139,13 +139,16 @@ h4 {
 
 .carousel-inner {
 
-    margin: 0px !important;
+    margin: auto;
+
+    width: 60vw;
+    height: 70vh;
 
     display: flex;
 }
 
 #blogCarousel {
-    height: 80vw;
+    height: 60vw;
     margin: auto;
 }
 
@@ -153,14 +156,13 @@ h4 {
     margin: auto;
 }
 .slide-image {
+
+    margin: auto;
     width: 100%;
-    height: 100%;
-    min-width: 23.8vw;
-    max-height: 35.7vw;
+    height: 90%;
 
     object-fit: cover;
 
-    margin-left: 30px;
 
     text-align: left;
     float: left;
@@ -169,14 +171,8 @@ h4 {
 }
 .carousel-marques {
     width: 100%;
-    height: 53.5vw; /*60vh;*/
-    padding-top: 3.15vw; /*5vh;*/
-
-    
-    width: 23.8vw;
 
     margin: auto;
-    margin-top: 5.3vw;
 
 }
 
@@ -188,7 +184,7 @@ h4 {
 .carousel-arrows {
     height: 4vw;
     width: 2vw;
-    margin-top: auto;
+    margin: auto;
 }
 
 
@@ -203,6 +199,10 @@ h4 {
 .carousel-item-image {
     float: left;
     padding-left: 0px;
+
+    width: 60vw;
+
+    display: flex;
 
 }
 
@@ -267,14 +267,13 @@ input[type="radio"] {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-
-    width: 100vw;
     padding: 0px;
 
     font-family: Atak-Regular;
     font-size: 16px;
+
+    display: flex;
+    height: 70vh;
 }
 
 #parutions {
@@ -306,10 +305,32 @@ input[type="radio"] {
     text-transform: uppercase;
 }
 
+.modal-backdrop {
+    position: relative;
+  }
+
+.modal-body {
+    padding: 0px !important;
+}
+
+.modal-dialog {
+    width: 80vw;
+    max-width: 1440px;
+    min-height: 0px;
+    margin-top: 60px;
+}
+
 #catalogues, #banqueImages, #pressKit, #parutions {
     margin-top: -60px;
     padding-top: 60px;
 }
+
+#clickme {
+    background-color: orange;
+    color: white;
+}
+
+
 
 @media only screen and (max-width: 800px) {
     .parutions-text {
