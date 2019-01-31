@@ -7,7 +7,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 5.9vw;
+    /* margin-top: 5.9vw; */
     margin-bottom: 5.6vw;
     font-family: Atak-Light;
     font-size: 3.5vw;
@@ -131,7 +131,7 @@ h4 {
     width: 15.8vw;
     word-wrap: normal;
 
-    height: 12.5vw;
+    height: 6.5vw;
 }
 
 
@@ -321,7 +321,7 @@ input[type="radio"] {
 }
 
 #catalogues, #banqueImages, #pressKit, #parutions {
-    margin-top: -60px;
+    margin-bottom: 60px;
     padding-top: 60px;
 }
 

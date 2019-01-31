@@ -9,7 +9,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 5.9vw;
+    /* margin-top: 5.9vw; */
     font-family: Atak-Light;
     font-size: 3.5vw;
 
@@ -218,7 +218,6 @@ textarea{
     text-align: center;
 
     margin-bottom: 5vh;
-    margin-top: 7vw;
 
     font-family: Atak-Regular;
     font-size: 20px;
@@ -378,7 +377,7 @@ button
 }
 
 #expertise, #surMesure, #votreProjet {
-    margin-top: -60px;
+    margin-bottom: 60px;
     padding-top: 60px;
 }
 
