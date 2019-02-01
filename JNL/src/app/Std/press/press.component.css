@@ -105,7 +105,8 @@ h4 {
 
 .four-flex {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    flex-direction: row;
     flex-wrap: wrap;
 
     width: 67.9vw;
@@ -113,18 +114,26 @@ h4 {
 }
 
 .four-flex > div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.four-flex > div > div {
     margin: auto;
     width: 15.8vw;
     display: flex;
     flex-direction: column;
+
+    margin-right: 1vw;
 }
 
-.four-flex > div > img {
+.four-flex > div > div > img {
     width: 15.8vw;
     margin-bottom: 1.9vw;
 }
 
-.four-flex > div > span {
+.four-flex > div > div > span {
     font-family: Atak-Light;
     font-size: 1.8vw;
 
@@ -336,6 +345,10 @@ input[type="radio"] {
         top:0;
     }
 
+    h1 {
+        font-size: 9.7vw;
+    }
+
     h2 {
         font-size: 7.6vw;
     }
@@ -355,5 +368,22 @@ input[type="radio"] {
 
     #presse_list > a {
         margin: 0px;
+    }
+
+    .four-flex {
+        width: 80vw;
+        justify-content: center;
+    }
+
+    .four-flex > div {
+        flex-direction: column;
+    }
+
+    .four-flex > div > div {
+        width: 30vw;
+    }
+
+    .four-flex > div > div > img {
+        width: 30vw;
     }
 }

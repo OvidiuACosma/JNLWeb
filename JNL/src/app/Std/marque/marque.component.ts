@@ -13,11 +13,13 @@ export class MarqueComponent implements OnInit {
 
   language: string;
   text: any;
+  othersText = ['JNL Collection', 'Vanhamme', 'Luz Interiors', 'Emanuel Ungaro Home'];
+  othersLink = ['jnl', 'vanhamme', 'luz', 'ungaro'];
 
   public marque: string;
 
   constructor(private route: ActivatedRoute,
-               private router: Router,
+              private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService) { }
 
@@ -60,6 +62,14 @@ export class MarqueComponent implements OnInit {
     //   }
   }
 
+  getOthers(nr: number) {
+    if (this.othersLink[nr] === this.marque) {
+        return 3;
+    } else {
+      return nr;
+    }
+  }
+
   navigateToAnchor(fragment: string) {
     const element = document.getElementById(fragment);
     if (element) {
@@ -74,6 +84,21 @@ export class MarqueComponent implements OnInit {
     } else {
       this.router.navigate([target], {fragment: fragment});
     }
+  }
+
+  navigateToMarque(newMarque: string) {
+    this.router.navigate(['/marque', newMarque]);
+    window.scrollTo(0, 0);
+
+    this.route.params.subscribe(params => {
+      this.marque = params['marque'];
+    });
+
+    this.dataex.currentLanguage
+    .subscribe(lang => {
+      this.language = lang || 'EN';
+      this.getText(lang);
+    });
   }
 
   ScrollTop() {

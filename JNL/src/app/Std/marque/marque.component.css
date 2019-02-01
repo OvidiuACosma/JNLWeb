@@ -281,7 +281,7 @@ h6 {
  }
 
 .voir {
-    margin: auto;
+    /* margin: auto; */
     margin-top: 4.1vw;
     text-align: center;
 }
@@ -370,6 +370,10 @@ h6 {
      text-align: center !important;
 
      display: flex;
+ }
+
+ #autres > p:hover {
+     cursor: pointer;
  }
 
  #autres > p > span {

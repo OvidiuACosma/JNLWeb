@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
 
 @Component({
   selector: 'app-jnl-group',
@@ -11,11 +11,14 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   language: string;
   text: any;
+  scroller = true;
+  year: any;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private archive: ArchiveService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -35,31 +38,44 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-    // switch (this.language) {
-    //     case 'EN': {
-    //       this.text = res['EN'];
-    //       break;
-    //       }
-    //     case 'FR': {
-    //       this.text = res['FR'];
-    //       break;
-    //     }
-    //     default: {
-    //       this.text = res['EN'];
-    //       break;
-    //     }
-    //   }
-    //   console.log('Home text:' , this.text);
   }
 
+  // archive images
+  yearClick(yr: any) {
+    this.year = yr;
+    this.scroller = false;
+    this.getImages(this.year);
+  }
+
+  getImages(year: any) {
+    this.archive.getArchiveImages()
+    .subscribe(data => {
+      const source = data[0];
+      this.getImageSource(source);
+    });
+  }
+
+  getImageSource(source: any) {
+    this.archive = source[this.year];
+  }
+
+  // end of archive images
 
 
+  reScroll() {
+    this.scroller = true;
+    this.ngAfterViewChecked();
+  }
 
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
-        this.navigateToAnchor(fragment);
-      } else {
+        const element = document.getElementById(fragment);
+        if (element && this.scroller === true ) {
+          element.scrollIntoView({block: 'start', behavior: 'smooth'});
+        }
+        // this.scroller = true;
+      } else if (this.scroller === true) {
           window.scrollTo(0, 0);
         }
     });
@@ -67,8 +83,9 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   navigateToAnchor(fragment: string) {
     const element = document.getElementById(fragment);
-    if (element) {
+    if (element &&  this.scroller === true) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
+    this.scroller = true;
   }
 }
