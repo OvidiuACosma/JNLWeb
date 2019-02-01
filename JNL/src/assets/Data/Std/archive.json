@@ -1,11 +1,11 @@
 [
     {
         "2016": {
-            "imgSrc": "Archive_2011_slide1",
-            "imgSrc2": "Archive_2011_slide2"
+            "imgSrc": "Archive_2011_slide1.png",
+            "imgSrc2": "Archive_2011_slide2.png"
         },
         "2015": { 
-            "imgSrc": "Archive_2011_slide3"
+            "imgSrc": "Archive_2011_slide3.png"
         }
     }
 ]
