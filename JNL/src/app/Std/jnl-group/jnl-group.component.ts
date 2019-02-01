@@ -11,6 +11,7 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   language: string;
   text: any;
+  archive: any;
   scroller = true;
   year: any;
 
@@ -18,7 +19,7 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private archive: ArchiveService) { }
+              private archiveService: ArchiveService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -42,21 +43,29 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   // archive images
   yearClick(yr: any) {
-    this.year = yr;
     this.scroller = false;
-    this.getImages(this.year);
+
+    this.year = yr;
+
+    // this.archive.getArchiveImages()
+    // .subscribe(year => {
+    //   this.year = yr;
+    //   this.getImages(yr);
+    // });
+    this.getImages(yr);
   }
 
   getImages(year: any) {
-    this.archive.getArchiveImages()
-    .subscribe(data => {
-      const source = data[0];
-      this.getImageSource(source);
+       console.log(year);
+    this.archiveService.getArchiveImages()
+    .subscribe(pics => {
+      const source = pics[0];
+      this.getImageSource(source, year);
     });
   }
 
-  getImageSource(source: any) {
-    this.archive = source[this.year];
+  getImageSource(source: any, year: any) {
+    this.archive = source[year];
   }
 
   // end of archive images

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ArchiveService {
 
-  private urlAssets = 'assets/Assets/Images/Archive/';
+  private urlAssets = 'assets/Data';
 
   constructor(private http: HttpClient) { }
 

@@ -73,6 +73,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     TranslationService,
     ProductsService,
     PagerService,
+    ArchiveService,
     UserService,
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
