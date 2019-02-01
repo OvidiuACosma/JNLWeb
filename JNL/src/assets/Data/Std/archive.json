@@ -1,12 +1,15 @@
 [
     {
+        "0": {
+
+        },
         "2016": {
                 "imgSrc": [
-                    "assets/Images/Archive/AR_2016AR_2016_pic1.png",
-                    "assets/Images/Archive/AR_2016/AR_2016_pic2.png",
-                    "assets/Images/Archive/AR_2016/AR_2016_pic3.png",
-                    "assets/Images/Archive/AR_2016/AR_2016_pic4.png",
-                    "assets/Images/Archive/AR_2016/AR_2016_pic5.png"
+                    "assets/Images/Archive/AR_2016/AR_2016_pic1.jpg",
+                    "assets/Images/Archive/AR_2016/AR_2016_pic2.jpg",
+                    "assets/Images/Archive/AR_2016/AR_2016_pic3.jpg",
+                    "assets/Images/Archive/AR_2016/AR_2016_pic4.jpg",
+                    "assets/Images/Archive/AR_2016/AR_2016_pic5.jpg"
                 ]
         },
         "2015": { 
@@ -30,14 +33,14 @@
                 ]
         },
         "2012": {
-            "imgSrc": [
-                "assets/Images/Archive/AR_2012/AR_2012_pic1.png",
-                "assets/Images/Archive/AR_2012/AR_2012_pic2.png",
-                "assets/Images/Archive/AR_2012/AR_2012_pic3.png",
-                "assets/Images/Archive/AR_2012/AR_2012_pic4.png",
-                "assets/Images/Archive/AR_2012/AR_2012_pic5.png",
-                "assets/Images/Archive/AR_2012/AR_2012_pic6.png"
-            ]
+                "imgSrc": [
+                    "assets/Images/Archive/AR_2012/AR_2012_pic1.png",
+                    "assets/Images/Archive/AR_2012/AR_2012_pic2.png",
+                    "assets/Images/Archive/AR_2012/AR_2012_pic3.png",
+                    "assets/Images/Archive/AR_2012/AR_2012_pic4.png",
+                    "assets/Images/Archive/AR_2012/AR_2012_pic5.png",
+                    "assets/Images/Archive/AR_2012/AR_2012_pic6.png"
+                ]
         },
         "2011": { 
                 "imgSrc": [

@@ -292,25 +292,25 @@
               </span>
             </div>
             
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2016)">
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2014)">
               <span>
                 2014
               </span>
             </div>
             
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2016)">
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2013)">
               <span>
                 2013
               </span>
             </div>
             
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2016)">
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2012)">
               <span>
                 2012
               </span>
             </div>
             
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2016)">
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2011)">
               <span>
                 2011
               </span>
@@ -321,13 +321,13 @@
 
       
 <!---->
-      <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
+      <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="ModalLabel">Archive</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <h5 class="modal-title" id="ModalLabel">Archive {{this.year}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (onclick)="modalClose()">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -336,19 +336,19 @@
                   <div class="carousel-inner">
                       <div class='carousel-item active'>
                         <div class="container2">
-                        <div class="carousel-item-image2">
-                          <img src={{archive.imgSrc[0]}} alt='JNL Collection' class="slide-image">
-                        </div>
-                        </div>
-                      </div>
-          
-                      <div class='carousel-item' *ngFor="let item of archive.imgSrc | slice:1">
-                          <div class="container2">
                           <div class="carousel-item-image2">
-                            <img src={{item}} alt='JNL Collection1' class="slide-image">
+                            <img src={{archive.imgSrc[0]}} alt='JNL Collection' class="slide-image">
                           </div>
-                          </div>
+                        </div>
                       </div>
+                      
+                        <div class='carousel-item' *ngFor="let item of archive.imgSrc | slice:1">
+                            <div class="container2">
+                              <div class="carousel-item-image2">
+                                <img src={{item}} alt='JNL Collection1' class="slide-image">
+                              </div>
+                            </div>
+                        </div>
                   </div>
                   
                   <!-- Controls -->

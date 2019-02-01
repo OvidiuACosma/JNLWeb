@@ -41,6 +41,10 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
     this.text = res[this.language.toUpperCase()];
   }
 
+  unsetScroll() {
+    this.scroller = false;
+  }
+
   // archive images
   yearClick(yr: any) {
     this.scroller = false;
@@ -66,6 +70,10 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   getImageSource(source: any, year: any) {
     this.archive = source[year];
+  }
+
+  modalClose() {
+    this.year = 0;
   }
 
   // end of archive images
