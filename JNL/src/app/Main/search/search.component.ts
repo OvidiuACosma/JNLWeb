@@ -73,7 +73,7 @@ export class SearchComponent implements OnInit {
   }
 
   goHome() {
-    this.toggleNav();
+    this.dataex.setNavBarStatus(false);
     this.router.navigate(['/home']);
     this.ScrollTop();
   }

@@ -237,7 +237,8 @@ h6 {
 } */
 
 .carousel-indicators {
-    width: 28.5vw;
+    /* width: 28.5vw; */
+    width: 80vw;
     margin: auto;
 
     justify-content: space-between;
