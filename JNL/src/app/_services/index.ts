@@ -7,3 +7,4 @@ export * from './translation.service';
 export * from './products.service';
 export * from './pager.service';
 export * from './archive.service';
+export * from './downloader.service';
