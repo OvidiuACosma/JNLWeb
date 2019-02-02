@@ -18,6 +18,8 @@ export class SearchComponent implements OnInit {
   public text: any;
   public searchMode = false;
   public navBarStatus = true;
+  navBarButtonSrc: string;
+  navBarButtonText: string;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
@@ -25,13 +27,17 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.dataex.currentNavBarStatus
-    .subscribe(status => this.navBarStatus = status);
+    .subscribe(status => {
+      this.navBarStatus = status;
+      this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
+      this.navBarButtonText = 'MENU';
+    });
     this.dataex.currentLanguage
     .subscribe(lang => {
       this.language = lang || 'EN';
-      // this.getText(lang);
+      // this.languages = this.languages.filter(f => !f.includes(this.language)); // against HTML slect > option philisophy
+      this.getText(this.language);
     });
-    this.getText(this.language);
   }
 
   getText(lang: string) {
@@ -44,20 +50,6 @@ export class SearchComponent implements OnInit {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-    // switch (this.language) {
-    //     case 'EN': {
-    //       this.text = res['EN'];
-    //       break;
-    //       }
-    //     case 'FR': {
-    //       this.text = res['FR'];
-    //       break;
-    //     }
-    //     default: {
-    //       this.text = res['EN'];
-    //       break;
-    //     }
-    //   }
   }
 
   goSearchMode() {
@@ -80,6 +72,18 @@ export class SearchComponent implements OnInit {
   toggleNav() {
     this.toggleNavBar.emit(null);
     this.dataex.setNavBarStatus(!this.navBarStatus);
+    switch (this.navBarStatus) {
+      case false: {
+        this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
+        this.navBarButtonText = 'MENU';
+        break;
+      }
+      case true: {
+        this.navBarButtonSrc = '/assets/Images/Menu/menuClose.png';
+        this.navBarButtonText = 'CLOSE';
+        break;
+      }
+    }
   }
 
   ScrollTop() {
@@ -90,9 +94,11 @@ export class SearchComponent implements OnInit {
     switch (this.navBarStatus) {
       case false: {
         return '&#9776;';
+        // return '/assets/Images/Menu/menuOpen.png';
       }
       case true: {
         return '&#10005;';
+        // return '/assets/Images/Menu/menuClose.png';
       }
     }
   }

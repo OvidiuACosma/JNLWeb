@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class ProductComponent implements OnInit {
 
   public detail = 'description';
+  public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
 
   constructor(private router: Router) { }
 
@@ -16,28 +17,7 @@ export class ProductComponent implements OnInit {
   }
 
   setDetail(index: number) {
-    switch (index) {
-      case 0: {
-        this.detail = 'description';
-        break;
-      }
-      case 1: {
-        this.detail = 'matFin';
-        break;
-      }
-      case 2 : {
-        this.detail = 'dimensions';
-        break;
-      }
-      case 3 : {
-        this.detail = 'catalogues';
-        break;
-      }
-      case 4 : {
-        this.detail = 'pdf';
-        break;
-      }
-    }
+    this.detail = this.tabList[index];
   }
 
 }

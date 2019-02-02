@@ -3,6 +3,7 @@
     display: inline-block;
     cursor: pointer;
     height: 22px;
+    mix-blend-mode: difference;
 } 
 
 .searchInput {
@@ -15,16 +16,23 @@
 
 .top-button {
     text-transform: uppercase;
+    mix-blend-mode: difference;
 }
 
 .select-lang {
     border: 0px none;
     outline: 0;
+
+    transform: none;
+    -o-transform: none; 
     -webkit-appearance: none;
     -moz-appearance: none;
+
     appearance: none;
     width: 110%;
     padding-right: 20px;
+    background-color: transparent;
+    background: transparent;
 }
 
 /* For IE10 */
@@ -47,16 +55,16 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 60px;
+    min-height: var(--search-bar-height);
     height: auto;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     transition: 0.5s;
 }
 
 /*TEXT SEARCH*/
 #search_bar >  input {
     width: 97vw;
-    min-height: 60px;
+    min-height: var(--search-bar-height);
     height: auto;
     padding-left: 5vw;
     border: 0;
@@ -95,13 +103,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 60px;
+    min-height: var(--search-bar-height);/*60px;*/
     height: auto;
     padding: 0px;
     /*position: fixed;*/
-    background-color: white;
+    /* background-color: white; */
     color: grey;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -120,29 +129,41 @@
     text-align: center; 
     text-decoration: none;
     color: black;
+    mix-blend-mode: difference;
 }
 
 #top_buttons > span > a:link, #top_buttons > span > a:visited {
     text-decoration: none;
     color: black;
+    mix-blend-mode: difference;
 }
 
 #top_buttons > span >a:hover {
     color: darkgrey;
 }
 
-/*MENU BUTTON*/
-#menu-button, #menu-button:link, #menu-button:visited {
+#menu-button {
+    width: 77px;
+    height: var(--search-bar-height);
+    text-align: center;
+    align-items: center;
     text-decoration: none;
-    color: black;
+    color: white;
+    background-color: #121A2D;
     font-size: 1.3em;
     cursor: pointer;
 }
 
 #menu-logo {
-    display: flex;
+    display: inline-flex;
+    align-items: center !important;
     margin: auto;
-    margin-left: 1.5vw !important;
+    margin-left: 0 !important; /*1.5vw*/
+}
+
+.menu-logo-img {
+    height: var(--search-bar-height);
+    width: auto;
 }
 
 #logo {
@@ -154,7 +175,16 @@
     display: none;
 }
 
+.menu-text {
+    font-size:.758rem;
+    padding: 16px 0 0 0;
+    margin: 0;
+}
 
+.memu-button-img {
+    padding-top: 16px;
+    width: 40px;
+}
 
 @media only screen and (max-width: 800px)
 {
@@ -193,7 +223,7 @@
     }
 
     .image-link {
-        height: 19PX;
+        height: 19px;
     }
 
 

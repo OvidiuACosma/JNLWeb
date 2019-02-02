@@ -23,7 +23,7 @@ input:focus, button:focus {
     padding: 55px 55px 15px 55px;
     /* position: absolute; */
 
-    width: 100vw;
+    width: 100%;
     margin: 0;
     left: 0;
     background-color: lightgrey;
@@ -66,7 +66,7 @@ input:focus, button:focus {
 
 #fb_in {
     text-decoration: none;
-    width: 20vw;
+    width: 15vw;
 }
 
 #news_letter {
@@ -116,7 +116,7 @@ input:focus, button:focus {
     .bottom-nav-mob {
         background-color: lightgrey;
 
-        width: 100vw;
+        width: 100%;
         height: 100%;
 
         display: flex;

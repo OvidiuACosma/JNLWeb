@@ -3,9 +3,10 @@
     <app-search (toggleNavBar)="toggleNav()"></app-search>
   </div>
 
-  <div style="display:flex; flex-direction:row; top:60px; position: relative">
-    <div class="menu-blue">&nbsp;</div>
+  <div style="position: relative; background-color: #121A2D;">
+
     <div class="content">
+
       <div class="menu">
         <app-menu [toggleNavBar]="toggleNavBar"></app-menu>
       </div>
@@ -15,10 +16,13 @@
         <div class="router-outlet">
           <router-outlet></router-outlet>
         </div>
+
         <div class="menu-bottom">
           <app-menu-bottom></app-menu-bottom>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>
