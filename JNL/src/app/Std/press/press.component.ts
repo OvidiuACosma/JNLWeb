@@ -66,12 +66,15 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
   download(marque: any, type: any) {
 
+    // NOT WORKING FOR IE AND EDGE
+
     this.downloader.getFile(marque, type).subscribe(data => {
       this.blob = new Blob([data], {
         type: 'application/pdf'
       });
       this.url = window.URL.createObjectURL(this.blob);
-      window.open(this.url);
+      window.open(this.url, '_blank');
+
     });
   }
 
