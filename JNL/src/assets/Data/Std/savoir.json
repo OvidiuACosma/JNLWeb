@@ -1,6 +1,8 @@
 [
     {
         "EN": {
+            "title": "KNOW-HOW",
+
             "ateliers": "Workshops",
             "fabrication": "Fabrication",
 
@@ -22,8 +24,10 @@
             "stepsText": "Each step in the manufacturing process may be subject to a custom request for a custom result."
 
         },
-    "FR": { 
-             "ateliers": "Les ateliers",
+        "FR": { 
+            "title": "SAVOIR-FAIRE",
+
+            "ateliers": "Les ateliers",
             "fabrication": "La fabrication",
 
             "subText": "ENTRE TRADITION ET INNOVATION : UNE HISTOIRE DE CRÉATION.",

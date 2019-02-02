@@ -7,7 +7,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 5.9vw;
+    /* margin-top: 5.9vw; */
     font-family: Atak-Light;
     font-size: 3.5vw;
 
@@ -320,7 +320,7 @@ video {
 }
 
 #atelier, #fabrication {
-    margin-top: -60px;
+    margin-bottom: 60px;
     padding-top: 60px;
 }
 

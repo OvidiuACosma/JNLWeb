@@ -33,6 +33,9 @@ h4{
     text-align: center;
 }
 
+button {
+    outline: none;
+}
 
 .marques_selected {
     text-decoration: underline !important;
@@ -49,7 +52,7 @@ h4{
 .les-marques-main {
     /* display: flex; */
     margin: auto;
-    width: 100vw;
+    /* width: 100vw; */
     text-align: center;
 }
 
@@ -867,9 +870,20 @@ input[type="radio"] {
 
     #impg2 > div > p{
         max-height: 100%;
+        padding-left: 0px;
     }
 
     .proj-flex {
+        font-size: 4.2vw;
+    }
+
+    .respo_img {
+        padding-left: 80vw;
+        padding-bottom: 100%;
+        background-size: 80vw 100vw;
+    }
+
+    .group-text > span {
         font-size: 4.2vw;
     }
 }

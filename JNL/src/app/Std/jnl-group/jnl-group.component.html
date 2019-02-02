@@ -1,14 +1,14 @@
 <div class="les-marques-main">
     <div>
-      <h1>LE GROUPE</h1>
+      <h1>{{text.title}}</h1>
 
 
       <div id="marques_list">
-        <a routerLink="/jnlGroup" fragment="histoire">{{text.histoire}}</a>
-        <a routerLink="/jnlGroup" fragment="equipe">{{text.equipe}}</a>
-        <a routerLink="/jnlGroup" fragment="engagement">{{text.engagement}}</a>
-        <a routerLink="/jnlGroup" fragment="projets">{{text.projets}}</a>
-        <a routerLink="/jnlGroup" fragment="archives">{{text.archives}}</a>
+        <a routerLink="/jnlGroup" fragment="histoire" (click)="reScroll()">{{text.histoire}}</a>
+        <a routerLink="/jnlGroup" fragment="equipe" (click)="reScroll()">{{text.equipe}}</a>
+        <a routerLink="/jnlGroup" fragment="engagement" (click)="reScroll()">{{text.engagement}}</a>
+        <a routerLink="/jnlGroup" fragment="projets" (click)="reScroll()">{{text.projets}}</a>
+        <a routerLink="/jnlGroup" fragment="archives" (click)="reScroll()">{{text.archives}}</a>
       </div>
 
       <div id="histoire">
@@ -86,7 +86,7 @@
 
 
         <!--CAROUSEL-->
-        <div id='carousel-custom' class='carousel slide carousel-marques' data-ride='carousel'>
+        <div id='carousel-custom' class='carousel slide carousel-marques' data-ride='carousel'  data-interval="1800">
             <div class="carousel-inner">
                 <div class='carousel-item active'>
                   <div class="container">
@@ -202,7 +202,7 @@
           </div>
 
           
-      <div id='carousel-projets' class='carousel slide carousel-marques' data-ride='carousel'>
+      <div id='carousel-projets' class='carousel slide carousel-marques' data-ride='carousel'  data-interval="1200">
           <div class="carousel-inner">
               <div class='carousel-item active'>
                 <div class="container">
@@ -280,39 +280,39 @@
         <h2>Les Archives</h2>
         <h3>XXXXXX</h3>
         <div>
-          <div data-toggle="modal" data-target="#archivesModal" id="clickme">
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2016)">
             <span>
-              2017
+              2016
             </span>
           </div>
           
-          <div>
-              <span>
-                2016
-              </span>
-            </div>
-            
-          <div>
+          <div  data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2015)">
               <span>
                 2015
               </span>
             </div>
             
-          <div>
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2014)">
               <span>
                 2014
               </span>
             </div>
             
-          <div>
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2013)">
               <span>
                 2013
               </span>
             </div>
             
-          <div>
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2012)">
               <span>
                 2012
+              </span>
+            </div>
+            
+          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2011)">
+              <span>
+                2011
               </span>
             </div>
             
@@ -321,66 +321,45 @@
 
       
 <!---->
-      <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
-      aria-hidden="true" data-backdrop="false">
+      <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true" data-backdrop="false" *ngIf="isOpen">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="ModalLabel">2017 Archives</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <h5 class="modal-title" id="ModalLabel">Archive {{this.year}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (onclick)="modalClose()">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
                 <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel'>
                   <div class="carousel-inner">
-                      <div class='carousel-item active'>
+                      <!-- <div class='carousel-item active'>
                         <div class="container2">
-                        <div class="carousel-item-image2">
-                          <img src='\assets\Images\Projects\PJ_Paris.jpeg' alt='JNL Collection' class="slide-image">
-                        </div>
-                        </div>
-                      </div>
-          
-                      <div class='carousel-item' active="setActiveSlide(1)">
-                          <div class="container2">
                           <div class="carousel-item-image2">
-                            <img src='\assets\Images\Projects\PJ_London.jpeg' alt='JNL Collection1' class="slide-image">
+                            <img src={{archive.imgSrc[0]}} alt='JNL Collection' class="slide-image">
                           </div>
-                          </div>
-                      </div>
-                      <div class='carousel-item'>
-                          <div class="container2">
-                          <div class="carousel-item-image2">
-                            <img src='\assets\Images\Projects\PJ_Reims.jpeg' alt='JNL Collection2' class="slide-image">
-                          </div>
-                          </div>
-                      </div>
+                        </div>
+                      </div> -->
+                      
+                        <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
+                            <div class="container2">
+                              <div class="carousel-item-image2">
+                                <img src={{item}} alt='JNL Collection1' class="slide-image">
+                              </div>
+                            </div>
+                        </div>
                   </div>
                   
                   <!-- Controls -->
-                  <a class='carousel-control-prev' data-target="#carousel-archives" data-slide='prev'>
+                  <a class='carousel-control-prev' data-target="#carousel-archives" data-slide='prev' (click)="unsetScroll()">
                       <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
                       <span class="sr-only">Previous</span>
                   </a>
-                  <a class='carousel-control-next' data-target="#carousel-archives" data-slide='next'>
+                  <a class='carousel-control-next' data-target="#carousel-archives" data-slide='next' (click)="unsetScroll()">
                       <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
                       <span class="sr-only">Next</span>
                   </a>
-
-                  <!-- 
-                <div class='carousel-indicators'>
-                    <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='0' class='active'>
-                    <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='1'>
-                    <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='2'>
-                  </div>
-                
-                <ol class='carousel-indicators'>
-                    <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>JNL Collection</span></li>
-                    <li data-target='#carousel-custom' data-slide-to='1'><span>Vanhamme</span></li>
-                    <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaro Home</span></li>
-                    <li data-target='#carousel-custom' data-slide-to='3'><span>Luz-Interiors</span></li>
-                </ol>-->
               </div>
             </div>
           </div>

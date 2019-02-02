@@ -237,7 +237,8 @@ h6 {
 } */
 
 .carousel-indicators {
-    width: 28.5vw;
+    /* width: 28.5vw; */
+    width: 80vw;
     margin: auto;
 
     justify-content: space-between;
@@ -281,7 +282,7 @@ h6 {
  }
 
 .voir {
-    margin: auto;
+    /* margin: auto; */
     margin-top: 4.1vw;
     text-align: center;
 }
@@ -370,6 +371,10 @@ h6 {
      text-align: center !important;
 
      display: flex;
+ }
+
+ #autres > p:hover {
+     cursor: pointer;
  }
 
  #autres > p > span {

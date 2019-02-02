@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, DownloaderService } from 'src/app/_services';
+import { getFirstTemplatePass } from '@angular/core/src/render3/state';
+import { GeneratedFile, analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-press',
@@ -13,11 +15,16 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
   language: string;
   text: any;
+  scroller = true;
+
+  blob: any;
+  url: any;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private downloader: DownloaderService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -58,11 +65,34 @@ export class PressComponent implements OnInit, AfterViewChecked {
     //   console.log('Home text:' , this.text);
   }
 
+  download(marque: any, type: any) {
+
+    // NOT WORKING FOR IE AND EDGE
+
+    this.downloader.getFile(marque, type).subscribe(data => {
+      this.blob = new Blob([data], {
+        type: 'application/pdf'
+      });
+      this.url = window.URL.createObjectURL(this.blob);
+      window.open(this.url, '_blank');
+
+    });
+
+    this.scroller = false;
+  }
+
+
+
+
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
-        this.navigateToAnchor(fragment);
-      } else {
+        const element = document.getElementById(fragment);
+        if (element && this.scroller === true ) {
+          element.scrollIntoView({block: 'start', behavior: 'smooth'});
+        }
+        // this.scroller = true;
+      } else if (this.scroller === true) {
           window.scrollTo(0, 0);
         }
     });
@@ -70,9 +100,10 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
   navigateToAnchor(fragment: string) {
     const element = document.getElementById(fragment);
-    if (element) {
+    if (element &&  this.scroller === true) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
+    this.scroller = true;
   }
 
   navigateTo(target: string, fragment: string = '') {
