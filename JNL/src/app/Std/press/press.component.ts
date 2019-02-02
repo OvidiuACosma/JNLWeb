@@ -76,6 +76,8 @@ export class PressComponent implements OnInit, AfterViewChecked {
   }
 
 
+
+
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
