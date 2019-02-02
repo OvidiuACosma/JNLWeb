@@ -367,6 +367,10 @@ input[type="radio"] {
         font-size: 7.2vw;
     }
 
+    #presse_list {
+        flex-direction: column;
+    }
+
     #presse_list > a {
         margin: 0px;
     }
