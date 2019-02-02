@@ -16,6 +16,8 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
 
   language: string;
   text: any;
+  selected = [0, 0, 0, 0];
+  scroller = true;
 
 
   constructor(private router: Router,
@@ -29,6 +31,7 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
       this.language = lang || 'EN';
       this.getText(lang);
     });
+
   }
 
   getText(lang: string) {
@@ -58,14 +61,25 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
     //   console.log('Home text:' , this.text);
   }
 
+  selectMarque(nr: number) {
+    if (this.selected[nr] === 1) {
+      this.selected[nr] = 0;
+    } else {
+      this.selected[nr] = 1;
+    }
+
+    this.scroller = false;
+  }
+
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
         const element = document.getElementById(fragment);
-        if (element) {
+        if (element && this.scroller === true ) {
           element.scrollIntoView({block: 'start', behavior: 'smooth'});
         }
-      } else {
+        this.scroller = true;
+      } else if (this.scroller === true) {
           window.scrollTo(0, 0);
         }
     });

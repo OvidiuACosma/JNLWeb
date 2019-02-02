@@ -65,6 +65,7 @@ export class SearchComponent implements OnInit {
   }
 
   goHome() {
+    this.dataex.setNavBarStatus(false);
     this.router.navigate(['/home']);
     this.ScrollTop();
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
 
 @Component({
   selector: 'app-jnl-group',
@@ -11,11 +11,17 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   language: string;
   text: any;
+  archive: any;
+  scroller = true;
+  year: any;
+  isOpen = false;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private archiveService: ArchiveService
+              ) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -23,6 +29,8 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
       this.language = lang || 'EN';
       this.getText(lang);
     });
+
+    console.log(this.language);
   }
 
   getText(lang: string) {
@@ -35,31 +43,60 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-    // switch (this.language) {
-    //     case 'EN': {
-    //       this.text = res['EN'];
-    //       break;
-    //       }
-    //     case 'FR': {
-    //       this.text = res['FR'];
-    //       break;
-    //     }
-    //     default: {
-    //       this.text = res['EN'];
-    //       break;
-    //     }
-    //   }
-    //   console.log('Home text:' , this.text);
   }
 
+  unsetScroll() {
+    this.scroller = false;
+  }
+
+  // archive images
+  yearClick(yr: any) {
+    this.scroller = false;
+    this.isOpen = true;
+
+    this.year = yr;
+
+    // this.archive.getArchiveImages()
+    // .subscribe(year => {
+    //   this.year = yr;
+    //   this.getImages(yr);
+    // });
+    this.getImages(yr);
+  }
+
+  getImages(year: any) {
+    this.archiveService.getArchiveImages()
+    .subscribe(pics => {
+      const source = pics[0];
+      this.getImageSource(source);
+    });
+  }
+
+  getImageSource(source: any) {
+    this.archive = source[this.year];
+  }
+
+  modalClose() {
+    this.year = 0;
+  }
+
+  // end of archive images
 
 
+  reScroll() {
+    this.scroller = true;
+    this.ngAfterViewChecked();
+  }
 
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
-        this.navigateToAnchor(fragment);
-      } else {
+        const element = document.getElementById(fragment);
+        if (element && this.scroller === true ) {
+          element.scrollIntoView({block: 'start', behavior: 'smooth'});
+        }
+        // this.scroller = true;
+      } else if (this.scroller === true) {
           window.scrollTo(0, 0);
         }
     });
@@ -67,8 +104,9 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   navigateToAnchor(fragment: string) {
     const element = document.getElementById(fragment);
-    if (element) {
+    if (element &&  this.scroller === true) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
+    this.scroller = true;
   }
 }

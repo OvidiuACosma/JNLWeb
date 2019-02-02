@@ -1,6 +1,8 @@
 [
     {
         "EN": {
+            "title": "GROUP",
+
             "histoire": "About",
             "equipe": "People",
             "engagement": "Commitments",
@@ -45,6 +47,8 @@
             "archivesTitle": "Past Collections"
         },
     "FR": { 
+        "title": "GROUPE",
+
         "histoire": "L'histoire",
         "equipe": "L’ÉQUIPE",
         "engagement": "L’ENGAGEMENT",
