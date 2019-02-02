@@ -322,7 +322,7 @@
       
 <!---->
       <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true" data-backdrop="false">
+      aria-hidden="true" data-backdrop="false" *ngIf="isOpen">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -334,15 +334,15 @@
             <div class="modal-body">
                 <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel'>
                   <div class="carousel-inner">
-                      <div class='carousel-item active'>
+                      <!-- <div class='carousel-item active'>
                         <div class="container2">
                           <div class="carousel-item-image2">
                             <img src={{archive.imgSrc[0]}} alt='JNL Collection' class="slide-image">
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                       
-                        <div class='carousel-item' *ngFor="let item of archive.imgSrc | slice:1">
+                        <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
                             <div class="container2">
                               <div class="carousel-item-image2">
                                 <img src={{item}} alt='JNL Collection1' class="slide-image">

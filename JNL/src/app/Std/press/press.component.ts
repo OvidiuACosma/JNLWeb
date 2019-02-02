@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
-
 @Component({
   selector: 'app-press',
   templateUrl: './press.component.html',
