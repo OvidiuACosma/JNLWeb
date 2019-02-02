@@ -2,7 +2,8 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, DownloaderService } from 'src/app/_services';
 import { getFirstTemplatePass } from '@angular/core/src/render3/state';
-import { GeneratedFile } from '@angular/compiler';
+import { GeneratedFile, analyzeAndValidateNgModules } from '@angular/compiler';
+
 @Component({
   selector: 'app-press',
   templateUrl: './press.component.html',
@@ -14,6 +15,9 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
   language: string;
   text: any;
+
+  blob: any;
+  url: any;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -61,14 +65,16 @@ export class PressComponent implements OnInit, AfterViewChecked {
   }
 
   download(marque: any, type: any) {
+
     this.downloader.getFile(marque, type).subscribe(data => {
-      const blob = new Blob([data], {
-        type: 'image/png'
+      this.blob = new Blob([data], {
+        type: 'application/pdf'
       });
-      const url = window.URL.createObjectURL(blob);
-      window.open(url);
+      this.url = window.URL.createObjectURL(this.blob);
+      window.open(this.url);
     });
   }
+
 
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {

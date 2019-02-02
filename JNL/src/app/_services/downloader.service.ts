@@ -12,6 +12,6 @@ export class DownloaderService {
   constructor(private http: HttpClient) { }
 
   public getFile(marque: any, type: any): Observable<Blob> {
-    return this.http.get(`${this.urlAssets}/{{marque}}_{{type}}.jpg`, { responseType: 'blob' });
+    return this.http.get(`${this.urlAssets}/` + marque + `_` + type + `.pdf`, { responseType: 'blob' });
   }
 }
