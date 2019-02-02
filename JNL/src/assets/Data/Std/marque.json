@@ -4,7 +4,7 @@
             "JNL": {
                 "collectionTitle": "JNL Collection",
                
-                "marqueImgSrc": "assets/Images/Marques/MK_picJNL.jpg",
+                "marqueImgSrc": "assets/Images/Marques/JNL/MKJ_first.jpg",
 
                 "sectionTitle": "Le classicisme réinventé.",
                 "sectionText": "Founded in 1992, the spirit embodied by the JNL Collection is a subtle blend of great classicism and avant-garde inspiration. Ancestral know-how is harmoniously met with the latest state-of-the-art techniques to bring a soul to each of its creations. The JNL Collection uses personalization and eclecticism to create ultimately sublime interiors.<br><br>Each artisan, whether a woodworker, sculptor, or upholsterer, is guided by a taste for innovation all while respecting century old methods. They are able to bring together surprising combinations of materials, such as <strong>stainless steel</strong> combined with <strong>flattened bamboo</strong> or <strong>lush velvet</strong> combined with <strong>polished veneer</strong>. This contrasting effect continues on pieces such as <strong>armchairs with pure geometric lines</strong> rubbing shoulders with <strong>wood crafted sofas</strong> made with infinitely fine precision.",
@@ -13,12 +13,25 @@
                 "leftText": "By designing eclectic and high-quality universes, JNL Collection invites us to break free from the codes of traditional furniture.<br><br>The art of blending, inspired by Dominique Waxmann, CEO of the Group, allows living freely in environments where one may dine in a minimalist atmosphere and afterwards retire to a plush and colorful setting.",
 
                 "rightTitle": "MOLIERE SOFA",
-                "rightText": "Whether it is a two or three-seater, this \"best seller\" sofa with its oversized allure reaches up to 6 meters in length. Equipped with a maple framework, the precision of the woodwork is incomparable and is particularly noticeable on the figured legs. The Molière sofa is the perfect piece, revealing the brand's entire philosophy between know-how and innovation."
+                "rightText": "Whether it is a two or three-seater, this \"best seller\" sofa with its oversized allure reaches up to 6 meters in length. Equipped with a maple framework, the precision of the woodwork is incomparable and is particularly noticeable on the figured legs. The Molière sofa is the perfect piece, revealing the brand's entire philosophy between know-how and innovation.",
+            
+                "productCategories": [
+                    "ACCESOIRES",
+                    "ASSISES", 
+                    "LUMINAIRES",
+                    "MOBILIER"
+                ],
+                "productImages": [
+                    "ACCESOIRES",
+                    "ASSISES", 
+                    "LUMINAIRES",
+                    "MOBILIER"
+                ]
             },
             "VANHAMME": {
                 "collectionTitle": "Vanhamme",
                
-                "marqueImgSrc": "assets/Images/Marques/MK_picVanhamme.jpg",
+                "marqueImgSrc": "assets/Images/Marques/Vanhamme/MKV_first.jpg",
 
                 "sectionTitle": "L’héritage en étendard",
                 "sectionText": "As a true explorer in the art of seating, the Vanhamme brand joined the JNL group in 2007. However, it was in 1895, in the city of Bruxelles, that this workshop was created under the auspices of the talented Jean Vanhamme. Their Belgian craftsmen’s talent has, over the years, aroused the interest of great families, renowned architects, and decorators, all particularly attracted by the excellence of its tailor-made services. Having acquired such a reputation over five generations, the brand now exports its innate sense of craftsmanship and comfort all over the world. ",
@@ -27,12 +40,23 @@
                 "leftText": "Still designed in their original workshops, Vanhamme's creations are first and foremost characterized by their high-quality finishes. The almost tangible passion of its craftsmen – including carpenters, upholsterers, and seamstresses - is the strength of the collection. The incredible work that a man brings to the comfort of a seat, the inviting curve of the backrest, or the finesse of an armrest is an ode to comfort and the art of sitting. The Vanhamme signature is reflected in the subtle and audacious choice of materials and finishes, such as sumptuous velvets, aged brass and noble woods such as oak and maple. ",
 
                 "rightTitle": "EXCESSIF ARMCHAIR",
-                "rightText": "As its name suggests, this armchair speaks oversize.  Measuring 116 centimeters of sophistication by 140 centimeters of craftsmanship, its exquisite format has been imagined in a design so robust that it looks like it has been chiseled from stone. In their own way, the upholstery fabrics impose an out-of-the-ordinary style, where it be the ultra-contemporary marbled effect of one, to the radically abstract design of another."
+                "rightText": "As its name suggests, this armchair speaks oversize.  Measuring 116 centimeters of sophistication by 140 centimeters of craftsmanship, its exquisite format has been imagined in a design so robust that it looks like it has been chiseled from stone. In their own way, the upholstery fabrics impose an out-of-the-ordinary style, where it be the ultra-contemporary marbled effect of one, to the radically abstract design of another.",
+            
+                "productCategories": [
+                    "CANAPES",
+                    "FAUTEUILS", 
+                    "POUFS"
+                ],
+                "productImages": [
+                    "ACCESOIRES",
+                    "ASSISES", 
+                    "LUMINAIRES"
+                ]
             },
             "UNGARO": {
                 "collectionTitle": "Emanuel Ungaro Home",
                
-                "marqueImgSrc": "assets/Images/Marques/MK_picUngaro.jpg",
+                "marqueImgSrc": "assets/Images/Marques/Unagaro/MKU_first.jpg",
 
                 "sectionTitle": "Entre mode et mobilier",
                 "sectionText": "Originally from Italy, Emanuel Ungaro founded his eponymous brand in 1965. The whole world fell in admiration with his mastery of drapery and innate sense of color. Thanks to their unequalled know-how in the field of luxury furniture, JNL was entrusted with the creation of the designer's home line and sought inspiration from the brand's archived treasures to design a state-of-the-art haute couture collection. Sophisticated motifs, precious materials, and delicate finishes... Ungaro Home unveils its home designs in unstoppably chic and contemporary opulence. ",
@@ -41,12 +65,25 @@
                 "leftText": "By composing a vast collection of armchairs, tables, chairs and furniture, Ungaro Home renders unique and masterful designs. The brand brings together a centuries-old know-how where egg shell inlays interact with high-gloss lacquers and artisan jeweled handles. In terms of texture, silk and velvet upholstery echo the nobility of materials such as white Macassar ebony, marble or crystal. Sumptuousness being the only rule, Ungaro Home has also developed a line of accessories - carpets, mirrors, wallpapers, cushions, lighting - that punctuate any fabulous setting. ",
 
                 "rightTitle": "THEODORA TABLE",
-                "rightText": "Ungaro Home’s flagship model rightly takes its name from an ancient and prestigious Byzantine empress. Indeed, the Theodora table concentrates together the codes of ultra-luxury, with its brass finish base and precious lacquered top, inlaid with deer antlers or ostrich eggshells. Whether round, square or rectangular, this pure lined piece conveys unique home refinement."
+                "rightText": "Ungaro Home’s flagship model rightly takes its name from an ancient and prestigious Byzantine empress. Indeed, the Theodora table concentrates together the codes of ultra-luxury, with its brass finish base and precious lacquered top, inlaid with deer antlers or ostrich eggshells. Whether round, square or rectangular, this pure lined piece conveys unique home refinement.",
+            
+                "productCategories": [
+                    "ACCESOIRES",
+                    "ASSISES", 
+                    "LUMINAIRES",
+                    "MOBILIER"
+                ],
+                "productImages": [
+                    "ACCESOIRES",
+                    "ASSISES", 
+                    "LUMINAIRES",
+                    "MOBILIER"
+                ]
             },
             "LUZ": {
                 "collectionTitle": "Luz Interiors",
                
-                "marqueImgSrc": "assets/Images/Marques/MK_picLuz.jpg",
+                "marqueImgSrc": "assets/Images/Marques/Luz/MKL_first.jpg",
 
                 "sectionTitle": "La duceour minimale",
                 "sectionText": "Luz Interiors offers a timeless collection, designed to enliven any space with simplicity and conviviality. All furnishings, from seats to lighting are furnished out of high-quality materials and reflect the minimalist aesthetics that have been catalysts of the brand’s success. Their keen sense of detail and robust designs have undoubtedly contributed to the brand’s reputation, which has been meeting the standards and expectations of an international clientele since 1995. ",
@@ -55,14 +92,25 @@
                 "leftText": "The simplest things are often the most complex to design. The proof is in the Luz Interiors collection whose furnishings embody refinement and sophistication. Firstly, the maison chooses the nobility of its materials, such as oak wood, that can be found on sleek veneered panels.<br><br>Secondly, designs are compact and effortless to promote efficiently straight lines. Nevertheless, Luz Interiors keeps its balance by mastering not only straight lines but also curves; introduced sparingly through the roundness of a light fixture or the elliptical shape of a table.",
 
                 "rightTitle": "DAISY COLLECTION",
-                "rightText": "From beds to armoires, to folding screens and various accessories, the Daisy Line is a praise to elegant minimalism, designed for either contemporary or more classic decors. The meticulous work put into proportions and the quality of veneered oak undoubtedly reflect the brand’s inherent know-how."
+                "rightText": "From beds to armoires, to folding screens and various accessories, the Daisy Line is a praise to elegant minimalism, designed for either contemporary or more classic decors. The meticulous work put into proportions and the quality of veneered oak undoubtedly reflect the brand’s inherent know-how.",
+  
+                "productCategories": [
+                    "ASSISES", 
+                    "LUMINAIRES",
+                    "MOBILIER"
+                ],
+                "productImages": [
+                    "ASSISES", 
+                    "LUMINAIRES",
+                    "MOBILIER"
+                ]
             }
         },
     "FR": {
         "JNL": {
             "collectionTitle": "JNL Collection",
                
-            "marqueImgSrc": "assets/Images/Marques/MK_picJNL.jpg",
+            "marqueImgSrc": "assets/Images/Marques/JNL/MKJ_first.jpg",
 
             "sectionTitle": "Le classicisme réinventé",
             "sectionText": "Né en 1992, l’esprit JNL Collection est un subtil mélange entre le grand classicisme et des inspirations avant-gardistes. Les savoir-faire ancestraux s’accordent avec les techniques de pointe et font vibrer chacune de ses créations. Proposant une multitude de finitions, JNL Collection joue la carte de la personnalisation et de l’éclectisme afin de sublimer les intérieurs.<br><br>Qu’ils soient ébénistes, sculpteurs ou garnisseurs, chaque artisan de la marque respecte des méthodes ancestrales tout en étant guidés par le goût de l’innovation. Ils osent ainsi des combinaisons étonnantes de matériaux, tels que <strong>l’acier inoxydable</strong> associé au <strong>bambou déroulé</strong> – fierté de la maison – ou un <strong>luxuriant velours</strong> couplé à du <strong>placage poli</strong>. Les effets de contraste se poursuivent également dans les formes, où des <strong>fauteuils aux lignes pures et géométriques</strong> côtoient des <strong>canapés à la boiserie travaillée</strong> avec une infinie précision. ",
@@ -71,12 +119,25 @@
             "leftText": "En concevant des univers éclectiques et de grande qualité, JNL Collection invite à s’affranchir des codes du mobilier traditionnel.<br><br>L’art de mélanges insufflé par Dominique Waxmann, CEO du Groupe, permet de vivre librement dans des univers où l’on dîne dans une ambiance minimaliste pour plus tard se coucher dans un décor feutré et coloré. ",
 
             "rightTitle": "LE MOLIERE",
-            "rightText": "Qu’il soit à deux ou trois places, ce modèle « best seller » étonne par son caractère surdimensionné atteignant jusqu’à 6 mètres de longueur. Doté d’une structure en érable, le traitement des boiseries est incomparable et se remarque tout particulièrement au niveau des pieds. Le canapé Molière est la parfaite pièce révélant toute la philosophie de la marque entre savoir-faire et innovation."
+            "rightText": "Qu’il soit à deux ou trois places, ce modèle « best seller » étonne par son caractère surdimensionné atteignant jusqu’à 6 mètres de longueur. Doté d’une structure en érable, le traitement des boiseries est incomparable et se remarque tout particulièrement au niveau des pieds. Le canapé Molière est la parfaite pièce révélant toute la philosophie de la marque entre savoir-faire et innovation.",
+            
+            "productCategories": [
+                "ACCESOIRES",
+                "ASSISES", 
+                "LUMINAIRES",
+                "MOBILIER"
+            ],
+            "productImages": [
+                "ACCESOIRES",
+                "ASSISES", 
+                "LUMINAIRES",
+                "MOBILIER"
+            ]
         },
         "VANHAMME": {
             "collectionTitle": "Vanhamme",
                
-            "marqueImgSrc": "assets/Images/Marques/MK_picVanhamme.jpg",
+            "marqueImgSrc": "assets/Images/Marques/Vanhamme/MKV_first.jpg",
 
             "sectionTitle": "L’héritage en étendard",
             "sectionText": "Véritable explorateur de l’assise, la marque Vanhamme rejoint le groupe JNL en 2007. C’est pourtant en 1895, à Bruxelles, que cet atelier a vu le jour sous l’égide de l’exigent Jean Vanhamme. Le talent de ses artisans belges a, au fil du temps, suscité l’intérêt des plus grandes familles ainsi que des architectes et décorateurs de renom, notamment attirés par l’excellence de son service sur mesure. Fort de cette réputation acquise durant cinq générations, la marque exporte désormais dans le monde entier son sens inné de l’artisanat et du confortable.",
@@ -85,12 +146,23 @@
             "leftText": "Encore conçues dans les ateliers originels, les créations Vanhamme interpellent de premier abord par l’extrême qualité de leur fabrication. La passion palpable de ses artisans – menuisiers, garnisseurs ou couturiers – fait toute la force de la collection. L’incroyable travail de l’homme sur le confort de l’assise, le galbe délicieux du dossier, ou la délicatesse de l’accoudoir est une ode au confort et à l’art de s’assoir. La signature Vanhamme transparait à travers le choix subtil et audacieux de ses matières et finitions qui font la part belle aux velours palatine, laiton patiné et autres bois nobles à l’instar du chêne et de l’érable.",
 
             "rightTitle": "L'EXCESSIF",
-            "rightText": "Comme son nom l’indique, ce fauteuil joue la carte de la sur-dimension. 116 centimètres de sophistication sur 140 d’artisanat, tel est son exquis format, imaginé dans un design si robuste qu’il paraît comme taillé dans la pierre. A leur façon, ses revêtements imposent également un style hors-norme, à l’image de l’effet marbré très actuel de l’un, et des dessins radicalement abstraits de l’autre."
+            "rightText": "Comme son nom l’indique, ce fauteuil joue la carte de la sur-dimension. 116 centimètres de sophistication sur 140 d’artisanat, tel est son exquis format, imaginé dans un design si robuste qu’il paraît comme taillé dans la pierre. A leur façon, ses revêtements imposent également un style hors-norme, à l’image de l’effet marbré très actuel de l’un, et des dessins radicalement abstraits de l’autre.",
+            
+            "productCategories": [
+                "CANAPES",
+                "FAUTEUILS", 
+                "POUFS"
+            ],
+            "productImages": [
+                "ACCESOIRES",
+                "ASSISES", 
+                "MOBILIER"
+            ]
         },
         "UNGARO": {
             "collectionTitle": "Emanuel Ungaro Home",
                
-            "marqueImgSrc": "assets/Images/Marques/MK_picUngaro.jpg",
+            "marqueImgSrc": "assets/Images/Marques/Ungaro/MKU_first.jpg",
 
             "sectionTitle": "Entre mode et mobilier",
             "sectionText": "Originaire d’Italie, Emanuel Ungaro fonde sa marque éponyme en 1965. Le monde entier tombe dès lors en admiration devant sa maîtrise du drapé et son sens inné de la couleur. Grâce à son savoir-faire inimitable en matière de mobilier de luxe, JNL s’est vu confié la réalisation de la ligne maison du créateur et, inspiré par les trésors d’archives de la marque, signe une collection très haute couture. Jeux de motifs, matières précieuses, finitions délicates… Ungaro Home dévoile sans détours les codes d’une opulence contemporaine au chic imparable. ",
@@ -99,12 +171,25 @@
             "leftText": "En composant une vaste collection de fauteuils, tables, chaises et meubles, Ungaro Home livre une performance design inédite. La marque y convoque un savoir-faire séculaire où les marqueteries de coquille d’œuf dialoguent avec des laques grand brillant ou des poignées bijoux. Côté texture, la soie et le velours des garnissages font écho à la noblesse des matériaux, tels que l’ébène blanc de Macassar, le marbre ou le cristal. Avec la somptuosité pour seule règle, Ungaro Home a également mis au point une ligne d’accessoires – tapis, miroirs, papiers peints, coussins, luminaires – qui viennent ponctuer ce décor fabuleux.",
 
             "rightTitle": "LA THEODORA",
-            "rightText": "Ce modèle phare d’Ungaro Home emprunte à juste titre son nom à une ancienne et prestigieuse impératrice byzantine. En effet, la table Théodora concentre en elle les codes de l’ultra-luxe, à l’image de ses pieds en laiton doré et des matériaux précieux de ses plateaux, incrustés de bois de cerfs ou de coquille d’œuf. Qu’elle soit ronde, carré ou rectangulaire, cette pièce aux lignes pures résume à elle seule tout le raffinement de la maison."
+            "rightText": "Ce modèle phare d’Ungaro Home emprunte à juste titre son nom à une ancienne et prestigieuse impératrice byzantine. En effet, la table Théodora concentre en elle les codes de l’ultra-luxe, à l’image de ses pieds en laiton doré et des matériaux précieux de ses plateaux, incrustés de bois de cerfs ou de coquille d’œuf. Qu’elle soit ronde, carré ou rectangulaire, cette pièce aux lignes pures résume à elle seule tout le raffinement de la maison.",
+            
+            "productCategories": [
+                "ACCESOIRES",
+                "ASSISES", 
+                "LUMINAIRES",
+                "MOBILIER"
+            ],
+            "productImages": [
+                "ACCESOIRES",
+                "ASSISES", 
+                "LUMINAIRES",
+                "MOBILIER"
+            ]
         },
         "LUZ": {
             "collectionTitle": "Luz Interiors",
                
-            "marqueImgSrc": "assets/Images/Marques/MK_picLuz.jpg",
+            "marqueImgSrc": "assets/Images/Marques/Luz/MKU_first.jpg",
 
             "sectionTitle": "La douceur minimale",
             "sectionText": "Luz Interiors propose une collection empreinte d’intemporalité, pensée pour habiller chambres et espaces de convivialité en toute simplicité. Entièrement conçus à partir de matériaux de haute qualité, meubles, sièges et luminaires renvoient à une esthétique minimaliste qui fait le succès de la marque. Son sens aigu du détail et la robustesse de son design contribuent sans nul doute au rayonnement de la maison qui, depuis 1995, parvient à répondre aux attentes des clients internationaux les plus exigeants.",
@@ -113,7 +198,18 @@
             "leftText": "Les choses les plus simples demeurent souvent les plus complexes à concevoir. La preuve en est avec la collection de Luz Interiors qui distille un mobilier aussi raffiné qu’épuré. D’une part, la maison fait le choix évident de la noblesse des matières, à l’image du chêne, souvent décliné en panneaux plaqués épais. D’autre part, le design se veut compact et sans effort prônant des lignes droites redoutablement efficaces. Néanmoins, par souci d’équilibre, Luz Interiors maîtrise également la courbe, qu’elle introduit avec parcimonie par la rondeur d’un luminaire ou l’ovalité d’une table.",
 
             "rightTitle": "LA LIGNE DAISY",
-            "rightText": "Des lits aux penderies, en passant par les table basses et accessoires divers, la ligne Daisy est un éloge au minimalisme élégant, pensé pour des décors contemporains ou plus classiques. Le travail méticuleux des proportions et la qualité de son chêne plaqué y reflètent sans conteste tout le savoir-faire inhérent à la marque."
+            "rightText": "Des lits aux penderies, en passant par les table basses et accessoires divers, la ligne Daisy est un éloge au minimalisme élégant, pensé pour des décors contemporains ou plus classiques. Le travail méticuleux des proportions et la qualité de son chêne plaqué y reflètent sans conteste tout le savoir-faire inhérent à la marque.",
+            
+            "productCategories": [
+                "ASSISES", 
+                "LUMINAIRES",
+                "MOBILIER"
+            ],
+            "productImages": [
+                "ASSISES", 
+                "LUMINAIRES",
+                "MOBILIER"
+            ]
         }
      }
     
