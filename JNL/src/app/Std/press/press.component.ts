@@ -15,6 +15,7 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
   language: string;
   text: any;
+  scroller = true;
 
   blob: any;
   url: any;
@@ -76,6 +77,8 @@ export class PressComponent implements OnInit, AfterViewChecked {
       window.open(this.url, '_blank');
 
     });
+
+    this.scroller = false;
   }
 
 
@@ -84,8 +87,12 @@ export class PressComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
-        this.navigateToAnchor(fragment);
-      } else {
+        const element = document.getElementById(fragment);
+        if (element && this.scroller === true ) {
+          element.scrollIntoView({block: 'start', behavior: 'smooth'});
+        }
+        // this.scroller = true;
+      } else if (this.scroller === true) {
           window.scrollTo(0, 0);
         }
     });
@@ -93,9 +100,10 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
   navigateToAnchor(fragment: string) {
     const element = document.getElementById(fragment);
-    if (element) {
+    if (element &&  this.scroller === true) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
+    this.scroller = true;
   }
 
   navigateTo(target: string, fragment: string = '') {
