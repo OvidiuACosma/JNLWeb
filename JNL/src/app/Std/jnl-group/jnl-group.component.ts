@@ -53,6 +53,8 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
   }
 
 
+
+
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
