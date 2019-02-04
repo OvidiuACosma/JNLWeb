@@ -5,7 +5,7 @@
     <div class="product-main">
       <div id="header">
         <div id='famille'>
-          <h3>Meuble</h3>
+          <h3>{{prodDesc.familyFr}}</h3>
         </div>
         <div id='marque'>
           <h3>JNL Collection</h3>
@@ -14,13 +14,14 @@
       <hr>
       <div id="container">
         <div id="model">
-          <h3>Sellier</h3>
+          <h3>{{prodDesc.model}}</h3>
         </div>
         <div id="code">
-          <h3>MESE01</h3>
+          <h3>{{product_id | uppercase}}</h3>
         </div>
         <div id="productImg">
-          <img class="img-fluid" src="assets\Images\Products\JNL\Meuble\Meuble Sellier_01.jpg" alt="">
+          <!-- <img class="img-fluid" src="assets\Images\Products\JNL\Meuble\Meuble Sellier_01.jpg" alt=""> -->
+          <img class="img-fluid" src="assets\Images\Products\JNL\{{prodDesc.familyFr}}\{{imgName}}_01.jpg" alt="">
         </div>
         <ul class="nav nav-tabs nav-justified flex-column flex-md-row" role="tablist">
           <li class="nav-item">
