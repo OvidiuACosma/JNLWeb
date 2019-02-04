@@ -35,13 +35,14 @@ video {
 
 /*NO VIDEO*/
 video {
+    width: 87.3vw;
+    height: 51.5vw;
+    /*NO VIDEO */
+
     margin: auto;
     width: 87vw;
 
     height: 48.5vw;
-    background-image: url("/assets/Images/Home/HM_video.png");
-    background-size: cover;
-    background-position: center center;
 }
 
 .first-image {
@@ -54,7 +55,10 @@ video {
 
 .les-services-main {
     margin: auto;
-    width: 100vw;
+    /* width: 100vw; */
+
+    display: flex;
+    flex-direction: column;
 }
 
 .les-services-main > div {
@@ -176,10 +180,10 @@ video {
 
     text-transform: uppercase;
 }
-
+/* 
 #services_list > a:last-child {
     margin-right: 0px;
-}
+} */
 
 #services_list > a:hover {
     text-decoration: underline;

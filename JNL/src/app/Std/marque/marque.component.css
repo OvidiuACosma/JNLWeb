@@ -532,4 +532,9 @@ h6 {
     #autres > p > span {
         font-size: 4.2vw;
     }
+
+    
+    #other-links > div > h4 {
+        font-size: 4.3vw;
+    }
 }
