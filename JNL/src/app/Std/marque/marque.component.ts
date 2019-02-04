@@ -45,21 +45,6 @@ export class MarqueComponent implements OnInit {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()][this.marque.toUpperCase()];
-    // switch (this.language) {
-    //     case 'EN': {
-    //       console.log('Marque JSON: ', res['EN'][this.marque.toUpperCase()]);
-    //       this.text = res['EN'];
-    //       break;
-    //       }
-    //     case 'FR': {
-    //       this.text = res['FR'];
-    //       break;
-    //     }
-    //     default: {
-    //       this.text = res['EN'];
-    //       break;
-    //     }
-    //   }
   }
 
   getOthers(nr: number) {

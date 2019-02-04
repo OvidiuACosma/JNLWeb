@@ -6,6 +6,7 @@
 
 :root {
     --search-bar-height: 73px;
+    --mobile-width: 768px;
 }
 
 body

@@ -37,21 +37,6 @@ export class HomeComponent implements OnInit {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-    // switch (this.language) {
-    //     case 'EN': {
-    //       this.text = res['EN'];
-    //       break;
-    //       }
-    //     case 'FR': {
-    //       this.text = res['FR'];
-    //       break;
-    //     }
-    //     default: {
-    //       this.text = res['EN'];
-    //       break;
-    //     }
-    //   }
-    //   console.log('Home text:' , this.text);
   }
 
   navigateToAnchor(fragment: string) {

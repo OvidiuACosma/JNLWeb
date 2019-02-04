@@ -14,29 +14,41 @@ export class ProductsService {
  private headers: HttpHeaders;
 
  // Access Point URLs
- private tissusUrl: string;
- private cuirsUrl: string;
- private similiCuirsUrl: string;
+ private tissus: string;
+ private cuirs: string;
+ private simili: string;
+ private prodDescURL = '';
+ private product: string;
 
   constructor(private http: HttpClient,
               private configService: ConfigService) {
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
-    this.tissusUrl = configService.getApiURI() + '/products/tissus';
-    this.cuirsUrl = configService.getApiURI() + '/products/cuirs';
-    this.similiCuirsUrl = configService.getApiURI() + '/products/similicuirs';
+    this.tissus = configService.getApiURI() + '/products/tissus';
+    this.cuirs = configService.getApiURI() + '/products/cuirs';
+    this.simili = configService.getApiURI() + '/products/similicuirs';
+    this.product = configService.getApiURI() + '/products/';
+    this.prodDescURL = configService.getApiURI() + '/productsdescriptions/';
   }
 
   public getTissus(): Observable<any[]> {
     // Get all Tissus data
-    return this.http.get<any[]>(this.tissusUrl, {headers: this.headers});
+    return this.http.get<any[]>(this.tissus, {headers: this.headers});
   }
 
   public getCuirs(): Observable<any[]> {
-    return this.http.get<any[]>(this.cuirsUrl, {headers: this.headers});
+    return this.http.get<any[]>(this.cuirs, {headers: this.headers});
   }
 
   public getSimiliCuirs(): Observable<any[]> {
-    return this.http.get<any[]>(this.similiCuirsUrl, {headers: this.headers});
+    return this.http.get<any[]>(this.simili, {headers: this.headers});
+  }
+
+  public getProduct(id: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.product}/${id}`, {headers: this.headers});
+  }
+
+  public getProductDesc(id: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.prodDescURL}/${id}`, {headers: this.headers});
   }
 
 /*
