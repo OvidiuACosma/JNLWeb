@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ProductsService } from 'src/app/_services';
 
 @Component({
   selector: 'app-product',
@@ -9,11 +10,34 @@ import { Router } from '@angular/router';
 export class ProductComponent implements OnInit {
 
   public detail = 'description';
+  public product_id: string;
+  public prodDesc: any;
+  public imgName: any;
 
-  constructor(private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private productsService: ProductsService) { }
 
   ngOnInit() {
-  }
+    // this.product_id = 'CAMO01';
+    this.activatedRoute.params.subscribe(paramsId => {
+      this.product_id = paramsId.product;
+      this.getProductData(paramsId.product);
+      this.getImage();
+      });
+    }
+
+    getProductData(productID: string) {
+    this.productsService.getProduct(this.product_id)
+      .subscribe(desc => {
+        this.prodDesc = desc;
+        // console.log('DESC:', desc);
+      });
+    }
+
+    getImage() {
+      // this.imgName = this.prodDesc.model;
+      console.log('IMG NAME: ', this.product_id);
+    }
 
   setDetail(index: number) {
     switch (index) {
@@ -25,15 +49,15 @@ export class ProductComponent implements OnInit {
         this.detail = 'matFin';
         break;
       }
-      case 2 : {
+      case 2: {
         this.detail = 'dimensions';
         break;
       }
-      case 3 : {
+      case 3: {
         this.detail = 'catalogues';
         break;
       }
-      case 4 : {
+      case 4: {
         this.detail = 'pdf';
         break;
       }
