@@ -36,6 +36,7 @@ export class SearchComponent implements OnInit {
     .subscribe(lang => {
       this.language = lang || 'EN';
       // this.languages = this.languages.filter(f => !f.includes(this.language)); // against HTML slect > option philisophy
+      // TODO: implemet horizontal face select
       this.getText(this.language);
     });
   }
