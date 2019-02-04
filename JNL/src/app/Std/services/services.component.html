@@ -86,7 +86,32 @@
 
             <div>
               <span>Sélectionnez les marques qui vous intéressent:</span>
+
               <div id="checks">
+                <div>
+                    <div (click)="selectMarque(0)">
+                        <span><i [ngClass]="(this.selected[0]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
+                        <span>&nbsp;JNL Collection</span>
+                    </div>
+                    <div (click)="selectMarque(1)">
+                        <span><i [ngClass]="(this.selected[1]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
+                        <span>&nbsp;Luz Interiors</span>
+                    </div>
+                </div>
+                <div>
+                    <div (click)="selectMarque(2)">
+                        <span><i [ngClass]="(this.selected[2]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
+                        <span>&nbsp;Emmanuel Ungaro Home</span>
+                    </div>
+                    <div (click)="selectMarque(3)">
+                        <span><i [ngClass]="(this.selected[3]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
+                        <span>&nbsp;Vanhamme</span>
+                    </div>
+                </div>
+
+              </div>
+
+              <!-- <div id="checks">
                 <div>
                   <div>
                     <input type="checkbox" id="jnl"><label for="jnl">JNL Collection</label>
@@ -103,7 +128,7 @@
                   <input type="checkbox" id="vanhamme"><label for="vanhamme">Vanhamme</label>
                 </div>
               </div>
-              </div>  
+              </div>   -->
             </div>
           </div>
           <div>

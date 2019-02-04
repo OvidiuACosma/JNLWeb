@@ -1,9 +1,15 @@
 <div id="bar">
    <div id="top-bar">
        <div id="menu-logo">
-            <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()"></span>
-            <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo.jpg"
+            <div id="menu-button" (click)="toggleNav()">
+                <img class="memu-button-img" src="{{navBarButtonSrc}}">
+                <p class="menu-text">{{navBarButtonText}}</p>
+            </div>
+            <div id="menu-logo-img">
+            <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
                 (click)="goHome()"/>
+            </div>
+            <div>&nbsp;</div>
        </div>
 
        <div id="top_buttons">
@@ -25,16 +31,16 @@
            </span>
        </div>
    </div>
-   </div>
+</div>
 
-   <div id="mob-searchbar"> 
-       <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()"></span>
-       <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
-        <span>
-            <i class="fa fa-search" aria-hidden="true" id="loupe"></i>
-            <a class="top-button" *ngIf="!searchMode" 
-                (click)="goSearchMode()"></a>
-            <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
-                (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
-        </span>
-   </div>
+<div id="mob-searchbar"> 
+    <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()"></span>
+    <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
+    <span>
+        <i class="fa fa-search" aria-hidden="true" id="loupe"></i>
+        <a class="top-button" *ngIf="!searchMode" 
+            (click)="goSearchMode()"></a>
+        <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
+            (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
+    </span>
+</div>

@@ -13,6 +13,7 @@ export class ProductComponent implements OnInit {
   public product_id: string;
   public prodDesc: any;
   public imgName: any;
+  public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
 
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService) { }
@@ -40,28 +41,7 @@ export class ProductComponent implements OnInit {
     }
 
   setDetail(index: number) {
-    switch (index) {
-      case 0: {
-        this.detail = 'description';
-        break;
-      }
-      case 1: {
-        this.detail = 'matFin';
-        break;
-      }
-      case 2: {
-        this.detail = 'dimensions';
-        break;
-      }
-      case 3: {
-        this.detail = 'catalogues';
-        break;
-      }
-      case 4: {
-        this.detail = 'pdf';
-        break;
-      }
-    }
+    this.detail = this.tabList[index];
   }
 
 }

@@ -1,8 +1,9 @@
 .search-bar {
     position: fixed;
     top: 0vh;
-    min-height: 60px;
-    max-height: 60px;
+    min-height: var(--search-bar-height);
+    max-height: var(--search-bar-height);
+    background: rgba(255, 255, 255, 0.5);
     z-index: 1000;
 }
 
@@ -11,17 +12,31 @@
     z-index: 899;
 }
 
+.menu-blue {
+    background-color: #121A2D;
+    top: 60px;
+    width: 0;
+}
+
+.content {
+    background-color: #fff; 
+    margin-left: 77px !important;
+    top: 60px;
+    z-index: 801;
+    /* width: auto; */
+}
+
 .main {
     display: block;
-    top: 60px;
-    position: relative;
+    /*top: 60px;
+    position: relative;*/
     z-index: 800;
 }
 
 .router-outlet {
     min-height: 50vh;
 }
-
-menu-bottom {
-    position: relative;
-}
+/*
+.menu-bottom {
+     position: relative; 
+}*/

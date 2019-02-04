@@ -6,7 +6,7 @@ h1 {
     text-align: center;
 }
 h2 {
-    margin-top: 5.9vw;
+    /* margin-top: 5.9vw; */
     font-family: Atak-Light;
     font-size: 3.5vw;
 
@@ -33,6 +33,9 @@ h4{
     text-align: center;
 }
 
+button {
+    outline: none;
+}
 
 .marques_selected {
     text-decoration: underline !important;
@@ -49,7 +52,7 @@ h4{
 .les-marques-main {
     /* display: flex; */
     margin: auto;
-    width: 100vw;
+    /* width: 100vw; */
     text-align: center;
 }
 
@@ -123,9 +126,11 @@ h4{
     /*width: 50vw;*/
     /*margin: auto;*/
     margin-top: 0px;
-    height: 40vw;
+    /* height: 40vw; */
 
     padding-right: 4vw;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
 
     font-family: Atak-Regular;
     font-size: 1.41vw;
@@ -137,20 +142,27 @@ h4{
     
     padding-right: 0px;
     padding-left: 4vw;
-    max-height: 35vw;
-}
-
-#impg2 > div > img {
-    max-height: 35vw;
 }
 
 
-.image-parag > div > img {
+
+.image-parag > div > img, .respo_img {
     /*margin: auto;*/
     margin-top: 0;
-    /*width: 24vw;*/ 
-    width: auto;
-    max-height: 40vw;
+    width: 0vw; 
+    padding-left: 30vw;
+    display: inline-block; 
+    /* width: auto; */
+    /* max-height: 40vw; */
+    height: auto;
+    
+    background-image: url("/assets/Images/Groupe/GP_vertical.jpg");
+    background-size: 30vw auto;
+    object-fit: cover;
+}
+
+#img2 {
+    background-image: url("/assets/Images/Groupe/GP_leaf.jpg");
 }
 
 .group-img {
@@ -452,7 +464,7 @@ h4{
 }
 
 #histoire, #equipe, #engagement, #projets, #archives {
-    margin-top: -60px;
+    margin-bottom: 60px;
     padding-top: 60px;
 }
 
@@ -469,6 +481,10 @@ h4{
     width: 100%;
     /*height: 37.78vw; /*60vh;*/
     padding-top: 3.15vw; /*5vh;*/
+}
+
+#carousel-custom {
+    margin-top: 10vw;
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -660,6 +676,44 @@ input[type="radio"] {
     margin-top: 0vw !important;
 }
 
+.modal-backdrop {
+    position: relative;
+  }
+
+.modal-body {
+    padding: 0px !important;
+}
+
+.modal-dialog {
+    width: 80vw;
+    max-width: 1440px;
+    min-height: 0px;
+    margin-top: 60px;
+}
+
+.container2 {
+    padding: 0px;
+
+    font-family: Atak-Regular;
+    font-size: 16px;
+
+    display: flex;
+    height: 70vh;
+}
+
+.carousel-item-image2 {
+    margin: auto;
+    top: 0;
+    width: 60vw;
+
+    display: flex;
+}
+
+.carousel-item-image2 > .slide-image {
+    /* margin: auto; */
+    max-width: 60vw;
+    height: 70vh;
+}
 
 @media only screen and (max-width: 800px)
 {
@@ -816,9 +870,20 @@ input[type="radio"] {
 
     #impg2 > div > p{
         max-height: 100%;
+        padding-left: 0px;
     }
 
     .proj-flex {
+        font-size: 4.2vw;
+    }
+
+    .respo_img {
+        padding-left: 80vw;
+        padding-bottom: 100%;
+        background-size: 80vw 100vw;
+    }
+
+    .group-text > span {
         font-size: 4.2vw;
     }
 }

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --search-bar-height: 73px;
+}
+
 body
 {
     font-family: 'Century Gothic';
