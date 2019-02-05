@@ -22,6 +22,7 @@ import { AuthGuard } from './_guards';
 import { BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ProductDimensionsComponent,
     ProductCataloguesComponent,
     ActualiteComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
