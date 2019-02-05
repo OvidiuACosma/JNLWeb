@@ -30,6 +30,14 @@ li {
     text-shadow: -.5px 0 lightgray, 0 .5px lightgray, .5px 0 lightgray, 0 -.5px lightgray;
 }
 
+.top-button:hover {
+    color: darkgray;
+}
+
+.span-cursor {
+    cursor: pointer;
+}
+
 .select-lang {
     border: 0px none;
     outline: 0;

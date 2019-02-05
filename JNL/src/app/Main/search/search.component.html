@@ -26,11 +26,11 @@
            <span class="top-button">&nbsp;&#8213;&nbsp;</span>
            <ul *ngIf="isLangSelectMode">
                <li *ngFor="let l of otherLanguages">
-                   <span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>
+                   <span class="top-button span-cursor" (click)="onChangeLanguage(l)">{{l}}</span>
                </li>
            </ul>
-           <span class="top-button" style="margin-right: 2px" (click)="toggleLangStatus()">{{language}}</span>
-           <span class="top-button" (click)="toggleLangStatus()">
+           <span class="top-button span-cursor" style="margin-right: 2px" (click)="toggleLangStatus()">{{language}}</span>
+           <span class="top-button span-cursor" (click)="toggleLangStatus()">
                <i class="fa fa-sort-down fa-1"></i>
            </span>
 

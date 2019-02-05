@@ -186,7 +186,7 @@ hr {
     max-height: 13vh;
     max-width: 56vw;
     height: auto;
-    width: auto;
+    width: 34vw;
 }
 
 #first_picture > div > p {
@@ -196,9 +196,9 @@ hr {
 
 #first_picture > div > p > a> img {
     max-height: 13vh;
-    max-width: 13vw;
+    max-width: 15vw;
     height: auto;
-    width: auto;
+    width: 8vw;
 }
 
 #une_histoire
@@ -489,7 +489,7 @@ video {
     max-width: 80vw;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 768px){
 
     h1 {
         font-size: 9.7vw;
