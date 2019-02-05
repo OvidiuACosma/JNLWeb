@@ -1,3 +1,12 @@
+ul {
+ list-style-type: none;
+ padding: 0;
+}
+
+li {
+    float: right;
+}
+
 .image-link {
     vertical-align: middle;
     display: inline-block;
@@ -18,7 +27,7 @@
     text-transform: uppercase;
     mix-blend-mode: difference;
     /* text-shadow: 0px 0px 5px white; */
-    text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+    text-shadow: -.5px 0 lightgray, 0 .5px lightgray, .5px 0 lightgray, 0 -.5px lightgray;
 }
 
 .select-lang {
@@ -121,10 +130,12 @@
 #top_buttons {
     width: auto;
     display: inline-flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-wrap: nowrap;
+    height: 24px;
 }
 
-#top_buttons > span {
+#top_buttons > span, #top_buttons > ul > li > span {
     flex: 0 0 auto;
     width: auto;
     margin: 0 20px 0 0;
