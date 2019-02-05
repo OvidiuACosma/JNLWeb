@@ -1,15 +1,32 @@
 <div class="fav-main">
   <h1>{{text.title}}</h1>
 
-  <div id="remove-download">
-    <div>
-      <img alt="JNL Collection" src="">
-      <h3>{{text.remove}}</h3>
+  <div id="favs">
+    <div id="remove-download">
+      <div>
+        <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png" class="icon">
+        <h3>&nbsp;&nbsp;{{text.remove}}</h3>
+      </div>
+
+      <h3>&nbsp;&nbsp;&#8213;&nbsp;&nbsp;</h3>
+
+      <div>
+          <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png" class="icon">
+          <h3>&nbsp;&nbsp;{{text.download}}</h3>
+        </div>
     </div>
 
-    <span>&nbsp;&#8213;&nbsp;</span>
+    <div class="products">
+      <ul class="list">
+        <cdk-virtual-scroll-viewport  style="height: 500px" itemSize="30" >
+          <ng-container *cdkVirtualFor="let n of numbers">
+            <li> {{n}} </li>
+          </ng-container>
+        </cdk-virtual-scroll-viewport>
+      </ul>
+    </div>
 
-    <h3>{{text.download}}</h3>
+
   </div>
 
 

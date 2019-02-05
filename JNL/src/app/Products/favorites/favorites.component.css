@@ -20,7 +20,7 @@ h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
-    font-size: 1.6vw; /*20px;*/
+    font-size: 1.1vw; /*20px;*/
 
     margin-bottom: 1.5vw;
 }
@@ -172,8 +172,16 @@ button
     /* justify-content: space-between; */
 }
 
+.icon {
+    height: 16px;
+}
+
 .option-label:hover {
     cursor: default;
+}
+
+.products {
+    width: 72.7vw;
 }
 
 #expertise, #surMesure, #votreProjet {
@@ -229,6 +237,22 @@ button
 #send {
     width: 16.5vw;
     margin-top: 4.3vw;
+}
+
+#remove-download {
+    margin: auto;
+
+    width: 39.9vw;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#remove-download > div {
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
 }
 
 

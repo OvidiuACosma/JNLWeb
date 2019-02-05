@@ -1,10 +1,8 @@
 
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-favorites',
@@ -18,11 +16,13 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
 
   selected = [0, 0, 0, 0];
   scroller = true;
+  numbers: number[] = [];
 
   constructor(private router: Router,
     private route: ActivatedRoute,
     private dataex: DataExchangeService,
-    private textService: TranslationService) { }
+    private textService: TranslationService) {
+    }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -30,6 +30,11 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.language = lang || 'EN';
       this.getText(lang);
     });
+
+
+    for (let index = 0; index < 100; index++) {
+      this.numbers.push(index);
+  }
   }
 
   getText(lang: string) {

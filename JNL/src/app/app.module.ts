@@ -22,6 +22,7 @@ import { AuthGuard } from './_guards';
 import { BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     routing,
     ReactiveFormsModule,
     DeviceDetectorModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    ScrollingModule
   ],
   providers: [
     DataExchangeService,
