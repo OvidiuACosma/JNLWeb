@@ -100,7 +100,7 @@ button
 
 
 
-.les-services-main {
+.fav-main {
     margin: auto;
     /* width: 100vw; */
 
@@ -108,7 +108,7 @@ button
     flex-direction: column;
 }
 
-.les-services-main > div {
+.fav-main > div {
     margin: auto;
     left: 0;
     width: calc(100vw - 77px);
@@ -169,7 +169,7 @@ button
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .option-label:hover {
@@ -185,6 +185,8 @@ button
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    margin-top: 3.5vw;
 }
 
 #services {
@@ -224,10 +226,11 @@ button
     flex-direction: row;
 }
 
-
-#votreProjet {
-    width: calc(100vw - 77px);
+#send {
+    width: 16.5vw;
+    margin-top: 4.3vw;
 }
+
 
 @media only screen and (max-width: 800px){
     .fav_div > p{
