@@ -1,0 +1,538 @@
+h1 {
+    font-family: PlacardMT-Condensed;
+    font-size: 5.03vw;
+    margin-bottom: 3vh;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+h2 {
+    /* margin-top: 5.9vw; */
+    font-family: Atak-Light;
+    font-size: 3.5vw;
+
+    text-align: center;
+}
+
+h4 {
+    margin: auto;
+    width: 58.3vw;
+    font-size: 1.8vw;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+
+
+video {
+    width: 87.3vw;
+    height: 51.5vw;
+}
+
+/*NO VIDEO*/
+video {
+    width: 87.3vw;
+    height: 51.5vw;
+    /*NO VIDEO */
+
+    margin: auto;
+    width: 87vw;
+
+    height: 48.5vw;
+}
+
+.first-image {
+    width: 76vw;
+
+    margin: auto;
+    margin-top: 1.6vw;
+    margin-bottom: 4.2vw;
+}
+
+.les-services-main {
+    margin: auto;
+    /* width: 100vw; */
+
+    display: flex;
+    flex-direction: column;
+}
+
+.les-services-main > div {
+    margin: auto;
+    left: 0;
+    width: 100vw;
+
+    text-align: center;
+}
+
+.quote-bar {
+    margin-top: 7.6vw !important;
+    width: 100vw  !important;
+    left: 0;
+
+    display: flex;
+    flex-direction: column  !important;
+
+    background-color: #C6C6C6;
+    position: relative;
+
+    padding: 11.7vw;
+    padding-top: 4.2vw;
+    padding-bottom: 4.2vw;
+}
+
+.quote-bar > p {
+    font-family: Atak-LightItalic;
+    font-size: 1.8vw;
+}
+
+.quote-bar > h4 {
+    font-family: Atak-Bold;
+    font-size: 1vw;
+    margin-top: 0px;
+}
+
+.sur-flex {
+    width: 76vw;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    text-align: left;
+}
+
+.sur-flex > div {
+    width: 31.2vw;
+    margin: auto;
+    margin-top: 7.9vw;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sur-flex > div > div > img {
+    width: 31.2vw;
+    margin: 0px !important;
+}
+
+
+.sur-flex > div > div {
+    
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+} 
+.sur-flex > div > div > span {
+
+    font-family: Atak-Bold;
+    font-size: 1.1vw;
+
+} 
+
+.sur-flex > div > div > h5 {
+    margin-bottom: 2em;
+}
+
+.sur-flex > div:nth-child(2) > div:first-child {
+    margin-top: 0px !important;
+    margin-bottom: 10.8vw;
+
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+    text-align: left;
+} 
+
+
+
+
+
+
+#services_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
+    width: 50vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 4vw;
+    text-align: center;
+}
+
+#services_list > a {
+    margin: auto;
+
+    font-size: 1.5em;
+    margin-right: 20px;
+    left: 0;
+
+    text-transform: uppercase;
+}
+/* 
+#services_list > a:last-child {
+    margin-right: 0px;
+} */
+
+#services_list > a:hover {
+    text-decoration: underline;
+}
+
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+  }
+
+textarea{
+    margin: auto;
+    background-color: #F6EEDD;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+i {
+    outline: none;
+}
+
+
+.contact_div
+{
+    background-color: #E9D6AC;
+    width: 100vw;
+    left: 0;
+
+    text-align: center;
+
+    margin-bottom: 5vh;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+    padding-top: 3.7vw;
+    
+}
+
+.contact_div > h2 {
+    margin-top: 0;
+}
+
+.contact_div > div > p {
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+    text-align: center;
+}
+.contact_form
+{
+    width: 72.6vw;
+    margin: auto;
+    margin-top: 4.8vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    text-align: left;
+}
+.contact_form:focus, input:focus, textarea:focus, select:focus, button:focus
+{
+    outline: none;
+}
+input
+{
+    margin: auto;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+
+    outline: none;
+    border: hidden;
+
+    width: 100%;
+    background-color: transparent;
+
+
+    border: none;
+    border-bottom: 1.5px solid black;
+
+    margin-top: 1.5vw;
+    padding-bottom: 0px;
+}
+
+input[type="checkbox"]
+{
+    margin: auto;
+
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox; 
+
+    outline: none;
+    border: hidden;
+
+    width: auto;
+
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 5px;
+}
+
+
+label {
+    margin: 0px;
+}
+
+
+#checks {
+    /* width: 70%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center
+}
+
+#checks > div {
+    display: flex;
+    flex-direction: column;
+}
+
+select
+{
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;  
+
+    width: 100%;
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 1.5px solid black;
+
+    margin-bottom: 1em;
+
+}
+button
+{
+    text-transform: uppercase;
+
+    margin: auto;
+    background-color: white;
+    color: black;
+
+    margin-top: 5.3em;
+    margin-bottom: 4em;
+    border: none;
+
+    /*width: 20%;*/
+}
+
+
+#votreProjet {
+    width: 100vw;
+}
+
+.contact_form > div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+
+    width: 72.7vw;
+    margin: auto;
+}
+
+.contact_form > div > div:first-child{
+    width: 34vw;
+    margin-top: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact_form > div > div:last-child > input:first-child{
+    margin-top: 0px;
+}
+
+.contact_form > div > div:last-child{
+    width: 30vw;
+    margin-top: 0px;
+
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#expertise, #surMesure, #votreProjet {
+    margin-bottom: 60px;
+    padding-top: 60px;
+}
+
+#services {
+    margin: auto;
+    width: 87.3vw;
+    height: 55vw;
+    display: flex;
+
+    color: white;
+}
+
+#services > div:first-child {
+    margin: auto;
+    width: 87vw;
+    /*width: 1255px;*/
+
+    height: 48.5vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 800px){
+    .contact_div > p{
+        font-size: 1em;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        font-size: 9.7vw;
+    }
+
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
+        word-wrap: normal;
+        font-size: 5.6vw !important;
+    }
+
+    h4 {
+        width: 80vw;
+    }
+
+    button {
+        margin-top: 0px;
+    }
+
+    input {
+        margin-top: 20px;
+    }
+
+    .sur-flex {
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .sur-flex > div {
+        width: 80vw;
+        justify-content: space-between;
+    }
+    
+    .sur-flex > div:last-child {
+        flex-direction: column-reverse;
+    }
+
+    .sur-flex > div > div > img {
+        width: 80vw;
+    }
+
+    .contact_form {
+        width: 100vw;
+    }
+
+    .contact_form > div {
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .contact_form > div > div {
+        width: 80vw !important;
+    }
+
+    
+    .contact_form > div > div:first-child {
+        margin-bottom: 5vw;
+    }
+
+
+
+
+
+
+
+    h2 {
+        font-size: 5.6vw;
+    }
+    
+    h4 {
+        font-size: 4.2vw;
+    }
+    
+    
+    .quote-bar > p {
+        font-family: Atak-LightItalic;
+        font-size: 4.2vw;
+    }
+    
+    .quote-bar > h4 {
+        font-size: 3.9vw;
+    }
+    
+    .sur-flex > div > div {
+        font-size: 4.5vw;
+    } 
+    .sur-flex > div > div > span {
+        font-size: 4.4vw;
+    
+    } 
+    
+    .sur-flex > div:nth-child(2) > div:first-child {
+        font-size: 4.5vw; 
+    } 
+    
+    
+    
+    
+    
+    
+   
+    .contact_div
+    {
+        font-size: 4.5vw;
+        
+    }
+    
+   
+    .contact_div > div > p {
+        font-size: 4.5vw;
+    }
+
+    #services_list > a {
+        margin: 0px;
+    }
+
+   
+}

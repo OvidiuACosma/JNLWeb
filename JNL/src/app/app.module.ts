@@ -10,7 +10,7 @@ import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
          MarqueComponent, ActualiteComponent } from './Std';
 import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
-         ProductDimensionsComponent, ProductCataloguesComponent } from './Products';
+         ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent } from './Products';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -22,7 +22,6 @@ import { AuthGuard } from './_guards';
 import { BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({

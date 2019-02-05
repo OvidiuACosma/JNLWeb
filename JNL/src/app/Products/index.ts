@@ -1,3 +1,4 @@
+export * from './favorites/favorites.component';
 export * from './product/product.component';
 export * from './product-search/product-search.component';
 export * from './product-description/product-description.component';
