@@ -28,11 +28,21 @@
                <a routerLink="/contact" class="top-button">{{text.contact}}</a>
            </span>
            <span class="top-button">&nbsp;&#8213;&nbsp;</span>
-           <span>
+           <ul *ngIf="isLangSelectMode">
+               <li *ngFor="let l of otherLanguages">
+                   <span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>
+               </li>
+           </ul>
+           <span class="top-button" style="margin-right: 2px" (click)="toggleLangStatus()">{{language}}</span>
+           <span class="top-button" (click)="toggleLangStatus()">
+               <i class="fa fa-sort-down fa-1"></i>
+           </span>
+
+           <!--<span>
                 <select #l [value]="language" (change)="onChangeLanguage(l.value)" class="select-lang">
                     <option *ngFor="let lang of languages" [ngValue]="lang">{{lang}}</option>
                 </select>
-           </span>
+           </span>-->
        </div>
    </div>
 </div>
