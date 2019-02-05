@@ -20,7 +20,22 @@
       <ul class="list">
         <cdk-virtual-scroll-viewport  style="height: 500px" itemSize="30" >
           <ng-container *cdkVirtualFor="let n of numbers">
-            <li> {{n}} </li>
+            <div class="products-group">
+              <li>
+                <div>
+                  <div class="pic-frame">
+                    <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover">
+                    <div class="center-product">
+                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n % 5)}}.png" class="fav-img">
+                    </div>
+                  </div>
+                  <span>Product Name</span>
+                </div>
+               </li>
+              <li> <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + 1) % 5}}.png" class="fav-img"> </li>
+              <li> <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + 2) % 5}}.png" class="fav-img"> </li>
+              <li> <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + 3) % 5}}.png" class="fav-img"> </li>
+            </div>
           </ng-container>
         </cdk-virtual-scroll-viewport>
       </ul>

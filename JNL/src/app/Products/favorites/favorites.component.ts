@@ -14,7 +14,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   language: string;
   text: any;
 
-  selected = [0, 0, 0, 0];
+  selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
 
@@ -32,9 +32,9 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     });
 
 
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < 30; index++) {
       this.numbers.push(index);
-  }
+    }
   }
 
   getText(lang: string) {

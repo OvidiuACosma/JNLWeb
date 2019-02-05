@@ -84,6 +84,17 @@ button
     /*width: 20%;*/
 }
 
+li, ul {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;   
+    list-style-type: none;
+}
+
+cdk-virtual-scroll-viewport {
+    width: 90vw;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
     opacity: 1; /* Firefox */
@@ -180,8 +191,45 @@ button
     cursor: default;
 }
 
-.products {
+.list {
+    margin: auto;
+/* 
+    width: 72.7vw; */
+}
+
+/* .products {
     width: 72.7vw;
+} */
+
+.products-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.fav-img {
+    max-width: 18.8vw;
+    max-height: 20.9vw;  
+}
+
+.remover {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 20px;
+}
+
+.pic-frame {
+    width: 18.8vw;
+    height: 21.9vw;  
+
+    background-color: white;
+    border: 1px solid black;
+}
+
+.center-product {
+    width: 18.8vw;
+    height: 20.9vw;  
 }
 
 #expertise, #surMesure, #votreProjet {
@@ -253,6 +301,11 @@ button
 
     display: flex;
     flex-direction: row;
+}
+
+#favs {
+    display: flex;
+    flex-direction: column;
 }
 
 
