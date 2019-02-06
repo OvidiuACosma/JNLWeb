@@ -18,9 +18,9 @@
 
     <div [ngClass]="(this.removeAll===true) ? 'remove-item' :'products'">
       <ul class="list">
-        <cdk-virtual-scroll-viewport itemSize="30" >
+        <cdk-virtual-scroll-viewport itemSize="30">
           <div class="flex-div">
-          <ng-container *cdkVirtualFor="let n of numbers" >
+          <ng-container *cdkVirtualFor="let n of numbers">
                 <li [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'">
                   <div>
                     <div class="pic-frame">
