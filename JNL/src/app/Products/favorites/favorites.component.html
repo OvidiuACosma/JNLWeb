@@ -35,6 +35,21 @@
               </div>
             </li>
           </ng-container>
+          
+
+          <li *ngFor="let m of fillers" class="non-remove">
+            <div>
+              <div class="pic-frame">
+                <div>
+                  <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="remover" (click)="removeItem(n)">
+                </div>
+                <div class="center-product">
+                  <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-img">
+                </div>
+              </div>
+              <span></span>
+            </div>
+          </li>
         </div>
         </cdk-virtual-scroll-viewport>
       </ul>

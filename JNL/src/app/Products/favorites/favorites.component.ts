@@ -3,6 +3,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { fillProperties } from '@angular/core/src/util/property';
 
 @Component({
   selector: 'app-favorites',
@@ -17,9 +18,10 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
+  fillers: number[] = [];
   removed: number[] = [];
   removeAll = false;
-  numberAll = 19;
+  total: number;
 
   country: any;
   cy: any;
@@ -38,16 +40,23 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.getText(lang);
     });
 
+    const numberAll = 19;
+    this.total = numberAll;
 
-    const max = this.numberAll + 4 - this.numberAll % 4;
-
-    for (let index = 0; index < max; index++) {
-      console.log(index);
+    for (let index = 0; index < numberAll; index++) {
       this.numbers.push(index);
       this.removed[index] = 0;
     }
 
+    this.fillEmpty(this.total, this.total + 4 - this.total % 4);
 
+  }
+
+  fillEmpty(nr: number, max: number) {
+
+    for (let index = nr; index < max; index++) {
+      this.fillers.push(index);
+    }
   }
 
   getText(lang: string) {
@@ -105,6 +114,8 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   removeItem(index: number) {
     this.removed[index] = 1;
     this.scroller = false;
+    this.total--;
+    this.fillEmpty(1, 1);
     // REMOVE FROM DB ?
   }
 
