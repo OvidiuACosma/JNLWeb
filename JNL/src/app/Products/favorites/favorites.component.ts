@@ -49,29 +49,14 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.removed[index] = 0;
     }
 
-    // this.fillEmpty(this.total, this.total + 4 - this.total % 4);
-
   }
 
-  fillEmpty(nr: number, max: number) {
-
-    if (this.total % 4 !== 0) {
-
-      for (let index = nr; index < max; index++) {
-        this.fillers.push(index);
-        this.nrEmpty++;
-      }
-    } else {
-      this.fillers.push(0);
-      this.nrEmpty = 0;
-    }
-  }
 
   removeItem(index: number) {
     this.removed[index] = 1;
     this.scroller = false;
     this.total--;
-    // this.fillEmpty(1, 2);
+
     // REMOVE FROM DB ?
   }
 

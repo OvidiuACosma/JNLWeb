@@ -37,7 +37,7 @@
           </ng-container>
           
 
-          <li *ngFor="let m of [1, 2, 3]" [ngClass]="(m  == 4 - this.total % 4 || this.total % 4 === 0) ? 'remove-item' :'non-remove'">
+          <li *ngFor="let m of [0, 1, 2]" [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'">
             <div>
               <div class="pic-frame">
                 <div>
