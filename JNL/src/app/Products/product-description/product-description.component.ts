@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from 'src/app/_services';
 
 @Component({
@@ -8,18 +8,16 @@ import { ProductsService } from 'src/app/_services';
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  public product: string;
+  @Input() prodCode = '';
   public productDesc: any[];
-  public productID = 'MEDD01';
   public parts: string[];
 
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-    this.productsService.getProductDesc(this.productID)
+    this.productsService.getProductDesc(this.prodCode)
       .subscribe(desc => {
         this.productDesc = desc;
-        // console.log('DESC:', this.productDesc[0].familyFr);
       });
   }
 }

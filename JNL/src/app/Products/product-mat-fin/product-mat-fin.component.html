@@ -1,194 +1,187 @@
 <!-- CONTAINER -->
+<hr>
 <div id="container" (window:resize)="onResize()">
-  <h5><b>Mati&egrave;res &amp; Finitions</b></h5>
-  <hr>
-  <div class="row">
-    <div class="col-xl-2 col-sm-3">
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
-          aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
-        <a class="nav-link" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab" aria-controls="v-pills-cuir"
-          aria-selected="false" (click)="setCategory('cuir')">Cuirs</a>
-        <a class="nav-link" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
-          aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('similicuir')">Simili Cuirs</a>
-        <a class="nav-link" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab" aria-controls="v-pills-metal"
-          aria-selected="false">Metal</a>
-        <a class="nav-link" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab" aria-controls="v-pills-bois"
-          aria-selected="false">Bois &amp; Plaquage</a>
-        <a class="nav-link" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab" aria-controls="v-pills-verre"
-          aria-selected="false">Verre</a>
-        <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab" aria-controls="v-pills-miroir"
-          aria-selected="false">Miroir</a>
-      </div>
+  <div id="static">
+    <h5><b>MATERIALS<br> &amp; FINISHES</b></h5>
+    <div class="clear"></div>
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
+        aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
+      <a class="nav-link" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab" aria-controls="v-pills-cuir"
+        aria-selected="false" (click)="setCategory('cuir')">Cuirs</a>
+      <a class="nav-link" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
+        aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('similicuir')">Simili Cuirs</a>
+      <a class="nav-link" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab" aria-controls="v-pills-metal"
+        aria-selected="false">Metal</a>
+      <a class="nav-link" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab" aria-controls="v-pills-bois"
+        aria-selected="false">Bois &amp; Plaquage</a>
+      <a class="nav-link" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab" aria-controls="v-pills-verre"
+        aria-selected="false">Verre</a>
+      <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab" aria-controls="v-pills-miroir"
+        aria-selected="false">Miroir</a>
     </div>
-    <div class="col-xl-10 col-sm-9">
-      <div class="tab-content" id="v-pills-tabContent">
-        <!-- TISSUS TAB------------------------->
-        <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
-          <b>---Tissus</b>
-          <div class="clear"></div>
-          <div class="row text-lg-left">
-            <!-- paged item-------------------->
-            <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of tissuPagedItems">
-              <a class="d-block">
-                <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                  src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
-                  [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
-              </a>
-              {{item.model}}
-              <div class="clear"></div>
-            </div>
-            <!---------------------------------->
+  </div>
+  <div id="content">
+    <div class="tab-content" id="v-pills-tabContent">
+      <!-- TISSUS TAB------------------------->
+      <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
+        <div class="row text-lg-left">
+          <!-- paged item-------------------->
+          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of tissuPagedItems">
+            <a class="d-block">
+              <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
+                src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
+                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
+            </a>
+            {{item.model}}
+            <div class="clear"></div>
           </div>
-          <div class="clear"></div>
-
-          <!-- pager -->
-          <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-              <a class="page-link" (click)="setPage(1)">&laquo;</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-              <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
-            </li>
-            <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-              <a class="page-link" (click)="setPage(page)">{{page}}</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
-            </li>
-          </ul>
+          <!---------------------------------->
         </div>
+        <div class="clear"></div>
 
-        <!-- CUIRS TAB------------------------->
-        <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
-          <b>---Cuirs</b>
-          <div class="clear"></div>
-          <div class="row text-lg-left">
-            <!-- paged item-------------------->
-            <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of cuirPagedItems">
-              <a class="d-block">
-                <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                  src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                  [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
-              </a>
-              {{item.model}}
-              <div class="clear"></div>
-            </div>
-            <!---------------------------------->
+        <!-- pager -->
+        <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(1)">&laquo;</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a class="page-link" (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CUIRS TAB------------------------->
+      <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
+        <div class="row text-lg-left">
+          <!-- paged item-------------------->
+          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of cuirPagedItems">
+            <a class="d-block">
+              <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
+                src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
+                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
+            </a>
+            {{item.model}}
+            <div class="clear"></div>
           </div>
-          <div class="clear"></div>
+          <!---------------------------------->
+        </div>
+        <div class="clear"></div>
 
-          <!-- pager --> 
-          <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-              <a class="page-link" (click)="setPage(1)">&laquo;</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-              <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
-            </li>
-            <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-              <a class="page-link" (click)="setPage(page)">{{page}}</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
-            </li>
-          </ul>
-        </div> 
+        <!-- pager -->
+        <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(1)">&laquo;</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a class="page-link" (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
+          </li>
+        </ul>
+      </div>
 
-        <!-- SIMILI CUIRS TAB------------------------->
-        <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
-          <b>---Simili Cuirs</b>
-          <div class="clear"></div>
-          <div class="row text-lg-left">
-            <!-- paged item-------------------->
-            <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of similiPagedItems">
-              <a class="d-block">
-                <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                  src="assets\Images\Products\JNL\Garnissage\SimiliCuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                  [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
-              </a>
-              {{item.model}}
-              <div class="clear"></div>
-            </div>
-            <!---------------------------------->
+      <!-- SIMILI CUIRS TAB------------------------->
+      <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
+        <div class="row text-lg-left">
+          <!-- paged item-------------------->
+          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of similiPagedItems">
+            <a class="d-block">
+              <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
+                src="assets\Images\Products\JNL\Garnissage\SimiliCuir\{{item.codeProd | uppercase }}.jpg" alt=""
+                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
+            </a>
+            {{item.model}}
+            <div class="clear"></div>
           </div>
-          <div class="clear"></div>
+          <!---------------------------------->
+        </div>
+        <div class="clear"></div>
 
-          <!-- pager --> 
-          <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-              <a class="page-link" (click)="setPage(1)">&laquo;</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-              <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
-            </li>
-            <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-              <a class="page-link" (click)="setPage(page)">{{page}}</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
-            </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
-            </li>
-          </ul>
-        </div>
+        <!-- pager -->
+        <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(1)">&laquo;</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a class="page-link" (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
-          <b>---Metal</b>
-        </div>
-        <div class="tab-pane fade" id="v-pills-bois" role="tabpanel" aria-labelledby="v-pills-bois-tab">
-          <b>---Bois &amp; Plaquage</b>
-        </div>
-        <div class="tab-pane fade" id="v-pills-verre" role="tabpanel" aria-labelledby="v-pills-verre-tab">
-          <b>---Verre</b>
-        </div>
-        <div class="tab-pane fade" id="v-pills-miroir" role="tabpanel" aria-labelledby="v-pills-miroir-tab">
-          <b>---Miroir</b>
-        </div>
+      <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
+        <b>---Metal</b>
+      </div>
+      <div class="tab-pane fade" id="v-pills-bois" role="tabpanel" aria-labelledby="v-pills-bois-tab">
+        <b>---Bois &amp; Plaquage</b>
+      </div>
+      <div class="tab-pane fade" id="v-pills-verre" role="tabpanel" aria-labelledby="v-pills-verre-tab">
+        <b>---Verre</b>
+      </div>
+      <div class="tab-pane fade" id="v-pills-miroir" role="tabpanel" aria-labelledby="v-pills-miroir-tab">
+        <b>---Miroir</b>
       </div>
     </div>
   </div>
-  <br>
+</div>
+<br>
 
-  <!-- MODAL -->
-  <div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
-    aria-hidden="true" data-backdrop="false">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="ModalLabel">{{garnissageModel}}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="row" id="garnissage-detail">
-            <div class="card col-6" style="width: 25rem;">
-              <img [src]="imgSource" class="card-img-top" alt="...">
-              <!--
+<!-- MODAL -->
+<div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
+  aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">{{garnissageModel}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="garnissage-detail">
+          <div class="card col-6" style="width: 25rem;">
+            <img [src]="imgSource" class="card-img-top" alt="...">
+            <!--
           <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
           card's content.</p>
           </div>
           -->
-            </div>
-            <div col-6>
-              <ul style="list-style-type:none">
-                <li><b>Name: </b><label>{{garnissageModel}}</label></li>
-                <li><b>Code: </b><label>{{garnissageCode}}</label></li>
-                <li><b>Dimensions: </b><label>{{garnissageDimensions}}</label></li>
-                <li><b>Composition: </b></li>
-                <li><label>{{garnissageCompositionFR}}</label></li>
-              </ul>
-            </div>
+          </div>
+          <div col-6>
+            <ul style="list-style-type:none">
+              <li><b>Name: </b><label>{{garnissageModel}}</label></li>
+              <li><b>Code: </b><label>{{garnissageCode}}</label></li>
+              <li><b>Dimensions: </b><label>{{garnissageDimensions}}</label></li>
+              <li><b>Composition: </b></li>
+              <li><label>{{garnissageCompositionFR}}</label></li>
+            </ul>
           </div>
         </div>
       </div>

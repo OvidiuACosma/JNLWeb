@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/_services';
 
@@ -12,32 +12,28 @@ export class ProductComponent implements OnInit {
   public detail = 'description';
   public product_id: string;
   public prodDesc: any;
-  public imgName: any;
+  public family = '';
+  public prodName = '';
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
 
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService) { }
 
   ngOnInit() {
-    // this.product_id = 'CAMO01';
     this.activatedRoute.params.subscribe(paramsId => {
       this.product_id = paramsId.product;
       this.getProductData(paramsId.product);
-      this.getImage();
       });
     }
 
     getProductData(productID: string) {
-    this.productsService.getProduct(this.product_id)
+    this.productsService.getProduct(productID)
       .subscribe(desc => {
         this.prodDesc = desc;
-        // console.log('DESC:', desc);
+        this.family = this.prodDesc.familyFr.replace(/\s/g , '');
+        this.prodName = this.prodDesc.model.replace(/\s/g , '');
+        // console.log('DESC:', this.prodDesc);
       });
-    }
-
-    getImage() {
-      // this.imgName = this.prodDesc.model;
-      console.log('IMG NAME: ', this.product_id);
     }
 
   setDetail(index: number) {
