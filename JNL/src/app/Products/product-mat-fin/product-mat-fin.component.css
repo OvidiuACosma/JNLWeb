@@ -1,6 +1,5 @@
 hr {
-    border-width: 1px;
-    border-style: solid;
+    border: 0.5px solid #DBBB76;
 }
 
 /* data list from modal */
@@ -14,8 +13,8 @@ ul {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: lightgrey;
+    color: #DBBB76;
+    background-color: white;
 }
 
 .img-button {
@@ -60,15 +59,23 @@ ul {
     padding: 0px !important;
 }
 
+
+#container {
+    display:flex;
+}
+
+#static {
+    flex:1;
+}
+
+#content {
+    flex:3;
+}
+
 #thumbnail-container {
     padding: 0px !important;
 }
 
 #garnissage-detail {
     margin: 5px;
-}
-
-.test {
-    display: flex;
-    flex-wrap: wrap;
 }

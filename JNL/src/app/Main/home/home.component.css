@@ -186,7 +186,7 @@ hr {
     max-height: 13vh;
     max-width: 56vw;
     height: auto;
-    width: auto;
+    width: 34vw;
 }
 
 #first_picture > div > p {
@@ -196,9 +196,9 @@ hr {
 
 #first_picture > div > p > a> img {
     max-height: 13vh;
-    max-width: 13vw;
+    max-width: 15vw;
     height: auto;
-    width: auto;
+    width: 8vw;
 }
 
 #une_histoire

@@ -27,7 +27,15 @@ li {
     text-transform: uppercase;
     mix-blend-mode: difference;
     /* text-shadow: 0px 0px 5px white; */
-    text-shadow: -.5px 0 lightgray, 0 .5px lightgray, .5px 0 lightgray, 0 -.5px lightgray;
+    text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+}
+
+.top-button:hover {
+    color: darkgray;
+}
+
+.span-cursor {
+    cursor: pointer;
 }
 
 .select-lang {
