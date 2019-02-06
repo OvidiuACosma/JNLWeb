@@ -1,8 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
-import { Target } from '@angular/compiler';
-import { getRenderedText, text } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-search',
@@ -14,12 +12,15 @@ export class SearchComponent implements OnInit {
   @Output() toggleNavBar = new EventEmitter();
 
   public language: string;
+  otherLanguages: string[];
   languages: string[] = ['EN', 'FR'];
+  isLangSelectMode = false;
   public text: any;
   public searchMode = false;
   public navBarStatus = true;
   navBarButtonSrc: string;
   navBarButtonText: string;
+
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
@@ -35,7 +36,7 @@ export class SearchComponent implements OnInit {
     this.dataex.currentLanguage
     .subscribe(lang => {
       this.language = lang || 'EN';
-      // this.languages = this.languages.filter(f => !f.includes(this.language)); // against HTML slect > option philisophy
+      this.otherLanguages = this.languages.filter(f => !f.includes(this.language));
       this.getText(this.language);
     });
   }
@@ -108,5 +109,12 @@ export class SearchComponent implements OnInit {
     this.language = lang;
     this.dataex.setLanguage(lang);
     this.getText(this.language);
+    if (this.isLangSelectMode) {
+      this.toggleLangStatus()
+    }
+  }
+
+  toggleLangStatus() {
+    this.isLangSelectMode = ! this.isLangSelectMode;
   }
 }
