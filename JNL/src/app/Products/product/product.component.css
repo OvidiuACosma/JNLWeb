@@ -13,6 +13,16 @@ h1 {
     text-transform: uppercase;
 }
 
+h3 {
+    text-transform: uppercase;
+    font-family: Atak-Regular;
+    color: #DBBB76;
+    font-size: 1.1vw; /*20px;*/
+
+    margin-bottom: 1.5vw;
+}
+
+
 .gold {
     color: #DBBB76;
 }
@@ -41,6 +51,23 @@ h1 {
 
 #footer {
     text-align: center;
+}
+
+
+#fav-download {
+    margin: auto;
+
+    width: 39.9vw;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#fav-download > div {
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
 }
 
 .home_links
