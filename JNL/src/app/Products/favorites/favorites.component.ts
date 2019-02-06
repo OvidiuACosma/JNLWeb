@@ -22,6 +22,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   removed: number[] = [];
   removeAll = false;
   total: number;
+  nrEmpty = 0;
 
   country: any;
   cy: any;
@@ -40,7 +41,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.getText(lang);
     });
 
-    const numberAll = 19;
+    const numberAll = 15;
     this.total = numberAll;
 
     for (let index = 0; index < numberAll; index++) {
@@ -48,15 +49,35 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.removed[index] = 0;
     }
 
-    this.fillEmpty(this.total, this.total + 4 - this.total % 4);
+    // this.fillEmpty(this.total, this.total + 4 - this.total % 4);
 
   }
 
   fillEmpty(nr: number, max: number) {
 
-    for (let index = nr; index < max; index++) {
-      this.fillers.push(index);
+    if (this.total % 4 !== 0) {
+
+      for (let index = nr; index < max; index++) {
+        this.fillers.push(index);
+        this.nrEmpty++;
+      }
+    } else {
+      this.fillers.push(0);
+      this.nrEmpty = 0;
     }
+  }
+
+  removeItem(index: number) {
+    this.removed[index] = 1;
+    this.scroller = false;
+    this.total--;
+    // this.fillEmpty(1, 2);
+    // REMOVE FROM DB ?
+  }
+
+  removeAllItems() {
+    // console.log('Removed');
+    this.removeAll = true;
   }
 
   getText(lang: string) {
@@ -111,18 +132,6 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     this.scroller = false;
   }
 
-  removeItem(index: number) {
-    this.removed[index] = 1;
-    this.scroller = false;
-    this.total--;
-    this.fillEmpty(1, 1);
-    // REMOVE FROM DB ?
-  }
-
-  removeAllItems() {
-    // console.log('Removed');
-    this.removeAll = true;
-  }
 
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
