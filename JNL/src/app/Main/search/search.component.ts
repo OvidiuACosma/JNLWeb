@@ -110,7 +110,7 @@ export class SearchComponent implements OnInit {
     this.dataex.setLanguage(lang);
     this.getText(this.language);
     if (this.isLangSelectMode) {
-      this.toggleLangStatus()
+      this.toggleLangStatus();
     }
   }
 
