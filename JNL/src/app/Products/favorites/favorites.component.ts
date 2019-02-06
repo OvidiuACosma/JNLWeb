@@ -19,6 +19,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   numbers: number[] = [];
   removed: number[] = [];
   removeAll = false;
+  numberAll = 19;
 
   country: any;
   cy: any;
@@ -38,12 +39,15 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     });
 
 
-    for (let index = 0; index < 19; index++) {
+    const max = this.numberAll + 4 - this.numberAll % 4;
+
+    for (let index = 0; index < max; index++) {
+      console.log(index);
       this.numbers.push(index);
       this.removed[index] = 0;
     }
 
-    this.getCountries();
+
   }
 
   getText(lang: string) {
@@ -52,6 +56,9 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       const res = data[0];
       this.getLanguageText(res);
     });
+
+
+    this.getCountries();
 
   }
 
@@ -73,7 +80,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   }
 
   getCountryList(source: any) {
-    this.cy = source['countries'];
+    this.cy = source[this.language.toUpperCase()]['countries'];
   }
 
   NavigateTo(target: string, fragment: string = '') {
