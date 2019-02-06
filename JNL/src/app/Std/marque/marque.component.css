@@ -86,6 +86,7 @@ h6 {
 .marque-main{
     text-align: center;
     display: flex;
+    padding-top: 73px;
 }
 
 .marque-main > div{

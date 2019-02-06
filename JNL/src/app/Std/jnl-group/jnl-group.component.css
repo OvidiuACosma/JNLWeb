@@ -54,6 +54,7 @@ button {
     margin: auto;
     /* width: 100vw; */
     text-align: center;
+    padding-top: 73px;
 }
 
 /* .les-marques-main > div {
@@ -74,14 +75,15 @@ button {
 .full-image {
     margin-top: 11.4vw;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: auto;
 
 }
 
 .quote-bar {
     margin-top: 7.6vw !important;
-    width: 100vw  !important;
+    /* width: 100vw  !important; */
+    width: 100%;
     left: 0;
 
     display: flex;
@@ -189,7 +191,7 @@ button {
     margin: auto;
     font-family: Atak-Light;
     font-size: 1em;
-    width: 73vw;
+    width: 80vw;
     
     display: flex;
     flex-direction: row;
@@ -198,7 +200,7 @@ button {
     padding: 0px;
     justify-content: center;
 
-    margin-bottom: 7.5vw;
+    margin-bottom: 4vw;
     text-align: center;
 }
 
@@ -207,11 +209,18 @@ button {
 
     font-size: 2vw;
     left: 0;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid transparent;
+    transition: all .5s ease;
 }
 
 #marques_list > a:hover {
-    text-decoration: underline;
+    border-color: #888;
+    transition: all .5s ease;
 }
+
 
 #equipe {
     width: 76vw;

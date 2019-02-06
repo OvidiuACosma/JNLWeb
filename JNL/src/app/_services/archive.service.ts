@@ -14,4 +14,8 @@ export class ArchiveService {
   public getArchiveImages(): Observable<any> {
     return this.http.get(`${this.urlAssets}/Std/archive.json`);
   }
+
+  public getTextCountries(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Main/countries.json`);
+  }
 }

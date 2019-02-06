@@ -71,6 +71,7 @@ video {
 .les-marques-main {
     display: flex;
     margin: auto;
+    padding-top: 73px;
     /* width: 100vw; */
     /* width: 90vw; */
 }
@@ -95,7 +96,8 @@ video {
     margin-top: 11.4vw;
     position: relative;
     left: 0;
-    width: calc(100vw - 77px);
+    /* width: calc(100vw - 77px); */
+    width: 100%;
     height: auto;
 
 }
@@ -295,8 +297,8 @@ video {
 #marques_list {
     margin: auto;
     font-family: Atak-Light;
-    font-size: 1.1vw;
-    width: 30vw;
+    font-size: 1em;
+    width: 80vw;
     
     display: flex;
     flex-direction: row;
@@ -307,20 +309,25 @@ video {
 
     margin-bottom: 4vw;
     text-align: center;
-    text-transform: uppercase;
 }
 
 #marques_list > a {
     margin: auto;
 
     font-size: 2vw;
-    /* margin-right: 20px; */
     left: 0;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid transparent;
+    transition: all .5s ease;
 }
 
 #marques_list > a:hover {
-    text-decoration: underline;
+    border-color: #888;
+    transition: all .5s ease;
 }
+
 
 #atelier, #fabrication {
     margin-bottom: 60px;
@@ -459,7 +466,7 @@ input[type="radio"] {
     display: flex;
     flex-direction: row;
 
-    width: 100vw;
+    /* width: 100vw; */
     padding: 0px;
 
     font-family: Atak-Regular;

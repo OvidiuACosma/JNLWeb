@@ -4,14 +4,14 @@
   <div id="favs">
     <div id="remove-download">
       <div (click)="removeAllItems()">
-        <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png" class="icon">
+        <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png"  height="16px">
         <h3>&nbsp;&nbsp;{{text.remove}}</h3>
       </div>
 
       <h3>&nbsp;&nbsp;&#8213;&nbsp;&nbsp;</h3>
 
       <div>
-          <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png" class="icon">
+          <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png" height="16px">
           <h3>&nbsp;&nbsp;{{text.download}}</h3>
         </div>
     </div>
@@ -77,26 +77,22 @@
       </div>
 
       <div id="details">
-        <input placeholder="Prenom*" reaquired/>
-        <input placeholder="Nom*" required/>
-        <input placeholder="Société*" required/>
-        <input placeholder="Poste*" required/>
-        <select>
+        <input placeholder="{{text.firstName}}" required/>
+        <input placeholder="{{text.lastName}}" required/>
+        <select (click)="countryClick()">
             <option selected disabled>{{text.country}} 🡫</option>
-            <option>Sujet 1</option>
-            <option>Sujet 2</option>
-            <option>Sujet 3</option>
+            <option *ngFor="let ctry of this.cy; let x = index" >{{cy[x].name}}</option>
           </select>
-        <input placeholder="Adresse"/>
-        <input placeholder="Ville*" required/>
-        <input placeholder="Province"/>
-        <input placeholder="Code Postal*"/>
-        <input placeholder="Email*" required/>
+        <input placeholder="{{text.address}}"/>
+        <input placeholder="{{text.city}}"/>
+        <input placeholder="{{text.province}}"/>
+        <input placeholder="{{text.zip}}"/>
+        <input placeholder="{{text.email}}" required/>
       </div>
 
       <br>
 
-      <button id="send">ENVOYER</button>
+      <button id="send">{{text.send}}</button>
     </form>
   </div>
 
