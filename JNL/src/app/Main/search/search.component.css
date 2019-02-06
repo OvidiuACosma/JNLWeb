@@ -28,10 +28,12 @@ li {
     mix-blend-mode: difference;
     /* text-shadow: 0px 0px 5px white; */
     text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+    transition: all .3s ease;
 }
 
 .top-button:hover {
-    color: darkgray;
+    color: #DBBB76;
+    transition: all .3s ease;
 }
 
 .span-cursor {
@@ -113,7 +115,8 @@ li {
 
 #search_bar > button:hover {
     outline: 0;
-    background-color: darkgrey;
+    background-color: #DBBB76;
+    transition: all .3s ease;
     cursor: pointer;
 }
 
@@ -151,6 +154,12 @@ li {
     text-decoration: none;
     color: black;
     mix-blend-mode: difference;
+    transition: all .3s ease;
+}
+
+#top_buttons > ul > li > span:hover {
+    color: #DBBB76;
+    transition: all .3s ease;
 }
 
 #top_buttons > span > a:link, #top_buttons > span > a:visited {
@@ -160,7 +169,8 @@ li {
 }
 
 #top_buttons > span >a:hover {
-    color: darkgrey;
+    color: #DBBB76;
+    transition: all .3s ease;
 }
 
 #menu-button {
