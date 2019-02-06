@@ -1,4 +1,16 @@
 hr{
-    border-width: 1px;
-    border-style: solid;
+    border: 0.5px solid #DBBB76;
+}
+
+#container {
+    /* padding-top: 30px; */
+    display: flex;
+}
+
+#staticText {
+    flex: 1;
+}
+
+#description {
+    flex: 3;
 }

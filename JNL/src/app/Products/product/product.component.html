@@ -1,60 +1,35 @@
-<br>
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-10">
-    <div class="product-main">
-      <div id="header">
-        <div id='famille'>
-          <h3>{{prodDesc.familyFr}}</h3>
-        </div>
-        <div id='marque'>
-          <h3>JNL Collection</h3>
-        </div>
-      </div>
-      <hr>
-      <div id="container">
-        <div id="model">
-          <h3>{{prodDesc.model}}</h3>
-        </div>
-        <div id="code">
-          <h3>{{product_id | uppercase}}</h3>
-        </div>
-        <div id="productImg">
-          <!-- <img class="img-fluid" src="assets\Images\Products\JNL\Meuble\Meuble Sellier_01.jpg" alt=""> -->
-          <img class="img-fluid" src="assets\Images\Products\JNL\{{prodDesc.familyFr}}\{{imgName}}_01.jpg" alt="">
-        </div>
-        <ul class="nav nav-tabs nav-justified flex-column flex-md-row" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link flex-md-fill text-md-center active" data-toggle="tab" role="tab" (click)="setDetail(0)">DESCRIPTION</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link flex-md-fill text-md-center" data-toggle="tab" role="tab" (click)="setDetail(1)">COLOURS AND FINISHES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link flex-md-fill text-md-center" data-toggle="tab" role="tab" (click)="setDetail(2)">DIMENSIONS AND CAD</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link flex-md-fill text-md-center" data-toggle="tab" role="tab" (click)="setDetail(3)">CATALOGUES</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link flex-md-fill text-md-center dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="true">PDF</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">&agrave; t&eacute;l&eacute;charger</a>
-              <a class="dropdown-item" href="#">envoyer par mail</a>
-            </div>
-          </li>
-
-        </ul>
-        <br>
-        <br>
-        <app-product-description *ngIf="detail==='description'"></app-product-description>
-        <app-product-mat-fin *ngIf="detail==='matFin'"></app-product-mat-fin>
-        <app-product-dimensions *ngIf="detail==='dimensions'"></app-product-dimensions>
-        <app-product-catalogues *ngIf="detail==='catalogues'"></app-product-catalogues>
-
-      </div>
-    </div>
+<div id="container">
+  <div id="header">
+    <h1><b>{{prodDesc.model}}</b></h1>
+    <h4>JNL Collection</h4>
+    <!--<h3>{{prodDesc.brand  | uppercase}}</h3>-->
+    <h4 class="gold">{{prodDesc.familyFr | uppercase}}</h4>
   </div>
-  <div class="col-1"></div>
+
+  <div id="productImg">
+    <img class="img-fluid" src="assets\Images\Products\JNL\{{family}}\{{prodName}}_01.jpg" alt="">
+  </div>
+  <div class="clear"></div>
+  <div id="footer">
+    <a class="home_links">PRICE LIST REQUEST</a><br>
+  </div>
+
+  <!-- PRODUCT DESCRIPTION-->
+  <div>
+    <app-product-description *ngIf="detail==='description'" [prodCode]="product_id"></app-product-description>
+  </div>
+
+  <!-- PRODUCT MATERIALS AND FINISAGES-->
+  <div>
+    <app-product-mat-fin></app-product-mat-fin>
+  </div>
+
+  <div>
+    <app-product-dimensions></app-product-dimensions>
+  </div>
+  
+  <div>
+    <app-product-catalogues></app-product-catalogues>
+  </div>
+
 </div>
