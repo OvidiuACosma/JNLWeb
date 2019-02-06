@@ -77,26 +77,22 @@
       </div>
 
       <div id="details">
-        <input placeholder="Prenom*" reaquired/>
-        <input placeholder="Nom*" required/>
-        <input placeholder="Société*" required/>
-        <input placeholder="Poste*" required/>
+        <input placeholder="{{text.firstName}}" required/>
+        <input placeholder="{{text.lastName}}" required/>
         <select>
             <option selected disabled>{{text.country}} 🡫</option>
-            <option>Sujet 1</option>
-            <option>Sujet 2</option>
-            <option>Sujet 3</option>
+            <option *ngFor="let ctry of this.countryList; let x = index" >{{ctry[x]}}</option>
           </select>
-        <input placeholder="Adresse"/>
-        <input placeholder="Ville*" required/>
-        <input placeholder="Province"/>
-        <input placeholder="Code Postal*"/>
-        <input placeholder="Email*" required/>
+        <input placeholder="{{text.address}}"/>
+        <input placeholder="{{text.city}}"/>
+        <input placeholder="{{text.province}}"/>
+        <input placeholder="{{text.zip}}"/>
+        <input placeholder="{{text.email}}" required/>
       </div>
 
       <br>
 
-      <button id="send">ENVOYER</button>
+      <button id="send">{{text.send}}</button>
     </form>
   </div>
 
