@@ -3,7 +3,7 @@
 
   <div id="favs">
     <div id="remove-download">
-      <div>
+      <div (click)="removeAllItems()">
         <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png" class="icon">
         <h3>&nbsp;&nbsp;{{text.remove}}</h3>
       </div>
@@ -16,27 +16,42 @@
         </div>
     </div>
 
-    <div class="products">
+    <div [ngClass]="(this.removeAll===true) ? 'remove-item' :'products'">
       <ul class="list">
-        <cdk-virtual-scroll-viewport  style="height: 500px" itemSize="30" >
-          <ng-container *cdkVirtualFor="let n of numbers">
-            <div class="products-group">
-              <li>
+        <cdk-virtual-scroll-viewport itemSize="30" >
+          <div class="flex-div">
+          <ng-container *cdkVirtualFor="let n of numbers" >
+                <li [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'">
+                  <div>
+                    <div class="pic-frame">
+                      <div>
+                        <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover" (click)="removeItem(n)">
+                      </div>
+                      <div class="center-product">
+                        <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{n}}.png" class="fav-img">
+                      </div>
+                    </div>
+                    <span>Product Name</span>
+                  </div>
+                </li>
+
+            <!-- <div class="products-group">
+              <li *ngFor="let i of [0,1,2,3]">
                 <div>
                   <div class="pic-frame">
-                    <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover">
+                    <div>
+                      <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover" (click)="removeItem(n)">
+                    </div>
                     <div class="center-product">
-                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n % 5)}}.png" class="fav-img">
+                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + i) % 5}}.png" class="fav-img">
                     </div>
                   </div>
                   <span>Product Name</span>
                 </div>
-               </li>
-              <li> <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + 1) % 5}}.png" class="fav-img"> </li>
-              <li> <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + 2) % 5}}.png" class="fav-img"> </li>
-              <li> <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + 3) % 5}}.png" class="fav-img"> </li>
-            </div>
+              </li>
+            </div> -->
           </ng-container>
+        </div>
         </cdk-virtual-scroll-viewport>
       </ul>
     </div>

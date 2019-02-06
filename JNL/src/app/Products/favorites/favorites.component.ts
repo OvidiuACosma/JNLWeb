@@ -17,6 +17,8 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
+  removed: number[] = [];
+  removeAll = false;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -32,8 +34,9 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     });
 
 
-    for (let index = 0; index < 30; index++) {
+    for (let index = 0; index < 19; index++) {
       this.numbers.push(index);
+      this.removed[index] = 0;
     }
   }
 
@@ -46,7 +49,6 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   }
 
   getLanguageText(res: any) {
-    console.log(this.language);
     this.text = res[this.language.toUpperCase()];
   }
 
@@ -67,6 +69,17 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     }
 
     this.scroller = false;
+  }
+
+  removeItem(index: number) {
+    this.removed[index] = 1;
+    this.scroller = false;
+    // REMOVE FROM DB ?
+  }
+
+  removeAllItems() {
+    // console.log('Removed');
+    this.removeAll = true;
   }
 
   ngAfterViewChecked() {
