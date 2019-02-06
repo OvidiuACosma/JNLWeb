@@ -151,7 +151,7 @@ cdk-virtual-scroll-viewport {
 
     text-align: center;
 
-    margin-bottom: 5vh !important;
+    /* margin-bottom: 5vh !important; */
     margin-top: 7.5vw !important;
 
     font-family: Atak-Regular;

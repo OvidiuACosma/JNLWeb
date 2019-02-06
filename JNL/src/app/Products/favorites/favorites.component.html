@@ -79,9 +79,9 @@
       <div id="details">
         <input placeholder="{{text.firstName}}" required/>
         <input placeholder="{{text.lastName}}" required/>
-        <select>
+        <select (click)="countryClick()">
             <option selected disabled>{{text.country}} 🡫</option>
-            <option *ngFor="let ctry of this.countryList; let x = index" >{{ctry[x]}}</option>
+            <option *ngFor="let ctry of this.cy; let x = index" >{{cy[x].name}}</option>
           </select>
         <input placeholder="{{text.address}}"/>
         <input placeholder="{{text.city}}"/>

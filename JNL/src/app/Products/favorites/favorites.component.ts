@@ -21,6 +21,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   removeAll = false;
 
   country: any;
+  cy: any;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -41,6 +42,8 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.numbers.push(index);
       this.removed[index] = 0;
     }
+
+    this.getCountries();
   }
 
   getText(lang: string) {
@@ -49,6 +52,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       const res = data[0];
       this.getLanguageText(res);
     });
+
   }
 
   getLanguageText(res: any) {
@@ -58,19 +62,18 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   // archive country list
   countryClick() {
     this.scroller = false;
-    this.getCountries();
   }
 
   getCountries() {
-    this.countryList.getArchiveImages()
+    this.countryList.getTextCountries()
     .subscribe(c => {
       const source = c[0];
-      this.getCountryList(source);
+       this.getCountryList(source);
     });
   }
 
   getCountryList(source: any) {
-    this.country = source[0];
+    this.cy = source['countries'];
   }
 
   NavigateTo(target: string, fragment: string = '') {
