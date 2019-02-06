@@ -5,7 +5,7 @@ import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { CreditsComponent, GDPRComponent, LegalComponent } from './Extras';
 import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
-         ProductDimensionsComponent, ProductCataloguesComponent} from './Products';
+         ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent} from './Products';
 import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
   SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'searchResults/:searchText', component: SearchResultsComponent },
 
+  { path: 'favorites', component: FavoritesComponent },
   { path: 'product', component: ProductComponent },
   { path: 'products', component: ProductSearchComponent },
   { path: 'productSearch', component: ProductSearchComponent },

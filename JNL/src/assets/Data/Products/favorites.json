@@ -1,0 +1,61 @@
+[
+    {
+        "EN": {
+            "title": "Favorites",
+
+            "remove": "Remove all from favorites",
+            "download": "Download selection",
+
+            "infoTitle": "Information Request",
+            
+            "infoOptions": [
+                "I would like to receive the catalog for the above products",
+                "I would like to be contacted for the above products",
+                "I would like to be sent a rate/quotation for the above products",
+                "I would like a meeting at the show for the above products",
+                "I would like to be contacted about other similar products"
+            ],
+
+            "specifyText": "To optimize your exchanges, please specify your need *",
+
+            "firstName": "First name *",
+            "lastName": "Last name *",
+            "country": "Country",
+            "address": "Address",
+            "city": "City",
+            "province": "Province",
+            "zip": "ZIP Code",
+            "email": "Email *",
+
+            "send": "SEND"
+
+        },
+        "FR": {
+            "title": "Favorites",
+
+            "remove": "Remove all from favorites",
+            "download": "Download selection",
+
+            "infoTitle": "Information Request",
+            
+            "infoOptions": [
+                "I would like to receive the catalog for the above products",
+                "I would like to be contacted for the above products",
+                "I would like to be sent a rate/quotation for the above products",
+                "I would like a meeting at the show for the above products",
+                "I would like to be contacted about other similar products"
+            ],
+
+            "specifyText": "To optimize your exchanges, please specify your need *",
+
+            "firstName": "First name *",
+            "lastName": "Last name *",
+            "country": "Country",
+            "address": "Address",
+            "city": "City",
+            "province": "Province",
+            "zip": "ZIP Code",
+            "email": "Email *"
+        }
+    }
+]

@@ -200,6 +200,10 @@ h6 {
     margin-top: 0.7vw;
 }
 
+.style-title {
+    font-size: 1.8vw !important;
+}
+
 .carousel-produits {
     width: 100vw;
     height: 50vw; /*60vh;*/
@@ -241,7 +245,7 @@ h6 {
     width: 80vw;
     margin: auto;
 
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     position: relative;
 
@@ -491,6 +495,10 @@ h6 {
         margin-bottom: 10px;
     }
 
+    .style-title {
+        font-size: 4.6vw !important;
+    }
+
     #autres {
         width: 83vw;
         height: auto;
@@ -523,5 +531,10 @@ h6 {
 
     #autres > p > span {
         font-size: 4.2vw;
+    }
+
+    
+    #other-links > div > h4 {
+        font-size: 4.3vw;
     }
 }

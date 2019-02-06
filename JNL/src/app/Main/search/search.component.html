@@ -14,6 +14,10 @@
 
        <div id="top_buttons">
            <span>
+               <a (click)="NavigateTo('favorites')" class="top-button"><img alt="JNL Collection" src="/assets/Images/Common/fav_icon.png" height="16px"></a>
+           </span>
+           <span class="top-button">&nbsp;&#8213;&nbsp;</span>
+           <span>
                <a class="top-button" *ngIf="!searchMode" 
                 (click)="goSearchMode()">{{text.search}}</a>
                <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"

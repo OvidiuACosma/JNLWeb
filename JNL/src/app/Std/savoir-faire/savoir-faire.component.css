@@ -51,9 +51,9 @@ video {
     width: 87vw;
 
     height: 48.5vw;
-    background-image: url("/assets/Images/Home/HM_video.png");
+    /* background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
 }
 
 .marques_selected {
@@ -71,13 +71,15 @@ video {
 .les-marques-main {
     display: flex;
     margin: auto;
-    width: 100vw;
+    /* width: 100vw; */
+    /* width: 90vw; */
 }
 
 .les-marques-main > div {
     margin: auto;
     left: 0;
-    width: 100vw;
+    /* width: 100vw; */
+    /* width: 90vw; */
 
     text-align: center;
 }
@@ -91,8 +93,9 @@ video {
 
 .full-image {
     margin-top: 11.4vw;
+    position: relative;
     left: 0;
-    width: 100vw;
+    width: calc(100vw - 77px);
     height: auto;
 
 }

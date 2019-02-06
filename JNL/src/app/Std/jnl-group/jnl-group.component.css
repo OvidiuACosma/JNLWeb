@@ -715,6 +715,19 @@ input[type="radio"] {
     height: 70vh;
 }
 
+.close { 
+    position: absolute; 
+    right: 1rem;
+}
+
+#archivesModal {
+    background-color: rgba(127, 127, 127, 0.5);
+}
+
+#modalLabel {
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 800px)
 {
     h1 {

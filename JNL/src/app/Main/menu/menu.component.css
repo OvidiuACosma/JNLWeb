@@ -25,7 +25,9 @@
 
 #side_nav {
     width: 100%;
-    height: 100%;
+    height: calc(100% + 60px);
+
+    margin-top: -60px;
 
     /* padding-top: 4vw; */
     padding-bottom: 1vw;
@@ -66,7 +68,7 @@
 #side_nav_links {
     margin: auto;
     margin-left: 0px;
-    margin-top: 60px;
+    margin-top: 120px; /* 60px */
     padding-left: 5vw;
     display: flex;
     flex-direction: column;
@@ -123,7 +125,7 @@ a:focus, img:focus {
     outline: none;
 }
 
-@media only screen and (max-width: 800px)
+@media only screen and (max-width: 768px)
 {
     #menu-image-div {
         display: none;
@@ -141,9 +143,9 @@ a:focus, img:focus {
         width: 100vw;
     }
 
-    #side_nav {
+    /* #side_nav {
         padding-top: 7vw; 
-    }
+    } */
 
     #side_nav_links > div > a {
         margin: 0px;

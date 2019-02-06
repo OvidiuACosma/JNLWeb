@@ -1,0 +1,103 @@
+<div class="fav-main">
+  <h1>{{text.title}}</h1>
+
+  <div id="favs">
+    <div id="remove-download">
+      <div (click)="removeAllItems()">
+        <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png" class="icon">
+        <h3>&nbsp;&nbsp;{{text.remove}}</h3>
+      </div>
+
+      <h3>&nbsp;&nbsp;&#8213;&nbsp;&nbsp;</h3>
+
+      <div>
+          <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png" class="icon">
+          <h3>&nbsp;&nbsp;{{text.download}}</h3>
+        </div>
+    </div>
+
+    <div [ngClass]="(this.removeAll===true) ? 'remove-item' :'products'">
+      <ul class="list">
+        <cdk-virtual-scroll-viewport itemSize="30" >
+          <div class="flex-div">
+          <ng-container *cdkVirtualFor="let n of numbers" >
+                <li [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'">
+                  <div>
+                    <div class="pic-frame">
+                      <div>
+                        <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover" (click)="removeItem(n)">
+                      </div>
+                      <div class="center-product">
+                        <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{n}}.png" class="fav-img">
+                      </div>
+                    </div>
+                    <span>Product Name</span>
+                  </div>
+                </li>
+
+            <!-- <div class="products-group">
+              <li *ngFor="let i of [0,1,2,3]">
+                <div>
+                  <div class="pic-frame">
+                    <div>
+                      <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover" (click)="removeItem(n)">
+                    </div>
+                    <div class="center-product">
+                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{(n + i) % 5}}.png" class="fav-img">
+                    </div>
+                  </div>
+                  <span>Product Name</span>
+                </div>
+              </li>
+            </div> -->
+          </ng-container>
+        </div>
+        </cdk-virtual-scroll-viewport>
+      </ul>
+    </div>
+
+
+  </div>
+
+
+  
+    
+  <div class="fav_div">
+    <h2>{{text.infoTitle}}</h2>
+    <form class="fav_form">
+      <div id="checks">
+        <div *ngFor="let item of text.infoOptions; let k = index" (click)="selectMarque(k)">
+            <span><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
+            <span class="option-label">&nbsp;&nbsp;{{item}}</span>
+        </div>
+      </div>
+  
+      <div>
+        <textarea placeholder={{text.specifyText}} rows="6" required maxlength="500"></textarea>
+      </div>
+
+      <div id="details">
+        <input placeholder="Prenom*" reaquired/>
+        <input placeholder="Nom*" required/>
+        <input placeholder="Société*" required/>
+        <input placeholder="Poste*" required/>
+        <select>
+            <option selected disabled>{{text.country}} 🡫</option>
+            <option>Sujet 1</option>
+            <option>Sujet 2</option>
+            <option>Sujet 3</option>
+          </select>
+        <input placeholder="Adresse"/>
+        <input placeholder="Ville*" required/>
+        <input placeholder="Province"/>
+        <input placeholder="Code Postal*"/>
+        <input placeholder="Email*" required/>
+      </div>
+
+      <br>
+
+      <button id="send">ENVOYER</button>
+    </form>
+  </div>
+
+</div>

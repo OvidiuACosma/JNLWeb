@@ -51,6 +51,10 @@ export class TranslationService {
     return this.http.get(`${this.urlAssets}/Main/contact.json`);
   }
 
+  public getTextFavorites(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Products/favorites.json`);
+  }
+
   public getTextLegal(): Observable<any> {
     return this.http.get(`${this.urlAssets}/Main/legal.json`);
   }
