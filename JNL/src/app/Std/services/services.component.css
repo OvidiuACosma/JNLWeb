@@ -59,19 +59,20 @@ video {
 
     display: flex;
     flex-direction: column;
+    padding-top: 73px;
 }
 
 .les-services-main > div {
     margin: auto;
     left: 0;
-    width: 100vw;
+    /* width: 100vw; */
 
     text-align: center;
 }
 
 .quote-bar {
     margin-top: 7.6vw !important;
-    width: 100vw  !important;
+    /* width: 100vw  !important; */
     left: 0;
 
     display: flex;
@@ -154,7 +155,7 @@ video {
 
 
 
-#services_list {
+/* #services_list {
     margin: auto;
     font-family: Atak-Light;
     font-size: 1em;
@@ -180,14 +181,57 @@ video {
 
     text-transform: uppercase;
 }
-/* 
-#services_list > a:last-child {
-    margin-right: 0px;
-} */
+
+#services_list > a {
+    margin: auto;
+
+    font-size: 2vw;
+    left: 0;
+
+    border-bottom: 1px solid transparent;
+    transition: all .5s ease;
+}
 
 #services_list > a:hover {
-    text-decoration: underline;
+    border-color: #888;
+    transition: all .5s ease;
+} */
+
+
+#services_list {
+    margin: auto;
+    font-family: Atak-Light;
+    font-size: 1em;
+    width: 80vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0px;
+    justify-content: center;
+
+    margin-bottom: 4vw;
+    text-align: center;
 }
+
+#services_list > a {
+    margin: auto;
+
+    font-size: 2vw;
+    left: 0;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid transparent;
+    transition: all .5s ease;
+}
+
+#services_list > a:hover {
+    border-color: #888;
+    transition: all .5s ease;
+}
+
 
 
 
@@ -220,7 +264,7 @@ i {
 .contact_div
 {
     background-color: #E9D6AC;
-    width: 100vw;
+    /* width: 100vw; */
     left: 0;
 
     text-align: center;
@@ -348,7 +392,7 @@ button
 
 
 #votreProjet {
-    width: 100vw;
+    width: 100%;
 }
 
 .contact_form > div {
