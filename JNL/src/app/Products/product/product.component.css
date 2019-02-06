@@ -11,6 +11,9 @@ hr {
 h1 {
     font-family: PlacardMT-Condensed;
     text-transform: uppercase;
+    font-size: 5.03vw;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 h3 {

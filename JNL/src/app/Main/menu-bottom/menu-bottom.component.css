@@ -1,5 +1,5 @@
 a:hover {
-    color: #888 !important;
+    color: #DBBB76 !important;
 }
 
 input:focus, button:focus {
@@ -15,12 +15,12 @@ input:focus, button:focus {
 
 .columnHead > a {
     border-bottom: 1px solid transparent;
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 .columnHead > a:hover {
-    border-color: #888;
-    transition: all .5s ease;
+    border-color: #DBBB76;
+    transition: all .3s ease;
 }
 
 .bottom_nav > div {
@@ -67,6 +67,7 @@ input:focus, button:focus {
     font-size: .9em;
     margin-bottom: 1em;
     font-family: "Atak-Light", sans-serif;
+    transition: all .3s ease;
 }
 
 #bottom_line > a {
