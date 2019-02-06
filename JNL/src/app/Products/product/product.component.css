@@ -32,9 +32,12 @@ h3 {
 }
 
 #container {
+    width: 88.3vw;
+    margin: auto;
+
     padding-top: 60px;
-    margin-left: 30px;
-    margin-right: 30px;
+    /* margin-left: 30px;
+    margin-right: 30px; */
     
 }
 
@@ -56,11 +59,13 @@ h3 {
 
 #fav-download {
     margin: auto;
+    margin-top: 3.2vw;
 
-    width: 39.9vw;
+    width: 20.7vw;
 
     display: flex;
     flex-direction: row;
+    align-content: space-between;
 }
 
 #fav-download > div {
