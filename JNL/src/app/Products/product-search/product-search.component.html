@@ -1,7 +1,72 @@
-<div id="container">
-  <h3>Testing products with code MEDD01, CAMO31</h3>
-  <br>
-  <input name="productName" type="text" [(ngModel)]="product">
-  <br><br>
-  <input (click)="GoToProduct()" type="button" value="Search">
-</div>
+<div class="search-main">
+    <h1>Product Search</h1>
+  
+    <div id="container">
+        <h3>Testing products with code MEDD01, CAMO31</h3>
+        <br>
+        <input name="productName" type="text" [(ngModel)]="product">
+        <br><br>
+        <input (click)="GoToProduct()" type="button" value="Search" class="search-but">
+      </div>
+  
+    <div id="favs">
+  
+      <div class="filters">
+        <h4>FILTERS</h4>
+
+        <ul>
+          <li *ngFor="let c of categoriesJSON; let i=index">
+            <h3>{{c}}</h3>
+            <ul>
+              <li *ngFor="let d of getFilters(c); let i2=index">
+
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+  
+      <div class="products">
+        <ul class="list">
+          <cdk-virtual-scroll-viewport itemSize="30" >
+            <div class="flex-div">
+            <ng-container *cdkVirtualFor="let n of numbers" >
+              <li> 
+                <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
+                <div>
+                  <div class="pic-frame">
+                    <div>
+                      <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover" (click)="removeItem(n)">
+                    </div>
+                    <div class="center-product">
+                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{n}}.png" class="search-img">
+                    </div>
+                  </div>
+                  <span>Product Name</span>
+                </div>
+              </li>
+            </ng-container>
+            
+  
+            <li *ngFor="let m of [0, 1, 2]" [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'">
+              <div>
+                <div class="pic-frame">
+                  <div>
+                    <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="remover">
+                  </div>
+                  <div class="center-product">
+                    <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="search-img">
+                  </div>
+                </div>
+                <span>&nbsp;</span>
+              </div>
+            </li>
+          </div>
+          </cdk-virtual-scroll-viewport>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
