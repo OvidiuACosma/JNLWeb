@@ -86,13 +86,13 @@ export class ProductMatFinComponent implements OnInit {
     // xl
     if (cssWidth >= 1200) {
       this.pageSize = 24;
-    // lg
+      // lg
     } else if (cssWidth < 1200 && cssWidth >= 992) {
       this.pageSize = 16;
-    // md
+      // md
     } else if (cssWidth < 992 && cssWidth >= 768) {
       this.pageSize = 12;
-    // sm
+      // sm
     } else if (cssWidth < 768) {
       this.pageSize = 8;
     }
@@ -100,19 +100,19 @@ export class ProductMatFinComponent implements OnInit {
 
   setPage(page: number) {
     if (this.matCategory === 'tissu') {
-    // get pager object from service
-    this.pager = this.pagerService.getPager(this.tissus.length, page, this.pageSize);
+      // get pager object from service
+      this.pager = this.pagerService.getPager(this.tissus.length, page, this.pageSize);
 
-    // get current page of items
-    this.tissuPagedItems = this.tissus.slice(this.pager.startIndex, this.pager.endIndex + 1);
+      // get current page of items
+      this.tissuPagedItems = this.tissus.slice(this.pager.startIndex, this.pager.endIndex + 1);
     } else if (this.matCategory === 'cuir') {
       this.pager = this.pagerService.getPager(this.cuirs.length, page, this.pageSize);
       this.cuirPagedItems = this.cuirs.slice(this.pager.startIndex, this.pager.endIndex + 1);
-  } else if (this.matCategory === 'similicuir') {
-    this.pager = this.pagerService.getPager(this.similiCuirs.length, page, this.pageSize);
-    this.similiPagedItems = this.similiCuirs.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    } else if (this.matCategory === 'similicuir') {
+      this.pager = this.pagerService.getPager(this.similiCuirs.length, page, this.pageSize);
+      this.similiPagedItems = this.similiCuirs.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    }
   }
-}
 
   onResize() {
     this.setPageSize();
@@ -149,6 +149,14 @@ export class ProductMatFinComponent implements OnInit {
         break;
       }
     }
+  }
+
+  getPrevious() {
+    console.log('PREVIOUS');
+  }
+
+  getNext() {
+    console.log('NEXT');
   }
 
   closeModal() {

@@ -12,6 +12,10 @@ ul {
     margin: 0px !important;
 }
 
+.clear {
+    height: 20px;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #DBBB76;
     background-color: white;
@@ -37,10 +41,6 @@ ul {
     color:#fff;
 }
 
-.clear{
-    height: 20px;
-}
-
 /* workaround to fix bootstrap`s modal bug in Angular
    Without this fix the dark background will cover the modal. */
 .modal {
@@ -51,17 +51,41 @@ ul {
     position: relative;
   }
 
-.modal-body {
-    padding: 0px !important;
+.modal-dialog{
+    width: 70vw !important;
+    min-width: 400px;
+    max-width: 700px !important;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.whiteSpace {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardContainer {
+    flex: 4;
 }
 
 .card {
-    padding: 0px !important;
+    margin: auto;
 }
 
+.card-body {
+    padding: 0.75rem;
+}
 
 #container {
     display:flex;
+    flex-wrap: wrap; 
 }
 
 #static {
@@ -74,8 +98,4 @@ ul {
 
 #thumbnail-container {
     padding: 0px !important;
-}
-
-#garnissage-detail {
-    margin: 5px;
 }
