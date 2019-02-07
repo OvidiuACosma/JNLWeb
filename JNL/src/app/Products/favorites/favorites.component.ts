@@ -25,7 +25,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   nrEmpty = 0;
 
   country: any;
-  cy: any;
+  countryName: any;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -61,7 +61,6 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   }
 
   removeAllItems() {
-    // console.log('Removed');
     this.removeAll = true;
   }
 
@@ -95,7 +94,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   }
 
   getCountryList(source: any) {
-    this.cy = source[this.language.toUpperCase()]['countries'];
+    this.countryName = source[this.language.toUpperCase()]['countries'];
   }
 
   NavigateTo(target: string, fragment: string = '') {
