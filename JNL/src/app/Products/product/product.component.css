@@ -11,7 +11,20 @@ hr {
 h1 {
     font-family: PlacardMT-Condensed;
     text-transform: uppercase;
+    font-size: 5.03vw;
+    margin-bottom: 0;
+    text-align: center;
 }
+
+h3 {
+    text-transform: uppercase;
+    font-family: Atak-Regular;
+    color: #DBBB76;
+    font-size: 1.1vw; /*20px;*/
+
+    margin-bottom: 1.5vw;
+}
+
 
 .gold {
     color: #DBBB76;
@@ -22,9 +35,12 @@ h1 {
 }
 
 #container {
+    width: 88.3vw;
+    margin: auto;
+
     padding-top: 60px;
-    margin-left: 30px;
-    margin-right: 30px;
+    /* margin-left: 30px;
+    margin-right: 30px; */
     
 }
 
@@ -41,6 +57,25 @@ h1 {
 
 #footer {
     text-align: center;
+}
+
+
+#fav-download {
+    margin: auto;
+    margin-top: 3.2vw;
+
+    width: 20.7vw;
+
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+#fav-download > div {
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
 }
 
 .home_links

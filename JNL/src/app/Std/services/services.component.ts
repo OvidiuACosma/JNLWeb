@@ -80,7 +80,7 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
         }
         this.scroller = true;
       } else if (this.scroller === true) {
-          window.scrollTo(0, 0);
+          window.scrollTo(-100, 0);
         }
     });
   }

@@ -151,7 +151,7 @@ cdk-virtual-scroll-viewport {
 
     text-align: center;
 
-    margin-bottom: 5vh !important;
+    /* margin-bottom: 5vh !important; */
     margin-top: 7.5vw !important;
 
     font-family: Atak-Regular;
@@ -200,9 +200,6 @@ cdk-virtual-scroll-viewport {
     /* justify-content: space-between; */
 }
 
-.icon {
-    height: 16px;
-}
 
 .option-label {
     font-family: Atak-Regular;

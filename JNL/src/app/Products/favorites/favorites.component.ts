@@ -1,7 +1,7 @@
 
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @Component({
@@ -20,10 +20,14 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   removed: number[] = [];
   removeAll = false;
 
+  country: any;
+  cy: any;
+
   constructor(private router: Router,
     private route: ActivatedRoute,
     private dataex: DataExchangeService,
-    private textService: TranslationService) {
+    private textService: TranslationService,
+    private countryList: ArchiveService) {
     }
 
   ngOnInit() {
@@ -38,6 +42,8 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.numbers.push(index);
       this.removed[index] = 0;
     }
+
+    this.getCountries();
   }
 
   getText(lang: string) {
@@ -46,10 +52,28 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       const res = data[0];
       this.getLanguageText(res);
     });
+
   }
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  // archive country list
+  countryClick() {
+    this.scroller = false;
+  }
+
+  getCountries() {
+    this.countryList.getTextCountries()
+    .subscribe(c => {
+      const source = c[0];
+       this.getCountryList(source);
+    });
+  }
+
+  getCountryList(source: any) {
+    this.cy = source['countries'];
   }
 
   NavigateTo(target: string, fragment: string = '') {

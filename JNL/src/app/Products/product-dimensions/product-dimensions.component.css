@@ -2,6 +2,13 @@ hr{
     border: 0.5px solid #DBBB76;
 }
 
+h5 {
+    font-family: Atak-Light;
+    font-size: 1.8vw;
+
+    text-transform: uppercase;
+}
+
 #container {
     /* padding-top: 30px; */
     display: flex;

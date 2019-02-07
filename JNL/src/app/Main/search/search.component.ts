@@ -110,11 +110,20 @@ export class SearchComponent implements OnInit {
     this.dataex.setLanguage(lang);
     this.getText(this.language);
     if (this.isLangSelectMode) {
-      this.toggleLangStatus()
+      this.toggleLangStatus();
     }
   }
 
   toggleLangStatus() {
     this.isLangSelectMode = ! this.isLangSelectMode;
+  }
+
+  NavigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      window.scrollTo(0, 0);
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
   }
 }

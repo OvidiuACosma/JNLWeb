@@ -30,13 +30,15 @@ h4 {
 
 .presse-main {
     margin: auto;
-    width: 100vw;
+    width: 100%;
+
+    padding-top: 73px;
 }
 
 .presse-main > div {
     margin: auto;
     left: 0;
-    width: 100vw;
+    width: 100%;
 
     text-align: center;
 }
@@ -90,13 +92,23 @@ h4 {
     margin-right: 0px;
 }
 
-#presse_list > a:hover {
-    text-decoration: underline;
+#presse_list > a {
+    margin: auto;
+
+    font-size: 2vw;
+    left: 0;
+
+    border-bottom: 1px solid transparent;
+    transition: all .5s ease;
 }
 
+#presse_list > a:hover {
+    border-color: #888;
+    transition: all .5s ease;
+}
 
 .first-image {
-    width: 100vw;
+    width: 100%;
 
     left: 0;
     margin-top: 1.6vw;
