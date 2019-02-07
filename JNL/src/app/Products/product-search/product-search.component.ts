@@ -48,20 +48,12 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     }
   }
 
-  getFilters(category: string): any { // da-i nume sugestiv :))
-    this.distinctContent = new Set(this.categoriesJSON
-      .filter(f => f.category === category)
-      .map(m => m.content));
-    return this.distinctContent;
-  }
-
   removeItem(index: number) {
     this.scroller = false;
     this.total--;
 
     // REMOVE FROM DB ?
   }
-
 
   getText(lang: string) {
     this.textService.getTextFavorites()
@@ -74,9 +66,14 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
      .subscribe(p => {
       this.categoriesJSON = p;
       this.distinctHeader = new Set(p.map(f => f.category));
-      console.log(this.distinctHeader);
     });
+  }
 
+  getFilters(category: string): any {
+    this.distinctContent = new Set(this.categoriesJSON
+      .filter(f => f.category === category)
+      .map(m => m.content));
+    return this.distinctContent;
   }
 
   getLanguageText(res: any) {

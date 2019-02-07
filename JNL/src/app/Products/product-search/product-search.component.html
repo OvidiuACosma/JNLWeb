@@ -15,11 +15,11 @@
         <h4>FILTERS</h4>
 
         <ul>
-          <li *ngFor="let c of categoriesJSON; let i=index">
+          <li *ngFor="let c of ['type', 'material']; let i=index">
             <h3>{{c}}</h3>
             <ul>
               <li *ngFor="let d of getFilters(c); let i2=index">
-
+                {{d[i2]}}
               </li>
             </ul>
           </li>

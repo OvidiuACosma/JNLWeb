@@ -1,13 +1,27 @@
 [
     {
-        "EN": [
-                {"category": "brand",
-                "content": "JNL Collection"},
-                {"category": "brand",
-                "content": "Vanhamme"}
-                
-                
+        "EN": {
+            "category":
+            {
+                "type": [
+                    "Sofas",
+                    "Chairs",
+                    "Storage",
+                    "Tables",
+                    "Desks",
+                    "Small Tables",
+                    "Accessories"
                 ],
+                "material": [
+                    "Wood",
+                    "PVC",
+                    "Steel",
+                    "Stone",
+                    "Leather",
+                    "Plastic"
+                ]
+            }
+    },
         "FR": {
                 "category":
                 {
