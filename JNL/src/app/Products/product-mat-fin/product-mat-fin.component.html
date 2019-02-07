@@ -154,7 +154,7 @@
 <!-- MODAL -->
 <div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
   aria-hidden="true" data-backdrop="false">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered" style="width: 50vw;" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="ModalLabel">{{garnissageModel}}</h5>
@@ -162,28 +162,28 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="row" id="garnissage-detail">
-          <div class="card col-6" style="width: 25rem;">
-            <img [src]="imgSource" class="card-img-top" alt="...">
-            <!--
-          <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+      <div class="modal-body flex-container">
+          <div class="whiteSpace">
+            <div (click)="getPrevious()">previous</div>
           </div>
-          -->
+          <div class="cardContainer">
+            <div class="card">
+              <img [src]="imgSource" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">
+                  <ul style="list-style-type:none">
+                    <li><b>Name: </b><label>{{garnissageModel}}</label></li>
+                    <li><b>Code: </b><label>{{garnissageCode}}</label></li>
+                    <li><b>Dimensions: </b><label>{{garnissageDimensions}}</label></li>
+                    <li><b>Composition: </b></li>
+                    <li><label>{{garnissageCompositionFR}}</label></li>
+                  </ul>
+              </div>
+            </div>
           </div>
-          <div col-6>
-            <ul style="list-style-type:none">
-              <li><b>Name: </b><label>{{garnissageModel}}</label></li>
-              <li><b>Code: </b><label>{{garnissageCode}}</label></li>
-              <li><b>Dimensions: </b><label>{{garnissageDimensions}}</label></li>
-              <li><b>Composition: </b></li>
-              <li><label>{{garnissageCompositionFR}}</label></li>
-            </ul>
+          <div class="whiteSpace">
+              <div (click)="getNext()">next</div>
           </div>
-        </div>
       </div>
     </div>
   </div>
