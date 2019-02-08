@@ -34,6 +34,12 @@ h6 {
     text-align: center;
 }
 
+.marque-main {
+    text-align: center;
+    /* display: flex; */
+    padding-top: 73px;
+}
+
 .location {
     font-family: Atak-Regular;
     font-size: 1.2vw;
