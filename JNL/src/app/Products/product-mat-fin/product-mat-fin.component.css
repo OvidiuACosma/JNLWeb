@@ -5,7 +5,6 @@ hr {
 h5 {
     font-family: Atak-Light;
     font-size: 1.8vw;
-
     text-transform: uppercase;
 }
 
@@ -19,8 +18,16 @@ ul {
     margin: 0px !important;
 }
 
-.nav-pills .nav-link {
+.clear {
+    height: 20px;
+}
 
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.nav-pills .nav-link {
     font-family: Atak-Medium;
     font-size: 1.25vw;
 
@@ -51,10 +58,6 @@ ul {
     color:#fff;
 }
 
-.clear{
-    height: 20px;
-}
-
 /* workaround to fix bootstrap`s modal bug in Angular
    Without this fix the dark background will cover the modal. */
 .modal {
@@ -65,17 +68,49 @@ ul {
     position: relative;
   }
 
-.modal-body {
-    padding: 0px !important;
+.modal-dialog {
+    width: 70vw !important;
+    min-width: 400px;
+    max-width: 700px !important;
+}
+
+.modal-header {
+    text-align: center !important;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.whiteSpace {
+    flex: 1;
+}
+
+.cardContainer {
+    flex: 4;
 }
 
 .card {
-    padding: 0px !important;
+    margin: auto;
 }
 
+.card-body {
+    padding: 0.75rem;
+}
 
 #container {
     display:flex;
+    flex-wrap: wrap; 
 }
 
 #static {
@@ -88,8 +123,4 @@ ul {
 
 #thumbnail-container {
     padding: 0px !important;
-}
-
-#garnissage-detail {
-    margin: 5px;
 }
