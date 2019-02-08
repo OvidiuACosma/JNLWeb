@@ -7,18 +7,20 @@
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
         aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
-      <a class="nav-link" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab" aria-controls="v-pills-cuir"
-        aria-selected="false" (click)="setCategory('cuir')">Cuirs</a>
+      <a class="nav-link" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab"
+        aria-controls="v-pills-cuir" aria-selected="false" *ngIf="cuirTab" (click)="setCategory('cuir')">Cuirs</a>
       <a class="nav-link" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
-        aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('similicuir')">Simili Cuirs</a>
-      <a class="nav-link" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab" aria-controls="v-pills-metal"
-        aria-selected="false">Metal</a>
-      <a class="nav-link" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab" aria-controls="v-pills-bois"
-        aria-selected="false">Bois &amp; Plaquage</a>
-      <a class="nav-link" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab" aria-controls="v-pills-verre"
-        aria-selected="false">Verre</a>
-      <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab" aria-controls="v-pills-miroir"
-        aria-selected="false">Miroir</a>
+        aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('simili')">Simili Cuirs</a>
+      <a class="nav-link" id="v-pills-abatjour-tab" data-toggle="pill" href="#v-pills-abatjour" role="tab"
+        aria-controls="v-pills-abatjour" aria-selected="false" (click)="setCategory('abatjour')">Abat-jour</a>
+      <a class="nav-link" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab"
+        aria-controls="v-pills-metal" aria-selected="false" (click)="setCategory('metal')">Metal</a>
+      <a class="nav-link" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab"
+        aria-controls="v-pills-bois" aria-selected="false" (click)="setCategory('bois')">Bois &amp; Plaquage</a>
+      <a class="nav-link" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab"
+        aria-controls="v-pills-verre" aria-selected="false">Verre</a>
+      <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
+        aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
     </div>
   </div>
   <div id="content">
@@ -27,11 +29,13 @@
       <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
         <div class="row text-lg-left">
           <!-- paged item-------------------->
-          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of tissuPagedItems">
+          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center"
+            *ngFor="let item of tissuPagedItems">
             <a class="d-block">
               <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
-                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
+                src="assets\Images\Products\JNL\Garnissage\tissu\{{item.codeProd | uppercase }}.jpg" alt=""
+                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR"
+                (click)="sendDataToModal($event)">
             </a>
             {{item.model}}
             <div class="clear"></div>
@@ -64,11 +68,13 @@
       <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
         <div class="row text-lg-left">
           <!-- paged item-------------------->
-          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of cuirPagedItems">
+          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center"
+            *ngFor="let item of cuirPagedItems">
             <a class="d-block">
               <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
+                src="assets\Images\Products\JNL\Garnissage\cuir\{{item.codeProd | uppercase }}.jpg" alt=""
+                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR"
+                (click)="sendDataToModal($event)">
             </a>
             {{item.model}}
             <div class="clear"></div>
@@ -101,11 +107,13 @@
       <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
         <div class="row text-lg-left">
           <!-- paged item-------------------->
-          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center" *ngFor="let item of similiPagedItems">
+          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center"
+            *ngFor="let item of similiPagedItems">
             <a class="d-block">
               <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                src="assets\Images\Products\JNL\Garnissage\SimiliCuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR" (click)="sendDataToModal($event)">
+                src="assets\Images\Products\JNL\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
+                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR"
+                (click)="sendDataToModal($event)">
             </a>
             {{item.model}}
             <div class="clear"></div>
@@ -134,6 +142,9 @@
         </ul>
       </div>
 
+      <div class="tab-pane fade" id="v-pills-abatjour" role="tabpanel" aria-labelledby="v-pills-abatjour-tab">
+        <b>---Abat-jour</b>
+      </div>
       <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
         <b>---Metal</b>
       </div>
@@ -152,38 +163,39 @@
 <br>
 
 <!-- MODAL -->
-<div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" (click)="closeModal()"
-  aria-hidden="true" data-backdrop="false">
+<div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  (click)="closeModal()" aria-hidden="true" data-backdrop="false">
   <div class="modal-dialog modal-dialog-centered" style="width: 50vw;" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">{{garnissageModel}}</h5>
+        <div><h4 class="modal-title" id="ModalLabel">{{garnissageModel}}</h4></div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body flex-container">
-          <div class="whiteSpace">
-            <div (click)="getPrevious()">previous</div>
-          </div>
-          <div class="cardContainer">
-            <div class="card">
-              <img [src]="imgSource" class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">
-                  <ul style="list-style-type:none">
-                    <li><b>Name: </b><label>{{garnissageModel}}</label></li>
-                    <li><b>Code: </b><label>{{garnissageCode}}</label></li>
-                    <li><b>Dimensions: </b><label>{{garnissageDimensions}}</label></li>
-                    <li><b>Composition: </b></li>
-                    <li><label>{{garnissageCompositionFR}}</label></li>
-                  </ul>
-              </div>
+        <div class="whiteSpace">
+          <div id= "previous" class="cursor-pointer" (click)="getPrevious()">previous</div>
+        </div>
+        <div class="cardContainer">
+          <div class="card">
+            <img [src]="imgSource" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">
+                <ul style="list-style-type:none">
+                  <li><b>Name: </b><label>{{garnissageModel}}</label></li>
+                  <li><b>Code: </b><label>{{garnissageCode}}</label></li>
+                  <li><b>Dimensions: </b><label>{{garnissageDimensions}}</label></li>
+                  <li><b>Composition: </b></li>
+                  <li><label>{{garnissageCompositionFR}}</label></li>
+                </ul>
+                <input type="text" id="garnId" value="{{garnissageID}}" type="hidden">
             </div>
           </div>
-          <div class="whiteSpace">
-              <div (click)="getNext()">next</div>
-          </div>
+        </div>
+        <div class="whiteSpace">
+          <div id= "next" class="cursor-pointer" (click)="getNext()">next</div>
+        </div>
       </div>
     </div>
   </div>

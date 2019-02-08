@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
         this.prodDesc = desc;
         this.family = this.prodDesc.familyFr.replace(/\s/g , '');
         this.prodName = this.prodDesc.model.replace(/\s/g , '');
-         console.log('DESC:', this.prodDesc);
+         // console.log('DESC:', this.prodDesc);
       });
     }
 
