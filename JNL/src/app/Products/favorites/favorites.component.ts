@@ -3,6 +3,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { fillProperties } from '@angular/core/src/util/property';
 
 @Component({
   selector: 'app-favorites',
@@ -17,8 +18,11 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
+  fillers: number[] = [];
   removed: number[] = [];
   removeAll = false;
+  total: number;
+  nrEmpty = 0;
 
   country: any;
   cy: any;
@@ -37,13 +41,28 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.getText(lang);
     });
 
+    const numberAll = 15;
+    this.total = numberAll;
 
-    for (let index = 0; index < 19; index++) {
+    for (let index = 0; index < numberAll; index++) {
       this.numbers.push(index);
       this.removed[index] = 0;
     }
 
-    this.getCountries();
+  }
+
+
+  removeItem(index: number) {
+    this.removed[index] = 1;
+    this.scroller = false;
+    this.total--;
+
+    // REMOVE FROM DB ?
+  }
+
+  removeAllItems() {
+    // console.log('Removed');
+    this.removeAll = true;
   }
 
   getText(lang: string) {
@@ -52,6 +71,9 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       const res = data[0];
       this.getLanguageText(res);
     });
+
+
+    this.getCountries();
 
   }
 
@@ -73,7 +95,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   }
 
   getCountryList(source: any) {
-    this.cy = source['countries'];
+    this.cy = source[this.language.toUpperCase()]['countries'];
   }
 
   NavigateTo(target: string, fragment: string = '') {
@@ -95,16 +117,6 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     this.scroller = false;
   }
 
-  removeItem(index: number) {
-    this.removed[index] = 1;
-    this.scroller = false;
-    // REMOVE FROM DB ?
-  }
-
-  removeAllItems() {
-    // console.log('Removed');
-    this.removeAll = true;
-  }
 
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {

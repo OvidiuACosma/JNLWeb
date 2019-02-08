@@ -55,7 +55,9 @@
             "city": "City",
             "province": "Province",
             "zip": "ZIP Code",
-            "email": "Email *"
+            "email": "Email *",
+
+            "send": "ENVOYER"
         }
     }
 ]
