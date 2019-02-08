@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-jnl-group',
@@ -15,13 +16,14 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
   scroller = true;
   year: any;
   isOpen = false;
+  archives = [2011, 2012, 2013, 2014, 2015, 2016];
 
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private archiveService: ArchiveService
-              ) { }
+              ) {}
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -29,8 +31,7 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
       this.language = lang || 'EN';
       this.getText(lang);
     });
-
-    console.log(this.language);
+    this.archives = _.sortBy(this.archives).reverse();
   }
 
   getText(lang: string) {
@@ -53,14 +54,7 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
   yearClick(yr: any) {
     this.scroller = false;
     this.isOpen = true;
-
     this.year = yr;
-
-    // this.archive.getArchiveImages()
-    // .subscribe(year => {
-    //   this.year = yr;
-    //   this.getImages(yr);
-    // });
     this.getImages(yr);
   }
 
@@ -80,8 +74,17 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
     this.year = 0;
   }
 
-  // end of archive images
+  closeModal() {
+    const modal = document.getElementById('archivesModal');
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        document.getElementById('btnClose').click();
+      }
+    };
+  }
 
+  // end of archive images
 
   reScroll() {
     this.scroller = true;

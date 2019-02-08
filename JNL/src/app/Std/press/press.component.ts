@@ -1,8 +1,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, DownloaderService } from 'src/app/_services';
-import { getFirstTemplatePass } from '@angular/core/src/render3/state';
-import { GeneratedFile, analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-press',
@@ -16,7 +14,6 @@ export class PressComponent implements OnInit, AfterViewChecked {
   language: string;
   text: any;
   scroller = true;
-
   blob: any;
   url: any;
 
@@ -48,21 +45,6 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-    // switch (this.language) {
-    //     case 'EN': {
-    //       this.text = res['EN'];
-    //       break;
-    //       }
-    //     case 'FR': {
-    //       this.text = res['FR'];
-    //       break;
-    //     }
-    //     default: {
-    //       this.text = res['EN'];
-    //       break;
-    //     }
-    //   }
-    //   console.log('Home text:' , this.text);
   }
 
   download(marque: any, type: any) {
@@ -80,9 +62,6 @@ export class PressComponent implements OnInit, AfterViewChecked {
 
     this.scroller = false;
   }
-
-
-
 
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
@@ -119,4 +98,6 @@ export class PressComponent implements OnInit, AfterViewChecked {
     window.scrollTo(0, 0);
   }
 
+  closeModal() {
+  }
 }

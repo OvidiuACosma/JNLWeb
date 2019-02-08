@@ -97,7 +97,6 @@
                                 
                           <span>Prenom Nom</span><br>
                           <span>TITRE</span><br><br>
-
                           Lorem ipsum dolor sit amet, consectetuer adipiscing
                           elit, sed diam nonummy nibh euismod
                           tincidunt ut laoreet dolore magna aliquam erat
@@ -106,17 +105,15 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class='carousel-item' active="setActiveSlide(1)">
                     <div class="container">
                         <div class="carousel-item-image">
                           <img src='/assets/Images/Groupe/GP_michele.JPG' alt='JNL Collection' class="slide-image">
                         </div>
                         <div class="group-text">
-                                    
                               <span>Prenom Nom</span><br>
                               <span>TITRE</span><br><br>
-    
                               Lorem ipsum dolor sit amet, consectetuer adipiscing
                               elit, sed diam nonummy nibh euismod
                               tincidunt ut laoreet dolore magna aliquam erat
@@ -125,16 +122,15 @@
                         </div>
                       </div>
                 </div>
+
                 <div class='carousel-item'>
                     <div class="container">
                         <div class="carousel-item-image">
                           <img src='/assets/Images/Groupe/GP_daniel.JPG' alt='JNL Collection' class="slide-image">
                         </div>
                         <div class="group-text">
-                                    
                               <span>Prenom Nom</span><br>
                               <span>TITRE</span><br><br>
-    
                               Lorem ipsum dolor sit amet, consectetuer adipiscing
                               elit, sed diam nonummy nibh euismod
                               tincidunt ut laoreet dolore magna aliquam erat
@@ -155,7 +151,6 @@
                 <span class="sr-only">Next</span>
             </a>-->
 
-            
           <div class='carousel-indicators'>
               <input type="radio" name="equipe-cr" data-target='#carousel-custom' data-slide-to='0' class='active'>
               <input type="radio" name="equipe-cr" data-target='#carousel-custom' data-slide-to='1'>
@@ -201,7 +196,6 @@
             </div>
           </div>
 
-          
       <div id='carousel-projets' class='carousel slide carousel-marques' data-ride='carousel'  data-interval="1200">
           <div class="carousel-inner">
               <div class='carousel-item active'>
@@ -275,96 +269,60 @@
       </div>
     </div>
 
-      
-      <div id="archives">
-        <h2>Les Archives</h2>
-        <h3>XXXXXX</h3>
-        <div>
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2016)">
-            <span>
-              2016
-            </span>
-          </div>
-          
-          <div  data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2015)">
-              <span>
-                2015
-              </span>
-            </div>
-            
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2014)">
-              <span>
-                2014
-              </span>
-            </div>
-            
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2013)">
-              <span>
-                2013
-              </span>
-            </div>
-            
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2012)">
-              <span>
-                2012
-              </span>
-            </div>
-            
-          <div data-toggle="modal" data-target="#archivesModal" (click)="yearClick(2011)">
-              <span>
-                2011
-              </span>
-            </div>
-            
+    <div id="archives">
+      <h2>Les Archives</h2>
+      <h3>XXXXXX</h3>
+      <div>
+        <div *ngFor="let y of archives" data-toggle="modal" data-target="#archivesModal" (click)="yearClick(y)">
+          <span>{{y}}</span>
         </div>
       </div>
+    </div>
 
-      
-<!---->
-      <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true" data-backdrop="false" *ngIf="isOpen">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class='col-12 modal-title text-center' id="ModalLabel">Archive {{this.year}}</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (onclick)="modalClose()">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel'>
-                  <div class="carousel-inner">
-                      <!-- <div class='carousel-item active'>
-                        <div class="container2">
-                          <div class="carousel-item-image2">
-                            <img src={{archive.imgSrc[0]}} alt='JNL Collection' class="slide-image">
-                          </div>
+    <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-backdrop="false" *ngIf="isOpen" (click)="closeModal()">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class='col-12 modal-title text-center' id="ModalLabel">Archive {{year}}</h5>
+            <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close" (onclick)="modalClose()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel'>
+                <div class="carousel-inner">
+                    <!-- <div class='carousel-item active'>
+                      <div class="container2">
+                        <div class="carousel-item-image2">
+                          <img src={{archive.imgSrc[0]}} alt='JNL Collection' class="slide-image">
                         </div>
-                      </div> -->
-                      
-                        <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
-                            <div class="container2">
-                              <div class="carousel-item-image2">
-                                <img src={{item}} alt='JNL Collection1' class="slide-image">
-                              </div>
+                      </div>
+                    </div> -->
+                    
+                      <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
+                          <div class="container2">
+                            <div class="carousel-item-image2">
+                              <img src={{item}} alt='JNL Collection1' class="slide-image">
                             </div>
-                        </div>
-                  </div>
-                  
-                  <!-- Controls -->
-                  <a class='carousel-control-prev' data-target="#carousel-archives" data-slide='prev' (click)="unsetScroll()">
-                      <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
-                      <span class="sr-only">Previous</span>
-                  </a>
-                  <a class='carousel-control-next' data-target="#carousel-archives" data-slide='next' (click)="unsetScroll()">
-                      <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
-                      <span class="sr-only">Next</span>
-                  </a>
-              </div>
+                          </div>
+                      </div>
+                </div>
+                
+                <!-- Controls -->
+                <a class='carousel-control-prev' data-target="#carousel-archives" data-slide='prev' (click)="unsetScroll()">
+                    <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class='carousel-control-next' data-target="#carousel-archives" data-slide='next' (click)="unsetScroll()">
+                    <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
 <!---->
 

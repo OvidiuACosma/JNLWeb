@@ -27,7 +27,7 @@
         <input placeholder="Nom*" required/>
         <input placeholder="Societe*" required/>
         <input placeholder="Poste*" required/>
-        <select (click)="countryClick()" id="country">
+        <select id="country">
           <option selected disabled>Pays 🡫</option>
           <option *ngFor="let ctry of this.cy; let x = index" >{{cy[x].name}}</option>
         </select>
