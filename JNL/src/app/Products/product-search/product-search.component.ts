@@ -37,6 +37,12 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
       .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+
+      this.productService.getProductSearch()
+      .subscribe(p => {
+       this.categoriesJSON = p;
+       this.distinctHeader = new Set(p.map(f => f.category));
+     });
     });
 
 
@@ -48,13 +54,7 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     }
   }
 
-  // CHANGE function for FAV
-  removeItem(index: number) {
-    this.scroller = false;
-    this.total--;
 
-    // REMOVE FROM DB ?
-  }
 
   getText(lang: string) {
     this.textService.getTextFavorites()
@@ -62,12 +62,10 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
       const res = data[0];
       this.getLanguageText(res);
     });
+  }
 
-    this.productService.getProductSearch()
-    .subscribe(p => {
-     this.categoriesJSON = p;
-     this.distinctHeader = new Set(p.map(f => f.category));
-   });
+  getLanguageText(res: any) {
+    this.text = res[this.language.toUpperCase()];
   }
 
   getFilters(category: string): any {
@@ -75,10 +73,6 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
       .filter(f => f.category === category)
       .map(m => m.content));
     return this.distinctContent;
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
   }
 
 
@@ -100,6 +94,14 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
 
     this.scroller = false;
   }
+
+    // CHANGE function for FAV
+    removeItem(index: number) {
+      this.scroller = false;
+      this.total--;
+
+      // REMOVE FROM DB ?
+    }
 
 
   ngAfterViewChecked() {
