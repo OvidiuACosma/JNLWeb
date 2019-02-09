@@ -48,6 +48,7 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     }
   }
 
+  // CHANGE function for FAV
   removeItem(index: number) {
     this.scroller = false;
     this.total--;
@@ -63,10 +64,10 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     });
 
     this.productService.getProductSearch()
-     .subscribe(p => {
-      this.categoriesJSON = p;
-      this.distinctHeader = new Set(p.map(f => f.category));
-    });
+    .subscribe(p => {
+     this.categoriesJSON = p;
+     this.distinctHeader = new Set(p.map(f => f.category));
+   });
   }
 
   getFilters(category: string): any {

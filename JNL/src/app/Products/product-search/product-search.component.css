@@ -144,7 +144,7 @@ cdk-virtual-scroll-viewport {
     left: 0;
     width: calc(100vw - 77px);
 
-    text-align: center;
+    /* text-align: center; */
 }
 
 .option-label {
@@ -192,6 +192,13 @@ li {
     margin-bottom: 5vh;
 }
 
+li > div {
+    font-family: Atak-Medium;
+    font-size: 1.2vw;
+
+    text-align: left;
+}
+
 .search-but {
     background-color: white;
     border: 1px solid black;
@@ -226,7 +233,7 @@ li {
     margin: auto;
 }
 
-.remover {
+.fav-button {
     text-align: right;
     float: right;
     margin-right: 5px;
@@ -240,7 +247,7 @@ li {
     height: 19.44vw;  
 
     background-color: white;
-    border: 1px solid black;
+    border: 0.88px solid black;
 }
 
 .center-product {
@@ -262,6 +269,14 @@ li {
 
     display: flex;
     flex-direction: column;
+}
+
+.prod-name {
+    font-family: Atak-Medium;
+    font-size: 1.2vw;
+
+    text-align: left;
+    margin-top: 11px;
 }
 
 .cdk-virtual-scroll-content-wrapper {

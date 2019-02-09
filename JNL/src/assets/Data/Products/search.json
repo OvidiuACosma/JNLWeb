@@ -1,48 +1,22 @@
 [
     {
-        "EN": {
-            "category":
-            {
-                "type": [
-                    "Sofas",
-                    "Chairs",
-                    "Storage",
-                    "Tables",
-                    "Desks",
-                    "Small Tables",
-                    "Accessories"
-                ],
-                "material": [
-                    "Wood",
-                    "PVC",
-                    "Steel",
-                    "Stone",
-                    "Leather",
-                    "Plastic"
-                ]
-            }
+        "EN": [
+            {"category": "brand",
+                "content": "JNL Collection"},
+                {"category": "brand",
+                "content": "Vanhamme"},
+                {"category": "type",
+                "content": "Ungaro"}
+            ]
     },
-        "FR": {
-                "category":
-                {
-                    "type": [
-                        "Sofas",
-                        "Chairs",
-                        "Storage",
-                        "Tables",
-                        "Desks",
-                        "Small Tables",
-                        "Accessories"
-                    ],
-                    "material": [
-                        "Wood",
-                        "PVC",
-                        "Steel",
-                        "Stone",
-                        "Leather",
-                        "Plastic"
-                    ]
-                }
-        }
+    {
+        "FR": [
+            {"category": "brand",
+                "content": "JNL Collection"},
+                {"category": "brand",
+                "content": "Vanhamme"},
+                {"category": "type",
+                "content": "Ungaro"}
+            ]
     }
 ]
