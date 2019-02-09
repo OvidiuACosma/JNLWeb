@@ -1,8 +1,5 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
 
 @Component({
@@ -38,20 +35,6 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-    // switch (this.language) {
-    //     case 'EN': {
-    //       this.text = res['EN'];
-    //       break;
-    //       }
-    //     case 'FR': {
-    //       this.text = res['FR'];
-    //       break;
-    //     }
-    //     default: {
-    //       this.text = res['EN'];
-    //       break;
-    //     }
-    //   }
   }
 
 

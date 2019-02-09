@@ -5,7 +5,6 @@ hr {
 h5 {
     font-family: Atak-Light;
     font-size: 1.8vw;
-
     text-transform: uppercase;
 }
 
@@ -21,6 +20,11 @@ ul {
 
 .clear {
     height: 20px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
 }
 
 .nav-pills .nav-link {
@@ -64,10 +68,14 @@ ul {
     position: relative;
   }
 
-.modal-dialog{
+.modal-dialog {
     width: 70vw !important;
     min-width: 400px;
     max-width: 700px !important;
+}
+
+.modal-header {
+    text-align: center !important;
 }
 
 .modal-content {
@@ -76,12 +84,16 @@ ul {
 
 .flex-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 .whiteSpace {
     flex: 1;
-    align-items: center;
-    justify-content: center;
 }
 
 .cardContainer {

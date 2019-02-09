@@ -1,149 +1,132 @@
-h1{
+h1 {
     font-family: PlacardMT-Condensed;
     font-size: 4.4vw;
     margin-bottom: 3vh;
-
     text-transform: uppercase;
-
     text-align: center !important;
 }
-h2{
+
+h2 {
     font-family: Atak-Regular;
     font-size: 3.5vw;
 }
-h3{
+
+h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
     font-size: 1.39vw;
-
     margin-bottom: 1.5vw;
 }
-h4{
+
+h4 {
     margin: auto;
     font-size: 1.8vw;
-
     font-family: Atak-Medium;
-
     margin-top: 3.3vw;
     text-align: center;
 }
+
 h6 {
     margin-top: 1.7vw;
-
     font-family: Atak-Bold;
     font-size: 1.2vw;
-
     text-align: center;
 }
 
+.marque-main {
+    text-align: center;
+    /* display: flex; */
+    padding-top: 73px;
+}
 
-.location{
+.location {
     font-family: Atak-Regular;
     font-size: 1.2vw;
-
     margin-bottom: 5.5vw;
 }
-.marques_selected{
+
+.marques_selected {
     text-decoration: underline !important;
 }
 
-.marques-gold, .marques-gold:link, .marques-gold:visited{
+.marques-gold, .marques-gold:link, .marques-gold:visited {
     color: #DBBB76 !important;
 }
 
 .home-links-flex {
     width: 69.4vw;
     margin: auto;
-
     display: flex;
     justify-content: space-between;
-
 }
 
-.home_links
-{
+.home_links {
     border: 1.5px solid #DBBB76;
     padding: 0.3vw;
     padding-left: 1.1vw;
     padding-right: 1.1vw;
     height: auto;
-
     font-size: 1.1vw;
-
     text-transform: uppercase;
-    
-    
 }
 
-.marques-image{
+.marques-image {
     width: 76vw;
-
     margin-top: 1.6vw;
     margin-bottom: 4.2vw;
 }
 
-.marque-main{
+.marque-main {
     text-align: center;
     display: flex;
     padding-top: 73px;
 }
 
-.marque-main > div{
+.marque-main > div {
     margin: auto;
 }
 
-.location{
+.location {
     text-align: center;
-
     font-family: Atak-Regular;
     font-size: 1.2vw;
 }
 
-.heritage
-{
+.heritage {
     width: 100vw;
     padding-top: 7vw;
     padding-bottom: 7vw;
-
     background-color: white;
-
     display: flex;
 }
-.heritage > div
-{
+
+.heritage > div {
     width: 69.5vw;
     margin: auto;
-
     text-align: center;
 }
-.heritage > div > p
-{
+
+.heritage > div > p {
     font-size: 1.6em;
     line-height: 1.24em;
-
     width: 55vw;
     margin: auto;
-
     font-family: Atak-Regular;
     font-size: 1.4vw;
-
     margin-bottom: 5vw;
 }
-.heritage > div > p > a
-{
+
+.heritage > div > p > a {
     font-size: 0.6em;
 }
 
 .full-image {
     margin-top: 3.4vw;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: auto;
-
-
 }
-
 
 .container {
     display: flex;
@@ -151,46 +134,39 @@ h6 {
     height: auto;
 }
 
-
-#marques_list{
+#marques_list {
     width: 73vw;
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-
     margin-bottom: 7.5vw;
 }
 
-#marques_list > a{
+#marques_list > a {
     margin: auto;
-
     font-size: 1.5em;
 }
 
-#marques_list > a:hover{
+#marques_list > a:hover {
     text-decoration: underline;
 }
 
-
 #les_produits {
-    width: 100vw;
+    width: 100%;
     padding: 0px;
     height: auto;
-
     background-color: #D3D3D3;
     color: black;
-
     display: flex;
     flex-direction: row;
 }
 
 #produits_main {
     margin: auto;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -206,9 +182,9 @@ h6 {
 }
 
 .carousel-produits {
-    width: 100vw;
-    height: 50vw; /*60vh;*/
-    padding-top: 3.15vw; /*5vh;*/
+    width: 100%;
+    height: 50vw;
+    padding-top: 3.15vw;
 }
 
 .carousel-arrows {
@@ -236,14 +212,9 @@ h6 {
     /* border: solid 1px #000; */
 }
 
-/* .marques_img {
-    height: 50vh;
-    float: left;
-} */
-
 .carousel-indicators {
     /* width: 28.5vw; */
-    width: 80vw;
+    width: 80%;
     margin: auto;
 
     justify-content: space-around;
@@ -259,7 +230,6 @@ h6 {
     text-transform: uppercase;
     text-indent: 0;
     font-size: 1.8vw;
-
     font-family: Atak-Light;
 }
 
@@ -271,13 +241,12 @@ h6 {
     color: #555;
 }
 
-.carousel-indicators .active > span{
+.carousel-indicators .active > span {
     text-decoration: underline;
     color: black;
 }
 
-.produits-text
- {
+.produits-text {
      /* width: 80%; */
      padding-top: 6vw;
      height: auto;
@@ -293,10 +262,9 @@ h6 {
 }
 
 .flex-div {
-    width: 80.1vw;
+    width: 80%;
     margin: auto;
     margin-bottom: 8.1vw;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -306,40 +274,32 @@ h6 {
     margin: auto;
     margin-top: 0px;
     margin-bottom: 0px;
-
     width: 35.1vw;
-
     text-align: center;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.flex-div > div > img{
+.flex-div > div > img {
     width: 35.1vw;
     margin-bottom: 1.7vw;
 }
 
-.flex-div > div > span{
-
+.flex-div > div > span {
     font-family: Atak-Light;
     font-size: 1.4vw;
-
     text-transform: uppercase;
 }
 
 .flex-div > div > p {
     margin-top: 1.7vw;
-
     font-family: Atak-Regular;
     font-size: 1.1vw;
-
     padding: 1.3vw;
 }
 
-
-.flex-div > div > div > span{
+.flex-div > div > div > span {
 
     font-family: Atak-Light;
     font-size: 1.4vw;
@@ -347,11 +307,10 @@ h6 {
 
 .flex-div > div:nth-child(2) {
     background-color: #EAD6AD;
-
     align-content: space-around;
 }
 
-.flex-div > div:nth-child(2) > img{
+.flex-div > div:nth-child(2) > img {
     width: 33vw;
     margin: auto;
 }
@@ -366,7 +325,6 @@ h6 {
     height: 6vw;
     margin: auto;
     margin-bottom: 6.98vw;
-
     justify-content: space-between;
  }
 
@@ -374,7 +332,6 @@ h6 {
      background-color: #D3D3D3 !important;
      width: 27vw !important;
      text-align: center !important;
-
      display: flex;
  }
 
@@ -384,7 +341,6 @@ h6 {
 
  #autres > p > span {
     margin: auto;
-
     font-family: Atak-Light;
     font-size: 1.8vw;
 }
@@ -393,7 +349,6 @@ h6 {
     width: 83vw;
     margin: auto;
     margin-bottom: 6.98vw;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -415,14 +370,11 @@ h6 {
     cursor: pointer;
 }
 
-
 #first_picture > div > p {
     text-align: center;
-
     /*TREBUIE MODIFICAT*/
     position: relative;
     margin-top: -6vh;
-    
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -431,13 +383,12 @@ h6 {
     max-width: 6vw;
     height: auto;
     width: auto;
-
     margin: 0;
 }
 
 
 @media only screen and (max-width: 800px) {
-    
+
     h1 {
         font-size: 9.7vw;
     }
@@ -446,12 +397,11 @@ h6 {
         font-size: 5.6vw;
     }
 
-
     .heritage > div {
         width: 80vw;
     }
 
-    .heritage > div > p{
+    .heritage > div > p {
         width: auto;
         font-size: 4.2vw;
     }
@@ -483,8 +433,6 @@ h6 {
         width: 80vw;
     }
 
-
-
     .home-links-flex {
         flex-direction: column;
         width: 60vw;
@@ -510,7 +458,6 @@ h6 {
         width: 80vw !important;
         height: 10vw;
         text-align: center !important;
-   
         display: flex;
     }
 
@@ -534,7 +481,6 @@ h6 {
         font-size: 4.2vw;
     }
 
-    
     #other-links > div > h4 {
         font-size: 4.3vw;
     }

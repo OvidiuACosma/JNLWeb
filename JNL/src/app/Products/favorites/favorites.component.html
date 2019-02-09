@@ -18,9 +18,9 @@
 
     <div [ngClass]="(this.removeAll===true) ? 'remove-item' :'products'">
       <ul class="list">
-        <cdk-virtual-scroll-viewport itemSize="30" >
+        <cdk-virtual-scroll-viewport itemSize="30">
           <div class="flex-div">
-          <ng-container *cdkVirtualFor="let n of numbers" >
+          <ng-container *cdkVirtualFor="let n of numbers">
             <li [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'">
               <div>
                 <div class="pic-frame">
@@ -36,7 +36,6 @@
             </li>
           </ng-container>
           
-
           <li *ngFor="let m of [0, 1, 2]" [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'">
             <div>
               <div class="pic-frame">
@@ -54,13 +53,8 @@
         </cdk-virtual-scroll-viewport>
       </ul>
     </div>
-
-
   </div>
 
-
-  
-    
   <div class="fav_div">
     <h2>{{text.infoTitle}}</h2>
     <form class="fav_form">
@@ -88,9 +82,7 @@
         <input placeholder="{{text.zip}}"/>
         <input placeholder="{{text.email}}" required/>
       </div>
-
       <br>
-
       <button id="send">{{text.send}}</button>
     </form>
   </div>

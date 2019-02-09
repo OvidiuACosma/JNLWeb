@@ -2,16 +2,13 @@ h1 {
     font-family: PlacardMT-Condensed;
     font-size: 5.03vw;
     margin-bottom: 3vh;
-
     text-align: center;
 }
 
 h2 {
-    /* margin-top: 5.9vw; */
     margin-bottom: 5.6vw;
     font-family: Atak-Light;
     font-size: 3.5vw;
-
     text-align: center;
 }
 
@@ -19,19 +16,14 @@ h4 {
     margin: auto;
     width: 58.3vw;
     font-size: 1.8vw;
-
     font-family: Atak-Medium;
-
     margin-top: 3.3vw;
     text-align: center;
 }
 
-
-
 .presse-main {
     margin: auto;
     width: 100%;
-
     padding-top: 73px;
 }
 
@@ -39,48 +31,39 @@ h4 {
     margin: auto;
     left: 0;
     width: 100%;
-
     text-align: center;
 }
 
-
 .home_links {
     border: 1.5px solid #DBBB76;
-    padding: .38vw; /*0.3em;*/
-    padding-left: 1.25vw; /*1em;*/
-    padding-right: 1.25vw; /*1em;*/
-
+    padding: .38vw;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
     font-size: 1.25vw;
     text-transform: uppercase;
-
     margin-bottom: 10px;
 }
-
 
 #presse_list {
     margin: auto;
     font-family: Atak-Light;
     font-size: 1em;
-    width: 50vw;
-    
+    width: 45vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-
     margin-bottom: 4vw;
     text-align: center;
 }
 
 #presse_list > a {
     margin: auto;
-
     font-size: 1.5em;
     margin-right: 20px;
     left: 0;
-
     text-transform: uppercase;
 }
 
@@ -94,10 +77,8 @@ h4 {
 
 #presse_list > a {
     margin: auto;
-
     font-size: 2vw;
     left: 0;
-
     border-bottom: 1px solid transparent;
     transition: all .5s ease;
 }
@@ -109,7 +90,6 @@ h4 {
 
 .first-image {
     width: 100%;
-
     left: 0;
     margin-top: 1.6vw;
     margin-bottom: 4.2vw;
@@ -118,10 +98,8 @@ h4 {
 
 .four-flex {
     display: flex;
-    /* justify-content: space-between; */
     flex-direction: row;
     flex-wrap: wrap;
-
     width: 67.9vw;
     margin: auto;
 }
@@ -137,7 +115,6 @@ h4 {
     width: 15.8vw;
     display: flex;
     flex-direction: column;
-
     margin-right: 1vw;
 }
 
@@ -149,23 +126,15 @@ h4 {
 .four-flex > div > div > span {
     font-family: Atak-Light;
     font-size: 1.8vw;
-
     width: 15.8vw;
     word-wrap: normal;
-
     height: 6.5vw;
 }
 
-
-
-
 .carousel-inner {
-
     margin: auto;
-
     width: 60vw;
     height: 70vh;
-
     display: flex;
 }
 
@@ -177,25 +146,20 @@ h4 {
 .row {
     margin: auto;
 }
-.slide-image {
 
+.slide-image {
     margin: auto;
     width: 100%;
     height: 90%;
-
     object-fit: cover;
-
-
     text-align: left;
     float: left;
-    
     position: relative;
 }
+
 .carousel-marques {
     width: 100%;
-
     margin: auto;
-
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -209,7 +173,6 @@ h4 {
     margin: auto;
 }
 
-
 .carousel-arrows {
     margin-top: auto;
 }
@@ -221,18 +184,9 @@ h4 {
 .carousel-item-image {
     float: left;
     padding-left: 0px;
-
     width: 60vw;
-
     display: flex;
-
 }
-
-
-/* .marques_img {
-    height: 50vh;
-    float: left;
-} */
 
 .carousel-indicators {
     width: auto;
@@ -242,7 +196,6 @@ h4 {
     align-content: center;
     flex-wrap: wrap;
     margin-top: 1vw;
-
     position: relative;
 }
 
@@ -272,28 +225,21 @@ input[type="radio"] {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-
     height: 15px;
     width: 15px;
-
     border: none;
     border-radius: 100%;
-
     cursor: pointer;
     display: inline-block;
-
     margin-right: 0.5em;
     outline: none;
-
     background-color: #BFBFBF;
 }
 
 .container {
     padding: 0px;
-
     font-family: Atak-Regular;
     font-size: 16px;
-
     display: flex;
     height: 70vh;
 }
@@ -303,17 +249,12 @@ input[type="radio"] {
 }
 
 .parutions-text {
-
     width: 23.7vw;
-
     padding-top: 3vw;
-
     font-family: Atak-Regular;
     font-size: 1.4vw;
-
     text-align: left;
     text-transform: uppercase;
-    
 }
 
 .parutions-text > div {
@@ -321,7 +262,6 @@ input[type="radio"] {
 }
 
 .parutions-text > div > span {
-    
     font-family: Atak-Light;
     font-size: 1.8vw;
     text-transform: uppercase;
@@ -348,8 +288,6 @@ input[type="radio"] {
 }
 
 
-
-
 @media only screen and (max-width: 800px) {
     .parutions-text {
         width: 80vw;
@@ -369,7 +307,6 @@ input[type="radio"] {
     h4 {
         font-size: 7.2vw;
     }
-
 
     .parutions-text {
         font-size: 5.5vw;

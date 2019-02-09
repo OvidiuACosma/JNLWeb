@@ -2,8 +2,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { fillProperties } from '@angular/core/src/util/property';
 
 @Component({
   selector: 'app-favorites',
@@ -112,7 +110,6 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     } else {
       this.selected[nr] = 1;
     }
-
     this.scroller = false;
   }
 
@@ -130,5 +127,4 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
         }
     });
   }
-
 }

@@ -2,15 +2,12 @@ h1 {
     font-family: PlacardMT-Condensed;
     font-size: 5.03vw;
     margin-bottom: 3vh;
-
     text-align: center;
 }
 
 h2 {
-    /* margin-top: 5.9vw; */
     font-family: Atak-Light;
     font-size: 3.5vw;
-
     text-align: center;
 }
 
@@ -19,7 +16,6 @@ h3 {
     font-family: Atak-Regular;
     color: #DBBB76;
     font-size: 1.4vw;
-
     margin-bottom: 1.5vw;
     text-align: center;
 }
@@ -28,9 +24,7 @@ h4{
     margin: auto;
     width: 54vw;
     font-size: 1.8vw;
-
     font-family: Atak-Medium;
-
     margin-top: 3.3vw;
     text-align: center;
 }
@@ -43,14 +37,11 @@ h5 {
 
 
 video {
-    width: 87.3vw;
-    height: 51.5vw;
+    width: 87.3%;
+    height: auto;
+    /* height: 51.5vw; */
     /*NO VIDEO */
-
     margin: auto;
-    width: 87vw;
-
-    height: 48.5vw;
     /* background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
     background-position: center center; */
@@ -61,7 +52,7 @@ video {
 }
 
 .marques-image {
-    width: 76vw;
+    width: 76%;
 
     margin: auto;
     margin-top: 1.6vw;
@@ -72,22 +63,16 @@ video {
     display: flex;
     margin: auto;
     padding-top: 73px;
-    /* width: 100vw; */
-    /* width: 90vw; */
 }
 
 .les-marques-main > div {
     margin: auto;
     left: 0;
-    /* width: 100vw; */
-    /* width: 90vw; */
-
     text-align: center;
 }
 
 .location {
     text-align: center;
-
     font-family: Atak-Regular;
     font-size: 17px;
 }
@@ -99,13 +84,11 @@ video {
     /* width: calc(100vw - 77px); */
     width: 100%;
     height: auto;
-
 }
 
 .ateliers-flex {
     width: 68.5vw;
     margin: auto;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -116,7 +99,6 @@ video {
     margin: auto;
     margin-top: 13.1vw;
     margin-bottom: 0px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -129,12 +111,10 @@ video {
 
 
 .ateliers-flex > div > div {
-    
     font-family: Atak-LightItalic;
     font-size: 1.8vw;
 } 
 .ateliers-flex > div > div > span {
-
     font-family: Atak-Bold;
     font-size: 1.1vw;
 
@@ -147,73 +127,54 @@ video {
 .ateliers-flex > div:nth-child(2) > div:first-child {
     margin-top: 0px !important;
     margin-bottom: 10.8vw;
-
     font-family: Atak-Regular;
     font-size: 1.4vw;
     text-align: left;
 } 
 
 .gallery-flex {
-    width: 81.9vw;
+    width: 81.9%;
     margin: auto;
-
     display: flex;
     flex-direction: column !important;
-
     margin-top: 5.3vw;
 }
 
 .carousel-inner {
     width: 90vw;
     height: 30vw;
-
     margin: 0px !important;
-
     display: flex;
     flex-direction: row;
 }
 
 .slide-image {
-    
     width: 100%;
     height: 100%;
     max-width: 58vw;
     max-height: 30vw;
-
     object-fit: cover;
-
     margin-left: 0px;
     margin-top: 0px !important;
-
     text-align: left;
     float: left;
-
-    
     position: absolute;
     left: 0;
 }
 
 .steps-text {
     margin-top: 0px  !important;
-
     background-color: #D3D3D3;
-
     width: 32vw;
     height: 30vw;
-
     padding: 3vw;
-
     font-family: Atak-Regular;
     font-size: 1.4vw;
-
     text-align: center !important;
-
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-
-    
     position: absolute;
     right: 0;
 }
@@ -223,14 +184,12 @@ video {
 }
 
 .steps-text > div > span {
-    
     font-family: Atak-Light;
     font-size: 1.8vw;
     text-transform: uppercase;
 }
 
 .equipe-card > div > h4 {
-    
     text-align: left !important;
     margin-top: 0px  !important;
 }
@@ -238,7 +197,6 @@ video {
 .equipe-radio {
     margin: auto;
     width: 76vw !important;
-
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -251,30 +209,23 @@ video {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-
     height: 15px;
     width: 15px;
-
     border: none;
     border-radius: 100%;
-
     cursor: pointer;
     display: inline-block;
-
     margin-right: 0.5em;
     margin-top: 10px;
     outline: none;
-
     background-color: #BFBFBF;
 }
 
 .equipe-radio > input:hover {
-    
     background-color: grey;
 }
 
 .equipe-radio > input:checked {
-    
     background-color: rgb(46, 46, 46);
 }
 
@@ -293,32 +244,26 @@ video {
     margin-top: 0px;
 }
 
-
 #marques_list {
     margin: auto;
     font-family: Atak-Light;
     font-size: 1em;
-    width: 80vw;
-    
+    width: 32vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-
     margin-bottom: 4vw;
     text-align: center;
 }
 
 #marques_list > a {
     margin: auto;
-
     font-size: 2vw;
     left: 0;
-
     text-transform: uppercase;
-
     border-bottom: 1px solid transparent;
     transition: all .5s ease;
 }
@@ -327,7 +272,6 @@ video {
     border-color: #888;
     transition: all .5s ease;
 }
-
 
 #atelier, #fabrication {
     margin-bottom: 60px;
@@ -339,41 +283,26 @@ video {
     width: 87.3vw;
     height: 55vw;
     display: flex;
-
     color: white;
 }
 
 #savoir > div:first-child {
     margin: auto;
     width: 87vw;
-    /*width: 1255px;*/
-
     height: 48.5vw;
-
     display: flex;
     flex-direction: column;
 }
 
-
-
-
-
-
-
 .carousel-marques {
     width: 100%;
-    height: 37.78vw; /*60vh;*/
-    padding-top: 3.15vw; /*5vh;*/
-
-    
+    height: 37.78vw;
+    padding-top: 3.15vw;
     width: 90vw;
     margin: auto;
-
     display: flex;
     flex-direction: column !important;
-
     margin-top: 5.3vw;
-
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -386,7 +315,6 @@ video {
     width: 2vw;
     margin-top: auto;
 }
-
 
 .carousel-arrows {
     margin-top: auto;
@@ -402,12 +330,6 @@ video {
 
 }
 
-
-/* .marques_img {
-    height: 50vh;
-    float: left;
-} */
-
 .carousel-indicators {
     width: auto;
     margin: auto;
@@ -415,7 +337,6 @@ video {
     align-content: center;
     flex-wrap: wrap;
     margin-top: 1vw;
-
     position: relative;
 }
 
@@ -445,53 +366,36 @@ input[type="radio"] {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-
     height: 15px;
     width: 15px;
-
     border: none;
     border-radius: 100%;
-
     cursor: pointer;
     display: inline-block;
-
     margin-right: 0.5em;
     margin-top: 2vw;
     outline: none;
-
     background-color: #BFBFBF;
 }
 
 .container {
     display: flex;
     flex-direction: row;
-
-    /* width: 100vw; */
     padding: 0px;
-
     font-family: Atak-Regular;
     font-size: 16px;
 }
 
 .group-text > span {
-    
     text-align: left !important;
     margin-top: 0px  !important;
-    
     margin: auto;
     width: 54vw;
     font-size: 1.8vw;
-
     font-family: Atak-Medium;
-
     margin-top: 3.3vw;
     text-align: center;
-
 }
-
-
-
-
 
 
 @media only screen and (max-width: 800px) {
@@ -560,54 +464,47 @@ input[type="radio"] {
     h2 {
         font-size: 5.6vw;
     }
-    
+
     h3 {
         font-size: 4.5vw;
     }
-    
+
     h4{
         font-size: 4.2vw;
     }
     h5 {
         font-size: 3.4vw;
     }
-    
-    
+
     .location {
         font-size: 4.7vw;
     }
-    
-    
+
     .ateliers-flex > div > div {
         font-size: 4.2vw;
     } 
+
     .ateliers-flex > div > div > span {
         font-size: 3.4vw;
-    
     } 
-    
+
     .ateliers-flex > div:nth-child(2) > div:first-child {
         font-size: 4.5vw;
     } 
-    
-    
+
     .steps-text {
         font-size: 4.5vw;
     }
- 
-    
+
     .steps-text > div > span {
         font-size: 6.2vw;
     }
-    
-    
-    
+
     .container {
         font-size: 3.4vw;
     }
-    
+
     .group-text > span {
         font-size: 6.2vw;
-    
     }
 }

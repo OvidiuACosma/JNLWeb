@@ -2,14 +2,12 @@ h1 {
     font-family: PlacardMT-Condensed;
     font-size: 5.03vw;
     margin-bottom: 3vh;
-
     text-align: center;
 }
 h2 {
     /* margin-top: 5.9vw; */
     font-family: Atak-Light;
     font-size: 3.5vw;
-
     text-align: center;
 }
 
@@ -18,17 +16,15 @@ h3 {
     font-family: Atak-Regular;
     color: #DBBB76;
     font-size: 1.4vw;
-
     margin-bottom: 1.5vw;
     text-align: center;
 }
-h4{
+
+h4 {
     margin: auto;
     width: 54vw;
     font-size: 1.8vw;
-
     font-family: Atak-Medium;
-
     margin-top: 3.3vw;
     text-align: center;
 }
@@ -42,32 +38,20 @@ button {
 }
 
 .marques-image {
-    width: 76vw;
-
+    width: 76%;
     margin: auto;
     margin-top: 1.6vw;
     margin-bottom: 4.2vw;
 }
 
 .les-marques-main {
-    /* display: flex; */
     margin: auto;
-    /* width: 100vw; */
     text-align: center;
     padding-top: 73px;
 }
 
-/* .les-marques-main > div {
-    margin: auto;
-    left: 0;
-    width: 100vw;
-
-    text-align: center;
-} */
-
 .location {
     text-align: center;
-
     font-family: Atak-Regular;
     font-size: 1.2vw;
 }
@@ -77,7 +61,6 @@ button {
     left: 0;
     width: 100%;
     height: auto;
-
 }
 
 .quote-bar {
@@ -85,79 +68,59 @@ button {
     /* width: 100vw  !important; */
     width: 100%;
     left: 0;
-
     display: flex;
     flex-direction: column  !important;
-
     background-color: #C6C6C6;
     position: relative;
-
     padding: 11.7vw;
     padding-top: 4.2vw;
     padding-bottom: 4.2vw;
 }
+
 .quote-bar > p {
     font-family: Atak-LightItalic;
     font-size: 1.8vw;
 }
+
 .quote-bar > h4 {
     font-family: Atak-Bold;
     font-size: 1vw;
     margin-top: 0px;
 }
 
-
 .image-parag {
-    width: 76vw;
+    width: 76%;
     margin: auto;
     height: auto;
-
     display: flex;
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-between;
-
-    /*margin-left: 12vw;*/
     margin-bottom: 0px;
-
     text-align: left;
-
 }
 
 .image-parag > div > p {
-    /*width: 50vw;*/
-    /*margin: auto;*/
     margin-top: 0px;
-    /* height: 40vw; */
-
     padding-right: 4vw;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
-
     font-family: Atak-Regular;
     font-size: 1.41vw;
     line-height: 1.2;
 }
 
-
 #impg2 > div > p {
-    
     padding-right: 0px;
     padding-left: 4vw;
 }
 
-
-
 .image-parag > div > img, .respo_img {
-    /*margin: auto;*/
     margin-top: 0;
     width: 0vw; 
     padding-left: 30vw;
     display: inline-block; 
-    /* width: auto; */
-    /* max-height: 40vw; */
     height: auto;
-    
     background-image: url("/assets/Images/Groupe/GP_vertical.jpg");
     background-size: 30vw auto;
     object-fit: cover;
@@ -175,43 +138,33 @@ button {
     display: flex;
     align-content: center;
     justify-content: space-between;
-
     text-align: left;
-
     font-family: Atak-Regular;
     font-size: 1.4vw;
-
     margin: auto;
-    width: 80vw;
-
+    width: 80%;
 }
-
 
 #marques_list {
     margin: auto;
     font-family: Atak-Light;
     font-size: 1em;
-    width: 80vw;
-    
+    width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-
     margin-bottom: 4vw;
     text-align: center;
 }
 
 #marques_list > a {
     margin: auto;
-
     font-size: 2vw;
     left: 0;
-
     text-transform: uppercase;
-
     border-bottom: 1px solid transparent;
     transition: all .5s ease;
 }
@@ -221,28 +174,25 @@ button {
     transition: all .5s ease;
 }
 
-
 #equipe {
-    width: 76vw;
+    width: 76%;
     margin-left: 12vw;
     text-align: center;
 }
+
 #equipe > div {
     margin: auto;
-
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
-
     text-align: center;
 }
 
-#equipe > div > div{
+#equipe > div > div {
     margin: 0px;
     margin-top: 0px;
     width: 34vw;
-
     font-family: Atak-Regular;
     font-size: 1.1vw;
     text-align: center;
@@ -250,18 +200,14 @@ button {
 
 #equipe > div > div > p {
     margin: auto;
-
     font-family: Atak-Regular;
-    /*font-size: 16px;*/
     font-size: 1.1vw;
-
     text-align: justify;
 }
 
 #equipe > div > div > h4 {
     width: auto;
     margin: auto;
-
     margin-top: 2.2vw; 
     margin-bottom: 2.2vw;
 }
@@ -284,18 +230,15 @@ button {
 
 
 .gallery-flex {
-    width: 76vw;
-
+    width: 76%;
     display: flex;
     flex-direction: column !important;
-
     margin-top: 8.7vw;
 }
 
 .equipe-card {
-    width: 76vw;
+    width: 76%;
     height: 29vw;
-
     margin: 0px !important;
 
     display: flex;
@@ -310,163 +253,124 @@ button {
 .equipe-card > div {
     margin: auto;
     margin-top: 0px  !important;
-
-    width: 47vw;
-
+    width: 47%;
     padding: 3vw;
     padding-right: 0px;
     padding-top: 0px;
-
     text-align: left !important;
 }
 
 .equipe-card > div > h4 {
-    
     text-align: left !important;
     margin-top: 0px  !important;
 }
 
 .equipe-radio {
     margin: auto;
-    width: 76vw !important;
-
+    width: 76% !important;
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
 }
 
- 
-
 .equipe-radio > input:hover {
-    
     background-color: grey;
 }
 
 .equipe-radio > input:checked {
-    
     background-color: rgb(46, 46, 46);
 }
 
-
-
-
 #les-projets {
     margin: auto;
-    
     margin-top: 14.2vw;
-    width: 76vw;
+    width: 76%;
 }
 
 #les-projets > p {
     text-align: center;
-
     font-family: Atak-Regular;
     font-size: 1.4vw;
-
     margin: auto;
-    width: 49.2vw;
+    width: 49.2%;
 }
 
-.gallery
-{
+.gallery {
     margin-bottom: 14vw;
     width: 100%;
-
     text-align: center;
-
     display: flex;
 }
 
-.gallery > div
-{
+.gallery > div {
     margin: auto;
 }
 
-.gallery > div > div > div
-{
+.gallery > div > div > div {
     display: flex;
     flex-direction: column;
-
     text-align: center;
 }
 
-.gallery > div > div > div > img
-{
+.gallery > div > div > div > img {
     margin: auto;
     height: 35vw;
 }
 
-.gallery > div > div > div > h2
-{
+.gallery > div > div > div > h2 {
     margin: auto;
     width: 55.5vw;
 }
 
-.gallery > div > div > div > h4
-{
+.gallery > div > div > div > h4 {
     margin-top: 20px;
 }
 
-.gallery_buttons
-{
+.gallery_buttons {
     height: 100vh;
     width: 10vw;
     display: flex;
 }
-.gallery_buttons > div
-{
+.gallery_buttons > div {
     margin: auto;
-
     font-size: 5em;
     font-family: Atak-Regular;
 }
-.gallery_buttons > div > img
-{
+
+.gallery_buttons > div > img {
     width: 2vw;
 }
 
 #archives {
     width: auto;
-
-    margin-left: 7.8vw;
-    margin-right: 7.8vw;
-
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
     margin-bottom: 5vw;
 }
 
 #archives > div {
     margin: auto;
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-    width: 80.4vw;
-
+    width: 80.4%;
 }
 
 #archives > div > div {
-    
-    margin-top: 3vw;
-    margin-right: 3vw;
-
-    height: 20.2vw;
-    width: 23.5vw;
-
+    margin-top: 3%;
+    margin-right: 3%;
+    height: 15vw; /*20.2vw;*/
+    width: 19.0vw;
     background-color: #DBBB76;
-
     display: flex;
 }
 
 #archives > div > div > span {
-    
     margin: auto;
-
     font-family: PlacardMT-Condensed;
-    font-size: 5.1vw;
+    font-size: 4.2vw;
 }
-
 
 #gallery-div {
     margin: auto;
@@ -480,16 +384,14 @@ button {
 #projets > p {
     font-family: Atak-Regular;
     font-size: 1.4vw;
-
-    width: 48.4vw;
+    width: 48.4%;
     margin: auto;
 }
 
 
 .carousel-marques {
     width: 100%;
-    /*height: 37.78vw; /*60vh;*/
-    padding-top: 3.15vw; /*5vh;*/
+    padding-top: 3.15vw;
 }
 
 #carousel-custom {
@@ -499,7 +401,6 @@ button {
 .carousel-control-prev, .carousel-control-next {
     display: flex;
 }
-
 
 .carousel-control-prev > img , .carousel-control-next > img {
     margin-top: auto;
@@ -511,7 +412,6 @@ button {
     width: 2vw;
     margin-top: auto;
 }
-
 
 .carousel-arrows {
     margin-top: auto;
@@ -527,21 +427,10 @@ button {
 }
 
 .slide-image {
-    /*width: 28vw;
-    height: auto;
-     border: solid 1px #000; */
-
-    
     width: 100%;
-    max-width: 28vw;
-
+    /* max-width: 28vw; */
     object-fit: cover;
 }
-
-/* .marques_img {
-    height: 50vh;
-    float: left;
-} */
 
 .carousel-indicators {
     width: auto;
@@ -579,78 +468,59 @@ input[type="radio"] {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-
     height: 15px;
     width: 15px;
-
     border: none;
     border-radius: 100%;
-
     cursor: pointer;
     display: inline-block;
-
     margin-right: 0.5em;
     margin-top: 2vw;
     outline: none;
-
     background-color: #BFBFBF;
 }
 
 .container {
     display: flex;
     flex-direction: row;
-
-    width: 78vw;
-
+    width: 78%;
     font-family: Atak-Regular;
     font-size: 1.1vw;
-
     padding: 0px;
 }
-.group-text
- {
-     /* width: 80%; */
+
+.group-text {
      padding-top: 6vw;
      text-align: left;
      font-size: 1.4vw;
-
     margin-top: 0px  !important;
-
-    width: 47vw;
-
+    width: 47%;
     padding: 3vw;
     padding-right: 0px;
     padding-top: 0px;
-
     text-align: left !important;
  }
 
 .group-text > span {
-    
     text-align: left !important;
     margin-top: 0px  !important;
-    
     margin: auto;
-    width: 54vw;
+    width: 54%;
     font-size: 1.8vw;
-
     font-family: Atak-Medium;
-
     margin-top: 3.3vw;
     text-align: center;
 }
 
 .projets-text > h4 {
-    
     margin: auto;
-    width: 60vw;
-
+    width: 60%;
     margin-top: 3.3vw;
     text-align: center;
 }
 
 .projets {
-    width: 60vw;
+    width: 60%;
     padding: 0px;
 }
 
@@ -663,12 +533,12 @@ input[type="radio"] {
 }
 
 #carousel-projets > div > div > div > h4 {
-    width: 60vw;
+    width: 60%;
     padding-bottom: 0px;
 }
 
 #carousel-projets > div > div > div > div > .slide-image {
-    max-width: 60vw;
+    max-width: 60%;
 }
 
 #carousel-projets > .carousel-indicators {
@@ -694,7 +564,7 @@ input[type="radio"] {
 }
 
 .modal-dialog {
-    width: 80vw;
+    width: 80%;
     max-width: 1440px;
     min-height: 0px;
     margin-top: 60px;
@@ -702,10 +572,8 @@ input[type="radio"] {
 
 .container2 {
     padding: 0px;
-
     font-family: Atak-Regular;
     font-size: 16px;
-
     display: flex;
     height: 70vh;
 }
@@ -714,14 +582,12 @@ input[type="radio"] {
     margin: auto;
     top: 0;
     width: 60vw;
-
-    display: flex;
 }
 
 .carousel-item-image2 > .slide-image {
-    /* margin: auto; */
     max-width: 60vw;
-    height: 70vh;
+    object-fit: contain;
+    height: auto;
 }
 
 .close { 
@@ -742,12 +608,15 @@ input[type="radio"] {
     h1 {
         font-size: 9.7vw;
     }
+
     h2 {
         font-size: 7.6vw;
     }
+
     h3 {
         font-size: 3.8vw;
     }
+
     h4 {
         font-size: 3.8vw;
         width: 80vw;
@@ -755,6 +624,7 @@ input[type="radio"] {
 
         text-align: center !important;
     }
+
     span {
         font-size: 4.2vw;
     }
@@ -781,10 +651,8 @@ input[type="radio"] {
     #marques_list > a{
         margin: auto;
         font-size: 4.5vw;
-    
         left: 0;
     }
-
 
     #equipe > div > div {
         width: 70vw;
@@ -796,19 +664,15 @@ input[type="radio"] {
     }
 
     #equipe > div {
-
         display: flex;
         flex-direction: column;
         align-content: center;
         justify-content: space-between;
-    
-    
         text-align: center;
     }
 
     #projets > p {
         font-family: Atak-Regular;
-    
         width: 90vw
     }
 
@@ -831,10 +695,8 @@ input[type="radio"] {
         padding-right: 0px !important; 
         padding-top: 5vw; 
         padding-bottom: 5vw;
-
         font-family: Atak-Regular;
     }
-
 
     .image-parag > div > img {
         width: 80vw;
@@ -877,14 +739,12 @@ input[type="radio"] {
         text-align: center;
     }
 
-    
     .carousel-item-image {
         width: 70vw;
         margin-right: 0vw;
         padding-left: 0vw;
     }
 
-    
     #engagement .image-parag > p {
         padding-right: 0px;
         padding-left: 0vw;
