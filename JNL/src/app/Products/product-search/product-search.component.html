@@ -9,16 +9,19 @@
         <input (click)="GoToProduct()" type="button" value="Search" class="search-but">
       </div>
   
-    <div id="favs">
+    <div id="results">
   
       <div class="filters">
         <h4>FILTERS</h4>
         <ul>
           <li *ngFor="let c of categoriesJSON; let i=index">
-            <h3>{{c}}</h3>
+            <div class="header-arrow">
+                <span class="header-filter">{{c}}</span>
+                <img alt="JNL Collection" src="\assets\Images\Common\arrow_down_gold.png" class="arrow">
+            </div>
             <ul>
-              <li *ngFor="let d of getFilters(c); let i2=index">
-                {{d}}
+              <li *ngFor="let d of getFilters(c); let i2=index" class="single-filter">
+                  <span><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i>&nbsp;{{d}}</span>
               </li>
             </ul>
           </li>
@@ -26,7 +29,7 @@
       </div>
   
       <div class="products">
-        <span class="prod-name" style="text-align: left !important; margin-bottom: 3.75vw">Products found – 122</span>
+        <span class="prod-name" style="text-align: left !important; margin-bottom: 3.75vw">&nbsp;Products found – 122</span>
         <ul class="list">
           <cdk-virtual-scroll-viewport itemSize="30" >
             <div class="flex-div">
