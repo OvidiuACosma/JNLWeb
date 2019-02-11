@@ -75,11 +75,17 @@ ul {
 }
 
 .modal-header {
-    text-align: center !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* close button of modal */
+.close {
+    margin-left: 0px !important;
 }
 
 .modal-content {
-    text-align: center;
+    text-align: center; 
 }
 
 .flex-container {
