@@ -1,3 +1,453 @@
 #container {
     padding-top: 60px;
 }
+
+h1 {
+    font-family: PlacardMT-Condensed;
+    font-size: 5.03vw;
+    margin-bottom: 3vh;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+h2 {
+    /* margin-top: 5.9vw; */
+    font-family: Atak-Light;
+    font-size: 3.5vw;
+
+    text-align: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: Atak-Regular;
+    color: #DBBB76;
+    font-size: 1.1vw; /*20px;*/
+
+    margin-bottom: 1.5vw;
+}
+
+h4 {
+    margin: auto;
+    font-size: 1.8vw;
+
+    font-family: Atak-Medium;
+
+    margin-top: 3.3vw;
+    text-align: center;
+}
+
+textarea{
+    margin: auto;
+    background-color: #F6EEDD;
+    border: none;
+    width: 100%;
+    outline: none;
+
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+}
+
+i {
+    outline: none;
+}
+
+input, select
+{
+    /* margin: auto; */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+
+    outline: none;
+    border: hidden;
+
+    width: 21vw;
+    background-color: transparent;
+
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+
+    border: none;
+    border-bottom: 1.5px solid black;
+
+    margin-top: 1.5vw;
+    padding-bottom: 0px;
+}
+
+button
+{
+    text-transform: uppercase;
+
+    margin: auto;
+    background-color: white;
+    color: black;
+
+    margin-top: 5.3em;
+    margin-bottom: 4em;
+    border: none;
+
+    /*width: 20%;*/
+}
+
+li, ul {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;   
+    list-style-type: none;
+
+    padding: 0px !important;
+}
+
+cdk-virtual-scroll-viewport {
+    width: 72vw;
+    margin: auto;
+    height: 52.3vw;
+    overflow-x: hidden;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+}
+
+
+.remove-item {
+    display: none;
+}
+
+.non-remove {
+    display: block;
+}
+
+.search-main {
+    margin: auto;
+    margin-top: 60px;
+    /* width: 100vw; */
+
+    display: flex;
+    flex-direction: column;
+}
+
+.search-main > div {
+    margin: auto;
+    left: 0;
+    width: calc(100vw - 77px);
+
+    /* text-align: center; */
+}
+
+.option-label {
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+}
+
+.option-label:hover {
+    cursor: default;
+}
+
+
+.products {
+    margin-top: 6.6vw;
+}
+
+
+.products-group {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+
+    width: 75.7vw;
+
+    flex-wrap: wrap;
+}
+/*
+.products-group > div {
+    width: 18.8vw;
+} */
+
+.products-group > li {
+    margin: auto;
+    margin-bottom: 4.5vw;
+
+    width: 17.8vw;
+}
+
+li {
+    width: 17.8vw;
+    margin: auto;
+
+    display: inline-block;
+    
+    margin-bottom: 5vh;
+}
+
+li > div {
+    font-family: Atak-Medium;
+    font-size: 1.2vw;
+
+    text-align: left;
+}
+
+.search-but {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.flex-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+
+    width: 72vw;
+}
+
+.non-remove > div > span {
+    font-family: Atak-Medium;
+    font-size: 1.2vw;
+
+    text-align: left;
+    float: left;
+
+    margin-top: 1.1vw;
+}
+
+.search-img {
+    max-width: 14.3vw;
+    max-height: 17.2vw;  
+
+    padding: 0px;
+
+    margin: auto;
+}
+
+.fav-button {
+    text-align: right;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+
+    height: 15px;
+}
+
+.pic-frame {
+    width: 14.9vw;
+    height: 19.44vw;  
+
+    background-color: white;
+    border: 0.88px solid black;
+}
+
+.center-product {
+    width: 14.3vw;
+    height: 17.2vw;  
+
+    margin-bottom: 0;
+    position: relative;
+
+    display: flex;
+}
+
+.filters {
+    width: 16.1vw;
+}
+
+.filter-type {
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.prod-name {
+    font-family: Atak-Medium;
+    font-size: 1.2vw;
+
+    text-align: left;
+    margin-top: 11px;
+}
+
+.cdk-virtual-scroll-content-wrapper {
+    display: flex !important;
+    flex-direction: row;
+    width: 75.7vw;
+    flex-wrap: wrap !important;
+}
+
+#expertise, #surMesure, #votreProjet {
+    margin-bottom: 60px;
+    padding-top: 60px;
+}
+
+#details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-top: 3.5vw;
+}
+
+#services {
+    margin: auto;
+    width: 87.3vw;
+    height: 55vw;
+    display: flex;
+
+    color: white;
+}
+
+#services > div:first-child {
+    margin: auto;
+    width: 87vw;
+    /*width: 1255px;*/
+
+    height: 48.5vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+#checks {
+    /* width: 70%; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    align-content: center;
+
+    margin-bottom: 5.1vw;
+}
+
+#checks > div {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#send {
+    width: 16.5vw;
+    margin-top: 4.3vw;
+
+    font-family : Atak-Light;
+    font-size : 1.4vw;
+    letter-spacing : 1.28px;
+    text-transform : uppercase;
+}
+
+#remove-download {
+    margin: auto;
+
+    width: 39.9vw;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#remove-download > div {
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#favs {
+    display: flex;
+    flex-direction: row;
+
+    width: 88.2vw;
+}
+
+
+@media only screen and (max-width: 800px){
+
+    h1 {
+        font-size: 9.7vw;
+    }
+
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
+        word-wrap: normal;
+        font-size: 5.6vw !important;
+    }
+
+    h4 {
+        width: 80vw;
+    }
+
+    button {
+        margin-top: 0px;
+    }
+
+    input {
+        margin-top: 20px;
+    }
+
+    .sur-flex {
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .sur-flex > div {
+        width: 80vw;
+        justify-content: space-between;
+    }
+    
+    .sur-flex > div:last-child {
+        flex-direction: column-reverse;
+    }
+
+    .sur-flex > div > div > img {
+        width: 80vw;
+    }
+
+    h2 {
+        font-size: 5.6vw;
+    }
+    
+    h4 {
+        font-size: 4.2vw;
+    }
+    
+    .sur-flex > div > div {
+        font-size: 4.5vw;
+    } 
+    .sur-flex > div > div > span {
+        font-size: 4.4vw;
+    
+    } 
+    
+    .sur-flex > div:nth-child(2) > div:first-child {
+        font-size: 4.5vw; 
+    } 
+    .fav_div
+    {
+        font-size: 4.5vw;
+        
+    }
+    
+   
+    .fav_div > div > p {
+        font-size: 4.5vw;
+    }
+
+    #services_list > a {
+        margin: 0px;
+    }
+
+   
+}
