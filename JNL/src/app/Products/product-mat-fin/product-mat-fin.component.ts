@@ -37,6 +37,7 @@ export class ProductMatFinComponent implements OnInit {
   public garnissageCode = '';
   public garnissageDimensions = '';
   public garnissageCompositionFR = '';
+  public garnissageMartindale = '';
 
 
   constructor(private productsService: ProductsService,
@@ -152,6 +153,7 @@ export class ProductMatFinComponent implements OnInit {
         this.garnissageCode = this.tissus[this.garnissageID].codeProd.toUpperCase();
         this.garnissageDimensions = this.tissus[this.garnissageID].dimensions;
         this.garnissageCompositionFR = this.tissus[this.garnissageID].compositionFR;
+        this.garnissageMartindale = this.tissus[this.garnissageID].martindale;
         this.imgSource = '/assets/Images/Products/JNL/Garnissage/tissu/' + this.garnissageCode + '_Print.jpg';
         break;
       }
@@ -160,6 +162,7 @@ export class ProductMatFinComponent implements OnInit {
         this.garnissageCode = this.cuirs[this.garnissageID].codeProd.toUpperCase();
         this.garnissageDimensions = this.cuirs[this.garnissageID].dimensions;
         this.garnissageCompositionFR = this.cuirs[this.garnissageID].compositionFR;
+        this.garnissageMartindale = this.cuirs[this.garnissageID].martindale;
         this.imgSource = '/assets/Images/Products/JNL/Garnissage/cuir/' + this.garnissageCode + '_Print.jpg';
         break;
       }
@@ -168,6 +171,7 @@ export class ProductMatFinComponent implements OnInit {
         this.garnissageCode = this.similiCuirs[this.garnissageID].codeProd.toUpperCase();
         this.garnissageDimensions = this.similiCuirs[this.garnissageID].dimensions;
         this.garnissageCompositionFR = this.similiCuirs[this.garnissageID].compositionFR;
+        this.garnissageMartindale = this.similiCuirs[this.garnissageID].martindale;
         this.imgSource = '/assets/Images/Products/JNL/Garnissage/simili/' + this.garnissageCode + '_Print.jpg';
         break;
       }
@@ -193,6 +197,7 @@ export class ProductMatFinComponent implements OnInit {
       this.garnissageCode = list[id].codeProd.toUpperCase();
       this.garnissageDimensions = list[id].dimensions;
       this.garnissageCompositionFR = list[id].compositionFR;
+      this.garnissageMartindale = list[id].martindale;
       this.imgSource = '/assets/Images/Products/JNL/Garnissage/' + this.matCategory + '/' + this.garnissageCode + '_Print.jpg';
     }
   }
@@ -217,6 +222,7 @@ export class ProductMatFinComponent implements OnInit {
       this.garnissageCode = list[id].codeProd.toUpperCase();
       this.garnissageDimensions = list[id].dimensions;
       this.garnissageCompositionFR = list[id].compositionFR;
+      this.garnissageMartindale = list[id].martindale;
       this.imgSource = '/assets/Images/Products/JNL/Garnissage/' + this.matCategory + '/' + this.garnissageCode + '_Print.jpg';
     }
   }
