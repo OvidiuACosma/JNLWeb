@@ -18,12 +18,13 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
   text: any;
   distinctHeader: any;
   distinctContent: any;
-  categoriesJSON: any[];
+  categoriesJSON: any;
 
   selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
   total: number;
+  res: any;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -40,11 +41,10 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
 
       this.productService.getProductSearch()
       .subscribe(p => {
-       this.categoriesJSON = p;
-       this.distinctHeader = new Set(p.map(f => f.category));
+        this.res = p[0];
+        this.categoriesJSON = new Set(this.res[this.language.toUpperCase()].map(c => c.category));
      });
     });
-
 
     const numberAll = 15;
     this.total = numberAll;
@@ -53,8 +53,6 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
       this.numbers.push(index);
     }
   }
-
-
 
   getText(lang: string) {
     this.textService.getTextFavorites()
@@ -69,8 +67,8 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
   }
 
   getFilters(category: string): any {
-    this.distinctContent = new Set(this.categoriesJSON
-      .filter(f => f.category === category)
+    this.distinctContent = new Set(this.res[this.language.toUpperCase()]
+      .filter(f => f.category.toUpperCase() === category.toUpperCase())
       .map(m => m.content));
     return this.distinctContent;
   }
