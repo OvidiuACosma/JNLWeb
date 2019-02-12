@@ -1,0 +1,20 @@
+[
+    {
+        "EN": [
+                {"category": "brand",
+                "content": "JNL Collection"},
+                {"category": "brand",
+                "content": "Vanhamme"},
+                {"category": "type",
+                "content": "Ungaro"}
+            ]
+    },
+    {
+        "FR": [
+                {"category": "brand",
+                "content": "JNL Collection"},
+                {"category": "brand",
+                "content": "Vanhamme"}
+            ]
+    }
+]

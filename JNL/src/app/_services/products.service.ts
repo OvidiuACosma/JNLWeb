@@ -39,6 +39,10 @@ export class ProductsService {
     return this.http.get<any[]>(this.cuirs, {headers: this.headers});
   }
 
+  public getProductSearch(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.urlAssets}/Products/search.json`, {headers: this.headers});
+  }
+
   public getSimiliCuirs(): Observable<any[]> {
     return this.http.get<any[]>(this.simili, {headers: this.headers});
   }
@@ -50,6 +54,7 @@ export class ProductsService {
   public getProductDesc(id: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.prodDescURL}/${id}`, {headers: this.headers});
   }
+
 
 /*
   public getTissus(): Observable<any> {

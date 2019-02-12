@@ -567,7 +567,7 @@ input[type="radio"] {
     width: 80%;
     max-width: 1440px;
     min-height: 0px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .container2 {
@@ -575,13 +575,14 @@ input[type="radio"] {
     font-family: Atak-Regular;
     font-size: 16px;
     display: flex;
-    height: 70vh;
+    height: 80vh;
 }
 
 .carousel-item-image2 {
     margin: auto;
     top: 0;
     width: 60vw;
+    padding: 20px;
 }
 
 .carousel-item-image2 > .slide-image {
