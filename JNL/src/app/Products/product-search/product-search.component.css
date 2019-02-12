@@ -125,6 +125,10 @@ cdk-virtual-scroll-viewport {
     color: black;
 }
 
+.list {
+    
+    margin-top: 3.8vw;
+}
 
 .remove-item {
     display: none;
@@ -252,6 +256,8 @@ li > div {
     width: 16.1vw;
     margin-top: 2.1vw;
     margin-bottom: 2.1vw;   
+
+    justify-content: baseline;
 }
 
 .filters > ul > li {
@@ -284,6 +290,12 @@ li > div {
     margin-top: 5px;
 
     height: 15px;
+}
+
+.fav-button:hover {
+    background-image: url("/assets/Images/Common/fav_icon_filled.png");
+    background-size: contain;
+    transition: all .3s ease;
 }
 
 .pic-frame {
