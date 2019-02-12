@@ -12,8 +12,7 @@ export class ProductDescriptionComponent implements OnInit {
   @Input() prodCode = '';
   public productDesc: any[];
   public parts: string[] = [];
-  // public item = 0;
-  public index = -1;
+  public materials: string[] = [];
 
   constructor(private productsService: ProductsService) { }
 
@@ -31,6 +30,19 @@ export class ProductDescriptionComponent implements OnInit {
       partsList.push(item.partNameFr.toString());
     });
     this.parts = _.uniq(partsList);
+  }
+
+  getMaterials(part: string) {
+    // console.log('PART: ', part);
+    const matList: string[] = [];
+    this.productDesc.forEach(item => {
+      if (item.partNameFr === part) {
+        matList.push(item.materialNameFr.toString());
+      }
+    });
+    this.materials = _.uniq(matList);
+    // console.log('MATERIALS: ', this.materials);
+    return this.materials;
   }
 }
 
