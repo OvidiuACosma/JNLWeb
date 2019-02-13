@@ -8,6 +8,11 @@ h5 {
     text-transform: uppercase;
 }
 
+h6 {
+    font-family: Atak-Light;
+    font-size: 1.2vw;
+}
+
 /* data list from modal */
 ul {
     margin-left: 10px;
@@ -16,10 +21,6 @@ ul {
 
  label {
     margin: 0px !important;
-}
-
-.clear {
-    height: 20px;
 }
 
 .center {
@@ -38,24 +39,36 @@ ul {
     background-color: white;
 }
 
+.example-viewport {
+    width: 56vw;
+    height: 37vw;
+  }
+
+  .scroll-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 10px 10px 10px 0px;
+  }
+
+  .scroll-item {
+    display: flex;
+    flex-direction:column;
+    width: 14.86vw;
+    margin-right: 2vw;
+    align-items: center;
+  }
+
 .img-button {
-    width: 120px;
-    height: 120px;
+    width:14.86vw;
+    height: 8vw;
+    max-width: 380px;
+    max-height: 200px;
 }
 
-.pagination > li > a, .pagination > li > span { 
-    color: #000; 
-}
-
-.pagination > .active > a,
-.pagination > .active > a:focus,
-.pagination > .active > a:hover,
-.pagination > .active > span,
-.pagination > .active > span:focus,
-.pagination > .active > span:hover {
-    background-color: lightgrey;
-    border-color: lightgrey;
-    color:#fff;
+.clear {
+    height: 2.4vw;
 }
 
 /* workaround to fix bootstrap`s modal bug in Angular
@@ -125,8 +138,4 @@ ul {
 
 #content {
     flex:3;
-}
-
-#thumbnail-container {
-    padding: 0px !important;
 }
