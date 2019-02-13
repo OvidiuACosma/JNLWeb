@@ -9,7 +9,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 })
 export class ProductMatFinComponent implements OnInit {
 
-  public matCategory = 'tissu';
+  public matCategory = 'Tissu';
   public tissus: any[];
   public cuirs: any[];
   public similiCuirs: any[];
@@ -60,11 +60,11 @@ export class ProductMatFinComponent implements OnInit {
   setCategory(category: string) {
     switch (category) {
       case 'tissu': {
-        this.matCategory = 'tissu';
+        this.matCategory = 'Tissu';
         break;
       }
       case 'cuir': {
-        this.matCategory = 'cuir';
+        this.matCategory = 'Cuir';
         break;
       }
       case 'simili': {
@@ -96,7 +96,7 @@ export class ProductMatFinComponent implements OnInit {
         this.garnissageDimensions = this.tissus[this.garnissageID].dimensions;
         this.garnissageCompositionFR = this.tissus[this.garnissageID].compositionFR;
         this.garnissageMartindale = this.tissus[this.garnissageID].martindale;
-        this.imgSource = '/assets/Images/Products/JNL/Garnissage/tissu/' + this.garnissageCode + '_Print.jpg';
+        this.imgSource = '/assets/Images/Products/JNL/Garnissage/Tissu/' + this.garnissageCode + '_Print.jpg';
         break;
       }
       case 'CUIR': {
@@ -105,7 +105,7 @@ export class ProductMatFinComponent implements OnInit {
         this.garnissageDimensions = this.cuirs[this.garnissageID].dimensions;
         this.garnissageCompositionFR = this.cuirs[this.garnissageID].compositionFR;
         this.garnissageMartindale = this.cuirs[this.garnissageID].martindale;
-        this.imgSource = '/assets/Images/Products/JNL/Garnissage/cuir/' + this.garnissageCode + '_Print.jpg';
+        this.imgSource = '/assets/Images/Products/JNL/Garnissage/Cuir/' + this.garnissageCode + '_Print.jpg';
         break;
       }
       case 'SIMILI CUIR': {
@@ -122,9 +122,9 @@ export class ProductMatFinComponent implements OnInit {
 
   getPrevious() {
     let list: any[];
-    if (this.matCategory === 'tissu') {
+    if (this.matCategory === 'Tissu') {
       list = this.tissus;
-    } else if (this.matCategory === 'cuir') {
+    } else if (this.matCategory === 'Cuir') {
       list = this.cuirs;
     } else if (this.matCategory === 'simili') {
       list = this.similiCuirs;
@@ -146,15 +146,13 @@ export class ProductMatFinComponent implements OnInit {
 
   getNext() {
     let list: any[];
-    if (this.matCategory === 'tissu') {
+    if (this.matCategory === 'Tissu') {
       list = this.tissus;
-    } else if (this.matCategory === 'cuir') {
+    } else if (this.matCategory === 'Cuir') {
       list = this.cuirs;
     } else if (this.matCategory === 'simili') {
       list = this.similiCuirs;
     }
-
-
     // index from the hidden input box
     let id: any = document.getElementById('garnId').innerText;
     id++;
