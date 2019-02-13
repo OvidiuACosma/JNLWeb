@@ -6,9 +6,9 @@
   <div id="description">
     <p>{{productDesc[0].descriptionFr}}</p>
     <br>
-    <div id="parts" *ngFor="let part of parts"><b>{{part}} :</b>
-      <div *ngFor="let item of productDesc; let i = index">
-       <!-- <span *ngIf="item.partNameFr == part">{{item.materialNameFr}}</span> -->
+    <div id="parts" *ngFor="let part of parts"><b>{{part}}:</b>
+      <div>
+       <span *ngFor="let mat of getMaterials(part)">{{mat}}, </span>
       </div>
       <br>
     </div> 
