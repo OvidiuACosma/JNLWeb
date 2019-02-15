@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService, PagerService } from 'src/app/_services';
+import { ProductsService } from 'src/app/_services';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { materialize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-mat-fin',
@@ -15,23 +16,16 @@ export class ProductMatFinComponent implements OnInit {
   public similiCuirs: any[];
   public abatjours: any[];
   public metals: any[];
-  public garnissageID: string;
-  public material: string;
+
+  // data used in modal
+  public index: number;
+  public currentMatList: any[];
+  public material: any[];
 
   // test tab visibility
   public cuirTab: boolean;
 
-  // data used in the modal
-  public imgSource = '';
-  public garnissageModel = '';
-  public garnissageCode = '';
-  public garnissageDimensions = '';
-  public garnissageCompositionFR = '';
-  public garnissageMartindale = '';
-
-
-  constructor(private productsService: ProductsService,
-    private pagerService: PagerService) { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
 
@@ -82,89 +76,60 @@ export class ProductMatFinComponent implements OnInit {
     }
   }
 
-  sendDataToModal(event) {
-    this.garnissageID = event.target.dataset.garnissageid;
-    this.material = event.target.dataset.material.toUpperCase();
-
-    // hidden
-    document.getElementById('garnId').innerText = this.garnissageID;
-
-    switch (this.material) {
-      case 'TISSU': {
-        this.garnissageModel = this.tissus[this.garnissageID].model;
-        this.garnissageCode = this.tissus[this.garnissageID].codeProd.toUpperCase();
-        this.garnissageDimensions = this.tissus[this.garnissageID].dimensions;
-        this.garnissageCompositionFR = this.tissus[this.garnissageID].compositionFR;
-        this.garnissageMartindale = this.tissus[this.garnissageID].martindale;
-        this.imgSource = '/assets/Images/Products/JNL/Garnissage/Tissu/' + this.garnissageCode + '_Print.jpg';
-        break;
-      }
-      case 'CUIR': {
-        this.garnissageModel = this.cuirs[this.garnissageID].model;
-        this.garnissageCode = this.cuirs[this.garnissageID].codeProd.toUpperCase();
-        this.garnissageDimensions = this.cuirs[this.garnissageID].dimensions;
-        this.garnissageCompositionFR = this.cuirs[this.garnissageID].compositionFR;
-        this.garnissageMartindale = this.cuirs[this.garnissageID].martindale;
-        this.imgSource = '/assets/Images/Products/JNL/Garnissage/Cuir/' + this.garnissageCode + '_Print.jpg';
-        break;
-      }
-      case 'SIMILI CUIR': {
-        this.garnissageModel = this.similiCuirs[this.garnissageID].model;
-        this.garnissageCode = this.similiCuirs[this.garnissageID].codeProd.toUpperCase();
-        this.garnissageDimensions = this.similiCuirs[this.garnissageID].dimensions;
-        this.garnissageCompositionFR = this.similiCuirs[this.garnissageID].compositionFR;
-        this.garnissageMartindale = this.similiCuirs[this.garnissageID].martindale;
-        this.imgSource = '/assets/Images/Products/JNL/Garnissage/simili/' + this.garnissageCode + '_Print.jpg';
-        break;
-      }
-    }
+  sendItemToModal(mat: any) {
+    this.material = mat;
   }
 
-  getPrevious() {
-    let list: any[];
-    if (this.matCategory === 'Tissu') {
-      list = this.tissus;
-    } else if (this.matCategory === 'Cuir') {
-      list = this.cuirs;
-    } else if (this.matCategory === 'simili') {
-      list = this.similiCuirs;
-    }
 
-    // index from the hidden input box
-    let id: any = document.getElementById('garnId').innerText;
-    id--;
-    if (id >= 0) {
-      document.getElementById('garnId').innerText = id;
-      this.garnissageModel = list[id].model;
-      this.garnissageCode = list[id].codeProd.toUpperCase();
-      this.garnissageDimensions = list[id].dimensions;
-      this.garnissageCompositionFR = list[id].compositionFR;
-      this.garnissageMartindale = list[id].martindale;
-      this.imgSource = '/assets/Images/Products/JNL/Garnissage/' + this.matCategory + '/' + this.garnissageCode + '_Print.jpg';
+  getPrevious() {
+    if (this.matCategory === 'Tissu') {
+      this.index = this.tissus.indexOf(this.material);
+      if (this.index >= 1) {
+        this.index--;
+        this.material = this.tissus[this.index];
+      }
+    }
+    if (this.matCategory === 'Cuir') {
+      this.index = this.cuirs.indexOf(this.material);
+      if (this.index >= 1) {
+        this.index--;
+        this.material = this.cuirs[this.index];
+      }
+    }
+    if (this.matCategory === 'simili') {
+      this.index = this.similiCuirs.indexOf(this.material);
+      if (this.index >= 1) {
+        this.index--;
+        this.material = this.similiCuirs[this.index];
+      }
     }
   }
 
   getNext() {
-    let list: any[];
     if (this.matCategory === 'Tissu') {
-      list = this.tissus;
-    } else if (this.matCategory === 'Cuir') {
-      list = this.cuirs;
-    } else if (this.matCategory === 'simili') {
-      list = this.similiCuirs;
+      this.index = this.tissus.indexOf(this.material);
+      if (this.index < this.tissus.length - 1) {
+        this.index++;
+        this.material = this.tissus[this.index];
+      }
     }
-    // index from the hidden input box
-    let id: any = document.getElementById('garnId').innerText;
-    id++;
-    if (id < list.length) {
-      document.getElementById('garnId').innerText = id;
-      this.garnissageModel = list[id].model;
-      this.garnissageCode = list[id].codeProd.toUpperCase();
-      this.garnissageDimensions = list[id].dimensions;
-      this.garnissageCompositionFR = list[id].compositionFR;
-      this.garnissageMartindale = list[id].martindale;
-      this.imgSource = '/assets/Images/Products/JNL/Garnissage/' + this.matCategory + '/' + this.garnissageCode + '_Print.jpg';
+
+    if (this.matCategory === 'Cuir') {
+      this.index = this.cuirs.indexOf(this.material);
+      if (this.index < this.cuirs.length - 1) {
+        this.index++;
+        this.material = this.cuirs[this.index];
+      }
     }
+
+    if (this.matCategory === 'simili') {
+      this.index = this.similiCuirs.indexOf(this.material);
+      if (this.index < this.similiCuirs.length - 1) {
+        this.index++;
+        this.material = this.similiCuirs[this.index];
+      }
+    }
+
   }
 
   closeModal() {

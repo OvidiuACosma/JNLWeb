@@ -111,6 +111,12 @@ ul {
     cursor: pointer;
 }
 
+.arrow {
+    height: 3.5vw;
+    width: 1.5vw;
+    margin-top: -15vw;
+}
+
 .whiteSpace {
     flex: 1;
 }
