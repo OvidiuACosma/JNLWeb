@@ -15,9 +15,5 @@ h5 {
 }
 
 #staticText {
-    flex: 1;
-}
-
-#content {
-    flex: 3;
+    width: 30.55vw;
 }
