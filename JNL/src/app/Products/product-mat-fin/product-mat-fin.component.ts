@@ -18,8 +18,8 @@ export class ProductMatFinComponent implements OnInit {
   public metals: any[];
 
   // data used in modal
-  public index: number;
   public currentMatList: any[];
+  public index: number;
   public material: any[];
 
   // test tab visibility
@@ -36,6 +36,7 @@ export class ProductMatFinComponent implements OnInit {
     this.productsService.getTissus()
       .subscribe(tissus => {
         this.tissus = tissus;
+        this.currentMatList = this.tissus;
       });
 
     // get Cuirs
@@ -55,14 +56,17 @@ export class ProductMatFinComponent implements OnInit {
     switch (category) {
       case 'tissu': {
         this.matCategory = 'Tissu';
+        this.currentMatList = this.tissus;
         break;
       }
       case 'cuir': {
         this.matCategory = 'Cuir';
+        this.currentMatList = this.cuirs;
         break;
       }
       case 'simili': {
         this.matCategory = 'simili';
+        this.currentMatList = this.similiCuirs;
         break;
       }
       case 'abatjour': {
@@ -80,56 +84,14 @@ export class ProductMatFinComponent implements OnInit {
     this.material = mat;
   }
 
-
-  getPrevious() {
-    if (this.matCategory === 'Tissu') {
-      this.index = this.tissus.indexOf(this.material);
-      if (this.index >= 1) {
-        this.index--;
-        this.material = this.tissus[this.index];
-      }
+  navigate(direction: string) {
+    this.index = this.currentMatList.indexOf(this.material);
+    if (direction === 'previous' && this.index >= 1) {
+      this.index--;
+    } else if (direction === 'next' && this.index < this.currentMatList.length - 1) {
+      this.index++;
     }
-    if (this.matCategory === 'Cuir') {
-      this.index = this.cuirs.indexOf(this.material);
-      if (this.index >= 1) {
-        this.index--;
-        this.material = this.cuirs[this.index];
-      }
-    }
-    if (this.matCategory === 'simili') {
-      this.index = this.similiCuirs.indexOf(this.material);
-      if (this.index >= 1) {
-        this.index--;
-        this.material = this.similiCuirs[this.index];
-      }
-    }
-  }
-
-  getNext() {
-    if (this.matCategory === 'Tissu') {
-      this.index = this.tissus.indexOf(this.material);
-      if (this.index < this.tissus.length - 1) {
-        this.index++;
-        this.material = this.tissus[this.index];
-      }
-    }
-
-    if (this.matCategory === 'Cuir') {
-      this.index = this.cuirs.indexOf(this.material);
-      if (this.index < this.cuirs.length - 1) {
-        this.index++;
-        this.material = this.cuirs[this.index];
-      }
-    }
-
-    if (this.matCategory === 'simili') {
-      this.index = this.similiCuirs.indexOf(this.material);
-      if (this.index < this.similiCuirs.length - 1) {
-        this.index++;
-        this.material = this.similiCuirs[this.index];
-      }
-    }
-
+    this.material = this.currentMatList[this.index];
   }
 
   closeModal() {
