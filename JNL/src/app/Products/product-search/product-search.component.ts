@@ -101,7 +101,6 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
       // REMOVE FROM DB ?
     }
 
-
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {

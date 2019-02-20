@@ -1,9 +1,9 @@
 <!-- CONTAINER -->
 <hr>
-<div id="container" (window:resize)="onResize()">
+<div id="container">
   <div id="static">
     <h5>MATERIALS<br> &amp; FINISHES</h5>
-    <div class="clear"></div>
+    <br>
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
         aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
@@ -25,121 +25,68 @@
   </div>
   <div id="content">
     <div class="tab-content" id="v-pills-tabContent">
+
       <!-- TISSUS TAB------------------------->
       <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
-        <div class="row text-lg-left">
-          <!-- paged item-------------------->
-          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center"
-            *ngFor="let item of tissuPagedItems">
-            <a class="d-block">
-              <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                src="assets\Images\Products\JNL\Garnissage\tissu\{{item.codeProd | uppercase }}.jpg" alt=""
-                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR"
-                (click)="sendDataToModal($event)">
-            </a>
-            {{item.model}}
-            <div class="clear"></div>
+        <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+          <div class="scroll-container">
+            <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
+              <div class="scroll-item">
+                <a>
+                  <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                    src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
+                    (click)="sendItemToModal(item)">
+                </a>
+                <div>
+                  <h6>{{item.model}}</h6>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </ng-container>
           </div>
-          <!---------------------------------->
-        </div>
-        <div class="clear"></div>
-
-        <!-- pager -->
-        <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="page-link" (click)="setPage(1)">&laquo;</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
-          </li>
-          <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-            <a class="page-link" (click)="setPage(page)">{{page}}</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
-          </li>
-        </ul>
+        </cdk-virtual-scroll-viewport>
       </div>
 
       <!-- CUIRS TAB------------------------->
       <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
-        <div class="row text-lg-left">
-          <!-- paged item-------------------->
-          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center"
-            *ngFor="let item of cuirPagedItems">
-            <a class="d-block">
-              <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                src="assets\Images\Products\JNL\Garnissage\cuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR"
-                (click)="sendDataToModal($event)">
-            </a>
-            {{item.model}}
-            <div class="clear"></div>
+        <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+          <div class="scroll-container">
+            <ng-container *cdkVirtualFor="let item of cuirs" class="example-item">
+              <div class="scroll-item">
+                <a>
+                  <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                    src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
+                    (click)="sendItemToModal(item)">
+                </a>
+                <div>
+                  <h6>{{item.model}}</h6>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </ng-container>
           </div>
-          <!---------------------------------->
-        </div>
-        <div class="clear"></div>
-
-        <!-- pager -->
-        <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="page-link" (click)="setPage(1)">&laquo;</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
-          </li>
-          <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-            <a class="page-link" (click)="setPage(page)">{{page}}</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
-          </li>
-        </ul>
+        </cdk-virtual-scroll-viewport>
       </div>
 
       <!-- SIMILI CUIRS TAB------------------------->
       <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
-        <div class="row text-lg-left">
-          <!-- paged item-------------------->
-          <div id="thumbnail-container" class="col-xl-2 col-lg-3 col-md-4 col-6 text-center"
-            *ngFor="let item of similiPagedItems">
-            <a class="d-block">
-              <img id="thumbnail-img" class="img-fluid img-button" data-toggle="modal" data-target="#garnissageModal"
-                src="assets\Images\Products\JNL\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
-                [attr.data-garnissageid]="item.id-1" [attr.data-material]="item.materialFR"
-                (click)="sendDataToModal($event)">
-            </a>
-            {{item.model}}
-            <div class="clear"></div>
+        <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+          <div class="scroll-container">
+            <ng-container *cdkVirtualFor="let item of similiCuirs" class="example-item">
+              <div class="scroll-item">
+                <a>
+                  <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                    src="assets\Images\Products\JNL\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
+                    (click)="sendItemToModal(item)">
+                </a>
+                <div>
+                  <h6>{{item.model}}</h6>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </ng-container>
           </div>
-          <!---------------------------------->
-        </div>
-        <div class="clear"></div>
-
-        <!-- pager -->
-        <ul class="pagination pagination-sm justify-content-center" *ngIf="pager.pages && pager.pages.length">
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="page-link" (click)="setPage(1)">&laquo;</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
-          </li>
-          <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-            <a class="page-link" (click)="setPage(page)">{{page}}</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
-          </li>
-          <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="page-link" (click)="setPage(pager.totalPages)">&raquo;</a>
-          </li>
-        </ul>
+        </cdk-virtual-scroll-viewport>
       </div>
 
       <div class="tab-pane fade" id="v-pills-abatjour" role="tabpanel" aria-labelledby="v-pills-abatjour-tab">
@@ -170,7 +117,7 @@
       <div class="modal-header">
         <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
         <div>
-          <h4 class="modal-title" id="ModalLabel">{{garnissageModel}}</h4>
+          <h4 class="modal-title" id="ModalLabel">{{material.model}}</h4>
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -178,27 +125,28 @@
       </div>
       <div class="modal-body flex-container">
         <div class="whiteSpace">
-          <div id="previous" class="cursor-pointer" (click)="getPrevious()">previous</div>
+          <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
         </div>
         <div class="cardContainer">
           <div class="card">
-            <img [src]="imgSource" class="card-img-top" alt="...">
+            <img
+              src="assets\Images\Products\JNL\Garnissage\{{matCategory}}\Print\{{material.codeProd | uppercase }}.jpg"
+              class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">
                 <ul style="list-style-type:none">
-                  <li><b>Name: </b><label>{{garnissageModel}}</label></li>
-                  <li><b>Code: </b><label>{{garnissageCode}}</label></li>
-                  <li><b>Dimensions: </b><label>{{garnissageDimensions}}</label></li>
-                  <li><b>Martindale: </b><label>{{garnissageMartindale}}</label></li>
+                  <li><b>Name: </b><label>{{material.model}}</label></li>
+                  <li><b>Code: </b><label>{{material.codeProd}}</label></li>
+                  <li><b>Dimensions: </b><label>{{material.dimensions}}</label></li>
+                  <li><b>Martindale: </b><label>{{material.martindale}}</label></li>
                   <li><b>Composition: </b></li>
-                  <li><label>{{garnissageCompositionFR}}</label></li>
+                  <li><label>{{material.compositionFR}}</label></li>
                 </ul>
-                <input type="text" id="garnId" value="{{garnissageID}}" type="hidden">
             </div>
           </div>
         </div>
         <div class="whiteSpace">
-          <div id="next" class="cursor-pointer" (click)="getNext()">next</div>
+          <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
         </div>
       </div>
     </div>

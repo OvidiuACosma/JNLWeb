@@ -112,19 +112,21 @@ button
     height: 20px;
 }
 
+.imgContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    max-width: 71.4vw;
+    max-height: 47.1vw;
+    object-fit: contain;
+}
+
 #container {
     width: 88.3vw;
     margin: auto;
-
-    padding-top: 60px;
-    /* margin-left: 30px;
-    margin-right: 30px; */
-    
-}
-
-#productImg {
-    display: flex;
-    text-align: center;
+    padding-top: var(--search-bar-height);
 }
 
 #header {
