@@ -17,13 +17,13 @@
         <h4>FILTERS</h4>
         <ul>
           <li *ngFor="let c of categoriesJSON; let i=index">
-            <div class="header-arrow">
+            <div class="header-arrow"  (click)="toggleFilters(c)">
                 <span class="header-filter">{{c}}</span>
                 <img alt="JNL Collection" src="\assets\Images\Common\arrow_down_gold.png" class="arrow">
             </div>
-            <ul>
+            <ul id="filter-{{c}}" [ngClass]="(this.toggle[c] === false) ? 'hide-item' :'show-item'">
               <li *ngFor="let d of getFilters(c); let i2=index" class="single-filter">
-                  <span><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i>&nbsp;{{d}}</span>
+                  <span (click)="selectFilter()"><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i>&nbsp;{{d}}</span>
               </li>
             </ul>
           </li>

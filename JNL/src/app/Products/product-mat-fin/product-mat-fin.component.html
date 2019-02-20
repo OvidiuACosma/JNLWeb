@@ -1,108 +1,114 @@
 <!-- CONTAINER -->
 <hr>
 <div id="container">
-  <div id="static">
-    <h5>MATERIALS<br> &amp; FINISHES</h5>
-    <br>
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
-        aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
-      <a class="nav-link" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab"
-        aria-controls="v-pills-cuir" aria-selected="false" *ngIf="cuirTab" (click)="setCategory('cuir')">Cuirs</a>
-      <a class="nav-link" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
-        aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('simili')">Simili Cuirs</a>
-      <a class="nav-link" id="v-pills-abatjour-tab" data-toggle="pill" href="#v-pills-abatjour" role="tab"
-        aria-controls="v-pills-abatjour" aria-selected="false" (click)="setCategory('abatjour')">Abat-jour</a>
-      <a class="nav-link" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab"
-        aria-controls="v-pills-metal" aria-selected="false" (click)="setCategory('metal')">Metal</a>
-      <a class="nav-link" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab"
-        aria-controls="v-pills-bois" aria-selected="false" (click)="setCategory('bois')">Bois &amp; Plaquage</a>
-      <a class="nav-link" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab"
-        aria-controls="v-pills-verre" aria-selected="false">Verre</a>
-      <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
-        aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
+    <div id="staticText" (click)="toggleElement()">
+        <h5>MATERIALS<br> &amp; FINISHES</h5>
+        <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
+      </div>
+  <div id="contentMatFin" [ngClass]="(this.toggleMat === false) ? 'hide-item' :'show-item'">
+    <div id="static">
+      <!-- <h5>MATERIALS<br> &amp; FINISHES</h5> -->
+      <br>
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
+          aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
+        <a class="nav-link" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab"
+          aria-controls="v-pills-cuir" aria-selected="false" *ngIf="cuirTab" (click)="setCategory('cuir')">Cuirs</a>
+        <a class="nav-link" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
+          aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('simili')">Simili Cuirs</a>
+        <a class="nav-link" id="v-pills-abatjour-tab" data-toggle="pill" href="#v-pills-abatjour" role="tab"
+          aria-controls="v-pills-abatjour" aria-selected="false" (click)="setCategory('abatjour')">Abat-jour</a>
+        <a class="nav-link" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab"
+          aria-controls="v-pills-metal" aria-selected="false" (click)="setCategory('metal')">Metal</a>
+        <a class="nav-link" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab"
+          aria-controls="v-pills-bois" aria-selected="false" (click)="setCategory('bois')">Bois &amp; Plaquage</a>
+        <a class="nav-link" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab"
+          aria-controls="v-pills-verre" aria-selected="false">Verre</a>
+        <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
+          aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
+      </div>
     </div>
-  </div>
-  <div id="content">
-    <div class="tab-content" id="v-pills-tabContent">
+    <div id="content">
+      <div class="tab-content" id="v-pills-tabContent">
 
-      <!-- TISSUS TAB------------------------->
-      <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
-        <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
-          <div class="scroll-container">
-            <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
-              <div class="scroll-item">
-                <a>
-                  <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                    src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
-                    (click)="sendItemToModal(item)">
-                </a>
-                <div>
-                  <h6>{{item.model}}</h6>
+        <!-- TISSUS TAB------------------------->
+        <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
+          <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+            <div class="scroll-container">
+              <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
+                <div class="scroll-item">
+                  <a>
+                    <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                      src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
+                      (click)="sendItemToModal(item)">
+                  </a>
+                  <div>
+                    <h6>{{item.model}}</h6>
+                  </div>
+                  <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
-              </div>
-            </ng-container>
-          </div>
-        </cdk-virtual-scroll-viewport>
-      </div>
+              </ng-container>
+            </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
 
-      <!-- CUIRS TAB------------------------->
-      <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
-        <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
-          <div class="scroll-container">
-            <ng-container *cdkVirtualFor="let item of cuirs" class="example-item">
-              <div class="scroll-item">
-                <a>
-                  <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                    src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                    (click)="sendItemToModal(item)">
-                </a>
-                <div>
-                  <h6>{{item.model}}</h6>
+        <!-- CUIRS TAB------------------------->
+        <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
+          <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+            <div class="scroll-container">
+              <ng-container *cdkVirtualFor="let item of cuirs" class="example-item">
+                <div class="scroll-item">
+                  <a>
+                    <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                      src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
+                      (click)="sendItemToModal(item)">
+                  </a>
+                  <div>
+                    <h6>{{item.model}}</h6>
+                  </div>
+                  <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
-              </div>
-            </ng-container>
-          </div>
-        </cdk-virtual-scroll-viewport>
-      </div>
+              </ng-container>
+            </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
 
-      <!-- SIMILI CUIRS TAB------------------------->
-      <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
-        <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
-          <div class="scroll-container">
-            <ng-container *cdkVirtualFor="let item of similiCuirs" class="example-item">
-              <div class="scroll-item">
-                <a>
-                  <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                    src="assets\Images\Products\JNL\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
-                    (click)="sendItemToModal(item)">
-                </a>
-                <div>
-                  <h6>{{item.model}}</h6>
+        <!-- SIMILI CUIRS TAB------------------------->
+        <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
+          <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+            <div class="scroll-container">
+              <ng-container *cdkVirtualFor="let item of similiCuirs" class="example-item">
+                <div class="scroll-item">
+                  <a>
+                    <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                      src="assets\Images\Products\JNL\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
+                      (click)="sendItemToModal(item)">
+                  </a>
+                  <div>
+                    <h6>{{item.model}}</h6>
+                  </div>
+                  <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
-              </div>
-            </ng-container>
-          </div>
-        </cdk-virtual-scroll-viewport>
-      </div>
+              </ng-container>
+            </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
 
-      <div class="tab-pane fade" id="v-pills-abatjour" role="tabpanel" aria-labelledby="v-pills-abatjour-tab">
-        <b>---Abat-jour</b>
-      </div>
-      <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
-        <b>---Metal</b>
-      </div>
-      <div class="tab-pane fade" id="v-pills-bois" role="tabpanel" aria-labelledby="v-pills-bois-tab">
-        <b>---Bois &amp; Plaquage</b>
-      </div>
-      <div class="tab-pane fade" id="v-pills-verre" role="tabpanel" aria-labelledby="v-pills-verre-tab">
-        <b>---Verre</b>
-      </div>
-      <div class="tab-pane fade" id="v-pills-miroir" role="tabpanel" aria-labelledby="v-pills-miroir-tab">
-        <b>---Miroir</b>
+        <div class="tab-pane fade" id="v-pills-abatjour" role="tabpanel" aria-labelledby="v-pills-abatjour-tab">
+          <b>---Abat-jour</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
+          <b>---Metal</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-bois" role="tabpanel" aria-labelledby="v-pills-bois-tab">
+          <b>---Bois &amp; Plaquage</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-verre" role="tabpanel" aria-labelledby="v-pills-verre-tab">
+          <b>---Verre</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-miroir" role="tabpanel" aria-labelledby="v-pills-miroir-tab">
+          <b>---Miroir</b>
+        </div>
       </div>
     </div>
   </div>

@@ -321,11 +321,6 @@ button
         width: 80vw !important;
     }
 
-    
-    .info_form > div > div:first-child {
-        margin-bottom: 5vw;
-    }
-
     h2 {
         font-size: 5.6vw;
     }
@@ -337,11 +332,25 @@ button
     .info_div
     {
         font-size: 4.5vw;
+        width: 100vw;
         
     }
    
     .info_div > div > p {
         font-size: 4.5vw;
+    }
+
+    .home_links {
+        font-size: 3.88vw;
+    }
+
+
+    #fav-download {
+        width: 70vw;
+    }
+
+    h3 {
+        font-size: 4.11vw;
     }
    
 }

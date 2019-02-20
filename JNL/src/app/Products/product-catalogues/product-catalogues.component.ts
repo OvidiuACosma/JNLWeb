@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCataloguesComponent implements OnInit {
 
+  toggleCatalogues = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleElement() {
+    this.toggleCatalogues = !this.toggleCatalogues;
   }
 
 }

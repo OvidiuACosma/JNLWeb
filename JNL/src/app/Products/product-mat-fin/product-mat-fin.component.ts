@@ -25,6 +25,8 @@ export class ProductMatFinComponent implements OnInit {
   // test tab visibility
   public cuirTab: boolean;
 
+  toggleMat = false;
+
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
@@ -103,5 +105,10 @@ export class ProductMatFinComponent implements OnInit {
         document.getElementById('thumbnail-img').click();
       }
     };
+  }
+
+
+  toggleElement() {
+    this.toggleMat = !this.toggleMat;
   }
 }

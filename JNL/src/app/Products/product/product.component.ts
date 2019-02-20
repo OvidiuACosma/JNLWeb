@@ -23,6 +23,7 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   country: any;
   countryName: any;
 
+
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService,
               private router: Router,

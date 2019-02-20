@@ -14,6 +14,8 @@ export class ProductDescriptionComponent implements OnInit {
   public parts: string[] = [];
   public materials: string[] = [];
 
+  toggle = false;
+
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
@@ -44,5 +46,10 @@ export class ProductDescriptionComponent implements OnInit {
     // console.log('MATERIALS: ', this.materials);
     return this.materials;
   }
+
+  toggleElement() {
+    this.toggle = !this.toggle;
+  }
+
 }
 

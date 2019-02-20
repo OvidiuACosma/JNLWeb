@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDimensionsComponent implements OnInit {
 
+  toggle = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleElement() {
+    this.toggle = !this.toggle;
   }
 
 }

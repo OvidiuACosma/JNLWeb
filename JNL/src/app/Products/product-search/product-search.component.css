@@ -130,11 +130,11 @@ cdk-virtual-scroll-viewport {
     margin-top: 3.8vw;
 }
 
-.remove-item {
+.remove-item, .hide-item {
     display: none;
 }
 
-.non-remove {
+.non-remove, .show-item {
     display: block;
 }
 
