@@ -9,3 +9,26 @@
     <h5>Catalog</h5>
   </div>
 </div>
+<div id="info-form">
+  <form [formGroup]="informationReq" (ngSubmit)="onSubmit(informationReq)">
+    <h1>Information Request</h1>
+    <br>
+    <input type="checkbox" formControlName="" /> I would like to receive the catalog
+    <br>
+    <input type="checkbox" formControlName="" /> I would like to be contacted
+    <br>
+    <input type="checkbox" formControlName="" /> I would like to be sent a rate/quotation
+    <br>
+    <input type="checkbox" formControlName="" /> I would like a meeting at the show
+    <br>
+    <input type="checkbox" formControlName="" /> I would like to be contacted about other similar products
+    <br>
+    <div class="form-group">
+      <!-- <label>First Name</label>
+      <input formControlName="name" placeholder="Your name"> -->
+    </div>
+    <div class="form-group">
+        <a class="btn-envoyer">ENVOYER</a><br>
+    </div>
+  </form>
+</div>
