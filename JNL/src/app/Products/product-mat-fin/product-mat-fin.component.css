@@ -167,7 +167,17 @@ ul {
     }
 
     .hide-item {
-        display: none;
+        display: none !important;
+    }
+
+    .scroll-container, .example-viewport {
+        width: 88.3vw;
+    }
+
+    .img-button {
+        width: 37.5vw;
+        height: auto;
+        margin: auto;
     }
 
     #staticText {
@@ -187,5 +197,9 @@ ul {
 
     #container {
         flex-direction: column;
+    }
+
+    #contentMatFin {
+        flex-direction: column-reverse;
     }
 }
