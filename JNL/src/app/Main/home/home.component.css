@@ -219,8 +219,10 @@ hr {
 
 #une_histoire > div {
     margin: auto;
-    padding-left: 17vw;
-    padding-right: 17vw;
+    /* padding-left: 17vw;
+    padding-right: 17vw; */
+
+    width: 60.8vw;
 
     text-align: center;
 }
@@ -359,6 +361,8 @@ hr {
     display: flex;
 
     color: white;
+
+    margin-bottom: 9vw;
 }
 
 /*NO VIDEO*/
@@ -416,6 +420,10 @@ video {
     text-align: center;
 
     display: flex;
+}
+
+.projets-text > h4 {
+    font-size: 1.8vw;
 }
 
 #projets > div {

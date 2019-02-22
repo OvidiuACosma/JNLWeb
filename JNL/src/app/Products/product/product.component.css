@@ -16,6 +16,15 @@ h1 {
     text-align: center;
 }
 
+
+h2 {
+    /* margin-top: 5.9vw; */
+    font-family: Atak-Light;
+    font-size: 3.5vw;
+
+    text-align: center;
+}
+
 h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
@@ -24,6 +33,76 @@ h3 {
 
     margin-bottom: 1.5vw;
 }
+
+
+textarea{
+    margin: auto;
+    background-color: #F6EEDD;
+    border: none;
+    width: 100%;
+    outline: none;
+
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+}
+
+i {
+    outline: none;
+}
+
+input, select
+{
+    /* margin: auto; */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+
+    outline: none;
+    border: hidden;
+
+    background-color: transparent;
+
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+    width: 21vw;
+
+    border: none;
+    border-bottom: 1.5px solid black;
+
+    margin-top: 1.5vw;
+    padding-bottom: 0px;
+}
+
+button
+{
+    text-transform: uppercase;
+
+    margin: auto;
+    background-color: white;
+    color: black;
+
+    margin-top: 5.3em;
+    margin-bottom: 4em;
+    border: none;
+
+    /*width: 20%;*/
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+}
+
+
 
 .gold {
     color: #DBBB76;
@@ -88,4 +167,190 @@ h3 {
     font-size: 1.35vw; /*1em;*/
     width: 20vw;
     text-transform: uppercase;
+}
+
+
+.info_div
+{
+    background-color: #E9D6AC;
+    width: calc(100vw - 77px);
+    left: 0;
+
+    text-align: center;
+
+    /* margin-bottom: 5vh !important; */
+    margin-top: 7.5vw !important;
+
+    font-family: Atak-Regular;
+    font-size: 20px;
+    padding-top: 3.7vw;
+    
+}
+
+.info_div > h2 {
+    margin-top: 0;
+}
+
+.info_form
+{
+    width: 44vw;
+    margin: auto;
+    margin-top: 4.8vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    text-align: left;
+}
+
+.info_form:focus, input:focus, textarea:focus, select:focus, button:focus
+{
+    outline: none;
+}
+
+.info_form > div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+
+    width: 44vw;
+    margin: auto;
+}
+
+.info_form > div > div{
+    width: 44vw;
+    margin-top: 0px;
+
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+
+.option-label {
+    font-family: Atak-Regular;
+    font-size: 1.4vw;
+}
+
+.option-label:hover {
+    cursor: default;
+}
+
+
+#checks {
+    /* width: 70%; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    align-content: center;
+
+    margin-bottom: 5.1vw;
+}
+
+#checks > div {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#send {
+    width: 16.5vw;
+    margin-top: 4.3vw;
+
+    font-family : Atak-Light;
+    font-size : 1.4vw;
+    letter-spacing : 1.28px;
+    text-transform : uppercase;
+}
+
+
+#details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-top: 3.5vw;
+}
+
+
+
+@media only screen and (max-width: 800px){
+    .info_div > p{
+        font-size: 1em;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        font-size: 9.7vw;
+    }
+
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
+        word-wrap: normal;
+        font-size: 5.6vw !important;
+    }
+
+    h4 {
+        width: 80vw;
+    }
+
+    button {
+        margin-top: 0px;
+    }
+
+    input {
+        margin-top: 20px;
+    }
+
+    .info_form {
+        width: 100vw;
+    }
+
+    .info_form > div {
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .info_form > div > div {
+        width: 80vw !important;
+    }
+
+    h2 {
+        font-size: 5.6vw;
+    }
+    
+    h4 {
+        font-size: 4.2vw;
+    }
+   
+    .info_div
+    {
+        font-size: 4.5vw;
+        width: 100vw;
+        
+    }
+   
+    .info_div > div > p {
+        font-size: 4.5vw;
+    }
+
+    .home_links {
+        font-size: 3.88vw;
+    }
+
+
+    #fav-download {
+        width: 70vw;
+    }
+
+    h3 {
+        font-size: 4.11vw;
+    }
+   
 }

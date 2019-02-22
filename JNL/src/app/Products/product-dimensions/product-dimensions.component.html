@@ -1,9 +1,10 @@
 <hr>
 <div id="container">
   <br>
-  <div id="staticText">
+  <div id="staticText" (click)="toggleElement()">
     <h5>TECHNICAL<br>DRAWINGS</h5>
+    <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow">
   </div>
-  <div id="description">
+  <div id="description"  [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'">
   </div>
 </div>

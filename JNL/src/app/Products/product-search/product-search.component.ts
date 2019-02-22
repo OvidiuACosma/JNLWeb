@@ -26,6 +26,8 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
   total: number;
   res: any;
 
+  toggle: boolean[] = [];
+
   constructor(private router: Router,
     private route: ActivatedRoute,
     private dataex: DataExchangeService,
@@ -34,6 +36,7 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     }
 
   ngOnInit() {
+
     this.dataex.currentLanguage
       .subscribe(lang => {
       this.language = lang || 'EN';
@@ -43,8 +46,11 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
       .subscribe(p => {
         this.res = p[0];
         this.categoriesJSON = new Set(this.res[this.language.toUpperCase()].map(c => c.category));
+
+        this.toggle[this.categoriesJSON] = false;
      });
     });
+   // this.toggle[this.nrCategories] = true;
 
     const numberAll = 15;
     this.total = numberAll;
@@ -99,6 +105,16 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
       this.total--;
 
       // REMOVE FROM DB ?
+    }
+
+    selectFilter() {
+      this.scroller = false;
+    }
+
+    toggleFilters(index: any) {
+      // true = show, false = hide
+      this.toggle[index] = !this.toggle[index];
+      this.scroller = false;
     }
 
   ngAfterViewChecked() {

@@ -9,6 +9,14 @@ h5 {
     text-transform: uppercase;
 }
 
+.hide-item, .show-item {
+    display: block;
+}
+
+.arrow {
+    display: none;
+}
+
 #container {
     /* padding-top: 30px; */
     display: flex;
@@ -16,4 +24,39 @@ h5 {
 
 #staticText {
     width: 30.55vw;
+}
+
+@media only screen and (max-width: 800px){
+
+    .arrow {
+        /* display: inline; */
+        margin: auto;
+        margin-left: 0px;
+        display: block;
+        width: 13px;
+        height: 13px;
+    }
+
+    .hide-item {
+        display: none;
+    }
+
+    #staticText {
+        width: 88.3vw;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: baseline;
+    }
+
+    #staticText > h5 {
+        font-size: 4.16vw;
+        text-align: center;
+
+        width: 75.22vw;
+    }
+
+    #container {
+        flex-direction: column;
+    }
 }
