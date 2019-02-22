@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
   navBarButtonSrc: string;
   navBarButtonText: string;
 
-
   constructor(private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService) { }
