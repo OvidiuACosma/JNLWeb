@@ -15,7 +15,6 @@ h6 {
 
 /* data list from modal */
 ul {
-    margin-left: 10px;
     padding: 0px !important;
  }
 
@@ -112,9 +111,9 @@ ul {
 }
 
 .arrow {
-    height: 3.5vw;
+    height: 3vw;
     width: 1.5vw;
-    margin-top: -15vw;
+    margin-top: -13vw;
 }
 
 .whiteSpace {
@@ -127,6 +126,7 @@ ul {
 
 .card {
     margin: auto;
+    border: 0px !important;
 }
 
 .card-body {
@@ -139,9 +139,5 @@ ul {
 }
 
 #static {
-    flex:1;
-}
-
-#content {
-    flex:3;
+    width: 30.55vw;
 }

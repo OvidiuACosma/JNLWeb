@@ -9,15 +9,29 @@ h5 {
     text-transform: uppercase;
 }
 
+.btn-envoyer
+{
+    background-color: white;
+    padding: 0.2em;
+    padding-left: 1.35vw;
+    padding-right: 1.35vw;
+    font-size: 1.35vw; /*1em;*/
+    width: 30vw;
+}
+
 #container {
     /* padding-top: 30px; */
     display: flex;
 }
 
 #staticText {
-    flex: 1;
+    width: 30.55vw;
 }
 
-#content {
-    flex: 3;
+#info-form {
+    display: flex;
+    width: 100vw;
+    background-color: #DBBB76;
+    justify-content: center;
+    padding:5vw;
 }
