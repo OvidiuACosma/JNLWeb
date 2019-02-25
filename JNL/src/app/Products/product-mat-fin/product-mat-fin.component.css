@@ -69,15 +69,16 @@ ul {
     height: 2.4vw;
 }
 
+
 /* workaround to fix bootstrap`s modal bug in Angular
-   Without this fix the dark background will cover the modal. */
+   Without this fix the dark background will cover the modal.
 .modal {
     background-color: rgba(0, 0, 0, 0.3);
   }
 
 .modal-backdrop {
     position: relative;
-  }
+  }  */
 
 .modal-dialog {
     width: 70vw !important;
