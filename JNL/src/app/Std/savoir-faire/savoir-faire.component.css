@@ -86,6 +86,11 @@ video {
     height: auto;
 }
 
+#atelier > h4 {
+    font-family: Atak-Medium;
+    width: 59.7vw;
+}
+
 .ateliers-flex {
     width: 68.5vw;
     margin: auto;
@@ -131,6 +136,10 @@ video {
     font-size: 1.4vw;
     text-align: left;
 } 
+
+#af2 > div > div {
+    margin-bottom: 0px;
+}
 
 .gallery-flex {
     width: 81.9%;
@@ -302,7 +311,7 @@ video {
     margin: auto;
     display: flex;
     flex-direction: column !important;
-    margin-top: 5.3vw;
+    /* margin-top: 5.3vw; */
 }
 
 .carousel-control-prev, .carousel-control-next {
