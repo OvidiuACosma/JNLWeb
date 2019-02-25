@@ -1,12 +1,42 @@
 <hr>
 <div id="container">
-  <br>
-  <div id="staticText" (click)="toggleElement()">
-    <h5>DOWNLOADS</h5>
-    <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow">
+  <div id="header">
+    <br>
+    <div id="staticText">
+      <h2>DOWNLOADS</h2>
+    </div>
+    <div id="content">
+      <h3>Product Sheet</h3>
+      <h3>Catalog</h3>
+    </div>
   </div>
-  <div id="content" [ngClass]="(this.toggleCatalogues === false) ? 'hide-item' : 'show-item'">
-    <h5>Product Sheet</h5>
-    <h5>Catalog</h5>
+  <br>
+  <div id="info-form">
+    <form [formGroup]="informationReq" (ngSubmit)="onSubmit(informationReq)">
+      <h1>Information Request</h1>
+      <br>
+      <input type="checkbox" class="chk-option" formControlName="" /> <span> I would like to receive the catalog</span>
+      <br>
+      <input type="checkbox" class="chk-option" formControlName="" checked /> <span> I would like to be contacted</span>
+      <br>
+      <input type="checkbox" class="chk-option" formControlName="" /> <span> I would like to be sent a
+        rate/quotation</span>
+      <br>
+      <input type="checkbox" class="chk-option" formControlName="" /> <span> I would like a meeting at the show</span>
+      <br>
+      <input type="checkbox" class="chk-option" formControlName="" /> <span> I would like to be contacted about other
+        similar products</span>
+      <br>
+      <br>
+      <div class="form-group">
+        <span class="required">To optimize your exchanges, please specify your need</span><br>
+        <!-- <input formControlName="name" placeholder="Your name"> -->
+        <input formControlName="">
+      </div>
+      <br>
+      <div class="form-group" style="text-align: center">
+        <a class="btn-envoyer">ENVOYER</a><br>
+      </div>
+    </form>
   </div>
 </div>

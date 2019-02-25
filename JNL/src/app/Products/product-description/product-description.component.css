@@ -2,11 +2,13 @@ hr{
     border: 0.5px solid #DBBB76;
 }
 
-h5 {
-    font-family: Atak-Light;
-    font-size: 1.8vw;
+h2 {
+    font-size: 2.4vw;
+}
 
-    text-transform: uppercase;
+p {
+    font-family: Atak-Regular;
+    font-size: 1.48vw;
 }
 
 .hide-item, .show-item {
