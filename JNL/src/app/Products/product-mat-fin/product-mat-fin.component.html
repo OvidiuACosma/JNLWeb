@@ -1,6 +1,7 @@
 <!-- CONTAINER -->
 <hr>
 <div id="container">
+<<<<<<< HEAD
     <div id="staticText" (click)="toggleElement()">
         <h5>MATERIALS<br> &amp; FINISHES</h5>
         <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
@@ -27,6 +28,28 @@
         <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
           aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
       </div>
+=======
+  <div id="static">
+    <h2>MATERIALS<br> &amp; FINISHES</h2>
+    <br>
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
+        aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
+      <a class="nav-link" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab"
+        aria-controls="v-pills-cuir" aria-selected="false" *ngIf="cuirTab" (click)="setCategory('cuir')">Cuirs</a>
+      <a class="nav-link" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
+        aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('simili')">Simili Cuirs</a>
+      <a class="nav-link" id="v-pills-abatjour-tab" data-toggle="pill" href="#v-pills-abatjour" role="tab"
+        aria-controls="v-pills-abatjour" aria-selected="false" (click)="setCategory('abatjour')">Abat-jour</a>
+      <a class="nav-link" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab"
+        aria-controls="v-pills-metal" aria-selected="false" (click)="setCategory('metal')">Metal</a>
+      <a class="nav-link" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab"
+        aria-controls="v-pills-bois" aria-selected="false" (click)="setCategory('bois')">Bois &amp; Plaquage</a>
+      <a class="nav-link" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab"
+        aria-controls="v-pills-verre" aria-selected="false">Verre</a>
+      <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
+        aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
+>>>>>>> c2405ea3984a214abc61557fb467e353c1a1b79e
     </div>
     <div id="content">
       <div class="tab-content" id="v-pills-tabContent">

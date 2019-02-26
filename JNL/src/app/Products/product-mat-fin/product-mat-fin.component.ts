@@ -88,14 +88,23 @@ export class ProductMatFinComponent implements OnInit {
 
   navigate(direction: string) {
     this.index = this.currentMatList.indexOf(this.material);
-    if (direction === 'previous' && this.index >= 1) {
-      this.index--;
-    } else if (direction === 'next' && this.index < this.currentMatList.length - 1) {
-      this.index++;
+    if (direction === 'previous') {
+      if (this.index >= 1) {
+        this.index--;
+      } else {
+        this.index = this.currentMatList.length - 1;
+      }
+    } else if (direction === 'next') {
+      if (this.index < this.currentMatList.length - 1) {
+        this.index++;
+      } else {
+        this.index = 0;
+      }
     }
     this.material = this.currentMatList[this.index];
   }
 
+  /*
   closeModal() {
     const modal = document.getElementById('garnissageModal');
 
@@ -109,5 +118,5 @@ export class ProductMatFinComponent implements OnInit {
 
   toggleElement() {
     this.toggleMat = !this.toggleMat;
-  }
+  }*/
 }

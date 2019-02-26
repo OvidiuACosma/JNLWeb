@@ -2,10 +2,9 @@ hr {
     border: 0.5px solid #DBBB76;
 }
 
-h5 {
+h2 {
     font-family: Atak-Light;
-    font-size: 1.8vw;
-    text-transform: uppercase;
+    font-size: 2.4vw;
 }
 
 h6 {
@@ -78,15 +77,16 @@ ul {
     height: 2.4vw;
 }
 
+
 /* workaround to fix bootstrap`s modal bug in Angular
-   Without this fix the dark background will cover the modal. */
+   Without this fix the dark background will cover the modal.
 .modal {
     background-color: rgba(0, 0, 0, 0.3);
   }
 
 .modal-backdrop {
     position: relative;
-  }
+  }  */
 
 .modal-dialog {
     width: 70vw !important;
