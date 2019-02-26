@@ -10,7 +10,7 @@
     <h5>Catalog</h5>
   </div>
 </div>
-<div id="info-form">
+<div id="info-form" *ngIf="informationReq">
   <form [formGroup]="informationReq" (ngSubmit)="onSubmit(informationReq)">
     <h1>Information Request</h1>
     <br>

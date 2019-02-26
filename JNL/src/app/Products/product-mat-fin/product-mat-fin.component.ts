@@ -107,7 +107,6 @@ export class ProductMatFinComponent implements OnInit {
     };
   }
 
-
   toggleElement() {
     this.toggleMat = !this.toggleMat;
   }

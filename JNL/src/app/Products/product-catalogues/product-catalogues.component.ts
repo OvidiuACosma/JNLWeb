@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductCataloguesComponent implements OnInit {
 
   toggleCatalogues = false;
+  informationReq: any;
 
   constructor() { }
 
