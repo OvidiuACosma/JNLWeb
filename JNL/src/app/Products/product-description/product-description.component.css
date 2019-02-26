@@ -40,7 +40,7 @@ p {
     }
 
     .hide-item {
-        display: none;
+        display: none !important;
     }
 
     #staticText {

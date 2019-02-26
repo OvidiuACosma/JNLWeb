@@ -29,12 +29,15 @@ h3 {
 }
 
 .home_links {
+    font-family: Atak-Light;
     border: 1.5px solid #DBBB76;
-    padding: 0.3em;
-    padding-left: 1.35vw;
-    padding-right: 1.35vw;
-    font-size: 1.35vw; /*1em;*/
+    padding: .38vw; /*0.3em;*/
+    padding-left: 1.25vw; /*1em;*/
+    padding-right: 1.25vw; /*1em;*/
+
+    font-size: 1.25vw;
     text-transform: uppercase;
+    letter-spacing : 1.28px;
 }
 
 .marques-image {

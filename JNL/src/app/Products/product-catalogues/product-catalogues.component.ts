@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-product-catalogues',
@@ -17,6 +17,7 @@ export class ProductCataloguesComponent implements OnInit {
 
   toggleElement() {
     this.toggleCatalogues = !this.toggleCatalogues;
+    console.log(this.toggleCatalogues);
   }
 
 }
