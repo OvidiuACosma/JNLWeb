@@ -22,7 +22,8 @@
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #777; 
+    /* background: #777;  */
+    background: #121A2D;
   }
   
   /* Handle on hover */
