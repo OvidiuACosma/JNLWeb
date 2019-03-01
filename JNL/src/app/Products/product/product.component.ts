@@ -102,7 +102,7 @@ export class ProductComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  selectMarque(nr: number) {
+  selectOption(nr: number) {
     if (this.selected[nr] === 1) {
       this.selected[nr] = 0;
     } else {
@@ -110,7 +110,6 @@ export class ProductComponent implements OnInit, AfterViewChecked {
     }
     this.scroller = false;
   }
-
 
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
@@ -121,7 +120,7 @@ export class ProductComponent implements OnInit, AfterViewChecked {
         }
         this.scroller = true;
       } else if (this.scroller === true) {
-          window.scrollTo(0, 0);
+          // window.scrollTo(0, 0);
         }
     });
   }

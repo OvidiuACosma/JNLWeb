@@ -16,16 +16,16 @@
 
   <div id="fav-download">
     <div>
-      <img alt="JNL Collection" src="/assets/Images/Common/add_fav_icon.png"  height="16px">
+      <img alt="JNL Collection" src="/assets/Images/Common/add_fav_icon.png" height="16px">
       <h3>&nbsp;&nbsp;Add to Favorites</h3>
     </div>
 
     <h3>&nbsp;&nbsp;&#8213;&nbsp;&nbsp;</h3>
 
     <div>
-        <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png"  height="16px">
-        <h3>&nbsp;&nbsp;Print</h3>
-      </div>
+      <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png" height="16px">
+      <h3>&nbsp;&nbsp;Print</h3>
+    </div>
   </div>
 
   <!-- PRODUCT DESCRIPTION-->
@@ -42,41 +42,41 @@
   <div>
     <app-product-dimensions></app-product-dimensions>
   </div>
-  
+
   <!-- PRODUCT DOWNLOADS-->
   <div>
     <app-product-catalogues></app-product-catalogues>
   </div>
 </div>
 
-  <div class="info_div">
-    <h2>{{text.infoTitle}}</h2>
-    <form class="info_form">
-      <div id="checks">
-        <div *ngFor="let item of text.infoOptions; let k = index" (click)="selectMarque(k)">
-            <span><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
-            <span class="option-label">&nbsp;&nbsp;{{item}}</span>
-        </div>
+<div class="info_div">
+  <h2>{{text.infoTitle}}</h2>
+  <form class="info_form">
+    <div id="checks">
+      <div *ngFor="let item of text.infoOptions; let k = index" (click)="selectOption(k)">
+        <span><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
+        <span class="option-label">&nbsp;&nbsp;{{item}}</span>
       </div>
-  
-      <div>
-        <textarea placeholder={{text.specifyText}} rows="6" required maxlength="500"></textarea>
-      </div>
+    </div>
 
-      <div id="details">
-        <input placeholder="{{text.firstName}}" required/>
-        <input placeholder="{{text.lastName}}" required/>
-        <select (click)="countryClick()">
-            <option selected disabled>{{text.country}} 🡫</option>
-            <option *ngFor="let ctry of this.countryName; let x = index" >{{countryName[x].name}}</option>
-          </select>
-        <input placeholder="{{text.address}}"/>
-        <input placeholder="{{text.city}}"/>
-        <input placeholder="{{text.province}}"/>
-        <input placeholder="{{text.zip}}"/>
-        <input placeholder="{{text.email}}" required/>
-      </div>
-      <br>
-      <button id="send">{{text.send}}</button>
-    </form>
-  </div>
+    <div>
+      <textarea placeholder={{text.specifyText}} rows="6" required maxlength="500"></textarea>
+    </div>
+
+    <div id="details">
+      <input placeholder="{{text.firstName}}" required />
+      <input placeholder="{{text.lastName}}" required />
+      <select (click)="countryClick()">
+        <option selected disabled>{{text.country}} 🡫</option>
+        <option *ngFor="let ctry of this.countryName; let x = index">{{countryName[x].name}}</option>
+      </select>
+      <input placeholder="{{text.address}}" />
+      <input placeholder="{{text.city}}" />
+      <input placeholder="{{text.province}}" />
+      <input placeholder="{{text.zip}}" />
+      <input placeholder="{{text.email}}" required />
+    </div>
+    <br>
+    <button id="send">{{text.send}}</button>
+  </form>
+</div>

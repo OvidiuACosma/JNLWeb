@@ -114,9 +114,9 @@ export class ProductMatFinComponent implements OnInit {
         document.getElementById('thumbnail-img').click();
       }
     };
-  }
+  }*/
 
   toggleElement() {
     this.toggleMat = !this.toggleMat;
-  }*/
+  }
 }
