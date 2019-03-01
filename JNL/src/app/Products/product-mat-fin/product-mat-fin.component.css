@@ -50,21 +50,21 @@ ul {
     height: 37vw;
   }
 
-  .scroll-container {
+.scroll-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 10px 10px 10px 0px;
-  }
+}
 
-  .scroll-item {
+.scroll-item {
     display: flex;
     flex-direction:column;
     width: 14.86vw;
     margin-right: 2vw;
     align-items: center;
-  }
+}
 
 .img-button {
     width:14.86vw;
@@ -76,17 +76,6 @@ ul {
 .clear {
     height: 2.4vw;
 }
-
-
-/* workaround to fix bootstrap`s modal bug in Angular
-   Without this fix the dark background will cover the modal.
-.modal {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-.modal-backdrop {
-    position: relative;
-  }  */
 
 .modal-dialog {
     width: 70vw !important;
@@ -175,9 +164,11 @@ ul {
     }
 
     .img-button {
-        width: 37.5vw;
+        width:14.86vw;
+        height: 8vw;
+        /* width: 37.5vw;
         height: auto;
-        margin: auto;
+        margin: auto;*/
     }
 
     #staticText {
@@ -198,8 +189,8 @@ ul {
     #container {
         flex-direction: column;
     }
-
+    /*
     #contentMatFin {
         flex-direction: column-reverse;
-    }
+    } */
 }

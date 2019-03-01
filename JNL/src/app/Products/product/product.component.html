@@ -6,10 +6,59 @@
     <h4 class="gold">{{prodDesc.familyFr | uppercase}}</h4>
   </div>
 
-  <div class="imgContainer">
-    <img class="img" src="assets\Images\Products\JNL\{{family}}\{{prodName}}_01.jpg" alt="">
+  <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+    <!-- Indicators -->
+    <!--
+    <ul class='carousel-indicators'>
+      <li data-target='#carousel-custom' data-slide-to='0' class='active'></li>
+      <li data-target='#carousel-custom' data-slide-to='1'></li>
+      <li data-target='#carousel-custom' data-slide-to='2'></li>
+      <li data-target='#carousel-custom' data-slide-to='3'></li>
+    </ul> -->
+    <div class="carousel-inner">
+
+      <div class='carousel-item active'>
+        <div class="carousel-item-image">
+          <img src="assets\Images\Products\JNL\{{family}}\{{prodName}}_01.jpg" alt="{{family}} {{prodName}}"
+            class="slide-image">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="carousel-item-image">
+          <img src="assets\Images\Products\JNL\{{family}}\{{prodName}}_01.jpg" alt="{{family}} {{prodName}}"
+            class="slide-image">
+        </div>
+      </div>
+
+      <div class='carousel-item'>
+        <div class="carousel-item-image">
+          <img src="assets\Images\Products\JNL\{{family}}\{{prodName}}_01.jpg" alt="{{family}} {{prodName}}"
+            class="slide-image">
+        </div>
+      </div>
+
+      <div class='carousel-item'>
+        <div class="carousel-item-image">
+          <img src="assets\Images\Products\JNL\{{family}}\{{prodName}}_01.jpg" alt="{{family}} {{prodName}}"
+            class="slide-image">
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
+      <img alt="" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next'>
+      <img alt="" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <div class="clear"></div>
+  <br>
+  <br>
+
   <div id="footer">
     <a class="home_links">PRICE LIST REQUEST</a><br>
   </div>

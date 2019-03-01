@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from 'src/app/_services';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @Component({
   selector: 'app-product',

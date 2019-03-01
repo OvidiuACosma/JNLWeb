@@ -7,7 +7,6 @@
   </div>
   <div id="contentMatFin" [ngClass]="(this.toggleMat === false) ? 'hide-item' :'show-item'">
     <div id="static">
-      <!-- <h5>MATERIALS<br> &amp; FINISHES</h5> -->
       <br>
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
@@ -27,134 +26,135 @@
         <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
           aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
       </div>
-      <div id="content">
-        <div class="tab-content" id="v-pills-tabContent">
+    </div>
+    <div id="content">
+      <div class="tab-content" id="v-pills-tabContent">
 
-          <!-- TISSUS TAB------------------------->
-          <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
-            <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
-              <div class="scroll-container">
-                <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
-                  <div class="scroll-item">
-                    <a>
-                      <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                        src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
-                        (click)="sendItemToModal(item)">
-                    </a>
-                    <div>
-                      <h6>{{item.model}}</h6>
-                    </div>
-                    <div class="clear"></div>
+        <!-- TISSUS TAB------------------------->
+        <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
+          <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+            <div class="scroll-container">
+              <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
+                <div class="scroll-item">
+                  <a>
+                    <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                      src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
+                      (click)="sendItemToModal(item)">
+                  </a>
+                  <div>
+                    <h6>{{item.model}}</h6>
                   </div>
-                </ng-container>
-              </div>
-            </cdk-virtual-scroll-viewport>
-          </div>
+                  <div class="clear"></div>
+                </div>
+              </ng-container>
+            </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
 
-          <!-- CUIRS TAB------------------------->
-          <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
-            <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
-              <div class="scroll-container">
-                <ng-container *cdkVirtualFor="let item of cuirs" class="example-item">
-                  <div class="scroll-item">
-                    <a>
-                      <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                        src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                        (click)="sendItemToModal(item)">
-                    </a>
-                    <div>
-                      <h6>{{item.model}}</h6>
-                    </div>
-                    <div class="clear"></div>
+        <!-- CUIRS TAB------------------------->
+        <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
+          <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+            <div class="scroll-container">
+              <ng-container *cdkVirtualFor="let item of cuirs" class="example-item">
+                <div class="scroll-item">
+                  <a>
+                    <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                      src="assets\Images\Products\JNL\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
+                      (click)="sendItemToModal(item)">
+                  </a>
+                  <div>
+                    <h6>{{item.model}}</h6>
                   </div>
-                </ng-container>
-              </div>
-            </cdk-virtual-scroll-viewport>
-          </div>
+                  <div class="clear"></div>
+                </div>
+              </ng-container>
+            </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
 
-          <!-- SIMILI CUIRS TAB------------------------->
-          <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
-            <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
-              <div class="scroll-container">
-                <ng-container *cdkVirtualFor="let item of similiCuirs" class="example-item">
-                  <div class="scroll-item">
-                    <a>
-                      <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                        src="assets\Images\Products\JNL\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
-                        (click)="sendItemToModal(item)">
-                    </a>
-                    <div>
-                      <h6>{{item.model}}</h6>
-                    </div>
-                    <div class="clear"></div>
+        <!-- SIMILI CUIRS TAB------------------------->
+        <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
+          <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+            <div class="scroll-container">
+              <ng-container *cdkVirtualFor="let item of similiCuirs" class="example-item">
+                <div class="scroll-item">
+                  <a>
+                    <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
+                      src="assets\Images\Products\JNL\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
+                      (click)="sendItemToModal(item)">
+                  </a>
+                  <div>
+                    <h6>{{item.model}}</h6>
                   </div>
-                </ng-container>
-              </div>
-            </cdk-virtual-scroll-viewport>
-          </div>
+                  <div class="clear"></div>
+                </div>
+              </ng-container>
+            </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
 
-          <div class="tab-pane fade" id="v-pills-abatjour" role="tabpanel" aria-labelledby="v-pills-abatjour-tab">
-            <b>---Abat-jour</b>
-          </div>
-          <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
-            <b>---Metal</b>
-          </div>
-          <div class="tab-pane fade" id="v-pills-bois" role="tabpanel" aria-labelledby="v-pills-bois-tab">
-            <b>---Bois &amp; Plaquage</b>
-          </div>
-          <div class="tab-pane fade" id="v-pills-verre" role="tabpanel" aria-labelledby="v-pills-verre-tab">
-            <b>---Verre</b>
-          </div>
-          <div class="tab-pane fade" id="v-pills-miroir" role="tabpanel" aria-labelledby="v-pills-miroir-tab">
-            <b>---Miroir</b>
-          </div>
+        <div class="tab-pane fade" id="v-pills-abatjour" role="tabpanel" aria-labelledby="v-pills-abatjour-tab">
+          <b>---Abat-jour</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
+          <b>---Metal</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-bois" role="tabpanel" aria-labelledby="v-pills-bois-tab">
+          <b>---Bois &amp; Plaquage</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-verre" role="tabpanel" aria-labelledby="v-pills-verre-tab">
+          <b>---Verre</b>
+        </div>
+        <div class="tab-pane fade" id="v-pills-miroir" role="tabpanel" aria-labelledby="v-pills-miroir-tab">
+          <b>---Miroir</b>
         </div>
       </div>
     </div>
   </div>
-  <br>
+</div>
+<br>
 
-  <!-- MODAL -->
-  <div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true" *ngIf="material">
-    <!-- (click)="closeModal()"  data-backdrop="false" > -->
-    <div class="modal-dialog modal-dialog-centered" style="width: 50vw;" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
-          <div>
-            <h4 class="modal-title" id="ModalLabel">{{material.model}}</h4>
-          </div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<!-- MODAL -->
+<div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" *ngIf="material">
+  <!-- (click)="closeModal()"  data-backdrop="false" > -->
+  <div class="modal-dialog modal-dialog-centered" style="width: 50vw;" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
+        <div>
+          <h4 class="modal-title" id="ModalLabel">{{material.model}}</h4>
         </div>
-        <div class="modal-body flex-container">
-          <div class="whiteSpace">
-            <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
-          </div>
-          <div class="cardContainer">
-            <div class="card">
-              <img
-                src="assets\Images\Products\JNL\Garnissage\{{matCategory}}\Print\{{material.codeProd | uppercase }}.jpg"
-                class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">
-                  <ul style="list-style-type:none">
-                    <li><b>Name: </b><label>{{material.model}}</label></li>
-                    <li><b>Code: </b><label>{{material.codeProd}}</label></li>
-                    <li><b>Dimensions: </b><label>{{material.dimensions}}</label></li>
-                    <li><b>Martindale: </b><label>{{material.martindale}}</label></li>
-                    <li><b>Composition: </b></li>
-                    <li><label>{{material.compositionFR}}</label></li>
-                  </ul>
-              </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body flex-container">
+        <div class="whiteSpace">
+          <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
+        </div>
+        <div class="cardContainer">
+          <div class="card">
+            <img
+              src="assets\Images\Products\JNL\Garnissage\{{matCategory}}\Print\{{material.codeProd | uppercase }}.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">
+                <ul style="list-style-type:none">
+                  <li><b>Name: </b><label>{{material.model}}</label></li>
+                  <li><b>Code: </b><label>{{material.codeProd}}</label></li>
+                  <li><b>Dimensions: </b><label>{{material.dimensions}}</label></li>
+                  <li><b>Martindale: </b><label>{{material.martindale}}</label></li>
+                  <li><b>Composition: </b></li>
+                  <li><label>{{material.compositionFR}}</label></li>
+                </ul>
             </div>
           </div>
-          <div class="whiteSpace">
-            <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
-          </div>
+        </div>
+        <div class="whiteSpace">
+          <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
         </div>
       </div>
     </div>
   </div>
+</div>
