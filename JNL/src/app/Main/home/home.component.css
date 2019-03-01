@@ -1,19 +1,19 @@
 h1 {
     font-family: PlacardMT-Condensed;
-    font-size: 5.03vw; /* 4em; */
-
+    font-size: 5.06vw; /* 4em; */
+    margin-bottom: .3vw;
     text-transform: uppercase;
 }
 
 h2 {
     font-size: 3.2vw;
+    margin-bottom: .5vw;
 }
 
 h3 {
     margin: auto;
     width: 54vw;
     font-size: 26px;
-
     font-family: Atak-Medium;
 }
 
@@ -23,15 +23,16 @@ h4 {
 
 hr {
     border: 0.5px solid #DBBB76;
+    margin-top: 1.11vw;
+    margin-bottom: 1.11vw;
 }
 
 .home_links {
     border: 1.5px solid #DBBB76;
-    padding: .38vw; /*0.3em;*/
-    padding-left: 1.25vw; /*1em;*/
-    padding-right: 1.25vw; /*1em;*/
-
-    font-size: 1.25vw;
+    padding: .27vw; /*0.3em;*/
+    padding-left: 1.59vw; /*1em;*/
+    padding-right: 1.59vw; /*1em;*/
+    font-size: 1.11vw;
     text-transform: uppercase;
     letter-spacing : 1.28px;
 }
@@ -82,52 +83,38 @@ hr {
 
 .carousel-item-image {
     float: left;
-    /*margin-right: 1vw;
-    padding-left: 4vw;*/
 }
 
 .slide-image {
     width: 34vw;
     height: auto;
-    /* border: solid 1px #000; */
+    max-height: 31vw;
+    object-fit: contain;
 }
 
-/* .marques_img {
-    height: 50vh;
-    float: left;
-} */
-
 .carousel-indicators {
-   /* margin-left: 10%;
-    margin-right: 10%;*/
-
     margin: auto;
-
     width: 72.2vw;
     justify-content: space-between;
     flex-wrap: wrap;
-
     position: relative;
 }
 
 .carousel-indicators > li {
     height: 0;
     width: auto;
-    text-transform: uppercase;
     text-indent: 0;
-    font-size: 1.88vw;
 }
 
 .carousel-indicators > li > span {
     color: black !important;
     margin: auto;
-    font-size: 2vw;
+    font-size: 1.8vw;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1.5px solid transparent;
     transition: all .5s ease;
 }
-
 
 .carousel-indicators > li > span:hover {
     border-color: black;
@@ -159,13 +146,15 @@ hr {
  }
 
  .container2 > h2 {
-    font-size: 3.05vw;
+     font-family: Atak-Light;
+    font-size: 3.04vw;
+    margin-top: 0;
 }
 
  .container2 > h2:first-child {
      text-transform: uppercase;
      font-size: 1.1vw;
-     margin-top: 1.5vw;
+     margin-top: 0;
  }
 
 /* :host >>> .carousel-control-prev-icon {
@@ -228,54 +217,44 @@ hr {
 #une_histoire
 {
     width: 100%;
-    height: auto; /*39vw;*/
-    /* min-height: 558px; */
+    height: auto; 
     min-height: 39vw;
-
     background-color: white;
-
     display: flex;
-
-    /* start after fixed navbar*/ 
-    /* margin-top: -60px; */
-    /* padding-top: 60px; */
 }
 
 #une_histoire > div {
     margin: auto;
-    /* padding-left: 17vw;
-    padding-right: 17vw; */
-
+    margin-top: 8.12vw;
+    margin-bottom: 8.12vw;
     width: 60.8vw;
-
     text-align: center;
 }
 
 #une_histoire > div > p {
-    font-size: 1.776vw; /*2.01vw;  1.6em;*/
-    line-height: 1.24em;
+    font-size: 1.8vw; /*2.01vw;  1.6em;*/
+    line-height: 2.16vw;
+    margin-bottom: 3.68vw;
 }
 
 #une_histoire > div > p > a {
-    font-size: 1.06vw; /*1.25vw; 0.6em;*/
+    font-size: 1.11vw; /*1.25vw; 0.6em;*/
 }
 
 #les_marques {
     width: 100%;
-    height: 100vh; /*50vw;*/
-    /* min-height: 724px; */
-    /*min-height: 40vw; 724px;*/
-    /*max-height: 50vw;*/
-
+    /* height: 100vh;  */
+    height: auto;
     background-color: #D3D3D3;
     color: black;
-
     display: flex;
     flex-direction: row;
 }
 
 #marques_main {
     margin: auto;
+    margin-top: 1.92vw;
+    margin-bottom: 1.92vw;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -320,9 +299,9 @@ hr {
 }
 
 #actualites {
-    padding-top: 120px; 
-    padding-left: 50px; 
-    padding-right: 50px; 
+    padding-top: 8vw; 
+    padding-left: 3.88vw; 
+    padding-right: 3.88vw; 
 }
 
 #actualites > div {
@@ -344,18 +323,22 @@ hr {
 
 .actualites_img {
     width: 25.4vw;
-    height: 25.4vw;
+    height: 33.33vw;
     object-fit: cover;
 }
 
 .more_links {
     font-family: Atak-Bold;
-
     text-transform: uppercase;
+    margin-top: 1.42vw;
+    margin-bottom: 0.25vw;
+    display: block;
 }
 
 #actualites > div > p >span {
-    font-size: 1.5em;
+    font-size: 2.08vw;
+    margin-bottom: .98vw;
+    display: block;
 }
 
 #actualites_arrows {
@@ -387,10 +370,7 @@ hr {
     width: 81.29vw; /*87.3vw;*/
     height: 55vw;
     display: flex;
-
     color: white;
-
-    margin-bottom: 9vw;
 }
 
 /*NO VIDEO*/
@@ -444,27 +424,27 @@ video {
 
 #projets {
     width: 100%;
-
     text-align: center;
-
-    display: flex;
+    /* display: flex; */
+    padding-top: 8vw;
+    padding-bottom: 8vw;
 }
 
 .projets-text > h4 {
     font-size: 1.8vw;
-    margin-top: 1vw;
+    margin-top: 1.09vw;
 }
 
 #projets > div {
     margin: auto;
+    margin-bottom: 2.08vw;
 }
 
-#projets > div > div > div {
+/* #projets > div > div > div {
     display: flex;
     flex-direction: column;
-
     text-align: center;
-}
+} */
 
 #projets > div > div > div > img {
     margin: auto;
@@ -510,6 +490,7 @@ video {
 .container2 > h2:nth-child(2) {
     width: 59.3vw;
     margin: auto;
+    margin-bottom: .54vw;
 }
 
 #carousel-projets > a {
@@ -555,7 +536,6 @@ video {
 
     #une_histoire > div {
         margin: auto;
-
         text-align: center;
     }
 
