@@ -203,9 +203,9 @@ h6 {
 
 .slide-image {
     text-align: center;
-    max-width: 34vw;
+    max-width: 50vw;
     height: auto;
-    max-height: 28.5vw;
+    /* max-height: 28.5vw; */
     margin: auto;
     /* border: solid 1px #000; */
 }
@@ -322,26 +322,25 @@ h6 {
     width: 83vw;
     height: 6vw;
     margin: auto;
-    margin-bottom: 6.98vw;
+    margin-bottom: 5vw;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
  }
 
- #autres > p {
+ #autres > span {
      background-color: #D3D3D3 !important;
-     width: 27vw !important;
+     width: 41vw !important;
      text-align: center !important;
-     display: flex;
+     margin: auto;
+     font-family: Atak-Light;
+     font-size: 1.8vw;
+     line-height: 5vw;
  }
 
- #autres > p:hover {
+ #autres > span:hover {
      cursor: pointer;
  }
-
- #autres > p > span {
-    margin: auto;
-    font-family: Atak-Light;
-    font-size: 1.8vw;
-}
 
 #other-links {
     width: 83vw;

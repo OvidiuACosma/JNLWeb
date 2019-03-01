@@ -99,24 +99,23 @@
 
     <h6>DÉCOUVREZ LES AUTRES MARQUES</h6>
     <div class="flex-div" id="autres">
-      <p (click)="navigateToMarque(this.othersLink[getOthers(0)])"><span>{{this.othersText[getOthers(0)] | uppercase}}</span></p>
-      <p (click)="navigateToMarque(this.othersLink[getOthers(1)])"><span>{{this.othersText[getOthers(1)] | uppercase}}</span></p>
-      <p (click)="navigateToMarque(this.othersLink[getOthers(2)])"><span>{{this.othersText[getOthers(2)] | uppercase}}</span></p>
+      <span *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
+        {{othersText[getOthers(i)] | uppercase}}
+      </span>
+      <!--<p (click)="navigateToMarque(othersLink[getOthers(1)])"><span>{{othersText[getOthers(1)] | uppercase}}</span></p>-->
     </div>
 
-
-    
     <div id="other-links">
       <div (click)="navigateTo('jnlGroup')">
-        <img  alt="JNL Collection" src="assets/Images/Common/GP_link.jpg">
+        <img  alt="JNL Collection" src="assets/Images/Marque/MK_groupe.jpg">
         <h4>LE GROUPE</h4>
       </div>
       <div  (click)="navigateTo('savoirFaire')">
-        <img  alt="JNL Collection" src="assets/Images/Common/SF_link.jpg">
+        <img  alt="JNL Collection" src="assets/Images/Marque/MK_savoir.jpg">
         <h4>LE SAVOIR-FAIRE</h4>
       </div>
-      <div  (click)="navigateTo('savoirFaire')">
-        <img  alt="JNL Collection" src="assets/Images/Common/SV_link.jpg">
+      <div  (click)="navigateTo('services')">
+        <img  alt="JNL Collection" src="assets/Images/Marque/MK_services.jpg">
         <h4>LES SERVICES</h4>
       </div>
     </div>

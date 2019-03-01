@@ -14,7 +14,7 @@
 
        <div id="top_buttons">
            <span>
-               <a (click)="NavigateTo('favorites')" class="top-button">
+               <a (click)="navigateTo('favorites')" class="top-button">
                    <i class="far fa-heart"></i>
                    <!--<img alt="JNL Collection" src="/assets/Images/Common/fav_icon.png" height="16px">-->
                 </a>
@@ -28,7 +28,7 @@
            </span>
            <span class="top-button">&nbsp;&#8213;&nbsp;</span>
            <span>
-               <a routerLink="/contact" class="top-button">{{text.contact}}</a>
+               <a (click)="navigateTo('contact')" class="top-button">{{text.contact}}</a>
            </span>
            <span class="top-button">&nbsp;&#8213;&nbsp;</span>
            <ul *ngIf="isLangSelectMode">
@@ -36,7 +36,9 @@
                    <span class="top-button span-cursor" (click)="onChangeLanguage(l)">{{l}}</span>
                </li>
            </ul>
-           <span class="top-button span-cursor" style="margin-right: 2px" (click)="toggleLangStatus()">{{language}}</span>
+           <span class="top-button span-cursor" style="margin-right: 2px" (click)="toggleLangStatus()">
+                {{language}}
+           </span>
            <span class="top-button span-cursor" (click)="toggleLangStatus()">
                <i class="fa fa-sort-down fa-1"></i>
            </span>

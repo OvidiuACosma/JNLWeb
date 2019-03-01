@@ -22,13 +22,13 @@
                     "MOBILIER"
                 ],
                 "productImages": [
-                    "assets/Images/Marque/JNL/MKJ_accesoires.jpeg",
-                    "assets/Images/Marque/JNL/MKJ_assises.jpeg", 
-                    "assets/Images/Marque/JNL/MKJ_luminaires.jpeg",
-                    "assets/Images/Marque/JNL/MKJ_mobilier.jpeg"
+                    "assets/Images/Marque/JNL/MKJ_accesoires.png",
+                    "assets/Images/Marque/JNL/MKJ_assises.png", 
+                    "assets/Images/Marque/JNL/MKJ_luminaires.png",
+                    "assets/Images/Marque/JNL/MKJ_mobilier.png"
                 ],
 
-                "style":  "assets/Images/Marque/JNL/MKJ_style.jpeg",
+                "style":  "assets/Images/Marque/JNL/MKJ_style.jpg",
                 "iconique":  "assets/Images/Marque/JNL/MKJ_iconique.png"
             },
             "VANHAMME": {
@@ -51,9 +51,9 @@
                     "POUFS"
                 ],
                 "productImages": [
-                    "assets/Images/Marque/Vanhamme/MKV_canapes.jpeg",
-                    "assets/Images/Marque/Vanhamme/MKV_fauteuils.jpeg", 
-                    "assets/Images/Marque/Vanhamme/MKV_poufs.jpeg"
+                    "assets/Images/Marque/Vanhamme/MKV_canapes.png",
+                    "assets/Images/Marque/Vanhamme/MKV_fauteuils.png", 
+                    "assets/Images/Marque/Vanhamme/MKV_poufs.png"
                 ],
 
                 "style":  "assets/Images/Marque/Vanhamme/MKV_style.jpg",
@@ -80,14 +80,14 @@
                     "MOBILIER"
                 ],
                 "productImages": [
-                    "assets/Images/Marque/Ungaro/MKU_accesoires.jpeg",
-                    "assets/Images/Marque/Ungaro/MKU_assises.jpeg", 
-                    "assets/Images/Marque/Ungaro/MKU_luminaires.jpeg", 
-                    "assets/Images/Marque/Ungaro/MKU_mobilier.jpeg"
+                    "assets/Images/Marque/Ungaro/MKU_accesoires.png",
+                    "assets/Images/Marque/Ungaro/MKU_assises.png", 
+                    "assets/Images/Marque/Ungaro/MKU_luminaires.png", 
+                    "assets/Images/Marque/Ungaro/MKU_mobilier.png"
                 ],
 
-                "style":  "assets/Images/Marque/Ungaro/MKU_style.jpeg",
-                "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.jpeg"
+                "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
+                "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png"
             },
             "LUZ": {
                 "collectionTitle": "Luz Interiors",
@@ -109,13 +109,13 @@
                     "MOBILIER"
                 ],
                 "productImages": [
-                    "assets/Images/Marque/Luz/MKL_assises.jpeg",
-                    "assets/Images/Marque/Luz/MKL_luminaires.jpeg", 
-                    "assets/Images/Marque/Luz/MKL_mobilier.jpeg"
+                    "assets/Images/Marque/Luz/MKL_assises.png",
+                    "assets/Images/Marque/Luz/MKL_luminaires.png",
+                    "assets/Images/Marque/Luz/MKL_mobilier.png"
                 ],
 
-                "style":  "assets/Images/Marque/Luz/MKL_style.jpeg",
-                "iconique":  "assets/Images/Marque/Luz/MKL_iconique.jpeg"
+                "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
+                "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png"
             }
         },
     "FR": {
@@ -140,13 +140,13 @@
                 "MOBILIER"
             ],
             "productImages": [
-                "assets/Images/Marque/JNL/MKJ_accesoires.jpeg",
-                "assets/Images/Marque/JNL/MKJ_assises.jpeg", 
-                "assets/Images/Marque/JNL/MKJ_luminaires.jpeg",
-                "assets/Images/Marque/JNL/MKJ_mobilier.jpeg"
+                "assets/Images/Marque/JNL/MKJ_accesoires.png",
+                "assets/Images/Marque/JNL/MKJ_assises.png", 
+                "assets/Images/Marque/JNL/MKJ_luminaires.png",
+                "assets/Images/Marque/JNL/MKJ_mobilier.png"
             ],
 
-            "style":  "assets/Images/Marque/JNL/MKJ_style.jpeg",
+            "style":  "assets/Images/Marque/JNL/MKJ_style.jpg",
             "iconique":  "assets/Images/Marque/JNL/MKJ_iconique.png"
         },
         "VANHAMME": {
@@ -169,9 +169,9 @@
                 "POUFS"
             ],
             "productImages": [
-                "assets/Images/Marque/Vanhamme/MKV_canapes.jpeg",
-                "assets/Images/Marque/Vanhamme/MKV_fauteuils.jpeg", 
-                "assets/Images/Marque/Vanhamme/MKV_poufs.jpeg"
+                "assets/Images/Marque/Vanhamme/MKV_canapes.png",
+                "assets/Images/Marque/Vanhamme/MKV_fauteuils.png",
+                "assets/Images/Marque/Vanhamme/MKV_poufs.png"
             ],
 
             "style":  "assets/Images/Marque/Vanhamme/MKV_style.jpg",
@@ -198,14 +198,14 @@
                 "MOBILIER"
             ],
             "productImages": [
-                "assets/Images/Marque/Ungaro/MKU_accesoires.jpeg",
-                "assets/Images/Marque/Ungaro/MKU_assises.jpeg", 
-                "assets/Images/Marque/Ungaro/MKU_luminaires.jpeg", 
-                "assets/Images/Marque/Ungaro/MKU_mobilier.jpeg"
+                "assets/Images/Marque/Ungaro/MKU_accesoires.png",
+                "assets/Images/Marque/Ungaro/MKU_assises.png", 
+                "assets/Images/Marque/Ungaro/MKU_luminaires.png", 
+                "assets/Images/Marque/Ungaro/MKU_mobilier.png"
             ],
 
-            "style":  "assets/Images/Marque/Ungaro/MKU_style.jpeg",
-            "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.jpeg"
+            "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
+            "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png"
         },
         "LUZ": {
             "collectionTitle": "Luz Interiors",
@@ -227,13 +227,13 @@
                 "MOBILIER"
             ],
             "productImages": [
-                "assets/Images/Marque/Luz/MKL_assises.jpeg",
-                "assets/Images/Marque/Luz/MKL_luminaires.jpeg", 
-                "assets/Images/Marque/Luz/MKL_mobilier.jpeg"
+                "assets/Images/Marque/Luz/MKL_assises.png",
+                "assets/Images/Marque/Luz/MKL_luminaires.png", 
+                "assets/Images/Marque/Luz/MKL_mobilier.png"
             ],
 
-            "style":  "assets/Images/Marque/Luz/MKL_style.jpeg",
-            "iconique":  "assets/Images/Marque/Luz/MKL_iconique.jpeg"
+            "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
+            "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png"
         }
         }
      }

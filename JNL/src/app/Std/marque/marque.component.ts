@@ -13,8 +13,9 @@ export class MarqueComponent implements OnInit {
 
   language: string;
   text: any;
-  othersText = ['JNL Collection', 'Vanhamme', 'Luz Interiors', 'Emanuel Ungaro Home'];
-  othersLink = ['jnl', 'vanhamme', 'luz', 'ungaro'];
+  othersText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
+  othersLink = ['jnl', 'vanhamme', 'ungaro', 'luz'];
+  i: number;
 
   public marque: string;
 
@@ -26,6 +27,10 @@ export class MarqueComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.marque = params['marque'];
+      this.i = this.othersLink.indexOf(this.marque);
+      this.othersLink.splice(this.i, 1);
+      this.othersText.splice(this.i, 1);
+      this.i = this.i % this.othersLink.length;
     });
 
     this.dataex.currentLanguage
@@ -48,11 +53,7 @@ export class MarqueComponent implements OnInit {
   }
 
   getOthers(nr: number) {
-    if (this.othersLink[nr] === this.marque) {
-        return 3;
-    } else {
-      return nr;
-    }
+    return (this.i + nr) % this.othersLink.length;
   }
 
   navigateToAnchor(fragment: string) {
