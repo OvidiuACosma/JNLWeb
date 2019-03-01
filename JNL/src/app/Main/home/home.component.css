@@ -503,8 +503,11 @@ video {
 .container {
     display: flex;
     align-content: space-around;
+    max-width: 75vw;
+}
 
-    max-width: 80vw;
+.container div {
+    width: 50%;
 }
 
 @media only screen and (max-width: 768px){
