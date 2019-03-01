@@ -1,13 +1,12 @@
 <!-- CONTAINER -->
 <hr>
 <div id="container">
-    <div id="staticText" (click)="toggleElement()">
-        <h5>MATERIALS<br> &amp; FINISHES</h5>
-        <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
-      </div>
+  <div id="staticText" (click)="toggleElement()">
+    <h5>MATERIALS<br> &amp; FINISHES</h5>
+    <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
+  </div>
   <div id="contentMatFin" [ngClass]="(this.toggleMat === false) ? 'hide-item' :'show-item'">
     <div id="static">
-      <!-- <h5>MATERIALS<br> &amp; FINISHES</h5> -->
       <br>
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
@@ -27,6 +26,7 @@
         <a class="nav-link" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
           aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
       </div>
+    </div>
     <div id="content">
       <div class="tab-content" id="v-pills-tabContent">
 
@@ -116,7 +116,8 @@
 
 <!-- MODAL -->
 <div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  (click)="closeModal()" aria-hidden="true" data-backdrop="false" *ngIf="material">
+  aria-hidden="true" *ngIf="material">
+  <!-- (click)="closeModal()"  data-backdrop="false" > -->
   <div class="modal-dialog modal-dialog-centered" style="width: 50vw;" role="document">
     <div class="modal-content">
       <div class="modal-header">
