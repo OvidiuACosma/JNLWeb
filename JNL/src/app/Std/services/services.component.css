@@ -53,13 +53,13 @@ video {
 }
 
 .quote-bar {
-    margin-top: 7.6vw !important;
+    margin-top: 4.54vw !important;
     left: 0;
     display: flex;
     flex-direction: column  !important;
     background-color: #C6C6C6;
     position: relative;
-    padding: 11.7vw;
+    padding: 7.7vw;
     padding-top: 4.2vw;
     padding-bottom: 4.2vw;
 }
@@ -78,6 +78,7 @@ video {
 .sur-flex {
     width: 76vw;
     margin: auto;
+    margin-top: 5.2vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -87,7 +88,7 @@ video {
 .sur-flex > div {
     width: 31.2vw;
     margin: auto;
-    margin-top: 7.9vw;
+    margin-top: 0;
     margin-bottom: 0px;
     display: flex;
     flex-direction: column;
@@ -120,6 +121,11 @@ video {
     font-size: 1.4vw;
     text-align: left;
 } 
+
+#services > img {
+    width: 87.3vw;
+    height: 47.8vw;
+}
 
 #services_list {
     margin: auto;
@@ -171,8 +177,24 @@ textarea{
     outline: none;
 }
 
+textarea::placeholder {
+    font-size: 1.11vw;
+}
+
+textarea::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 1.11vw;
+  }
+  
+textarea::-ms-input-placeholder { /* Microsoft Edge */
+    font-size: 1.11vw;
+  }
+
 i {
     outline: none;
+}
+
+.small_text {
+    font-size: 1.11vw;
 }
 
 .contact_div
@@ -190,13 +212,18 @@ i {
     margin-top: 0;
 }
 
+.contact_div > p {
+    
+    width: 53.48vw;
+    margin: auto;
+}
+
 .contact_div > div > p {
     font-family: Atak-Regular;
     font-size: 1.4vw;
     text-align: center;
 }
 .contact_form {
-    width: 72.6vw;
     margin: auto;
     margin-top: 4.8vw;
     display: flex;
@@ -265,7 +292,7 @@ select {
     margin-bottom: 1em;
 }
 
-button {
+.send {
     text-transform: uppercase;
     margin: auto;
     background-color: white;
@@ -273,6 +300,10 @@ button {
     margin-top: 5.3em;
     margin-bottom: 4em;
     border: none;
+    width: 16.65vw;
+    font-family: Atak-Light;
+    font-size: 1.11vw;
+    letter-spacing: 1.28px;
 }
 
 #votreProjet {
@@ -284,7 +315,7 @@ button {
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
-    width: 72.7vw;
+    width: 64.79vw;
     margin: auto;
 }
 
@@ -301,22 +332,31 @@ button {
 }
 
 .contact_form > div > div:last-child{
-    width: 30vw;
+    width: 25.59vw;
     margin-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
+/* 
 #expertise, #surMesure, #votreProjet {
     margin-bottom: 60px;
     padding-top: 60px;
+} */
+
+#expertise {
+    margin-top: 2.57vw;
+}
+
+#surMesure {
+    margin-top: 5.75vw;
+    margin-bottom: 5.48vw;
 }
 
 #services {
     margin: auto;
     width: 87.3vw;
-    height: 55vw;
+    height: 47.8vw;
     display: flex;
     color: white;
 }
