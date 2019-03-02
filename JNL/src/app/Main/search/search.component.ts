@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService) {}
 
   ngOnInit() {
     this.dataex.currentNavBarStatus

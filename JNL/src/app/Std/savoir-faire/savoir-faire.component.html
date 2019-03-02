@@ -1,4 +1,4 @@
-<div class="les-marques-main">
+<div class="les-marques-main" *ngIf="text">
     <div>
         <h1>{{text.title}}</h1>
 
@@ -9,11 +9,10 @@
         </div>
 
         <div id="savoir">
-            <video width="87.3vw" height="33.3vw" controls>
-                <source src="\assets\Video\JNL_video.mp4" type="video/mp4">
+            <video width="87.3vw" height="33.3vw" autoplay muted loop playsinline>
+                <source src="assets/Video/JNL_video.mp4" type="video/mp4">
             </video>
         </div>
-
 
         <div id="atelier">
             <h2>{{text.ateliers}}</h2>

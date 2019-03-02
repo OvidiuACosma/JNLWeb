@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LegalComponent, GDPRComponent, CreditsComponent } from './Extras';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
@@ -14,7 +14,6 @@ import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DeviceDetectorModule } from 'ngx-device-detector';
-import { routing } from './app-routing.module';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { DataExchangeService, ConfigService, AlertService, AuthenticationService, UserService,
          TranslationService, ProductsService, PagerService, ArchiveService, DownloaderService} from './_services';
