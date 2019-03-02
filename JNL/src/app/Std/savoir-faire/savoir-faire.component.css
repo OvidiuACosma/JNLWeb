@@ -15,7 +15,7 @@ h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
-    font-size: 1.4vw;
+    font-size: 1.38vw;
     margin-bottom: 1.5vw;
     text-align: center;
 }
@@ -33,6 +33,7 @@ h5 {
     font-size: 1.1vw;
     text-align: left;
     margin-bottom: 0px;
+    margin-top: 0.98vw;
 }
 
 
@@ -78,7 +79,7 @@ video {
 }
 
 .full-image {
-    margin-top: 11.4vw;
+    margin-top: 6.8vw;
     position: relative;
     left: 0;
     /* width: calc(100vw - 77px); */
@@ -89,6 +90,8 @@ video {
 #atelier > h4 {
     font-family: Atak-Medium;
     width: 59.7vw;
+    margin-bottom: 1.75vw;
+    font-size: 1.42vw;
 }
 
 .ateliers-flex {
@@ -121,13 +124,13 @@ video {
 } 
 .ateliers-flex > div > div > span {
     font-family: Atak-Bold;
-    font-size: 1.1vw;
+    font-size: 0.97vw;
 
 } 
 
-.ateliers-flex > div > div > h5 {
+/* .ateliers-flex > div > div > h5 {
     margin-bottom: 2vw;
-}
+} */
 
 .ateliers-flex > div:nth-child(2) > div:first-child {
     margin-top: 0px !important;
@@ -136,6 +139,23 @@ video {
     font-size: 1.4vw;
     text-align: left;
 } 
+
+#af1 {
+    margin-top: 8.76vw;
+}
+
+#af1 > div, #af2 > div {
+    margin-top: 0;
+}
+
+#af1 > div > img {
+    width: 31.7vw;
+    height: auto;
+}
+
+#af2 {
+    margin-top: 6.85vw;
+}
 
 #af2 > div > div {
     margin-bottom: 0px;
