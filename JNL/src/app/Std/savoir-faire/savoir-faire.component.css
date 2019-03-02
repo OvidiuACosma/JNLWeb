@@ -40,12 +40,7 @@ h5 {
 video {
     width: 87.3%;
     height: auto;
-    /* height: 51.5vw; */
-    /*NO VIDEO */
     margin: auto;
-    /* background-image: url("/assets/Images/Home/HM_video.png");
-    background-size: cover;
-    background-position: center center; */
 }
 
 .marques_selected {
@@ -180,7 +175,7 @@ video {
 .slide-image {
     width: 100%;
     height: 100%;
-    max-width: 58vw;
+    max-width: 47.8vw;
     max-height: 30vw;
     object-fit: cover;
     margin-left: 0px;
@@ -192,9 +187,11 @@ video {
 }
 
 .steps-text {
+    margin: auto;
     margin-top: 0px  !important;
+    margin-right: 0px  !important;
     background-color: #D3D3D3;
-    width: 32vw;
+    width: 34.1vw;
     height: 30vw;
     padding: 3vw;
     font-family: Atak-Regular;
@@ -204,8 +201,6 @@ video {
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    position: absolute;
-    right: 0;
 }
 
 .steps-text > div {
@@ -259,14 +254,14 @@ video {
 }
 
 #services {
-    margin-top: 6.7vw;
-    margin-bottom: 5.2vw;
+    margin-top: 3.28vw;
+    margin-bottom: 3.28vw;
 }
 
 #services > img {
     width: 25.8vw;
     margin: auto;
-    margin-top: 5vw;
+    /* margin-top: 5vw; */
 }
 
 #services > h4 {
@@ -284,7 +279,7 @@ video {
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-    margin-bottom: 4vw;
+    /* margin-bottom: 4vw; */
     text-align: center;
 }
 
@@ -304,15 +299,25 @@ video {
 
 #atelier, #fabrication {
     margin-bottom: 60px;
-    padding-top: 60px;
+    /* padding-top: 60px; */
+}
+
+#fabrication {
+    margin-top: 7.39vw;
+}
+
+#fabrication > h4 {
+    margin-top: 3.94vw;
 }
 
 #savoir {
     margin: auto;
     width: 87.3vw;
-    height: 55vw;
+    height: 39vw;
     display: flex;
     color: white;
+    margin-top: 6.3vw;
+    margin-bottom: 7.72vw;
 }
 
 #savoir > div:first-child {
@@ -327,7 +332,9 @@ video {
     width: 100%;
     height: 37.78vw;
     padding-top: 3.15vw;
-    width: 90vw;
+    margin-top: 2.28vw;
+    margin-bottom: 0.64vw;
+    width: 81.86vw;
     margin: auto;
     display: flex;
     flex-direction: column !important;
@@ -349,8 +356,12 @@ video {
     margin-top: auto;
 }
 
+.carousel-item {
+    width: 81.86vw;
+}
+
 .carousel-item-content {
-    width: 90vw;
+    width: 81.86vw;
 }
 
 .carousel-item-image {
@@ -365,7 +376,7 @@ video {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    margin-top: 1vw;
+    margin-top: 1.8vw;
     position: relative;
 }
 
@@ -395,24 +406,27 @@ input[type="radio"] {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-    height: 15px;
-    width: 15px;
+    height: 0.69vw;
+    width: 0.69vw;
     border: none;
     border-radius: 100%;
     cursor: pointer;
     display: inline-block;
     margin-right: 0.5em;
-    margin-top: 2vw;
+    /* margin-top: 2vw; */
     outline: none;
     background-color: #BFBFBF;
 }
 
 .container {
+    margin: auto;
     display: flex;
     flex-direction: row;
+    align-content: center;
     padding: 0px;
     font-family: Atak-Regular;
     font-size: 16px;
+    width: 81.86vw;
 }
 
 .group-text > span {
