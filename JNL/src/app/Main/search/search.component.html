@@ -5,7 +5,7 @@
                 <img class="memu-button-img" src="{{navBarButtonSrc}}">
                 <p class="menu-text">{{navBarButtonText}}</p>
             </div>
-            <div id="menu-logo-img" *ngIf="(router.url === '/' || router.url === '/home') ? false : true">
+            <div id="menu-logo-img" *ngIf="!isHome">
                 <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
                     (click)="goHome()"/>
             </div>

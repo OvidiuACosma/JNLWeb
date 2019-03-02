@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
 
@@ -7,7 +7,7 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, AfterViewChecked {
 
   @Output() toggleNavBar = new EventEmitter();
 
@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   public navBarStatus = true;
   navBarButtonSrc: string;
   navBarButtonText: string;
+  isHome: boolean;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
@@ -38,6 +39,11 @@ export class SearchComponent implements OnInit {
       this.otherLanguages = this.languages.filter(f => !f.includes(this.language));
       this.getText(this.language);
     });
+    this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
+  }
+
+  ngAfterViewChecked() {
+    this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
   }
 
   getText(lang: string) {
