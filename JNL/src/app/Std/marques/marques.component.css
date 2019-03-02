@@ -7,15 +7,16 @@ h1 {
 
 h2 {
     font-family: Atak-Regular;
-    font-size: 3.5vw;
+    font-size: 3.46vw;
+    margin-bottom: 0;
 }
 
 h3 {
     text-transform: uppercase;
     font-family: Atak-Regular;
     color: #DBBB76;
-    font-size: 1.6vw; /*20px;*/
-    margin-bottom: 1.5vw;
+    font-size: 1.38vw; /*20px;*/
+    margin-bottom: 1.2vw;
 }
 
 .location {
@@ -29,27 +30,25 @@ h3 {
 }
 
 .home_links {
-    font-family: Atak-Light;
     border: 1.5px solid #DBBB76;
-    padding: .38vw; /*0.3em;*/
-    padding-left: 1.25vw; /*1em;*/
-    padding-right: 1.25vw; /*1em;*/
-
-    font-size: 1.25vw;
+    padding: .27vw; /*0.3em;*/
+    padding-left: 1.59vw; /*1em;*/
+    padding-right: 1.59vw; /*1em;*/
+    font-size: 1.11vw;
     text-transform: uppercase;
     letter-spacing : 1.28px;
 }
 
 .marques-image {
-    width: 76%;
-    margin-top: 1.6vw;
-    margin-bottom: 4.2vw;
+    width: 76.17vw;
+    margin-top: 1.5vw;
 }
 
 .les-marques-main {
     text-align: center;
     display: flex;
     padding-top: 73px;
+    margin-bottom: 10.13vw;
 }
 
 .les-marques-main > div {
@@ -65,14 +64,14 @@ h3 {
 #marques_list {
     margin: auto;
     font-family: Atak-Light;
-    width: 80%;
+    width: 76.17vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-    margin-bottom: 4vw;
+    margin-bottom: 2.74vw;
     text-align: center;
 }
 
@@ -88,7 +87,8 @@ h3 {
 }
 
 #marques_list > a:hover {
-    border-color: #888;
+    color: black;
+    border-bottom: 1px solid black;
     transition: all .5s ease;
 }
 
@@ -116,6 +116,5 @@ h3 {
 }
 
 #jnl, #vanhamme, #ungaro, #luz {
-    /* margin-top: -60px; */
-    padding-top: 73px;
+    padding-top: 2.74vw;
 }

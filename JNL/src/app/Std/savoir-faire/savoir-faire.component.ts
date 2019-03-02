@@ -37,7 +37,6 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
     this.text = res[this.language.toUpperCase()];
   }
 
-
   ngAfterViewChecked() {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
