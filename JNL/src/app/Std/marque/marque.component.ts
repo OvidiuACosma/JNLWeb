@@ -1,22 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { Component, OnInit, AfterViewChecked, OnChanges } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { switchMap } from 'rxjs/operators';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-marque',
   templateUrl: './marque.component.html',
   styleUrls: ['./marque.component.css']
 })
-export class MarqueComponent implements OnInit {
+export class MarqueComponent implements OnInit, OnChanges {
 
   language: string;
   text: any;
-  othersText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
-  othersLink = ['jnl', 'vanhamme', 'ungaro', 'luz'];
+  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
+  collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'luz'];
+  othersText: string[];
+  othersLink: string[];
   i: number;
-
+  collections: number;
   public marque: string;
 
   constructor(private route: ActivatedRoute,
@@ -25,12 +28,15 @@ export class MarqueComponent implements OnInit {
               private textService: TranslationService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.marque = params['marque'];
-      this.i = this.othersLink.indexOf(this.marque);
+    this.route.params.subscribe(p => {
+      this.marque = p['marque'];
+      this.i = this.collectionsLink.indexOf(this.marque);
+      this.othersLink = _.clone(this.collectionsLink);
+      this.othersText = _.clone(this.collectionsText);
       this.othersLink.splice(this.i, 1);
       this.othersText.splice(this.i, 1);
-      this.i = this.i % this.othersLink.length;
+      this.collections = this.othersLink.length;
+      this.i = this.i % this.collections;
     });
 
     this.dataex.currentLanguage
@@ -38,6 +44,10 @@ export class MarqueComponent implements OnInit {
       this.language = lang || 'EN';
       this.getText(lang);
     });
+  }
+
+  ngOnChanges() {
+    console.log('CHANGE!');
   }
 
   getText(lang: string) {
@@ -53,7 +63,7 @@ export class MarqueComponent implements OnInit {
   }
 
   getOthers(nr: number) {
-    return (this.i + nr) % this.othersLink.length;
+    return (this.i + nr) % this.collections;
   }
 
   navigateToAnchor(fragment: string) {

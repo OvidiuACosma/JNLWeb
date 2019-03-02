@@ -12,7 +12,7 @@
             <div>&nbsp;</div>
        </div>
 
-       <div id="top_buttons">
+       <div id="top_buttons" *ngIf="text">
            <span>
                <a (click)="navigateTo('favorites')" class="top-button">
                    <i class="far fa-heart"></i>

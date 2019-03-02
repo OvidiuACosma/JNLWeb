@@ -1,5 +1,5 @@
 <nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-100vw' : '0'}">
-    <div id="side_nav_links">
+    <div id="side_nav_links" *ngIf="text">
         <div>
             <span (click)="NavigateTo('products')">{{text.produits}}</span>
             <!--<a (click)="NavigateTo('products')">{{text.chercher}}</a>

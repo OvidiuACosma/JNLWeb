@@ -1,4 +1,4 @@
-<div class="marque-main">
+<div class="marque-main" *ngIf="text">
   <div>
   <h1>{{text.collectionTitle | uppercase}}</h1>
 
@@ -21,103 +21,103 @@
     </div>
   </div>
 
-<div id="les_produits" class="main_divs">
-    <div id="produits_main">
-        <h1>LES PRODUITS</h1>
-        <div id='carousel-custom' class='carousel slide carousel-produits' data-ride='carousel'>
-          
-        <!-- Indicators -->
-        <ol class='carousel-indicators'>
-            <li data-target='#carousel-custom'  *ngFor="let itemC of text.productCategories; let x = index" [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'><span>{{itemC}}</span></li>
-            <!-- <li data-target='#carousel-custom' data-slide-to='1'><span>FAUTEUILS</span></li>
-            <li data-target='#carousel-custom' data-slide-to='2'><span>CHAISES</span></li> -->
-        </ol>
-          <div class="carousel-inner">
-              <!-- <div class='carousel-item active'>
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='/assets/Images/Marque_V/MKV_pic2.png' alt='JNL Collection' class="slide-image">
+  <div id="les_produits" class="main_divs">
+      <div id="produits_main">
+          <h1>LES PRODUITS</h1>
+          <div id='carousel-custom' class='carousel slide carousel-produits' data-ride='carousel'>
+            
+          <!-- Indicators -->
+          <ol class='carousel-indicators'>
+              <li data-target='#carousel-custom'  *ngFor="let itemC of text.productCategories; let x = index" [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'><span>{{itemC}}</span></li>
+              <!-- <li data-target='#carousel-custom' data-slide-to='1'><span>FAUTEUILS</span></li>
+              <li data-target='#carousel-custom' data-slide-to='2'><span>CHAISES</span></li> -->
+          </ol>
+            <div class="carousel-inner">
+                <!-- <div class='carousel-item active'>
+                  <div class="container">
+                    <div class="carousel-item-image">
+                      <img src='/assets/Images/Marque_V/MKV_pic2.png' alt='JNL Collection' class="slide-image">
+                    </div>
+                    <p class="voir">
+                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
+                    </p>
                   </div>
-                  <p class="voir">
-                    <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
-                  </p>
-                </div>
-              </div> -->
-  
-              <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='{{item}}' alt='Vanhamme Collection' class="slide-image">
+                </div> -->
+    
+                <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
+                  <div class="container">
+                    <div class="carousel-item-image">
+                      <img src='{{item}}' alt='Vanhamme Collection' class="slide-image">
+                    </div>
+                    <p class="voir">
+                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES {{text.productCategories[k]}}</a>
+                    </p>
                   </div>
-                  <p class="voir">
-                    <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES {{text.productCategories[k]}}</a>
-                  </p>
                 </div>
-              </div>
-              <!-- <div class='carousel-item'>
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
+                <!-- <div class='carousel-item'>
+                  <div class="container">
+                    <div class="carousel-item-image">
+                      <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
+                    </div>
+                    <p class="voir">
+                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
+                    </p>
                   </div>
-                  <p class="voir">
-                    <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
-                  </p>
-                </div>
-              </div> -->
-          </div>
-          
-          <!-- Controls -->
-          <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
-              <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
-              <span class="sr-only">Previous</span>
-          </a>
-          <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next'>
-              <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
-              <span class="sr-only">Next</span>
-          </a>
-          
+                </div> -->
+            </div>
+            
+            <!-- Controls -->
+            <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
+                <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next'>
+                <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+                <span class="sr-only">Next</span>
+            </a>
+            
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex-div">
-    <div>
-      <img alt="JNL Collection" src={{text.style}}>
-      <span class="style-title">{{text.leftTitle}}</span>
-      <p [innerHTML]="text.leftText"></p>
-    </div>
-
-    <div>
+    <div class="flex-div">
       <div>
-        <h6>ICONIQUE</h6>
-        <span>{{text.rightTitle}}</span>
+        <img alt="JNL Collection" src={{text.style}}>
+        <span class="style-title">{{text.leftTitle}}</span>
+        <p [innerHTML]="text.leftText"></p>
       </div>
-      <img alt="JNL Collection" src={{text.iconique}}>
-      <p [innerHTML]="text.rightText"></p>
+
+      <div>
+        <div>
+          <h6>ICONIQUE</h6>
+          <span>{{text.rightTitle}}</span>
+        </div>
+        <img alt="JNL Collection" src={{text.iconique}}>
+        <p [innerHTML]="text.rightText"></p>
+      </div>
+    </div>
+
+      <h6>DÉCOUVREZ LES AUTRES MARQUES</h6>
+      <div class="flex-div" id="autres" *ngIf="othersLink">
+        <span *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
+          {{othersText[getOthers(i)] | uppercase}}
+        </span>
+      </div>
+
+      <div id="other-links">
+        <div (click)="navigateTo('jnlGroup')">
+          <img  alt="JNL Collection" src="assets/Images/Marque/MK_groupe.jpg">
+          <h4>LE GROUPE</h4>
+        </div>
+        <div  (click)="navigateTo('savoirFaire')">
+          <img  alt="JNL Collection" src="assets/Images/Marque/MK_savoir.jpg">
+          <h4>LE SAVOIR-FAIRE</h4>
+        </div>
+        <div  (click)="navigateTo('services')">
+          <img  alt="JNL Collection" src="assets/Images/Marque/MK_services.jpg">
+          <h4>LES SERVICES</h4>
+        </div>
+      </div>
     </div>
   </div>
-
-    <h6>DÉCOUVREZ LES AUTRES MARQUES</h6>
-    <div class="flex-div" id="autres">
-      <span *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
-        {{othersText[getOthers(i)] | uppercase}}
-      </span>
-    </div>
-
-    <div id="other-links">
-      <div (click)="navigateTo('jnlGroup')">
-        <img  alt="JNL Collection" src="assets/Images/Marque/MK_groupe.jpg">
-        <h4>LE GROUPE</h4>
-      </div>
-      <div  (click)="navigateTo('savoirFaire')">
-        <img  alt="JNL Collection" src="assets/Images/Marque/MK_savoir.jpg">
-        <h4>LE SAVOIR-FAIRE</h4>
-      </div>
-      <div  (click)="navigateTo('services')">
-        <img  alt="JNL Collection" src="assets/Images/Marque/MK_services.jpg">
-        <h4>LES SERVICES</h4>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
