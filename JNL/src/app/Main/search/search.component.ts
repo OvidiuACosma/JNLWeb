@@ -39,11 +39,13 @@ export class SearchComponent implements OnInit, AfterViewChecked {
       this.otherLanguages = this.languages.filter(f => !f.includes(this.language));
       this.getText(this.language);
     });
-    this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
+    this.router.events.subscribe(r => {
+      this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
+    });
   }
 
   ngAfterViewChecked() {
-    this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
+    // this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
   }
 
   getText(lang: string) {
