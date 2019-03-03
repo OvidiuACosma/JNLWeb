@@ -38,7 +38,7 @@ h5 {
 
 
 video {
-    width: 87.3%;
+    width: 87vw;
     height: auto;
     margin: auto;
 }
@@ -312,12 +312,12 @@ video {
 
 #savoir {
     margin: auto;
-    width: 87.3vw;
-    height: 39vw;
+    width: 87vw;
+    height: 49vw;
     display: flex;
     color: white;
     margin-top: 6.3vw;
-    margin-bottom: 7.72vw;
+    margin-bottom: 8vw;
 }
 
 #savoir > div:first-child {

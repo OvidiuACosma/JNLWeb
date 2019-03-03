@@ -3,6 +3,7 @@ h1 {
     font-size: 5.03vw;
     text-transform: uppercase;
     text-align: center !important;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -93,8 +94,8 @@ h6 {
 
 .heritage {
     /* width: 100vw; */
-    padding-top: 7vw;
-    padding-bottom: 7vw;
+    margin-top: 3.06vw;
+    margin-bottom: 5.64vw;
     background-color: white;
     display: flex;
 }
@@ -112,7 +113,8 @@ h6 {
     margin: auto;
     font-family: Atak-Regular;
     font-size: 1.4vw;
-    margin-bottom: 5vw;
+    margin-top: 1.37vw;
+    margin-bottom: 4vw;
 }
 
 .heritage > div > p > a {
@@ -120,7 +122,7 @@ h6 {
 }
 
 .full-image {
-    margin-top: 3.4vw;
+    margin-top: 2.63vw;
     left: 0;
     width: 100%;
     height: auto;
@@ -172,7 +174,7 @@ h6 {
 
 #produits_main > h1 {
     margin: auto;
-    margin-top: 0.7vw;
+    margin-top: 2.41vw;
 }
 
 .style-title {
@@ -181,7 +183,7 @@ h6 {
 
 .carousel-produits {
     width: 100%;
-    height: 50vw;
+    /* height: 50vw; */
     padding-top: 3.15vw;
 }
 
@@ -215,7 +217,8 @@ h6 {
     width: 80%;
     margin: auto;
 
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    align-content: center;
     flex-wrap: wrap;
     position: relative;
 
@@ -229,6 +232,8 @@ h6 {
     text-indent: 0;
     font-size: 1.8vw;
     font-family: Atak-Light;
+    margin-left: 0.73vw;
+    margin-right: 0.73vw;
 }
 
 .carousel-indicators > li:hover {
@@ -257,12 +262,13 @@ h6 {
     /* margin: auto; */
     margin-top: 4.1vw;
     text-align: center;
+    margin-bottom: 2.41vw;
 }
 
 .flex-div {
-    width: 80.2vw;
+    width: 80.12vw;
     margin: auto;
-    margin-bottom: 8.1vw;
+    margin-bottom: 6.24vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -272,11 +278,11 @@ h6 {
     margin: auto;
     margin-top: 0px;
     margin-bottom: 0px;
-    width: 35.1vw;
+    width: 35.17vw;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .flex-div > div > img {
@@ -291,10 +297,14 @@ h6 {
 }
 
 .flex-div > div > p {
-    margin-top: 1.7vw;
+    /* margin-top: 1.7vw; */
     font-family: Atak-Regular;
     font-size: 1.1vw;
     padding: 1.3vw;
+    width: 31.1vw;
+    margin: auto;
+    margin-top: 0;
+    line-height: 1.33vw;
 }
 
 .flex-div > div > div > span {
@@ -306,15 +316,25 @@ h6 {
 .flex-div > div:nth-child(2) {
     background-color: #EAD6AD;
     align-content: space-around;
+    width: 39.12vw;
 }
 
 .flex-div > div:nth-child(2) > img {
     width: 33vw;
     margin: auto;
+    margin-top: 2.79vw;
+    margin-bottom: 3.56vw;
+}
+
+.flex-div > div:nth-child(2) > p {
+    font-family: Atak-Medium;
+    font-size: 1.3vw;
+    width: 33.8vw;
+    line-height: 1.66vw;
 }
 
  #les_produits {
-     margin-bottom: 5vw;
+     margin-bottom: 7.28vw;
      height: auto;
  }
 
@@ -322,7 +342,7 @@ h6 {
     width: 83vw;
     height: 6vw;
     margin: auto;
-    margin-bottom: 5vw;
+    margin-bottom: 5.48vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -345,7 +365,7 @@ h6 {
 #other-links {
     width: 83vw;
     margin: auto;
-    margin-bottom: 6.98vw;
+    margin-bottom: 4.83vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -361,6 +381,7 @@ h6 {
 
 #other-links > div > h4 {
     margin-top: 1vw;
+    font-family: Atak-Light;
 }
 
 #other-links > div:hover {
