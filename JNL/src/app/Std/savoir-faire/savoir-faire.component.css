@@ -285,7 +285,8 @@ video {
 
 #marques_list > a {
     margin: auto;
-    font-size: 2vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -299,12 +300,12 @@ video {
 
 #atelier, #fabrication {
     margin-bottom: 60px;
-    /* padding-top: 60px; */
+    padding-top: 8vw;
 }
 
-#fabrication {
+/* #fabrication {
     margin-top: 7.39vw;
-}
+} */
 
 #fabrication > h4 {
     margin-top: 3.94vw;
@@ -317,7 +318,7 @@ video {
     display: flex;
     color: white;
     margin-top: 6.3vw;
-    margin-bottom: 8vw;
+    /* margin-bottom: 8vw; */
 }
 
 #savoir > div:first-child {

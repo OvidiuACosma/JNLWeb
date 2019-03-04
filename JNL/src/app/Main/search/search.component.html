@@ -12,7 +12,7 @@
             <div>&nbsp;</div>
        </div>
 
-       <div id="top_buttons" *ngIf="text">
+       <div id="top_buttons" *ngIf="text" (mouseleave)="closeLangSelection()">
            <span>
                <a (click)="navigateTo('favorites')" class="top-button">
                    <i class="far fa-heart"></i>
@@ -31,17 +31,20 @@
                <a (click)="navigateTo('contact')" class="top-button">{{text.contact}}</a>
            </span>
            <span class="top-button">&nbsp;&#8213;&nbsp;</span>
+           
            <ul *ngIf="isLangSelectMode">
                <li *ngFor="let l of otherLanguages">
-                   <span class="top-button span-cursor" (click)="onChangeLanguage(l)">{{l}}</span>
+                   <span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>
                </li>
            </ul>
-           <span class="top-button span-cursor" style="margin-right: 2px" (click)="toggleLangStatus()">
-                {{language}}
-           </span>
-           <span class="top-button span-cursor" (click)="toggleLangStatus()">
-               <i class="fa fa-sort-down fa-1"></i>
-           </span>
+           <span class="top-button">
+                <span style="margin-right: 2px" (click)="toggleLangStatus()">
+                        {{language}}
+                </span>
+                <span (click)="toggleLangStatus()">
+                    <i class="fa fa-sort-down fa-1"></i>
+                </span>
+            </span>
 
            <!--<span>
                 <select #l [value]="language" (change)="onChangeLanguage(l.value)" class="select-lang">

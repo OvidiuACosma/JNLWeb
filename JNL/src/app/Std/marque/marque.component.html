@@ -44,7 +44,7 @@
                   </div>
                 </div> -->
     
-                <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
+                <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index" [ngClass]="k === 0 ? 'item active' : 'item'">
                   <div class="container">
                     <div class="carousel-item-image">
                       <img src='{{item}}' alt='Vanhamme Collection' class="slide-image">

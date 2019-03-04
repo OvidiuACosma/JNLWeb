@@ -133,4 +133,8 @@ export class SearchComponent implements OnInit, AfterViewChecked {
       this.router.navigate([target], {fragment: fragment});
     }
   }
+
+  closeLangSelection() {
+    this.isLangSelectMode = false;
+  }
 }

@@ -101,16 +101,17 @@
     justify-content: center;
     align-content: center;
     margin: auto;
-    margin-bottom: 2em;
+    margin-bottom: 2.22vw;
 }
 
 #side_nav_links > div:nth-child(7) {
-    margin-bottom: 5em;
+    margin-bottom: 5.55vw;
 }
 
 #side_nav_links > div > a {
-    margin-right: 20px;
+    margin-right: 1.38vw;;
     transition: all .5s ease;
+    font-size: 1.3vw;
 }
 
 #side_nav_links > div > span {

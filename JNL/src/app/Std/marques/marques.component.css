@@ -31,9 +31,7 @@ h3 {
 
 .home_links {
     border: 1.5px solid #DBBB76;
-    padding: .27vw; /*0.3em;*/
-    padding-left: 1.59vw; /*1em;*/
-    padding-right: 1.59vw; /*1em;*/
+    padding: .27vw 1.59vw;
     font-size: 1.11vw;
     text-transform: uppercase;
     letter-spacing : 1.28px;
@@ -77,7 +75,6 @@ h3 {
 
 #marques_list > a {
     margin: auto;
-
     font-size: 1.8vw;
     line-height: 2vw;
     left: 0;

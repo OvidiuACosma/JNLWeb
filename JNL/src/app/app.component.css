@@ -12,34 +12,22 @@
     z-index: 899;
 }
 
-.menu-blue {
-    background-color: #121A2D;
-    top: 60px;
-    width: 0;
-}
-
 .content {
     background-color: #fff; 
-    margin-left: 77px !important;
+    margin-left: 5.347vw; /*77px !important;*/
     top: 60px;
     z-index: 801;
-    /* width: auto; */
 }
 
 .main {
     display: block;
-    /*top: 60px;
-    position: relative;*/
     z-index: 800;
 }
 
 .router-outlet {
     min-height: 57.5vh;
 }
-/*
-.menu-bottom {
-     position: relative; 
-}*/
+
 
 @media only screen and (max-width: 768px){
     .content {

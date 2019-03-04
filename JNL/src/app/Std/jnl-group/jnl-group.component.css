@@ -170,7 +170,8 @@ button {
 
 #group_list > a {
     margin: auto;
-    font-size: 2vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -453,9 +454,7 @@ button {
 }
 
 .slide-image {
-    width: 28.7vw;
-    /* width: 100%; */
-    /* max-width: 28vw; */
+    width: 55.5vw;
     object-fit: cover;
 }
 

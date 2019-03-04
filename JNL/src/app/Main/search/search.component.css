@@ -34,9 +34,6 @@ li {
 .top-button:hover {
     color: #DBBB76;
     transition: all .3s ease;
-}
-
-.span-cursor {
     cursor: pointer;
 }
 
@@ -141,7 +138,6 @@ li {
 #top_buttons {
     width: auto;
     display: inline-flex;
-    /* flex-wrap: wrap; */
     flex-wrap: nowrap;
     height: 24px;
 }
@@ -174,14 +170,14 @@ li {
 }
 
 #menu-button {
-    width: 77px;
+    width: 5.347vw;
     height: var(--search-bar-height);
     text-align: center;
     align-items: center;
     text-decoration: none;
     color: white;
     background-color: #121A2D;
-    font-size: 1.3em;
+    font-size: 1.444vw;
     cursor: pointer;
 }
 
@@ -189,7 +185,8 @@ li {
     display: inline-flex;
     align-items: center !important;
     margin: auto;
-    margin-left: 0 !important; /*1.5vw*/
+    margin-left: 0 !important;
+    transition: all .3s ease;
 }
 
 .menu-logo-img {
@@ -207,14 +204,14 @@ li {
 }
 
 .menu-text {
-    font-size:.758rem;
-    padding: 16px 0 0 0;
+    font-size: .842vw; /*.758rem;*/
+    padding: 1.111vw 0 0 0;
     margin: 0;
 }
 
 .memu-button-img {
     padding-top: 16px;
-    width: 40px;
+    width: 2.777vw; /*40px;*/
 }
 
 @media only screen and (max-width: 768px) {

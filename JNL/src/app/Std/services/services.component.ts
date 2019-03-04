@@ -10,12 +10,10 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
 })
 export class ServicesComponent implements OnInit, AfterViewChecked {
 
-
   language: string;
   text: any;
   selected = [0, 0, 0, 0];
   scroller = true;
-
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -28,7 +26,6 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
       this.language = lang || 'EN';
       this.getText(lang);
     });
-
   }
 
   getText(lang: string) {
@@ -49,7 +46,6 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
     } else {
       this.selected[nr] = 1;
     }
-
     this.scroller = false;
   }
 
@@ -66,5 +62,4 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
         }
     });
   }
-
 }

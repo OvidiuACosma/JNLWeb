@@ -144,7 +144,8 @@ video {
 
 #services_list > a {
     margin: auto;
-    font-size: 2vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;

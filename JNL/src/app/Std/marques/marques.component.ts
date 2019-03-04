@@ -50,7 +50,7 @@ export class MarquesComponent implements OnInit, AfterViewChecked {
       if (fragment) {
         this.navigateToAnchor(fragment);
       } else {
-          window.scrollTo(0, 0);
+          this.scrollTop();
         }
     });
   }
@@ -62,8 +62,21 @@ export class MarquesComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  navigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.scrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+  }
+
   navigateToMarque(marque: string) {
     this.router.navigate(['/marque', marque]);
+    this.scrollTop();
+  }
+
+  scrollTop() {
     window.scrollTo(0, 0);
   }
 }
