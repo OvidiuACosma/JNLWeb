@@ -50,4 +50,16 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
     });
   }
 
+  navigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.ScrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+  }
+
+  ScrollTop() {
+    window.scrollTo(0, 0);
+  }
 }

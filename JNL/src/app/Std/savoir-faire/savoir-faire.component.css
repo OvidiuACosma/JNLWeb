@@ -261,7 +261,7 @@ video {
 #services > img {
     width: 25.8vw;
     margin: auto;
-    /* margin-top: 5vw; */
+    cursor: pointer;
 }
 
 #services > h4 {
