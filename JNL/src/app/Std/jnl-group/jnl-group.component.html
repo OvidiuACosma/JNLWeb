@@ -1,9 +1,9 @@
-<div class="les-marques-main" *ngIf="text">
+<div class="group-main" *ngIf="text">
     <div>
       <h1>{{text.title}}</h1>
 
 
-      <div id="marques_list">
+      <div id="group_list">
         <a routerLink="/jnlGroup" fragment="histoire" (click)="reScroll()">{{text.histoire}}</a>
         <a routerLink="/jnlGroup" fragment="equipe" (click)="reScroll()">{{text.equipe}}</a>
         <a routerLink="/jnlGroup" fragment="engagement" (click)="reScroll()">{{text.engagement}}</a>
@@ -15,7 +15,7 @@
         <h2>{{text.histoireTitle}}</h2>
         <h3>{{text.histoireSub}}</h3>
         <h4>{{text.histoireText1}}</h4>
-        <img class="marques-image" alt="JNL Collection" src="assets/Images/Groupe/GP_bw.jpg">
+        <img class="group-image" alt="JNL Collection" src="assets/Images/Groupe/GP_bw.jpg">
 
         <div class="image-parag">
           <div>
@@ -86,7 +86,7 @@
 
 
         <!--CAROUSEL-->
-        <div id='carousel-custom' class='carousel slide carousel-marques' data-ride='carousel'  data-interval="1800">
+        <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel'  data-interval="1800">
             <div class="carousel-inner">
                 <div class='carousel-item active'>
                   <div class="container">
@@ -178,7 +178,7 @@
         <h3>{{text.engagementSub}}</h3>
         <div class='image-parag' id="impg2">
             <div class="respo_img" id="img2">&nbsp;
-                <!-- <img alt="JNL Collection">
+                <!-- <img alt="JNL Collection"> 
                 <img alt="JNL Collection" src="assets/Images/Groupe/GP_leaf.jpg"> -->
               </div>
           <div>
@@ -196,7 +196,7 @@
             </div>
           </div>
 
-      <div id='carousel-projets' class='carousel slide carousel-marques' data-ride='carousel'  data-interval="1200">
+      <div id='carousel-projets' class='carousel slide carousel-group' data-ride='carousel'  data-interval="1800">
           <div class="carousel-inner">
               <div class='carousel-item active'>
                 <div class="container3">

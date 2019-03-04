@@ -6,7 +6,7 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 5.6vw;
+    margin-bottom: 3.45vw;
     font-family: Atak-Light;
     font-size: 3.5vw;
     text-align: center;
@@ -55,7 +55,7 @@ h4 {
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-    margin-bottom: 4vw;
+    /* margin-bottom: 4vw; */
     text-align: center;
 }
 
@@ -91,8 +91,8 @@ h4 {
 .first-image {
     width: 100%;
     left: 0;
-    margin-top: 1.6vw;
-    margin-bottom: 4.2vw;
+    margin-top: 3.81vw;
+    margin-bottom: 3.01vw;
 }
 
 
@@ -112,21 +112,21 @@ h4 {
 
 .four-flex > div > div {
     margin: auto;
-    width: 15.8vw;
+    width: 15.47vw;
     display: flex;
     flex-direction: column;
     margin-right: 1vw;
 }
 
 .four-flex > div > div > img {
-    width: 15.8vw;
+    width: 15.47vw;
     margin-bottom: 1.9vw;
 }
 
 .four-flex > div > div > span {
     font-family: Atak-Light;
     font-size: 1.8vw;
-    width: 15.8vw;
+    width: 15.47vw;
     word-wrap: normal;
     height: 6.5vw;
 }
@@ -282,9 +282,13 @@ input[type="radio"] {
     margin-top: 60px;
 }
 
-#catalogues, #banqueImages, #pressKit, #parutions {
+/* #catalogues, #banqueImages, #pressKit, #parutions {
     margin-bottom: 60px;
     padding-top: 60px;
+} */
+
+#catalogues, #banqueImages {
+    margin-bottom: 8.05vw;
 }
 
 
