@@ -22,12 +22,7 @@ h4 {
 }
 
 video {
-    width: 87.3vw;
-    height: 51.5vw;
-}
-
-video {
-    width: 87.3vw;
+    width: 72.63vw;
     height: 51.5vw;
     margin: auto;
 }
@@ -123,8 +118,8 @@ video {
 } 
 
 #services > img {
-    width: 87.3vw;
-    height: 47.8vw;
+    width: 72.63vw;
+    height: 28vw;
 }
 
 #services_list {
@@ -356,8 +351,8 @@ select {
 
 #services {
     margin: auto;
-    width: 87.3vw;
-    height: 47.8vw;
+    width: 72.63vw;
+    height: 28vw;
     display: flex;
     color: white;
 }
