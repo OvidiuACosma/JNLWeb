@@ -68,14 +68,14 @@ export class SearchComponent implements OnInit, AfterViewChecked {
     this.searchMode = !this.searchMode;
     if (searchText) {
     this.router.navigate(['/searchResults', searchText]);
-    this.ScrollTop();
+    this.scrollTop();
     }
   }
 
   goHome() {
     this.dataex.setNavBarStatus(false);
     this.router.navigate(['/home']);
-    this.ScrollTop();
+    this.scrollTop();
   }
 
   toggleNav() {
@@ -95,7 +95,7 @@ export class SearchComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  ScrollTop() {
+  scrollTop() {
     window.scrollTo(0, 0);
   }
 

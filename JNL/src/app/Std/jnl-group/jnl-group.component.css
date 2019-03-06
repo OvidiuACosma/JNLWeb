@@ -415,6 +415,11 @@ button {
     margin: auto;
 }
 
+.modal-header {
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
 
 .carousel-group {
     width: 100%;
@@ -454,8 +459,18 @@ button {
 }
 
 .slide-image {
+    width: 28.7vw;
+    object-fit: contain;
+}
+
+.slide-image-archive {
     width: 55.5vw;
     object-fit: cover;
+}
+
+.slide-image-projects {
+    width: 59vw;
+    object-fit: contain;
 }
 
 .carousel-indicators {
@@ -628,7 +643,8 @@ input[type="radio"] {
     margin: auto;
     top: 0;
     width: 60vw;
-    padding: 20px;
+    padding: 1.35vw;
+    /* padding-top: 0; */
 }
 
 .carousel-item-image2 > .slide-image {
@@ -639,7 +655,9 @@ input[type="radio"] {
 
 .close { 
     position: absolute; 
-    right: 1rem;
+    right: 1vw;
+    top: .79vw;
+    z-index: 2000;
 }
 
 #archivesModal {

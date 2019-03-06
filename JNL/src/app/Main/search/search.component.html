@@ -31,7 +31,7 @@
                <a (click)="navigateTo('contact')" class="top-button">{{text.contact}}</a>
            </span>
            <span class="top-button">&nbsp;&#8213;&nbsp;</span>
-           
+           <!--(mouseleave)="closeLangSelection()"-->
            <ul *ngIf="isLangSelectMode">
                <li *ngFor="let l of otherLanguages">
                    <span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>

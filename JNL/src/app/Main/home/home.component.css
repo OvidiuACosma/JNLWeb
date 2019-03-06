@@ -94,6 +94,13 @@ hr {
     object-fit: contain;
 }
 
+.slide-image-projects {
+    width: 59vw;
+    height: auto;
+    /* max-height: 31vw; */
+    object-fit: contain;
+}
+
 .carousel-indicators {
     margin: auto;
     width: 72.2vw;

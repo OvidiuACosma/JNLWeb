@@ -374,6 +374,7 @@ h6 {
 
 #other-links > div > img {
     width: 27vw;
+    opacity: .8;
 }
 
 #other-links > div > h4 {

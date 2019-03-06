@@ -86,7 +86,7 @@
 
 
         <!--CAROUSEL-->
-        <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel'  data-interval="1800">
+        <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel'  data-interval="3000">
             <div class="carousel-inner">
                 <div class='carousel-item active'>
                   <div class="container">
@@ -196,14 +196,14 @@
             </div>
           </div>
 
-      <div id='carousel-projets' class='carousel slide carousel-group' data-ride='carousel'  data-interval="1800">
+      <div id='carousel-projets' class='carousel slide carousel-group' data-ride='carousel'  data-interval="3000">
           <div class="carousel-inner">
               <div class='carousel-item active'>
                 <div class="container3">
                   <h2>{{text.projetsCity1}}</h2>
                   <h2>{{text.projets1}}</h2>
                  <div class="carousel-item-image">
-                   <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image">
+                   <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image-project">
                  </div>
                    <div class="projets-text">
                       <h4>
@@ -218,7 +218,7 @@
                     <h2>{{text.projetsCity2}}</h2>
                     <h2>{{text.projets2}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image">
+                     <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -232,7 +232,7 @@
                     <h2>{{text.projetsCity1}}</h2>
                     <h2>{{text.projets1}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image">
+                     <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -284,13 +284,13 @@
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class='col-12 modal-title text-center' id="ModalLabel">Archive {{year}}</h5>
+            <!--<h5 class='col-12 modal-title text-center' id="ModalLabel">Archive {{year}}</h5>-->
             <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close" (onclick)="modalClose()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-              <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel'>
+              <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel' data-interval="3000" >
                 <div class="carousel-inner">
                     <!-- <div class='carousel-item active'>
                       <div class="container2">
@@ -303,7 +303,7 @@
                       <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
                           <div class="container2">
                             <div class="carousel-item-image2">
-                              <img src={{item}} alt='JNL Collection1' class="slide-image">
+                              <img src={{item}} alt='JNL Collection1' class="slide-image-archive">
                             </div>
                           </div>
                       </div>
