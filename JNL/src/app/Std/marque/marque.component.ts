@@ -47,7 +47,7 @@ export class MarqueComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log('CHANGE!');
+    // console.log('CHANGE!');
   }
 
   getText(lang: string) {
