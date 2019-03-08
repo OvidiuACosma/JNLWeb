@@ -1,36 +1,34 @@
 <div id="bar">
    <div id="top-bar">
        <div id="menu-logo">
-            <div id="menu-button" (click)="toggleNav()">
-                <img class="memu-button-img" src="{{navBarButtonSrc}}">
-                <p class="menu-text">{{navBarButtonText}}</p>
-            </div>
             <div id="menu-logo-img" *ngIf="!isHome">
-                <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
+                <img class="image-link" id="logo"
+                    alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
                     (click)="goHome()"/>
             </div>
             <div>&nbsp;</div>
        </div>
 
-       <div id="top_buttons" *ngIf="text" (mouseleave)="closeLangSelection()">
+       <div id="top_buttons" *ngIf="text" (mouseleave)="closeLangSelection()"
+        [ngStyle]="isHome ? {'color': 'white'} : {'color': 'black'}">
            <span>
                <a (click)="navigateTo('favorites')" class="top-button">
                    <i class="far fa-heart"></i>
                    <!--<img alt="JNL Collection" src="/assets/Images/Common/fav_icon.png" height="16px">-->
                 </a>
-           </span>
-           <span class="top-button">&nbsp;&#8213;&nbsp;</span>
+           </span>&#8213;
+           <!-- <span class="top-button">&nbsp;&#8213;&nbsp;</span> -->
            <span>
                <a class="top-button" *ngIf="!searchMode" 
                 (click)="goSearchMode()">{{text.search}}</a>
                <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
                 (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
-           </span>
-           <span class="top-button">&nbsp;&#8213;&nbsp;</span>
+           </span>&#8213;
+           <!-- <span class="top-button">&nbsp;&#8213;&nbsp;</span> -->
            <span>
                <a (click)="navigateTo('contact')" class="top-button">{{text.contact}}</a>
-           </span>
-           <span class="top-button">&nbsp;&#8213;&nbsp;</span>
+           </span>&#8213;
+           <!-- <span class="top-button">&nbsp;&#8213;&nbsp;</span> -->
            <!--(mouseleave)="closeLangSelection()"-->
            <ul *ngIf="isLangSelectMode">
                <li *ngFor="let l of otherLanguages">
@@ -55,6 +53,7 @@
    </div>
 </div>
 
+<!--MOBILE VERSION-->
 <div id="mob-searchbar"> 
     <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()"></span>
     <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>

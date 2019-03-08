@@ -1,5 +1,5 @@
 
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
 
@@ -8,12 +8,13 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent implements OnInit, AfterViewChecked {
+export class ServicesComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   language: string;
   text: any;
   selected = [0, 0, 0, 0];
   scroller = true;
+  anchor: number;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -49,17 +50,42 @@ export class ServicesComponent implements OnInit, AfterViewChecked {
     this.scroller = false;
   }
 
+  ngAfterViewInit() {
+    this.anchor = 1;
+  }
+
   ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element && this.scroller === true ) {
-          element.scrollIntoView({block: 'start', behavior: 'smooth'});
-        }
-        this.scroller = true;
-      } else if (this.scroller === true) {
-          window.scrollTo(-100, 0);
-        }
-    });
+    if (this.anchor <= 2) {
+      this.route.fragment.subscribe(fragment => {
+        if (fragment) {
+          this.navigateToAnchor(fragment);
+          this.anchor++;
+          this.scroller = true;
+        } else {
+            this.scrollTop();
+          }
+      });
+    }
+  }
+
+  navigateToAnchor(fragment: string) {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+  }
+
+  navigateTo(target: string, fragment: string = '') {
+    this.anchor = 2;
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.scrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+  }
+
+  scrollTop() {
+    window.scrollTo(0, 0);
   }
 }

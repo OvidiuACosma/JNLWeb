@@ -5,7 +5,7 @@ import { AppRoutingModule, routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LegalComponent, GDPRComponent, CreditsComponent } from './Extras';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
-         SearchResultsComponent, PageNotFoundComponent } from './Main';
+         SearchResultsComponent, PageNotFoundComponent, LeftStripComponent } from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
          MarqueComponent, ActualiteComponent } from './Std';
@@ -53,7 +53,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ProductCataloguesComponent,
     ActualiteComponent,
     PageNotFoundComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    LeftStripComponent
   ],
   imports: [
     BrowserModule,

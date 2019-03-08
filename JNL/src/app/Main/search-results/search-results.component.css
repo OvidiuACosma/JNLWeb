@@ -1,0 +1,4 @@
+.search {
+    width: calc(100vw - var(--left-strip-width));
+    padding-top: var(--search-bar-height);
+}

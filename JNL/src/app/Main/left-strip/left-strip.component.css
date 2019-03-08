@@ -1,0 +1,47 @@
+#menu-logo {
+    display: inline-flex;
+    /* align-items: center !important; */
+    background-color: #121A2D;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 0;
+    margin: auto;
+    margin-left: 0 !important;
+    transition: all .3s ease;
+}
+
+#menu-button {
+    top: 0;
+    width: 5.347vw;
+    height: var(--search-bar-height);
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #121A2D;
+    font-size: 1.444vw;
+    cursor: pointer;
+}
+
+.memu-button-img {
+    padding-top: 16px;
+    width: 2.777vw; /*40px;*/
+}
+
+.menu-text {
+    font-size: .842vw; /*.758rem;*/
+    padding: 1.111vw 0 0 0;
+    margin: 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+   
+    #menu-button {
+        color: white !important;
+        background-color: transparent;
+        margin-top: -5px;
+    }
+
+}

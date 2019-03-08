@@ -55,7 +55,6 @@
     height: 100%; /*calc(100% + 60px);*/
     margin-left: -100vw;
 
-    /* margin-top: -60px; */
     padding-bottom: 1vw;
     position: fixed;
 
@@ -67,11 +66,8 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
-
     font-family: Atak-Regular;
-
     overflow-y: scroll;
-
     -ms-overflow-style: none; 
     overflow: -moz-scrollbars-none; 
 }

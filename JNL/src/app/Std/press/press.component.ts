@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, DownloaderService } from 'src/app/_services';
 
@@ -7,13 +7,13 @@ import { DataExchangeService, TranslationService, DownloaderService } from 'src/
   templateUrl: './press.component.html',
   styleUrls: ['./press.component.css']
 })
-export class PressComponent implements OnInit, AfterViewChecked {
+export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   public section: string;
-
   language: string;
   text: any;
   scroller = true;
+  anchor: number;
   blob: any;
   url: any;
 
@@ -50,7 +50,6 @@ export class PressComponent implements OnInit, AfterViewChecked {
   download(marque: any, type: any) {
 
     // NOT WORKING FOR IE AND EDGE
-
     this.downloader.getFile(marque, type).subscribe(data => {
       this.blob = new Blob([data], {
         type: 'application/pdf'
@@ -63,18 +62,21 @@ export class PressComponent implements OnInit, AfterViewChecked {
     this.scroller = false;
   }
 
+  ngAfterViewInit() {
+    this.anchor = 1;
+  }
+
   ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element && this.scroller === true ) {
-          element.scrollIntoView({block: 'start', behavior: 'smooth'});
-        }
-        // this.scroller = true;
-      } else if (this.scroller === true) {
-          window.scrollTo(0, 0);
-        }
-    });
+    if (this.anchor <= 2) {
+      this.route.fragment.subscribe(fragment => {
+        if (fragment) {
+          this.navigateToAnchor(fragment);
+          this.anchor++;
+        } else {
+            this.scrollTop();
+          }
+      });
+    }
   }
 
   navigateToAnchor(fragment: string) {
@@ -86,15 +88,16 @@ export class PressComponent implements OnInit, AfterViewChecked {
   }
 
   navigateTo(target: string, fragment: string = '') {
+    this.anchor = 2;
     if (fragment === '') {
       this.router.navigate([target]);
-      this.ScrollTop();
+      this.scrollTop();
     } else {
       this.router.navigate([target], {fragment: fragment});
     }
   }
 
-  ScrollTop() {
+  scrollTop() {
     window.scrollTo(0, 0);
   }
 

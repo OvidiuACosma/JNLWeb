@@ -2,11 +2,10 @@
   <h1>{{text.services}}</h1>
 
   <div id="services_list">
-    <a routerLink="/services" fragment="expertise">{{text.expertise}}</a>
-    <a routerLink="/services" fragment="surMesure">{{text.surMesure}}</a>
-    <a routerLink="/services" fragment="votreProjet">{{text.project}}</a>
+    <a (click)="navigateTo('services', 'expertise')">{{text.expertise}}</a>
+    <a (click)="navigateTo('services', 'surMesure')">{{text.surMesure}}</a>
+    <a (click)="navigateTo('services', 'votreProjet')">{{text.project}}</a>
   </div>
-
 
     <div id="services">
       <img  src="\assets\Images\Services\SV_pic1.jpg">
@@ -26,45 +25,32 @@
     </div>
   </div>
 
-
-  
   <div id="surMesure">
     <h2>{{text.consultingTitle}}</h2>
-
-    <div class="sur-flex">
-      <div>
-
-          <div>{{text.consultingText1}} 
-            <br><br>
-
-          </div>
-          
-          <div>
-              <img alt="JNL Collection" src="assets/Images/Services/SV_pic2.jpg">
-          </div>
-      </div>
-
-      <div>
-
-          <div>
-              <img alt="JNL Collection" src="assets/Images/Services/SV_pic3.jpg">
-          </div>
-
-          <div>
-             {{text.consultingText2}} 
-
-          </div>
-      </div>
-  </div>
+      <div class="sur-flex">
+        <div>
+            <div>{{text.consultingText1}} 
+              <br><br>
+            </div>
+            <div>
+                <img alt="JNL Collection" src="assets/Images/Services/SV_pic2.jpg">
+            </div>
+        </div>
+        <div>
+            <div>
+                <img alt="JNL Collection" src="assets/Images/Services/SV_pic3.jpg">
+            </div>
+            <div>
+              {{text.consultingText2}} 
+            </div>
+        </div>
+    </div>
   </div>
 
-  
   <div id="votreProjet">
-    
-  <div class="contact_div">
-      <h2>{{text.projectTitle}}</h2>
-      <p>{{text.projectText}} 
-        </p>
+    <div class="contact_div">
+        <h2>{{text.projectTitle}}</h2>
+        <p>{{text.projectText}}</p>
       <form class="contact_form">
         <div>
           <div>
@@ -76,13 +62,11 @@
               <option>Sujet 3</option>
             </select>
           </div>
-
             <div>
               <span>Pouvez vous preciser?</span><br>
               <textarea placeholder="Votre message*" rows="6" required maxlength="500"></textarea><br>
               <span class="small_text">Max 500 caractères.</span>
             </div>
-
             <div>
               <span>Sélectionnez les marques qui vous intéressent:</span>
 
@@ -107,27 +91,7 @@
                         <span>&nbsp;Vanhamme</span>
                     </div>
                 </div>
-
               </div>
-
-              <!-- <div id="checks">
-                <div>
-                  <div>
-                    <input type="checkbox" id="jnl"><label for="jnl">JNL Collection</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="luz"><label for="luz">Luz Interiors</label>
-                  </div>
-              </div>
-              <div>
-                <div>
-                 <input type="checkbox" id="ungaro"><label for="ungaro">Emanuel Ungaro</label>
-                </div>
-                <div>
-                  <input type="checkbox" id="vanhamme"><label for="vanhamme">Vanhamme</label>
-                </div>
-              </div>
-              </div>   -->
             </div>
           </div>
           <div>
@@ -143,12 +107,9 @@
             <input placeholder="Email*" required/>
           </div>
        </div>
-
         <br>
-
         <button class="send">ENVOYER</button>
       </form>
     </div>
   </div>
-
 </div>

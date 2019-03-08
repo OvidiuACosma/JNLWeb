@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
 import * as _ from 'lodash';
@@ -8,12 +8,13 @@ import * as _ from 'lodash';
   templateUrl: './jnl-group.component.html',
   styleUrls: ['./jnl-group.component.css']
 })
-export class JnlGroupComponent implements OnInit, AfterViewChecked {
+export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   language: string;
   text: any;
   archive: any;
   scroller = true;
+  anchor: number;
   year: any;
   isOpen = false;
   archives = [2011, 2012, 2013, 2014, 2015, 2016];
@@ -86,23 +87,22 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
 
   // end of archive images
 
-  reScroll() {
-    this.scroller = true;
-    this.ngAfterViewChecked();
+  ngAfterViewInit() {
+    this.anchor = 1;
   }
 
   ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element && this.scroller === true ) {
-          element.scrollIntoView({block: 'start', behavior: 'smooth'});
-        }
-        // this.scroller = true;
-      } else if (this.scroller === true) {
-          window.scrollTo(0, 0);
-        }
-    });
+    // this.anchor <= 2 - ensures it pass the code 2 times, otherwise no scroll to anchor happens
+    if (this.anchor <= 2) {
+      this.route.fragment.subscribe(fragment => {
+        if (fragment) {
+          this.navigateToAnchor(fragment);
+          this.anchor++;
+        } else {
+            this.scrollTop();
+          }
+      });
+    }
   }
 
   navigateToAnchor(fragment: string) {
@@ -111,5 +111,19 @@ export class JnlGroupComponent implements OnInit, AfterViewChecked {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
     this.scroller = true;
+  }
+
+  navigateTo(target: string, fragment: string = '') {
+    this.anchor = 2;
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.scrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+  }
+
+  scrollTop() {
+    window.scrollTo(0, 0);
   }
 }

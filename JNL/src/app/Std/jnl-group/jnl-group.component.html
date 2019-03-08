@@ -4,11 +4,11 @@
 
 
       <div id="group_list">
-        <a routerLink="/jnlGroup" fragment="histoire" (click)="reScroll()">{{text.histoire}}</a>
-        <a routerLink="/jnlGroup" fragment="equipe" (click)="reScroll()">{{text.equipe}}</a>
-        <a routerLink="/jnlGroup" fragment="engagement" (click)="reScroll()">{{text.engagement}}</a>
-        <a routerLink="/jnlGroup" fragment="projets" (click)="reScroll()">{{text.projets}}</a>
-        <a routerLink="/jnlGroup" fragment="archives" (click)="reScroll()">{{text.archives}}</a>
+        <a (click)="navigateTo('jnlGroup', 'histoire')">{{text.histoire}}</a>
+        <a (click)="navigateTo('jnlGroup', 'equipe')">{{text.equipe}}</a>
+        <a (click)="navigateTo('jnlGroup', 'engagement')">{{text.engagement}}</a>
+        <a (click)="navigateTo('jnlGroup', 'projets')">{{text.projets}}</a>
+        <a (click)="navigateTo('jnlGroup', 'archives')">{{text.archives}}</a>
       </div>
 
       <div id="histoire">

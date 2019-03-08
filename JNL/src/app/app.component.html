@@ -1,9 +1,12 @@
-<div>
-  <div class="search-bar">
-    <app-search (toggleNavBar)="toggleNav()"></app-search>
+<div class="wrapper">
+  <div class="left-strip" (click)="toggleNav()">
+    <app-left-strip></app-left-strip>
   </div>
 
-  <div style="position: relative; background-color: #121A2D;">
+  <div class="container-main">
+    <div class="search-bar">
+      <app-search (toggleNavBar)="toggleNav()"></app-search>
+    </div>
 
     <div class="content">
 

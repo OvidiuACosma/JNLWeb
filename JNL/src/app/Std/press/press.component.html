@@ -2,9 +2,9 @@
   <h1>{{text.press}}</h1>
 
   <div id="presse_list">
-    <a routerLink="/press" fragment="catalogues">{{text.catalog}}</a>
-    <a routerLink="/press" fragment="banqueImages">{{text.bank}}</a>
-    <a routerLink="/press" fragment="parutions">{{text.review}}</a>
+    <a (click)="navigateTo('press', 'catalogues')">{{text.catalog}}</a>
+    <a (click)="navigateTo('press', 'banqueImages')">{{text.bank}}</a>
+    <a (click)="navigateTo('press', 'parutions')">{{text.review}}</a>
   </div>
 
   <div>
@@ -78,9 +78,6 @@
       </div>
     </div>
   </div>
-
-  
-
     
     <div id="parutions">
       <h2>{{text.review}}</h2>

@@ -135,6 +135,8 @@ export class SearchComponent implements OnInit, AfterViewChecked {
   }
 
   closeLangSelection() {
-    this.isLangSelectMode = false;
+    if (this.isLangSelectMode) {
+      this.toggleLangStatus();
+    }
   }
 }

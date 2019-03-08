@@ -27,7 +27,7 @@ li {
     text-transform: uppercase;
     mix-blend-mode: difference;
     /* text-shadow: 0px 0px 5px white; */
-    text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+    /* text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white; */
     transition: all .3s ease;
 }
 
@@ -59,9 +59,9 @@ li {
   }
 
 #bar {
-    position: fixed;
-    top: 0px;
-    width: 100%;
+    width: calc(100vw - var(--left-strip-width));
+    display: flex;
+    flex-direction: row;
     font-family: Atak-Light;
 }
 
@@ -119,10 +119,10 @@ li {
 
 /*TOP MENU BAR*/
 #top-bar {
-    top: 0;
+    /* top: 0;
     left: 0;
-    width: 100%;
-    min-height: var(--search-bar-height);/*60px;*/
+    width: 100%; */
+    min-height: var(--search-bar-height);
     height: auto;
     padding: 0px;
     /*position: fixed;*/
@@ -140,15 +140,16 @@ li {
     display: inline-flex;
     flex-wrap: nowrap;
     height: 24px;
+    float: right;
 }
 
 #top_buttons > span, #top_buttons > ul > li > span {
     flex: 0 0 auto;
     width: auto;
-    margin: 0 20px 0 0;
+    margin: 0 1.38vw 0 1.38vw;
     text-align: center; 
     text-decoration: none;
-    color: black;
+    /* color: black; */
     mix-blend-mode: difference;
     transition: all .3s ease;
 }

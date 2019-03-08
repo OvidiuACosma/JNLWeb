@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
 
@@ -7,10 +7,11 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
   templateUrl: './savoir-faire.component.html',
   styleUrls: ['./savoir-faire.component.css']
 })
-export class SavoirFaireComponent implements OnInit, AfterViewChecked {
+export class SavoirFaireComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   language: string;
   text: any;
+  anchor: number;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -37,20 +38,32 @@ export class SavoirFaireComponent implements OnInit, AfterViewChecked {
     this.text = res[this.language.toUpperCase()];
   }
 
+  ngAfterViewInit() {
+    this.anchor = 1;
+  }
+
   ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element) {
-          element.scrollIntoView({block: 'start', behavior: 'smooth'});
-        }
-      } else {
-          window.scrollTo(0, 0);
-        }
-    });
+    if (this.anchor <= 2) {
+      this.route.fragment.subscribe(fragment => {
+        if (fragment) {
+          this.navigateToAnchor(fragment);
+          this.anchor++;
+        } else {
+            window.scrollTo(0, 0);
+          }
+      });
+    }
+  }
+
+  navigateToAnchor(fragment: string) {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
   }
 
   navigateTo(target: string, fragment: string = '') {
+    this.anchor = 2;
     if (fragment === '') {
       this.router.navigate([target]);
       this.scrollTop();
