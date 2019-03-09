@@ -66,14 +66,14 @@ input:focus, button:focus {
 }
 
 .bottom_nav > div {
-    font-size: 1.25vw;
+    font-size: 1.04vw;
     letter-spacing: 0.1vw;
     color: #212529;
 }
 
 .bottom_nav {
 
-    padding: 2.57vw 2.8vw 1.64vw 2.8vw;
+    padding: 2.41vw 5.48vw 1.86vw 4.44vw;
     width: 100%;
     margin: 0;
     left: 0;
@@ -130,6 +130,7 @@ input:focus, button:focus {
 
 #news_letter > input {
     border: 0;
+    border-right: 1px solid black;
     padding: 0.2em;
     margin: 0;
     width: 15vw;
