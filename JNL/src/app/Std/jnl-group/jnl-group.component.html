@@ -1,5 +1,5 @@
-<div class="group-main" *ngIf="text">
-    <div>
+ <div class="group-main">
+    <div *ngIf="text">
       <h1>{{text.title}}</h1>
 
 
@@ -19,9 +19,7 @@
 
         <div class="image-parag">
           <div>
-            <p style="font-size: 1.69vw" [innerHTML]="text.histoireText2">
-              
-            </p>
+            <p style="font-size: 1.69vw" [innerHTML]="text.histoireText2"></p>
           </div>
           <div class="respo_img" id="img1">&nbsp;
             <!-- <img alt="JNL Collection">
@@ -38,52 +36,18 @@
         <div>
           <div>
             <img class="group-img" alt="JNL Collection" src="assets/Images/Groupe/GP_dominique.JPG">
-
             <h4>Dominique Waxmann</h4>
             <h4>{{text.dominiqueTitle}}</h4>
-
             <p>{{text.dominiqueText}}</p>
-
           </div>
-
           <div>
               <img class="group-img" alt="JNL Collection" src="assets/Images/Groupe/GP_alain.JPG">
-  
               <h4>Alain Lahy</h4>
               <h4>{{text.alainTitle}}</h4>
-  
               <p>{{text.alainText}}</p>
-  
           </div>
         </div>
-
-        <!--
-        <div class="gallery-flex">
-          <div class="equipe-card">
-            <img alt="JNL Collection" src="assets/Images/Groupe/GP_gery.JPG">
-           
-            <div>
-              
-              <h4>Prenom Nom</h4>
-              <h4>TITRE</h4>
-              <br>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing
-                elit, sed diam nonummy nibh euismod
-                tincidunt ut laoreet dolore magna aliquam erat
-                volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit.
-            </div>
-
-          </div>
-          <div class="equipe-radio">
-            <input type="radio" name="equipe-cr">
-            <input type="radio" name="equipe-cr">
-            <input type="radio" name="equipe-cr">
-          </div>
-        </div>-->
-        
       </div>
-
 
         <!--CAROUSEL-->
         <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel'  data-interval="3000">
@@ -203,7 +167,7 @@
                   <h2>{{text.projetsCity1}}</h2>
                   <h2>{{text.projets1}}</h2>
                  <div class="carousel-item-image">
-                   <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image-project">
+                   <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image slide-image-project">
                  </div>
                    <div class="projets-text">
                       <h4>
@@ -218,7 +182,7 @@
                     <h2>{{text.projetsCity2}}</h2>
                     <h2>{{text.projets2}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image-project">
+                     <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -232,7 +196,7 @@
                     <h2>{{text.projetsCity1}}</h2>
                     <h2>{{text.projets1}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image-project">
+                     <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>

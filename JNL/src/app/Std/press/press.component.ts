@@ -74,6 +74,7 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
           this.anchor++;
         } else {
             this.scrollTop();
+            this.anchor++;
           }
       });
     }

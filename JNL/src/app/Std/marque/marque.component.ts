@@ -4,6 +4,7 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { switchMap } from 'rxjs/operators';
 import * as _ from 'lodash';
+declare var $: any;
 
 @Component({
   selector: 'app-marque',
@@ -43,6 +44,10 @@ export class MarqueComponent implements OnInit, OnChanges {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+    });
+    // activate carousel
+    $(document).ready(function() {
+      $('.carousel').carousel();
     });
   }
 

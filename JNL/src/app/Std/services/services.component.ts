@@ -63,6 +63,7 @@ export class ServicesComponent implements OnInit, AfterViewInit, AfterViewChecke
           this.scroller = true;
         } else {
             this.scrollTop();
+            this.anchor++;
           }
       });
     }

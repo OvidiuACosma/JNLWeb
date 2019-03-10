@@ -28,23 +28,14 @@
             
           <!-- Indicators -->
           <ol class='carousel-indicators'>
-              <li data-target='#carousel-custom'  *ngFor="let itemC of text.productCategories; let x = index" [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'><span>{{itemC}}</span></li>
-              <!-- <li data-target='#carousel-custom' data-slide-to='1'><span>FAUTEUILS</span></li>
-              <li data-target='#carousel-custom' data-slide-to='2'><span>CHAISES</span></li> -->
+              <li data-target='#carousel-custom'  *ngFor="let itemC of text.productCategories; let x = index" 
+                [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'>
+                <span>{{itemC}}</span>
+              </li>
           </ol>
             <div class="carousel-inner">
-                <!-- <div class='carousel-item active'>
-                  <div class="container">
-                    <div class="carousel-item-image">
-                      <img src='/assets/Images/Marque_V/MKV_pic2.png' alt='JNL Collection' class="slide-image">
-                    </div>
-                    <p class="voir">
-                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
-                    </p>
-                  </div>
-                </div> -->
-    
-                <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index" [ngClass]="k === 0 ? 'item active' : 'item'">
+                <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index" 
+                  [ngClass]="k === 0 ? 'item active' : 'item'">
                   <div class="container">
                     <div class="carousel-item-image">
                       <img src='{{item}}' alt='Vanhamme Collection' class="slide-image">
@@ -54,16 +45,6 @@
                     </p>
                   </div>
                 </div>
-                <!-- <div class='carousel-item'>
-                  <div class="container">
-                    <div class="carousel-item-image">
-                      <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
-                    </div>
-                    <p class="voir">
-                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES ASSISES </a>
-                    </p>
-                  </div>
-                </div> -->
             </div>
             
             <!-- Controls -->

@@ -2,6 +2,7 @@ import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from 'src/app/_services';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+declare var $: any;
 
 @Component({
   selector: 'app-product',
@@ -44,8 +45,11 @@ export class ProductComponent implements OnInit, AfterViewChecked {
       this.language = lang || 'EN';
       this.getText(lang);
     });
-
-    }
+    // activate carousel
+    $(document).ready(function() {
+      $('.carousel').carousel();
+    });
+  }
 
     getProductData(productID: string) {
     this.productsService.getProduct(productID)

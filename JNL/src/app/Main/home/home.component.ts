@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
-
+declare var $: any;
 
 @Component({
   selector: 'app-home',
@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+    });
+    // activate carousel
+    $(document).ready(function() {
+      $('.carousel').carousel();
     });
   }
 

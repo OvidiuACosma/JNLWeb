@@ -76,6 +76,12 @@ hr {
 .carousel-arrows {
     height: 4vw;
     width: 2vw;
+    margin-top: 4vw;
+}
+
+.carousel-arrows-projets {
+    height: 4vw;
+    width: 2vw;
     margin-top: -11vw;
 }
 

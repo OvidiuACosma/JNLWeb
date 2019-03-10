@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
+declare var $: any;
 
 @Component({
   selector: 'app-savoir-faire',
@@ -23,6 +24,10 @@ export class SavoirFaireComponent implements OnInit, AfterViewInit, AfterViewChe
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+    });
+    // activate carousel
+    $(document).ready(function() {
+      $('.carousel').carousel();
     });
   }
 
@@ -49,7 +54,8 @@ export class SavoirFaireComponent implements OnInit, AfterViewInit, AfterViewChe
           this.navigateToAnchor(fragment);
           this.anchor++;
         } else {
-            window.scrollTo(0, 0);
+            this.scrollTop();
+            this.anchor++;
           }
       });
     }

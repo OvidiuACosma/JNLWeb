@@ -1,7 +1,9 @@
-import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, AfterViewChecked, AfterViewInit, AfterContentInit, AfterContentChecked } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd, Scroll } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
 import * as _ from 'lodash';
+import { filter } from 'rxjs/operators';
+declare var $: any; // import jQuery
 
 @Component({
   selector: 'app-jnl-group',
@@ -33,6 +35,29 @@ export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecke
       this.getText(lang);
     });
     this.archives = _.sortBy(this.archives).reverse();
+    // activate carousel
+    $(document).ready(function() {
+      $('.carousel').carousel();
+    });
+  }
+
+  ngAfterViewInit() {
+    this.anchor = 1;
+  }
+
+  ngAfterViewChecked() {
+    // this.anchor <= 2 - ensures it pass the code 2 times, otherwise no scroll to anchor happens
+    if (this.anchor <= 2) {
+      this.route.fragment.subscribe(fragment => {
+        if (fragment) {
+          this.navigateToAnchor(fragment);
+          this.anchor++;
+        } else {
+            this.scrollTop();
+            this.anchor++;
+          }
+      });
+    }
   }
 
   getText(lang: string) {
@@ -87,30 +112,11 @@ export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   // end of archive images
 
-  ngAfterViewInit() {
-    this.anchor = 1;
-  }
-
-  ngAfterViewChecked() {
-    // this.anchor <= 2 - ensures it pass the code 2 times, otherwise no scroll to anchor happens
-    if (this.anchor <= 2) {
-      this.route.fragment.subscribe(fragment => {
-        if (fragment) {
-          this.navigateToAnchor(fragment);
-          this.anchor++;
-        } else {
-            this.scrollTop();
-          }
-      });
-    }
-  }
-
   navigateToAnchor(fragment: string) {
     const element = document.getElementById(fragment);
-    if (element &&  this.scroller === true) {
+    if (element) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
-    this.scroller = true;
   }
 
   navigateTo(target: string, fragment: string = '') {
