@@ -5,7 +5,7 @@
     <h5>MATERIALS<br> &amp; FINISHES</h5>
     <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
   </div>
-  <div id="contentMatFin" [ngClass]="(this.toggleMat === false) ? 'hide-item' :'show-item'">
+  <div id="contentMatFin" [ngClass]="(this.toggleMat) ? 'hide-item' :'show-item'">
     <div id="static">
       <br>
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -35,11 +35,10 @@
           <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
             <div class="scroll-container">
               <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
-                <div class="scroll-item">
+                <div class="scroll-item" (click)="sendItemToModal(item)" data-toggle="modal" data-target="#garnissageModal">
                   <a>
-                    <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                      src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt=""
-                      (click)="sendItemToModal(item)">
+                    <img id="thumbnail-img" class="img-button"
+                      src="assets\Images\Products\JNL\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt="">
                   </a>
                   <div>
                     <h6>{{item.model}}</h6>
@@ -116,8 +115,7 @@
 
 <!-- MODAL -->
 <div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true" *ngIf="material">
-  <!-- (click)="closeModal()"  data-backdrop="false" > -->
+  aria-hidden="true" *ngIf="material" (click)="closeModal()"  data-backdrop="false">
   <div class="modal-dialog modal-dialog-centered" style="width: 50vw;" role="document">
     <div class="modal-content">
       <div class="modal-header">

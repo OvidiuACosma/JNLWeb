@@ -104,7 +104,7 @@ button
 
 
 #container {
-    padding-top: 70px;
+    padding-top: var(--search-bar-height);
 }
 
 .gold {
