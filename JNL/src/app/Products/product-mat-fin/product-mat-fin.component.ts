@@ -103,8 +103,6 @@ export class ProductMatFinComponent implements OnInit {
     }
     this.material = this.currentMatList[this.index];
   }
-
-  /*
   closeModal() {
     const modal = document.getElementById('garnissageModal');
 
@@ -114,7 +112,7 @@ export class ProductMatFinComponent implements OnInit {
         document.getElementById('thumbnail-img').click();
       }
     };
-  }*/
+  }
 
   toggleElement() {
     this.toggleMat = !this.toggleMat;
