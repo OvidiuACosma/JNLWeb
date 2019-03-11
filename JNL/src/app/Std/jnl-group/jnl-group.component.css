@@ -415,6 +415,10 @@ button {
     margin: auto;
 }
 
+.modal {
+    left: calc(var(--left-strip-width) / 2)
+}
+
 .modal-header {
     border-bottom: 0;
     padding-bottom: 0;
