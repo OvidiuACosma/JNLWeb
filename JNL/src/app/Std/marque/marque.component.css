@@ -223,29 +223,34 @@ h6 {
 }
 
 .carousel-indicators > li {
+    color: black !important;
     height: 0;
     width: auto;
-    text-transform: uppercase;
     text-indent: 0;
+    margin-right: 1.38vw; 
+}
+
+.carousel-indicators > li > span {
+    color: black !important;
+    margin: auto;
     font-size: 1.8vw;
-    font-family: Atak-Light;
-    margin-left: 0.73vw;
-    margin-right: 0.73vw;
+    line-height: 2vw;
+    left: 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: all .5s ease;
 }
 
-.carousel-indicators > li:hover {
-    text-decoration: underline;
-}
-
-.carousel-indicators > span {
-    color: #555;
-}
-
-.carousel-indicators .active > span {
-    text-decoration: underline;
+.carousel-indicators > li > span:hover {
+    border-color: black;
+    transition: all .5s ease;
     color: black;
 }
 
+.carousel-indicators .active > span{
+    color: black;
+    border-bottom: 1px solid black;
+}
 .produits-text {
      /* width: 80%; */
      padding-top: 6vw;
