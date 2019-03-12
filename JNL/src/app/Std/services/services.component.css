@@ -148,7 +148,8 @@ video {
 }
 
 #services_list > a:hover {
-    border-color: #888;
+    color: black;
+    border-bottom: 1px solid black;
     transition: all .5s ease;
 }
 
