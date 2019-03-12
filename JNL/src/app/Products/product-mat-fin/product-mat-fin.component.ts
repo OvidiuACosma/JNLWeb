@@ -16,6 +16,8 @@ export class ProductMatFinComponent implements OnInit {
   public similiCuirs: any[];
   public abatjours: any[];
   public metals: any[];
+  public bois: any[];
+  public materials: any[];
 
   // data used in modal
   public currentMatList: any[];
@@ -30,7 +32,6 @@ export class ProductMatFinComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-
     // testing tab visibility
     this.cuirTab = true;
 
@@ -52,6 +53,12 @@ export class ProductMatFinComponent implements OnInit {
       .subscribe(similiCuirs => {
         this.similiCuirs = similiCuirs;
       });
+
+    // get Materials
+    this.productsService.getMaterials()
+    .subscribe(materials => {
+      this.materials = materials;
+    });
   }
 
   setCategory(category: string) {
@@ -77,7 +84,13 @@ export class ProductMatFinComponent implements OnInit {
       }
       case 'metal': {
         this.matCategory = 'metal';
+        this.metals = this.materials.filter(f => f.ctg === 2);
+        console.log('Metals: ', this.metals);
         break;
+      }
+      case 'bois': {
+        this.matCategory = 'bois';
+        this.bois = this.materials.filter(f => f.ctg === 1 || f.ctg === 6);
       }
     }
   }
@@ -103,6 +116,7 @@ export class ProductMatFinComponent implements OnInit {
     }
     this.material = this.currentMatList[this.index];
   }
+
   closeModal() {
     const modal = document.getElementById('garnissageModal');
 

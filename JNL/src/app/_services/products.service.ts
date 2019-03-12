@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
+import { AnyKindOfDictionary } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,10 @@ export class ProductsService {
 
   public getSimiliCuirs(): Observable<any[]> {
     return this.http.get<any[]>(this.simili, {headers: this.headers});
+  }
+
+  public getMaterials(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.product}/materials`, {headers: this.headers});
   }
 
   public getProduct(id: string): Observable<any[]> {
