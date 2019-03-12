@@ -100,12 +100,14 @@ ul {
 /* workaround to fix bootstrap`s modal bug in Angular
    Without this fix the dark background will cover the modal. */
 .modal {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(127, 127, 127, 0.5); 
   }
 
 .modal-backdrop {
     position: relative;
   }
+
+/****************************************************************/
 
 .flex-container {
     display: flex;
