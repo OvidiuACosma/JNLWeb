@@ -14,9 +14,11 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   public detail = 'description';
   public product_id: string;
   public prodDesc: any;
+  public brand = 'JNL';
   public family = '';
   public prodName = '';
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
+  public heroImg = '';
 
   scroller = true;
   language: string;
@@ -27,39 +29,45 @@ export class ProductComponent implements OnInit, AfterViewChecked {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-              private productsService: ProductsService,
-              private router: Router,
-              private route: ActivatedRoute,
-              private dataex: DataExchangeService,
-              private textService: TranslationService,
-              private countryList: ArchiveService) { }
+    private productsService: ProductsService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private dataex: DataExchangeService,
+    private textService: TranslationService,
+    private countryList: ArchiveService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(paramsId => {
       this.product_id = paramsId.product;
       this.getProductData(paramsId.product);
+    });
+
+    this.dataex.currentLanguage
+      .subscribe(lang => {
+        this.language = lang || 'EN';
+        this.getText(lang);
       });
 
-      this.dataex.currentLanguage
-      .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-    });
     // activate carousel
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('.carousel').carousel();
     });
   }
 
-    getProductData(productID: string) {
+  getProductData(productID: string) {
     this.productsService.getProduct(productID)
       .subscribe(desc => {
         this.prodDesc = desc;
-        this.family = this.prodDesc.familyFr.replace(/\s/g , '');
-        this.prodName = this.prodDesc.model.replace(/\s/g , '');
-         // console.log('DESC:', this.prodDesc);
+        this.family = this.prodDesc.familyFr;
+        this.prodName = this.prodDesc.model;
+        // console.log('DESC:', this.prodDesc);
+        this.getImage();
       });
-    }
+  }
+
+  getImage() {
+    this.heroImg = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_01.jpg';
+  }
 
   setDetail(index: number) {
     this.detail = this.tabList[index];
@@ -68,9 +76,9 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   getText(lang: string) {
     this.textService.getTextFavorites()
       .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
-    });
+        const res = data[0];
+        this.getLanguageText(res);
+      });
 
 
     this.getCountries();
@@ -88,10 +96,10 @@ export class ProductComponent implements OnInit, AfterViewChecked {
 
   getCountries() {
     this.countryList.getTextCountries()
-    .subscribe(c => {
-      const source = c[0];
-       this.getCountryList(source);
-    });
+      .subscribe(c => {
+        const source = c[0];
+        this.getCountryList(source);
+      });
   }
 
   getCountryList(source: any) {
@@ -103,7 +111,7 @@ export class ProductComponent implements OnInit, AfterViewChecked {
       this.router.navigate([target]);
       window.scrollTo(0, 0);
     } else {
-      this.router.navigate([target], {fragment: fragment});
+      this.router.navigate([target], { fragment: fragment });
     }
   }
 
@@ -120,13 +128,13 @@ export class ProductComponent implements OnInit, AfterViewChecked {
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
         const element = document.getElementById(fragment);
-        if (element && this.scroller === true ) {
-          element.scrollIntoView({block: 'start', behavior: 'smooth'});
+        if (element && this.scroller === true) {
+          element.scrollIntoView({ block: 'start', behavior: 'smooth' });
         }
         this.scroller = true;
       } else if (this.scroller === true) {
-          // window.scrollTo(0, 0);
-        }
+        // window.scrollTo(0, 0);
+      }
     });
   }
 

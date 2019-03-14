@@ -29,13 +29,14 @@ export class ProductDescriptionComponent implements OnInit {
   getParts() {
     const partsList: any[] = [];
     this.productDesc.forEach(item => {
-      partsList.push(item.partNameFr.toString());
+      if (item.partNameFr) { // check if is NULL or undefined
+      partsList.push(item.partNameFr);
+      }
     });
     this.parts = _.uniq(partsList);
   }
 
   getMaterials(part: string) {
-    // console.log('PART: ', part);
     const matList: string[] = [];
     this.productDesc.forEach(item => {
       if (item.partNameFr === part) {
@@ -43,7 +44,6 @@ export class ProductDescriptionComponent implements OnInit {
       }
     });
     this.materials = _.uniq(matList);
-    // console.log('MATERIALS: ', this.materials);
     return this.materials;
   }
 
