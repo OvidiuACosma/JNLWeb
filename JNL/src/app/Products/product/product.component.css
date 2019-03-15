@@ -111,40 +111,44 @@ button
     color: #DBBB76;
 }
 
-.clear {
-    height: 20px;
-}
-
 .slide-image {
-    max-width: 71.4vw;
+    max-width: 56.52vw;
     max-height: 47.1vw;
     object-fit: contain;
     text-align: center;
 }
 
-
 #carousel-item-image {
     display: flex !important;
     justify-content: center;
-   /* width: 88.3vw; */
+    width: 56.72vw;
     margin: auto;
 } 
 
 #carousel-custom {
-    text-align: center;
+    display: flex !important;
+    justify-content: center;
 }
 
-/*
+
 .carousel-inner {
-    width: 80%;
+    width: 56.72vw;
     border-style: solid;
-    border-width: 0.5px;
-    text-align: center;
-} */
+    border-width: 2px;
+    text-align: center; 
+}
+
+.carousel-control-prev {
+     justify-content: flex-end; 
+}
+
+.carousel-control-next {
+    justify-content: flex-start;
+}
  
 .carousel-arrows {
-    height: 4vw;
-    width: 2vw;
+    height: 3.38vw;
+    width: 1.7vw;
 }
 
 #header {
