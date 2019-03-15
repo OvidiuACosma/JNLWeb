@@ -14,11 +14,14 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   public detail = 'description';
   public product_id: string;
   public prodDesc: any;
-  public brand = 'JNL';
+  public brand = 'JNL Collection';
   public family = '';
   public prodName = '';
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
-  public heroImg = '';
+  public heroImg0 = '';
+  public heroImg1 = '';
+  public heroImg2 = '';
+  public heroImg3 = '';
 
   scroller = true;
   language: string;
@@ -66,7 +69,11 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   }
 
   getImage() {
-    this.heroImg = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_01.jpg';
+    // will come from the database
+    this.heroImg0 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_0.jpg';
+    this.heroImg1 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_1.jpg';
+    this.heroImg2 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_2.jpg';
+    this.heroImg3 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_3.jpg';
   }
 
   setDetail(index: number) {
