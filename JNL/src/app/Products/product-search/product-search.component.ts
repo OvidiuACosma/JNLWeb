@@ -79,8 +79,7 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     return this.distinctContent;
   }
 
-
-  NavigateTo(target: string, fragment: string = '') {
+  navigateTo(target: string, fragment: string = '') {
     if (fragment === '') {
       this.router.navigate([target]);
       window.scrollTo(0, 0);
@@ -95,7 +94,6 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     } else {
       this.selected[nr] = 1;
     }
-
     this.scroller = false;
   }
 
@@ -103,7 +101,6 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     removeItem(index: number) {
       this.scroller = false;
       this.total--;
-
       // REMOVE FROM DB ?
     }
 
@@ -130,7 +127,6 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
         }
     });
   }
-
 
   GoToProduct() {
     this.router.navigate(['product', {product: this.product}]);

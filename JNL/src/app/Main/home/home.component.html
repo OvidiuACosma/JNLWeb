@@ -1,12 +1,15 @@
 <div id="first_picture" class="main_divs">
   <div>
     <img alt="JNL Collection" src="assets\Images\Home\HM_JNL_Logo.png">
-    <p>
+    <!--<p>
       <a (click)="navigateToAnchor('une_histoire')">
         <img alt="arrow_down" src="assets\Images\Common\arrow_down.png">
       </a>
-    </p>
+    </p>-->
   </div>
+  <a (click)="navigateToAnchor('une_histoire')">
+    <img  alt="arrow_down" src="assets\Images\Common\arrow_down.png">
+  </a>
 </div>
 
 <div *ngIf="text">

@@ -202,8 +202,12 @@ hr {
     height: 100vh;
     background-image: url("/assets/Images/Home/HM_main.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #first_picture > div {
@@ -224,9 +228,22 @@ hr {
 
 #first_picture > div > p > a> img {
     /* max-height: 13vh; */
+    vertical-align: bottom;
+    /* padding-top: 20vw; */
     max-width: 15vw;
     height: auto;
-    width: 8vw;
+    width: 3.2vw;
+}
+
+#first_picture > a > img {
+    object-fit: contain;
+    bottom: 0;
+    margin-top: auto;
+    padding-bottom: 1vw;
+    text-align: center;
+    max-width: 15vw;
+    height: auto;
+    width: 3.2vw;
 }
 
 #une_histoire

@@ -72,4 +72,10 @@
     .left-strip {
         display: none;
     }
+
+    .container-main {
+        position: relative;
+        width: 100vw;
+        margin-left: 0;
+    }
 }
