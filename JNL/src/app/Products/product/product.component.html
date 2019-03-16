@@ -48,10 +48,9 @@
     </div>
   </div>
 
-  <div *ngIf="false">
   <!-- PRODUCT DESCRIPTION-->
-  <div>
-    <app-product-description *ngIf="detail==='description'" [prodCode]="product_id"></app-product-description>
+  <div class="prod-desc">
+    <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
   </div>
 
   <!-- PRODUCT MATERIALS AND FINISAGES-->
@@ -68,37 +67,36 @@
   <div>
     <app-product-catalogues></app-product-catalogues>
   </div>
-</div>
 
-<div class="info_div" *ngIf="text">
-  <h2>{{text.infoTitle}}</h2>
-  <form class="info_form">
-    <div id="checks">
-      <div *ngFor="let item of text.infoOptions; let k = index" (click)="selectOption(k)">
-        <span><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
-        <span class="option-label">&nbsp;&nbsp;{{item}}</span>
+  <div class="info_div" *ngIf="text">
+    <h2>{{text.infoTitle}}</h2>
+    <form class="info_form">
+      <div id="checks">
+        <div *ngFor="let item of text.infoOptions; let k = index" (click)="selectOption(k)">
+          <span><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
+          <span class="option-label">&nbsp;&nbsp;{{item}}</span>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <textarea placeholder={{text.specifyText}} rows="6" required maxlength="500"></textarea>
-    </div>
+      <div>
+        <textarea placeholder={{text.specifyText}} rows="6" required maxlength="500"></textarea>
+      </div>
 
-    <div id="details">
-      <input placeholder="{{text.firstName}}" required />
-      <input placeholder="{{text.lastName}}" required />
-      <select (click)="countryClick()">
-        <option selected disabled>{{text.country}} 🡫</option>
-        <option *ngFor="let ctry of this.countryName; let x = index">{{countryName[x].name}}</option>
-      </select>
-      <input placeholder="{{text.address}}" />
-      <input placeholder="{{text.city}}" />
-      <input placeholder="{{text.province}}" />
-      <input placeholder="{{text.zip}}" />
-      <input placeholder="{{text.email}}" required />
-    </div>
-    <br>
-    <button id="send">{{text.send}}</button>
-  </form>
-</div>
+      <div id="details">
+        <input placeholder="{{text.firstName}}" required />
+        <input placeholder="{{text.lastName}}" required />
+        <select (click)="countryClick()">
+          <option selected disabled>{{text.country}} 🡫</option>
+          <option *ngFor="let ctry of this.countryName; let x = index">{{countryName[x].name}}</option>
+        </select>
+        <input placeholder="{{text.address}}" />
+        <input placeholder="{{text.city}}" />
+        <input placeholder="{{text.province}}" />
+        <input placeholder="{{text.zip}}" />
+        <input placeholder="{{text.email}}" required />
+      </div>
+      <br>
+      <button id="send">{{text.send}}</button>
+    </form>
+  </div>
 </div>

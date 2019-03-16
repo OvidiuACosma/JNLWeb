@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from 'src/app/_services';
 import * as _ from 'lodash';
+import { Product } from 'src/app/_models';
 
 @Component({
   selector: 'app-product-description',
@@ -9,7 +10,7 @@ import * as _ from 'lodash';
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  @Input() prodCode = '';
+  @Input() product: Product;
   public productDesc: any[];
   public parts: string[] = [];
   public materials: string[] = [];
@@ -19,7 +20,7 @@ export class ProductDescriptionComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-    this.productsService.getProductDesc(this.prodCode)
+    this.productsService.getProductDesc(this.product)
       .subscribe(desc => {
         this.productDesc = desc;
         this.getParts();

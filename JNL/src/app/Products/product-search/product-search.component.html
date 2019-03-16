@@ -1,78 +1,75 @@
+
 <div class="search-main">
-   
+  <h1>Product Finder</h1>
   
-    <div id="container">
-        <h3>Testing products by Product Code</h3>
-        <br>
-        <input name="productName" type="text" [(ngModel)]="product">
-        <br><br>
-        <input (click)="GoToProduct()" type="button" value="Search" class="search-but">
+  <div class="content">
+
+    <div class="search">
+      <h4>FILTERS</h4>
+      <div class="search-by-text">
+        <p class="header-filter">SEARCH</p>
+        <input class="search-textbox" name="productName" type="text" [(ngModel)]="product"><br>
       </div>
 
-      <h1>Product Finder</h1>
-  
-    <div id="results">
-  
       <div class="filters">
-        <h4>FILTERS</h4>
         <ul>
-          <li *ngFor="let c of categoriesJSON; let i=index">
-            <div class="header-arrow"  (click)="toggleFilters(c)">
+          <li *ngFor="let c of filterBy; let i=index">
+            <div class="header-arrow"  (click)="toggleFilters(i)">
                 <span class="header-filter">{{c}}</span>
-                <img alt="JNL Collection" src="\assets\Images\Common\arrow_down_gold.png" class="arrow">
+                <img class="arrow" [src]="getArrow(i)">
             </div>
-            <ul id="filter-{{c}}" [ngClass]="(this.toggle[c] === false) ? 'hide-item' :'show-item'">
-              <li *ngFor="let d of getFilters(c); let i2=index" class="single-filter">
+            <ul id="filter-{{c}}" *ngIf="toggle[i]">
+              <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index">
                   <span (click)="selectFilter()"><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i>&nbsp;{{d}}</span>
               </li>
             </ul>
           </li>
         </ul>
       </div>
-  
-      <div class="products">
-        <span class="prod-name" style="text-align: left !important; margin-bottom: 3.75vw">&nbsp;Products found – 122</span>
-        <ul class="list">
-          <cdk-virtual-scroll-viewport itemSize="30" >
-            <div class="flex-div">
-            <ng-container *cdkVirtualFor="let n of numbers" >
-              <li> 
-                <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
-                <div>
-                  <div class="pic-frame">
-                    <div>
-                      <img alt="JNL Collection" src="\assets\Images\Common\fav_icon_no_border.png" class="fav-button" (click)="favItem(n)">
-                    </div>
-                    <div class="center-product">
-                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{n}}.png" class="search-img">
-                    </div>
-                  </div>
-                  <span class="prod-name">Product Name</span>
-                </div>
-              </li>
-            </ng-container>
-            
-  
-            <li *ngFor="let m of [0]"> 
-              <!-- , 1, 2 -->
-              <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->
-              <div>
+    </div>
+
+    <div class="products">
+      
+      <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
+      <ul class="list">
+        <cdk-virtual-scroll-viewport itemSize="30" >
+          <div class="flex-div">
+          <ng-container *cdkVirtualFor="let n of productsFiltered">
+            <li> 
+              <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
+              <div class="card-product" (click)="goToProduct(n)">
                 <div class="pic-frame">
                   <div>
-                    <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-button">
+                    <img alt="JNL Collection" src="\assets\Images\Common\fav_icon_no_border.png" class="fav-button" (click)="favItem(n)">
                   </div>
                   <div class="center-product">
-                    <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="search-img">
+                    <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
                   </div>
                 </div>
-                <span>&nbsp;</span>
+                <span class="prod-name">{{getProductName(n)}}</span>
               </div>
             </li>
-          </div>
-          </cdk-virtual-scroll-viewport>
-        </ul>
-      </div>
+          </ng-container>
+          
+          <li *ngFor="let m of [0]"> 
+            <!-- , 1, 2 -->
+            <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->
+            <div>
+              <div class="pic-frame">
+                <div>
+                  <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-button">
+                </div>
+                <div class="center-product">
+                  <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="search-img">
+                </div>
+              </div>
+              <span>&nbsp;</span>
+            </div>
+          </li>
+        </div>
+        </cdk-virtual-scroll-viewport>
+      </ul>
     </div>
+    
   </div>
-  
-  
+</div>

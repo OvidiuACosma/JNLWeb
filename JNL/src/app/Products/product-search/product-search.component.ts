@@ -1,22 +1,26 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from 'src/app/_services';
-import { Product } from 'src/app/_models';
+import { Product, ProductEF } from 'src/app/_models';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
   styleUrls: ['./product-search.component.css']
 })
-export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
+export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
 
+  public products: ProductEF[];
+  public productsFiltered: ProductEF[];
   public selectedProduct: Product;
-  public product: string;
+  public categoriesFr: any;
+  public categoriesEn: any;
+  public product: string; // TODO: kill it when killing the search button
   language: string;
   text: any;
-  distinctHeader: any;
-  distinctContent: any;
-  categoriesJSON: any;
+  filterBy: string[] = ['Brand', 'Type'];
+  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
 
   selected = [0, 0, 0, 0, 0];
   scroller = true;
@@ -24,32 +28,32 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
   total: number;
   res: any;
 
-  toggle: boolean[] = [];
+  toggle: boolean[];
 
   constructor(private router: Router,
-    private route: ActivatedRoute,
-    private dataex: DataExchangeService,
-    private textService: TranslationService,
-    private productService: ProductsService) {
-    }
+              private route: ActivatedRoute,
+              private dataex: DataExchangeService,
+              private textService: TranslationService,
+              private productService: ProductsService) {}
 
   ngOnInit() {
-
     this.dataex.currentLanguage
       .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
 
-      this.productService.getProductSearch()
+      this.productService.getProducts()
       .subscribe(p => {
-        this.res = p[0];
-        this.categoriesJSON = new Set(this.res[this.language.toUpperCase()].map(c => c.category));
-
-        this.toggle[this.categoriesJSON] = false;
+        this.products = p;
+        this.productsFiltered = _.clone(this.products);
+        this.categoriesFr = new Set(this.products.map(c => c.categoryFr));
+        this.categoriesEn = new Set(this.products.map(c => c.categoryEn));
      });
     });
-   // this.toggle[this.nrCategories] = true;
-
+    this.toggle = new Array(this.filterBy.length);
+    for (let i = 0; i < this.filterBy.length; i++) {
+      this.toggle[i] = true;
+    }
     const numberAll = 15;
     this.total = numberAll;
 
@@ -71,10 +75,22 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
   }
 
   getFilters(category: string): any {
-    this.distinctContent = new Set(this.res[this.language.toUpperCase()]
-      .filter(f => f.category.toUpperCase() === category.toUpperCase())
-      .map(m => m.content));
-    return this.distinctContent;
+    switch (category.toLowerCase()) {
+      case 'brand': {
+        return this.collectionsText;
+      }
+      case 'type': {
+        switch (this.language.toLowerCase()) {
+          case 'en': {
+            return this.categoriesEn;
+          }
+          case 'fr': {
+            return this.categoriesFr;
+          }
+        }
+      }
+    }
+    return [];
   }
 
   navigateTo(target: string, fragment: string = '') {
@@ -95,41 +111,67 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
     this.scroller = false;
   }
 
-    // CHANGE function for FAV
-    removeItem(index: number) {
-      this.scroller = false;
-      this.total--;
-      // REMOVE FROM DB ?
-    }
-
-    selectFilter() {
-      this.scroller = false;
-    }
-
-    toggleFilters(index: any) {
-      // true = show, false = hide
-      this.toggle[index] = !this.toggle[index];
-      this.scroller = false;
-    }
-
-  ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element && this.scroller === true ) {
-          element.scrollIntoView({block: 'start', behavior: 'smooth'});
-        }
-        this.scroller = true;
-      } else if (this.scroller === true) {
-          window.scrollTo(0, 0);
-        }
-    });
+  // CHANGE function for FAV
+  removeItem(index: number) {
+    this.scroller = false;
+    this.total--;
+    // REMOVE FROM DB ?
   }
 
-  GoToProduct() {
-    // this.router.navigate(['product', {product: this.product}]);
+  selectFilter() {
+    this.scroller = false;
+  }
+
+  toggleFilters(index: number) {
+    this.toggle[index] = !this.toggle[index];
+    this.scroller = false;
+  }
+
+  getArrow(i: number): string {
+    if (this.toggle[i]) {
+      return 'assets/Images/Common/arrow_up_gold.png';
+    }
+    return 'assets/Images/Common/arrow_down_gold.png';
+  }
+
+  getProductImage(product: ProductEF): string {
+    const src = `assets/Images/Products/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
+    return src;
+  }
+
+  getProductName(product: ProductEF): string {
+    let productName: string;
+    switch (this.language.toLowerCase()) {
+      case 'fr': {
+        productName = product.familyFr;
+        break;
+      }
+      case 'en': {
+        productName = product.familyEn;
+        break;
+      }
+    }
+    productName = `${productName} ${product.model}`;
+    return productName;
+  }
+
+  // ngAfterViewChecked() {
+  //   this.route.fragment.subscribe(fragment => {
+  //     if (fragment) {
+  //       const element = document.getElementById(fragment);
+  //       if (element && this.scroller === true ) {
+  //         element.scrollIntoView({block: 'start', behavior: 'smooth'});
+  //       }
+  //       this.scroller = true;
+  //     } else if (this.scroller === true) {
+  //         window.scrollTo(0, 0);
+  //       }
+  //   });
+  // }
+
+  goToProduct(product: ProductEF) {
     this.selectedProduct = { brand: 'JNL Collection', family: 'Canapé', model: 'Shanghai'};
-    this.router.navigate(['product', {b: this.selectedProduct.brand, f: this.selectedProduct.family, m: this.selectedProduct.model}]);
+    this.router.navigate(['product', {b: product.brand, f: product.familyFr, m: product.model}]);
   }
 
 }

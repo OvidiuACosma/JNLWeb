@@ -171,9 +171,7 @@ button
 #fav-download {
     margin: auto;
     margin-top: 3.2vw;
-
     width: 20.7vw;
-
     display: flex;
     flex-direction: row;
     align-content: space-between;
@@ -181,13 +179,11 @@ button
 
 #fav-download > div {
     margin: auto;
-
     display: flex;
     flex-direction: row;
 }
 
-.home_links
-{
+.home_links {
     border: 1.5px solid #DBBB76;
     padding: .27vw 1.59vw;
     font-size: 1.11vw;
@@ -195,42 +191,32 @@ button
     text-transform: uppercase;
 }
 
-
-.info_div
-{
+.info_div {
     background-color: #E9D6AC;
     width: calc(100vw - 77px);
     left: 0;
-
     text-align: center;
-
-    /* margin-bottom: 5vh !important; */
     margin-top: 7.5vw !important;
-
     font-family: Atak-Regular;
     font-size: 20px;
     padding-top: 3.7vw;
-    
 }
 
 .info_div > h2 {
     margin-top: 0;
 }
 
-.info_form
-{
+.info_form {
     width: 44vw;
     margin: auto;
     margin-top: 4.8vw;
     display: flex;
     flex-direction: column;
     align-content: center;
-
     text-align: left;
 }
 
-.info_form:focus, input:focus, textarea:focus, select:focus, button:focus
-{
+.info_form:focus, input:focus, textarea:focus, select:focus, button:focus {
     outline: none;
 }
 
@@ -239,7 +225,6 @@ button
     flex-direction: column;
     align-content: center;
     justify-content: space-between;
-
     width: 44vw;
     margin: auto;
 }
@@ -250,9 +235,7 @@ button
 
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
 }
-
 
 .option-label {
     font-family: Atak-Regular;
@@ -263,13 +246,10 @@ button
     cursor: default;
 }
 
-
 #checks {
-    /* width: 70%; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
     align-content: center;
 
     margin-bottom: 5.1vw;
@@ -291,7 +271,6 @@ button
     text-transform : uppercase;
 }
 
-
 #details {
     display: flex;
     flex-direction: row;
@@ -300,7 +279,11 @@ button
     margin-top: 3.5vw;
 }
 
-
+.prod-desc {
+    width: 100%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
 
 @media only screen and (max-width: 800px){
     .info_div > p{
