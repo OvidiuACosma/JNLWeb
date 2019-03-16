@@ -1,4 +1,4 @@
-<div id="container" *ngIf="text">
+<div id="container">
   <div id="header">
     <h1>{{prodDesc.model}}</h1>
     <h4>JNL Collection</h4>
@@ -6,33 +6,12 @@
     <h4 class="gold">{{prodDesc.familyFr | uppercase}}</h4>
   </div>
   <br>
-  <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+  <div id='carousel-custom' class='carousel slide carousel-fade' data-ride='carousel' data-pause="false">
     <div class="carousel-inner">
-
-      <div class='carousel-item active'>
+      <div class='carousel-item' *ngFor="let heroImage of heroImages; let i = index"
+        [ngClass]="i === 0 ? 'item active' : 'item'">
         <div class="carousel-item-image">
-          <img [src]="heroImg0" alt=""
-            class="slide-image">
-        </div>
-      </div>
-      
-      <div class="carousel-item">
-        <div class="carousel-item-image">
-          <img [src]="heroImg1" alt=""
-            class="slide-image">
-        </div>
-      </div>
-
-      <div class='carousel-item'>
-        <div class="carousel-item-image">
-          <img [src]="heroImg2" alt=""
-            class="slide-image">
-        </div>
-      </div>
-
-      <div class='carousel-item'>
-        <div class="carousel-item-image">
-          <img [src]="heroImg3" alt=""
+          <img [src]="heroImage.src" alt="{{heroImage.alt}}"
             class="slide-image">
         </div>
       </div>
@@ -69,6 +48,7 @@
     </div>
   </div>
 
+  <div *ngIf="false">
   <!-- PRODUCT DESCRIPTION-->
   <div>
     <app-product-description *ngIf="detail==='description'" [prodCode]="product_id"></app-product-description>
@@ -90,7 +70,7 @@
   </div>
 </div>
 
-<div class="info_div">
+<div class="info_div" *ngIf="text">
   <h2>{{text.infoTitle}}</h2>
   <form class="info_form">
     <div id="checks">
@@ -120,4 +100,5 @@
     <br>
     <button id="send">{{text.send}}</button>
   </form>
+</div>
 </div>

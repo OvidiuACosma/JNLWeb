@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
 import { AnyKindOfDictionary } from 'lodash';
+import { Product } from '../_models';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class ProductsService {
     this.tissus = configService.getApiURI() + '/products/tissus';
     this.cuirs = configService.getApiURI() + '/products/cuirs';
     this.simili = configService.getApiURI() + '/products/similicuirs';
-    this.product = configService.getApiURI() + '/products/';
+    this.product = configService.getApiURI() + '/products';
     this.prodDescURL = configService.getApiURI() + '/productsdescriptions/';
   }
 
@@ -52,8 +53,8 @@ export class ProductsService {
     return this.http.get<any[]>(`${this.product}/materials`, {headers: this.headers});
   }
 
-  public getProduct(id: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.product}/${id}`, {headers: this.headers});
+  public getProduct(product: Product): Observable<any[]> {
+    return this.http.get<any[]>(`${this.product}/${product.brand}/${product.family}/${product.model}`, {headers: this.headers});
   }
 
   public getProductDesc(id: string): Observable<any[]> {

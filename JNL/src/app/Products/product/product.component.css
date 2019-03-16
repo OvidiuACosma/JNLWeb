@@ -113,28 +113,34 @@ button
 
 .slide-image {
     max-width: 56.52vw;
-    max-height: 47.1vw;
+    /* max-height: 47.1vw; */
     object-fit: contain;
     text-align: center;
 }
 
-#carousel-item-image {
+/* #carousel-item-image {
     display: flex !important;
     justify-content: center;
     width: 56.72vw;
     margin: auto;
-} 
+}  */
 
 #carousel-custom {
     display: flex !important;
     justify-content: center;
 }
 
+.carousel-inner .carousel-item {
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+}
 
 .carousel-inner {
     width: 56.72vw;
-    border-style: solid;
-    border-width: 2px;
+    height: auto;
+    border: .7px solid black;
     text-align: center; 
 }
 

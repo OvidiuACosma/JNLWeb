@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from 'src/app/_services';
+import { Product, Img } from 'src/app/_models';
 declare var $: any;
 
 @Component({
@@ -17,10 +18,8 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   public family = '';
   public prodName = '';
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
-  public heroImg0 = '';
-  public heroImg1 = '';
-  public heroImg2 = '';
-  public heroImg3 = '';
+  product: Product;
+  public heroImages: Img[] = [];
 
   scroller = true;
   language: string;
@@ -39,9 +38,12 @@ export class ProductComponent implements OnInit, AfterViewChecked {
     private countryList: ArchiveService) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(paramsId => {
-      this.product_id = paramsId.product;
-      this.getProductData(paramsId.product);
+    this.activatedRoute.params.subscribe(params => {
+      this.product = new Product();
+      this.product.brand = params.b;
+      this.product.family = params.f;
+      this.product.model = params.m;
+      this.getProductData(this.product);
     });
 
     this.dataex.currentLanguage
@@ -56,23 +58,22 @@ export class ProductComponent implements OnInit, AfterViewChecked {
     });
   }
 
-  getProductData(productID: string) {
-    this.productsService.getProduct(productID)
+  getProductData(product: Product) {
+    this.productsService.getProduct(this.product)
       .subscribe(desc => {
         this.prodDesc = desc;
         this.family = this.prodDesc.familyFr;
         this.prodName = this.prodDesc.model;
-        // console.log('DESC:', this.prodDesc);
-        this.getImage();
+        this.getHeroImages();
       });
   }
 
-  getImage() {
-    // will come from the database
-    this.heroImg0 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_0.jpg';
-    this.heroImg1 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_1.jpg';
-    this.heroImg2 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_2.jpg';
-    this.heroImg3 = 'assets/Images/Products/' + this.brand + '/' + this.family + '/' + this.prodName + '_3.jpg';
+  getHeroImages() {
+    // TODO: get from API
+    for (let i = 0; i <= 3 ; i++) {
+      this.heroImages[i] = { src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.product.model}_${i}.jpg`,
+                           alt: `${this.product.brand} ${this.product.family} ${this.product.model}`};
+    }
   }
 
   setDetail(index: number) {

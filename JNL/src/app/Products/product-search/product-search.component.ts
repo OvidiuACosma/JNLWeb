@@ -1,9 +1,7 @@
-
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from 'src/app/_services';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { fillProperties } from '@angular/core/src/util/property';
+import { Product } from 'src/app/_models';
 
 @Component({
   selector: 'app-product-search',
@@ -12,8 +10,8 @@ import { fillProperties } from '@angular/core/src/util/property';
 })
 export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
 
+  public selectedProduct: Product;
   public product: string;
-
   language: string;
   text: any;
   distinctHeader: any;
@@ -129,7 +127,9 @@ export class ProductSearchComponent implements OnInit,  AfterViewChecked  {
   }
 
   GoToProduct() {
-    this.router.navigate(['product', {product: this.product}]);
+    // this.router.navigate(['product', {product: this.product}]);
+    this.selectedProduct = { brand: 'JNL Collection', family: 'Canapé', model: 'Shanghai'};
+    this.router.navigate(['product', {b: this.selectedProduct.brand, f: this.selectedProduct.family, m: this.selectedProduct.model}]);
   }
 
 }
