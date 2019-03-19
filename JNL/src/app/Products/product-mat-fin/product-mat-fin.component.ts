@@ -56,9 +56,9 @@ export class ProductMatFinComponent implements OnInit {
 
     // get Materials
     this.productsService.getMaterials()
-    .subscribe(materials => {
-      this.materials = materials;
-    });
+      .subscribe(materials => {
+        this.materials = materials;
+      });
   }
 
   setCategory(category: string) {
@@ -80,12 +80,14 @@ export class ProductMatFinComponent implements OnInit {
       }
       case 'abatjour': {
         this.matCategory = 'abatjour';
+        this.abatjours = this.materials.filter(f => f.ctg === 5);
+        // console.log('ABAT-JOURS: ', this.abatjours);
         break;
       }
       case 'metal': {
         this.matCategory = 'metal';
         this.metals = this.materials.filter(f => f.ctg === 2);
-        console.log('Metals: ', this.metals);
+        // console.log('Metals: ', this.metals);
         break;
       }
       case 'bois': {
@@ -102,17 +104,13 @@ export class ProductMatFinComponent implements OnInit {
   navigate(direction: string) {
     this.index = this.currentMatList.indexOf(this.material);
     if (direction === 'previous') {
-      if (this.index >= 1) {
-        this.index--;
-      } else {
+      // this.index = (this.index - 1) % this.currentMatList.length;
+      this.index--;
+      if (this.index === -1) {
         this.index = this.currentMatList.length - 1;
       }
     } else if (direction === 'next') {
-      if (this.index < this.currentMatList.length - 1) {
-        this.index++;
-      } else {
-        this.index = 0;
-      }
+      this.index = (this.index + 1) % this.currentMatList.length;
     }
     this.material = this.currentMatList[this.index];
   }
