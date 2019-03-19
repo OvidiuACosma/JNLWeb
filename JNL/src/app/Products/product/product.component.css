@@ -16,7 +16,6 @@ h1 {
     text-align: center;
 }
 
-
 h2 {
     /* margin-top: 5.9vw; */
     font-family: Atak-Light;
@@ -32,6 +31,16 @@ h3 {
     font-size: 1.1vw; /*20px;*/
 
     margin-bottom: 1.5vw;
+}
+
+h4 {
+    font-family: Atak-Light;
+    font-size: 2.4vw;
+}
+
+h5 {
+    font-family: Atak-Medium;
+    font-size: 1.85vw;
 }
 
 
