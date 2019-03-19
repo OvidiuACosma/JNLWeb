@@ -1,11 +1,11 @@
 <div id="bar">
    <div id="top-bar">
-       <div id="menu-logo">
-            <div id="menu-button">
-                <img class="menu-button-img" src="{{navBarButtonSrc}}" 
-                    (click)="toggleNav()" (mouseover)="toggleNav()">
-                <p class="menu-text" (click)="toggleNav()" (mouseover)="toggleNav()">{{navBarButtonText}}</p>
-            </div>
+       <div id="menu-button">
+            <img class="menu-button-img" src="{{navBarButtonSrc}}" 
+                (click)="toggleNav()" (mouseover)="toggleNav()">
+            <p class="menu-text" (click)="toggleNav()" (mouseover)="toggleNav()">{{navBarButtonText}}</p>
+        </div>
+        <div id="menu-logo">
             <div id="menu-logo-img" *ngIf="!isHome">
                 <img class="image-link" id="logo"
                     alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"

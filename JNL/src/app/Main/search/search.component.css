@@ -8,11 +8,13 @@ li {
 }
 
 .image-link {
+    margin-left: 5.347vw;
     vertical-align: middle;
     display: inline-block;
     cursor: pointer;
     height: 22px;
     mix-blend-mode: difference;
+    margin: auto;
 } 
 
 .searchInput {
@@ -173,6 +175,7 @@ li {
 #menu-button {
     position: fixed;
     top: 0;
+    left: 0;
     width: 5.347vw;
     height: var(--search-bar-height);
     text-align: center;
@@ -186,7 +189,7 @@ li {
 }
 
 .menu-button-img {
-    padding-top: 16px;
+    padding-top: 12px;
     min-width: 30px;
     width: 2.777vw;
     height: auto;
@@ -205,16 +208,12 @@ li {
     margin: auto;
     margin-left: 0 !important;
     transition: all .3s ease;
+    padding-left: 7.2vw;
 }
 
 .menu-logo-img {
     height: var(--search-bar-height);
     width: auto;
-}
-
-#logo {
-    margin: auto;
-    margin-left: 2vw;
 }
 
 #mob-searchbar {
