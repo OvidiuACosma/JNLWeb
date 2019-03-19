@@ -12,8 +12,8 @@
   }
 
 h1{
-    font-family: PlacardMT-Condensed;
-    font-size: 5.03vw;
+    font-family: Helvetica;
+    font-size: 3vw;
     margin-bottom: 3vh;
     text-transform: uppercase;
 }
@@ -50,11 +50,11 @@ select
 
     /* margin-bottom: 5vh; */
     margin-top: 60px;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
 }
 .contact_div > p{
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     font-size: 1.8vw;
     padding-left: 275px;
     padding-right: 275px;
@@ -121,7 +121,7 @@ select
 }
 .contact_div > div{
     width: 100vw;
-    background-color: #E9D6AC;
+    background-color: #e3d9c6;
 }
 
 .contact_form > div{

@@ -1,13 +1,13 @@
 h1 {
-    font-family: PlacardMT-Condensed;
-    font-size: 5.03vw;
+    font-family: Helvetica;
+    font-size: 3vw;
     margin-bottom: 3vh;
     text-align: center;
 }
 
 h2 {
     margin-bottom: 3.45vw;
-    font-family: Atak-Light;
+    font-family: Helvetica;
     font-size: 3.5vw;
     text-align: center;
 }
@@ -16,7 +16,7 @@ h4 {
     margin: auto;
     width: 58.3vw;
     font-size: 1.8vw;
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
 }
@@ -40,11 +40,12 @@ h4 {
     font-size: 1.11vw;
     text-transform: uppercase;
     margin-bottom: 10px;
+    font-style: italic;
 }
 
 #presse_list {
     margin: auto;
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1em;
     width: 45vw;
     display: flex;
@@ -125,7 +126,7 @@ h4 {
 }
 
 .four-flex > div > div > span {
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1.8vw;
     width: 15.47vw;
     word-wrap: normal;
@@ -239,7 +240,7 @@ input[type="radio"] {
 
 .container {
     padding: 0px;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 16px;
     display: flex;
     height: 70vh;
@@ -252,7 +253,7 @@ input[type="radio"] {
 .parutions-text {
     width: 23.7vw;
     padding-top: 3vw;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
     text-align: left;
     text-transform: uppercase;
@@ -263,7 +264,7 @@ input[type="radio"] {
 }
 
 .parutions-text > div > span {
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1.8vw;
     text-transform: uppercase;
 }

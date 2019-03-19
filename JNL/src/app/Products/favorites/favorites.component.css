@@ -1,6 +1,6 @@
 h1 {
-    font-family: PlacardMT-Condensed;
-    font-size: 5.03vw;
+    font-family: Helvetica;
+    font-size: 3vw;
     margin-bottom: 3vh;
 
     text-align: center;
@@ -10,7 +10,7 @@ h1 {
 
 h2 {
     /* margin-top: 5.9vw; */
-    font-family: Atak-Light;
+    font-family: Helvetica;
     font-size: 3.5vw;
 
     text-align: center;
@@ -18,7 +18,7 @@ h2 {
 
 h3 {
     text-transform: uppercase;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     color: #DBBB76;
     font-size: 1.1vw; /*20px;*/
 
@@ -30,7 +30,7 @@ h4 {
     width: 58.3vw;
     font-size: 1.8vw;
 
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
 
     margin-top: 3.3vw;
     text-align: center;
@@ -43,7 +43,7 @@ textarea{
     width: 100%;
     outline: none;
 
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
 }
 
@@ -64,7 +64,7 @@ input, select
     width: 21vw;
     background-color: transparent;
 
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
 
     border: none;
@@ -145,7 +145,7 @@ cdk-virtual-scroll-viewport {
 
 .fav_div
 {
-    background-color: #E9D6AC;
+    background-color: #e3d9c6;
     width: calc(100vw - 77px);
     left: 0;
 
@@ -154,7 +154,7 @@ cdk-virtual-scroll-viewport {
     /* margin-bottom: 5vh !important; */
     margin-top: 7.5vw !important;
 
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 20px;
     padding-top: 3.7vw;
     
@@ -202,7 +202,7 @@ cdk-virtual-scroll-viewport {
 
 
 .option-label {
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
 }
 
@@ -257,7 +257,7 @@ li {
 }
 
 .non-remove > div > span {
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     font-size: 1.2vw;
 
     text-align: left;
@@ -364,7 +364,7 @@ li {
     width: 16.5vw;
     margin-top: 4.3vw;
 
-    font-family : Atak-Light;
+    font-family : Helvetica-Light;
     font-size : 1.4vw;
     letter-spacing : 1.28px;
     text-transform : uppercase;
@@ -476,7 +476,7 @@ li {
     
     
     .quote-bar > p {
-        font-family: Atak-LightItalic;
+        font-family: Helvetica-Light;
         font-size: 4.2vw;
     }
     

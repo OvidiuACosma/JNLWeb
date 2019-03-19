@@ -1,38 +1,40 @@
 h1 {
-    font-family: PlacardMT-Condensed;
-    font-size: 5.03vw; /*4em;*/
+    font-family: Helvetica;
+    font-size: 3vw; /*4em;*/
     margin-bottom: 3vh;
     text-transform: uppercase;
 }
 
 h2 {
-    font-family: Atak-Regular;
-    font-size: 3.46vw;
+    font-family: Helvetica;
+    font-size: 3vw;
     margin-bottom: 0;
 }
 
 h3 {
     text-transform: uppercase;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     color: #DBBB76;
     font-size: 1.38vw; /*20px;*/
     margin-bottom: 1.2vw;
 }
 
-.location {
+/* .location {
     font-family: Atak-Regular;
     font-size: 1.1vw;
     margin-bottom: 5.5vw;
-}
+} */
 
 .marques_selected {
     text-decoration: underline !important;
 }
 
 .home_links {
+    font-family: Helvetica-Light;
     border: 1.5px solid #DBBB76;
     padding: .27vw 1.59vw;
     font-size: 1.11vw;
+    font-style: italic;
     text-transform: uppercase;
     letter-spacing : 1.28px;
 }
@@ -55,16 +57,16 @@ h3 {
     left: 0;
     text-align: center;
 }
-
+/* 
 .location {
     text-align: center;
     font-family: Atak-Regular;
     font-size: 1.1vw;
-}
+} */
 
 #marques_list {
     margin: auto;
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     width: 76.17vw;
     display: flex;
     flex-direction: row;
