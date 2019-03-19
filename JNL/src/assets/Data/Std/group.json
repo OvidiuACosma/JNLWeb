@@ -44,7 +44,44 @@
             "projets3": "Royal Champagne Hotel & Spa",
             "projetsDescription3": "Photo credit : MRTRIPPER",
         
-            "archivesTitle": "Past Collections"
+            "archivesTitle": "Past Collections",
+
+            "people": [
+                {"name": "Gery Dehon",
+                    "title": "Interior Designer",
+                    "text": "",
+                    "image": "/assets/Images/Groupe/GP_gery.JPG"
+                },
+                {"name": "Michèle Claes",
+                    "title": "D.R. H and Accounting",
+                    "text": "",
+                    "image": "/assets/Images/Groupe/GP_michele.JPG"
+                },
+                {
+                    "name": "Daniel Nicolo",
+                    "title": "Head of Technical department and Logistic",
+                    "text": "",
+                    "image": "/assets/Images/Groupe/GP_daniel.JPG"
+                },
+                {
+                    "name": "Isabelle Renuart",
+                    "title": "Key account manager",
+                    "text": "",
+                    "image": "/assets/Images/Groupe/GP_isabelle.JPG"
+                },
+                {
+                    "name": "Monica Sălăjan",
+                    "title": "Customer department manager",
+                    "text": "",
+                    "image": "/assets/Images/Groupe/GP_monica.JPG"
+                },
+                {
+                    "name": "Georgiana Moțocan",
+                    "title": "Customer fabric department",
+                    "text": "",
+                    "image": "/assets/Images/Groupe/GP_georgiana.JPG"
+                }
+            ]
         },
     "FR": { 
         "title": "GROUPE",
@@ -92,7 +129,44 @@
         "projets3": "Royal Champagne Hotel & Spa",
         "projetsDescription3": "Crédit photos : MRTRIPPER",
     
-        "archivesTitle": "Archives"
+        "archivesTitle": "Archives",
+
+        "people": [
+            {"name": "Gery Dehon",
+                "title": "Interior Designer",
+                "text": "",
+                "image": "/assets/Images/Groupe/GP_gery.JPG"
+            },
+            {"name": "Michèle Claes",
+                "title": "D.R. H and Accounting",
+                "text": "",
+                "image": "/assets/Images/Groupe/GP_michele.JPG"
+            },
+            {
+                "name": "Daniel Nicolo",
+                "title": "Head of Technical department and Logistic",
+                "text": "",
+                "image": "/assets/Images/Groupe/GP_daniel.JPG"
+            },
+            {
+                "name": "Isabelle Renuart",
+                "title": "Key account manager",
+                "text": "",
+                "image": "/assets/Images/Groupe/GP_isabelle.JPG"
+            },
+            {
+                "name": "Monica Sălăjan",
+                "title": "Customer department manager",
+                "text": "",
+                "image": "/assets/Images/Groupe/GP_monica.JPG"
+            },
+            {
+                "name": "Georgiana Moțocan",
+                "title": "Customer fabric department",
+                "text": "",
+                "image": "/assets/Images/Groupe/GP_georgiana.JPG"
+            }
+        ]
      }
     }
 ]

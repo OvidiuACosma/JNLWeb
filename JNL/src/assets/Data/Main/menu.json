@@ -8,7 +8,7 @@
             "marques": "Brands",
 
             "savoir": "Know-How",
-            "atelier": "Workshop",
+            "atelier": "Manufactory",
             "fabrication": "Production",
 
             "services": "Services",
@@ -19,14 +19,14 @@
 
             "groupe": "Group",
             "histoire": "About",
-            "equipe": "People",
+            "equipe": "Team",
             "engagement": "Commitment",
             "projets": "Projects",
             "archives": "Archives",
 
             "presse": "Press",
             "catalogues": "Catalogues",
-            "banque": "Image Bank",
+            "banque": "Inspiration Gallery",
             "parutions": "Review",
 
             "contact": "Contact",
@@ -48,7 +48,7 @@
             "marques": "Les Marques",
 
             "savoir": "Le Savoir-Faire",
-            "atelier": "L'Atelier",
+            "atelier": "Manufacture",
             "fabrication": "La Fabrication",
 
             "services": "Les Services",
@@ -66,7 +66,7 @@
 
             "presse": "Presse",
             "catalogues": "Catalogues",
-            "banque": "Banque Images",
+            "banque": "Galerie d'Images",
             "parutions": "Parutions",
 
             "contact": "Contact",

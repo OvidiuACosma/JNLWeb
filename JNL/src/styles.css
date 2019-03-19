@@ -87,3 +87,9 @@ a:hover {
     src: url('/assets/Fonts/placard-condensed.ttf'),
     url('/assets/Fonts/placard-condensed.ttf'); /* IE */
  }
+
+ @font-face {
+    font-family: "Helvetica-Light";
+    src: url('/assets/Fonts/Helvetica-Light.otf'),
+    url('/assets/Fonts/Helvetica-Light.otf'); /* IE */
+    }

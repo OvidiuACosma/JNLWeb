@@ -52,57 +52,19 @@
         <!--CAROUSEL-->
         <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel'  data-interval="3000">
             <div class="carousel-inner">
-                <div class='carousel-item active'>
-                  <div class="container">
-                    <div class="carousel-item-image">
-                      <img src='/assets/Images/Groupe/GP_gery.JPG' alt='JNL Collection' class="slide-image"  class="group-img">
-                    </div>
-                    <div class="group-text">
-                                
-                          <span>Prenom Nom</span><br>
-                          <span>TITRE</span><br><br>
-                          Lorem ipsum dolor sit amet, consectetuer adipiscing
-                          elit, sed diam nonummy nibh euismod
-                          tincidunt ut laoreet dolore magna aliquam erat
-                          volutpat. Ut wisi enim ad minim veniam, quis
-                          nostrud exerci tation ullamcorper suscipit.
-                    </div>
+              <div class='carousel-item' *ngFor="let p of people; let i = index"
+              [ngClass]="i === 0 ? 'item active' : 'item'">
+                <div class="container">
+                  <div class="carousel-item-image">
+                    <img [src]='p.image' alt='{{p.name}}' class="slide-image"  class="group-img">
+                  </div>
+                  <div class="group-text">
+                    <span>{{p.name}}</span><br>
+                    <span class="people-title">{{p.title}}</span><br><br>
+                    {{p.text}}
                   </div>
                 </div>
-
-                <div class='carousel-item' active="setActiveSlide(1)">
-                    <div class="container">
-                        <div class="carousel-item-image">
-                          <img src='/assets/Images/Groupe/GP_michele.JPG' alt='JNL Collection' class="slide-image"  class="group-img">
-                        </div>
-                        <div class="group-text">
-                              <span>Prenom Nom</span><br>
-                              <span>TITRE</span><br><br>
-                              Lorem ipsum dolor sit amet, consectetuer adipiscing
-                              elit, sed diam nonummy nibh euismod
-                              tincidunt ut laoreet dolore magna aliquam erat
-                              volutpat. Ut wisi enim ad minim veniam, quis
-                              nostrud exerci tation ullamcorper suscipit.
-                        </div>
-                      </div>
-                </div>
-
-                <div class='carousel-item'>
-                    <div class="container">
-                        <div class="carousel-item-image">
-                          <img src='/assets/Images/Groupe/GP_daniel.JPG' alt='JNL Collection' class="slide-image"  class="group-img">
-                        </div>
-                        <div class="group-text">
-                              <span>Prenom Nom</span><br>
-                              <span>TITRE</span><br><br>
-                              Lorem ipsum dolor sit amet, consectetuer adipiscing
-                              elit, sed diam nonummy nibh euismod
-                              tincidunt ut laoreet dolore magna aliquam erat
-                              volutpat. Ut wisi enim ad minim veniam, quis
-                              nostrud exerci tation ullamcorper suscipit.
-                        </div>
-                      </div>
-                </div>
+              </div>
             </div>
             
             <!-- Controls 
@@ -115,11 +77,13 @@
                 <span class="sr-only">Next</span>
             </a>-->
 
-          <div class='carousel-indicators'>
-              <input type="radio" name="equipe-cr" data-target='#carousel-custom' data-slide-to='0' class='active'>
-              <input type="radio" name="equipe-cr" data-target='#carousel-custom' data-slide-to='1'>
-              <input type="radio" name="equipe-cr" data-target='#carousel-custom' data-slide-to='2'>
-            </div>
+          <ul class='carousel-indicators'>
+            <!-- <input type="radio" name="equipe-cr" data-target='#carousel-custom' data-slide-to='{{i}}'
+              [ngClass]="i === 0 ? 'active' : ''"> -->
+              <li data-target='#carousel-custom' data-slide-to='i'
+              *ngFor="let p of people; let i = index"
+              [ngClass]="i === 0 ? 'active' : ''">o</li>
+          </ul>
           
           <!-- Indicators 
           <ol class='carousel-indicators'>

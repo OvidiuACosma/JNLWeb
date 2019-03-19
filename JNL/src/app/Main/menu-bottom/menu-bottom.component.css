@@ -52,7 +52,7 @@ input:focus, button:focus {
     font-size: .9em;
     margin-bottom: 1em;
     text-transform: uppercase;
-    font-family: "Atak-Light", sans-serif;
+    font-family: Helvetica-Light, sans-serif;
 }
 
 .columnHead > a {
@@ -77,7 +77,7 @@ input:focus, button:focus {
     width: 100%;
     margin: 0;
     left: 0;
-    background-color: lightgrey;
+    background-color: #f3f5f5;
 }
 
 #bottom_nav_links {
@@ -106,13 +106,13 @@ input:focus, button:focus {
 #bottom_nav_links > div > a {
     font-size: .9em;
     margin-bottom: 1em;
-    font-family: "Atak-Light", sans-serif;
+    font-family: Helvetica-Light, sans-serif;
     transition: all .3s ease;
 }
 
 #bottom_line > a {
     margin-right: 1vw;
-    font-family: "Atak-Light", sans-serif;
+    font-family: Helvetica-Light, sans-serif;
 }
 
 #fb_in {

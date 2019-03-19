@@ -31,6 +31,7 @@
 
 .menu-text {
     font-size: .842vw; /*.758rem;*/
+    color: #666;
     padding: 1.111vw 0 0 0;
     margin: 0;
 }

@@ -373,7 +373,7 @@ button {
     /* margin-right: 3%; */
     height: 20.25vw; /*20.2vw;*/
     width: 23.34vw;
-    background-color: #DBBB76;
+    background-color: #e3d9c6;
     display: flex;
 }
 
@@ -481,7 +481,7 @@ button {
     align-content: center;
     flex-wrap: wrap;
     position: relative;
-    margin-top: 5vw;
+    /* margin-top: 1vw; */
 }
 
 .carousel-indicators > li {
@@ -494,6 +494,11 @@ button {
 
 .carousel-indicators > span {
     color: #555;
+}
+
+.people-title {
+    text-transform: uppercase;
+    font-size: .5vw;
 }
 
 .carousel-indicators .active > span{

@@ -14,6 +14,7 @@ export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   language: string;
   text: any;
+  people: string[];
   archive: any;
   scroller = true;
   anchor: number;
@@ -70,6 +71,11 @@ export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+    this.getPeople(this.text);
+  }
+
+  getPeople(text: any) {
+    this.people = text['people'];
   }
 
   unsetScroll() {

@@ -1,7 +1,8 @@
 h1 {
-    font-family: PlacardMT-Condensed;
-    font-size: 5.06vw; /* 4em; */
-    margin-bottom: .3vw;
+    /* font-family: PlacardMT-Condensed */
+    font-family: Helvetica;
+    font-size: 3vw; /* 4em; */
+    margin-bottom: 1.1vw;
     text-transform: uppercase;
 }
 
@@ -18,6 +19,7 @@ h3 {
 }
 
 h4 {
+    font-family: Helvetica-Light;
     font-size: 1.2vw;
 }
 
@@ -34,9 +36,11 @@ hr {
     padding: .27vw; /*0.3em;*/
     padding-left: 1.59vw; /*1em;*/
     padding-right: 1.59vw; /*1em;*/
-    font-size: 1.11vw;
+    font-size: 1vw;
     text-transform: uppercase;
     letter-spacing : 1.28px;
+    font-family: Helvetica-light;
+    font-style: italic;
 }
 
 .gallery_buttons {
@@ -60,7 +64,7 @@ hr {
 
 .main_divs {
     text-align: center;
-    font-family: Atak-Light;
+    font-family: Helvetica;
 }
 
 .marques_selected {
@@ -74,14 +78,14 @@ hr {
 }
 
 .carousel-arrows {
-    height: 4vw;
-    width: 2vw;
+    height: 2vw;
+    width: 1vw;
     margin-top: 4vw;
 }
 
 .carousel-arrows-projets {
-    height: 4vw;
-    width: 2vw;
+    height: 2vw;
+    width: 1vw;
     margin-top: -11vw;
 }
 
@@ -154,7 +158,7 @@ hr {
  }
 
  .marque-text > p {
-     font-family: Atak-Light;
+     font-family: Helvetica-Light;
  }
 
  .container2 {
@@ -163,8 +167,8 @@ hr {
  }
 
  .container2 > h2 {
-     font-family: Atak-Light;
-    font-size: 3.04vw;
+     font-family: Helvetica-Light;
+    font-size: 2vw;
     margin-top: 0;
 }
 
@@ -218,7 +222,7 @@ hr {
 #first_picture > div > img {
     max-width: 56vw;
     height: auto;
-    width: 34vw;
+    width: 30vw;
 }
 
 #first_picture > div > p {
@@ -243,6 +247,7 @@ hr {
     text-align: center;
     max-width: 15vw;
     height: auto;
+    min-width: 30px;
     width: 3.2vw;
 }
 
@@ -257,16 +262,17 @@ hr {
 
 #une_histoire > div {
     margin: auto;
-    margin-top: 8.12vw;
+    margin-top: 9.12vw;
     margin-bottom: 8.12vw;
     width: 60.8vw;
     text-align: center;
 }
 
 #une_histoire > div > p {
-    font-size: 1.8vw; /*2.01vw;  1.6em;*/
-    line-height: 2.16vw;
+    font-size: 1.6vw; /*2.01vw;  1.6em;*/
+    line-height: 2vw;
     margin-bottom: 3.68vw;
+    font-family: Helvetica-Light;
 }
 
 #une_histoire > div > p > a {
@@ -277,7 +283,7 @@ hr {
     width: 100%;
     /* height: 100vh;  */
     height: auto;
-    background-color: #D3D3D3;
+    background-color: #f3f5f5; /* RAL 1013: #e3d9c6; RAL 7047: #c8c8c7*/
     color: black;
     display: flex;
     flex-direction: row;
@@ -295,6 +301,9 @@ hr {
 #marques_main > h1 {
     margin: auto;
     margin-top: 1.2vw;
+    font-family: Helvetica;
+    font-size: 3vw;
+
 }
 
 /* #marques_list {
@@ -350,7 +359,7 @@ hr {
     text-align: left;
     text-justify: justify;
 
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
 }
 
 .actualites_img {
@@ -360,9 +369,11 @@ hr {
 }
 
 .more_links {
-    font-family: Atak-Bold;
+    font-family: Helvetica-Light;
+    font-style: italic;
     text-transform: uppercase;
-    margin-top: 1.42vw;
+    font-size: 1vw;
+    margin-top: 1.45vw;
     margin-bottom: 0.25vw;
     display: block;
 }

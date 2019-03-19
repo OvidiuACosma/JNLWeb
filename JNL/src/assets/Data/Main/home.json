@@ -1,7 +1,7 @@
 [
     {
         "EN": {
-            "histoireTitle": "Where tradition meets design.",
+            "histoireTitle": "Where tradition meets design",
             "histoireText": "JNL group brings a new wave of creativity to made-to-measure design with its impeccable mastery of the fabrication process. Upholsterers, woodworkers, sculptors, blacksmiths, and technicians, JNL’s artisans breathe new life into an ancestral art that renders each creation unique.",
             "histoireButtonText": "discover the group",
 
@@ -10,12 +10,12 @@
             "marquesVanhamme": "With an experience that has lasted centuries, the Vanhamme collection continues to enrich its collections by addressing ethical issues of our time. All is made to translate the very art of sitting, with attention paid to the quality of a seat, curvature of a backrest, or comfort of an armrest. ",
             "marquesUngaro": "Ungaro Home boldly combines key aspects of contemporary life: Motif pairings, rare and precious materials, delicate finishings. Each model is a unique and exclusive object. ",
             "marquesLuz": "The Luz Interiors collection offers a range of timeless and comfortable furniture specially made to enliven bedrooms and living rooms alike.",
-            "marquesButtonText": "Discover the universe",
+            "marquesButtonText": "Discover the collection",
             
             "actualitesTitle": "News",
-            "actualites1": "Maison & Objet 2019",
-            "actualites2": "Welcome Tiger Lily rugs",
-            "actualites3": "The new gougé",
+            "actualites1": "Re Garnissage",
+            "actualites2": "Ready To Sell",
+            "actualites3": "Tiger Lily chez JNL",
             "readButton": "read more",
 
             "savoirTitle": "Know-how",
@@ -25,15 +25,15 @@
 
             "projetsCity1": "London",
             "projets1": "Residential",
-            "projetsDescription1": "In partnership with interior design architect Shalini Misra",
+            "projetsDescription1": "In partnership with Shalini Misra, interior design architect",
 
             "projetsCity2": "Paris",
             "projets2": "Residential",
-            "projetsDescription2": "In partnership with interior design architect xxxx",
+            "projetsDescription2": "In partnership with Gerard Faivre, interior design architect",
 
             "projetsCity3": "Reims",
             "projets3": "Royal Champagne Hotel & Spa",
-            "projetsDescription3": "Photo credit : MRTRIPPER"
+            "projetsDescription3": "In partnership with Sybille de Margerie, interior design architect"
         },
         "FR": {
             "histoireTitle": "La tradition dans la création",
@@ -45,12 +45,12 @@
             "marquesVanhamme": "La maison VANHAMME forte de ses acquis centenaires enrichi régulièrement sa collection en intégrant les problématiques éthiques de notre siècle. La qualité des assises, le galbe d’un dossier, le confort d’un accotoir, tout traduit le véritable art de s’asseoir.",
             "marquesUngaro": "UNGARO HOME conjugue sans détours la spécificité des codes de notre époque. Jeux de motifs, matières rares et précieuses, finitions délicates font de chaque modèle de sa collection un objet unique et exclusif.",
             "marquesLuz": "La collection Luz Interiors propose une gamme de mobilier au style intemporel et confortable spécialement conçue pour habiller chambres et pièces à vivre. ",
-            "marquesButtonText": "DÉCOUVRIR L’UNIVERS",
+            "marquesButtonText": "DÉCOUVRIR la collection",
 
             "actualitesTitle": "ACTUALITÉS",
-            "actualites1": "Maison & Objet 2019",
-            "actualites2": "Les tapis Tiger Lily chez JNL",
-            "actualites3": "Le nouveau gougé",
+            "actualites1": "Re Garnissage",
+            "actualites2": "Ready To Sell",
+            "actualites3": "Tiger Lily chez JNL",
             "readButton": "lire la suite",
 
             "savoirTitle": "Le savoir faire",
@@ -60,15 +60,15 @@
 
             "projetsCity1": "Londres",
             "projets1": "Résidentiel",
-            "projetsDescription1": "Projet réalisé en collaboration avec l’architecte d’intérieur Shalini Misra",
+            "projetsDescription1": "Projet réalisé en collaboration avec Shalini Misra, architecte d’intérieur",
 
             "projetsCity2": "Paris",
             "projets2": "Résidentiel",
-            "projetsDescription2": "Projet réalisé en collaboration avec l’architecte d’intérieur xxx",
+            "projetsDescription2": "Projet réalisé en collaboration avec Gerard Faivre, architecte d’intérieur",
 
             "projetsCity3": "Reims",
             "projets3": "Royal Champagne Hotel & Spa",
-            "projetsDescription3": "Crédit photos : MRTRIPPER"
+            "projetsDescription3": "Projet réalisé en collaboration avec Sybille de Margerie, architecte d’intérieur"
         }
     }
 ]
