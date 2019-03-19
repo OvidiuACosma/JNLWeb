@@ -1,19 +1,19 @@
 h1 {
-    font-family: PlacardMT-Condensed;
-    font-size: 5.03vw;
+    font-family: Helvetica;
+    font-size: 3vw;
     margin-bottom: 3vh;
     text-align: center;
 }
 
 h2 {
-    font-family: Atak-Light;
+    font-family: Helvetica;
     font-size: 3.5vw;
     text-align: center;
 }
 
 h3 {
     text-transform: uppercase;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     color: #DBBB76;
     font-size: 1.38vw;
     margin-bottom: 1.5vw;
@@ -24,12 +24,12 @@ h4{
     margin: auto;
     width: 54vw;
     font-size: 1.8vw;
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
 }
 h5 {
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.1vw;
     text-align: left;
     margin-bottom: 0px;
@@ -69,7 +69,7 @@ video {
 
 .location {
     text-align: center;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 17px;
 }
 
@@ -83,7 +83,7 @@ video {
 }
 
 #atelier > h4 {
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     width: 59.7vw;
     margin-bottom: 1.75vw;
     font-size: 1.42vw;
@@ -114,11 +114,11 @@ video {
 
 
 .ateliers-flex > div > div {
-    font-family: Atak-LightItalic;
+    font-family: Helvetica-Light;
     font-size: 1.8vw;
 } 
 .ateliers-flex > div > div > span {
-    font-family: Atak-Bold;
+    font-family: Helvetica-Light;
     font-size: 0.97vw;
 
 } 
@@ -130,7 +130,7 @@ video {
 .ateliers-flex > div:nth-child(2) > div:first-child {
     margin-top: 0px !important;
     margin-bottom: 10.8vw;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
     text-align: left;
 } 
@@ -190,11 +190,11 @@ video {
     margin: auto;
     margin-top: 0px  !important;
     margin-right: 0px  !important;
-    background-color: #D3D3D3;
+    background-color: #f3f5f5;
     width: 34.1vw;
     height: 30vw;
     padding: 3vw;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
     text-align: center !important;
     display: flex;
@@ -208,7 +208,7 @@ video {
 }
 
 .steps-text > div > span {
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1.8vw;
     text-transform: uppercase;
 }
@@ -270,7 +270,7 @@ video {
 
 #marques_list {
     margin: auto;
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1em;
     width: 32vw;
     display: flex;
@@ -426,7 +426,7 @@ input[type="radio"] {
     flex-direction: row;
     align-content: center;
     padding: 0px;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 16px;
     width: 81.86vw;
 }
@@ -437,7 +437,7 @@ input[type="radio"] {
     margin: auto;
     width: 54vw;
     font-size: 1.8vw;
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
 }

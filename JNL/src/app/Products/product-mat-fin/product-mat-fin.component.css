@@ -3,12 +3,12 @@ hr {
 }
 
 h2 {
-    font-family: Atak-Light;
+    font-family: Helvetica;
     font-size: 2.4vw;
 }
 
 h6 {
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1.2vw;
 }
 
@@ -35,7 +35,7 @@ ul {
 }
 
 .nav-pills .nav-link {
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     font-size: 1.25vw;
 
 }

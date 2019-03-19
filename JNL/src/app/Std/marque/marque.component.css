@@ -1,19 +1,19 @@
 h1 {
-    font-family: PlacardMT-Condensed;
-    font-size: 5.03vw;
+    font-family: Helvetica;
+    font-size: 3vw; /* 5.03vw */
     text-transform: uppercase;
     text-align: center !important;
     margin-bottom: 0;
 }
 
 h2 {
-    font-family: Atak-Regular;
+    font-family: Helvetica;
     font-size: 3.5vw;
 }
 
 h3 {
     text-transform: uppercase;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     color: #DBBB76;
     font-size: 1.39vw;
     margin-bottom: 1.5vw;
@@ -22,14 +22,14 @@ h3 {
 h4 {
     margin: auto;
     font-size: 1.8vw;
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
 }
 
 h6 {
     margin-top: 1.7vw;
-    font-family: Atak-Bold;
+    font-family: Helvetica-Light;
     font-size: 1.2vw;
     text-align: center;
 }
@@ -41,7 +41,7 @@ h6 {
 }
 
 .location {
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.2vw;
     margin-bottom: 5.5vw;
 }
@@ -62,12 +62,13 @@ h6 {
 }
 
 .home_links {
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     border: 1.5px solid #DBBB76;
     padding: .27vw 1.59vw;
     font-size: 1.11vw;
     text-transform: uppercase;
     letter-spacing : 1.28px;
+    font-style: italic;
 }
 
 .marques-image {
@@ -85,7 +86,7 @@ h6 {
 
 .location {
     text-align: center;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.2vw;
 }
 
@@ -108,7 +109,7 @@ h6 {
     line-height: 1.24em;
     width: 55vw;
     margin: auto;
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
     margin-top: 1.37vw;
     margin-bottom: 4vw;
@@ -293,14 +294,14 @@ h6 {
 }
 
 .flex-div > div > span {
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
     text-transform: uppercase;
 }
 
 .flex-div > div > p {
     /* margin-top: 1.7vw; */
-    font-family: Atak-Regular;
+    font-family: Helvetica-Light;
     font-size: 1.1vw;
     padding: 1.3vw;
     width: 31.1vw;
@@ -311,7 +312,7 @@ h6 {
 
 .flex-div > div > div > span {
 
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
     font-size: 1.4vw;
 }
 
@@ -329,7 +330,7 @@ h6 {
 }
 
 .flex-div > div:nth-child(2) > p {
-    font-family: Atak-Medium;
+    font-family: Helvetica-Light;
     font-size: 1.3vw;
     width: 33.8vw;
     line-height: 1.66vw;
@@ -355,7 +356,7 @@ h6 {
      width: 41vw !important;
      text-align: center !important;
      margin: auto;
-     font-family: Atak-Light;
+     font-family: Helvetica-Light;
      font-size: 1.8vw;
      line-height: 5vw;
  }
@@ -384,7 +385,7 @@ h6 {
 
 #other-links > div > h4 {
     margin-top: 1vw;
-    font-family: Atak-Light;
+    font-family: Helvetica-Light;
 }
 
 #other-links > div:hover {
