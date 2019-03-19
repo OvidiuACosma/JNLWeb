@@ -1,26 +1,20 @@
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.left-strip {
+/* .left-strip {
     position: fixed;
     top: 0;
     left: 0;
     min-width: var(--left-strip-width);
     width: var(--left-strip-width);
-    min-height: 100vh;
+    min-height: 100vh; */
     /* background-color: red; */
-    z-index: 1002; /* bigger than .menu, to preserve the close button, 
-                      same color to trick the menu presence in full*/
-}
+    /* z-index: 1002; /* bigger than .menu, to preserve the close button,  */
+                      /* same color to trick the menu presence in full
+} */
 
 .menu {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1001;
+    z-index: 1000;
 }
 
 .container-main {
@@ -32,16 +26,17 @@
 .search-bar {
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
     min-height: var(--search-bar-height);
     max-height: var(--search-bar-height);
-    /* background: rgba(255, 255, 255, 0.5); */
     background: transparent;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .content {
+    width: 100%;
     background-color: #fff; 
-    /* margin-left: 5.347vw; */
     top: 0;
     z-index: 801;
 }
@@ -49,6 +44,8 @@
 .main {
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
     display: block;
     z-index: 800;
 }

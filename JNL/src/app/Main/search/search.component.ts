@@ -9,8 +9,6 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
 })
 export class SearchComponent implements OnInit, AfterViewChecked {
 
-  @Output() toggleNavBar = new EventEmitter();
-
   public language: string;
   otherLanguages: string[];
   languages: string[] = ['EN', 'FR'];
@@ -79,19 +77,17 @@ export class SearchComponent implements OnInit, AfterViewChecked {
   }
 
   toggleNav() {
-    this.toggleNavBar.emit(null);
-    this.dataex.setNavBarStatus(!this.navBarStatus);
-    switch (this.navBarStatus) {
-      case false: {
-        this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
-        this.navBarButtonText = 'MENU';
-        break;
-      }
-      case true: {
-        this.navBarButtonSrc = '/assets/Images/Menu/menuClose.png';
-        this.navBarButtonText = 'CLOSE';
-        break;
-      }
+    if (event.type === 'mouseover' && !this.navBarStatus) {
+      this.dataex.setNavBarStatus(!this.navBarStatus);
+      this.navBarButtonSrc = '/assets/Images/Menu/menuClose.png';
+      this.navBarButtonText = 'CLOSE';
+      return;
+    }
+    if (event.type === 'click' && this.navBarStatus) {
+      this.dataex.setNavBarStatus(!this.navBarStatus);
+      this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
+      this.navBarButtonText = 'MENU';
+      return;
     }
   }
 

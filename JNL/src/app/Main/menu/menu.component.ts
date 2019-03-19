@@ -11,8 +11,6 @@ export class MenuComponent implements OnInit, OnChanges {
 
   language: string;
   text: any;
-
-  @Input() toggleNavBar = false;
   isCollapsed = false;
 
   constructor(private router: Router,

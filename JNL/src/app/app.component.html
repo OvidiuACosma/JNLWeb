@@ -1,31 +1,25 @@
-<div class="wrapper">
-  <div class="left-strip" (click)="toggleNav()">
-    <app-left-strip></app-left-strip>
+<div class="container-main">
+  <div class="search-bar">
+    <app-search (toggleNavBar)="toggleNav()"></app-search>
   </div>
 
-  <div class="container-main">
-    <div class="search-bar">
-      <app-search (toggleNavBar)="toggleNav()"></app-search>
+  <div class="content">
+
+    <div class="menu">
+      <app-menu></app-menu>
     </div>
 
-    <div class="content">
-
-      <div class="menu">
-        <app-menu [toggleNavBar]="toggleNavBar"></app-menu>
+    <div class="main">
+      <app-alert></app-alert>
+      <div class="router-outlet">
+        <router-outlet></router-outlet>
       </div>
 
-      <div class="main">
-        <app-alert></app-alert>
-        <div class="router-outlet">
-          <router-outlet></router-outlet>
-        </div>
-
-        <div class="menu-bottom">
-          <app-menu-bottom></app-menu-bottom>
-        </div>
-
+      <div class="menu-bottom">
+        <app-menu-bottom></app-menu-bottom>
       </div>
 
     </div>
+
   </div>
 </div>
