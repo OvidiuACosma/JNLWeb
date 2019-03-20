@@ -1,5 +1,5 @@
-<nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-100vw' : '0'}">
-    <div id="side_nav_links" *ngIf="text">
+<nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-34vw' : '0'}">
+    <div id="side_nav_links" *ngIf="text" (mouseleave)="hideMenu()">
         <div>
             <span (click)="NavigateTo('products')">{{text.produits}}</span>
             <!--<a (click)="NavigateTo('products')">{{text.chercher}}</a>
@@ -51,18 +51,19 @@
           <a href="https://www.instagram.com/jnl_design/" target="_blank"><img alt="JNL Collection Instagram" 
             src="assets/Images/Menu/MN_InstagramIcon_White.png" height="30vh"></a>&nbsp;&nbsp;
           <a href="https://www.facebook.com/JNLcollections/" target="_blank"><img alt="JNL Collection Facebook" 
-            src="assets/Images/Menu/MN_FacebookIcon_White.png" height="30vh"></a>
+            src="assets/Images/Menu/MN_FacebookIcon_White.png" height="30vh"></a>&nbsp;&nbsp;
+            <a href="https://www.facebook.com/JNLcollections/" target="_blank"><img alt="JNL Collection Pinterest" 
+              src="assets/Images/Menu/MN_PinterestIcon_White.png" height="30vh"></a>
           <br>
         </div>
     
-
+    
         <div id="side_bottom_line">
             <a (click)="NavigateTo('legal')">{{text.mentions}}</a>
             <a (click)="NavigateTo('gdpr')">{{text.politique}}</a><br>
             <a (click)="NavigateTo('credits')">{{text.credits}}</a>
         </div>
     </div>
-
     <!-- <div id="menu-image-div">
         <img class="menu_image" alt="JNL Collection" src="assets/Images/Menu/MN_pic.jpg">
     </div> -->

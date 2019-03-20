@@ -143,6 +143,7 @@ li {
     flex-wrap: nowrap;
     height: 24px;
     float: right;
+    font-size: 1.1vw;
 }
 
 #top_buttons > span, #top_buttons > ul > li > span {

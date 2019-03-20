@@ -68,4 +68,8 @@ export class MenuComponent implements OnInit, OnChanges {
   ScrollTop() {
     window.scrollTo(0, 0);
   }
+
+  hideMenu() {
+    this.toggleMenuBar();
+  }
 }

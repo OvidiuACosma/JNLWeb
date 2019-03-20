@@ -7,7 +7,7 @@ input:focus, button:focus {
 }
 
 ::placeholder {
-    font-family : Atak-Light;
+    font-family : Helvetica-Light;
     font-size : 1.2vw;
     line-height : 1.2vw;
     letter-spacing : 1.2px;
@@ -15,7 +15,7 @@ input:focus, button:focus {
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    font-family : Atak-Light;
+    font-family : Helvetica-Light;
     font-size : 1.2vw;
     line-height : 1.2vw;
     letter-spacing : 1.2px;
@@ -23,7 +23,7 @@ input:focus, button:focus {
 }
 
 ::-moz-placeholder { /* Firefox 19+ */
-    font-family : Atak-Light;
+    font-family : Helvetica-Light;
     font-size : 1.2vw;
     line-height : 1.2vw;
     letter-spacing : 1.2px;
@@ -31,7 +31,7 @@ input:focus, button:focus {
 }
 
 :-ms-input-placeholder { /* IE 10+ */
-    font-family : Atak-Light;
+    font-family : Helvetica-Light;
     font-size : 1.2vw;
     line-height : 1.2vw;
     letter-spacing : 1.2px;
@@ -39,7 +39,7 @@ input:focus, button:focus {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-    font-family : Atak-Light;
+    font-family : Helvetica-Light;
     font-size : 1.2vw;
     line-height : 1.2vw;
     letter-spacing : 1.2px;
@@ -49,8 +49,8 @@ input:focus, button:focus {
 
 
 .columnHead {
-    font-size: .9em;
-    margin-bottom: 1em;
+    font-size: 1vw;
+    margin-bottom: 1vw;
     text-transform: uppercase;
     font-family: Helvetica-Light, sans-serif;
 }
@@ -66,14 +66,14 @@ input:focus, button:focus {
 }
 
 .bottom_nav > div {
-    font-size: 1.04vw;
+    font-size: .9vw;
     letter-spacing: 0.1vw;
     color: #212529;
 }
 
 .bottom_nav {
 
-    padding: 2.41vw 5.48vw 1.86vw 4.44vw;
+    padding: 1.8vw 5.48vw .8vw 4.44vw;
     width: 100%;
     margin: 0;
     left: 0;
@@ -97,15 +97,15 @@ input:focus, button:focus {
     background-color: white;
 }
 
-#bottom_nav_links > div > p, #bottom_line > a {
-    font-size: .9em;
-    margin-bottom: 1em;
+#bottom_nav_links > div > p {
+    font-size: 1vw;
+    margin-bottom: 1vw;
     text-transform: uppercase;
 }
 
 #bottom_nav_links > div > a {
-    font-size: .9em;
-    margin-bottom: 1em;
+    font-size: 1vw;
+    margin-bottom: .8vw;
     font-family: Helvetica-Light, sans-serif;
     transition: all .3s ease;
 }
@@ -113,6 +113,9 @@ input:focus, button:focus {
 #bottom_line > a {
     margin-right: 1vw;
     font-family: Helvetica-Light, sans-serif;
+    font-size: .7vw;
+    margin-bottom: 1vw;
+    text-transform: uppercase;
 }
 
 #fb_in {
@@ -131,7 +134,7 @@ input:focus, button:focus {
 #news_letter > input {
     border: 0;
     border-right: 1px solid black;
-    padding: 0.2em;
+    padding: 0.1vw;
     margin: 0;
     width: 15vw;
     background-color: transparent;
@@ -142,8 +145,8 @@ input:focus, button:focus {
     background-color: transparent;
     float: right;
     padding: 0px;
-    padding-top: 4px;
-    padding-right: 4px;
+    padding-top: 1px;
+    padding-right: 2px;
 }
 #bottom-inline
 {
@@ -223,7 +226,7 @@ input:focus, button:focus {
     .mob-links {
         font-size: 4.4vw;
         text-transform: uppercase;
-        font-family: "Atak-Light", sans-serif;
+        font-family: "Helvetica-Light", sans-serif;
 
         display: flex;
         flex-direction: column;
