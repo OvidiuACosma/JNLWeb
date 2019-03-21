@@ -14,7 +14,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .container-main {
@@ -31,7 +31,7 @@
     min-height: var(--search-bar-height);
     max-height: var(--search-bar-height);
     background: transparent;
-    z-index: 1001;
+    z-index: 1000;
 }
 
 .content {

@@ -156,7 +156,7 @@ h6 {
     width: 100%;
     padding: 0px;
     height: auto;
-    background-color: #D3D3D3;
+    background-color: #f3f5f5;
     color: black;
     display: flex;
     flex-direction: row;
@@ -186,8 +186,8 @@ h6 {
 }
 
 .carousel-arrows {
-    height: 4vw;
-    width: 2vw;
+    height: 2vw;
+    width: 1vw;
     margin-top: 0vw;
 }
 

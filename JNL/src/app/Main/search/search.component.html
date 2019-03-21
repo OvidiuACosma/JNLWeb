@@ -15,7 +15,7 @@
        </div>
 
        <div id="top_buttons" *ngIf="text" (mouseleave)="closeLangSelection()"
-        [ngStyle]="isHome ? {'color': '#666666'} : {'color': 'black'}">
+        [ngStyle]="isHome ? {'color': '#666'} : {'color': 'black'}">
            <span>
                <a (click)="navigateTo('favorites')" class="top-button">
                    <i class="far fa-heart"></i>
@@ -25,7 +25,10 @@
            <!-- <span class="top-button">&nbsp;&#8213;&nbsp;</span> -->
            <span>
                <a class="top-button" *ngIf="!searchMode" 
-                (click)="goSearchMode()">{{text.search}}</a>
+                    (click)="goSearchMode()">
+                    <!-- <i class="fas fa-search"></i> -->
+                    <i class="material-icons magnifier">search</i>
+                </a>
                <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
                 (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
            </span>&#8213;

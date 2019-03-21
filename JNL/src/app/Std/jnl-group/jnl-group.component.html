@@ -50,48 +50,27 @@
       </div>
 
         <!--CAROUSEL-->
-        <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel'  data-interval="3000">
-            <div class="carousel-inner">
-              <div class='carousel-item' *ngFor="let p of people; let i = index"
-              [ngClass]="i === 0 ? 'item active' : 'item'">
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img [src]='p.image' alt='{{p.name}}' class="slide-image"  class="group-img">
-                  </div>
-                  <div class="group-text">
-                    <span>{{p.name}}</span><br>
-                    <span class="people-title">{{p.title}}</span><br><br>
-                    {{p.text}}
-                  </div>
+        <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel' data-interval="3000">
+          <div class="carousel-inner">
+            <div class='carousel-item' *ngFor="let p of people; let i = index"
+            [ngClass]="i === 0 ? 'item active' : 'item'">
+              <div class="container">
+                <div class="carousel-item-image">
+                  <img [src]='p.image' alt='{{p.name}}' class="slide-image"  class="group-img">
+                </div>
+                <div class="group-text">
+                  <span class="people-name">{{p.name}}</span><br>
+                  <span class="people-title">{{p.title}}</span><br><br>
+                  {{p.text}}
                 </div>
               </div>
             </div>
-            
-            <!-- Controls 
-            <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
-                <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next'>
-                <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
-                <span class="sr-only">Next</span>
-            </a>-->
-
-          <ul class='carousel-indicators'>
-            <!-- <input type="radio" name="equipe-cr" data-target='#carousel-custom' data-slide-to='{{i}}'
-              [ngClass]="i === 0 ? 'active' : ''"> -->
-              <li data-target='#carousel-custom' data-slide-to='i'
-              *ngFor="let p of people; let i = index"
-              [ngClass]="i === 0 ? 'active' : ''">o</li>
-          </ul>
-          
-          <!-- Indicators 
+            </div>
           <ol class='carousel-indicators'>
-              <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>JNL Collection</span></li>
-              <li data-target='#carousel-custom' data-slide-to='1'><span>Vanhamme</span></li>
-              <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaro Home</span></li>
-              <li data-target='#carousel-custom' data-slide-to='3'><span>Luz-Interiors</span></li>
-          </ol>-->
+              <li data-target='#carousel-custom' [attr.data-slide-to]='j'
+              *ngFor="let p of people; let j = index"
+              [ngClass]="j === 0 ? 'active' : ''"></li>
+          </ol>
         </div>
         <!--CAROUSEL-->
 

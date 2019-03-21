@@ -152,7 +152,6 @@ li {
     margin: 0 1.38vw 0 1.38vw;
     text-align: center; 
     text-decoration: none;
-    /* color: black; */
     mix-blend-mode: difference;
     transition: all .3s ease;
 }
@@ -173,6 +172,12 @@ li {
     transition: all .3s ease;
 }
 
+.magnifier {
+    color: #666 !important;
+    font-size: 1.5vw !important;
+    padding-top: .13vw;
+}
+
 #menu-button {
     position: fixed;
     top: 0;
@@ -186,7 +191,7 @@ li {
     background-color: transparent;
     font-size: 1.444vw;
     cursor: pointer;
-    z-index: 2000;
+    /* z-index: 2000; */
 }
 
 .menu-button-img {

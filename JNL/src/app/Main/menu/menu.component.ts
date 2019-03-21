@@ -66,6 +66,8 @@ export class MenuComponent implements OnInit {
   }
 
   hideMenu() {
-    this.toggleMenuBar();
+    if (!this.isCollapsed) {
+      this.toggleMenuBar();
+    }
   }
 }

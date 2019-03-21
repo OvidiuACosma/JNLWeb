@@ -445,8 +445,8 @@ button {
 }
 
 .carousel-arrows {
-    height: 4vw;
-    width: 2vw;
+    height: 2vw;
+    width: 1vw;
     margin-top: auto;
 }
 
@@ -481,33 +481,41 @@ button {
     align-content: center;
     flex-wrap: wrap;
     position: relative;
-    /* margin-top: 1vw; */
+    margin-top: 1vw;
 }
 
 .carousel-indicators > li {
-    height: 0;
-    width: auto;
+    height: .9vw;
+    width: .9vw;
+    margin-right: .6vw;
     text-transform: uppercase;
     text-indent: 0;
     font-size: 1.88vw;
+    background-color: #666;
+    border-radius: 100%;
 }
+
+.carousel-indicators li .active {
+    background-color: black;
+    opacity: 1;
+}
+
+/* .carousel-indicators li:not(:active) {
+    background-color: black;
+    opacity: .4;
+} */
 
 .carousel-indicators > span {
     color: #555;
 }
 
-.people-title {
-    text-transform: uppercase;
-    font-size: .5vw;
-}
-
-.carousel-indicators .active > span{
+/* .carousel-indicators .active > span{
     background-color: #555;
-}
+} */
 
-.carousel-indicators .active {
+/* .carousel-indicators .active {
     background-color: rgb(46, 46, 46);
-}
+} */
 
 input[type="radio"] {
     -webkit-appearance: none;
@@ -538,9 +546,9 @@ input[type="radio"] {
 }
 
 .group-text {
-     padding-top: 6vw;
-     text-align: left;
-     font-size: 1.4vw;
+    padding-top: 6vw;
+    text-align: left;
+    font-size: 1.4vw;
     margin-top: 0px  !important;
     width: 38.9vw;
     padding: 3vw;
@@ -554,7 +562,7 @@ input[type="radio"] {
     margin-top: 0px  !important;
     margin: auto;
     width: 54%;
-    font-size: 1.8vw;
+    
     font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
@@ -565,6 +573,15 @@ input[type="radio"] {
     width: 60%;
     margin-top: 0.65vw;
     text-align: center;
+}
+
+.people-name {
+    font-size: 1.8vw;
+}
+
+.people-title {
+    text-transform: uppercase;
+    font-size: 1vw;
 }
 
 .projets {
