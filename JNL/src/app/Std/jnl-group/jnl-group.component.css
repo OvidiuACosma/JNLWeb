@@ -391,13 +391,13 @@ button {
     margin: auto;
 }
 
-/* #histoire, #equipe, #engagement, #projets, #archives {
-    margin-bottom: 60px;
+#histoire, #equipe, #engagement, #projets, #archives {
     padding-top: 60px;
-} */
+    margin-top: -60px;
+}
 
 #histoire {
-    margin-top: 8.38vw;
+    margin-top: 1.38vw;
 }
 
 #histoire > h1 {

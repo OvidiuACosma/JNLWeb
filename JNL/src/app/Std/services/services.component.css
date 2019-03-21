@@ -335,11 +335,11 @@ select {
     flex-direction: column;
     justify-content: space-between;
 }
-/* 
+ 
 #expertise, #surMesure, #votreProjet {
-    margin-bottom: 60px;
     padding-top: 60px;
-} */
+    margin-top: -60px;
+}
 
 #expertise {
     margin-top: 2.57vw;
