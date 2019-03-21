@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DeviceDetectorService } from 'ngx-device-detector';
 declare var $: any;
 
 @Component({
@@ -11,13 +12,15 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
 
+  deviceInfo = null;
   language: string;
   text: any;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private deviceService: DeviceDetectorService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -29,6 +32,7 @@ export class HomeComponent implements OnInit {
     $(document).ready(function() {
       $('.carousel').carousel();
     });
+    this.getBrowser();
   }
 
   getText(lang: string) {
@@ -48,6 +52,15 @@ export class HomeComponent implements OnInit {
     if (element) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
+  }
+
+  getBrowser() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+    this.dataex.setCurrentBrowser(this.deviceInfo.browser);
+    const isMobile = this.deviceService.isMobile();
+    const isTablet = this.deviceService.isTablet();
+    const isDesktopDevice = this.deviceService.isDesktop();
+    // console.log("Is Mobile: ", isMobile, ", Is Tablet: ", isTablet, ", Is Desktop: ", isDesktopDevice);
   }
 
   navigateTo(target: string, fragment: string = '') {
