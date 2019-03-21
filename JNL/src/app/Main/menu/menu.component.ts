@@ -7,7 +7,7 @@ import { DataExchangeService, TranslationService } from 'src/app/_services';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit, OnChanges {
+export class MenuComponent implements OnInit {
 
   language: string;
   text: any;
@@ -40,10 +40,6 @@ export class MenuComponent implements OnInit, OnChanges {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-  }
-
-  ngOnChanges() {
-    // this.toggleMenuBar();
   }
 
   toggleMenuBar() {
