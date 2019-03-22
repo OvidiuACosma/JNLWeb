@@ -39,13 +39,15 @@ export class ProductDescriptionComponent implements OnInit {
 
   getMaterials(part: string) {
     const matList: string[] = [];
+    let mats = '';
     this.productDesc.forEach(item => {
       if (item.partNameFr === part) {
         matList.push(item.materialNameFr.toString());
       }
     });
     this.materials = _.uniq(matList);
-    return this.materials;
+    mats = this.materials.join(', ');
+    return mats;
   }
 
   toggleElement() {

@@ -81,7 +81,7 @@ export class ProductMatFinComponent implements OnInit {
       case 'abatjour': {
         this.matCategory = 'abatjour';
         this.abatjours = this.materials.filter(f => f.ctg === 5);
-        // console.log('ABAT-JOURS: ', this.abatjours);
+        console.log('ABAT-JOURS: ', this.abatjours);
         break;
       }
       case 'metal': {
