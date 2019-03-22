@@ -208,8 +208,4 @@ ul {
     #container {
         flex-direction: column;
     }
-    /*
-    #contentMatFin {
-        flex-direction: column-reverse;
-    } */
 }

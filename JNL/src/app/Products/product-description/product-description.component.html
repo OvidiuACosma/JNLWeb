@@ -9,7 +9,7 @@
     <br>
     <div id="parts" *ngFor="let part of parts"><b>{{part}}:</b>
       <div>
-       <span *ngFor="let mat of getMaterials(part)">{{mat}}, </span>
+       <span>{{getMaterials(part)}}</span>
       </div>
       <br>
     </div> 
