@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../_models';
+import { User, Browser } from '../_models';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 
 @Injectable({
@@ -18,7 +19,10 @@ export class DataExchangeService {
   currentUser = this.subjectUser.asObservable();
 
   // Browser
-  private subjectBrowser = new BehaviorSubject<String>('');
+  private subjectBrowser = new BehaviorSubject<Browser>({name: this.deviceService.getDeviceInfo().browser,
+                                                        isDesktopDevice: this.deviceService.isDesktop(),
+                                                        isTablet: this.deviceService.isTablet(),
+                                                        isMobile: this.deviceService.isMobile()});
   currentBrowser = this.subjectBrowser.asObservable();
 
   // NavBar Status
@@ -29,7 +33,7 @@ export class DataExchangeService {
   private subjectLanguage = new BehaviorSubject<string>('EN');
   currentLanguage = this.subjectLanguage.asObservable();
 
-  constructor() { }
+  constructor(private deviceService: DeviceDetectorService) { }
 
   public changeMessage(message: string) {
     this.messageSource.next(message);
@@ -39,7 +43,7 @@ export class DataExchangeService {
     this.subjectUser.next(user);
   }
 
-  public setCurrentBrowser(browser: String) {
+  public setCurrentBrowser(browser: Browser) {
     this.subjectBrowser.next(browser);
   }
 

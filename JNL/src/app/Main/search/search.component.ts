@@ -1,13 +1,14 @@
 import { Component, OnInit, Output, EventEmitter, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService } from '../../_services';
+import { Browser } from '../../_models';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit, AfterViewChecked {
+export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
 
   public language: string;
   otherLanguages: string[];
@@ -16,9 +17,10 @@ export class SearchComponent implements OnInit, AfterViewChecked {
   public text: any;
   public searchMode = false;
   public navBarStatus = true;
-  navBarButtonSrc: string;
+  navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
   navBarButtonText: string;
   isHome: boolean;
+  browser: Browser;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
@@ -31,6 +33,8 @@ export class SearchComponent implements OnInit, AfterViewChecked {
       this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
       this.navBarButtonText = 'MENU';
     });
+    this.dataex.currentBrowser
+    .subscribe(browser => this.browser = browser);
     this.dataex.currentLanguage
     .subscribe(lang => {
       this.language = lang || 'EN';
@@ -42,9 +46,9 @@ export class SearchComponent implements OnInit, AfterViewChecked {
     });
   }
 
-  ngAfterViewChecked() {
-    // this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
-  }
+  // ngAfterViewChecked() {
+  //   // this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
+  // }
 
   getText(lang: string) {
     this.textService.getTextSearch()
@@ -77,18 +81,26 @@ export class SearchComponent implements OnInit, AfterViewChecked {
   }
 
   toggleNav() {
-    if (event.type === 'mouseover' && !this.navBarStatus) {
-      this.dataex.setNavBarStatus(!this.navBarStatus);
-      this.navBarButtonSrc = '/assets/Images/Menu/menuClose.png';
-      this.navBarButtonText = 'CLOSE';
-      return;
+    console.log(`Navbar status: ${this.navBarStatus}, browser: ${this.browser}`);
+    if (!this.navBarStatus) {
+      if ((event.type === 'mouseover' && this.browser.isDesktopDevice) ||
+           (event.type === 'click' && (this.browser.isTablet || this.browser.isMobile))) {
+             this.dataex.setNavBarStatus(!this.navBarStatus);
+           }
     }
-    if (event.type === 'click' && this.navBarStatus) {
-      this.dataex.setNavBarStatus(!this.navBarStatus);
-      this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
-      this.navBarButtonText = 'MENU';
-      return;
-    }
+
+    // if (event.type === 'mouseover' && !this.navBarStatus) {
+    //   this.dataex.setNavBarStatus(!this.navBarStatus);
+    //   // this.navBarButtonSrc = '/assets/Images/Menu/menuClose.png';
+    //   // this.navBarButtonText = 'CLOSE';
+    //   return;
+    // }
+    // if (event.type === 'click' && !this.navBarStatus) {
+    //   this.dataex.setNavBarStatus(!this.navBarStatus);
+    //   // this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
+    //   // this.navBarButtonText = 'MENU';
+    //   return;
+    // }
   }
 
   scrollTop() {

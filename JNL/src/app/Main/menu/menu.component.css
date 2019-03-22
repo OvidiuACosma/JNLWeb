@@ -63,11 +63,12 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    font-family: Atak-Regular;
+    font-family: Helvetica;
     overflow-y: scroll;
-    -ms-overflow-style: none; 
-    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
 }
+
 #side_nav::-webkit-scrollbar { 
     display: none; 
 }
@@ -76,7 +77,6 @@
     margin: auto;
     margin-left: 0px;
     margin-top: 50px;
-    /* padding-left: 1vw; */
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -97,12 +97,14 @@
 }
 
 #side_nav_links > div > a {
+    font-family: Helvetica-light;
     margin-right: 1.38vw;;
     transition: all .5s ease;
     font-size: 1.1vw;
 }
 
 #side_nav_links > div > span {
+    font-family: Helvetica;
     flex: 0 0 100%;
     line-height: 1em;
     transition: all .5s ease;
@@ -142,6 +144,7 @@
 a:focus, img:focus {
     outline: none;
 }
+
 
 @media only screen and (max-width: 768px)
 {

@@ -3,6 +3,7 @@
        <div id="menu-button">
             <img class="menu-button-img" src="{{navBarButtonSrc}}" 
                 (click)="toggleNav()" (mouseover)="toggleNav()">
+                <!-- [ngClass]="navBarStatus ? 'menu-button-img-active' : ''" -->
             <!-- <p class="menu-text" (click)="toggleNav()" (mouseover)="toggleNav()">{{navBarButtonText}}</p> -->
         </div>
         <div id="menu-logo">
@@ -18,7 +19,7 @@
         [ngStyle]="isHome ? {'color': '#666'} : {'color': 'black'}">
            <span>
                <a (click)="navigateTo('favorites')" class="top-button">
-                   <i class="far fa-heart"></i>
+                   <i class="far fa-heart heart"></i>
                    <!--<img alt="JNL Collection" src="/assets/Images/Common/fav_icon.png" height="16px">-->
                 </a>
            </span>&#8213;

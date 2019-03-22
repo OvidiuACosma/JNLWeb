@@ -172,10 +172,22 @@ li {
     transition: all .3s ease;
 }
 
+.heart {
+    color: #666 !important;
+}
+
+.heart:hover {
+    color: #DBBB76 !important;
+}
+
 .magnifier {
     color: #666 !important;
     font-size: 1.5vw !important;
     padding-top: .13vw;
+}
+
+.magnifier:hover {
+    color: #DBBB76 !important;
 }
 
 #menu-button {
@@ -195,10 +207,14 @@ li {
 }
 
 .menu-button-img {
-    padding-top: 12px;
+    padding-top: 10px;
     min-width: 30px;
     width: 2.777vw;
     height: auto;
+}
+
+.menu-button-img-active {
+    display: none;
 }
 
 .menu-text {
