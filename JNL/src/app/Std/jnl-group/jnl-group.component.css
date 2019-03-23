@@ -383,8 +383,9 @@ button {
 
 #archives > div > div > span {
     margin: auto;
-    font-family: PlacardMT-Condensed;
+    font-family: Helvetica-Light;
     font-size: 5.06vw;
+    font-style: italic;
 }
 
 #gallery-div {
@@ -394,6 +395,10 @@ button {
 #histoire, #equipe, #engagement, #projets, #archives {
     padding-top: 60px;
     margin-top: -60px;
+}
+
+#projets {
+    margin-bottom: 8.44vw;
 }
 
 #histoire {
