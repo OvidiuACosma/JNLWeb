@@ -87,7 +87,7 @@ export class ProductMatFinComponent implements OnInit {
       case 'metal': {
         this.matCategory = 'metal';
         this.metals = this.materials.filter(f => f.ctg === 2);
-        // console.log('Metals: ', this.metals);
+        console.log('Metals: ', this.metals);
         break;
       }
       case 'bois': {

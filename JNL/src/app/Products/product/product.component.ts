@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from 'src/app/_services';
 import { Product, Img } from 'src/app/_models';
+import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 declare var $: any;
 
 @Component({
@@ -9,7 +11,7 @@ declare var $: any;
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit, AfterViewChecked {
+export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
 
   public detail = 'description';
   public product_id: string;
@@ -18,7 +20,7 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   public family = '';
   public prodName = '';
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
-  product: Product;
+  public product: Product;
   public heroImages: Img[] = [];
 
   scroller = true;
@@ -30,21 +32,18 @@ export class ProductComponent implements OnInit, AfterViewChecked {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-    private productsService: ProductsService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private dataex: DataExchangeService,
-    private textService: TranslationService,
-    private countryList: ArchiveService) { }
+              private productsService: ProductsService,
+              private router: Router,
+              private dataex: DataExchangeService,
+              private textService: TranslationService,
+              private archiveService: ArchiveService) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.product = new Product();
-      this.product.brand = params.b;
-      this.product.family = params.f;
-      this.product.model = params.m;
-      this.getProductData(this.product);
-    });
+    this.activatedRoute.paramMap
+    .subscribe(params => {
+      this.product = { brand: params.get('b'), family: params.get('f'), model: params.get('m')};
+        this.getProductData(this.product);
+      });
 
     this.dataex.currentLanguage
       .subscribe(lang => {
@@ -76,6 +75,20 @@ export class ProductComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  // ngAfterViewChecked() {
+  //   this.route.fragment.subscribe(fragment => {
+  //     if (fragment) {
+  //       const element = document.getElementById(fragment);
+  //       if (element && this.scroller === true) {
+  //         element.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  //       }
+  //       this.scroller = true;
+  //     } else if (this.scroller === true) {
+  //       // window.scrollTo(0, 0);
+  //     }
+  //   });
+  // }
+
   setDetail(index: number) {
     this.detail = this.tabList[index];
   }
@@ -86,10 +99,7 @@ export class ProductComponent implements OnInit, AfterViewChecked {
         const res = data[0];
         this.getLanguageText(res);
       });
-
-
     this.getCountries();
-
   }
 
   getLanguageText(res: any) {
@@ -102,7 +112,7 @@ export class ProductComponent implements OnInit, AfterViewChecked {
   }
 
   getCountries() {
-    this.countryList.getTextCountries()
+    this.archiveService.getTextCountries()
       .subscribe(c => {
         const source = c[0];
         this.getCountryList(source);
@@ -130,19 +140,4 @@ export class ProductComponent implements OnInit, AfterViewChecked {
     }
     this.scroller = false;
   }
-
-  ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element && this.scroller === true) {
-          element.scrollIntoView({ block: 'start', behavior: 'smooth' });
-        }
-        this.scroller = true;
-      } else if (this.scroller === true) {
-        // window.scrollTo(0, 0);
-      }
-    });
-  }
-
 }

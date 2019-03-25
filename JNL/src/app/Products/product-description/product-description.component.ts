@@ -14,7 +14,6 @@ export class ProductDescriptionComponent implements OnInit {
   public productDesc: any[];
   public parts: string[] = [];
   public materials: string[] = [];
-
   toggle = false;
 
   constructor(private productsService: ProductsService) { }
@@ -22,7 +21,12 @@ export class ProductDescriptionComponent implements OnInit {
   ngOnInit() {
     this.productsService.getProductDesc(this.product)
       .subscribe(desc => {
-        this.productDesc = desc;
+        this.productDesc = desc.sort(function(a, b) {
+          if (a.orderIndex > b.orderIndex) { return -1; }
+          if (a.orderIndex < b.orderIndex) { return 1; }
+          return 0;
+        });
+        console.log(`Product Description: ${this.productDesc}, for product ${this.product}`);
         this.getParts();
       });
   }
@@ -30,8 +34,8 @@ export class ProductDescriptionComponent implements OnInit {
   getParts() {
     const partsList: any[] = [];
     this.productDesc.forEach(item => {
-      if (item.partNameFr) { // check if is NULL or undefined
-      partsList.push(item.partNameFr);
+      if (item.partNameFr) {
+        partsList.push(item.partNameFr);
       }
     });
     this.parts = _.uniq(partsList);
@@ -42,7 +46,7 @@ export class ProductDescriptionComponent implements OnInit {
     let mats = '';
     this.productDesc.forEach(item => {
       if (item.partNameFr === part) {
-        matList.push(item.materialNameFr.toString());
+        matList.push((item.materialNameFr || '').toString());
       }
     });
     this.materials = _.uniq(matList);

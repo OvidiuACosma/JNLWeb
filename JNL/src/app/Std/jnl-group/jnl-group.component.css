@@ -383,14 +383,9 @@ button {
 
 #archives > div > div > span {
     margin: auto;
-<<<<<<< HEAD
-    font-family: Helvetica;
-    font-size: 3.5vw;
-=======
     font-family: Helvetica-Light;
     font-size: 5.06vw;
     font-style: italic;
->>>>>>> d56593f69e5426038f326566400fefa5f4a025cf
 }
 
 #gallery-div {

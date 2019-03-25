@@ -1,10 +1,10 @@
-export class Product {
+export interface Product {
     brand: string;
     family: string;
     model: string;
 }
 
-export class ProductEF {
+export interface ProductEF {
     brand: string;
     categoryFr: string;
     categoryEn: string;

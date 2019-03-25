@@ -20,7 +20,7 @@ export class ProductsService {
               private configService: ConfigService) {
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
     this.product = configService.getApiURI() + '/products';
-    this.prodDescURL = configService.getApiURI() + '/productsdescriptions/';
+    this.prodDescURL = configService.getApiURI() + '/productsdescriptions';
   }
 
   public getProducts(): Observable<ProductEF[]> {

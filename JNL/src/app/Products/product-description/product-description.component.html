@@ -4,7 +4,7 @@
     <h5>DESCRIPTION &amp; <br>TECHNICAL INFO</h5>
     <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow">
   </div>
-  <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'">
+  <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'" *ngIf="productDesc">
     <p>{{productDesc[0].descriptionFr}}</p>
     <br>
     <div id="parts" *ngFor="let part of parts"><b>{{part}}:</b>

@@ -44,7 +44,14 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
 
       this.productService.getProducts()
       .subscribe(p => {
-        this.products = p;
+        this.products = p.sort(function(a, b) {
+          if (a.brand.localeCompare(b.brand) > 0) { return 1; }
+          if (a.brand.localeCompare(b.brand) < 0) { return -1; }
+          if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
+          if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
+          if (a.model.localeCompare(b.model) > 0) { return 1; }
+          return -1;
+        });
         this.productsFiltered = _.clone(this.products);
         this.categoriesFr = new Set(this.products.map(c => c.categoryFr));
         this.categoriesEn = new Set(this.products.map(c => c.categoryEn));
@@ -170,7 +177,7 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
   // }
 
   goToProduct(product: ProductEF) {
-    this.selectedProduct = { brand: 'JNL Collection', family: 'Canapé', model: 'Shanghai'};
+    // this.selectedProduct = { brand: 'JNL Collection', family: 'Canapé', model: 'Shanghai'};
     this.router.navigate(['product', {b: product.brand, f: product.familyFr, m: product.model}]);
   }
 

@@ -20,7 +20,10 @@
             </div>
             <ul id="filter-{{c}}" *ngIf="toggle[i]">
               <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index">
-                  <span (click)="selectFilter()"><i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i>&nbsp;{{d}}</span>
+                  <span (click)="selectFilter()">
+                    <i [ngClass]="(this.selected[k]===1) ? 'fas fa-square' :'far fa-square'"></i>
+                    &nbsp;{{d}}
+                  </span>
               </li>
             </ul>
           </li>
@@ -29,7 +32,6 @@
     </div>
 
     <div class="products">
-      
       <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
       <ul class="list">
         <cdk-virtual-scroll-viewport itemSize="30" >

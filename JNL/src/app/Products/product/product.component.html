@@ -1,5 +1,5 @@
 <div id="container">
-  <div id="header">
+  <div id="header" *ngIf="prodDesc">
     <h1>{{prodDesc.model}}</h1>
     <h4>JNL Collection</h4>
     <!--<h3>{{prodDesc.brand  | uppercase}}</h3>-->
@@ -48,7 +48,7 @@
   </div>
 
   <!-- PRODUCT DESCRIPTION-->
-  <div class="prod-desc">
+  <div class="prod-desc" *ngIf="product">
     <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
   </div>
 
