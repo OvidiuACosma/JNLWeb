@@ -1,6 +1,6 @@
 h1{
-    font-family: PlacardMT-Condensed;
-    font-size: 6.4vw;
+    font-family: Helvetica;
+    font-size: 3vw;
     margin-bottom: 3vh;
 
     text-transform: uppercase;
@@ -16,7 +16,7 @@ h4
     width: 60vw;
     margin: auto;
 
-    font-family: Atak-Medium;
+    font-family: Helvetica-light;
     font-size: 2.4vw;
 
     text-align: center;
@@ -48,7 +48,7 @@ h4
     width: 76vw;
     margin: auto;
 
-    font-family: Atak-Regular;
+    font-family: Helvetica-light;
     font-size: 1.7vw;
     text-align: left;
 
@@ -82,7 +82,7 @@ h4
 
     padding-right: 4vw;
 
-    font-family: Atak-Regular;
+    font-family: Helvetica-light;
     font-size: 1.41vw;
     line-height: 1.2;
 }
@@ -119,7 +119,7 @@ h4
  #autres > p > span {
     margin: auto;
 
-    font-family: Atak-Light;
+    font-family: Helvetica-light;
     font-size: 1.8vw;
 }
 
@@ -160,7 +160,7 @@ h4
         padding-top: 5vw; 
         padding-bottom: 5vw;
 
-        font-family: Atak-Regular;
+        font-family: Helvetica-light;
     }
 
 

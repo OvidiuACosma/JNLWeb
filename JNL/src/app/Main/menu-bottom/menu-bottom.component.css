@@ -91,11 +91,11 @@ input:focus, button:focus {
     justify-self: space-between;
 }
 
-#bottom_nav_links > div > button, #bottom_nav_links > div > button:link, #bottom_nav_links > div > button:visited {
+/* #bottom_nav_links > div > button, #bottom_nav_links > div > button:link, #bottom_nav_links > div > button:visited {
     border: none;
     outline: 0;
     background-color: white;
-}
+} */
 
 #bottom_nav_links > div > p {
     font-size: 1vw;
@@ -128,26 +128,35 @@ input:focus, button:focus {
     border: 1px solid black;
     max-width: 250px;
     width: auto;
-    padding: 0.1vw;
+    /* padding: 0.1vw; */
+    height: 1.96vw;
 }
 
 #news_letter > input {
     border: 0;
-    border-right: 1px solid black;
     padding: 0.1vw;
     margin: 0;
     width: 15vw;
     background-color: transparent;
+    height: 1.81vw;
 }
 
-#news_letter > button {
-    border: 0;
+.news_button {
     background-color: transparent;
     float: right;
     padding: 0px;
-    padding-top: 1px;
+    height: 1.81vw;
+    padding-left: 4px; 
     padding-right: 2px;
+    border-left: 1px solid black;
+    display: flex;
 }
+
+.news_button > i {
+    width: 100%;
+    margin: auto;
+}
+
 #bottom-inline
 {
     display: flex;
