@@ -7,7 +7,7 @@ h1 {
 h2 {
     /* margin-top: 5.9vw; */
     font-family: Helvetica;
-    font-size: 3.5vw;
+    font-size: 3vw;
     text-align: center;
     margin-bottom: 0;
 }
@@ -383,8 +383,8 @@ button {
 
 #archives > div > div > span {
     margin: auto;
-    font-family: PlacardMT-Condensed;
-    font-size: 5.06vw;
+    font-family: Helvetica;
+    font-size: 3.5vw;
 }
 
 #gallery-div {

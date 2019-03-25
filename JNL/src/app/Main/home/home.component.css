@@ -1,5 +1,4 @@
 h1 {
-    /* font-family: PlacardMT-Condensed */
     font-family: Helvetica;
     font-size: 3vw; /* 4em; */
     margin-bottom: 1.1vw;
@@ -15,7 +14,7 @@ h3 {
     margin: auto;
     width: 54vw;
     font-size: 26px;
-    font-family: Atak-Medium;
+    font-family: Helvetica-light;
 }
 
 h4 {
@@ -55,7 +54,7 @@ hr {
     margin: auto;
 
     font-size: 5em;
-    font-family: Atak-Regular;
+    font-family: Helvetica-light;
 }
 
 .gallery_buttons > div > img {
@@ -393,7 +392,7 @@ hr {
     margin: auto;
     font-size: 1.7vw;
     line-height: 1em;
-    font-family: Atak-Regular;
+    font-family: Helvetica-light;
 }
 
 #actualites_arrows > a:nth-child(1){
@@ -521,7 +520,7 @@ video {
 .container2 > .projets-text {
     width: 59.3vw;
     margin: auto;
-    font-family: Atak-Medium;
+    font-family: Helvetica-light;
     font-size: 1.8vw;
 
 }
@@ -725,7 +724,7 @@ video {
         text-align: center;
         width: auto;
         font-size: 5.3vw;
-        font-family: Atak-Medium;
+        font-family: Helvetica-light;
     }
 
     #projets > div > div > div {
