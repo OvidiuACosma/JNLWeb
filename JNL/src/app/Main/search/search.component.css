@@ -276,7 +276,10 @@ li {
     #menu-button {
         color: white !important;
         background-color: transparent;
-        margin-top: -5px;
+        margin-top: -10px;
+        position: relative;
+        width: auto;
+        font-size: 3vw;
     }
 
     .top-button {

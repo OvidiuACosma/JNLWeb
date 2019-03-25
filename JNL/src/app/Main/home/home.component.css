@@ -555,8 +555,9 @@ video {
 @media only screen and (max-width: 768px){
 
     h1 {
-        font-size: 9.7vw;
+        font-size: 4.5vw !important;
         margin: auto;
+        margin-bottom: 2vw;
         text-align: center;
     }
 
@@ -744,6 +745,7 @@ video {
 
     .marque-text {
         padding-top: 0px;
+        width: 100% !important;
     }
 
     .carousel-marques {
@@ -763,6 +765,7 @@ video {
 
     #une_histoire > div {
         padding: 0px;
+        width: 77.7vw;
     }
 
     .slide-image {

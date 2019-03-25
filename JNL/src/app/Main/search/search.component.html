@@ -64,7 +64,9 @@
 
 <!--MOBILE VERSION-->
 <div id="mob-searchbar"> 
-    <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()"></span>
+    <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
+        <i class="material-icons">menu</i>
+    </span>
     <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
     <span>
         <i class="fa fa-search" aria-hidden="true" id="loupe"></i>
