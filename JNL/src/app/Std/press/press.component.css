@@ -98,9 +98,10 @@ h4 {
 }
 
 .logo {
+    align-self: center;
     height: auto;
-    width: 15vw;
-    object-fit: contain;
+    width: 12vw !important;
+    /* object-fit: contain; */
 }
 
 .four-flex {

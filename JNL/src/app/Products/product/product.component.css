@@ -149,7 +149,7 @@ button
 .carousel-inner {
     width: 56.72vw;
     height: 37.43vw;;
-    border: .7px solid black;
+    /* border: .7px solid black; */
     text-align: center; 
 }
 
