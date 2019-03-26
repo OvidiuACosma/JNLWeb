@@ -1,4 +1,8 @@
 <nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-34vw' : '0'}">
+    <div class="container-fluid">
+        <img class="menu-close" src="/assets/Images/Menu/menuClose.png"
+            (click)="hideMenu()">
+    </div>
     <div id="side_nav_links" *ngIf="text" (mouseleave)="hideMenu()">
         <div>
             <span (click)="NavigateTo('products')">{{text.produits}}</span>

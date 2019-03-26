@@ -199,21 +199,14 @@
           <div class="modal-body">
               <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel' data-interval="3000" >
                 <div class="carousel-inner">
-                    <!-- <div class='carousel-item active'>
+                    
+                  <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
                       <div class="container2">
                         <div class="carousel-item-image2">
-                          <img src={{archive.imgSrc[0]}} alt='JNL Collection' class="slide-image">
+                          <img src={{item}} alt='JNL Collection1' class="slide-image-archive">
                         </div>
                       </div>
-                    </div> -->
-                    
-                      <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
-                          <div class="container2">
-                            <div class="carousel-item-image2">
-                              <img src={{item}} alt='JNL Collection1' class="slide-image-archive">
-                            </div>
-                          </div>
-                      </div>
+                  </div>
                 </div>
                 
                 <!-- Controls -->
@@ -230,38 +223,5 @@
         </div>
       </div>
     </div>
-
-<!---->
-
-      <!--
-      <div id="gallery-div">
-        <div class="gallery">
-            <a class="gallery_buttons">
-                <div><img alt="JNL Collection" src="assets\Images\Common\arrow_left.png"></div>
-              </a>
-            <div>
-            <div>
-                <div>
-        
-                  <img alt="JNL Collection" src="assets\Images\Groupe\GP_red.jpg">
-                  </div>
-              </div>
-              
-            <div class="equipe-radio">
-                <input type="radio" name="gallery-bottom">
-                <input type="radio" name="gallery-bottom">
-                <input type="radio" name="gallery-bottom">
-                <input type="radio" name="gallery-bottom">
-                <input type="radio" name="gallery-bottom">
-                <input type="radio" name="gallery-bottom">
-              </div>
-          </div>
-          <a class="gallery_buttons">
-            <div><img alt="JNL Collection" src="assets\Images\Common\arrow_right.png"></div>
-          </a>
-      </div>
-    </div>
-  -->
-
   </div>
 </div>

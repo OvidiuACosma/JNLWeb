@@ -28,6 +28,14 @@
     100% {-webkit-opacity: 1;}
 }
 
+.menu-close {
+    float: right;
+    padding-top: 1.3vw;
+    width: 2vw;
+    height: auto;
+    object-fit: contain;
+}
+
 .menu_image {
     height: 40vw;
     margin: auto;
@@ -60,7 +68,7 @@
     color: #C1C1C1;
     text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     font-family: Helvetica;

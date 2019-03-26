@@ -28,10 +28,18 @@
         >
           <!-- Indicators -->
         <ul class='carousel-indicators'>
-            <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>JNL Collection</span></li>
-            <li data-target='#carousel-custom' data-slide-to='1'><span>Vanhamme</span></li>
-            <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaro Home</span></li>
-            <li data-target='#carousel-custom' data-slide-to='3'><span>Luz Interiors</span></li>
+            <li data-target='#carousel-custom' data-slide-to='0' class='active'>
+                <img src="/assets/Images/Home/HM_logo_JNL.png">
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='1'>
+                <img src="/assets/Images/Home/HM_logo_VH.png">
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='2'>
+                <img src="/assets/Images/Home/HM_logo_Ungaro.png">
+            </li>
+            <li data-target='#carousel-custom' data-slide-to='3'>
+                <img src="/assets/Images/Home/HM_logo_LUZ.png">
+            </li>
         </ul>
           <div class="carousel-inner">
               <div class='carousel-item active'>
@@ -45,7 +53,6 @@
                   </div>
                 </div>
               </div>
-
               <div class='carousel-item' active="setActiveSlide(1)">
                 <div class="container">
                   <div class="carousel-item-image">
@@ -81,7 +88,6 @@
                 </div>
               </div>
           </div>
-          
           <!-- Controls -->
           <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
               <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
@@ -91,8 +97,6 @@
               <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
               <span class="sr-only">Next</span>
           </a>
-        
-      
       </div>
     </div>
   </div>
@@ -103,21 +107,16 @@
     <div>
       <p>
         <span>{{text.actualites1}}</span>
-
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1.jpg">
         <a class="more_links" (click)="navigateTo('actualites')">+ {{text.readButton}}</a>
       </p>
-
       <p>
           <span>{{text.actualites2}}</span>
-    
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic2.jpg">
         <a class="more_links">+ {{text.readButton}}</a>
       </p>
-
       <p>
           <span>{{text.actualites3}}</span>
-    
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3.jpg">
         <a class="more_links">+ {{text.readButton}}</a>
       </p>

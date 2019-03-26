@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
-import { AnyKindOfDictionary } from 'lodash';
 import { Product, ProductEF } from '../_models';
 
 @Injectable({
