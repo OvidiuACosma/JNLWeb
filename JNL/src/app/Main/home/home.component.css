@@ -615,7 +615,7 @@ video {
     #les_marques {
         width: 100vw;
         padding: 10px;
-        height: auto;
+        height: 130vw;
 
         background-color: #D3D3D3;
         color: black;
@@ -696,6 +696,14 @@ video {
         display: none;
     }
 
+    .actualites_img {
+        width: 87.13vw;
+    }
+
+    .more_links {
+        font-size: 3vw;
+    }
+
     #savoir {
         margin-left: 0px;
         margin-right: 0px;
@@ -718,24 +726,25 @@ video {
 
     #projets {
         margin-bottom: 14vw;
-        width: 100%;
+        width: 100vw;
         height: auto;
 
         text-align: center;
 
         display: flex;
+        flex-direction: column;
         align-content: space-between;
     }
 
     #projets > div > div > div > img {
         margin: auto;
-        width: 80vw;
+        width: 100vw;
         height: auto;
         text-align: center;
     }
     #projets > div > div > div > h2 {
         margin: auto;
-        width: 80vw;
+        width: 100vw;
     }
 
     #projets h3 {
@@ -747,7 +756,7 @@ video {
     }
 
     #projets > div > div > div {
-        width: 80vw;
+        width: 100vw;
     }
 
     #projets > div {
