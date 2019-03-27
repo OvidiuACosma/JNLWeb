@@ -45,9 +45,9 @@ h3 {
 }
 
 .les-marques-main {
-    width: calc(100vw - var(--left-strip-width));
+    width: 100%;
     display: flex;
-    padding-top: var(--search-bar-height);
+    padding-top: 5.9vw;
     margin: auto;
     margin-bottom: 10.13vw;
 }
@@ -88,10 +88,22 @@ h3 {
     transition: all .5s ease;
 }
 
-#marques_list > a:hover {
+/* #marques_list > a:hover {
     color: black;
     border-bottom: 1px solid black;
     transition: all .5s ease;
+} */
+
+#marques_list > a > img {
+    width: 15vw;
+    height: auto;
+    opacity: .7;
+    transition: all .3s ease;
+}
+
+#marques_list > a > img:hover {
+    opacity: 1;
+    transition: all .3s ease;
 }
 
 #jnl, #vanhamme, #ungaro, #luz {

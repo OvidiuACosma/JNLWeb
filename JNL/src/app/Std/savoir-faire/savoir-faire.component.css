@@ -58,7 +58,7 @@ video {
 .les-marques-main {
     display: flex;
     margin: auto;
-    padding-top: 73px;
+    padding-top: 5.9vw;
 }
 
 .les-marques-main > div {
@@ -129,7 +129,7 @@ video {
 
 .ateliers-flex > div:nth-child(2) > div:first-child {
     margin-top: 0px !important;
-    margin-bottom: 10.8vw;
+    margin-bottom: 2vw;
     font-family: Helvetica-Light;
     font-size: 1.4vw;
     text-align: left;
@@ -318,7 +318,7 @@ video {
     height: 49vw;
     display: flex;
     color: white;
-    margin-top: 6.3vw;
+    margin-top: 4vw;
     /* margin-bottom: 8vw; */
 }
 

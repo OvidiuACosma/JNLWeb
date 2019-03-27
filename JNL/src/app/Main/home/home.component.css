@@ -239,6 +239,7 @@ hr {
     max-width: 56vw;
     height: auto;
     width: 30vw;
+    mix-blend-mode: multiply;
 }
 
 #first_picture > div > p {

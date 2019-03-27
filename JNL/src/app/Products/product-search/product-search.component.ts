@@ -181,4 +181,10 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
     this.router.navigate(['product', {b: product.brand, f: product.familyFr, m: product.model}]);
   }
 
+  addToFavorites(product: Product) {
+    // TODO: check the user - login if not yet
+    // post the product to user's favorites
+    window.alert(`Product added to favorites.`);
+  }
+
 }

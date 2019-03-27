@@ -48,4 +48,8 @@ export class MenuBottomComponent implements OnInit {
   ScrollTop() {
     window.scrollTo(0, 0);
   }
+
+  registerForNewsletter() {
+    
+  }
 }

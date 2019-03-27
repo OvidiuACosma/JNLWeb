@@ -47,17 +47,15 @@ select
 .contact_div
 {
     text-align: center;
-
-    /* margin-bottom: 5vh; */
-    margin-top: 60px;
+    padding-top: 5.9vw;
     font-family: Helvetica-Light;
     font-size: 1.4vw;
 }
 .contact_div > p{
     font-family: Helvetica-Light;
     font-size: 1.8vw;
-    padding-left: 275px;
-    padding-right: 275px;
+    padding-left: 18.9vw;
+    padding-right: 18.9vw;
 }
 .contact_form
 {

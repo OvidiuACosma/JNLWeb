@@ -3,9 +3,9 @@
   <h1>Product Finder</h1>
   
   <div class="content">
-
+    <!-- SEARCH -->
     <div class="search">
-      <h4>FILTERS</h4>
+      <!-- <h4>FILTERS</h4> -->
       <div class="search-by-text">
         <p class="header-filter">SEARCH</p>
         <input class="search-textbox" name="productName" type="text" [(ngModel)]="product"><br>
@@ -31,24 +31,28 @@
       </div>
     </div>
 
+    <!-- PRODUCTS -->
     <div class="products">
       <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
       <ul class="list">
-        <cdk-virtual-scroll-viewport itemSize="30" >
+        <cdk-virtual-scroll-viewport itemSize="30">
           <div class="flex-div">
           <ng-container *cdkVirtualFor="let n of productsFiltered">
             <li> 
               <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
-              <div class="card-product" (click)="goToProduct(n)">
-                <div class="pic-frame">
-                  <div>
-                    <img alt="JNL Collection" src="\assets\Images\Common\fav_icon_no_border.png" class="fav-button" (click)="favItem(n)">
-                  </div>
+              <div class="card-product">
+                <div class="pic-frame" (click)="goToProduct(n)">
                   <div class="center-product">
                     <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
                   </div>
                 </div>
-                <span class="prod-name">{{getProductName(n)}}</span>
+
+                <div class="product-name">
+                  <span>
+                      <i class="far fa-heart heart" (click)="addToFavorites('product')"></i>
+                  </span>
+                  <span (click)="goToProduct(n)">{{getProductName(n)}}</span>
+                </div>
               </div>
             </li>
           </ng-container>

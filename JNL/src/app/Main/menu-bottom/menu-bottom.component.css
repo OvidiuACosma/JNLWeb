@@ -126,34 +126,48 @@ input:focus, button:focus {
 #news_letter {
     background-color: transparent;
     border: 1px solid black;
-    max-width: 250px;
+    max-width: 17.36vw;
     width: auto;
-    /* padding: 0.1vw; */
     height: 1.96vw;
 }
 
-#news_letter > input {
-    border: 0;
-    padding: 0.1vw;
+#news_letter > span > input {
+    border: none;
+    padding: 0.05vw;
     margin: 0;
     width: 15vw;
     background-color: transparent;
     height: 1.81vw;
+    outline: none;
+    font-size: .9vw;
+    line-height: 1.1vw;
 }
 
-.news_button {
+#news_letter > span > input::-webkit-input-placeholder {
+    font-size: .9vw;
+    line-height: 1.1vw;
+}
+
+.email-placeholder {
+    background-color: transparent;
+    /* border: 1px solid black; */
+    padding-left: .5vw;
+    max-width: 15vw;
+    width: auto;
+    height: 1.81vw;
+}
+
+.news-button {
     background-color: transparent;
     float: right;
-    padding: 0px;
+    padding: 0 .3vw 0 .4vw;
     height: 1.81vw;
-    padding-left: 4px; 
-    padding-right: 2px;
+    align-content: center;
     border-left: 1px solid black;
     display: flex;
 }
 
-.news_button > i {
-    width: 100%;
+.news-button > i {
     margin: auto;
 }
 
