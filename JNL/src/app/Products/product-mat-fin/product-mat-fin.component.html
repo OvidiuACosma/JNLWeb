@@ -12,7 +12,7 @@
         <a class="nav-link nav-position active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
           aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
         <a class="nav-link nav-position" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab"
-          aria-controls="v-pills-cuir" aria-selected="false" *ngIf="cuirTab" (click)="setCategory('cuir')">Cuirs</a>
+          aria-controls="v-pills-cuir" aria-selected="false" (click)="setCategory('cuir')">Cuirs</a>
         <a class="nav-link nav-position" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
           aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('simili')">Simili Cuirs</a>
         <a class="nav-link nav-position" id="v-pills-abatjour-tab" data-toggle="pill" href="#v-pills-abatjour" role="tab"
@@ -26,7 +26,7 @@
         <a class="nav-link nav-position" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
           aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
         <a class="nav-link nav-position" id="v-pills-pierre-tab" data-toggle="pill" href="#v-pills-pierre" role="tab"
-          aria-controls="v-pills-pierre" aria-selected="false">Pierre</a>
+          aria-controls="v-pills-pierre" aria-selected="false" (click)="setCategory('pierre')">Pierre</a>
       </div>
     </div>
     <div id="content">
@@ -34,7 +34,7 @@
 
         <!-- TISSUS TAB------------------------->
         <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
-          <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+          <cdk-virtual-scroll-viewport itemSize="30" class="example-viewport">
             <div class="scroll-container">
               <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
                 <div class="scroll-item" (click)="sendItemToModal(item)" data-toggle="modal" data-target="#garnissageModal">
