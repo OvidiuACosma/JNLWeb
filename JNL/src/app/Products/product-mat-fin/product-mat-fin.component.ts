@@ -17,6 +17,7 @@ export class ProductMatFinComponent implements OnInit {
   public abatjours: any[];
   public metals: any[];
   public bois: any[];
+  public pierre: any[];
   public materials: any[];
 
   // data used in modal
@@ -24,16 +25,12 @@ export class ProductMatFinComponent implements OnInit {
   public index: number;
   public material: any[];
 
-  // test tab visibility
-  public cuirTab: boolean;
 
   toggleMat = false;
 
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-    // testing tab visibility
-    this.cuirTab = true;
 
     // get Tissus
     this.productsService.getTissus()
@@ -58,6 +55,7 @@ export class ProductMatFinComponent implements OnInit {
     this.productsService.getMaterials()
       .subscribe(materials => {
         this.materials = materials;
+        // console.log('MATERIALS: ', this.materials);
       });
   }
 
@@ -81,18 +79,24 @@ export class ProductMatFinComponent implements OnInit {
       case 'abatjour': {
         this.matCategory = 'abatjour';
         this.abatjours = this.materials.filter(f => f.ctg === 5);
-        console.log('ABAT-JOURS: ', this.abatjours);
+        // console.log('ABAT-JOURS: ', this.abatjours);
         break;
       }
       case 'metal': {
         this.matCategory = 'metal';
         this.metals = this.materials.filter(f => f.ctg === 2);
-        console.log('Metals: ', this.metals);
+        // console.log('Metals: ', this.metals);
         break;
       }
       case 'bois': {
         this.matCategory = 'bois';
         this.bois = this.materials.filter(f => f.ctg === 1 || f.ctg === 6);
+        // console.log('BOIS: ', this.bois);
+        break;
+      }
+      case 'pierre': {
+        this.matCategory = 'pierre';
+        this.pierre = this.materials.filter(f => f.ctg === 3);
       }
     }
   }
