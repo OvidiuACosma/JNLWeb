@@ -152,7 +152,7 @@ cdk-virtual-scroll-viewport {
 }
 
 .products {
-    width: 73vw;
+    width: 72vw;
 }
 
 /* .products-group {
@@ -170,7 +170,7 @@ cdk-virtual-scroll-viewport {
 } */
 
 li {
-    width: 21vw;
+    width: 20vw;
     margin: auto;
     display: inline-block;
     margin-bottom: 3vh;
@@ -203,7 +203,7 @@ li > div {
     align-content: space-between;
     justify-content: left;
     float: left;
-    width: 64vw;
+    /* width: 64vw; */
 }
 
 .arrow {
@@ -256,8 +256,8 @@ li > div {
 } */
 
 .pic-frame {
-    width: 21vw;
-    height: 21vw;  
+    width: 20vw;
+    height: 20vw;  
     background-color: white;
     border: 0.88px solid transparent;
     transition: all .3s ease;
@@ -270,6 +270,7 @@ li > div {
 
 .product-name {
     max-width: 19.45vw;
+    text-align: center;
 }
 
 .product-name > span > i {

@@ -47,12 +47,14 @@
                   </div>
                 </div>
 
-                <div class="product-name">
+                <p class="product-name">
                   <span>
                       <i class="far fa-heart heart" (click)="addToFavorites('product')"></i>
                   </span>
-                  <span (click)="goToProduct(n)">{{getProductName(n)}}</span>
-                </div>
+                  <span (click)="goToProduct(n)">
+                    {{getProductName(n)}}
+                  </span>
+                </p>
               </div>
             </li>
           </ng-container>

@@ -87,19 +87,6 @@ export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
              this.dataex.setNavBarStatus(!this.navBarStatus);
            }
     }
-
-    // if (event.type === 'mouseover' && !this.navBarStatus) {
-    //   this.dataex.setNavBarStatus(!this.navBarStatus);
-    //   // this.navBarButtonSrc = '/assets/Images/Menu/menuClose.png';
-    //   // this.navBarButtonText = 'CLOSE';
-    //   return;
-    // }
-    // if (event.type === 'click' && !this.navBarStatus) {
-    //   this.dataex.setNavBarStatus(!this.navBarStatus);
-    //   // this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
-    //   // this.navBarButtonText = 'MENU';
-    //   return;
-    // }
   }
 
   scrollTop() {
