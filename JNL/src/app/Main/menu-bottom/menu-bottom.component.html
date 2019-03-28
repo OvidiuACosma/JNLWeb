@@ -74,7 +74,7 @@
         <p class="columnHead">{{text.newsletter}}</p>
         <form id="news_letter">
           <span class="email-placeholder">
-            <input type="email" name="email" placeholder="{{text.email}}"/>
+            <input type="email" name="email" [formControl]="email" placeholder="{{text.email}}"/>
           </span>
           <span class="news-button" (click)="registerForNewsletter()">
             <i class="fas fa-angle-right"></i>

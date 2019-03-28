@@ -136,11 +136,20 @@ input:focus, button:focus {
     padding: 0.05vw;
     margin: 0;
     width: 15vw;
-    background-color: transparent;
-    height: 1.81vw;
+    background-color: transparent !important;
+    height: 1.8vw;
     outline: none;
     font-size: .9vw;
     line-height: 1.1vw;
+
+}
+
+input.ng-valid.ng-dirty.ng-touched {
+    background-color: transparent !important;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 #news_letter > span > input::-webkit-input-placeholder {

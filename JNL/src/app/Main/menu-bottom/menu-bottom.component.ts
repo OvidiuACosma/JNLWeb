@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, RequestsService } from 'src/app/_services';
+import { FormControl } from '@angular/forms';
+import { RequestForm } from 'src/app/_models';
 
 @Component({
   selector: 'app-menu-bottom',
@@ -11,10 +13,12 @@ export class MenuBottomComponent implements OnInit {
 
   language: string;
   text: any;
+  email = new FormControl('');
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private requestService: RequestsService) {}
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -50,6 +54,11 @@ export class MenuBottomComponent implements OnInit {
   }
 
   registerForNewsletter() {
-    
+    const formReq = new RequestForm();
+    formReq.email = this.email.value;
+    this.requestService.postRequest(formReq)
+    .subscribe();
+    window.alert(`${this.email.value} - Thank you for subscribing to our newsletter.`);
+    // TODO: validate email is yours procedure (send an email with a link, process the link and validate)
   }
 }

@@ -81,7 +81,6 @@ export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
   }
 
   toggleNav() {
-    console.log(`Navbar status: ${this.navBarStatus}, browser: ${this.browser}`);
     if (!this.navBarStatus) {
       if ((event.type === 'mouseover' && this.browser.isDesktopDevice) ||
            (event.type === 'click' && (this.browser.isTablet || this.browser.isMobile))) {

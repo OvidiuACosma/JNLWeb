@@ -212,7 +212,6 @@ li {
     background-color: transparent;
     font-size: 1.444vw;
     cursor: pointer;
-    /* z-index: 2000; */
 }
 
 .menu-button-flex {
@@ -221,11 +220,10 @@ li {
 }
 
 .menu-button-img {
-    /* padding-top: 10px; */
     margin: auto;
     min-width: 30px;
     width: 2.777vw;
-    height: auto;
+    height: 2.777vw;
 }
 
 .menu-button-img-active {

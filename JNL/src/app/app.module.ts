@@ -16,7 +16,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { LoginComponent, RegisterComponent } from './Auth';
 import { DataExchangeService, ConfigService, AlertService, AuthenticationService, UserService,
-         TranslationService, ProductsService, PagerService, ArchiveService, DownloaderService} from './_services';
+         TranslationService, ProductsService, PagerService, ArchiveService, DownloaderService,
+         RequestsService} from './_services';
 import { AuthGuard } from './_guards';
 import { BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
@@ -78,6 +79,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     TranslationService,
     ProductsService,
     PagerService,
+    RequestsService,
     UserService,
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
