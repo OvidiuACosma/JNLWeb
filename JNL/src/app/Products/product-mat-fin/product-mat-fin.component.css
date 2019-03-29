@@ -128,7 +128,7 @@ ul {
 .arrow {
     height: 3vw;
     width: 1.5vw;
-    margin-top: 13vw;
+    margin-top: 120%;
 }
 
 .whiteSpace {
@@ -189,6 +189,14 @@ ul {
         max-width: 90vw;
         max-height: 90%;
         margin: auto;
+    }
+
+    .whiteSpace {
+        flex: 1;
+    }
+    
+    .cardContainer {
+        flex: 5;
     }
 
     .img-button {
