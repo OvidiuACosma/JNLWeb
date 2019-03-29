@@ -1,79 +1,28 @@
   <div id="actualites-div">
-    <h1>Maison&Objet 2019</h1>
+    <h1>{{text.articleTitle}}</h1>
 
-    <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-      sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-      magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-      nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
-      ea commodo consequat. Duis autem vel eum iriure dolor in
-      hendrerit in vulputate.
-    </h4>
+    <h4>Tiger Lily griffe vos tapis</h4>
     
-    <div class="image-div">
+    <!-- <div class="image-div">
       <img class="first-picture" alt="JNL Collection" src="assets/Images/Marque_V/MKV_pic1.jpg">
-    </div>
+    </div> -->
 
     <div>
-      <p class="parag">
-        Christian Ji et Alain Lahy éditent en 1992 leur première collection en proposant un univers élégant sans
-        ostentation.<br>
-        Si l’un est un concepteur technique en recherche de perfection et l’autre un grand entrepreneur
-        visionnaire, c’est ensemble qu’ils concevront des pièces d’exception, expression d’un art de vivre
-        mêlant l’expérience multi sensorielle dans un luxe confidentiel.<br><br>
-        Au fil du temps, JNL est parvenu à fédérer une communauté d’artisans passionnés, tous guidés par une
-        mission d’envergure; concevoir des pièces pérennes à la qualité irréprochable.<br><br>
-        Cette synergie où enthousiasme, créativité et respect sont les valeurs essentielles s’enrichit
-        rapidement de nouvelles compétences et expertises dans les domaines technique et commercial. Fort
-        de cette alliance, le groupe peut ainsi assurer à la fois le design, la fabrication et la commercialisation
-        de ses marques.
-      </p>
+      <img alt="JNL Collection" src={{text.pic1}} class="ac-img">
 
-      <div class="image-parag">
-        <div>
-          <p style="font-size: 1.69vw">
-            Christian Ji et Alain Lahy éditent en 1992 leur première
-            collection en proposant un univers élégant sans
-            ostentation. Si l’un est un concepteur technique en recherche de
-            perfection et l’autre un grand entrepreneur visionnaire,
-            c’est ensemble qu’ils concevront des pièces d’exception,
-            expression d’un <strong>art de vivre</strong> mêlant l’expérience multi
-            sensorielle dans un <strong>luxe confidentiel</strong>.<br><br>
-            Au fil du temps, JNL est parvenu à fédérer une
-            communauté d’artisans passionnés, tous guidés par une
-            mission d’envergure; concevoir des pièces pérennes à la
-            qualité irréprochable.<br><br>
-            Cette synergie où enthousiasme, créativité et respect
-            sont les valeurs essentielles s’enrichit rapidement de
-            nouvelles compétences et expertises dans les domaines
-            technique et commercial. Fort de cette alliance, le groupe
-            peut ainsi assurer à la fois le design, la fabrication et la
-            commercialisation de ses marques.
-          </p>
-        </div>
-        <div>
-          <img alt="JNL Collection" src="assets/Images/Groupe/GP_vertical.jpg">
-        </div>
-      </div>
+      <p class="parag" [innerHTML] = "text.articleText1"></p>
 
-      <p class="parag">
-        Christian Ji et Alain Lahy éditent en 1992 leur première collection en proposant un univers élégant sans
-        ostentation.<br>
-        Si l’un est un concepteur technique en recherche de perfection et l’autre un grand entrepreneur
-        visionnaire, c’est ensemble qu’ils concevront des pièces d’exception, expression d’un art de vivre
-        mêlant l’expérience multi sensorielle dans un luxe confidentiel.<br><br>
-        Au fil du temps, JNL est parvenu à fédérer une communauté d’artisans passionnés, tous guidés par une
-        mission d’envergure; concevoir des pièces pérennes à la qualité irréprochable.<br><br>
-        Cette synergie où enthousiasme, créativité et respect sont les valeurs essentielles s’enrichit
-        rapidement de nouvelles compétences et expertises dans les domaines technique et commercial. Fort
-        de cette alliance, le groupe peut ainsi assurer à la fois le design, la fabrication et la commercialisation
-        de ses marques.
-      </p>
-  </div>
+      <img alt="JNL Collection" src={{text.pic2}} class="ac-img2">
 
-    <div id="autres">
-      <p><span>ACTUALITÉ PRÉCÉDENTE</span></p>
-      <p><span>ACTUALITÉ SUIVANTE</span></p>
+      <p class="parag" [innerHTML] = "text.articleText2"></p>
+      
+
     </div>
+
+    <!-- <div id="autres">
+      <p (click)="navigateToActualite(-1)"><span>ACTUALITÉ PRÉCÉDENTE</span></p>
+      <p (click)="navigateToActualite(1)"><span>ACTUALITÉ SUIVANTE</span></p>
+    </div> -->
 
     <div id="links">
       <a class="home_links" (click)="navigateTo('home')">Retour a home</a>

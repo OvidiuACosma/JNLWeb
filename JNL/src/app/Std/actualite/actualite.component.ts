@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, OnChanges } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { switchMap } from 'rxjs/operators';
+import * as _ from 'lodash';
+declare var $: any;
 
 @Component({
   selector: 'app-actualite',
@@ -7,11 +13,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActualiteComponent implements OnInit {
 
-  constructor() { }
+  language: string;
+  text: any;
+  // nr: string;
+  public actual: string;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private dataex: DataExchangeService,
+              private textService: TranslationService) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.actual = params.get('a');
+    });
+
+    this.dataex.currentLanguage
+    .subscribe(lang => {
+      this.language = lang || 'EN';
+      this.getText(lang);
+    });
   }
 
-  navigateTo(comp: string) {
+  getText(lang: string) {
+    this.textService.getTextActualite()
+    .subscribe(data => {
+      const res = data[0];
+      this.getLanguageText(res);
+    });
+  }
+
+  getLanguageText(res: any) {
+    this.text = res[this.language.toUpperCase()][this.actual];
+  }
+
+  // navigateToActualite(changer: string) {
+  //   this.nr = '' + (Number(this.actual) + changer);
+  //   this.router.navigate(['actualites', {a: this.nr}]);
+  //   this.ngOnInit();
+  //   this.ScrollTop();
+  // }
+
+  navigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      this.ScrollTop();
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+  }
+
+  ScrollTop() {
+    window.scrollTo(0, 0);
   }
 }

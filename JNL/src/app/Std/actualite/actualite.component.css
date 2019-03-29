@@ -1,7 +1,6 @@
 h1{
     font-family: Helvetica;
     font-size: 3vw;
-    margin-bottom: 3vh;
 
     text-transform: uppercase;
 
@@ -13,15 +12,14 @@ h4
     font-size: 1.6em;
     line-height: 1.24em;
 
-    width: 60vw;
     margin: auto;
 
     font-family: Helvetica-light;
     font-size: 2.4vw;
+    font-style: italic;
 
     text-align: center;
 
-    margin-top: 5vw;
     margin-bottom: 5vw;
 }
 
@@ -30,11 +28,6 @@ h4
     margin: auto;
     margin-top: 0px;
     text-align: center;
-}
-
-.image-div {
-    max-height: 37.5vw;
-    display: flex;
 }
 
 .home_links {
@@ -52,45 +45,24 @@ h4
     font-size: 1.7vw;
     text-align: left;
 
+    text-align: justify;
     
     margin-top: 5vw;
     margin-bottom: 5vw;
 }
 
-.image-parag {
-    width: 76vw;
-    margin: auto;
-    height: auto;
-
-    display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    justify-content: space-between;
-
-    /*margin-left: 12vw;*/
-    margin-bottom: 0px;
-
-    text-align: left;
-
+.ac-img {
+    width: 30vw;
+    float: left;
+    margin-left: 11.8vw;
+    margin-right: 2vw;
 }
 
-.image-parag > div > p {
-    /*width: 50vw;*/
-    /*margin: auto;*/
-    margin-top: 0px;
-    height: 40vw;
-
-    padding-right: 4vw;
-
-    font-family: Helvetica-light;
-    font-size: 1.41vw;
-    line-height: 1.2;
-}
-
-.image-parag > div > img {
-    margin-top: 0;
-    width: auto;
-    max-height: 40vw;
+.ac-img2 {
+    width: 30vw;
+    float: right;
+    margin-left: 2vw;
+    margin-right: 11.8vw;
 }
 
 #autres {
@@ -142,29 +114,5 @@ h4
         font-size: 3.9vw;
     }
 
-    .image-parag {
-        width: 80vw;
-        flex-direction: column;
-        height: auto;
-        text-align: center;
-    }
-
-    .image-parag > div > p {
-        font-size: 4.2vw !important;
-        margin-bottom: 5vw;
-        height: auto;
-        width: 80vw;
-        padding-right: 0px !important; 
-        padding-top: 5vw; 
-        padding-bottom: 5vw;
-
-        font-family: Helvetica-light;
-    }
-
-
-    .image-parag > div > img {
-        width: 80vw;
-        max-height: 100% !important;
-    }
 
 }
