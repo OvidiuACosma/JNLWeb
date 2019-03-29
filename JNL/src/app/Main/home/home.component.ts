@@ -57,6 +57,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  navigateToActualite(actualite: string) {
+    this.router.navigate(['actualites', {a: actualite}]);
+    this.ScrollTop();
+  }
+
   // getBrowser() {
   //   this.browser = {name: this.deviceService.getDeviceInfo().browser,
   //                   isDesktopDevice: this.deviceService.isDesktop(),

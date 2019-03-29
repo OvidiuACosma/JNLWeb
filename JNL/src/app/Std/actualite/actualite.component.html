@@ -1,5 +1,5 @@
   <div id="actualites-div">
-    <h1>Tiger Lily chez JNL</h1>
+    <h1>{{text.articleTitle}}</h1>
 
     <h4>Tiger Lily griffe vos tapis</h4>
     
@@ -8,31 +8,20 @@
     </div> -->
 
     <div>
-      <img alt="JNL Collection" src="assets/Images/Actualite/Tiger Lily/ac_1.jpg" class="ac-img">
-      <img alt="JNL Collection" src="assets/Images/Actualite/Tiger Lily/ac_2.jpg"  class="ac-img2">
+      <img alt="JNL Collection" src={{text.pic1}} class="ac-img">
 
-      <p class="parag">
-        Tiger Lily a su tisser trente années d’expérience pour créer des tapis qui vous relient à la terre de la manière la plus extraordinaire.<br><br>
-        L’origine du nom est à la fois historique et toute neuve. Elle vient d’une légende Coréenne : le mythe du sage et du tigre. L’homme spirituel avait prédit au fauve qu’à chaque disparition d’un des siens, un Lys tigré naîtrait. <br><br>
-        Mais Tiger Lily est aussi la facétieuse comparse de Peter Pan, mutine et loyale à la fois. La limite c’est le ciel…ou le plafond. <br><br>
-        Cette maison 100% belge, discrète par élégance, offre un incomparable service B to B. <br><br>
-        Tiger Lily s’allie les services des meilleurs artisans à travers le monde, en fonction des spécialités de chaque région : les savoir-faire voyagent en Europe, au Népal, en Chine et bien entendu en Belgique. <br><br>
-        Ces différentes cultures, riches de leurs histoires, développent leurs métiers d’art singuliers, leurs techniques exclusives. <br><br>
-        Les premiers rendez-vous visuels sont, par l’intermédiaire des moyens de communications modernes, réalisés virtuellement, vous permettant de cocréer à distance en envoyant des photos et vidéos de vos intérieurs. <br><br>
-        Ensuite, l’équipe belge se déplace sous tous les horizons vers l’espace à décorer. Une démarche approfondie est alors entreprise afin d’explorer les différentes possibilités tout en adaptant les matières aux inspirations les plus cosmopolite. <br><br>
-        Dans un même temps une attention toute particulière est octroyée à l’écoute des clients qui souvent n’ont pas de disponibilités pour pouvoir entreprendre de telles recherches. <br><br>
-        Tiger Lily met à votre disposition ce que tout comme vous elle a de plus précieux : le temps. <br><br>
-        Écouter, explorer, étudier, proposer, telles sont les fils d’un savant tissage dont la trame est toujours empreinte d’une délicieuse poésie.
-      </p>
+      <p class="parag" [innerHTML] = "text.articleText1"></p>
 
+      <img alt="JNL Collection" src={{text.pic2}} class="ac-img2">
 
+      <p class="parag" [innerHTML] = "text.articleText2"></p>
       
 
     </div>
 
     <div id="autres">
-      <p><span>ACTUALITÉ PRÉCÉDENTE</span></p>
-      <p><span>ACTUALITÉ SUIVANTE</span></p>
+      <p (click)="navigateToActualite(-1)"><span>ACTUALITÉ PRÉCÉDENTE</span></p>
+      <p (click)="navigateToActualite(1)"><span>ACTUALITÉ SUIVANTE</span></p>
     </div>
 
     <div id="links">
