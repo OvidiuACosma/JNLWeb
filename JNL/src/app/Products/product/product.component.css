@@ -122,7 +122,7 @@ button
 
 .slide-image {
     max-width: 56.52vw;
-    /* max-height: 47.1vw; */
+    max-height: 37.43vw;
     object-fit: contain;
     text-align: center;
 }

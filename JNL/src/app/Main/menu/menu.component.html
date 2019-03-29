@@ -1,9 +1,10 @@
-<nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-34vw' : '0'}">
+<nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-34vw' : '0'}"
+    (mouseleave)="hideMenu()">
     <div class="container-fluid">
         <img class="menu-close" src="/assets/Images/Menu/menuClose.png"
             (click)="hideMenu()">
     </div>
-    <div id="side_nav_links" *ngIf="text" (mouseleave)="hideMenu()">
+    <div id="side_nav_links" *ngIf="text">
         <div>
             <span (click)="NavigateTo('products')">{{text.produits}}</span>
             <!--<a (click)="NavigateTo('products')">{{text.chercher}}</a>
