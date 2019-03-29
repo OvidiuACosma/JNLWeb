@@ -15,7 +15,7 @@ export class ActualiteComponent implements OnInit {
 
   language: string;
   text: any;
-  nr: string;
+  // nr: string;
   public actual: string;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -47,12 +47,12 @@ export class ActualiteComponent implements OnInit {
     this.text = res[this.language.toUpperCase()][this.actual];
   }
 
-  navigateToActualite(changer: string) {
-    this.nr = '' + (Number(this.actual) + changer);
-    this.router.navigate(['actualites', {a: this.nr}]);
-    this.ngOnInit();
-    this.ScrollTop();
-  }
+  // navigateToActualite(changer: string) {
+  //   this.nr = '' + (Number(this.actual) + changer);
+  //   this.router.navigate(['actualites', {a: this.nr}]);
+  //   this.ngOnInit();
+  //   this.ScrollTop();
+  // }
 
   navigateTo(target: string, fragment: string = '') {
     if (fragment === '') {
