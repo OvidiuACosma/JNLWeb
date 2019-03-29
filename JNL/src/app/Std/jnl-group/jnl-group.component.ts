@@ -75,7 +75,9 @@ export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecke
   }
 
   getPeople(text: any) {
-    this.people = text['people'];
+    this.people = text['people'].sort(function(a, b) {
+      return a.index - b.index;
+    });
   }
 
   unsetScroll() {

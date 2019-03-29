@@ -42,9 +42,9 @@
               <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
               <div class="card-product">
                 <div class="pic-frame" (click)="goToProduct(n)">
-                  <div class="center-product">
+                  <figure class="center-product">
                     <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
-                  </div>
+                  </figure>
                 </div>
 
                 <p class="product-name">

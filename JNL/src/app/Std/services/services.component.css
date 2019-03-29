@@ -337,8 +337,7 @@ select {
 }
  
 #expertise, #surMesure, #votreProjet {
-    padding-top: 60px;
-    margin-top: -60px;
+    padding-top: 5.9vw;
 }
 
 #expertise {

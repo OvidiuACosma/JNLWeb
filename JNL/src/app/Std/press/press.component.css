@@ -290,14 +290,13 @@ input[type="radio"] {
     margin-top: 60px;
 }
 
-/* #catalogues, #banqueImages, #pressKit, #parutions {
-    margin-bottom: 60px;
-    padding-top: 60px;
-} */
-
-#catalogues, #banqueImages {
-    margin-bottom: 8.05vw;
+#catalogues, #banqueImages, #pressKit, #parutions {
+    padding-top: 5.9vw;
 }
+
+/* #catalogues, #banqueImages {
+    margin-bottom: 8.05vw;
+} */
 
 
 @media only screen and (max-width: 800px) {

@@ -56,6 +56,7 @@ export class MenuBottomComponent implements OnInit {
   registerForNewsletter() {
     const formReq = new RequestForm();
     formReq.email = this.email.value;
+    formReq.type = 1;
     this.requestService.postRequest(formReq)
     .subscribe();
     window.alert(`${this.email.value} - Thank you for subscribing to our newsletter.`);

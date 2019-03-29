@@ -37,20 +37,33 @@
           <div>
             <img class="group-img" alt="JNL Collection" src="assets/Images/Groupe/GP_dominique.JPG">
             <h4>Dominique Waxmann</h4>
-            <h4>{{text.dominiqueTitle}}</h4>
-            <p>{{text.dominiqueText}}</p>
+            <h3>{{text.dominiqueTitle}}</h3>
+            <p [innerHTML]="text.dominiqueText"></p>
           </div>
           <div>
               <img class="group-img" alt="JNL Collection" src="assets/Images/Groupe/GP_alain.JPG">
               <h4>Alain Lahy</h4>
-              <h4>{{text.alainTitle}}</h4>
-              <p>{{text.alainText}}</p>
+              <h3>{{text.alainTitle}}</h3>
+              <p [innerHTML]="text.alainText"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="staff">
+        <div *ngFor="let s of people; let j=index"
+          [ngClass]="j%2!=0 ? 'right' : 'left'">
+          <div>
+            <p><b>{{s.name}}</b></p>
+            <p>{{s.title}}</p>
+          </div>
+          <div>
+            <img [src]="s.image" alt="{{s.name}}">
           </div>
         </div>
       </div>
 
         <!--CAROUSEL-->
-        <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel' data-interval="3000">
+        <!-- <div id='carousel-custom' class='carousel slide carousel-group' data-ride='carousel' data-interval="3000">
           <div class="carousel-inner">
             <div class='carousel-item' *ngFor="let p of people; let i = index"
             [ngClass]="i === 0 ? 'item active' : 'item'">
@@ -71,15 +84,14 @@
               *ngFor="let p of people; let j = index"
               [ngClass]="j === 0 ? 'active' : ''"></li>
           </ol>
-        </div>
+        </div> -->
         <!--CAROUSEL-->
 
-        <div class="quote-bar">
+        <!-- <div class="quote-bar">
           <p>{{text.quote}}</p>
             <h4>DOMINIQUE WAXMANN, CEO</h4>
-        </div>
+        </div> -->
 
-      
       <div id="engagement">
         <h2>{{text.engagementTitle}}</h2>
         <h3>{{text.engagementSub}}</h3>

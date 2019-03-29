@@ -18,10 +18,10 @@
             "todaySub":  "A NEW ERA",
 
             "dominiqueTitle": "CEO of JNL Group",
-            "dominiqueText": "Bringing with her an extensive experience working in high end ready to wear, Dominique Waxmann has been director of JNL these last few years.<br><br>Influenced by her cultural heritage of both European and Asian descent, she has breathed new life into the group’s style, increasingly mixed in inspiration. <br><br>She is constantly looking at and listening to the artistic movements of the world with curiosity and erudition. She addresses these with a spirit of innovation in partnership with ancient codes and ancestral techniques, as they meet the ethos of our time with grace. ",
+            "dominiqueText": "Bringing with her an extensive experience working in high end ready to wear, Dominique Waxmann has been director of JNL these last few years.<br>Influenced by her cultural heritage of both European and Asian descent, she has breathed new life into the group’s style, increasingly mixed in inspiration. <br>She is constantly looking at and listening to the artistic movements of the world with curiosity and erudition. She addresses these with a spirit of innovation in partnership with ancient codes and ancestral techniques, as they meet the ethos of our time with grace. ",
 
-            "alainTitle": "Founder of JNL Group",
-            "alainText": "The JNL adventure began in 1992 with a meeting between Alain Lahy, a great entrepreneurial visionary, and Christian Ji, a talented woodworker. Following the success of their first collection, in 1994 Alain decided to create «ATELIER JNL» to channel all know-how pertaining to skilled woodwork, lacquering, upholstery and metalworking into one place. This marvelous tool allows decorators from all over the world to choose exceptional pieces that they can customize as they please. Today at the head of a brands portfolio, Alain Lahy remains passionate about cultivating know-how in order to offer innovative pieces and outstanding quality.",
+            "alainTitle": "Chairman of JNL Group",
+            "alainText": "The JNL adventure began in 1992 with a meeting between Alain Lahy, a great entrepreneurial visionary, and Christian Ji, a talented woodworker. Following the success of their first collection, in 1994 Alain decided to create «ATELIER JNL» to channel all know-how pertaining to skilled woodwork, lacquering, upholstery and metalworking into one place. This marvelous tool allows decorators from all over the world to choose exceptional pieces that they can customize as they please.<br>Today at the head of a brands portfolio, Alain Lahy remains passionate about cultivating know-how in order to offer innovative pieces and outstanding quality.",
 
             "quote": "«Making our customers happy by beautifying the spaces around them is not only our primary mission but also our greatest pride. We are convinced that, may it be fine woodwork, or a material’s noble qualities, these elements can be the basis of dreams.»",
 
@@ -50,36 +50,42 @@
                 {"name": "Gery Dehon",
                     "title": "Interior Designer",
                     "text": "",
-                    "image": "/assets/Images/Groupe/GP_gery.JPG"
+                    "image": "/assets/Images/Groupe/GP_gery.JPG",
+                    "index": 1
                 },
                 {"name": "Michèle Claes",
                     "title": "D.R. H and Accounting",
                     "text": "",
-                    "image": "/assets/Images/Groupe/GP_michele.JPG"
+                    "image": "/assets/Images/Groupe/GP_michele.JPG",
+                    "index": 5
                 },
                 {
                     "name": "Daniel Nicolo",
                     "title": "Head of Technical department and Logistic",
                     "text": "",
-                    "image": "/assets/Images/Groupe/GP_daniel.JPG"
+                    "image": "/assets/Images/Groupe/GP_daniel.JPG",
+                    "index": 2
                 },
                 {
                     "name": "Isabelle Renuart",
                     "title": "Key account manager",
                     "text": "",
-                    "image": "/assets/Images/Groupe/GP_isabelle.JPG"
+                    "image": "/assets/Images/Groupe/GP_isabelle.JPG",
+                    "index": 3
                 },
                 {
                     "name": "Monica Salajan",
                     "title": "Customer department manager",
                     "text": "",
-                    "image": "/assets/Images/Groupe/GP_monica.JPG"
+                    "image": "/assets/Images/Groupe/GP_monica.JPG",
+                    "index": 4
                 },
                 {
                     "name": "Georgiana Motocan",
                     "title": "Customer fabric department",
                     "text": "",
-                    "image": "/assets/Images/Groupe/GP_georgiana.JPG"
+                    "image": "/assets/Images/Groupe/GP_georgiana.JPG",
+                    "index": 6
                 }
             ]
         },
@@ -100,11 +106,11 @@
         "todayTitle": "L’Équipe",
         "todaySub":  "AUJOURD’HUI, UNE NOUVELLE HISTOIRE",
 
-        "dominiqueTitle": "CEO of JNL Group",
-        "dominiqueText": "Forte d’une grande expérience par le passé dans le prêt à porter haut de gamme, Dominique Waxmann est depuis quelques années à la direction du groupe JNL.<br><br>Par sa culture mêlée d’Europe et d’Asie elle a su insuffler un style nouveau aux collections du groupe en conjuguant les inspirations les plus diverses<br><br>Curieuse, érudite, elle écoute et regarde, capturant les différents courants artistiques de ce monde. Elle en dépoussière les codes en innovant et en ravivant des techniques ancestrales, pour les conjuguer élégamment en parfait accord avec l’air de notre temps. ",
+        "dominiqueTitle": "CEO de JNL Group",
+        "dominiqueText": "Forte d’une grande expérience par le passé dans le prêt à porter haut de gamme, Dominique Waxmann est depuis quelques années à la direction du groupe JNL.<br>Par sa culture mêlée d’Europe et d’Asie elle a su insuffler un style nouveau aux collections du groupe en conjuguant les inspirations les plus diverses<br>Curieuse, érudite, elle écoute et regarde, capturant les différents courants artistiques de ce monde. Elle en dépoussière les codes en innovant et en ravivant des techniques ancestrales, pour les conjuguer élégamment en parfait accord avec l’air de notre temps. ",
 
-        "alainTitle": "Founder of JNL Group",
-        "alainText": "L’aventure JNL commence en 1992 au détour d’une rencontre entre Alain Lahy, grand entrepreneur visionnaire, et Christian Ji, talentueux ébéniste. Fort du succès des premières collections, Alain décide en 1994 de créer « L’ATELIER JNL » qui renferme tous les savoir-faire que l’on connait tels que l’ébénisterie, le laquage, le garnissage et le travail du métal. Cet outil merveilleux permet aux décorateurs du monde entier de choisir des pièces d’exception qu’ils pourront customiser à leur guise. Tout en développant la marque, Alain Lahy continue de croitre avec l’acquisition en 2007 de VANHAMME, une marque mythique de fabrication de canapé et de fauteuils, puis reprendra également la marque LUZ INTERIORS en 2010. En 2013, il est précurseur en signant un accord de licence avec la marque de prêt à porter de luxe, Emmanuel Ungaro et développe une ligne de mobilier pour la maison sous le nom d’UNGARO HOME. Aujourd’hui à la tête de ce portfolio de marques, Alain Lahy reste passionné par le développement des savoir-faire afin de proposer des pièces innovantes, à la qualité irréprochable.",
+        "alainTitle": "President de JNL Group",
+        "alainText": "L’aventure JNL commence en 1992 au détour d’une rencontre entre Alain Lahy, grand entrepreneur visionnaire, et Christian Ji, talentueux ébéniste. Fort du succès des premières collections, Alain décide en 1994 de créer « L’ATELIER JNL » qui renferme tous les savoir-faire que l’on connait tels que l’ébénisterie, le laquage, le garnissage et le travail du métal. Cet outil merveilleux permet aux décorateurs du monde entier de choisir des pièces d’exception qu’ils pourront customiser à leur guise. Tout en développant la marque, Alain Lahy continue de croitre avec l’acquisition en 2007 de VANHAMME, une marque mythique de fabrication de canapé et de fauteuils, puis reprendra également la marque LUZ INTERIORS en 2010. En 2013, il est précurseur en signant un accord de licence avec la marque de prêt à porter de luxe, Emmanuel Ungaro et développe une ligne de mobilier pour la maison sous le nom d’UNGARO HOME.<br>Aujourd’hui à la tête de ce portfolio de marques, Alain Lahy reste passionné par le développement des savoir-faire afin de proposer des pièces innovantes, à la qualité irréprochable.",
 
         "quote": "«Rendre nos clients heureux en sublimant les lieux qu’ils occupent est notre mission première mais aussi notre plus grande fierté. Nous sommes convaincus que le travail d’une boiserie ou la noblesse d’un matériau peuvent être, au quotidien, des vecteurs de rêve»",
 
@@ -135,36 +141,42 @@
             {"name": "Gery Dehon",
                 "title": "Interior Designer",
                 "text": "",
-                "image": "/assets/Images/Groupe/GP_gery.JPG"
+                "image": "/assets/Images/Groupe/GP_gery.JPG",
+                "index": 1
             },
             {"name": "Michèle Claes",
                 "title": "D.R. H and Accounting",
                 "text": "",
-                "image": "/assets/Images/Groupe/GP_michele.JPG"
+                "image": "/assets/Images/Groupe/GP_michele.JPG",
+                "index": 5
             },
             {
                 "name": "Daniel Nicolo",
                 "title": "Head of Technical department and Logistic",
                 "text": "",
-                "image": "/assets/Images/Groupe/GP_daniel.JPG"
+                "image": "/assets/Images/Groupe/GP_daniel.JPG",
+                "index": 2
             },
             {
                 "name": "Isabelle Renuart",
                 "title": "Key account manager",
                 "text": "",
-                "image": "/assets/Images/Groupe/GP_isabelle.JPG"
+                "image": "/assets/Images/Groupe/GP_isabelle.JPG",
+                "index": 3
             },
             {
                 "name": "Monica Salajan",
                 "title": "Customer department manager",
                 "text": "",
-                "image": "/assets/Images/Groupe/GP_monica.JPG"
+                "image": "/assets/Images/Groupe/GP_monica.JPG",
+                "index": 4
             },
             {
                 "name": "Georgiana Moaocan",
                 "title": "Customer fabric department",
                 "text": "",
-                "image": "/assets/Images/Groupe/GP_georgiana.JPG"
+                "image": "/assets/Images/Groupe/GP_georgiana.JPG",
+                "index": 6
             }
         ]
      }

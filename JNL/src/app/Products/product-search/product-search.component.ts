@@ -177,8 +177,8 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
   // }
 
   goToProduct(product: ProductEF) {
-    // this.selectedProduct = { brand: 'JNL Collection', family: 'Canapé', model: 'Shanghai'};
     this.router.navigate(['product', {b: product.brand, f: product.familyFr, m: product.model}]);
+    this.scrollTop();
   }
 
   addToFavorites(product: Product) {
@@ -187,4 +187,7 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
     window.alert(`Product added to favorites.`);
   }
 
+  scrollTop() {
+    window.scrollTo(0, 0);
+  }
 }

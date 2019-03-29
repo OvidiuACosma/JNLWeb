@@ -216,15 +216,80 @@ button {
 }
 
 #equipe > div > div > h4 {
+    font-family: Helvetica;
     width: auto;
     margin: auto;
     margin-top: 2.2vw; 
+    margin-bottom: 1vw;
+}
+
+#equipe > div > div > h3 {
+    font-family: Helvetica;
+    font-size: 1.2vw;
+    width: auto;
+    margin: auto;
+    margin-top: .8vw; 
     margin-bottom: 2.2vw;
 }
 
 #equipe > div > div > img {
     margin-top: 4vw;
     width: 28.9vw;
+}
+
+.staff {
+    width: 62.78vw;
+    margin: auto;
+    margin-top: 5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.staff > div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.left {
+    flex-direction: row;
+    text-align: right;
+}
+
+.right {
+    flex-direction: row-reverse;
+    text-align: left;
+}
+
+.staff > div > div {
+    display: inline-block;
+    margin-bottom: 2vw;
+}
+
+.staff > div > div > p {
+    font-family: Helvetica-light;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-bottom: .5vw;
+    width: 11vw;
+}
+
+.p-left {
+    text-align: left;
+}
+
+.p-right {
+    text-align: right;
+}
+
+.staff > div > div > img {
+    max-width: 18vw;
+    max-height: 18vw;
+    object-fit: contain;
 }
 
 #engagement .image-parag > p {
@@ -393,8 +458,7 @@ button {
 }
 
 #histoire, #equipe, #engagement, #projets, #archives {
-    padding-top: 60px;
-    margin-top: -60px;
+    padding-top: 5.9vw;
 }
 
 #projets {
