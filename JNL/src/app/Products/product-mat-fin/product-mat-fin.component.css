@@ -117,7 +117,7 @@ ul {
 
 .flex-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -128,7 +128,7 @@ ul {
 .arrow {
     height: 3vw;
     width: 1.5vw;
-    margin-top: -13vw;
+    margin-top: 120%;
 }
 
 .whiteSpace {
@@ -182,9 +182,21 @@ ul {
         width: 88.3vw;
     }
 
+
     .modal-dialog {
+        width: 70vw !important;
         min-width: 320px;
-        max-width: 90% !important;
+        max-width: 90vw;
+        max-height: 90%;
+        margin: auto;
+    }
+
+    .whiteSpace {
+        flex: 1;
+    }
+    
+    .cardContainer {
+        flex: 5;
     }
 
     .img-button {
