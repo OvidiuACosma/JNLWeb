@@ -1,10 +1,7 @@
-import { Component, OnInit, AfterViewChecked, OnChanges } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { switchMap } from 'rxjs/operators';
-import * as _ from 'lodash';
-declare var $: any;
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-actualite',
@@ -17,11 +14,12 @@ export class ActualiteComponent implements OnInit {
   text: any;
   // nr: string;
   public actual: string;
-
+  
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private location: Location) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -65,5 +63,13 @@ export class ActualiteComponent implements OnInit {
 
   ScrollTop() {
     window.scrollTo(0, 0);
+  }
+
+  goBack() {
+    if (window.history.length > 1) {
+      this.location.back();
+    } else {
+      this.navigateTo('home');
+    }
   }
 }
