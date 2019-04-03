@@ -767,7 +767,7 @@ input[type="radio"] {
     }
 
     h2 {
-        font-size: 7.6vw;
+        font-size: 5.6vw;
     }
 
     h3 {
@@ -775,7 +775,7 @@ input[type="radio"] {
     }
 
     h4 {
-        font-size: 3.8vw;
+        font-size: 4.5vw;
         width: 80vw;
         margin-top: 10vw;
 
@@ -784,6 +784,33 @@ input[type="radio"] {
 
     span {
         font-size: 4.2vw;
+    }
+
+    .staff > div {
+        width: auto;
+    }
+
+    .staff > div > div {
+        margin-bottom: 5vw;
+    }
+
+    .staff > div > div > p {
+        width: auto;
+        font-size: 4vw;
+        line-height: 5vw;
+    }
+
+    .staff > div > div > img {
+        max-height: 38vw;
+        max-width:  38vw;
+    }
+
+    .container3 > h2:first-child {
+        font-size: 5vw; 
+    }
+
+    .container3 > h2 {
+        font-size: 4.5vw; 
     }
 
     .quote-bar > h4 {
@@ -808,6 +835,7 @@ input[type="radio"] {
     #group_list > a{
         margin: auto;
         font-size: 4.5vw;
+        line-height: 6vw;
         left: 0;
     }
 
@@ -818,6 +846,10 @@ input[type="radio"] {
 
     #equipe > div > div > p, .group-text, .quote-bar > p {
         font-size: 4.2vw;
+    }
+
+    #equipe > div > div > h3 {
+        font-size: 3.5vw;
     }
 
     #equipe > div {
@@ -897,7 +929,6 @@ input[type="radio"] {
     }
 
     .carousel-item-image {
-        width: 70vw;
         margin-right: 0vw;
         padding-left: 0vw;
     }
@@ -917,6 +948,7 @@ input[type="radio"] {
     }
 
     .respo_img {
+        margin-top: 4vw;
         padding-left: 80vw;
         padding-bottom: 100%;
         background-size: 80vw 100vw;
