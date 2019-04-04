@@ -8,39 +8,45 @@
   <div id="contentMatFin" [ngClass]="(this.toggleMat) ? 'hide-item' :'show-item'">
     <div id="static">
       <br>
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link nav-position active" id="v-pills-tissu-tab" data-toggle="pill" href="#v-pills-tissu" role="tab"
-          aria-controls="v-pills-tissu" aria-selected="true" (click)="setCategory('tissu')">Tissus</a>
-        <a class="nav-link nav-position" id="v-pills-cuir-tab" data-toggle="pill" href="#v-pills-cuir" role="tab"
-          aria-controls="v-pills-cuir" aria-selected="false" (click)="setCategory('cuir')">Cuirs</a>
-        <a class="nav-link nav-position" id="v-pills-similiCuir-tab" data-toggle="pill" href="#v-pills-similiCuir" role="tab"
-          aria-controls="v-pills-similiCuir" aria-selected="false" (click)="setCategory('simili')">Simili Cuirs</a>
-        <a class="nav-link nav-position" id="v-pills-abatjour-tab" data-toggle="pill" href="#v-pills-abatjour" role="tab"
-          aria-controls="v-pills-abatjour" aria-selected="false" (click)="setCategory('abatjour')">Abat-jour</a>
-        <a class="nav-link nav-position" id="v-pills-metal-tab" data-toggle="pill" href="#v-pills-metal" role="tab"
-          aria-controls="v-pills-metal" aria-selected="false" (click)="setCategory('metal')">M&eacute;tal</a>
-        <a class="nav-link nav-position" id="v-pills-bois-tab" data-toggle="pill" href="#v-pills-bois" role="tab"
-          aria-controls="v-pills-bois" aria-selected="false" (click)="setCategory('bois')">Bois Massif</a>
-        <a class="nav-link nav-position" id="v-pills-verre-tab" data-toggle="pill" href="#v-pills-verre" role="tab"
-          aria-controls="v-pills-verre" aria-selected="false">Verre</a>
-        <a class="nav-link nav-position" id="v-pills-miroir-tab" data-toggle="pill" href="#v-pills-miroir" role="tab"
-          aria-controls="v-pills-miroir" aria-selected="false">Miroir</a>
-        <a class="nav-link nav-position" id="v-pills-pierre-tab" data-toggle="pill" href="#v-pills-pierre" role="tab"
-          aria-controls="v-pills-pierre" aria-selected="false" (click)="setCategory('pierre')">Pierre</a>
+      <div class="nav flex-column nav-pills" id="pills" role="tablist" aria-orientation="vertical">
+        <a class="nav-link nav-position active" id="tissu-tab" data-toggle="pill" href="#tissu" role="tab"
+          aria-controls="tissu" aria-selected="true" *ngIf="tissus" (click)="setCategory('tissu')">Tissus</a>
+        <a class="nav-link nav-position" id="cuir-tab" data-toggle="pill" href="#cuir" role="tab" aria-controls="cuir"
+          aria-selected="false" *ngIf="cuirs" (click)="setCategory('cuir')">Cuirs</a>
+        <a class="nav-link nav-position" id="similiCuir-tab" data-toggle="pill" href="#similiCuir" role="tab"
+          aria-controls="similiCuir" aria-selected="false" *ngIf="similiCuirs" (click)="setCategory('simili')">Simili
+          Cuirs</a>
+        <a class="nav-link nav-position" id="bois-tab" data-toggle="pill" href="#bois" role="tab" aria-controls="bois"
+          aria-selected="false" *ngIf="bois" (click)="setCategory('bois')">Bois Massif</a>
+        <a class="nav-link nav-position" id="metal-tab" data-toggle="pill" href="#metal" role="tab"
+          aria-controls="metal" aria-selected="false" *ngIf="metals" (click)="setCategory('metal')">M&eacute;tal</a>
+        <a class="nav-link nav-position" id="abatjour-tab" data-toggle="pill" href="#abatjour" role="tab"
+          aria-controls="abatjour" aria-selected="false" *ngIf="abatjours"
+          (click)="setCategory('abatjour')">Abat-jour</a>
+        <a class="nav-link nav-position" id="verre-tab" data-toggle="pill" href="#verre" role="tab"
+          aria-controls="verre" aria-selected="false" *ngIf="verre">Verre</a>
+        <a class="nav-link nav-position" id="miroir-tab" data-toggle="pill" href="#miroir" role="tab"
+          aria-controls="miroir" aria-selected="false" *ngIf="miroir">Miroir</a>
+        <a class="nav-link nav-position" id="pierre-tab" data-toggle="pill" href="#pierre" role="tab"
+          aria-controls="pierre" aria-selected="false" *ngIf="pierre" (click)="setCategory('pierre')">Pierre</a>
+        <a class="nav-link nav-position" id="placage-tab" data-toggle="pill" href="#placage" role="tab"
+          aria-controls="placage" aria-selected="false" *ngIf="placages" (click)="setCategory('placage')">Placage</a>
       </div>
     </div>
     <div id="content">
-      <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-content" id="tabContent">
 
         <!-- TISSUS TAB------------------------->
-        <div class="tab-pane fade show active" id="v-pills-tissu" role="tabpanel" aria-labelledby="v-pills-tissu-tab">
+        <div class="tab-pane fade show active" id="tissu" role="tabpanel" aria-labelledby="tissu-tab">
           <cdk-virtual-scroll-viewport itemSize="30" class="example-viewport">
             <div class="scroll-container">
               <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
-                <div class="scroll-item" (click)="sendItemToModal(item)" data-toggle="modal" data-target="#garnissageModal">
+                <div class="scroll-item" (click)="sendItemToModal(item)" data-toggle="modal"
+                  data-target="#garnissageModal">
                   <a>
                     <img id="thumbnail-img" class="img-button"
-                      src="assets\Images\Products\JNL Collection\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg" alt="">
+                      src="assets\Images\Products\JNL Collection\Garnissage\Tissu\{{item.codeProd | uppercase }}.jpg"
+                      alt="">
                   </a>
                   <div>
                     <h6>{{item.model}}</h6>
@@ -53,15 +59,15 @@
         </div>
 
         <!-- CUIRS TAB------------------------->
-        <div class="tab-pane fade" id="v-pills-cuir" role="tabpanel" aria-labelledby="v-pills-cuir-tab">
+        <div class="tab-pane fade" id="cuir" role="tabpanel" aria-labelledby="cuir-tab">
           <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
             <div class="scroll-container">
               <ng-container *cdkVirtualFor="let item of cuirs" class="example-item">
                 <div class="scroll-item">
                   <a>
                     <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                      src="assets\Images\Products\JNL Collection\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg" alt=""
-                      (click)="sendItemToModal(item)">
+                      src="assets\Images\Products\JNL Collection\Garnissage\Cuir\{{item.codeProd | uppercase }}.jpg"
+                      alt="" (click)="sendItemToModal(item)">
                   </a>
                   <div>
                     <h6>{{item.model}}</h6>
@@ -74,15 +80,15 @@
         </div>
 
         <!-- SIMILI CUIRS TAB------------------------->
-        <div class="tab-pane fade" id="v-pills-similiCuir" role="tabpanel" aria-labelledby="v-pills-similiCuir-tab">
+        <div class="tab-pane fade" id="similiCuir" role="tabpanel" aria-labelledby="similiCuir-tab">
           <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
             <div class="scroll-container">
               <ng-container *cdkVirtualFor="let item of similiCuirs" class="example-item">
                 <div class="scroll-item">
                   <a>
                     <img id="thumbnail-img" class="img-button" data-toggle="modal" data-target="#garnissageModal"
-                      src="assets\Images\Products\JNL Collection\Garnissage\simili\{{item.codeProd | uppercase }}.jpg" alt=""
-                      (click)="sendItemToModal(item)">
+                      src="assets\Images\Products\JNL Collection\Garnissage\simili\{{item.codeProd | uppercase }}.jpg"
+                      alt="" (click)="sendItemToModal(item)">
                   </a>
                   <div>
                     <h6>{{item.model}}</h6>
@@ -94,23 +100,32 @@
           </cdk-virtual-scroll-viewport>
         </div>
 
-        <div class="tab-pane fade" id="v-pills-abatjour" role="tabpanel" aria-labelledby="v-pills-abatjour-tab">
-          <b>---Abat-jour</b>
+        <div class="tab-pane fade" id="bois" role="tabpanel" aria-labelledby="bois-tab">
+          <span *ngFor="let item of bois">{{item}}, </span>
         </div>
-        <div class="tab-pane fade" id="v-pills-metal" role="tabpanel" aria-labelledby="v-pills-metal-tab">
-          <b>---Metal</b>
+
+        <div class="tab-pane fade" id="metal" role="tabpanel" aria-labelledby="metal-tab">
+          <span *ngFor="let item of metals">{{item}}, </span>
         </div>
-        <div class="tab-pane fade" id="v-pills-bois" role="tabpanel" aria-labelledby="v-pills-bois-tab">
-          <b>---Bois</b>
+
+        <div class="tab-pane fade" id="abatjour" role="tabpanel" aria-labelledby="abatjour-tab">
+          <span *ngFor="let item of abatjours">{{item}}, </span>
         </div>
-        <div class="tab-pane fade" id="v-pills-verre" role="tabpanel" aria-labelledby="v-pills-verre-tab">
+
+        <div class="tab-pane fade" id="verre" role="tabpanel" aria-labelledby="verre-tab">
           <b>---Verre</b>
         </div>
-        <div class="tab-pane fade" id="v-pills-miroir" role="tabpanel" aria-labelledby="v-pills-miroir-tab">
+
+        <div class="tab-pane fade" id="miroir" role="tabpanel" aria-labelledby="miroir-tab">
           <b>---Miroir</b>
         </div>
-        <div class="tab-pane fade" id="v-pills-pierre" role="tabpanel" aria-labelledby="v-pills-pierre-tab">
+
+        <div class="tab-pane fade" id="pierre" role="tabpanel" aria-labelledby="pierre-tab">
           <b>---Pierre</b>
+        </div>
+
+        <div class="tab-pane fade" id="placage" role="tabpanel" aria-labelledby="placage-tab">
+          <span *ngFor="let item of placages">{{item}}, </span>
         </div>
       </div>
     </div>
@@ -120,7 +135,7 @@
 
 <!-- MODAL -->
 <div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true" *ngIf="material" (click)="closeModal()"  data-backdrop="false" >
+  aria-hidden="true" *ngIf="material" (click)="closeModal()" data-backdrop="false">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">

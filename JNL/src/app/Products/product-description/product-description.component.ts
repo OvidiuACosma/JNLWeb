@@ -26,8 +26,6 @@ export class ProductDescriptionComponent implements OnInit {
           if (a.orderIndex < b.orderIndex) { return 1; }
           return 0;
         });
-        // console.log(`Product Description: ${this.productDesc}, for product ${this.product}`);
-        // console.log('PROD DESC: ', this.productDesc);
         this.getParts();
       });
   }
