@@ -491,7 +491,7 @@ video {
 }
 
 .projets-text > h4 {
-    font-size: 1.8vw;
+    font-size: 1.3vw;
     margin-top: 1.09vw;
 }
 
@@ -499,12 +499,6 @@ video {
     margin: auto;
     margin-bottom: 2.08vw;
 }
-
-/* #projets > div > div > div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-} */
 
 #projets > div > div > div > img {
     margin: auto;

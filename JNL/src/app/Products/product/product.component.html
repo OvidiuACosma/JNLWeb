@@ -53,8 +53,8 @@
   </div>
 
   <!-- PRODUCT MATERIALS AND FINISAGES-->
-  <div class="prod-desc">
-    <app-product-mat-fin></app-product-mat-fin>
+  <div class="prod-desc" *ngIf="product">
+    <app-product-mat-fin [product]="product"></app-product-mat-fin>
   </div>
 
   <!-- PRODUCT TECHNICAL DRAWINGS-->

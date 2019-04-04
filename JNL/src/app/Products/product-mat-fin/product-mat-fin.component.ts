@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from 'src/app/_services';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { materialize } from 'rxjs/operators';
+import * as _ from 'lodash';
+import { Product } from 'src/app/_models';
 
 @Component({
   selector: 'app-product-mat-fin',
@@ -10,6 +12,9 @@ import { materialize } from 'rxjs/operators';
 })
 export class ProductMatFinComponent implements OnInit {
 
+  @Input() product: Product;
+  public prodDesc: any[];
+  public matCat: number[];
   public matCategory = 'Tissu';
   public tissus: any[];
   public cuirs: any[];
@@ -18,6 +23,9 @@ export class ProductMatFinComponent implements OnInit {
   public metals: any[];
   public bois: any[];
   public pierre: any[];
+  public verre: any[];
+  public miroir: any[];
+  public placages: any[];
   public materials: any[];
 
   // data used in modal
@@ -25,13 +33,16 @@ export class ProductMatFinComponent implements OnInit {
   public index: number;
   public material: any[];
 
-
   toggleMat = false;
 
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-
+    this.productsService.getProductDesc(this.product)
+      .subscribe(desc => {
+        this.prodDesc = desc;
+        this.getMatCategories();
+      });
     // get Tissus
     this.productsService.getTissus()
       .subscribe(tissus => {
@@ -51,12 +62,69 @@ export class ProductMatFinComponent implements OnInit {
         this.similiCuirs = similiCuirs;
       });
 
+    /*
     // get Materials
     this.productsService.getMaterials()
       .subscribe(materials => {
         this.materials = materials;
-        // console.log('MATERIALS: ', this.materials);
       });
+      */
+  }
+
+  getMatCategories() {
+    const matList: any[] = [];
+    this.prodDesc.forEach(item => {
+      if (item.materialCategory) {
+        matList.push(Number(item.materialCategory));
+      }
+    });
+    this.matCat = _.uniq(matList.sort(function (a, b) {
+      return a - b;
+    }));
+    console.log('CTGS: ', this.matCat);
+    this.getMatFinByCtg();
+  }
+
+  getMatFinByCtg() {
+    this.matCat.forEach(item => {
+      switch (item) {
+        case 1: {
+          this.bois = this.getMatFinList(1);
+          break;
+        }
+        case 2: {
+          this.metals = this.getMatFinList(2);
+          break;
+        }
+        case 3: {
+          this.pierre = this.getMatFinList(3);
+          break;
+        }
+        case 5: {
+          this.abatjours = this.getMatFinList(5);
+          break;
+        }
+        case 7: {
+          this.verre = this.getMatFinList(7);
+          break;
+        }
+        case 11: {
+          this.placages = this.getMatFinList(11);
+        }
+      }
+    });
+  }
+
+  getMatFinList(ctg: number) {
+    let desc: any[];
+    const matFin: any[] = [];
+    desc = this.prodDesc.filter(f => f.materialCategory === ctg);
+    desc.forEach(i => {
+      if (i.materialNameFr && i.finisageNameFr) {
+        matFin.push(i.materialNameFr + ' ' + i.finisageNameFr);
+      }
+    });
+    return matFin;
   }
 
   setCategory(category: string) {
@@ -78,20 +146,15 @@ export class ProductMatFinComponent implements OnInit {
       }
       case 'abatjour': {
         this.matCategory = 'abatjour';
-        this.abatjours = this.materials.filter(f => f.ctg === 5);
-        // console.log('ABAT-JOURS: ', this.abatjours);
         break;
       }
       case 'metal': {
         this.matCategory = 'metal';
-        this.metals = this.materials.filter(f => f.ctg === 2);
-        // console.log('Metals: ', this.metals);
         break;
+
       }
       case 'bois': {
         this.matCategory = 'bois';
-        this.bois = this.materials.filter(f => f.ctg === 1 || f.ctg === 6);
-        // console.log('BOIS: ', this.bois);
         break;
       }
       case 'pierre': {
