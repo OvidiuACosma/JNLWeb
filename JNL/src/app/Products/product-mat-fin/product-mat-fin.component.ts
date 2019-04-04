@@ -124,7 +124,9 @@ export class ProductMatFinComponent implements OnInit {
         matFin.push(i.materialNameFr + ' ' + i.finisageNameFr);
       }
     });
-    return matFin;
+    if (matFin.length > 0) {
+      return matFin;
+    }
   }
 
   setCategory(category: string) {

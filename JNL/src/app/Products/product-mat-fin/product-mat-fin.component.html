@@ -113,7 +113,7 @@
         </div>
 
         <div class="tab-pane fade" id="verre" role="tabpanel" aria-labelledby="verre-tab">
-          <b>---Verre</b>
+          <span *ngFor="let item of verre">{{item}}, </span>
         </div>
 
         <div class="tab-pane fade" id="miroir" role="tabpanel" aria-labelledby="miroir-tab">
