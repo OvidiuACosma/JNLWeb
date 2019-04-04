@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductsService } from 'src/app/_services';
+import { ProductsService } from '../../_services';
 import * as _ from 'lodash';
-import { Product } from 'src/app/_models';
+import { Product } from '../../_models';
 
 @Component({
   selector: 'app-product-description',

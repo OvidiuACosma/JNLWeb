@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from 'src/app/_services';
-import { Product, Img } from 'src/app/_models';
+import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
+import { Product, Img } from '../../_models';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 declare var $: any;

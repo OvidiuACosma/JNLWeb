@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService, ProductsService } from 'src/app/_services';
-import { Product, ProductEF } from 'src/app/_models';
+import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
+import { Product, ProductEF } from '../../_models';
 import * as _ from 'lodash';
 
 @Component({
