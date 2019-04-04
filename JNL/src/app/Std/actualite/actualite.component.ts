@@ -14,7 +14,7 @@ export class ActualiteComponent implements OnInit {
   text: any;
   // nr: string;
   public actual: string;
-  
+
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private dataex: DataExchangeService,
