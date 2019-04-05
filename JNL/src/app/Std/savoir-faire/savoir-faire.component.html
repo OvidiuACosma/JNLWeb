@@ -39,11 +39,7 @@
 
             <div>
                 <div>
-                    Qu’ils soient <strong>garnisseurs, ébénistes, sculpteurs, ferronniers ou techniciens</strong>, ses artisans 
-                    perpétuent un art ancestral qui confère un cachet unique à chacune des créations. <br><br>
-                    Guidés par le sens de l’innovation, ils n’hésitent cependant pas à <strong>s’éloigner des schémas traditionnels.</strong> 
-                    Cette confrontation entre l’héritage de savoir-faire séculaires et les nouvelles technologies permet 
-                    d’éditer des collections très abouties et dans l’aire du temps.
+                    {{text.secondText}}
                 </div>
 
                 <div>
@@ -188,10 +184,10 @@
             </div>
             <!--CAROUSEL-->
 
-            <h4>{{text.stepsText}}</h4>
+            <h4 [innerHTML]="text.stepsText"></h4>
 
         <div id="services">
-            <img  alt="JNL Collection" src="assets/Images/Savoir/SF_pic11.jpg" (click)="navigateTo('services')">
+            <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic11.jpg" (click)="navigateTo('services')">
             <h4>LES SERVICES</h4>
         </div>
         </div>
