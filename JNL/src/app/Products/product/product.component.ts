@@ -16,9 +16,9 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
   public detail = 'description';
   public product_id: string;
   public prodDesc: any;
-  public brand = 'JNL Collection';
+  public brand = '';
   public family = '';
-  public prodName = '';
+  public model = '';
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
@@ -61,8 +61,9 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
     this.productsService.getProduct(this.product)
       .subscribe(desc => {
         this.prodDesc = desc;
+        this.brand = this.prodDesc.brand;
         this.family = this.prodDesc.familyFr;
-        this.prodName = this.prodDesc.model;
+        this.model = this.prodDesc.model;
         this.getHeroImages();
       });
   }
