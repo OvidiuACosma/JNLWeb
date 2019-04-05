@@ -1,9 +1,8 @@
 <div id="container">
   <div id="header" *ngIf="prodDesc">
-    <h1>{{prodDesc.model}}</h1>
-    <h4>JNL Collection</h4>
-    <!--<h3>{{prodDesc.brand  | uppercase}}</h3>-->
-    <h5 class="gold">{{prodDesc.familyFr | uppercase}}</h5>
+    <h1>{{model}}</h1>
+    <h4>{{brand}}</h4>
+    <h5 class="gold">{{family | uppercase}}</h5>
   </div>
   <div id='carousel-custom' class='carousel slide carousel-fade' data-ride='carousel' data-pause="false">
     <div class="carousel-inner">

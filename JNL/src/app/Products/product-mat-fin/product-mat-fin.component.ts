@@ -125,7 +125,7 @@ export class ProductMatFinComponent implements OnInit {
       }
     });
     if (matFin.length > 0) {
-      return matFin;
+      return _.uniq(matFin);
     }
   }
 
