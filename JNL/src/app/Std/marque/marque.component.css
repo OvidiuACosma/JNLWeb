@@ -114,6 +114,10 @@ h6 {
     margin-bottom: 4vw;
 }
 
+.heritage > div > h2 {
+    text-transform: capitalize;
+}
+
 .heritage > div > p > a {
     font-size: 0.6em;
 }
