@@ -14,9 +14,9 @@
       <h2>{{text.sectionTitle}}</h2>
       <p [innerHTML]="text.sectionText"></p>
       <div class="home-links-flex">
-        <a class="home_links">VOIR TOUS LES PRODUITS</a>
-        <a class="home_links">TÉLÉCHARGER LE CATALOGUE</a>
-        <a class="home_links">DEMANDER LA LISTE DE PRIX</a>
+        <span class="home_links">VOIR TOUS LES PRODUITS</span>
+        <span class="home_links">TÉLÉCHARGER LE CATALOGUE</span>
+        <span class="home_links">DEMANDER LA LISTE DE PRIX</span>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
                       <img src='{{item}}' alt='Vanhamme Collection' class="slide-image">
                     </div>
                     <p class="voir">
-                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES {{text.productCategories[k]}}</a>
+                      <span class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES {{text.productCategories[k]}}</span>
                     </p>
                   </div>
                 </div>

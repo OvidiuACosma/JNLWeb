@@ -30,12 +30,12 @@ h4
     text-align: center;
 }
 
-.home_links {
+/* .home_links {
     border: 1.5px solid #DBBB76;
     padding: .15vw 1.59vw;
     font-size: 1vw;
     text-transform: uppercase;
-}
+} */
 
 .parag {
     width: 76vw;
@@ -91,7 +91,7 @@ h4
     margin-bottom: 5vw;
 }
 
-#links > a {
+#links > span {
     margin: auto;
 }
 

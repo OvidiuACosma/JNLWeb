@@ -13,12 +13,15 @@
       <app-alert></app-alert>
       <div class="router-outlet">
         <router-outlet></router-outlet>
+        
       </div>
 
       <div class="menu-bottom">
         <app-menu-bottom></app-menu-bottom>
       </div>
-
+        <span class="button-go-top" (click)="scrollTop()" [ngClass]="{'active': scrollTopVisible}">
+          <img  alt="arrow_up" src="assets\Images\Common\arrow_up.png">
+        </span>
     </div>
 
   </div>

@@ -30,17 +30,17 @@ hr {
     width: 87.13vw;
 }
 
-.home_links {
+/* .home_links {
     border: 1.5px solid #DBBB76;
-    padding: .15vw; /*0.3em;*/
-    padding-left: 1.59vw; /*1em;*/
-    padding-right: 1.59vw; /*1em;*/
+    padding: .15vw; 
+    padding-left: 1.59vw; 
+    padding-right: 1.59vw; 
     font-size: 1vw;
     text-transform: uppercase;
     letter-spacing : 1.28px;
     font-family: Helvetica-light;
     font-style: italic;
-}
+} */
 
 .gallery_buttons {
     height: 100%;
@@ -286,14 +286,10 @@ hr {
 }
 
 #une_histoire > div > p {
-    font-size: 1.6vw; /*2.01vw;  1.6em;*/
+    font-size: 1.6vw;
     line-height: 2vw;
     margin-bottom: 3.68vw;
     font-family: Helvetica-Light;
-}
-
-#une_histoire > div > p > a {
-    font-size: 1.11vw; /*1.25vw; 0.6em;*/
 }
 
 #les_marques {
@@ -437,15 +433,12 @@ hr {
 /*NO VIDEO*/
 #savoir > div:first-child {
     margin: auto;
-    width: 87vw; /*87vw;*/
-    /*width: 1255px;*/
-
+    width: 87vw;
     height: 49vw;
     /*
     background-image: url("/assets/Images/Home/HM_video.png");
     background-size: cover;
     background-position: center center;*/
-
     display: flex;
     flex-direction: column;
 }
@@ -454,12 +447,12 @@ hr {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 87vw; /*87.3vw;*/
+    width: 87vw;
     height: 49vw;
     margin: auto;
 }
 
-#savoir > div:last-child > div{
+#savoir > div:last-child > div {
     margin: auto;
 }
 
@@ -475,10 +468,10 @@ video {
     color: white;
 }
 
-#savoir > div > a {
+#savoir > div > span {
     margin: auto;
     margin-top: 40px;
-    color: white;
+    /* color: #bbb; */
 }
 
 #projets {

@@ -1,11 +1,6 @@
 <div id="first_picture" class="main_divs">
   <div>
     <img alt="JNL Collection" src="assets\Images\Home\HM_JNL_Logo.png">
-    <!--<p>
-      <a (click)="navigateToAnchor('une_histoire')">
-        <img alt="arrow_down" src="assets\Images\Common\arrow_down.png">
-      </a>
-    </p>-->
   </div>
   <a (click)="navigateToAnchor('une_histoire')">
     <img  alt="arrow_down" src="assets\Images\Common\arrow_down.png">
@@ -17,7 +12,7 @@
     <div>
       <h1>{{text.histoireTitle}}</h1>
       <p>{{text.histoireText}}</p>
-      <a class="home_links" (click)="navigateTo('jnlGroup')">{{text.histoireButtonText}}</a>
+      <span class="home_links" (click)="navigateTo('jnlGroup')">{{text.histoireButtonText}}</span>
     </div>
   </div>
 
@@ -49,7 +44,7 @@
                   </div>
                   <div class="marque-text">
                         <p [innerHTML]="text.marquesJNL"></p><br><br>
-                      <a class="home_links" (click)="navigateTo('marques', 'jnl')">{{text.marquesButtonText}}</a>
+                      <span class="home_links" (click)="navigateTo('marques', 'jnl')">{{text.marquesButtonText}}</span>
                   </div>
                 </div>
               </div>
@@ -61,7 +56,7 @@
                   <div class="marque-text">
                     <p [innerHTML]="text.marquesVanhamme"></p>
                       <br><br>
-                    <a class="home_links" (click)="navigateTo('marques', 'vanhamme')">{{text.marquesButtonText}}</a>
+                    <span class="home_links" (click)="navigateTo('marques', 'vanhamme')">{{text.marquesButtonText}}</span>
                   </div>
                 </div>
               </div>
@@ -72,7 +67,7 @@
                   </div>
                   <div class="marque-text">
                     <p [innerHTML]="text.marquesUngaro"></p><br><br>
-                    <a class="home_links" (click)="navigateTo('marques', 'ungaro')">{{text.marquesButtonText}}</a>
+                    <span class="home_links" (click)="navigateTo('marques', 'ungaro')">{{text.marquesButtonText}}</span>
                   </div>
                 </div>
               </div>
@@ -83,7 +78,7 @@
                   </div>
                   <div class="marque-text">
                       <p [innerHTML]="text.marquesLuz"></p><br><br>
-                    <a class="home_links" (click)="navigateTo('marques', 'luz')">{{text.marquesButtonText}}</a>
+                    <span class="home_links" (click)="navigateTo('marques', 'luz')">{{text.marquesButtonText}}</span>
                   </div>
                 </div>
               </div>
@@ -140,7 +135,7 @@
     </div>
     <div>
         <h1>{{text.savoirTitle}}</h1>
-        <a class="home_links" (click)="navigateTo('savoirFaire')">{{text.savoirButton}}</a>
+        <span class="home_links" (click)="navigateTo('savoirFaire')">{{text.savoirButton}}</span>
     </div>
   </div>
 

@@ -30,7 +30,7 @@ h3 {
     text-decoration: underline !important;
 }
 
-.home_links {
+/* .home_links {
     font-family: Helvetica-Light;
     color: #666;
     border: 1.5px solid #666;
@@ -46,7 +46,7 @@ h3 {
     color: #DBBB76;
     transition: all .5s ease;
     cursor: pointer;
-}
+} */
 
 .marques-image {
     width: 76.17vw;

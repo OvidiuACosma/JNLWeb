@@ -323,7 +323,7 @@ li > div {
     transition: all .3s ease;
 }
 
-.prod-name:hover, .card-product:hover {
+.card-product:hover {
     color: #DBBB76;
     transition: all .3s ease;
 }

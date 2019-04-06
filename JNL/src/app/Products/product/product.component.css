@@ -192,13 +192,13 @@ button
     flex-direction: row;
 }
 
-.home_links {
+/* .home_links {
     border: 1.5px solid #DBBB76;
     padding: .15vw 1.59vw;
     font-size: 1vw;
     width: 20vw;
     text-transform: uppercase;
-}
+} */
 
 .info_div {
     background-color: #e3d9c6;

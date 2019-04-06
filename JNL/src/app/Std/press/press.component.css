@@ -34,14 +34,14 @@ h4 {
     text-align: center;
 }
 
-.home_links {
+/* .home_links {
     border: 1.5px solid #DBBB76;
     padding: .15vw 1.59vw;
     font-size: 1vw;
     text-transform: uppercase;
     margin-bottom: 10px;
     font-style: italic;
-}
+} */
 
 #presse_list {
     margin: auto;
@@ -132,11 +132,12 @@ h4 {
 }
 
 .four-flex > div > div > span {
-    font-family: Helvetica-Light;
-    font-size: 1.8vw;
+    /* font-family: Helvetica-Light;
+    font-size: 1.8vw; */
     width: 15.47vw;
-    word-wrap: normal;
-    height: 6.5vw;
+    margin-bottom: .6vw;
+    /* word-wrap: normal; */
+    /* height: 6.5vw; */
 }
 
 .carousel-inner {

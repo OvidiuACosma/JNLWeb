@@ -23,6 +23,7 @@ import { BrowserXhr } from '@angular/http';
 import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { WINDOW_PROVIDERS } from './_services/window.service';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
       { provide: BrowserXhr, useClass: CustExtBrowserXhr },
-      { provide: LOCALE_ID, useValue: 'en-BE' }
+      { provide: LOCALE_ID, useValue: 'en-BE' },
+  [ WINDOW_PROVIDERS ]
   ],
   bootstrap: [AppComponent]
 })

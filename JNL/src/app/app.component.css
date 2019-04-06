@@ -54,6 +54,25 @@
     min-height: 57.5vh;
 }
 
+.button-go-top > img {
+    display: none; /* Hidden by default */
+    position: fixed;
+    object-fit: contain;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+    z-index: 2099;
+    cursor: pointer;
+    min-width: 30px;
+    width: 3.2vw;
+    height: auto;
+    background-color: antiquewhite;
+}
+.active {
+    display: block;
+}
+
 
 @media only screen and (max-width: 768px){
     .content {
