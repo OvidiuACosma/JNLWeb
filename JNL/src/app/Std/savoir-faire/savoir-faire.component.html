@@ -25,12 +25,11 @@
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic6.jpg">
 
-                    <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h5>
+                    <h5>{{text.pic1}}</h5>
                 </div>
 
-                <div>« Nous avons la profonde conviction que l’artisanat du luxe ne doit pas être réservé à une élite.<br> 
-                    Il est crucial pour l’avenir qu’il se développe et que tous nos efforts soient tournés 
-                    vers la transmission du beau et du bien fait » 
+                <div>
+                    <p [innerHTML]="text.quote"></p>
                     <br>
                     <span>DOMINIQUE WAXMANN, CEO</span>
                 </div>
@@ -44,7 +43,7 @@
 
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic1.jpg">
-                    <h5>Lorem ipsum dolor sit amet.</h5>
+                    <h5>{{text.pic2}}</h5>
                 </div>
             </div>
         </div>
@@ -54,12 +53,12 @@
             <div>
                 <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic9.jpg">
 
-                <h5>Lorem ipsum dolor sit amet.</h5>
+                <h5>{{text.pic3}}</h5>
             </div>   
             <div>
                 <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic10.jpg">
 
-                <h5>Lorem ipsum dolor sit amet.</h5>
+                <h5>{{text.pic4}}</h5>
             </div>
         </div>
 
@@ -69,13 +68,13 @@
             <div>
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic5.jpg">
-                    <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h5>
+                    <h5>{{text.pic5}}</h5>
                 </div>
             </div>
             <div>
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic3.jpg">
-                    <h5>Lorem ipsum dolor sit amet.</h5>
+                    <h5>{{text.pic6}}</h5>
                 </div>
             </div>
         </div>
@@ -188,7 +187,7 @@
 
         <div id="services">
             <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic11.jpg" (click)="navigateTo('services')">
-            <h4>LES SERVICES</h4>
+            <h4>{{text.services}}</h4>
         </div>
         </div>
     </div>

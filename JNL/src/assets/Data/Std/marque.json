@@ -29,7 +29,20 @@
                 ],
 
                 "style":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "iconique":  "assets/Images/Marque/JNL/MKJ_iconique.png"
+                "iconique":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+
+                "link1": "VOIR TOUS LES PRODUITS",
+                "link2": "TÉLÉCHARGER LE CATALOGUE",
+                "link3": "DEMANDER LA LISTE DE PRIX",
+
+                "productsTitle": "Products",
+                "discover": "VOIR TOUS LES",
+                "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+                "groupe": "GROUP",
+                "savoir": "KNOW HOW",
+                "services": "SERVICES"
+
             },
             "VANHAMME": {
                 "collectionTitle": "Vanhamme",
@@ -57,7 +70,19 @@
                 ],
 
                 "style":  "assets/Images/Marque/Vanhamme/MKV_style.jpg",
-                "iconique":  "assets/Images/Marque/Vanhamme/MKV_iconique.png"
+                "iconique":  "assets/Images/Marque/Vanhamme/MKV_iconique.png",
+
+                "link1": "VOIR TOUS LES PRODUITS",
+                "link2": "TÉLÉCHARGER LE CATALOGUE",
+                "link3": "DEMANDER LA LISTE DE PRIX",
+
+                "productsTitle": "Products",
+                "discover": "VOIR TOUS LES",
+                "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+                "groupe": "GROUP",
+                "savoir": "KNOW HOW",
+                "services": "SERVICES"
             },
             "UNGARO": {
                 "collectionTitle": "Emanuel Ungaro Home",
@@ -87,7 +112,19 @@
                 ],
 
                 "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
-                "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png"
+                "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png",
+
+                "link1": "VOIR TOUS LES PRODUITS",
+                "link2": "TÉLÉCHARGER LE CATALOGUE",
+                "link3": "DEMANDER LA LISTE DE PRIX",
+
+                "productsTitle": "Products",
+                "discover": "VOIR TOUS LES",
+                "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+                "groupe": "GROUP",
+                "savoir": "KNOW HOW",
+                "services": "SERVICES"
             },
             "LUZ": {
                 "collectionTitle": "Luz Interiors",
@@ -115,7 +152,19 @@
                 ],
 
                 "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
-                "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png"
+                "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png",
+
+                "link1": "VOIR TOUS LES PRODUITS",
+                "link2": "TÉLÉCHARGER LE CATALOGUE",
+                "link3": "DEMANDER LA LISTE DE PRIX",
+
+                "productsTitle": "Products",
+                "discover": "VOIR TOUS LES",
+                "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+                "groupe": "GROUP",
+                "savoir": "KNOW HOW",
+                "services": "SERVICES"
             }
         },
     "FR": {
@@ -147,7 +196,19 @@
             ],
 
             "style":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-            "iconique":  "assets/Images/Marque/JNL/MKJ_iconique.png"
+            "iconique":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+
+            "link1": "VOIR TOUS LES PRODUITS",
+            "link2": "TÉLÉCHARGER LE CATALOGUE",
+            "link3": "DEMANDER LA LISTE DE PRIX",
+
+            "productsTitle": "Products",
+            "discover": "VOIR TOUS LES",
+            "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+            "groupe": "LE GROUPE",
+            "savoir": "LE SAVOIR-FAIRE",
+            "services": "LES SERVICES"
         },
         "VANHAMME": {
             "collectionTitle": "Vanhamme",
@@ -175,7 +236,19 @@
             ],
 
             "style":  "assets/Images/Marque/Vanhamme/MKV_style.jpg",
-            "iconique":  "assets/Images/Marque/Vanhamme/MKV_iconique.png"
+            "iconique":  "assets/Images/Marque/Vanhamme/MKV_iconique.png",
+
+            "link1": "VOIR TOUS LES PRODUITS",
+            "link2": "TÉLÉCHARGER LE CATALOGUE",
+            "link3": "DEMANDER LA LISTE DE PRIX",
+
+            "productsTitle": "Products",
+            "discover": "VOIR TOUS LES",
+            "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+            "groupe": "LE GROUPE",
+            "savoir": "LE SAVOIR-FAIRE",
+            "services": "LES SERVICES"
         },
         "UNGARO": {
             "collectionTitle": "Emanuel Ungaro Home",
@@ -205,7 +278,19 @@
             ],
 
             "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
-            "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png"
+            "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png",
+
+            "link1": "VOIR TOUS LES PRODUITS",
+            "link2": "TÉLÉCHARGER LE CATALOGUE",
+            "link3": "DEMANDER LA LISTE DE PRIX",
+
+            "productsTitle": "Products",
+            "discover": "VOIR TOUS LES",
+            "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+            "groupe": "LE GROUPE",
+            "savoir": "LE SAVOIR-FAIRE",
+            "services": "LES SERVICES"
         },
         "LUZ": {
             "collectionTitle": "Luz Interiors",
@@ -233,7 +318,19 @@
             ],
 
             "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
-            "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png"
+            "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png",
+
+            "link1": "VOIR TOUS LES PRODUITS",
+            "link2": "TÉLÉCHARGER LE CATALOGUE",
+            "link3": "DEMANDER LA LISTE DE PRIX",
+
+            "productsTitle": "Products",
+            "discover": "VOIR TOUS LES",
+            "autres": "DÉCOUVREZ LES AUTRES MARQUES",
+
+            "groupe": "LE GROUPE",
+            "savoir": "LE SAVOIR-FAIRE",
+            "services": "LES SERVICES"
         }
         }
      }

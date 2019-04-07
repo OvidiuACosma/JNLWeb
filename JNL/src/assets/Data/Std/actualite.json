@@ -9,7 +9,9 @@
                 "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
 
                 "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png"
+                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+
+                "back": "Back"
             },
             "2": {
                 "articleTitle": "JNL Collection",
@@ -19,7 +21,9 @@
                 "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
 
                 "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png"
+                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+
+                "back": "Back"
             },
             "3": {
                 "articleTitle": "Tiger Lily chez JNL",
@@ -29,7 +33,9 @@
                 "articleText2": "The first meetings happen at a distance, visual but virtual, in a modern communication that allows you to co-create by sending images and videos of your interiors.<br><br>Our belgian team then travels the globe towards the space in need of decoration.  An in-depth approach is undertaken to explore the various possibilities in which material meets the most cosmopolitan of inspirations.<br><br>Meanwhile, special attention is paid to the client, whose busy schedule often doesn’t allow for this depth of research. <br><br>Tiger Lily brings you that which is most precious to her: time.<br><br>To listen, to explore, to research, and to propose are core gestures that are woven together in a weaving of infinite poetry. ",
 
                 "pic1":  "assets/Images/Actualite/Tiger Lily/ac_1.jpg",
-                "pic2":  "assets/Images/Actualite/Tiger Lily/ac_2.jpg"
+                "pic2":  "assets/Images/Actualite/Tiger Lily/ac_2.jpg",
+
+                "back": "Back"
             }
         },
         "FR": {
@@ -41,7 +47,9 @@
                 "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
 
                 "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png"
+                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+
+                "back": "Retour"
             },
             "2": {
                 "articleTitle": "JNL Collection",
@@ -51,7 +59,9 @@
                 "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
 
                 "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png"
+                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+
+                "back": "Retour"
             },
             "3": {
                 "articleTitle": "Tiger Lily chez JNL",
@@ -61,7 +71,9 @@
                 "articleText2": "Ces différentes cultures, riches de leurs histoires, développent leurs métiers d’art singuliers, leurs techniques exclusives. <br><br>Les premiers rendez-vous visuels sont, par l’intermédiaire des moyens de communications modernes, réalisés virtuellement, vous permettant de cocréer à distance en envoyant des photos et vidéos de vos intérieurs. <br><br>Ensuite, l’équipe belge se déplace sous tous les horizons vers l’espace à décorer. Une démarche approfondie est alors entreprise afin d’explorer les différentes possibilités tout en adaptant les matières aux inspirations les plus cosmopolite. <br><br>Dans un même temps une attention toute particulière est octroyée à l’écoute des clients qui souvent n’ont pas de disponibilités pour pouvoir entreprendre de telles recherches. <br><br>Tiger Lily met à votre disposition ce que tout comme vous elle a de plus précieux : le temps. <br><br>Écouter, explorer, étudier, proposer, telles sont les fils d’un savant tissage dont la trame est toujours empreinte d’une délicieuse poésie.",
 
                 "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png"
+                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+
+                "back": "Retour"
             }
         }
     }
