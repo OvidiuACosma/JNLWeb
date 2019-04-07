@@ -60,17 +60,19 @@
     object-fit: contain;
     bottom: 0;
     right: 0;
-    margin-bottom: 1vw;
-    margin-right: 1vw;
+    margin-bottom: .6vw;
+    margin-right: .2vw;
     z-index: 2099;
     cursor: pointer;
     min-width: 30px;
     width: 3.2vw;
     height: auto;
-    background-color: antiquewhite;
+    /* background-color: #eee; */
+    transition: all .3s ease;
 }
 .active {
-    display: block;
+    display: block !important;
+    transition: all .3s ease;
 }
 
 

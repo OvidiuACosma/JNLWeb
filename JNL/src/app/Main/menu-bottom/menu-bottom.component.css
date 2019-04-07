@@ -123,7 +123,7 @@ input:focus, button:focus {
     width: 20%;
 }
 
-#news_letter {
+#newsletter {
     background-color: transparent;
     border: 1px solid black;
     max-width: 17.36vw;
@@ -131,7 +131,7 @@ input:focus, button:focus {
     height: 1.96vw;
 }
 
-#news_letter > span > input {
+#newsletter > span > input {
     border: none;
     padding: 0.05vw;
     margin: 0;
@@ -141,18 +141,23 @@ input:focus, button:focus {
     outline: none;
     font-size: .9vw;
     line-height: 1.1vw;
-
 }
 
-input.ng-valid.ng-dirty.ng-touched {
+input.ng-valid {
     background-color: transparent !important;
+    color: black;
+}
+
+input.ng-invalid {
+    /* background-color: rgb(255, 181, 181) !important; */
+    color: red;
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-#news_letter > span > input::-webkit-input-placeholder {
+#newsletter > span > input::-webkit-input-placeholder {
     font-size: .9vw;
     line-height: 1.1vw;
 }
@@ -236,17 +241,17 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
         margin-top: 0;
     }
 
-    #news_letter{
+    #newsletter{
         max-width: 55vw;
         height: auto;
     }
 
-    #news_letter > input {
+    #newsletter > input {
         width: 40vw;
         background-color: transparent;
     }
 
-    #news_letter > button {
+    #newsletter > button {
         padding: 0px;
         padding-top: 4px;
         padding-right: 4px;

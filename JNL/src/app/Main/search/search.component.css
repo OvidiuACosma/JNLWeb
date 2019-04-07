@@ -222,6 +222,7 @@ li {
 .menu-button-img {
     margin: auto;
     min-width: 30px;
+    min-height: 30px;
     width: 2.777vw;
     height: 2.777vw;
 }

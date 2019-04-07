@@ -20,12 +20,7 @@ export class AppComponent {
   onWindowScroll() {
     const offset = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
     // console.log('Scroll Y offset: ', offset);
-   if (offset >= 200) {
-     this.scrollTopVisible = true;
-     console.log('ScrollTopVis: ', this.scrollTopVisible);
-    } else {
-      this.scrollTopVisible = false;
-    }
+   offset >= 200 ? this.scrollTopVisible = true : this.scrollTopVisible = false;
   }
 
   scrollTop() {
