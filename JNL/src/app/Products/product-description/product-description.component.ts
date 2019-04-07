@@ -41,17 +41,26 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   getMaterials(part: string) {
-    const matList: string[] = [];
-    this.productDesc.forEach(item => {
-      if (item.partNameFr === part) {
-        matList.push((item.materialNameFr || '').toString());
-      }
-    });
-    this.materials = _.uniq(matList);
-    if (this.materials.length > 0) {
-      const mats =  this.materials.join(', ');
-      return mats;
-    } else { return ''; }
+    const matList = new Set(this.productDesc.filter(f => f.partNameFr === part)
+      .map(m => m.materialNameFr));
+      return matList;
+    // const matList: string[] = [];
+    // this.productDesc.forEach(item => {
+    //   if (item.partNameFr === part) {
+    //     matList.push((item.materialNameFr || '').toString());
+    //   }
+    // });
+    // this.materials = _.uniq(matList);
+    // if (this.materials.length > 0) {
+    //   const mats =  this.materials.join(', ');
+    //   return mats;
+    // } else { return ''; }
+  }
+
+  getFinitions(part: string, material: string) {
+    const finList = new Set(this.productDesc.filter(f => f.partNameFr === part && f.materialNameFr === material)
+        .map(c => c.finisageNameFr));
+    return finList;
   }
 
   toggleElement() {

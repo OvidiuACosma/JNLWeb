@@ -8,7 +8,11 @@
     <p>{{productDesc[0].descriptionFr}}</p>
     <div class="parts" *ngFor="let part of parts"><b>{{part}}:</b>
       <div class="materials">
-       <span>{{getMaterials(part)}}</span>
+        <span *ngFor="let mat of getMaterials(part)">{{mat}} 
+          <div class="finitions" *ngIf="getFinitions(part, mat)">
+            <span *ngFor="let fin of getFinitions(part, mat)">-{{fin}}- </span>
+          </div>
+        </span>
       </div>
     </div> 
   </div>

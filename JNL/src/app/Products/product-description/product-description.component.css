@@ -26,6 +26,12 @@ h2 {
     margin-bottom: .5vw;
 }
 
+.finitions {
+    font-family: Helvetica-light;
+    font-size: .9vw;
+    font-style: italic;
+}
+
 #container {
     /* padding-top: 30px; */
     display: flex;
