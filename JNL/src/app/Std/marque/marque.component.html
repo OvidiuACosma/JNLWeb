@@ -14,16 +14,16 @@
       <h2>{{text.sectionTitle}}</h2>
       <p [innerHTML]="text.sectionText"></p>
       <div class="home-links-flex">
-        <span class="home_links">VOIR TOUS LES PRODUITS</span>
-        <span class="home_links">TÉLÉCHARGER LE CATALOGUE</span>
-        <span class="home_links">DEMANDER LA LISTE DE PRIX</span>
+        <span class="home_links">{{text.link1}}</span>
+        <span class="home_links">{{text.link2}}</span>
+        <span class="home_links">{{text.link3}}</span>
       </div>
     </div>
   </div>
 
   <div id="les_produits" class="main_divs">
       <div id="produits_main">
-          <h1>LES PRODUITS</h1>
+          <h1>{{text.productsTitle}}</h1>
           <div id='carousel-custom' class='carousel slide carousel-produits' data-ride='carousel' data-interval="3000">
             
           <!-- Indicators -->
@@ -41,7 +41,7 @@
                       <img src='{{item}}' alt='Vanhamme Collection' class="slide-image">
                     </div>
                     <p class="voir">
-                      <span class="home_links" (click)="navigateTo('marques', 'jnl')">VOIR TOUS LES {{text.productCategories[k]}}</span>
+                      <span class="home_links" (click)="navigateTo('marques', 'jnl')">{{text.discover}} {{text.productCategories[k]}}</span>
                     </p>
                   </div>
                 </div>
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-      <h6>DÉCOUVREZ LES AUTRES MARQUES</h6>
+      <h6>{{text.autres}}</h6>
       <div class="flex-div" id="autres" *ngIf="othersLink">
         <span *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
           {{othersText[getOthers(i)] | uppercase}}
@@ -88,15 +88,15 @@
       <div id="other-links">
         <div (click)="navigateTo('jnlGroup')">
           <img  alt="JNL Collection" src="assets/Images/Marque/MK_groupe.jpg">
-          <h4>LE GROUPE</h4>
+          <h4>{{text.groupe}}</h4>
         </div>
         <div  (click)="navigateTo('savoirFaire')">
           <img  alt="JNL Collection" src="assets/Images/Marque/MK_savoir.jpg">
-          <h4>LE SAVOIR-FAIRE</h4>
+          <h4>{{text.savoir}}</h4>
         </div>
         <div  (click)="navigateTo('services')">
           <img  alt="JNL Collection" src="assets/Images/Marque/MK_services.jpg">
-          <h4>LES SERVICES</h4>
+          <h4>{{text.services}}</h4>
         </div>
       </div>
     </div>

@@ -1,10 +1,24 @@
 [
     {
         "EN": {
-            "title": "BRANDS"
+            "title": "BRANDS",
+
+            "JNL": "Contemporary Classicism",
+            "Vanhamme": "A Passion For Heritage",
+            "Ungaro": "Dress your interiors in haute couture…",
+            "Luz": "The elegance of understated style",
+
+            "decouvrir": "Discover the brand"
         },
         "FR": { 
-            "title": "LES COLLECTIONS"
+            "title": "LES COLLECTIONS",
+
+            "JNL": "Le Classicisme Contemporain",
+            "Vanhamme": "La passion en héritage",
+            "Ungaro": "La haute couture habille vos intérieurs",
+            "Luz": "L’élégance d’un style discret",
+
+            "decouvrir": "Decouvrir la Collection"
         }
     }
 ]
