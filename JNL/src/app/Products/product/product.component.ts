@@ -32,23 +32,23 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-              private productsService: ProductsService,
-              private router: Router,
-              private dataex: DataExchangeService,
-              private textService: TranslationService,
-              private archiveService: ArchiveService) { }
+    private productsService: ProductsService,
+    private router: Router,
+    private dataex: DataExchangeService,
+    private textService: TranslationService,
+    private archiveService: ArchiveService) { }
 
   ngOnInit() {
-    this.activatedRoute.paramMap
-    .subscribe(params => {
-      this.product = { brand: params.get('b'), family: params.get('f'), model: params.get('m')};
-        this.getProductData(this.product);
-      });
-
     this.dataex.currentLanguage
       .subscribe(lang => {
         this.language = lang || 'EN';
         this.getText(lang);
+
+        this.activatedRoute.paramMap
+          .subscribe(params => {
+            this.product = { brand: params.get('b'), family: params.get('f'), model: params.get('m') };
+            this.getProductData(this.product);
+          });
       });
 
     // activate carousel
@@ -62,7 +62,7 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
       .subscribe(desc => {
         this.prodDesc = desc;
         this.brand = this.prodDesc.brand;
-        this.family = this.prodDesc.familyFr;
+        if (this.language === 'FR') { this.family = this.prodDesc.familyFr; } else { this.family = this.prodDesc.familyEn; }
         this.model = this.prodDesc.model;
         this.getHeroImages();
       });
@@ -70,9 +70,11 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
 
   getHeroImages() {
     // TODO: get from API
-    for (let i = 0; i <= 3 ; i++) {
-      this.heroImages[i] = { src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.product.model}_${i}.jpg`,
-                           alt: `${this.product.brand} ${this.product.family} ${this.product.model}`};
+    for (let i = 0; i <= 3; i++) {
+      this.heroImages[i] = {
+        src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.product.model}_${i}.jpg`,
+        alt: `${this.product.brand} ${this.product.family} ${this.product.model}`
+      };
     }
   }
 
