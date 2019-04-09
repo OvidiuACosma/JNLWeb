@@ -15,10 +15,11 @@ h2 {
 h3 {
     text-transform: uppercase;
     font-family: Helvetica-Light;
-    color: #DBBB76;
+    /* color: #DBBB76; */
     font-size: 1.4vw;
     margin-bottom: 1.5vw;
     text-align: center;
+    margin-top: .6vw;
 }
 
 h4 {

@@ -22,7 +22,8 @@
             "step5Title": "Maintenance",
             "step5Text": "To ensure increased longevity, each creation benefits from a quality after-sales service. The workshops are committed to maintaining, reinforcing or repairing the furniture to better provide for a second life.",
             
-            "stepsText": "Each step in the manufacturing process may be subject to a custom request for a custom result.",
+            "servicesText1": "En étroite collaboration avec le service après-vente, ce département vous propose une cure de jouvence complète pour votre modèle préférée. Re-garnissage, re-tapissage et retouches diverses lui donneront une seconde vie.",
+            "servicesText2": "Le département design quant à lui, vous propose un service « sur mesure » pour répondre aux exigences et à la configuration de vos lieux de vie.",
 
             "quote": "« Nous avons la profonde conviction que l’artisanat du luxe ne doit pas être réservé à une élite.<br> Il est crucial pour l’avenir qu’il se développe et que tous nos efforts soient tournés vers la transmission du beau et du bien fait » ",
             
@@ -33,13 +34,13 @@
             "pic5": "Lorem ipsum dolor sit amet 5.",
             "pic6": "Lorem ipsum dolor sit amet 6.",
 
-            "services": "SERVICES"
+            "services": "services"
 
         },
         "FR": { 
             "title": "SAVOIR-FAIRE",
 
-            "ateliers": "Les ateliers",
+            "ateliers": "La Manufacture",
             "fabrication": "La fabrication",
 
             "subText": "ENTRE TRADITION ET INNOVATION : UNE HISTOIRE DE CRÉATION.",
@@ -50,16 +51,17 @@
             "steps": "Cinq étapes clés",
             "step1Title": "Le dessin",
             "step1Text": "Les lignes tracent les souhaits du client et posent les bases du projet.",
-            "step2Title": "The matériaux",
+            "step2Title": "Les matériaux",
             "step2Text": "Après une recherche approfondie, l’équipe créative propose une première sélection d’inspiration parmi les tissus, placages et métaux qui harmoniseront l’ambiance de vos intérieurs.",
-            "step3Title": "Le protoypage",
+            "step3Title": "Le prototypage",
             "step3Text": "Cette opération consiste à réaliser un prototype. Celui-ci sert à évaluer l'intérêt des idées proposées et les choix esthétiques qui seront appliqués au modèle final.",
             "step4Title": "Le modèle final",
             "step4Text": "Après un dernier contrôle qualité sévère, le modèle abouti est certifié conforme. Il quitte alors la manufacture pour être ensuite acheminé chez le client.",
-            "step5Title": "L'accompagnament",
+            "step5Title": "L'accompagnement",
             "step5Text": "Le service après-vente accompagne chacune de nos créations. Grâce à ce service par lequel les meilleurs conseils d’entretien sont transmis au client, chaque modèle traverse les décennies s’en en accuser les outrages.",
             
-            "stepsText": "En étroite collaboration avec le service après-vente, ce département vous propose une cure de jouvence complète pour votre modèle préférée. Re-garnissage, re-tapissage et retouches diverses lui donneront une seconde vie.<br><br>Le département design quant à lui, vous propose un service « sur mesure » pour répondre aux exigences et à la configuration de vos lieux de vie.",
+            "servicesText1": "En étroite collaboration avec le service après-vente, ce département vous propose une cure de jouvence complète pour votre modèle préférée. Re-garnissage, re-tapissage et retouches diverses lui donneront une seconde vie.",
+            "servicesText2": "Le département design quant à lui, vous propose un service « sur mesure » pour répondre aux exigences et à la configuration de vos lieux de vie.",
 
             "quote": "« Nous avons la profonde conviction que l’artisanat du luxe ne doit pas être réservé à une élite.<br> Il est crucial pour l’avenir qu’il se développe et que tous nos efforts soient tournés vers la transmission du beau et du bien fait » ",
 
@@ -70,7 +72,7 @@
             "pic5": "Lorem ipsum dolor sit amet 5.",
             "pic6": "Lorem ipsum dolor sit amet 6.",
 
-            "services": "LES SERVICES"
+            "services": "les services"
         }
     }
 ]

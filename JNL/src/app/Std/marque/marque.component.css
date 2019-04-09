@@ -32,6 +32,7 @@ h6 {
     font-family: Helvetica-Light;
     font-size: 1.2vw;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .marque-main {
@@ -118,8 +119,14 @@ h6 {
     text-transform: capitalize;
 }
 
-.heritage > div > p > a {
-    font-size: 0.6em;
+.heritage > div > div > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 13vw;
+    height: 3.5vw;
+    margin: auto;
 }
 
 .full-image {
@@ -305,12 +312,12 @@ h6 {
 .flex-div > div > p {
     /* margin-top: 1.7vw; */
     font-family: Helvetica-Light;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     padding: 1.3vw;
     width: 31.1vw;
     margin: auto;
     margin-top: 0;
-    line-height: 1.33vw;
+    line-height: 1.66vw;
 }
 
 .flex-div > div > div > span {

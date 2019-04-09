@@ -9,12 +9,13 @@ h2 {
     font-family: Helvetica;
     font-size: 3.5vw;
     text-align: center;
+    text-transform: capitalize;
 }
 
 h3 {
     text-transform: uppercase;
     font-family: Helvetica-Light;
-    color: #DBBB76;
+    /* color: #DBBB76; */
     font-size: 1.38vw;
     margin-bottom: 1.5vw;
     text-align: center;
@@ -115,7 +116,7 @@ video {
 
 .ateliers-flex > div > div {
     font-family: Helvetica-Light;
-    font-size: 1.8vw;
+    font-size: 1.3vw;
 } 
 .ateliers-flex > div > div > span {
     font-family: Helvetica-Light;
@@ -131,7 +132,7 @@ video {
     margin-top: 0px !important;
     margin-bottom: 2vw;
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     text-align: left;
 } 
 
@@ -265,14 +266,17 @@ video {
 }
 
 #services > h4 {
-    margin-top: 0px;
+    font-family: Helvetica-Light;
+    width: 59.7vw;
+    margin-bottom: 1.75vw;
+    font-size: 1.42vw;
 }
 
 #marques_list {
     margin: auto;
     font-family: Helvetica-Light;
     font-size: 1em;
-    width: 32vw;
+    width: 36vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -285,6 +289,8 @@ video {
 
 #marques_list > a {
     margin: auto;
+    margin-left: 1vw;
+    margin-right: 1vw;
     font-size: 1.8vw;
     line-height: 2vw;
     left: 0;

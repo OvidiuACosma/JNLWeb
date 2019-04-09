@@ -25,12 +25,11 @@
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic6.jpg">
 
-                    <h5>{{text.pic1}}</h5>
+                    <!-- <h5>{{text.pic1}}</h5> -->
                 </div>
 
                 <div>
                     <p [innerHTML]="text.quote"></p>
-                    <br>
                     <span>DOMINIQUE WAXMANN, CEO</span>
                 </div>
 
@@ -43,7 +42,7 @@
 
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic1.jpg">
-                    <h5>{{text.pic2}}</h5>
+                    <!-- <h5>{{text.pic2}}</h5> -->
                 </div>
             </div>
         </div>
@@ -53,12 +52,12 @@
             <div>
                 <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic9.jpg">
 
-                <h5>{{text.pic3}}</h5>
+                <!-- <h5>{{text.pic3}}</h5> -->
             </div>   
             <div>
                 <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic10.jpg">
 
-                <h5>{{text.pic4}}</h5>
+                <!-- <h5>{{text.pic4}}</h5> -->
             </div>
         </div>
 
@@ -68,13 +67,13 @@
             <div>
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic5.jpg">
-                    <h5>{{text.pic5}}</h5>
+                    <!-- <h5>{{text.pic5}}</h5> -->
                 </div>
             </div>
             <div>
                 <div>
                     <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic3.jpg">
-                    <h5>{{text.pic6}}</h5>
+                    <!-- <h5>{{text.pic6}}</h5> -->
                 </div>
             </div>
         </div>
@@ -183,12 +182,14 @@
             </div>
             <!--CAROUSEL-->
 
-            <h4 [innerHTML]="text.stepsText"></h4>
+            
 
-        <div id="services">
-            <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic11.jpg" (click)="navigateTo('services')">
-            <h4>{{text.services}}</h4>
-        </div>
+            <div id="services">
+                <h2 (click)="navigateTo('services')">{{text.services}}</h2>
+                <h4 [innerHTML]="text.servicesText1"></h4>
+                <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic11.jpg" (click)="navigateTo('services')">
+                <h4 [innerHTML]="text.servicesText2" style="margin-top: 1.5vw"></h4>
+            </div>
         </div>
     </div>
 </div>

@@ -117,7 +117,8 @@ button
 }
 
 .gold {
-    color: #DBBB76;
+    /* color: #DBBB76; */
+    color: inherit;
 }
 
 .slide-image {
