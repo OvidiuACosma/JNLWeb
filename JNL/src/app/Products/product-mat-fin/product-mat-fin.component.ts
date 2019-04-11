@@ -42,6 +42,7 @@ export class ProductMatFinComponent implements OnInit {
       .subscribe(desc => {
         this.prodDesc = desc;
         this.getMatCategories();
+        console.log('DESC: ', this.prodDesc);
       });
     // get Tissus
     this.productsService.getTissus()
