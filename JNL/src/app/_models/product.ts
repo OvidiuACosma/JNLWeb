@@ -12,3 +12,11 @@ export interface ProductEF {
     familyEn: string;
     model: string;
 }
+
+export interface ProductHeroImage {
+    brand: string;
+    imageId: number;
+    imageIndex: number;
+    imageName: string;
+    product: string;
+}

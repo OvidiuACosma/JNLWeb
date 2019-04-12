@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
-import { Product, Img } from '../../_models';
+import { Product, Img, ProductHeroImage} from '../../_models';
 declare var $: any;
 
 @Component({
@@ -12,7 +12,7 @@ declare var $: any;
 export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
 
   public detail = 'description';
-  public product_id: string;
+  // public product_id: string;
   public prodDesc: any;
   public brand = '';
   public family = '';
@@ -20,6 +20,8 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
+  public prodHeroImages: ProductHeroImage[];
+  public imgs: string[] = [];
 
   scroller = true;
   language: string;
@@ -67,13 +69,19 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
   }
 
   getHeroImages() {
-    // TODO: get from API
-    for (let i = 0; i <= 3; i++) {
-      this.heroImages[i] = {
-        src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.product.model}_${i}.jpg`,
-        alt: `${this.product.brand} ${this.product.family} ${this.product.model}`
-      };
-    }
+    this.productsService.getProdHeroImages(this.product)
+      .subscribe(imgDesc => {
+        this.prodHeroImages = imgDesc;
+        this.imgs = this.prodHeroImages.sort(function (a, b) {
+          return a.imageIndex - b.imageIndex;
+        }).map(img => img.imageName);
+        for (let i = 0; i < this.imgs.length; i++) {
+          this.heroImages[i] = {
+            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.imgs[i]}`,
+            alt: `${this.product.brand} ${this.product.family} ${this.product.model}`
+          };
+        }
+      });
   }
 
   setDetail(index: number) {
