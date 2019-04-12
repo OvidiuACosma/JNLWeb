@@ -42,7 +42,7 @@ export class ProductMatFinComponent implements OnInit {
       .subscribe(desc => {
         this.prodDesc = desc;
         this.getMatCategories();
-        console.log('DESC: ', this.prodDesc);
+        // console.log('DESC: ', this.prodDesc);
       });
     // get Tissus
     this.productsService.getTissus()
@@ -82,7 +82,7 @@ export class ProductMatFinComponent implements OnInit {
     this.matCat = _.uniq(matList.sort(function (a, b) {
       return a - b;
     }));
-    console.log('CTGS: ', this.matCat);
+    // console.log('CTGS: ', this.matCat);
     this.getMatFinByCtg();
   }
 
