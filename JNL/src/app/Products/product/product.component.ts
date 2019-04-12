@@ -1,9 +1,7 @@
-import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
 import { Product, Img } from '../../_models';
-import { switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 declare var $: any;
 
 @Component({
@@ -77,20 +75,6 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
       };
     }
   }
-
-  // ngAfterViewChecked() {
-  //   this.route.fragment.subscribe(fragment => {
-  //     if (fragment) {
-  //       const element = document.getElementById(fragment);
-  //       if (element && this.scroller === true) {
-  //         element.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  //       }
-  //       this.scroller = true;
-  //     } else if (this.scroller === true) {
-  //       // window.scrollTo(0, 0);
-  //     }
-  //   });
-  // }
 
   setDetail(index: number) {
     this.detail = this.tabList[index];
