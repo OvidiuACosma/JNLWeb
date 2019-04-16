@@ -59,6 +59,10 @@ export class TranslationService {
     return this.http.get(`${this.urlAssets}/Products/favorites.json`);
   }
 
+  public getTextProductStandard(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Products/product-description.json`);
+  }
+
   public getTextLegal(): Observable<any> {
     return this.http.get(`${this.urlAssets}/Main/legal.json`);
   }

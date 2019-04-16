@@ -22,10 +22,12 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
   public heroImages: Img[] = [];
   public prodHeroImages: ProductHeroImage[];
   public imgs: string[] = [];
+  public imgCount = 0;
 
   scroller = true;
   language: string;
   text: any;
+  stdText: any;
   selected = [0, 0, 0, 0, 0];
   country: any;
   countryName: any;
@@ -42,7 +44,7 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
     this.dataex.currentLanguage
       .subscribe(lang => {
         this.language = lang || 'EN';
-        this.getText(lang);
+        this.getStdText(this.language);
 
         this.activatedRoute.paramMap
           .subscribe(params => {
@@ -75,6 +77,7 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
         this.imgs = this.prodHeroImages.sort(function (a, b) {
           return a.imageIndex - b.imageIndex;
         }).map(img => img.imageName);
+        this.imgCount = this.imgs.length;
         for (let i = 0; i < this.imgs.length; i++) {
           this.heroImages[i] = {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.imgs[i]}`,
@@ -88,17 +91,20 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
     this.detail = this.tabList[index];
   }
 
-  getText(lang: string) {
-    this.textService.getTextFavorites()
+  getStdText(lang: string) {
+    this.textService.getTextProductStandard()
+      .subscribe(data => {
+        const resources = data[0];
+        this.stdText = resources[lang.toUpperCase()];
+      });
+
+      // standard text for the form
+      this.textService.getTextFavorites()
       .subscribe(data => {
         const res = data[0];
-        this.getLanguageText(res);
+        this.text = res[lang.toUpperCase()];
       });
     this.getCountries();
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
   }
 
   // archive country list

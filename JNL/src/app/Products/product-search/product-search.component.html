@@ -35,7 +35,7 @@
     <div class="products">
       <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
       <ul class="list">
-        <cdk-virtual-scroll-viewport itemSize="30">
+        <cdk-virtual-scroll-viewport itemSize="30" maxBufferPx="40000">
           <div class="flex-div">
           <ng-container *cdkVirtualFor="let n of productsFiltered">
             <li> 

@@ -38,7 +38,7 @@
 
         <!-- TISSUS TAB------------------------->
         <div class="tab-pane fade show active" id="tissu" role="tabpanel" aria-labelledby="tissu-tab">
-          <cdk-virtual-scroll-viewport itemSize="30" class="example-viewport">
+          <cdk-virtual-scroll-viewport itemSize="30" maxBufferPx="4000"class="example-viewport">
             <div class="scroll-container">
               <ng-container *cdkVirtualFor="let item of tissus" class="example-item">
                 <div class="scroll-item" (click)="sendItemToModal(item)" data-toggle="modal"

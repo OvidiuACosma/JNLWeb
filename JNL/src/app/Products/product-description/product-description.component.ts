@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataExchangeService, ProductsService } from '../../_services';
+import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 // import * as _ from 'lodash';
 import { Product } from '../../_models';
 
@@ -16,8 +16,10 @@ export class ProductDescriptionComponent implements OnInit {
   public materials: string[] = [];
   toggle = false;
   language: string;
+  stdText: any;
 
   constructor(private dataex: DataExchangeService,
+    private textService: TranslationService,
     private productsService: ProductsService) { }
 
   ngOnInit() {
@@ -25,7 +27,7 @@ export class ProductDescriptionComponent implements OnInit {
     this.dataex.currentLanguage
       .subscribe(lang => {
         this.language = lang || 'EN';
-        // this.getText(lang);
+        this.getStdText(this.language);
 
         this.productsService.getProductDesc(this.product)
           .subscribe(desc => {
@@ -40,14 +42,15 @@ export class ProductDescriptionComponent implements OnInit {
       });
   }
 
+  getStdText(lang: string) {
+    this.textService.getTextProductStandard()
+      .subscribe(data => {
+        const resources = data[0];
+        this.stdText = resources[lang.toUpperCase()];
+      });
+  }
+
   getParts() {
-    /*const partsList: any[] = [];
-    this.productDesc.forEach(item => {
-      if (item.partNameFr) {
-        partsList.push(item.partNameFr);
-      }
-    });
-    this.parts = _.uniq(partsList); */
     switch (this.language.toLowerCase()) {
       case 'fr': {
         this.parts = new Set(this.productDesc.map(m => m.partNameFr));
