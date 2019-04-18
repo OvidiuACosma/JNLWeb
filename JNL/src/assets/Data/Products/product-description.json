@@ -5,7 +5,7 @@
             "addToFavorites": "Add to Favorites",
             "print": "Print",
             "description": "Description & <br> Technical Info",
-            "matFin": "Materials & Finishes",
+            "matFin": "Materials <br> & Finishes",
             "drawings": "Technical Drawings",
             "downloads": "Downloads"
 
@@ -15,8 +15,8 @@
             "priceListRequest": "Price List Request",
             "addToFavorites": "Add to Favorites",
             "print": "Print",
-            "description": "Description & Technical Info",
-            "matFin": "Materials & Finishes",
+            "description": "Description & <br> Technical Info",
+            "matFin": "Materials <br> & Finishes",
             "drawings": "Technical Drawings",
             "downloads": "Downloads"
         }

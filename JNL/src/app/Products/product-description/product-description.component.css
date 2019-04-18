@@ -11,6 +11,7 @@ h2 {
     display: block;
 }
 
+
 .arrow {
     display: none;
 }
@@ -27,10 +28,58 @@ h2 {
 }
 
 .finitions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     font-family: Helvetica-light;
-    font-size: .9vw;
+    font-size: .7vw;
     font-style: italic;
+    cursor: default !important;
+    color: initial !important;
 }
+
+.pointer:hover {
+    cursor: pointer;
+    color: #DBBB76;
+}
+
+.fin {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.samples {
+    width: 80px;
+    height: 80px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* close button of modal */
+.close {
+    margin-left: 0px !important;
+}
+
+.modal-content {
+    text-align: center; 
+}
+
+/* workaround to fix bootstrap`s modal bug in Angular
+   Without this fix the dark background will cover the modal. */
+.modal {
+    background-color: rgba(127, 127, 127, 0.5); 
+  }
+
+.modal-backdrop {
+    position: relative;
+  }
+
+/****************************************************************/
 
 #container {
     /* padding-top: 30px; */
