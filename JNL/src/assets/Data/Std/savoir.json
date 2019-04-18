@@ -3,27 +3,27 @@
         "EN": {
             "title": "KNOW-HOW",
 
-            "ateliers": "Manufactory",
+            "ateliers": "Ateliers",
             "fabrication": "Production",
 
-            "subText": "Between tradition and innovation : a story of passion",
-            "firstText": "At the heart of their own European workshops, the JNL group has blown a breath of exclusivity over its manufacturing process while attracting great names in architecture; thanks to their talent for tailor-made design and development of one-of-a-kind pieces.",
-            "secondText": "Qu’ils soient garnisseurs, ébénistes, sculpteurs, ferronniers d’art ou techniciens, les artisans du groupe JNL perpétuent l’art de ces métiers de mains, léguant un cachet unique à chacune des créations. Cette union entre savoir-faire séculaire et nouvelles technologies à la pointe du progrès, permet d’éditer des collections très abouties en parfaite symbiose avec l’aire du temps.",
+            "subText": "Tradition meets innovation : a story of design",
+            "firstText": "At JNL’s very own ateliers, artisans work with state of the art technologies as they stay true to their craft, passed down through the generations. Each creation is inspired by the execution of « fine work, » a language of passion spoken the human hand. ",
+            "secondText": "Whether upholsterer, woodworker, sculptor, blacksmith or technician, JNL group’s artisans drive forward the realm of the handmade, inscribing a unique quality to each design. This unparalleled combination of ancient craftsmanship and technology at the height of progress makes for sophisticated collections in perfect alignment with their time.  ",
 
-            "steps": "5 STAGES IN MANUFACTURING",
-            "step1Title": "The design",
-            "step1Text": "The first lines of the project are drawn according to the client’s wishes and lay the foundations for the creative process.",
-            "step2Title": "The materials",
-            "step2Text": "Guided by inspirations and references provided beforehand, JNL researches and then hand selects the raw materials and fabrics that will shape the creation.",
-            "step3Title": "Protoyping",
-            "step3Text": "A highly experimental phase, this stage in the process is necessary to adjust the work depending on the volume and strength of certain materials.",
-            "step4Title": "The final model",
-            "step4Text": "The final piece of furniture is tested and approved by its artisans.  It then leaves the workshop to be sent to the customer.",
-            "step5Title": "Maintenance",
-            "step5Text": "To ensure increased longevity, each creation benefits from a quality after-sales service. The workshops are committed to maintaining, reinforcing or repairing the furniture to better provide for a second life.",
+            "steps": "Five key stages",
+            "step1Title": "Design",
+            "step1Text": "The client’s desires take shape as lines that lay the groundwork for the project. ",
+            "step2Title": "Materials",
+            "step2Text": "Following an in-depth research, our creative team presents an initial selection of inspirations, including fabrics, veneers, and metals that will harmonize your interiors. ",
+            "step3Title": "Prototyping",
+            "step3Text": "This phase involves creating a prototype. It will allow us to evaluate the quality of the proposed ideas and which aesthetic choices will be applied to the final model. ",
+            "step4Title": "Final Model",
+            "step4Text": "After an in-depth and strict quality control, the finalized model is labeled in accordance with company standards. It then leaves the workshop to be sent to the client.  ",
+            "step5Title": "Customer Service",
+            "step5Text": "Post-sale customer service comes with every design. Thanks to this service, through which the client receives advice regarding the best maintenance methodologies, each model will last through the decades in an unassuming manner. ",
             
-            "servicesText1": "En étroite collaboration avec le service après-vente, ce département vous propose une cure de jouvence complète pour votre modèle préférée. Re-garnissage, re-tapissage et retouches diverses lui donneront une seconde vie.",
-            "servicesText2": "Le département design quant à lui, vous propose un service « sur mesure » pour répondre aux exigences et à la configuration de vos lieux de vie.",
+            "servicesText1": "In close collaboration with customer service, this department offers a full rejuvenation of your favorite creation. Re-upholstering, re-carpeting or other touch-ups will give your model a second life. ",
+            "servicesText2": "The design department, on the other hand, offers a « made to measure » service to assist you in all expectations and configurations of your living spaces. ",
 
             "quote": "« Nous avons la profonde conviction que l’artisanat du luxe ne doit pas être réservé à une élite.<br> Il est crucial pour l’avenir qu’il se développe et que tous nos efforts soient tournés vers la transmission du beau et du bien fait » ",
             
@@ -40,7 +40,7 @@
         "FR": { 
             "title": "SAVOIR-FAIRE",
 
-            "ateliers": "La Manufacture",
+            "ateliers": "Les Ateliers",
             "fabrication": "La fabrication",
 
             "subText": "ENTRE TRADITION ET INNOVATION : UNE HISTOIRE DE CRÉATION.",
