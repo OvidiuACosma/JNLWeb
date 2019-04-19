@@ -69,6 +69,30 @@ h2 {
     text-align: center; 
 }
 
+.modal-arrow {
+    height: 3vw;
+    width: 1.5vw;
+    margin-top: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.whiteSpace {
+    flex: 1;
+}
+
+.cardContainer {
+    flex: 4;
+}
+
 /* workaround to fix bootstrap`s modal bug in Angular
    Without this fix the dark background will cover the modal. */
 .modal {
