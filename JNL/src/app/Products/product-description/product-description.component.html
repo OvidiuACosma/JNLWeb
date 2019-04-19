@@ -13,7 +13,7 @@
           <div class="finitions" *ngIf="getFinitions(part, mat)">
             <div *ngFor="let fin of getFinitions(part, mat)">
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
-                <div class="fin" (click)="sendItemToModal(fin)" data-toggle="modal" data-target="#finisageModal">
+                <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal" data-target="#finisageModal">
                   <a>
                     <img id="fin-img" *ngIf="testErable" class="samples"
                       src="assets\Images\Products\JNL Collection\Samples\{{fin.img}}">
@@ -30,8 +30,8 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal fade" id="finisageModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-  aria-hidden="true" *ngIf="finisage" (click)="closeModal()" data-backdrop="false">
+<div class="modal fade" id="finisageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  *ngIf="finisage" (click)="closeModal()" data-backdrop="false">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -45,14 +45,13 @@
       </div>
       <div class="modal-body flex-container">
         <div class="whiteSpace">
-          <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
         </div>
         <div class="cardContainer">
           <div class="card">
-            <img
-              src="assets\Images\Products\JNL Collection\Samples\Print\{{finisage.img}}"
-              class="card-img-top" alt="...">
-              <!--
+            <img src="assets\Images\Products\JNL Collection\Samples\Print\{{finisage.img}}" class="card-img-top"
+              alt="...">
+            <!--
             <div class="card-body">
               <p class="card-text">
                 <ul style="list-style-type:none">
@@ -68,7 +67,7 @@
           </div>
         </div>
         <div class="whiteSpace">
-          <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
         </div>
       </div>
     </div>

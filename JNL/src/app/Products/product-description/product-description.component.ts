@@ -16,10 +16,16 @@ export class ProductDescriptionComponent implements OnInit {
   public materials: string[] = [];
   public testErable = false;
   public showLevel = null;
-  public finisage: any[];
+  public finisage: Finisage;
+  // public modalActive = false;
   toggle = false;
   language: string;
   stdText: any;
+
+  // data used in modal
+  public currentFinList: Finisage[] = [];
+  public index: number;
+
 
   constructor(private dataex: DataExchangeService,
     private textService: TranslationService,
@@ -135,8 +141,24 @@ export class ProductDescriptionComponent implements OnInit {
     return this.showLevel === idx;
   }
 
-  sendItemToModal(fin: any) {
+  sendItemToModal(fin: any, finlist: Finisage[]) {
+    // this.modalActive = true;
+    this.currentFinList = finlist;
     this.finisage = fin;
+  }
+
+  navigate(direction: string) {
+    this.index = this.currentFinList.findIndex(i => i.name === this.finisage.name);
+    if (direction === 'previous') {
+      // this.index = (this.index - 1) % this.currentMatList.length;
+      this.index--;
+      if (this.index === -1) {
+        this.index = this.currentFinList.length - 1;
+      }
+    } else if (direction === 'next') {
+      this.index = (this.index + 1) % this.currentFinList.length;
+    }
+    this.finisage = this.currentFinList[this.index];
   }
 
   closeModal() {
