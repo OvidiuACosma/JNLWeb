@@ -20,3 +20,8 @@ export interface ProductHeroImage {
     imageName: string;
     product: string;
 }
+
+export interface Finisage {
+    name: string;
+    img: string;
+}

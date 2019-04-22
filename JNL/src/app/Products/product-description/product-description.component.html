@@ -6,14 +6,70 @@
   </div>
   <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'" *ngIf="productDesc">
     <p>{{productDesc[0].descriptionFr}}</p>
-    <div class="parts" *ngFor="let part of parts"><b>{{part}}:</b>
+    <div class="parts" *ngFor="let part of parts; let i = index;"><b>{{part}}:</b>
       <div class="materials">
-        <span *ngFor="let mat of getMaterials(part)">{{mat}} 
+        <span class="pointer" *ngFor="let mat of getMaterials(part); let i2 = index;"
+          (click)="toggleFin('idx'+i+'idx'+i2)">{{mat}}
           <div class="finitions" *ngIf="getFinitions(part, mat)">
-            <span *ngFor="let fin of getFinitions(part, mat)">-{{fin}}- </span>
+            <div *ngFor="let fin of getFinitions(part, mat)">
+              <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
+                <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal" data-target="#finisageModal">
+                  <a>
+                    <img id="fin-img" *ngIf="testErable" class="samples"
+                      src="assets\Images\Products\JNL Collection\Samples\{{fin.img}}">
+                  </a>
+                  <span>{{fin.name}}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </span>
       </div>
-    </div> 
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="finisageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  *ngIf="finisage" (click)="closeModal()" data-backdrop="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
+        <div>
+          <h4 class="modal-title" id="ModalLabel">{{finisage.name}}</h4>
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body flex-container">
+        <div class="whiteSpace">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
+        </div>
+        <div class="cardContainer">
+          <div class="card">
+            <img src="assets\Images\Products\JNL Collection\Samples\Print\{{finisage.img}}" class="card-img-top"
+              alt="...">
+            <!--
+            <div class="card-body">
+              <p class="card-text">
+                <ul style="list-style-type:none">
+                  <li><b>Name: </b><label>{{material.model}}</label></li>
+                  <li><b>Code: </b><label>{{material.codeProd}}</label></li>
+                  <li><b>Dimensions: </b><label>{{material.dimensions}}</label></li>
+                  <li><b>Martindale: </b><label>{{material.martindale}}</label></li>
+                  <li><b>Composition: </b></li>
+                  <li><label>{{material.compositionFR}}</label></li>
+                </ul>
+            </div>
+            -->
+          </div>
+        </div>
+        <div class="whiteSpace">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
+        </div>
+      </div>
+    </div>
   </div>
 </div>

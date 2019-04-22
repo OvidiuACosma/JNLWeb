@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-// import * as _ from 'lodash';
-import { Product } from '../../_models';
+import * as _ from 'lodash';
+import { Product, Finisage } from '../../_models';
 
 @Component({
   selector: 'app-product-description',
@@ -14,9 +14,18 @@ export class ProductDescriptionComponent implements OnInit {
   public productDesc: any[];
   public parts = new Set();
   public materials: string[] = [];
+  public testErable = false;
+  public showLevel = null;
+  public finisage: Finisage;
+  // public modalActive = false;
   toggle = false;
   language: string;
   stdText: any;
+
+  // data used in modal
+  public currentFinList: Finisage[] = [];
+  public index: number;
+
 
   constructor(private dataex: DataExchangeService,
     private textService: TranslationService,
@@ -92,24 +101,80 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   getFinitions(part: string, material: string) {
-    let finList = new Set();
-    switch (this.language.toLowerCase()) {
-      case 'fr': {
-        finList = new Set(this.productDesc.filter(f => f.partNameFr === part && f.materialNameFr === material)
-          .map(c => c.finisageNameFr));
-        break;
+    this.testErable = false; // testing...
+    if (material === 'Erable' || material === 'Maple') { this.testErable = true; }
+
+    const finList: Finisage[] = [];
+    this.productDesc.forEach(item => {
+      switch (this.language.toLowerCase()) {
+        case 'fr': {
+          if (item.partNameFr === part && item.materialNameFr === material) {
+            finList.push({
+              name: item.finisageNameFr,
+              img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
+            });
+          }
+          break;
+        }
+        case 'en': {
+          if (item.partNameEn === part && item.materialNameEn === material) {
+            finList.push({
+              name: item.finisageNameEn,
+              img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
+            });
+          }
+        }
       }
-      case 'en': {
-        finList = new Set(this.productDesc.filter(f => f.partNameEn === part && f.materialNameEn === material)
-          .map(c => c.finisageNameEn));
-      }
-    }
-    return finList;
+    });
+    return _.uniq(finList);
   }
 
+  toggleFin(index: string) {
+    if (this.isLevelShown(index)) {
+      this.showLevel = null;
+    } else {
+      this.showLevel = index;
+    }
+  }
+
+  isLevelShown(idx: string) {
+    return this.showLevel === idx;
+  }
+
+  sendItemToModal(fin: any, finlist: Finisage[]) {
+    // this.modalActive = true;
+    this.currentFinList = finlist;
+    this.finisage = fin;
+  }
+
+  navigate(direction: string) {
+    this.index = this.currentFinList.findIndex(i => i.name === this.finisage.name);
+    if (direction === 'previous') {
+      // this.index = (this.index - 1) % this.currentMatList.length;
+      this.index--;
+      if (this.index === -1) {
+        this.index = this.currentFinList.length - 1;
+      }
+    } else if (direction === 'next') {
+      this.index = (this.index + 1) % this.currentFinList.length;
+    }
+    this.finisage = this.currentFinList[this.index];
+  }
+
+  closeModal() {
+    const modal = document.getElementById('finisageModal');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        document.getElementById('fin-img').click();
+      }
+    };
+  }
+
+  // for mobile
   toggleElement() {
     this.toggle = !this.toggle;
   }
-
 }
 
