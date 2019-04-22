@@ -117,9 +117,26 @@ video {
     text-align: left;
 } 
 
+#services {
+    margin: auto;
+    width: 68vw;
+    /* height: 28vw; */
+    display: flex;
+    color: white;
+}
+
+/* #services > div:first-child {
+    margin: auto;
+    width: 87vw;
+    height: 48.5vw;
+    display: flex;
+    flex-direction: column;
+} */
+
 #services > img {
-    width: 72.63vw;
-    height: 28vw;
+    width: 68vw;
+    height: 44vw;
+    object-fit: contain;
 }
 
 #services_list {
@@ -347,22 +364,6 @@ select {
 #surMesure {
     margin-top: 5.75vw;
     margin-bottom: 5.48vw;
-}
-
-#services {
-    margin: auto;
-    width: 72.63vw;
-    height: 28vw;
-    display: flex;
-    color: white;
-}
-
-#services > div:first-child {
-    margin: auto;
-    width: 87vw;
-    height: 48.5vw;
-    display: flex;
-    flex-direction: column;
 }
 
 @media only screen and (max-width: 800px){
