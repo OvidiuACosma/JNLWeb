@@ -42,7 +42,19 @@ h2 {
     color: #DBBB76;
 }
 
+.pointer {
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+}
+
+.mat-arrow {
+    height: 0.8vw;
+    width: 0.8vw;
+    margin-bottom: 0.2vw;
+}
+
 .fin {
+    width: 90px;
     display: flex;
     flex-direction: column;
     text-align: center;

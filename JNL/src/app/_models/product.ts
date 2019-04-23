@@ -23,5 +23,6 @@ export interface ProductHeroImage {
 
 export interface Finisage {
     name: string;
+    material: string;
     img: string;
 }

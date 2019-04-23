@@ -8,8 +8,9 @@
     <p>{{productDesc[0].descriptionFr}}</p>
     <div class="parts" *ngFor="let part of parts; let i = index;"><b>{{part}}:</b>
       <div class="materials">
-        <span class="pointer" *ngFor="let mat of getMaterials(part); let i2 = index;"
-          (click)="toggleFin('idx'+i+'idx'+i2)">{{mat}}
+        <span *ngFor="let mat of getMaterials(part); let i2 = index;"
+          (click)="toggleFin('idx'+i+'idx'+i2)" [ngClass]="{'pointer': hasFinitions(part, mat)}">{{mat}}
+          <img *ngIf="hasFinitions(part, mat)" src="\assets\Images\Common\mobile_arrow_down.png" class="mat-arrow">
           <div class="finitions" *ngIf="getFinitions(part, mat)">
             <div *ngFor="let fin of getFinitions(part, mat)">
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
@@ -18,7 +19,7 @@
                     <img id="fin-img" *ngIf="testErable" class="samples"
                       src="assets\Images\Products\JNL Collection\Samples\{{fin.img}}">
                   </a>
-                  <span>{{fin.name}}</span>
+                  <span class="fin-text">{{fin.name}}</span>
                 </div>
               </div>
             </div>
@@ -37,7 +38,7 @@
       <div class="modal-header">
         <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
         <div>
-          <h4 class="modal-title" id="ModalLabel">{{finisage.name}}</h4>
+          <h4 class="modal-title" id="ModalLabel">{{finisage.material}} {{finisage.name}}</h4>
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
