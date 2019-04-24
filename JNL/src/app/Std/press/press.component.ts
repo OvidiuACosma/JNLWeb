@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService, DownloaderService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, DownloaderService, AltImgService } from 'src/app/_services';
 
 @Component({
   selector: 'app-press',
@@ -17,11 +17,15 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
   blob: any;
   url: any;
 
+  altIndex = 0;
+  page = 'press';
+
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private downloader: DownloaderService) { }
+              private downloader: DownloaderService,
+              private alt: AltImgService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -33,6 +37,8 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
       this.language = lang || 'EN';
       this.getText(lang);
     });
+
+    this.getAlt(this.page);
   }
 
   getText(lang: string) {
@@ -45,6 +51,20 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getAlt(page: string) {
+    this.alt.getAltImages()
+    .subscribe(data => {
+      const res = data[0];
+      this.alt[this.altIndex] = this.getAltText(res);
+      console.log('Alt' + this.alt[this.altIndex]);
+      this.altIndex++;
+    });
+  }
+
+  getAltText(res: any) {
+    this.alt = res[this.page];
   }
 
   download(marque: any, type: any) {

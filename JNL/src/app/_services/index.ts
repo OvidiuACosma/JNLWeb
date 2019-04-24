@@ -1,4 +1,5 @@
 export * from './alert.service';
+export * from './alt-img.service';
 export * from './authentication.service';
 export * from './config.service';
 export * from './data-exchange.service';
