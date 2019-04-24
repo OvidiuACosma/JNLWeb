@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductsService } from '../../_services';
+import {  DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { materialize } from 'rxjs/operators';
 import * as _ from 'lodash';
@@ -27,6 +27,8 @@ export class ProductMatFinComponent implements OnInit {
   public miroir: any[];
   public placages: any[];
   public materials: any[];
+  language: string;
+  stdText: any;
 
   // data used in modal
   public currentMatList: any[];
@@ -35,9 +37,17 @@ export class ProductMatFinComponent implements OnInit {
 
   toggleMat = false;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private dataex: DataExchangeService,
+              private textService: TranslationService,
+              private productsService: ProductsService) { }
 
   ngOnInit() {
+    this.dataex.currentLanguage
+      .subscribe(lang => {
+        this.language = lang || 'EN';
+        this.getStdText(this.language);
+      });
+
     this.productsService.getProductDesc(this.product)
       .subscribe(desc => {
         this.prodDesc = desc;
@@ -70,6 +80,14 @@ export class ProductMatFinComponent implements OnInit {
         this.materials = materials;
       });
       */
+  }
+
+  getStdText(lang: string) {
+    this.textService.getTextProductStandard()
+      .subscribe(data => {
+        const resources = data[0];
+        this.stdText = resources[lang.toUpperCase()];
+      });
   }
 
   getMatCategories() {
@@ -191,7 +209,7 @@ export class ProductMatFinComponent implements OnInit {
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target === modal) {
-       document.getElementById('thumbnail-img').click();
+        document.getElementById('thumbnail-img').click();
       }
     };
   }

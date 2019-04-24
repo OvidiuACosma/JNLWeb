@@ -3,11 +3,6 @@ html *
    font-family: Helvetica-Light !important;
 }
 
-hr {
-    border-width: 1px;
-    border-style: solid;
-}
-
 h1 {
     font-family: Helvetica;
     text-transform: uppercase;
@@ -112,7 +107,7 @@ button
 }
 
 
-#container {
+#top-container {
     padding-top: var(--search-bar-height);
 }
 
@@ -286,7 +281,6 @@ button
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
     margin-top: 3.5vw;
 }
 
@@ -294,6 +288,52 @@ button
     width: 100%;
     padding-left: 2vw;
     padding-right: 2vw;
+}
+
+/*  BOTTOM CAROUSEL ------------------- */
+
+
+.multi-item-carousel > .crsl-inner > .item {
+        transition: 500ms ease-in-out left;
+}
+
+.multi-item-carousel > .crsl-inner > .active > .left {
+          left: -33%;
+}
+.multi-item-carousel > .crsl-inner > .active > .right {
+          left: 33%;
+}
+      
+.multi-item-carousel > .carousel-control > .next {
+        left: 33%;
+      }
+.multi-item-carousel > .carousel-control > .prev {
+        left: -33%;
+      }
+   
+@media all and (transform-3d), (-webkit-transform-3d) {  
+        .multi-item-carousel > .crsl-inner > .item {
+          transition: 500ms ease-in-out left;
+          transition: 500ms ease-in-out all;
+          backface-visibility: visible;
+          transform: none!important;
+      }
+}
+
+     /*
+    
+    .carousel > .carousel-control {
+      &.left, &.right{
+        background-image: none;
+      }
+    } */
+  
+.test {
+    width: 30vw;
+    height: 300px;
+    object-fit: contain;
+    text-align: center;
+
 }
 
 @media only screen and (max-width: 800px){

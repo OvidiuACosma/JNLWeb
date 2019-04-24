@@ -1,4 +1,4 @@
-<div id="container">
+<div id="top-container">
   <div id="header" *ngIf="prodDesc">
     <h1>{{model}}</h1>
     <h4>{{brand}}</h4>
@@ -9,12 +9,11 @@
       <div class='carousel-item' *ngFor="let heroImage of heroImages; let i = index"
         [ngClass]="i === 0 ? 'item active' : 'item'">
         <div class="carousel-item-image">
-          <img [src]="heroImage.src" alt="{{heroImage.alt}}"
-            class="slide-image">
+          <img [src]="heroImage.src" alt="{{heroImage.alt}}" class="slide-image">
         </div>
       </div>
     </div>
-    
+
     <!-- Controls -->
     <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev' *ngIf="imgCount>1">
       <img alt="" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
@@ -52,7 +51,7 @@
   </div>
 
   <!-- PRODUCT MATERIALS AND FINISAGES-->
-  <div class="prod-desc" *ngIf="product">
+  <div class="prod-desc" *ngIf="category==='Assises'">
     <app-product-mat-fin [product]="product"></app-product-mat-fin>
   </div>
 
@@ -98,3 +97,51 @@
     </form>
   </div>
 </div>
+<br>
+
+<!--
+<div class="container">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="carousel slide multi-item-carousel" id="theCarousel">
+        <div class="crsl-inner">
+          <div class="item active">
+            <div class="col-xs-4"><img src="assets\Images\Products\JNL Collection\Canapé\Thumbs\Molière_0.jpg"
+                class="img-responsive test"></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><img src="assets\Images\Products\JNL Collection\Canapé\Thumbs\Molière_1.jpg"
+                class="img-responsive test"></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><img src="assets\Images\Products\JNL Collection\Canapé\Thumbs\Molière_2.jpg"
+                class="img-responsive test"></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><img src="assets\Images\Products\JNL Collection\Canapé\Thumbs\Molière_3.jpg"
+                class="img-responsive test"></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><img src="assets\Images\Products\JNL Collection\Canapé\Thumbs\Molière_4.jpg"
+                class="img-responsive test"></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><img src="assets\Images\Products\JNL Collection\Canapé\Thumbs\Molière_5.jpg"
+                class="img-responsive test"></div>
+          </div>
+          
+          <div class="item">
+            <div class="col-xs-4"><img src="assets\Images\Products\JNL Collection\Canapé\Thumbs\Molière_6.jpg"
+                class="img-responsive test"></div>
+          </div>
+
+        </div>
+        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i
+            class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i
+            class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+-->

@@ -1,5 +1,6 @@
 hr{
-    border: 0.5px solid #DBBB76;
+    height: 0;
+    border-top: 1px solid #DBBB76;
 }
 
 h2 {
@@ -69,6 +70,12 @@ h2 {
 .samples {
     width: 80px;
     height: 80px;
+}
+
+.modal-dialog {
+    width: 70vw !important;
+    min-width: 400px;
+    max-width: 700px !important;
 }
 
 .modal-header {
