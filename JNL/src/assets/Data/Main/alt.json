@@ -5,7 +5,10 @@
         "marque": {
             "jnl": {
                 "img0": {
-                    "alt": "jnl collection brazil salon maison et objet 2019 paris",
+                    "alt": {
+                        "en": "jnl collection brazil salon maison et objet 2019 paris",
+                        "fr": "jnl collection brazil salon maison et objet 2019 paris"
+                    },
                     "src": "assets/Images/Marque/JNL/MKJ_first.jpg"
                 },
                 "img1": {
@@ -13,7 +16,10 @@
                     "src": "assets/Images/Marque/JNL/MKJ_style.jpg"
                 },
                 "img2": {
-                    "alt": "jnl collection molière canapé sofa",
+                    "alt": {
+                        "en": "jnl collection molière sofa",
+                        "fr": "jnl collection molière canapé"
+                    },
                     "src": "assets/Images/Marque/JNL/MKJ_iconique.png"
                 },
                 "img3": {
@@ -229,24 +235,27 @@
         },
         "press": {
             "img0": {
-                "alt": "jnl collection salon maison et objet 2019 interior moodboard",
-                "src": "assets/Images/Presse/PS_pic1.jpg"
+                "alt": {
+                    "EN": "jnl collection salon maison et objet 2019 interior moodboard en",
+                    "FR": "jnl collection salon maison et objet 2019 interior moodboard fr"
+                },
+                "src": "PS_pic1.jpg"
             },
             "img1": {
                 "alt": "jnl collection ray salon maison et objet 2019",
-                "src": "assets/Images/Presse/PS_JNL.jpg"
+                "src": "PS_JNL.jpg"
             },
             "img2": {
                 "alt": "jnl collection oscar gainé interior intérieur",
-                "src": "assets/Images/Presse/PS_vanhamme.jpg"
+                "src": "PS_vanhamme.jpg"
             },
             "img3": {
                 "alt": "jnl collection ungaro home salon maison et objet",
-                "src": "assets/Images/Presse/PS_ungaro.jpg"
+                "src": "PS_ungaro.jpg"
             },
             "img4": {
                 "alt": "jnl collection luz interiors salon maison et objet",
-                "src": "assets/Images/Presse/PS_Luz.jpg"
+                "src": "PS_Luz.jpg"
             }
         }
     }

@@ -4,11 +4,18 @@ import { DataExchangeService, TranslationService, ProductsService } from '../../
 import { Product, ProductEF } from '../../_models';
 import * as _ from 'lodash';
 
+interface IBrands {
+  index: number;
+  checked: boolean;
+  brandName: string;
+}
+
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
   styleUrls: ['./product-search.component.css']
 })
+
 export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
 
   public products: ProductEF[];

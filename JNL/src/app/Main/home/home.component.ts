@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.dataex.currentLanguage
     .subscribe(lang => {
       this.language = lang || 'EN';
-      this.getText(lang);
+      this.getText();
     });
     // activate carousel
     $(document).ready(function() {
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getText(lang: string) {
+  getText() {
     this.textService.getTextHome()
     .subscribe(data => {
       const res = data[0];

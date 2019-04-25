@@ -12,6 +12,6 @@ export class AltImgService {
   constructor(private http: HttpClient) { }
 
   public getAltImages(): Observable<any> {
-    return this.http.get(`${this.urlAssets}/Main/alt.json`);
+    return this.http.get<any>(`${this.urlAssets}/Main/alt.json`);
   }
 }
