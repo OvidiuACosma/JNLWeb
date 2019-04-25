@@ -2,20 +2,20 @@
 <hr>
 <div id="container">
   <div id="staticText" (click)="toggleElement()">
-    <h5>MATERIALS<br> &amp; FINISHES</h5>
+    <h5 *ngIf="stdText" [innerHTML]="stdText.matFin | uppercase"></h5>
     <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
   </div>
   <div id="contentMatFin" [ngClass]="(this.toggleMat) ? 'hide-item' :'show-item'">
     <div id="static">
       <br>
-      <div class="nav flex-column nav-pills" id="pills" role="tablist" aria-orientation="vertical">
+      <div class="nav flex-column nav-pills" id="pills" role="tablist" aria-orientation="vertical" *ngIf="stdText">
         <a class="nav-link nav-position active" id="tissu-tab" data-toggle="pill" href="#tissu" role="tab"
-          aria-controls="tissu" aria-selected="true" *ngIf="tissus" (click)="setCategory('tissu')">Tissus</a>
+          aria-controls="tissu" aria-selected="true" *ngIf="tissus" (click)="setCategory('tissu')">{{stdText.tissus}}</a>
         <a class="nav-link nav-position" id="cuir-tab" data-toggle="pill" href="#cuir" role="tab" aria-controls="cuir"
-          aria-selected="false" *ngIf="cuirs" (click)="setCategory('cuir')">Cuirs</a>
+          aria-selected="false" *ngIf="cuirs" (click)="setCategory('cuir')">{{stdText.cuirs}}</a>
         <a class="nav-link nav-position" id="similiCuir-tab" data-toggle="pill" href="#similiCuir" role="tab"
-          aria-controls="similiCuir" aria-selected="false" *ngIf="similiCuirs" (click)="setCategory('simili')">Simili
-          Cuirs</a>
+          aria-controls="similiCuir" aria-selected="false" *ngIf="similiCuirs" (click)="setCategory('simili')">{{stdText.simili}}</a>
+        <!--
         <a class="nav-link nav-position" id="bois-tab" data-toggle="pill" href="#bois" role="tab" aria-controls="bois"
           aria-selected="false" *ngIf="bois" (click)="setCategory('bois')">Bois Massif</a>
         <a class="nav-link nav-position" id="metal-tab" data-toggle="pill" href="#metal" role="tab"
@@ -31,6 +31,7 @@
           aria-controls="pierre" aria-selected="false" *ngIf="pierre" (click)="setCategory('pierre')">Pierre</a>
         <a class="nav-link nav-position" id="placage-tab" data-toggle="pill" href="#placage" role="tab"
           aria-controls="placage" aria-selected="false" *ngIf="placages" (click)="setCategory('placage')">Placage</a>
+          -->
       </div>
     </div>
     <div id="content">
@@ -100,6 +101,7 @@
           </cdk-virtual-scroll-viewport>
         </div>
 
+        <!--
         <div class="tab-pane fade" id="bois" role="tabpanel" aria-labelledby="bois-tab">
           <span *ngFor="let item of bois">{{item}}, </span>
         </div>
@@ -127,6 +129,7 @@
         <div class="tab-pane fade" id="placage" role="tabpanel" aria-labelledby="placage-tab">
           <span *ngFor="let item of placages">{{item}}, </span>
         </div>
+        -->
       </div>
     </div>
   </div>

@@ -7,7 +7,10 @@
             "description": "Description & <br> Technical Info",
             "matFin": "Materials <br> & Finishes",
             "drawings": "Technical Drawings",
-            "downloads": "Downloads"
+            "downloads": "Downloads",
+            "tissus": "Fabrics",
+            "cuirs": "Leathers",
+            "simili": "Fake Leathers"
 
         },
 
@@ -18,7 +21,10 @@
             "description": "Description & <br> Technical Info",
             "matFin": "Materials <br> & Finishes",
             "drawings": "Technical Drawings",
-            "downloads": "Downloads"
+            "downloads": "Downloads",
+            "tissus": "Tissus",
+            "cuirs": "Cuirs",
+            "simili": "Simili Cuirs"
         }
     }
 ]

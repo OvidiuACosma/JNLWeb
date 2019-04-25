@@ -106,22 +106,26 @@ export class ProductDescriptionComponent implements OnInit {
 
     const finList: Finisage[] = [];
     this.productDesc.forEach(item => {
-      switch (this.language.toLowerCase()) {
-        case 'fr': {
-          if (item.partNameFr === part && item.materialNameFr === material) {
-            finList.push({
-              name: item.finisageNameFr,
-              img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
-            });
+      if (item.finisageNameFr) { // to do
+        switch (this.language.toLowerCase()) {
+          case 'fr': {
+            if (item.partNameFr === part && item.materialNameFr === material) {
+              finList.push({
+                name: item.finisageNameFr,
+                material: item.materialNameFr,
+                img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
+              });
+            }
+            break;
           }
-          break;
-        }
-        case 'en': {
-          if (item.partNameEn === part && item.materialNameEn === material) {
-            finList.push({
-              name: item.finisageNameEn,
-              img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
-            });
+          case 'en': {
+            if (item.partNameEn === part && item.materialNameEn === material) {
+              finList.push({
+                name: item.finisageNameEn,
+                material: item.materialNameEn,
+                img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
+              });
+            }
           }
         }
       }
@@ -139,6 +143,10 @@ export class ProductDescriptionComponent implements OnInit {
 
   isLevelShown(idx: string) {
     return this.showLevel === idx;
+  }
+
+  hasFinitions(part: any, mat: any) {
+    return this.getFinitions(part, mat).length !== 0 ? true : false;
   }
 
   sendItemToModal(fin: any, finlist: Finisage[]) {
@@ -171,6 +179,7 @@ export class ProductDescriptionComponent implements OnInit {
       }
     };
   }
+
 
   // for mobile
   toggleElement() {

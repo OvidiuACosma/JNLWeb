@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
-import { Product, Img, ProductHeroImage} from '../../_models';
+import { Product, Img, ProductHeroImage } from '../../_models';
 declare var $: any;
 
 @Component({
@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
   public brand = '';
   public family = '';
   public model = '';
+  public category = '';
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
@@ -54,9 +55,33 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
       });
 
     // activate carousel
+    /* $(document).ready(function () {
+      $('.carousel').carousel();
+    }); */
+
     $(document).ready(function () {
       $('.carousel').carousel();
+      /*  $('.multi-item-carousel').carousel({
+         interval: 10000
+       });
+
+       // for every slide in carousel, copy the next slide's item in the slide.
+       // Do the same for the next, next item.
+       $('.multi-item-carousel .item').each(function () {
+         let next = $(this).next();
+         if (!next.length) {
+           next = $(this).siblings(':first');
+         }
+         next.children(':first-child').clone().appendTo($(this));
+
+         if (next.next().length > 0) {
+           next.next().children(':first-child').clone().appendTo($(this));
+         } else {
+           $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+         }
+       }); */
     });
+
   }
 
   getProductData(product: Product) {
@@ -64,6 +89,7 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
       .subscribe(desc => {
         this.prodDesc = desc;
         this.brand = this.prodDesc.brand;
+        this.category = this.prodDesc.categoryFr;
         if (this.language === 'FR') { this.family = this.prodDesc.familyFr; } else { this.family = this.prodDesc.familyEn; }
         this.model = this.prodDesc.model;
         this.getHeroImages();
@@ -98,8 +124,8 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
         this.stdText = resources[lang.toUpperCase()];
       });
 
-      // standard text for the form
-      this.textService.getTextFavorites()
+    // standard text for the form
+    this.textService.getTextFavorites()
       .subscribe(data => {
         const res = data[0];
         this.text = res[lang.toUpperCase()];
@@ -141,4 +167,5 @@ export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
     }
     this.scroller = false;
   }
+
 }

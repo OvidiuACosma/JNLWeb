@@ -1,5 +1,6 @@
 hr{
-    border: 0.5px solid #DBBB76;
+    height: 0;
+    border-top: 1px solid #DBBB76;
 }
 
 h2 {
@@ -10,7 +11,6 @@ h2 {
 .hide-item, .show-item {
     display: block;
 }
-
 
 .arrow {
     display: none;
@@ -43,16 +43,39 @@ h2 {
     color: #DBBB76;
 }
 
+.pointer {
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+}
+
+.mat-arrow {
+    height: 0.8vw;
+    width: 0.8vw;
+    margin-bottom: 0.2vw;
+}
+
 .fin {
+    width: 90px;
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-right: 10px;
 }
 
+.fin-img {
+    object-fit: contain;
+    text-align: center;
+}
+
 .samples {
     width: 80px;
     height: 80px;
+}
+
+.modal-dialog {
+    width: 70vw !important;
+    min-width: 400px;
+    max-width: 700px !important;
 }
 
 .modal-header {
@@ -70,9 +93,9 @@ h2 {
 }
 
 .modal-arrow {
-    height: 3vw;
-    width: 1.5vw;
-    margin-top: 100%;
+    height: 2vw;
+    width: 1vw;
+    margin-top: 130%;
 }
 
 .cursor-pointer {
@@ -91,6 +114,15 @@ h2 {
 
 .cardContainer {
     flex: 4;
+}
+
+.card {
+    margin: auto;
+    border: 0px !important;
+}
+
+.card-body {
+    height: 30px;
 }
 
 /* workaround to fix bootstrap`s modal bug in Angular
