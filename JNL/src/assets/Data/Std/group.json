@@ -142,41 +142,47 @@
                 "title": "Interior Designer",
                 "text": "",
                 "image": "/assets/Images/Groupe/GP_gery.JPG",
-                "index": 1
+                "index": 1,
+                "alt": "jnl group gery dehon architecte d’intérieur interior designer"
             },
             {"name": "Michèle Claes",
                 "title": "D.R. H and Accounting",
                 "text": "",
                 "image": "/assets/Images/Groupe/GP_michele.JPG",
-                "index": 5
+                "index": 5,
+                "alt": "jnl group daniel nicolo logistique logistic technical department département technique"
             },
             {
                 "name": "Daniel Nicolo",
                 "title": "Head of Technical department and Logistic",
                 "text": "",
                 "image": "/assets/Images/Groupe/GP_daniel.JPG",
-                "index": 2
+                "index": 2,
+                "alt": "jnl group isabelle renuart key account manager responsable affaires"
             },
             {
                 "name": "Isabelle Renuart",
                 "title": "Key account manager",
                 "text": "",
                 "image": "/assets/Images/Groupe/GP_isabelle.JPG",
-                "index": 3
+                "index": 3,
+                "alt": "jnl group monica salajan customer department manager chef service clientèle"
             },
             {
                 "name": "Monica Salajan",
                 "title": "Customer department manager",
                 "text": "",
                 "image": "/assets/Images/Groupe/GP_monica.JPG",
-                "index": 4
+                "index": 4,
+                "alt": "jnl group michèle claes ressources humaines human resource comptable accounting"
             },
             {
                 "name": "Georgiana Moaocan",
                 "title": "Customer fabric department",
                 "text": "",
                 "image": "/assets/Images/Groupe/GP_georgiana.JPG",
-                "index": 6
+                "index": 6,
+                "alt": "jnl group georgiana motocan customer fabric department département tissus clients"
             }
         ]
      }

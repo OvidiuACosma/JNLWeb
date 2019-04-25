@@ -16,11 +16,13 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
   public selectedProduct: Product;
   public categoriesFr: any;
   public categoriesEn: any;
+  public familiesFr: any;
+  public familiesEn: any;
   public product: string; // TODO: kill it when killing the search button
   language: string;
   text: any;
-  filterBy: string[] = ['Brand', 'Type'];
-  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
+  filterBy: string[] = ['Brand', 'Type', 'Family'];
+  brands = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
 
   selected = [0, 0, 0, 0, 0];
   scroller = true;
@@ -44,17 +46,18 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
 
       this.productService.getProducts()
       .subscribe(p => {
-        this.products = p.sort(function(a, b) {
-          if (a.brand.localeCompare(b.brand) > 0) { return 1; }
-          if (a.brand.localeCompare(b.brand) < 0) { return -1; }
-          if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
-          if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
-          if (a.model.localeCompare(b.model) > 0) { return 1; }
-          return -1;
-        });
+        this.products = this.sortProducts(p);
         this.productsFiltered = _.clone(this.products);
+        // this.brands = this.products.map(b => {
+        //   return {
+        //     selected: false, // I'm here - defining selected for filtering. uniqBy follows.
+        //     brand: b.brand
+        //   };
+        // });
         this.categoriesFr = new Set(this.products.map(c => c.categoryFr));
         this.categoriesEn = new Set(this.products.map(c => c.categoryEn));
+        this.familiesFr = new Set(this.products.map(f => f.familyFr));
+        this.familiesEn = new Set(this.products.map(f => f.familyEn));
      });
     });
     this.toggle = new Array(this.filterBy.length);
@@ -81,10 +84,22 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
     this.text = res[this.language.toUpperCase()];
   }
 
+  sortProducts(p: ProductEF[]): ProductEF[] {
+    p.sort(function(a, b) {
+      if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
+      if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
+      if (a.brand.localeCompare(b.brand) > 0) { return 1; }
+      if (a.brand.localeCompare(b.brand) < 0) { return -1; }
+      if (a.model.localeCompare(b.model) > 0) { return 1; }
+      return -1;
+    });
+    return p;
+  }
+
   getFilters(category: string): any {
     switch (category.toLowerCase()) {
       case 'brand': {
-        return this.collectionsText;
+        return this.brands;
       }
       case 'type': {
         switch (this.language.toLowerCase()) {
@@ -95,6 +110,18 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
             return this.categoriesFr;
           }
         }
+        break;
+      }
+      case 'family': {
+        switch (this.language.toLowerCase()) {
+          case 'en': {
+            return this.familiesEn;
+          }
+          case 'fr': {
+            return this.familiesFr;
+          }
+        }
+        break;
       }
     }
     return [];
@@ -118,14 +145,19 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
     this.scroller = false;
   }
 
-  // CHANGE function for FAV
+  // TODO: CHANGE function for FAV
   removeItem(index: number) {
     this.scroller = false;
     this.total--;
-    // REMOVE FROM DB ?
+    // TODO: REMOVE FROM DB ?
   }
 
-  selectFilter() {
+  selectFilter(c: string, i: number) {
+    console.log('Index: ', c, i, this.brands[i]);
+    this.productsFiltered = this.products.filter(f =>
+      f.brand === this.brands[i]
+    );
+
     this.scroller = false;
   }
 
@@ -161,20 +193,6 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
     productName = `${productName} ${product.model}`;
     return productName;
   }
-
-  // ngAfterViewChecked() {
-  //   this.route.fragment.subscribe(fragment => {
-  //     if (fragment) {
-  //       const element = document.getElementById(fragment);
-  //       if (element && this.scroller === true ) {
-  //         element.scrollIntoView({block: 'start', behavior: 'smooth'});
-  //       }
-  //       this.scroller = true;
-  //     } else if (this.scroller === true) {
-  //         window.scrollTo(0, 0);
-  //       }
-  //   });
-  // }
 
   goToProduct(product: ProductEF) {
     this.router.navigate(['product', {b: product.brand, f: product.familyFr, m: product.model}]);

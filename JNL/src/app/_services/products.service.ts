@@ -48,8 +48,8 @@ export class ProductsService {
     return this.http.get<any[]>(`${this.product}/materials`, {headers: this.headers});
   }
 
-  public getProduct(product: Product): Observable<any[]> {
-    return this.http.get<any[]>(`${this.product}/${product.brand}/${product.family}/${product.model}`, {headers: this.headers});
+  public getProduct(product: Product): Observable<ProductEF[]> {
+    return this.http.get<ProductEF[]>(`${this.product}/${product.brand}/${product.family}/${product.model}`, {headers: this.headers});
   }
 
   public getProductDesc(product: Product): Observable<any[]> {

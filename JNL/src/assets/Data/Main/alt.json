@@ -1,0 +1,253 @@
+[
+    {
+        "home": [
+        ],
+        "marque": {
+            "jnl": {
+                "img0": {
+                    "alt": "jnl collection brazil salon maison et objet 2019 paris",
+                    "src": "assets/Images/Marque/JNL/MKJ_first.jpg"
+                },
+                "img1": {
+                    "alt": "jnl collection château castel mobilier de luxe",
+                    "src": "assets/Images/Marque/JNL/MKJ_style.jpg"
+                },
+                "img2": {
+                    "alt": "jnl collection molière canapé sofa",
+                    "src": "assets/Images/Marque/JNL/MKJ_iconique.png"
+                },
+                "img3": {
+                    "alt": "jnl collection showroom belgique",
+                    "src": "assets/Images/Marque/MK_groupe.jpg"
+                },
+                "img4": {
+                    "alt": "jnl collection manufacture factory",
+                    "src": "assets/Images/Marque/MK_savoir.jpg"
+                },
+                "img5": {
+                    "alt": "jnl collection samples",
+                    "src": "assets/Images/Marque/MK_services.jpg"
+                }
+
+            },
+            "vanhamme": {
+                "img0": {
+                    "alt": "jnl collection vanhamme la bergère salon maison et objet paris",
+                    "src": "assets/Images/Marque/Vanhamme/MKV_first.jpg"
+                },
+                "img1": {
+                    "alt": "jnl collection manufacture factory sur-mesure tailor-made",
+                    "src": "assets/Images/Marque/Vanhamme/MKV_style.jpg"
+                },
+                "img2": {
+                    "alt": "jnl collection vanhamme l’excessif fauteuil armchair",
+                    "src": "assets/Images/Marque/Vanhamme/MKV_iconique.png"
+                },
+                "img3": {
+                    "alt": "jnl collection showroom belgique",
+                    "src": "assets/Images/Marque/MK_groupe.jpg"
+                },
+                "img4": {
+                    "alt": "jnl collection manufacture factory",
+                    "src": "assets/Images/Marque/MK_savoir.jpg"
+                },
+                "img5": {
+                    "alt": "jnl collection samples",
+                    "src": "assets/Images/Marque/MK_services.jpg"
+                }
+
+            },
+            "ungaro": {
+                "img0": {
+                    "alt": "jnl collection ungaro home cassidy salon maison et objet paris",
+                    "src": "assets/Images/Marque/Ungaro/MKU_first.jpg"
+                },
+                "img1": {
+                    "alt": "jnl collection ungaro home sirine laiton brass",
+                    "src": "assets/Images/Marque/Ungaro/MKU_first.jpg"
+                },
+                "img2": {
+                    "alt": "jnl collection ungaro home théodora tournante table laiton brass",
+                    "src": "assets/Images/Marque/Ungaro/MKU_iconique.png"
+                },
+                "img3": {
+                    "alt": "jnl collection showroom belgique",
+                    "src": "assets/Images/Marque/MK_groupe.jpg"
+                },
+                "img4": {
+                    "alt": "jnl collection manufacture factory",
+                    "src": "assets/Images/Marque/MK_savoir.jpg"
+                },
+                "img5": {
+                    "alt": "jnl collection samples",
+                    "src": "assets/Images/Marque/MK_services.jpg"
+                }
+            },
+            "luz": {
+                "img0": {
+                    "alt": "jnl collection luz interiors salon maison et objet paris",
+                    "src": "assets/Images/Marque/Luz/MKL_first.jpg"
+                },
+                "img1": {
+                    "alt": "jnl collection luz interiors ligne meuble furniture",
+                    "src": "assets/Images/Marque/Luz/MKL_style.jpg"
+                },
+                "img2": {
+                    "alt": "jnl collection luz interiors daisy bout de canapé side table",
+                    "src": "assets/Images/Marque/Luz/MKL_iconique.png"
+                },
+                "img3": {
+                    "alt": "jnl collection showroom belgique",
+                    "src": "assets/Images/Marque/MK_groupe.jpg"
+                },
+                "img4": {
+                    "alt": "jnl collection manufacture factory",
+                    "src": "assets/Images/Marque/MK_savoir.jpg"
+                },
+                "img5": {
+                    "alt": "jnl collection samples",
+                    "src": "assets/Images/Marque/MK_services.jpg"
+                }
+            }
+        },
+        "marques": {
+            "img0": {
+                "alt": "jnl collection brazil salon maison et objet 2019 paris",
+                "src": "assets/Images/Marques/MK_JNL.jpg"
+            },
+            "img1": {
+                "alt": "jnl collection vanhamme la bergère salon maison et objet paris",
+                "src": "assets/Images/Marques/MK_Vanhamme.jpg"
+            },
+            "img2": {
+                "alt": "jnl collection ungaro home cassidy salon maison et objet paris",
+                "src": "assets/Images/Marques/MK_Ungaro.jpg"
+            },
+            "img3": {
+                "alt": "jnl collection luz interiors salon maison et objet paris",
+                "src": "assets/Images/Marques/MK_Luz.jpg"
+            }
+        },
+        "savoir": {
+            "img0": {
+                "alt": "jnl collection manufacture factory sur-mesure tailor-made",
+                "src": "assets/Images/Savoir/SF_pic4.jpg"
+            },
+            "img1": {
+                "alt": "jnl collection manufacture factory sur-mesure tailor-made",
+                "src": "assets/Images/Savoir/SF_pic6.jpg"
+            },
+            "img2": {
+                "alt": "jnl collection sur-mesure tailor-made fauteuil armchair",
+                "src": "assets/Images/Savoir/SF_pic1.jpg"
+            },
+            "img3": {
+                "alt": "jnl collection sur-mesure tailor-made",
+                "src": "assets/Images/Savoir/SF_pic9.jpg"
+            },
+            "img4": {
+                "alt": "jnl collection sur-mesure tailor-made manufacture factory",
+                "src": "assets/Images/Savoir/SF_pic10.jpg"
+            },
+            "img5": {
+                "alt": "jnl collection sur-mesure tailor-made manufacture factory",
+                "src": "assets/Images/Savoir/SF_pic2.jpg"
+            },
+            "img6": {
+                "alt": "jnl collection manufacture factory sur-mesure tailor-made",
+                "src": "assets/Images/Savoir/SF_pic5.jpg"
+            },
+            "img7": {
+                "alt": "jnl collection manufacture factory sur-mesure tailor-made",
+                "src": "assets/Images/Savoir/SF_pic3.jpg"
+            },
+            "img8": {
+                "alt": "jnl collection dessin draw design",
+                "src": "assets/Images/Savoir/SF_pic21.jpg"
+            },
+            "img9": {
+                "alt": "jnl collection sur-mesure tailor-made garnissage upholstery",
+                "src": "assets/Images/Savoir/SF_pic22.jpg"
+            },
+            "img10": {
+                "alt": "jnl collection sur-mesure prototyping prototypage",
+                "src": "assets/Images/Savoir/SF_pic23.jpg"
+            },
+            "img11": {
+                "alt": "jnl collection sunset boulevard canapé sofa ",
+                "src": "assets/Images/Savoir/SF_pic24.jpg"
+            },
+            "img12": {
+                "alt": "jnl collection sur-mesure tailor-made fauteuil armchair",
+                "src": "assets/Images/Savoir/SF_pic25.jpg"
+            }
+
+        },
+        "services": {
+            "img0": {
+                "alt": "jnl collection sur-mesure tailor-made architecte d’intérieur interior designer",
+                "src": "assets/Images/Services/SV_pic1.jpg"
+            },
+            "img1": {
+                "alt": "jnl collection sur-mesure tailor-made architecte d’intérieur interior designer",
+                "src": "assets/Images/Services/SV_pic2.jpg"
+            },
+            "img2": {
+                "alt": "jnl collection dessin draw design vientiane",
+                "src": "assets/Images/Services/SV_pic3.jpg"
+            }
+        },
+        "group": {
+            "img0": {
+                "alt": "jnl collection manufacture factory sur-mesure tailor-made",
+                "src": "assets/Images/Groupe/GP_bw.jpg"
+            },
+            "img1": {
+                "alt": "jnl collection manufacture factory sur-mesure tailor-made",
+                "src": "assets/Images/Groupe/GP_building.jpg"
+            },
+            "img2": {
+                "alt": "jnl collection dominique waxmann ceo director",
+                "src": "assets/Images/Groupe/GP_dominique.JPG"
+            },
+            "img3": {
+                "alt": "jnl collection alain lahy founder président chairman",
+                "src": "assets/Images/Groupe/GP_alain.JPG"
+            },
+            "img4": {
+                "alt": "jnl collection vanhamme shalini misra paris",
+                "src": "assets/Images/Projects/PJ_Paris.jpg"
+            },
+            "img5": {
+                "alt": "jnl collection ungaro home london gérard faivre",
+                "src": "assets/Images/Projects/PJ_London.jpg"
+            },
+            "img6": {
+                "alt": "jnl collection coriandre daybed méridienne royal champagne hôtel & spa",
+                "src": "assets/Images/Projects/PJ_Reims.jpg"
+            }
+        },
+        "press": {
+            "img0": {
+                "alt": "jnl collection salon maison et objet 2019 interior moodboard",
+                "src": "assets/Images/Presse/PS_pic1.jpg"
+            },
+            "img1": {
+                "alt": "jnl collection ray salon maison et objet 2019",
+                "src": "assets/Images/Presse/PS_JNL.jpg"
+            },
+            "img2": {
+                "alt": "jnl collection oscar gainé interior intérieur",
+                "src": "assets/Images/Presse/PS_vanhamme.jpg"
+            },
+            "img3": {
+                "alt": "jnl collection ungaro home salon maison et objet",
+                "src": "assets/Images/Presse/PS_ungaro.jpg"
+            },
+            "img4": {
+                "alt": "jnl collection luz interiors salon maison et objet",
+                "src": "assets/Images/Presse/PS_Luz.jpg"
+            }
+        }
+    }
+]
