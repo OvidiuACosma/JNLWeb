@@ -22,7 +22,7 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
   language: string;
   text: any;
   filterBy: string[] = ['Brand', 'Type', 'Family'];
-  brands: any; // = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
+  brands = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
 
   selected = [0, 0, 0, 0, 0];
   scroller = true;
@@ -48,12 +48,12 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
       .subscribe(p => {
         this.products = this.sortProducts(p);
         this.productsFiltered = _.clone(this.products);
-        this.brands = this.products.map(b => {
-          return {
-            selected: false, // I'm here - defining selected for filtering. uniqBy follows.
-            brand: b.brand
-          };
-        });
+        // this.brands = this.products.map(b => {
+        //   return {
+        //     selected: false, // I'm here - defining selected for filtering. uniqBy follows.
+        //     brand: b.brand
+        //   };
+        // });
         this.categoriesFr = new Set(this.products.map(c => c.categoryFr));
         this.categoriesEn = new Set(this.products.map(c => c.categoryEn));
         this.familiesFr = new Set(this.products.map(f => f.familyFr));
