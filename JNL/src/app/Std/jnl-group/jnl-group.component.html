@@ -15,7 +15,7 @@
         <h2>{{text.histoireTitle}}</h2>
         <h3>{{text.histoireSub}}</h3>
         <h4>{{text.histoireText1}}</h4>
-        <img class="group-image" alt="JNL Collection" src="assets/Images/Groupe/GP_bw.jpg">
+        <img class="group-image" alt="{{altText['img0']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img0']['src']}}">
 
         <div class="image-parag">
           <div>
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <img class="full-image" alt="JNL Collection" src="assets/Images/Groupe/GP_building.jpg">
+        <img class="full-image" alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img1']['src']}}">
       </div>
 
       <div id="equipe">
@@ -35,13 +35,13 @@
         <h3>{{text.todaySub}}</h3>
         <div>
           <div>
-            <img class="group-img" alt="JNL Collection" src="assets/Images/Groupe/GP_dominique.JPG">
+            <img class="group-img" alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img2']['src']}}">
             <h4>Dominique Waxmann</h4>
             <h3>{{text.dominiqueTitle}}</h3>
             <p [innerHTML]="text.dominiqueText"></p>
           </div>
           <div>
-              <img class="group-img" alt="JNL Collection" src="assets/Images/Groupe/GP_alain.JPG">
+              <img class="group-img" alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img3']['src']}}">
               <h4>Alain Lahy</h4>
               <h3>{{text.alainTitle}}</h3>
               <p [innerHTML]="text.alainText"></p>
@@ -122,7 +122,7 @@
                   <h2>{{text.projetsCity1}}</h2>
                   <h2>{{text.projets1}}</h2>
                  <div class="carousel-item-image">
-                   <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image slide-image-project">
+                   <img src="assets/Images/Projects/{{altText['img4']['src']}}" alt="{{altText['img4']['alt'][language]}}" class="slide-image slide-image-project">
                  </div>
                    <div class="projets-text">
                       <h4>
@@ -137,7 +137,7 @@
                     <h2>{{text.projetsCity2}}</h2>
                     <h2>{{text.projets2}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image slide-image-project">
+                     <img src="assets/Images/Projects/{{altText['img5']['src']}}" alt="{{altText['img5']['alt'][language]}}" class="slide-image slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -151,11 +151,11 @@
                     <h2>{{text.projetsCity3}}</h2>
                     <h2>{{text.projets3}}</h2>
                    <div class="carousel-item-image">
-                     <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image slide-image-project">
+                     <img src="assets/Images/Projects/{{altText['img6']['src']}}" alt="{{altText['img6']['alt'][language]}}" class="slide-image slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>
-                         {{text.projetsDescription1}}
+                         {{text.projetsDescription3}}
                         </h4> 
                      </div>
                    </div>
@@ -190,7 +190,7 @@
 
     <div id="archives">
       <h2>{{text.archivesTitle}}</h2>
-      <h3>XXXXXX</h3>
+      <h3>{{text.archivesSubtitle}}</h3>
       <div>
         <div *ngFor="let y of archives" data-toggle="modal" data-target="#archivesModal" (click)="yearClick(y)">
           <span>{{y}}</span>

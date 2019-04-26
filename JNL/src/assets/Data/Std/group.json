@@ -34,17 +34,18 @@
         
             "projetsCity1": "London",
             "projets1": "Residential",
-            "projetsDescription1": "In partnership with interior design architect Shalini Misra",
+            "projetsDescription1": "In partnership with Shalini Misra, interior design architect",
 
             "projetsCity2": "Paris",
             "projets2": "Residential",
-            "projetsDescription2": "In partnership with interior design architect xxxx",
+            "projetsDescription2": "In partnership with Gerard Faivre, interior design architect",
 
             "projetsCity3": "Reims",
             "projets3": "Royal Champagne Hotel & Spa",
-            "projetsDescription3": "Photo credit : MRTRIPPER",
+            "projetsDescription3": "In partnership with Sybille de Margerie, interior design architect",
         
             "archivesTitle": "Past Collections",
+            "archivesSubtitle": "",
 
             "people": [
                 {"name": "Gery Dehon",
@@ -120,22 +121,21 @@
 
         "projectsSub": "UN LUXE SANS FRONTIÈRE",
         "projectsText": "JNL Groupe diffuse désormais son Art de Vivre dans le monde entier. Son approche artisanale et sa vision contemporaine du luxe ont d’ores-et-déjà conquis les décorateurs du monde entier aussi bien en Europe qu’aux États-Unis, au Moyen Orient en Russie et en Asie.<br><br>Ce rayonnement international a sans conteste attiré l’attention de prestigieux acteurs de l’hôtellerie et du luxe avec lesquels le groupe JNL a collaboré, à l’instar du Peninsula de Paris, du Four Season’s Nile Cairo, des boutiques Louis Vuitton et Rolex ou encore du Manoir de Lébioles à Spa.",
-        
 
-        
         "projetsCity1": "Londres",
         "projets1": "Résidentiel",
-        "projetsDescription1": "Projet réalisé en collaboration avec l’architecte d’intérieur Shalini Misra",
+        "projetsDescription1": "Projet réalisé en collaboration avec Shalini Misra, architecte d’intérieur",
 
-        "projetsCity2": "London",
+        "projetsCity2": "Paris",
         "projets2": "Résidentiel",
-        "projetsDescription2": "Projet réalisé en collaboration avec l’architecte d’intérieur xxx",
+        "projetsDescription2": "Projet réalisé en collaboration avec Gerard Faivre, architecte d’intérieur",
 
         "projetsCity3": "Reims",
         "projets3": "Royal Champagne Hotel & Spa",
-        "projetsDescription3": "Crédit photos : MRTRIPPER",
+        "projetsDescription3": "Projet réalisé en collaboration avec Sybille de Margerie, architecte d’intérieur",
     
         "archivesTitle": "Archives",
+        "archivesSubtitle": "",
 
         "people": [
             {"name": "Gery Dehon",

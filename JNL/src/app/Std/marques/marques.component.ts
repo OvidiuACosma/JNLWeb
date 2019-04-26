@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
 
 @Component({
   selector: 'app-marques',
@@ -14,10 +14,14 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
   text: any;
   anchor: number;
 
+  altText: any;
+  page = 'marques';
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private altService: AltImgService) { }
 
   ngOnInit() {
     // this.route.params.subscribe(params => {
@@ -27,6 +31,7 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+      this.getAlt(this.page);
     });
   }
 
@@ -40,6 +45,18 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getAlt(page: string) {
+    this.altService.getAltImages()
+    .subscribe(data => {
+      const res = data[0];
+      this.altText = this.getAltText(res, this.page);
+    });
+  }
+
+  getAltText(res: any, page: string): any {
+    return res[page];
   }
 
   ngAfterViewInit() {

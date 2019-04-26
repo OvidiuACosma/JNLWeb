@@ -1,7 +1,7 @@
 
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
 
 @Component({
   selector: 'app-services',
@@ -16,16 +16,21 @@ export class ServicesComponent implements OnInit, AfterViewInit, AfterViewChecke
   scroller = true;
   anchor: number;
 
+  altText: any;
+  page = 'services';
+
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private altService: AltImgService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+      this.getAlt(this.page);
     });
   }
 
@@ -39,6 +44,18 @@ export class ServicesComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getAlt(page: string) {
+    this.altService.getAltImages()
+    .subscribe(data => {
+      const res = data[0];
+      this.altText = this.getAltText(res, this.page);
+    });
+  }
+
+  getAltText(res: any, page: string): any {
+    return res[page];
   }
 
   selectMarque(nr: number) {
