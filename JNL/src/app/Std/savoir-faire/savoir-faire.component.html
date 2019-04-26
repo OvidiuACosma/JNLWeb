@@ -18,12 +18,12 @@
             <h3>{{text.subText}}</h3>
             <h4>{{text.firstText}}</h4>
         </div>
-        <img class="full-image" alt="JNL Collection" src="assets/Images/Savoir/SF_pic4.jpg" style="margin-top: 0px;">
+        <img class="full-image" alt="{{altText['img0']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img0']['src']}}" style="margin-top: 0px;">
 
         <div class="ateliers-flex">
             <div>
                 <div>
-                    <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic6.jpg">
+                    <img alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img1']['src']}}">
 
                     <!-- <h5>{{text.pic1}}</h5> -->
                 </div>
@@ -41,7 +41,7 @@
                 </div>
 
                 <div>
-                    <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic1.jpg">
+                    <img alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img2']['src']}}">
                     <!-- <h5>{{text.pic2}}</h5> -->
                 </div>
             </div>
@@ -50,29 +50,29 @@
         
         <div class="ateliers-flex" id="af1">
             <div>
-                <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic9.jpg">
+                <img alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img3']['src']}}">
 
                 <!-- <h5>{{text.pic3}}</h5> -->
             </div>   
             <div>
-                <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic10.jpg">
+                <img alt="{{altText['img4']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img4']['src']}}">
 
                 <!-- <h5>{{text.pic4}}</h5> -->
             </div>
         </div>
 
-        <img class="full-image" alt="JNL Collection" src="assets/Images/Savoir/SF_pic2.jpg">
+        <img class="full-image" alt="{{altText['img5']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img5']['src']}}">
 
         <div class="ateliers-flex" id="af2">
             <div>
                 <div>
-                    <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic5.jpg">
+                    <img alt="{{altText['img6']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img6']['src']}}">
                     <!-- <h5>{{text.pic5}}</h5> -->
                 </div>
             </div>
             <div>
                 <div>
-                    <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic3.jpg">
+                    <img alt="{{altText['img7']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img7']['src']}}">
                     <!-- <h5>{{text.pic6}}</h5> -->
                 </div>
             </div>
@@ -90,7 +90,7 @@
                     <div class='carousel-item active'>
                     <div class="container">
                         <div class="carousel-item-image">
-                            <img src='/assets/Images/Savoir/SF_pic21.jpg' alt='JNL Collection' class="slide-image">
+                            <img src="assets/Images/Savoir/{{altText['img8']['src']}}" alt="{{altText['img8']['alt'][language]}}" class="slide-image">
                         </div>
                         <div class="steps-text">
                             <div>
@@ -105,7 +105,7 @@
                     <div class='carousel-item' active="setActiveSlide(1)">
                         <div class="container">
                             <div class="carousel-item-image">
-                                <img src='/assets/Images/Savoir/SF_pic22.jpg' alt='JNL Collection' class="slide-image">
+                                <img src="assets/Images/Savoir/{{altText['img9']['src']}}" alt="{{altText['img9']['alt'][language]}}" class="slide-image">
                             </div>
                             <div class="steps-text">
                                 <div>
@@ -120,7 +120,7 @@
                     <div class='carousel-item'>
                         <div class="container">
                             <div class="carousel-item-image">
-                                <img src='/assets/Images/Savoir/SF_pic23.jpg' alt='JNL Collection' class="slide-image">
+                                <img src="assets/Images/Savoir/{{altText['img10']['src']}}" alt="{{altText['img10']['alt'][language]}}" class="slide-image">
                             </div>
                             <div class="steps-text">
                                 <div>
@@ -134,7 +134,7 @@
                     <div class='carousel-item'>
                         <div class="container">
                             <div class="carousel-item-image">
-                                <img src='/assets/Images/Savoir/SF_pic24.jpg' alt='JNL Collection' class="slide-image">
+                                <img src="assets/Images/Savoir/{{altText['img11']['src']}}" alt="{{altText['img11']['alt'][language]}}" class="slide-image">
                             </div>
                             <div class="steps-text">
                                 <div>
@@ -148,7 +148,7 @@
                     <div class='carousel-item'>
                         <div class="container">
                             <div class="carousel-item-image">
-                                <img src='/assets/Images/Savoir/SF_pic25.jpg' alt='JNL Collection' class="slide-image">
+                                <img src="assets/Images/Savoir/{{altText['img12']['src']}}" alt="{{altText['img12']['alt'][language]}}" class="slide-image">
                             </div>
                             <div class="steps-text">
                                 <div>
@@ -187,7 +187,7 @@
             <div id="services">
                 <h2 (click)="navigateTo('services')">{{text.services}}</h2>
                 <h4 [innerHTML]="text.servicesText1"></h4>
-                <img alt="JNL Collection" src="assets/Images/Savoir/SF_pic11.jpg" (click)="navigateTo('services')">
+                <img alt="{{altText['img13']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img13']['src']}}" (click)="navigateTo('services')">
                 <h4 [innerHTML]="text.servicesText2" style="margin-top: 1.5vw"></h4>
             </div>
         </div>

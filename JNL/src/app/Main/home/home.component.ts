@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Browser } from 'src/app/_models';
 declare var $: any;
@@ -18,11 +18,15 @@ export class HomeComponent implements OnInit {
   language: string;
   text: any;
 
+  altText: any;
+  page = 'home';
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private deviceService: DeviceDetectorService) {
+              private deviceService: DeviceDetectorService,
+              private altService: AltImgService) {
     // this.getBrowser();
   }
 
@@ -31,6 +35,7 @@ export class HomeComponent implements OnInit {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText();
+      this.getAlt(this.page);
     });
     // activate carousel
     $(document).ready(function() {
@@ -48,6 +53,18 @@ export class HomeComponent implements OnInit {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getAlt(page: string) {
+    this.altService.getAltImages()
+    .subscribe(data => {
+      const res = data[0];
+      this.altText = this.getAltText(res, this.page);
+    });
+  }
+
+  getAltText(res: any, page: string): any {
+    return res[page];
   }
 
   navigateToAnchor(fragment: string) {

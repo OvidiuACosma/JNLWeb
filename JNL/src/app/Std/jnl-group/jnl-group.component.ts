@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit, AfterContentInit, AfterContentChecked } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, Scroll } from '@angular/router';
-import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, ArchiveService, AltImgService } from '../../_services';
 import * as _ from 'lodash';
 import { filter } from 'rxjs/operators';
 declare var $: any; // import jQuery
@@ -22,18 +22,22 @@ export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecke
   isOpen = false;
   archives = [2011, 2012, 2013, 2014, 2015, 2016];
 
+  altText: any;
+  page = 'group';
+
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private archiveService: ArchiveService
-              ) {}
+              private archiveService: ArchiveService,
+              private altService: AltImgService) {}
 
   ngOnInit() {
     this.dataex.currentLanguage
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+      this.getAlt(this.page);
     });
     this.archives = _.sortBy(this.archives).reverse();
     // activate carousel
@@ -78,6 +82,19 @@ export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecke
     this.people = text['people'].sort(function(a, b) {
       return a.index - b.index;
     });
+  }
+
+
+  getAlt(page: string) {
+    this.altService.getAltImages()
+    .subscribe(data => {
+      const res = data[0];
+      this.altText = this.getAltText(res, this.page);
+    });
+  }
+
+  getAltText(res: any, page: string): any {
+    return res[page];
   }
 
   unsetScroll() {

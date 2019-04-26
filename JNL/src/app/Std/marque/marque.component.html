@@ -4,7 +4,7 @@
 
   <div id="first_picture">
       <div>
-    <img class="full-image" alt="JNL Collection" src={{text.marqueImgSrc}}>
+    <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
       </div>
   </div>
   
@@ -63,7 +63,7 @@
 
     <div class="flex-div">
       <div>
-        <img alt="JNL Collection" src={{text.style}}>
+        <img alt="{{altText[marque]['img1']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img1']['src']}}">
         <span class="style-title">{{text.leftTitle}}</span>
         <p [innerHTML]="text.leftText"></p>
       </div>
@@ -73,7 +73,7 @@
           <h6>&nbsp;</h6>
           <span>{{text.rightTitle}}</span>
         </div>
-        <img alt="JNL Collection" src={{text.iconique}}>
+        <img alt="{{altText[marque]['img2']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img2']['src']}}">
         <p [innerHTML]="text.rightText"></p>
       </div>
     </div>
@@ -87,15 +87,15 @@
 
       <div id="other-links">
         <div (click)="navigateTo('jnlGroup')">
-          <img  alt="JNL Collection" src="assets/Images/Marque/MK_groupe.jpg">
+          <img  alt="{{altText[marque]['img3']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img3']['src']}}">
           <h4>{{text.groupe}}</h4>
         </div>
         <div  (click)="navigateTo('savoirFaire')">
-          <img  alt="JNL Collection" src="assets/Images/Marque/MK_savoir.jpg">
+          <img  alt="{{altText[marque]['img4']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img4']['src']}}">
           <h4>{{text.savoir}}</h4>
         </div>
         <div  (click)="navigateTo('services')">
-          <img  alt="JNL Collection" src="assets/Images/Marque/MK_services.jpg">
+          <img  alt="{{altText[marque]['img5']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img5']['src']}}">
           <h4>{{text.services}}</h4>
         </div>
       </div>

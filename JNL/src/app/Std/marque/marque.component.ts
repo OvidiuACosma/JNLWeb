@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked, OnChanges } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { switchMap } from 'rxjs/operators';
 import * as _ from 'lodash';
@@ -23,10 +23,14 @@ export class MarqueComponent implements OnInit, OnChanges {
   collections: number;
   public marque: string;
 
+  altText: any;
+  page = 'marque';
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private altService: AltImgService) { }
 
   ngOnInit() {
     this.route.params.subscribe(p => {
@@ -44,6 +48,7 @@ export class MarqueComponent implements OnInit, OnChanges {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+      this.getAlt(this.page);
     });
     // activate carousel
     $(document).ready(function() {
@@ -65,6 +70,18 @@ export class MarqueComponent implements OnInit, OnChanges {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()][this.marque.toUpperCase()];
+  }
+
+  getAlt(page: string) {
+    this.altService.getAltImages()
+    .subscribe(data => {
+      const res = data[0];
+      this.altText = this.getAltText(res, this.page);
+    });
+  }
+
+  getAltText(res: any, page: string): any {
+    return res[page];
   }
 
   getOthers(nr: number) {
