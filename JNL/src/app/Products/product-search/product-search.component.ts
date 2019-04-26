@@ -4,10 +4,15 @@ import { DataExchangeService, TranslationService, ProductsService } from '../../
 import { Product, ProductEF } from '../../_models';
 import * as _ from 'lodash';
 
-interface IBrands {
+interface IFilter {
   index: number;
   checked: boolean;
-  brandName: string;
+  displayName: string;
+}
+
+interface IFilterElements {
+  filterGroup: string;
+  filterElement: IFilter[];
 }
 
 @Component({
@@ -29,8 +34,8 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
   language: string;
   text: any;
   filterBy: string[] = ['Brand', 'Type', 'Family'];
-  brands = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
-
+  brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors']);
+  filterElements: IFilterElements[] = [];
   selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
@@ -55,16 +60,11 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
       .subscribe(p => {
         this.products = this.sortProducts(p);
         this.productsFiltered = _.clone(this.products);
-        // this.brands = this.products.map(b => {
-        //   return {
-        //     selected: false, // I'm here - defining selected for filtering. uniqBy follows.
-        //     brand: b.brand
-        //   };
-        // });
         this.categoriesFr = new Set(this.products.map(c => c.categoryFr));
         this.categoriesEn = new Set(this.products.map(c => c.categoryEn));
         this.familiesFr = new Set(this.products.map(f => f.familyFr));
         this.familiesEn = new Set(this.products.map(f => f.familyEn));
+        this.setFilterElements();
      });
     });
     this.toggle = new Array(this.filterBy.length);
@@ -91,6 +91,46 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
     this.text = res[this.language.toUpperCase()];
   }
 
+  setFilterElements() {
+    this.filterElements = [];
+    for (const f of this.filterBy) {
+      this.filterElements.push({filterGroup: f,
+        filterElement: this.getFilterElements(f)
+      });
+    }
+  }
+
+  getFilterElements(filterGroup: string): IFilter[] {
+    switch (filterGroup) {
+      case 'Brand': { return this.setFilterListFromSet(this.brands); }
+      case 'Type': {
+        switch (this.language.toLowerCase()) {
+          case 'fr': { return this.setFilterListFromSet(this.categoriesFr); }
+          case 'en': { return this.setFilterListFromSet(this.categoriesEn); }
+        }
+        break;
+      }
+      case 'Family': {
+        switch (this.language.toLowerCase()) {
+          case 'fr': { return this.setFilterListFromSet(this.familiesFr); }
+          case 'en': { return this.setFilterListFromSet(this.familiesEn); }
+        }
+        break;
+      }
+    }
+    return [];
+  }
+
+  setFilterListFromSet(set: Set<string>): IFilter[] {
+    const filter: IFilter[] = [];
+    let i = 0;
+    set.forEach((value: string) => {
+      filter.push({index: i, checked: false, displayName: value});
+      i++;
+    });
+    return filter;
+  }
+
   sortProducts(p: ProductEF[]): ProductEF[] {
     p.sort(function(a, b) {
       if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
@@ -104,34 +144,9 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
   }
 
   getFilters(category: string): any {
-    switch (category.toLowerCase()) {
-      case 'brand': {
-        return this.brands;
-      }
-      case 'type': {
-        switch (this.language.toLowerCase()) {
-          case 'en': {
-            return this.categoriesEn;
-          }
-          case 'fr': {
-            return this.categoriesFr;
-          }
-        }
-        break;
-      }
-      case 'family': {
-        switch (this.language.toLowerCase()) {
-          case 'en': {
-            return this.familiesEn;
-          }
-          case 'fr': {
-            return this.familiesFr;
-          }
-        }
-        break;
-      }
-    }
-    return [];
+      const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
+      const fg: IFilter[] = fe[0].filterElement;
+      return  fg;
   }
 
   navigateTo(target: string, fragment: string = '') {
@@ -160,12 +175,80 @@ export class ProductSearchComponent implements OnInit/** ,  AfterViewChecked*/ {
   }
 
   selectFilter(c: string, i: number) {
-    console.log('Index: ', c, i, this.brands[i]);
-    this.productsFiltered = this.products.filter(f =>
-      f.brand === this.brands[i]
-    );
+    let filteredElements: IFilterElements[];
+    const filterItems: number[] = [];
+    const filteredItems: boolean[] = [];
+    let filterItemsList: string[] = [];
+    this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked =
+      !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked;
+
+    filteredElements = _.cloneDeep(this.filterElements);
+
+    _.map(filteredElements, element => {
+      element.filterElement = _.filter(element.filterElement, fe => fe.checked);
+      return element;
+    });
+
+    for (let k = 0; k < this.filterElements.length; k++) {
+      filterItems.push(this.filterElements[k].filterElement.length);
+    }
+    for (let j = 0; j < filteredElements.length; j++) {
+      if ((filteredElements[j].filterElement.length %
+        (filterItems[j] || filteredElements[j].filterElement.length)) === 0) {
+          filteredItems.push(false);
+        } else {
+          filteredItems.push(true);
+        }
+    }
+
+    this.productsFiltered = _.clone(this.products);
+    for (let l = 0; l < filteredItems.length; l++) {
+      if (filteredItems[l]) {
+        filterItemsList = this.getListOfFilterItems(filteredElements[l].filterElement);
+        switch (l) {
+          case 0: {
+            this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.brand));
+            break;
+          }
+          case 1: {
+            switch (this.language) {
+              case 'EN': {
+                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryEn));
+                break;
+              }
+              case 'FR': {
+                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryFr));
+                break;
+              }
+            }
+            break;
+          }
+          case 2: {
+            switch (this.language) {
+              case 'EN': {
+                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.familyEn));
+                break;
+              }
+              case 'FR': {
+                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.familyFr));
+                break;
+              }
+            }
+            break;
+          }
+        }
+      }
+    }
 
     this.scroller = false;
+  }
+
+  getListOfFilterItems(filteredElements: IFilter[]): string[] {
+    const filterList: string[] = [];
+      for (const f of filteredElements) {
+        filterList.push(f.displayName);
+      }
+    return filterList;
   }
 
   toggleFilters(index: number) {

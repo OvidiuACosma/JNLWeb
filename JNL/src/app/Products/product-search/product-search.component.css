@@ -289,10 +289,9 @@ li > div {
     height: 17.2vw; */
     margin: auto;
     margin-bottom: 0;
-    /* position: relative; */
     vertical-align: middle;
     display: flex;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .filters {
