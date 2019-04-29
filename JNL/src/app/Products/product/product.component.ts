@@ -9,10 +9,9 @@ declare var $: any;
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit/*, AfterViewChecked*/ {
+export class ProductComponent implements OnInit {
 
   public detail = 'description';
-  // public product_id: string;
   public prodDesc: any;
   public brand = '';
   public family = '';

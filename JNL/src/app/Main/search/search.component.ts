@@ -69,7 +69,7 @@ export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
   doSearch(searchText: string) {
     this.searchMode = !this.searchMode;
     if (searchText) {
-    this.router.navigate(['/searchResults', searchText]);
+    this.router.navigate(['products', { s: searchText }]);
     this.scrollTop();
     }
   }

@@ -11,7 +11,7 @@ declare var $: any;
   templateUrl: './marque.component.html',
   styleUrls: ['./marque.component.css']
 })
-export class MarqueComponent implements OnInit, OnChanges {
+export class MarqueComponent implements OnInit {
 
   language: string;
   text: any;
@@ -54,10 +54,6 @@ export class MarqueComponent implements OnInit, OnChanges {
     $(document).ready(function() {
       $('.carousel').carousel();
     });
-  }
-
-  ngOnChanges() {
-    // console.log('CHANGE!');
   }
 
   getText(lang: string) {

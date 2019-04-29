@@ -2,8 +2,6 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
-import { DeviceDetectorService } from 'ngx-device-detector';
-import { Browser } from 'src/app/_models';
 declare var $: any;
 
 @Component({
@@ -13,11 +11,8 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
 
-  deviceInfo = null;
-  browser: Browser;
   language: string;
   text: any;
-
   altText: any;
   page = 'home';
 
@@ -25,9 +20,7 @@ export class HomeComponent implements OnInit {
               private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private deviceService: DeviceDetectorService,
               private altService: AltImgService) {
-    // this.getBrowser();
   }
 
   ngOnInit() {
@@ -35,7 +28,8 @@ export class HomeComponent implements OnInit {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText();
-      this.getAlt(this.page);
+      this.getAlt();
+      this.ScrollTop();
     });
     // activate carousel
     $(document).ready(function() {
@@ -55,7 +49,7 @@ export class HomeComponent implements OnInit {
     this.text = res[this.language.toUpperCase()];
   }
 
-  getAlt(page: string) {
+  getAlt() {
     this.altService.getAltImages()
     .subscribe(data => {
       const res = data[0];
@@ -78,19 +72,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['actualites', {a: actualite}]);
     this.ScrollTop();
   }
-
-  // getBrowser() {
-  //   this.browser = {name: this.deviceService.getDeviceInfo().browser,
-  //                   isDesktopDevice: this.deviceService.isDesktop(),
-  //                   isTablet: this.deviceService.isTablet(),
-  //                   isMobile: this.deviceService.isMobile()};
-  //   // this.deviceInfo = this.deviceService.getDeviceInfo();
-  //   this.dataex.setCurrentBrowser(this.browser);
-  //   // const isMobile = this.deviceService.isMobile();
-  //   // const isTablet = this.deviceService.isTablet();
-  //   // const isDesktopDevice = this.deviceService.isDesktop();
-  //   // console.log('Is Mobile: ', isMobile, ', Is Tablet: ', isTablet, ', Is Desktop: ', isDesktopDevice);
-  // }
 
   navigateTo(target: string, fragment: string = '') {
     if (fragment === '') {

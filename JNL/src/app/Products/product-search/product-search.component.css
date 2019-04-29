@@ -73,20 +73,25 @@ li, ul {
     appearance: none;   
     list-style-type: none;
     padding: 0px !important;
+    line-height: 1.8vw;
 }
 
 .content {
     width: calc(99vw - var(--left-strip-width));
-    margin-top: 3vw;
+    padding-top: 3vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .search {
-    width: 27vw;
+    width: 26vw;
     padding-left: 2vw;
-    padding-right: 5vw;
+    padding-right: 1vw;
+    margin-right: 4vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .search-by-text {
@@ -103,8 +108,16 @@ li, ul {
 cdk-virtual-scroll-viewport {
     width: auto;
     margin: auto;
-    height: 52.3vw;
+    height: 72.3vw;
     overflow-x: hidden;
+}
+
+.dk-virtual-scroll-content-wrapper {
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    flex-wrap: wrap !important;
+    padding-right: 1.2vw;
 }
 
 /* cdk-virtual-scroll-viewport::-webkit-scrollbar {
@@ -138,7 +151,6 @@ cdk-virtual-scroll-viewport {
 
 .search-main {
     margin: auto;
-    /* text-align: center; */
     padding-top: 5.9vw;;
 }
 
@@ -152,7 +164,7 @@ cdk-virtual-scroll-viewport {
 }
 
 .products {
-    width: 72vw;
+    width: 73vw;
 }
 
 /* .products-group {
@@ -172,8 +184,16 @@ cdk-virtual-scroll-viewport {
 li {
     width: 20vw;
     margin: auto;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     display: inline-block;
     margin-bottom: 3vh;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .header-filter {
@@ -182,12 +202,32 @@ li {
     text-transform: uppercase;
     color: #DBBB76;
     margin-bottom: 0;
+    float: left;
+}
+
+.reset-filter {
+    font-family: Helvetica-Light;
+    font-size: 1.4vw;
+    padding: 0 .2vw;
+    margin-bottom: 0;
+    text-align: right;
+    float: right;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.reset-filter:hover {
+    background-color: #eee;
+    font-weight: bold;
+    transition: all .3s ease-out;
 }
 
 .single-filter {
     margin-bottom: 0px;
     font-family: Helvetica-Light;
     font-size: 1.3vw;
+    /* line-height: 1.5vw; */
 }
 
 li > div {
@@ -263,7 +303,7 @@ li > div {
 } */
 
 .pic-frame {
-    width: 20vw;
+    width: 21vw; /* 20vw; */
     height: 20vw;  
     background-color: white;
     border: 0.88px solid transparent;
@@ -328,16 +368,10 @@ li > div {
 }
 
 .card-product {
+    width: 21vw;
     cursor: pointer;
     color: black;
     transition: all .5s ease;
-}
-
-.cdk-virtual-scroll-content-wrapper {
-    display: flex !important;
-    flex-direction: row;
-    width: auto; /* 75.7vw;*/
-    flex-wrap: wrap !important;
 }
 
 #expertise, #surMesure, #votreProjet {

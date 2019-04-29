@@ -2,13 +2,17 @@
 <div class="search-main">
   <h1>Product Finder</h1>
   
-  <div class="content">
+  <div class="content" id="content">
     <!-- SEARCH -->
     <div class="search">
       <!-- <h4>FILTERS</h4> -->
       <div class="search-by-text">
-        <p class="header-filter">SEARCH</p>
-        <input class="search-textbox" name="productName" type="text" [(ngModel)]="product"><br>
+        <span class="search-container">
+          <div class="header-filter">SEARCH</div>
+          <div class="reset-filter" (click)="resetFilter()">reset</div>
+        </span>
+        <input class="search-textbox" name="searchBox" type="text" 
+          [(ngModel)]="searchText" (change)="searchByText()"><br>
       </div>
 
       <div class="filters">
@@ -59,10 +63,10 @@
             </li>
           </ng-container>
           
-          <li *ngFor="let m of [0]"> 
-            <!-- , 1, 2 -->
-            <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->
-            <div>
+          <!-- <li *ngFor="let m of [0]">  -->
+                  <!-- , 1, 2 -->
+                  <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->
+            <!-- <div>
               <div class="pic-frame">
                 <div>
                   <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-button">
@@ -73,11 +77,10 @@
               </div>
               <span>&nbsp;</span>
             </div>
-          </li>
+          </li> -->
         </div>
         </cdk-virtual-scroll-viewport>
       </ul>
     </div>
-    
   </div>
 </div>
