@@ -1,20 +1,24 @@
 @keyframes slidein {
     0%   {margin-left:-100vw;}
+    1%   {margin-left:-34vw;}
     100% {margin-left:0vw;}
 }
 
 @-webkit-keyframes slidein {
     0%   {-webkit-margin-start:-100vw;}
+    1%   {-webkit-margin-start:-34vw;}
     100% {-webkit-margin-start:0vw;}
 }
 
 @keyframes slideout {
     0%   {margin-left:0vw;}
+    99% {margin-left:-34vw;}
     100% {margin-left:-100vw;}
 }
 
 @-webkit-keyframes slideout {
     0%   {-webkit-margin-start:0vw;}
+    99% {-webkit-margin-start:-34vw;}
     100% {-webkit-margin-start:-100vw;}
 }
 
@@ -44,21 +48,21 @@
 .menu-in {
     animation-name: slidein;
     -webkit-animation-name: slidein;
-    transition: slidein .8s;
-    animation-duration: .8s;
-    -webkit-animation-duration: .8s;
+    transition: slidein 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-duration: 0.8s;
 }
 
 .menu-out {
     animation-name: slideout;
     -webkit-animation-name: slideout;
-    transition: slideout .8s;
-    animation-duration: .8s;
-    -webkit-animation-duration: .8s;
+    transition: slideout 1.8s;
+    animation-duration: 1.8s;
+    -webkit-animation-duration: 1.8s;
 }
 
 #side_nav {
-    transition: .8s;
+    transition: 1.4s;
     width: 34vw;
     height: 100%;
     margin-left: -34vw;
@@ -156,8 +160,18 @@ a:focus, img:focus {
 
 @media only screen and (max-width: 768px)
 {
+    .menu-close {
+        width: 5vw;
+    }
+
     #menu-image-div {
         display: none;
+    }
+
+    #side_nav {
+        width: 100vw;
+        margin-left: 0px;
+        display: block;
     }
 
     #side_nav_links > div {
