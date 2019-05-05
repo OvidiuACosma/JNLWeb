@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataExchangeService, TranslationService, RequestsService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, RequestsService } from '../../_services';
 import { FormControl, Validators } from '@angular/forms';
-import { RequestForm } from 'src/app/_models';
+import { RequestForm } from '../../_models';
+import { ValidatorEmail } from '../../_validators';
 
 @Component({
   selector: 'app-menu-bottom',
@@ -78,7 +79,7 @@ export class MenuBottomComponent implements OnInit {
                       A verification email will be sent to you to confirm this is your email address.\n
                       Please click on the link provided in the email to validate your subscription.`);
         this.emailReset();
-        // TODO: validate 'email is yours procedure' (send an email with a link, process the link and validate in DB)
+        // TODO: validate 'email is yours' procedure (send an email with a link, process the link and validate in DB)
       }
     }
   }

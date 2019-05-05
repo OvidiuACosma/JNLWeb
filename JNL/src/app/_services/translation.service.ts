@@ -79,4 +79,8 @@ export class TranslationService {
     return this.http.get(`${this.urlAssets}/Main/pagenotfound.json`);
   }
 
+  public getTextRequest(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Std/request.json`);
+  }
+
 }

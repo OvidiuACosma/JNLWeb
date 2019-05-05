@@ -34,11 +34,11 @@ export class ProductComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-    private productsService: ProductsService,
-    private router: Router,
-    private dataex: DataExchangeService,
-    private textService: TranslationService,
-    private archiveService: ArchiveService) { }
+              private productsService: ProductsService,
+              private router: Router,
+              private dataex: DataExchangeService,
+              private textService: TranslationService,
+              private archiveService: ArchiveService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage

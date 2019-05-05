@@ -22,14 +22,10 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   total: number;
   nrEmpty = 0;
 
-  country: any;
-  countryName: any;
-
   constructor(private router: Router,
     private route: ActivatedRoute,
     private dataex: DataExchangeService,
-    private textService: TranslationService,
-    private countryList: ArchiveService) {
+    private textService: TranslationService) {
     }
 
   ngOnInit() {
@@ -38,23 +34,18 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.language = lang || 'EN';
       this.getText(lang);
     });
-
     const numberAll = 15;
     this.total = numberAll;
-
     for (let index = 0; index < numberAll; index++) {
       this.numbers.push(index);
       this.removed[index] = 0;
     }
-
   }
-
 
   removeItem(index: number) {
     this.removed[index] = 1;
     this.scroller = false;
     this.total--;
-
     // REMOVE FROM DB ?
   }
 
@@ -68,31 +59,10 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       const res = data[0];
       this.getLanguageText(res);
     });
-
-
-    this.getCountries();
-
   }
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
-  }
-
-  // archive country list
-  countryClick() {
-    this.scroller = false;
-  }
-
-  getCountries() {
-    this.countryList.getTextCountries()
-    .subscribe(c => {
-      const source = c[0];
-       this.getCountryList(source);
-    });
-  }
-
-  getCountryList(source: any) {
-    this.countryName = source[this.language.toUpperCase()]['countries'];
   }
 
   NavigateTo(target: string, fragment: string = '') {
@@ -113,18 +83,17 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     this.scroller = false;
   }
 
-
   ngAfterViewChecked() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element && this.scroller === true ) {
-          element.scrollIntoView({block: 'start', behavior: 'smooth'});
-        }
-        this.scroller = true;
-      } else if (this.scroller === true) {
-          window.scrollTo(0, 0);
-        }
-    });
+    // this.route.fragment.subscribe(fragment => {
+    //   if (fragment) {
+    //     const element = document.getElementById(fragment);
+    //     if (element && this.scroller === true ) {
+    //       element.scrollIntoView({block: 'start', behavior: 'smooth'});
+    //     }
+    //     this.scroller = true;
+    //   } else if (this.scroller === true) {
+    //       window.scrollTo(0, 0);
+    //     }
+    // });
   }
 }

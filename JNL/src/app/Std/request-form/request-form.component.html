@@ -1,0 +1,49 @@
+<div class="contact_div">
+  <div>
+    <form class="contact_form" [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+      <br>
+      <div class="a-left" *ngIf="requestType === 4 || requestType === 5">
+        <input type="checkbox" formControlName="contactReq" class="i-checkbox">&nbsp;&nbsp;{{text.contactreq}}<br>
+        <input type="checkbox" formControlName="quotationReq" class="i-checkbox">&nbsp;&nbsp;{{text.quotationreq}}<br>
+        <br>
+      </div>
+
+      <select formControlName="projectType" name="projectType"  *ngIf="requestType === 3">
+        <option *ngFor="let project of projectType" [ngValue]="project.name"
+          [disabled]="project.name === 0">{{project.value}}</option>
+      </select>
+
+      <input type="text" formControlName="subject" name="subject"
+        placeholder="{{text.subject}}" maxlength="50" *ngIf="requestType === 2">
+      <textarea formControlName="message" name="message"
+        placeholder="{{text.message}}&nbsp;*" maxlength="500" rows="4"></textarea>
+      <p><small>{{500 - requestForm.value?.message?.length}} characters left.</small></p>
+      <input type="text" formControlName="name" name="name"
+        placeholder="{{text.name}} *" maxlength="50"/>
+      <input type="text" formControlName="surname" name="surname"
+        placeholder="{{text.surname}} *" maxlength="50"/>
+      <input type="text" formControlName="company" name="company"
+        placeholder="{{text.company}}" maxlength="50"/>
+      <select formControlName="activity" name="activity">
+        <option *ngFor="let act of activity" [ngValue]="act.name"
+          [disabled]="act.name === ''">{{act.value}}</option>
+      </select>
+      <select formControlName="country" name="country">
+        <option [ngValue]="''" selected disabled>{{text.country}}&nbsp;*</option>
+        <option *ngFor="let country of countryNames" [ngValue]="country.code">{{country.name}}</option>
+      </select>
+      <input type="text" formControlName="address" name="address"
+        placeholder="{{text.address}}"  maxlength="100"/>
+      <input type="text" formControlName="city" name="city"
+        placeholder="{{text.city}}"  maxlength="50"/>
+      <input type="text" formControlName="county" name="county"
+        placeholder="{{text.county}}"  maxlength="50"/>
+      <input type="text" formControlName="zip" name="zip"
+        placeholder="{{text.zip}}"  maxlength="15"/>
+      <input type="email" formControlName="email" name="email"
+        placeholder="{{text.email}} *" maxlength="65"/>
+      <br>
+      <button type="submit" [disabled]="!isFormValid()">{{text.send}}</button>
+    </form>
+  </div>
+</div>

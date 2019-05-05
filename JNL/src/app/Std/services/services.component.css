@@ -211,32 +211,32 @@ i {
     font-size: 1.11vw;
 }
 
-.contact_div
+.contact-div
 {
     background-color: #e3d9c6;
     left: 0;
     text-align: center;
-    margin-bottom: 5vh;
     font-family: Helvetica-Light;
-    font-size: 20px;
+    font-size: 1.4vw;
     padding-top: 3.7vw;
+    padding-bottom: 3vw;
 }
 
-.contact_div > h2 {
+.contact-div > h2 {
     margin-top: 0;
 }
 
-.contact_div > p {
-    
-    width: 53.48vw;
+.contact-div > p {
+    width: 45vw;
     margin: auto;
 }
 
-.contact_div > div > p {
+.contact-div > div > p {
     font-family: Helvetica-Light;
     font-size: 1.4vw;
     text-align: center;
 }
+
 .contact_form {
     margin: auto;
     margin-top: 4.8vw;
@@ -367,7 +367,7 @@ select {
 }
 
 @media only screen and (max-width: 800px){
-    .contact_div > p {
+    .contact-div > p {
         font-size: 1em;
         width: 80vw;
         margin-left: auto;
@@ -407,7 +407,7 @@ select {
         width: 80vw;
         justify-content: space-between;
     }
-    
+
     .sur-flex > div:last-child {
         flex-direction: column-reverse;
     }
@@ -433,62 +433,45 @@ select {
         margin-bottom: 5vw;
     }
 
-
-
-
-
-
-
     h2 {
         font-size: 5.6vw;
     }
-    
+
     h4 {
         font-size: 4.2vw;
     }
-    
-    
+
     .quote-bar > p {
         font-family: Helvetica-Light;
         font-size: 4.2vw;
     }
-    
+
     .quote-bar > h4 {
         font-size: 3.9vw;
     }
-    
+
     .sur-flex > div > div {
         font-size: 4.5vw;
-    } 
+    }
+
     .sur-flex > div > div > span {
         font-size: 4.4vw;
-    
-    } 
-    
+    }
+
     .sur-flex > div:nth-child(2) > div:first-child {
         font-size: 4.5vw; 
-    } 
-    
-    
-    
-    
-    
-    
-   
-    .contact_div
+    }
+
+    .contact-div
     {
         font-size: 4.5vw;
-        
     }
-    
-   
-    .contact_div > div > p {
+
+    .contact-div > div > p {
         font-size: 4.5vw;
     }
 
     #services_list > a {
         margin: 0px;
     }
-
-   
 }

@@ -1,0 +1,85 @@
+[
+    {
+        "placeHolders":
+        {
+            "FR":
+            {
+                "subject": "sujet",
+                "message": "votre message",
+                "name": "prénom",
+                "surname": "nom",
+                "company": "société",
+                "country": "pays",
+                "address": "adresse",
+                "city": "ville",
+                "county": "province",
+                "zip": "code postal",
+                "email": "email",
+                "projecttype": "type de projet",
+                "contactreq": "I would like to be contacted",
+                "quotationreq": "I would like to be sent a rate/ quotation",
+                "send": "envoyer"
+            },
+            "EN":
+            {
+                "subject": "subject",
+                "message": "your message",
+                "name": "name",
+                "surname": "surname",
+                "company": "company",
+                "country": "country",
+                "address": "address",
+                "city": "city",
+                "county": "county",
+                "zip": "zip",
+                "email": "email",
+                "projecttype": "project type",
+                "contactreq": "I would like to be contacted",
+                "quotationreq": "I would like to be sent a rate/ quotation",
+                "send": "send"
+            }
+        },
+        "activity":
+        {
+            "FR":
+            [
+                {"name": "", "value": "activité"},
+                {"name": "professional", "value": "professionnel"},
+                {"name": "architect", "value": "architecte"},
+                {"name": "press", "value": "journaliste"},
+                {"name": "showroom", "value": "magasin"},
+                {"name": "private", "value": "particulier"},
+                {"name": "other", "value": "autre"}
+            ],
+            "EN":
+            [
+                {"name": "", "value": "activity"},
+                {"name": "professional", "value": "professional"},
+                {"name": "architect", "value": "architect"},
+                {"name": "press", "value": "press"},
+                {"name": "showroom", "value": "showroom"},
+                {"name": "private", "value": "private"},
+                {"name": "other", "value": "other"}
+            ]
+        },
+        "projectType":
+        {
+            "FR":
+            [
+                {"name": 0, "value": "type de projet"},
+                {"name": 1, "value": "projet d'interieur particulier"},
+                {"name": 2, "value": "hotel"},
+                {"name": 3, "value": "magasin"},
+                {"name": 4, "value": "autre"}
+            ],
+            "EN":
+            [
+                {"name": 0, "value": "project type"},
+                {"name": 1, "value": "private interior project"},
+                {"name": 2, "value": "hotel"},
+                {"name": 3, "value": "showroom"},
+                {"name": 4, "value": "other"}
+            ]
+        }
+    }
+]

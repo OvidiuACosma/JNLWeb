@@ -23,7 +23,7 @@ export class RequestForm {
     name = '';
     surname = '';
     company = '';
-    country = 0;
+    country = '';
     address = '';
     city = '';
     county = '';
@@ -36,5 +36,6 @@ export class RequestForm {
     quotationReq = false;
     relationId = '';
     subscriber = 0;
-    dateC?: Date;
+    activity = '';
+    // dateC?: Date;
 }

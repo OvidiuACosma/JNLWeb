@@ -1,43 +1,9 @@
 <div>
-
-  <div class="contact_div">
+  <div class="contact-div">
     <h1>Contact</h1>
     <p>Bienvenue, veuillez trouver ici des informations sur <strong>le groupe JNL</strong>.<br>
       Pour toutes autres demandes de renseignements, via le formulaire ci-après,<br>
       vous pouves contacter notre service client, qui vous répondera au plus vite.</p>
-    
-    <div>
-      <form class="contact_form">
-        <select>
-          <option selected disabled>Sujet* 🡫</option>
-          <option>Sujet 1</option>
-          <option>Sujet 2</option>
-          <option>Sujet 3</option>
-        </select>
-        <br>
-
-        <div>
-          <span>Pouvez vous preciser?</span><br>
-          <textarea placeholder="Votre message*" rows="4" required></textarea>
-        </div>
-      
-        <input placeholder="Prenom*" reaquired/>
-        <input placeholder="Nom*" required/>
-        <input placeholder="Societe*" required/>
-        <input placeholder="Poste*" required/>
-        <select id="country">
-          <option selected disabled>Pays 🡫</option>
-          <option *ngFor="let ctry of this.cy; let x = index" >{{cy[x].name}}</option>
-        </select>
-        <input placeholder="Adresse"/>
-        <input placeholder="Ville*" required/>
-        <input placeholder="Province"/>
-        <input placeholder="Code Postal*"/>
-        <input placeholder="Email*" required/>
-
-        <br>
-        <button>ENVOYER</button>
-      </form>
-      </div>
   </div>
+  <app-request-form [requestType]='2'></app-request-form>
 </div>

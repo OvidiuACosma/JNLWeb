@@ -117,7 +117,6 @@ cdk-virtual-scroll-viewport {
     color: black;
 }
 
-
 .remove-item {
     display: none;
 }
@@ -129,8 +128,6 @@ cdk-virtual-scroll-viewport {
 .fav-main {
     margin: auto;
     margin-top: 60px;
-    /* width: 100vw; */
-
     display: flex;
     flex-direction: column;
 }
@@ -138,26 +135,19 @@ cdk-virtual-scroll-viewport {
 .fav-main > div {
     margin: auto;
     left: 0;
-    width: calc(100vw - 77px);
-
+    width: 100%;
     text-align: center;
 }
 
-.fav_div
-{
+.fav_div {
     background-color: #e3d9c6;
-    width: calc(100vw - 77px);
+    width: 100%;
     left: 0;
-
     text-align: center;
-
-    /* margin-bottom: 5vh !important; */
     margin-top: 7.5vw !important;
-
     font-family: Helvetica-Light;
     font-size: 20px;
     padding-top: 3.7vw;
-    
 }
 
 .fav_div > h2 {

@@ -1,15 +1,19 @@
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black;
-    opacity: 1; /* Firefox */
-  }
+    color: #444;
+opacity: 1; /* Firefox */
+}
   
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: black;
-  }
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #444;
+}
   
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: black;
-  }
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #444;
+}
+
+/* :required {
+    background: red;
+} */
 
 h1 {
     font-family: Helvetica;
@@ -20,6 +24,7 @@ h1 {
 
 textarea {
     margin: auto;
+    margin-top: 1.5vw;
     background-color: #F6EEDD;
     border: none;
     width: 45vw;
@@ -34,20 +39,29 @@ select {
     width: 45vw;
     background-color: transparent;
     border: none;
-    border-bottom: 1.5px solid black;
-    margin-bottom: 1em;
-    margin-top: 4vw;
+    border-bottom: 1px solid black;
+    margin: auto;
+    margin-top: 1.5vw;
+    text-transform: capitalize;
 }
 
-.contact-div {
+select > .default-option {
+    color: #666;
+}
+
+p {
+    width: 45vw;
+    margin: auto;
+    text-align: right;
+}
+
+.contact_div {
     text-align: center;
-    padding-top: 5.9vw;
+    /* padding-top: 5.9vw; */
     font-family: Helvetica-Light;
     font-size: 1.4vw;
-    margin-bottom: 6vw;
 }
-
-.contact-div > p {
+.contact_div > p {
     font-family: Helvetica-Light;
     font-size: 1.8vw;
     padding-left: 18.9vw;
@@ -55,9 +69,8 @@ select {
 }
 
 .contact_form {
-    width: 90%;
-    /* margin: auto; */
-    margin-top: 4.8vw;
+    width: 100%;
+    padding-top: 2vw;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -77,10 +90,18 @@ select {
     width: 45vw;
     background-color: transparent;
     border: none;
-    border-bottom: 1.5px solid black;
+    border-bottom: 1px solid black;
     margin-top: 1.5vw !important;
     margin-bottom: 0px !important;
     padding-bottom: 0px;
+}
+
+.contact_form > input.ng-invalid {
+    color: red;
+}
+
+.i-checkbox {
+    border-bottom: none;
 }
 
 .contact_top {
@@ -90,17 +111,27 @@ select {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-
 }
+
 .contact_form > button {
     text-transform: uppercase;
     margin: auto;
     background-color: white;
     color: black;
-    margin-top: 5.3em;
-    margin-bottom: 4em;
+    margin-top: 3vw;
+    margin-bottom: 4vw;
     border: none;
+    width: 15vw;
+    font-size: 1.2vw;
+    transition: all .3s ease-out;
+}
 
+.contact_form > button:hover:not([disabled]) {
+    cursor: pointer;
+    color:#444;
+    background-color: #F6EEDD;
+    font-weight: bold;
+    transition: all .1s ease-in;
 }
 
 .contact_div > div {
@@ -108,14 +139,18 @@ select {
     background-color: #e3d9c6;
 }
 
-.contact_form > div{
+.contact_form > div {
+    width: 45vw;
     margin: auto;
     text-align: left;
 }
 
+.a-left {
+    align-content: left;
+}
 
 @media only screen and (max-width: 800px){
-    .contact-div > p {
+    .contact_div > p {
         font-size: 4.4vw;
         padding-left: 10px;
         padding-right: 10px;
@@ -131,11 +166,11 @@ select {
     }
     
     
-    .contact-div {
+    .contact_div {
         font-size: 4.2vw;
     }
 
-    .contact-div > p {
+    .contact_div > p {
         font-size: 4.2vw;
     }
 
