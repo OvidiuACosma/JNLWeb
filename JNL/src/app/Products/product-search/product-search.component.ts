@@ -82,6 +82,7 @@ export class ProductSearchComponent implements OnInit {
         this.setFilterElements();
         if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
             this.routeParams.model || this.routeParams.searchText) {
+          this.activateItemSelection(this.routeParams);
           this.selectFilter();
         }
      });
@@ -227,6 +228,14 @@ export class ProductSearchComponent implements OnInit {
   toggleItemSelection(c: string, i: number) {
     this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked =
       !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked;
+  }
+
+  activateItemSelection(routeParams: IRouteParams) {
+    // TODO: select item from Route Parameters
+    if (routeParams.brand) {
+      this.filterElements.find(f => f.filterGroup === 'Brand')
+      .filterElement.find(f => f.displayName === routeParams.brand).checked = true;
+    }
   }
 
   getFilterItems(): number[] {

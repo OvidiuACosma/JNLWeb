@@ -1,8 +1,6 @@
-import { Component, OnInit, AfterViewChecked, OnChanges } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DataExchangeService, TranslationService, AltImgService, DownloaderService } from '../../_services';
 import * as _ from 'lodash';
 declare var $: any;
 
@@ -15,13 +13,16 @@ export class MarqueComponent implements OnInit {
 
   language: string;
   text: any;
-  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'Luz Interiors'];
+  textG: any;
+  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors'];
   collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'luz'];
   othersText: string[];
   othersLink: string[];
   i: number;
   collections: number;
   public marque: string;
+  blob: any;
+  url: any;
 
   altText: any;
   page = 'marque';
@@ -30,7 +31,8 @@ export class MarqueComponent implements OnInit {
               private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private altService: AltImgService) { }
+              private altService: AltImgService,
+              private downloader: DownloaderService) { }
 
   ngOnInit() {
     this.route.params.subscribe(p => {
@@ -65,7 +67,8 @@ export class MarqueComponent implements OnInit {
   }
 
   getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()][this.marque.toUpperCase()];
+    this.text = res['Collections'][this.language.toUpperCase()][this.marque.toUpperCase()];
+    this.textG = res['Generic'][this.language.toUpperCase()];
   }
 
   getAlt(page: string) {
@@ -113,6 +116,22 @@ export class MarqueComponent implements OnInit {
       this.language = lang || 'EN';
       this.getText(lang);
     });
+  }
+
+  download(marque: any, type: any) {
+    // NOT WORKING FOR IE AND EDGE
+    this.downloader.getFile(marque, type).subscribe(data => {
+      this.blob = new Blob([data], {
+        type: 'application/pdf'
+      });
+      this.url = window.URL.createObjectURL(this.blob);
+      window.open(this.url, '_blank');
+    });
+  }
+
+  goAllProducts(marque: string) {
+    const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
+    this.router.navigate(['products', { b: brand }]);
   }
 
   ScrollTop() {
