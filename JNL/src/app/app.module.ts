@@ -78,6 +78,9 @@ import { MatDialogModule } from '@angular/material';
     MatDialogModule,
     BrowserAnimationsModule
   ],
+  entryComponents: [
+    DialogAnswerComponent
+  ],
   providers: [
     DataExchangeService,
     ConfigService,

@@ -315,6 +315,7 @@ button
 .multi-item-carousel > .carousel-inner > .active > .left {
     left: -33%;
 }
+
 .multi-item-carousel > .carousel-inner > .active > .right {
     left: 33%;
 }
