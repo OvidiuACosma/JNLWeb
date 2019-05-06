@@ -16,6 +16,13 @@ h3 {
     font-size: 1.8vw;
 }
 
+h5 {
+    text-transform: uppercase;
+    font-size: 1.68vw;
+    font-weight: 100;
+    font-family: Helvetica-Light;
+}
+
 span {
     font-family: Helvetica-Light;
     font-size: 1.896vw;

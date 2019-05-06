@@ -8,6 +8,13 @@ h2 {
     font-size: 2.4vw;
 }
 
+h5 {
+    text-transform: uppercase;
+    font-size: 1.68vw;
+    font-weight: 100;
+    font-family: Helvetica-Light;
+}
+
 .hide-item, .show-item {
     display: block;
 }

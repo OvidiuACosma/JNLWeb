@@ -2,7 +2,7 @@
 <hr>
 <div id="container">
   <div id="staticText" (click)="toggleElement()">
-    <h5 *ngIf="stdText" [innerHTML]="stdText.matFin | uppercase"></h5>
+    <h5 *ngIf="stdText" [innerHTML]="stdText.matFin"></h5>
     <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
   </div>
   <div id="contentMatFin" [ngClass]="(this.toggleMat) ? 'hide-item' :'show-item'">
