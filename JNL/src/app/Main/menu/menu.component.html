@@ -1,4 +1,5 @@
-<nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-34vw' : '0'}"
+<!-- <nav id="side_nav" [ngStyle]="{'margin-left': isCollapsed ? '-34vw' : '0'}" -->
+<nav id="side_nav" [ngStyle]="{'margin-left': !isCollapsed ? '0vw' : '-100vw'}"
     (mouseleave)="hideMenu()">
     <div class="container-fluid">
         <img class="menu-close" src="/assets/Images/Menu/menuClose.png"

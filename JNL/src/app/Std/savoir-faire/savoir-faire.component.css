@@ -449,7 +449,7 @@ input[type="radio"] {
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
 
     h4 {
         width: 80vw;
@@ -482,7 +482,7 @@ input[type="radio"] {
 
     .steps-text {
         width: 80vw;
-        height: 100vw;
+        height: 85vw;
         position: relative;
         top:0;
     }
@@ -518,10 +518,12 @@ input[type="radio"] {
 
     h3 {
         font-size: 4.5vw;
+        width: 90vw;
+        margin: auto;
     }
 
     h4{
-        font-size: 4.2vw;
+        font-size: 4.2vw !important;
     }
     h5 {
         font-size: 3.4vw;
@@ -533,6 +535,7 @@ input[type="radio"] {
 
     .ateliers-flex > div > div {
         font-size: 4.2vw;
+        text-align: center !important;
     } 
 
     .ateliers-flex > div > div > span {
@@ -542,6 +545,10 @@ input[type="radio"] {
     .ateliers-flex > div:nth-child(2) > div:first-child {
         font-size: 4.5vw;
     } 
+
+    #af1 > div > img {
+        width: 80vw;
+    }
 
     .steps-text {
         font-size: 4.5vw;

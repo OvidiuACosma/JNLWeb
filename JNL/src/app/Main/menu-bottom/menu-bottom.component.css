@@ -141,6 +141,12 @@ input:focus, button:focus {
     outline: none;
     font-size: .9vw;
     line-height: 1.1vw;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    -webkit-border-radius:0px;
 }
 
 input.ng-valid {
@@ -249,6 +255,19 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     #newsletter > input {
         width: 40vw;
         background-color: transparent;
+        height: 5vw;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        -webkit-border-radius: 0px;
+        border: none;
+        border-width: 0px;
+    }
+
+    .news-button {
+        height: 5vw;
     }
 
     #newsletter > button {
@@ -281,7 +300,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     }
 
     #mobile-social {
-        width: 95px;
+        /* width: 95px; */
+        display: flex;
         margin: auto;
     }
 

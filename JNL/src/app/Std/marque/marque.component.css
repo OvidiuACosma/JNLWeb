@@ -419,7 +419,7 @@ h6 {
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
 
     h1 {
         font-size: 9.7vw;
@@ -438,12 +438,19 @@ h6 {
         font-size: 4.2vw;
     }
 
+    .heritage > div > div > span {
+        
+        height: 6.5vw;
+        width: 63vw;
+        margin-top: 2vw;
+    }
+
     .flex-div {
         flex-direction: column;
     }
 
     .flex-div > div {
-        width: 80vw;
+        width: 80vw !important;
     }
     
     .flex-div > div > img {
@@ -476,6 +483,10 @@ h6 {
         margin-bottom: 10px;
     }
 
+    .home_links {
+        font-size: 2.7vw;
+    }
+
     .style-title {
         font-size: 4.6vw !important;
     }
@@ -505,8 +516,10 @@ h6 {
         height: 60vw;
     }
 
-    .flex-div > div > p, .flex-div > div > span, h6, .flex-div > div > div > span {
+    .flex-div > div > p,  .flex-div > div:nth-child(2) > p, .flex-div > div > span, h6, .flex-div > div > div > span {
         font-size: 4.2vw;
+        width: auto;
+        line-height: normal;
     }
 
     #autres > p > span {

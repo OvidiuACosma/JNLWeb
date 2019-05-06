@@ -452,6 +452,7 @@ select {
 
     .sur-flex > div > div {
         font-size: 4.5vw;
+        text-align: center;
     }
 
     .sur-flex > div > div > span {
@@ -472,6 +473,6 @@ select {
     }
 
     #services_list > a {
-        margin: 0px;
+        margin: auto;
     }
 }
