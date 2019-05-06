@@ -38,7 +38,7 @@
                   [ngClass]="k === 0 ? 'item active' : 'item'">
                   <div class="container">
                     <div class="carousel-item-image">
-                      <img src='{{item}}' alt='Vanhamme Collection' class="slide-image">
+                      <img src='{{item}}' alt='{{text.collectionTitle}}' class="slide-image">
                     </div>
                     <p class="voir">
                       <span class="home_links" (click)="navigateTo('marques', 'jnl')">{{text.discover}} {{text.productCategories[k]}}</span>
