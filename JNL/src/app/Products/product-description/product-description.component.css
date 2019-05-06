@@ -10,9 +10,9 @@ h2 {
 h5 {
     text-transform: uppercase;
     font-size: 1.68vw;
-    font-weight: 300;
+    font-weight: 100;
+    font-family: Helvetica-Light;
 }
-
 
 .hide-item, .show-item {
     display: block;
@@ -69,7 +69,7 @@ h5 {
 }
 
 .fin-img {
-    object-fit: contain;
+    object-fit: cover;
     text-align: center;
 }
 
