@@ -7,6 +7,12 @@ h2 {
     font-size: 2.4vw;
 }
 
+h5 {
+    text-transform: uppercase;
+    font-size: 1.68vw;
+    font-weight: 300;
+}
+
 
 .hide-item, .show-item {
     display: block;
@@ -182,7 +188,6 @@ h2 {
     #staticText > h5 {
         font-size: 4.16vw;
         text-align: center;
-
         width: 75.22vw;
     }
 

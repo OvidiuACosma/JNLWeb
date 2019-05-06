@@ -1,7 +1,28 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RequestsService, TranslationService, DataExchangeService, ArchiveService } from '../../_services';
 import { RequestForm } from '../../_models';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+export interface DialogData {
+  title: string;
+  text: string;
+}
+
+@Component({
+  selector: 'app-dialog-answer',
+  templateUrl: 'dialog-answer.html',
+})
+export class DialogAnswerComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogAnswerComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  okClick(): void {
+    this.dialogRef.close();
+  }
+}
 
 @Component({
   selector: 'app-request-form',
@@ -18,12 +39,15 @@ export class RequestFormComponent implements OnInit {
   countryNames: any;
   activity: any;
   projectType: any; // 0 - title(disabled); 1 - private interior project; 2 - hotel; 3 - showroom; 4 - other;
+  answerTitle: string;
+  answerText: string;
 
   constructor(private fb: FormBuilder,
               private requestsService: RequestsService,
               private textService: TranslationService,
               private dataex: DataExchangeService,
-              private archiveService: ArchiveService) {
+              private archiveService: ArchiveService,
+              public dialog: MatDialog) {
     this.createForm();
   }
 
@@ -75,8 +99,8 @@ export class RequestFormComponent implements OnInit {
   setRequestForm(): FormGroup {
     const requestForm = new RequestForm();
     requestForm.type = this.requestType;
-    const requestFormGroup: FormGroup = this.fb.group(requestForm);
     // TODO: populate form fields from user if logged in
+    const requestFormGroup: FormGroup = this.fb.group(requestForm);
     requestFormGroup.get('email').setValidators([Validators.email]);
     requestFormGroup.get('message').setValidators([Validators.required]);
     requestFormGroup.get('name').setValidators([Validators.required]);
@@ -86,15 +110,30 @@ export class RequestFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Request Form Values: ', JSON.stringify(this.requestForm.value));
-    // TODO: custom validate input
     if (this.requestForm.valid) {
       this.requestsService.postRequest(this.requestForm.value)
       .subscribe(s => {
-        console.log('Message success.', s);
+        window.alert(`Your request has been registered.\n
+                      We will consider it and return to you\n
+                      with an answer in short time.\n
+                      Thank you!`);
+        this.openDialog();
         this.rebuildForm();
       });
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogAnswerComponent, {
+      width: '250px',
+      data: {title: this.answerTitle, text: this.answerText}
+    });
+
+    // in case the dialog provides an answer (like Input box)
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.answerText = result;
+    });
   }
 
   isFormValid(): boolean {

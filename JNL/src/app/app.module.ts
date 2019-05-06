@@ -24,9 +24,10 @@ import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers'
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { WINDOW_PROVIDERS } from './_services/window.service';
-import { RequestFormComponent } from './Std/request-form/request-form.component';
+import { RequestFormComponent, DialogAnswerComponent } from './Std/request-form/request-form.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageNotFoundComponent,
     FavoritesComponent,
     LeftStripComponent,
-    RequestFormComponent
+    RequestFormComponent,
+    DialogAnswerComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CarouselModule.forRoot(),
     ScrollingModule,
     MatIconModule,
+    MatDialogModule,
     BrowserAnimationsModule
   ],
   providers: [

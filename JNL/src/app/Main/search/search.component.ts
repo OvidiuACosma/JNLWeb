@@ -83,7 +83,8 @@ export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
   toggleNav() {
     if (!this.navBarStatus) {
       if ((event.type === 'mouseover' && this.browser.isDesktopDevice) ||
-           (event.type === 'click' && (this.browser.isTablet || this.browser.isMobile))) {
+           (event.type === 'click' && (this.browser.isTablet || this.browser.isMobile ||
+                                       (this.browser.isDesktopDevice && window.innerWidth <= 768)))) {
              this.dataex.setNavBarStatus(!this.navBarStatus);
            }
     }
