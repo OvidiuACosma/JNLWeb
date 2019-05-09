@@ -24,10 +24,14 @@ import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers'
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { WINDOW_PROVIDERS } from './_services/window.service';
-import { RequestFormComponent } from './Std/request-form/request-form.component';
+import { RequestFormComponent, DialogAnswerComponent } from './Std/request-form/request-form.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { ProductGalleryComponent } from './Products/product-gallery/product-gallery.component';
+=======
+import { MatDialogModule } from '@angular/material';
+>>>>>>> 9d66c3889d9b720802e41e9bc40de97977ac532a
 
 
 @NgModule({
@@ -62,7 +66,11 @@ import { ProductGalleryComponent } from './Products/product-gallery/product-gall
     FavoritesComponent,
     LeftStripComponent,
     RequestFormComponent,
+<<<<<<< HEAD
     ProductGalleryComponent
+=======
+    DialogAnswerComponent
+>>>>>>> 9d66c3889d9b720802e41e9bc40de97977ac532a
   ],
   imports: [
     BrowserModule,
@@ -75,7 +83,11 @@ import { ProductGalleryComponent } from './Products/product-gallery/product-gall
     CarouselModule.forRoot(),
     ScrollingModule,
     MatIconModule,
+    MatDialogModule,
     BrowserAnimationsModule
+  ],
+  entryComponents: [
+    DialogAnswerComponent
   ],
   providers: [
     DataExchangeService,

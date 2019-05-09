@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { Browser } from '../../_models';
 
 @Component({
   selector: 'app-menu',
