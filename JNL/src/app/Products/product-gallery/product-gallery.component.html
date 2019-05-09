@@ -1,0 +1,31 @@
+<!-- BOTTOM CAROUSEL -->
+<div class="clear"></div>
+<div id="carousel-title">
+  <p><span>{{model}}</span> Gallery</p>
+</div>
+<div class="clear"></div>
+
+<div class="container-fluid">
+  <div id="carouselGallery" class="carousel slide" data-ride="carousel">
+    <div class="gallery-carousel-inner row w-100 mx-auto" role="listbox" *ngIf='gallery'>
+      <div class="carousel-item col-md-3" *ngFor="let img of gallery; let j = index" [ngClass]="j === 0 ? 'item active' : 'item'">
+        <div class="panel panel-default">
+          <div class="panel-thumbnail">
+            <a href="#" class="thumb"> <img class="img-fluid mx-auto d-block"
+                src="assets\Images\Products\{{brand}}\{{family}}\Thumbs\{{img}}"> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselGallery" role="button" data-slide="prev">
+      <img alt="" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next text-faded" href="#carouselGallery" role="button" data-slide="next">
+      <img alt="" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="clear"></div>

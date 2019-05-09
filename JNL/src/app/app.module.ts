@@ -27,6 +27,7 @@ import { WINDOW_PROVIDERS } from './_services/window.service';
 import { RequestFormComponent } from './Std/request-form/request-form.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductGalleryComponent } from './Products/product-gallery/product-gallery.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageNotFoundComponent,
     FavoritesComponent,
     LeftStripComponent,
-    RequestFormComponent
+    RequestFormComponent,
+    ProductGalleryComponent
   ],
   imports: [
     BrowserModule,
