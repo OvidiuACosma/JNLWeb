@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
 declare var $: any;
 
