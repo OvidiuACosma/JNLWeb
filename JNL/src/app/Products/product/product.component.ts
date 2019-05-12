@@ -34,11 +34,11 @@ export class ProductComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-              private productsService: ProductsService,
-              private router: Router,
-              private dataex: DataExchangeService,
-              private textService: TranslationService,
-              private archiveService: ArchiveService) { }
+    private productsService: ProductsService,
+    private router: Router,
+    private dataex: DataExchangeService,
+    private textService: TranslationService,
+    private archiveService: ArchiveService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -54,32 +54,9 @@ export class ProductComponent implements OnInit {
       });
 
     // activate carousel
-    /* $(document).ready(function () {
-      $('.carousel').carousel();
-    }); */
-
-    $(document).ready(function () {
-      $('.carousel').carousel();
-        $('.multi-item-carousel').carousel({
-         interval: 10000
-       });
-       /*
-       // for every slide in carousel, copy the next slide's item in the slide.
-       // Do the same for the next, next item.
-       $('.multi-item-carousel .item').each(function () {
-         let next = $(this).next();
-         if (!next.length) {
-           next = $(this).siblings(':first');
-         }
-         next.children(':first-child').clone().appendTo($(this));
-
-         if (next.next().length > 0) {
-           next.next().children(':first-child').clone().appendTo($(this));
-         } else {
-           $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-         }
-       }); */
-    });
+    // $(document).ready(function () {
+    //   $('.carousel').carousel();
+    // });
 
   }
 

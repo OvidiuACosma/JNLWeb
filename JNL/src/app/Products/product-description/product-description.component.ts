@@ -14,7 +14,7 @@ export class ProductDescriptionComponent implements OnInit {
   public productDesc: any[];
   public parts = new Set();
   public materials: string[] = [];
-  public testErable = false;
+  public checkMat = false;
   public showLevel = null;
   public finisage: Finisage;
   // public modalActive = false;
@@ -101,8 +101,9 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   getFinitions(part: string, material: string) {
-    this.testErable = false; // testing...
-    if (material === 'Erable' || material === 'Maple') { this.testErable = true; }
+    this.checkMat = true; // testing...
+    if (material === 'Tissu' || material === 'Cuir' || material === 'Fabric' || material === 'Leather'
+    || material === 'Simili Cuir' || material === 'Faux Leather') { this.checkMat = false; }
 
     const finList: Finisage[] = [];
     this.productDesc.forEach(item => {
