@@ -227,7 +227,12 @@ li {
     margin-bottom: 0px;
     font-family: Helvetica-Light;
     font-size: 1.3vw;
-    /* line-height: 1.5vw; */
+    line-height: 1.5vw;
+}
+
+.single-filter > span > i {
+    line-height: 1.4vw;
+    font-size: 1vw;
 }
 
 li > div {
@@ -307,13 +312,7 @@ li > div {
     height: 20vw;  
     background-color: white;
     border: 0.88px solid transparent;
-    /* transition: all .3s ease; */
 }
-
-/* .pic-frame:hover {
-    border: 0.88px solid #DBBB76;
-    transition: all .3s ease;
-} */
 
 .product-name {
     max-width: 19.45vw;
@@ -321,12 +320,26 @@ li > div {
 }
 
 .product-name > span > i {
-    padding-right: .7vw;
+    padding-right: .6vw;
+    font-size:  1vw;
+    transition: all .3s ease;
+}
+
+.product-name > span > i:hover {
+    color: #DBBB76;
+    transition: all .3s ease;
+}
+
+.product-name-text {
+    transition: all .3s ease;
+}
+
+.product-name-text:hover {
+    color: #DBBB76;
+    transition: all .3s ease;
 }
 
 .center-product {
-    /* width: 17.2vw;
-    height: 17.2vw; */
     margin: auto;
     margin-bottom: 0;
     vertical-align: middle;
@@ -362,17 +375,17 @@ li > div {
     transition: all .3s ease;
 }
 
-.card-product:hover {
-    color: #DBBB76;
-    transition: all .3s ease;
-}
-
 .card-product {
     width: 21vw;
     cursor: pointer;
     color: black;
-    transition: all .5s ease;
+    /* transition: all .5s ease; */
 }
+
+/* .card-product:hover {
+    color: #DBBB76;
+    transition: all .3s ease;
+} */
 
 #expertise, #surMesure, #votreProjet {
     margin-bottom: 60px;

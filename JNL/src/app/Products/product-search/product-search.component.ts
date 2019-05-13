@@ -45,7 +45,6 @@ export class ProductSearchComponent implements OnInit {
   filterBy: string[] = ['Brand', 'Type', 'Family'];
   brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors']);
   filterElements: IFilterElements[] = [];
-  // selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
   total: number;
@@ -74,10 +73,8 @@ export class ProductSearchComponent implements OnInit {
       .subscribe(p => {
         this.products = this.sortProducts(p);
         this.productsFiltered = _.clone(this.products);
-        this.categoriesFr = new Set(this.products.map(c => c.categoryFr));
-        this.categoriesEn = new Set(this.products.map(c => c.categoryEn));
-        this.familiesFr = new Set(this.products.map(f => f.familyFr));
-        this.familiesEn = new Set(this.products.map(f => f.familyEn));
+        this.getCategories();
+        this.getFamilies();
         this.getRouteParameters();
         this.setFilterElements();
         if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
@@ -109,6 +106,20 @@ export class ProductSearchComponent implements OnInit {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getCategories(brand = 'all') {
+    const products = this.products;
+    if (brand !== 'all') {
+      products.filter(f => f.brand = brand);
+    }
+      this.categoriesFr = new Set(products.map(c => c.categoryFr));
+      this.categoriesEn = new Set(products.map(c => c.categoryEn));
+  }
+
+  getFamilies() {
+    this.familiesFr = new Set(this.products.map(f => f.familyFr));
+    this.familiesEn = new Set(this.products.map(f => f.familyEn));
   }
 
   getRouteParameters() {
@@ -209,6 +220,7 @@ export class ProductSearchComponent implements OnInit {
     let filteredItems: boolean[];
     if (c !== '') {
       this.toggleItemSelection(c, i);
+      // TODO: implement filtering the list of filter elements brand -> category -> familiy
     }
     // Determine filtering parameters
     filteredElements = _.cloneDeep(this.filterElements);
