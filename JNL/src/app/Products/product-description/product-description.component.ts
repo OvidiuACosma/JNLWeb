@@ -11,6 +11,7 @@ import { Product, Finisage } from '../../_models';
 export class ProductDescriptionComponent implements OnInit {
 
   @Input() product: Product;
+  brand: string;
   public productDesc: any[];
   public parts = new Set();
   public materials: string[] = [];
@@ -32,7 +33,7 @@ export class ProductDescriptionComponent implements OnInit {
     private productsService: ProductsService) { }
 
   ngOnInit() {
-
+    this.getBrand(this.product.brand);
     this.dataex.currentLanguage
       .subscribe(lang => {
         this.language = lang || 'EN';
@@ -49,6 +50,14 @@ export class ProductDescriptionComponent implements OnInit {
           });
 
       });
+  }
+
+  getBrand(brand: string) {
+    if (brand !== 'Vanhamme') {
+      this.brand = brand;
+    } else {
+      this.brand = 'JNL Collection';
+    }
   }
 
   getStdText(lang: string) {
@@ -103,7 +112,8 @@ export class ProductDescriptionComponent implements OnInit {
   getFinitions(part: string, material: string) {
     this.checkMat = true; // testing...
     if (material === 'Tissu' || material === 'Cuir' || material === 'Fabric' || material === 'Leather'
-    || material === 'Simili Cuir' || material === 'Faux Leather') { this.checkMat = false; }
+    || material === 'Simili Cuir' || material === 'Simili cuir' || material === 'Faux Leather'
+    || material === 'Fake Leather') { this.checkMat = false; }
 
     const finList: Finisage[] = [];
     this.productDesc.forEach(item => {
@@ -114,7 +124,7 @@ export class ProductDescriptionComponent implements OnInit {
               finList.push({
                 name: item.finisageNameFr,
                 material: item.materialNameFr,
-                img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
+                img: `${item.materialNameFr.replace('/', '-')} ${item.finisageNameFr.replace('/', '-')}.jpg`
               });
             }
             break;
@@ -124,7 +134,7 @@ export class ProductDescriptionComponent implements OnInit {
               finList.push({
                 name: item.finisageNameEn,
                 material: item.materialNameEn,
-                img: `${item.materialNameFr} ${item.finisageNameFr}.jpg`
+                img: `${item.materialNameFr.replace('/', '-')} ${item.finisageNameFr.replace('/', '-')}.jpg`
               });
             }
           }

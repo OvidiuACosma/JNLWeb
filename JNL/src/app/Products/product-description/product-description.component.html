@@ -17,7 +17,7 @@
                 <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal" data-target="#finisageModal">
                   <a>
                     <img id="fin-img" *ngIf="checkMat" class="samples"
-                      src="assets\Images\Products\JNL Collection\Samples\{{fin.img}}">
+                      src="assets\Images\Products\{{brand}}\Samples\{{fin.img}}">
                   </a>
                   <span class="fin-text">{{fin.name}}</span>
                 </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="cardContainer">
           <div class="card">
-            <img src="assets\Images\Products\JNL Collection\Samples\Print\{{finisage.img}}" class="card-img-top"
+            <img src="assets\Images\Products\{{brand}}\Samples\Print\{{finisage.img}}" class="card-img-top"
               alt="...">
             <div class="card-body">
               <!--
