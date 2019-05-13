@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import { Product, ProductEF } from '../../_models';
@@ -108,18 +108,33 @@ export class ProductSearchComponent implements OnInit {
     this.text = res[this.language.toUpperCase()];
   }
 
-  getCategories(brand = 'all') {
-    const products = this.products;
-    if (brand !== 'all') {
-      products.filter(f => f.brand = brand);
+  getCategories(brand: string[] = ['all']) {
+    let products = _.clone(this.products);
+    if (!brand.includes('all')) {
+      products = products.filter(f => brand.includes(f.brand));
     }
       this.categoriesFr = new Set(products.map(c => c.categoryFr));
       this.categoriesEn = new Set(products.map(c => c.categoryEn));
   }
 
-  getFamilies() {
-    this.familiesFr = new Set(this.products.map(f => f.familyFr));
-    this.familiesEn = new Set(this.products.map(f => f.familyEn));
+  getFamilies(brand: string[] = ['all'], category: string[] = ['all']) {
+    let products = _.clone(this.products);
+    if (!brand.includes('all')) {
+      products = products.filter(f => brand.includes(f.brand));
+    }
+    if (!category.includes('all')) {
+      switch (this.language.toLowerCase()) {
+        case 'en': {
+          products = products.filter(f => category.includes(f.categoryEn));
+          break;
+        }
+        case 'fr': {
+          products = products.filter(f => category.includes(f.categoryFr));
+        }
+      }
+    }
+    this.familiesFr = new Set(products.map(f => f.familyFr));
+    this.familiesEn = new Set(products.map(f => f.familyEn));
   }
 
   getRouteParameters() {
@@ -188,7 +203,33 @@ export class ProductSearchComponent implements OnInit {
 
   getFilters(category: string): any {
       const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
-      const fg: IFilter[] = fe[0].filterElement;
+      let fg: IFilter[] = fe[0].filterElement;
+      switch (category) {
+        case 'Type': {
+          switch (this.language.toLowerCase()) {
+            case 'en': {
+              fg = fg.filter(f => this.categoriesEn.has(f.displayName));
+              break;
+            }
+            case 'fr': {
+              fg = fg.filter(f => this.categoriesFr.has(f.displayName));
+            }
+          }
+          break;
+        }
+        case 'Family': {
+          switch (this.language.toLowerCase()) {
+            case 'en': {
+              fg = fg.filter(f => this.familiesEn.has(f.displayName));
+              break;
+            }
+            case 'fr': {
+              fg = fg.filter(f => this.familiesFr.has(f.displayName));
+            }
+          }
+          break;
+        }
+      }
       return  fg;
   }
 
@@ -209,18 +250,27 @@ export class ProductSearchComponent implements OnInit {
   }
 
   resetFilter() {
+    this.getCategories(['all']);
+    this.getFamilies(['all']);
     this.setFilterElements();
     this.productsFiltered = _.clone(this.products);
   }
 
-  selectFilter(c = '', i = 0) {
+  selectFilter(c = '', displayName = '') {
     this.scrollAfterFilter('content');
     let filteredElements: IFilterElements[];
     let filterItems: number[];
     let filteredItems: boolean[];
     if (c !== '') {
-      this.toggleItemSelection(c, i);
+      this.toggleItemSelection(c, displayName);
       // TODO: implement filtering the list of filter elements brand -> category -> familiy
+      if (c === 'Brand') {
+        this.getCategories(this.getselectedItemsOfGroup('Brand'));
+        this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
+      }
+      if (c === 'Type') {
+        this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
+      }
     }
     // Determine filtering parameters
     filteredElements = _.cloneDeep(this.filterElements);
@@ -237,9 +287,16 @@ export class ProductSearchComponent implements OnInit {
     this.scroller = false;
   }
 
-  toggleItemSelection(c: string, i: number) {
-    this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked =
-      !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked;
+  toggleItemSelection(c: string, displayName: string) {
+    this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked =
+      !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
+  }
+
+  getselectedItemsOfGroup(group: string): string[] {
+    let selectedItems: string[] = this.filterElements.find(f => f.filterGroup === group)
+      .filterElement.filter(v => v.checked).map(m => m.displayName);
+    if (selectedItems.length === 0) { selectedItems = ['all']; }
+    return selectedItems;
   }
 
   activateItemSelection(routeParams: IRouteParams) {
@@ -255,6 +312,7 @@ export class ProductSearchComponent implements OnInit {
     for (let k = 0; k < this.filterElements.length; k++) {
       filterItems.push(this.filterElements[k].filterElement.length);
     }
+    // console.log('filterItems: ', filterItems);
     return filterItems;
   }
 

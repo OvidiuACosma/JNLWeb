@@ -24,7 +24,7 @@
             </div>
             <ul id="filter-{{c}}" *ngIf="toggle[i]">
               <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index">
-                  <span (click)="selectFilter(c, i2)">
+                  <span (click)="selectFilter(c, d.displayName)">
                     <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
                     &nbsp;{{d.displayName}}
                   </span>

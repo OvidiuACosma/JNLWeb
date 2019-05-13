@@ -88,6 +88,10 @@ hr {
     margin-top: -11vw;
 }
 
+.carousel-item {
+    transition-duration: 1.5s, 1.5s;
+}
+
 .carousel-item-content {
     width: 80%;
 }
