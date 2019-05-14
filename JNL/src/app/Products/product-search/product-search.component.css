@@ -249,6 +249,7 @@ li > div {
     justify-content: left;
     float: left;
     /* width: 64vw; */
+    padding-top: 2.2vw;
 }
 
 .arrow {

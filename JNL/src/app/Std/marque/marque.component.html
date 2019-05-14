@@ -14,7 +14,7 @@
       <h2>{{text.sectionTitle}}</h2>
       <p [innerHTML]="text.sectionText"></p>
       <div class="home-links-flex">
-        <span class="home_links" (click)="goAllProducts(marque)">{{textG.link1}}</span>
+        <span class="home_links" (click)="goAllProductsOfBrand(marque)">{{textG.link1}}</span>
         <span class="home_links" (click)="download(marque, 'catalog')">{{textG.link2}}</span>
         <span class="home_links">{{textG.link3}}</span>
       </div>
@@ -41,7 +41,7 @@
                       <img src='{{item}}' alt='{{text.collectionTitle}}' class="slide-image">
                     </div>
                     <p class="voir">
-                      <span class="home_links" (click)="navigateTo('marques', 'jnl')">{{textG.discover}} {{text.productCategories[k]}}</span>
+                      <span class="home_links" (click)="goProductsByCategoryOrFamily(marque, text.productCategories[k])">{{textG.discover}} {{text.productCategories[k]}}</span>
                     </p>
                   </div>
                 </div>

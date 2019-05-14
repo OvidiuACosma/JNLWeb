@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, DownloaderService } from '../../_services';
 import * as _ from 'lodash';
-declare var $: any;
+import * as FileSaver from 'file-saver';
+// declare var $: any;
 
 @Component({
   selector: 'app-marque',
@@ -53,9 +54,9 @@ export class MarqueComponent implements OnInit {
       this.getAlt(this.page);
     });
     // activate carousel
-    $(document).ready(function() {
-      $('.carousel').carousel();
-    });
+    // $(document).ready(function() {
+    //   $('.carousel').carousel();
+    // });
   }
 
   getText(lang: string) {
@@ -118,20 +119,40 @@ export class MarqueComponent implements OnInit {
     });
   }
 
-  download(marque: any, type: any) {
+  download(marque: string, type: string) {
     // NOT WORKING FOR IE AND EDGE
     this.downloader.getFile(marque, type).subscribe(data => {
       this.blob = new Blob([data], {
         type: 'application/pdf'
       });
-      this.url = window.URL.createObjectURL(this.blob);
-      window.open(this.url, '_blank');
+      const fileName = marque[0].toUpperCase() + marque.slice(1) + ' ' + type[0].toUpperCase() + type.slice(1) + '.pdf';
+      FileSaver.saveAs(this.blob, fileName);
+      // this.url = window.URL.createObjectURL(this.blob);
+      // window.open(this.url, '_blank');
     });
   }
 
-  goAllProducts(marque: string) {
+  goAllProductsOfBrand(marque: string) {
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
     this.router.navigate(['products', { b: brand }]);
+  }
+
+  goProductsByCategoryOrFamily(marque: string, param: string) {
+    const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
+    const categories = ['ASSISES', 'MEUBLES', 'LUMINAIRES', 'ACCESSOIRES', 'SEATING', 'FURNITURES', 'LIGHTINGS', 'ACCESORIES'];
+    if (categories.includes(param.toUpperCase())) {
+      param = param.replace('MEUBLES', 'MOBILIERS');
+      param = this.stringCapitalAndNoFinalS(param);
+      this.router.navigate(['products', { b: brand, c: param }]);
+    } else {
+      param = this.stringCapitalAndNoFinalS(param);
+      this.router.navigate(['products', { b: brand, f: param }]);
+    }
+  }
+
+  stringCapitalAndNoFinalS(str: string): string {
+    str = str[0].toUpperCase() + str.slice(1, -1).toLowerCase();
+    return str;
   }
 
   ScrollTop() {

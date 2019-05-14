@@ -84,6 +84,7 @@ export class ProductSearchComponent implements OnInit {
         }
      });
     });
+
     this.toggle = new Array(this.filterBy.length);
     for (let i = 0; i < this.filterBy.length; i++) {
       this.toggle[i] = true;
@@ -261,17 +262,9 @@ export class ProductSearchComponent implements OnInit {
     let filteredElements: IFilterElements[];
     let filterItems: number[];
     let filteredItems: boolean[];
-    if (c !== '') {
-      this.toggleItemSelection(c, displayName);
-      // TODO: implement filtering the list of filter elements brand -> category -> familiy
-      if (c === 'Brand') {
-        this.getCategories(this.getselectedItemsOfGroup('Brand'));
-        this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
-      }
-      if (c === 'Type') {
-        this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
-      }
-    }
+
+    this.toggleSelection(c, displayName);
+
     // Determine filtering parameters
     filteredElements = _.cloneDeep(this.filterElements);
     _.map(filteredElements, element => {
@@ -287,9 +280,31 @@ export class ProductSearchComponent implements OnInit {
     this.scroller = false;
   }
 
+  toggleSelection(c: string, displayName: string) {
+    if (c !== '') {
+      this.toggleItemSelection(c, displayName);
+      // filter the list of filter elements brand -> category -> familiy
+      if (c === 'Brand') {
+        this.resetCategories();
+        this.resetFamilies();
+      }
+      if (c === 'Type') {
+        this.resetFamilies();
+      }
+    }
+  }
+
   toggleItemSelection(c: string, displayName: string) {
     this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked =
       !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
+  }
+
+  resetCategories() {
+    this.getCategories(this.getselectedItemsOfGroup('Brand'));
+  }
+
+  resetFamilies() {
+    this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
   }
 
   getselectedItemsOfGroup(group: string): string[] {
@@ -300,11 +315,24 @@ export class ProductSearchComponent implements OnInit {
   }
 
   activateItemSelection(routeParams: IRouteParams) {
-    // TODO: select item from Route Parameters
     if (routeParams.brand) {
-      this.filterElements.find(f => f.filterGroup === 'Brand')
-      .filterElement.find(f => f.displayName === routeParams.brand).checked = true;
+      this.activateElementSelection('Brand', routeParams.brand);
+      this.resetCategories();
+      this.resetFamilies();
     }
+    if (routeParams.category) {
+      this.activateElementSelection('Type', routeParams.category);
+      this.resetFamilies();
+    }
+    if (routeParams.family) {
+      this.activateElementSelection('Family', routeParams.family);
+    }
+    // filter the list of filters
+  }
+
+  activateElementSelection(group: string, param: string) {
+    this.filterElements.find(f => f.filterGroup === group)
+    .filterElement.find(f => f.displayName === param).checked = true;
   }
 
   getFilterItems(): number[] {
