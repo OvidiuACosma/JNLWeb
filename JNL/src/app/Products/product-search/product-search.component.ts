@@ -192,12 +192,25 @@ export class ProductSearchComponent implements OnInit {
 
   sortProducts(p: ProductEF[]): ProductEF[] {
     p.sort(function(a, b) {
-      if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
-      if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
-      if (a.brand.localeCompare(b.brand) > 0) { return 1; }
-      if (a.brand.localeCompare(b.brand) < 0) { return -1; }
-      if (a.model.localeCompare(b.model) > 0) { return 1; }
-      return -1;
+      if (a.indexFamily > b.indexFamily) {
+        return 1; // reverse
+      } else  if (a.indexFamily < b.indexFamily) {
+        return -1; // preserve
+      } else {
+        if (a.indexBrand > b.indexBrand) {
+          return 1; // reverse
+          // return a.indexModel - b.indexModel;
+        } else {
+          return -1; // preserve
+        }
+      }
+
+      // if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
+      // if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
+      // if (a.brand.localeCompare(b.brand) > 0) { return 1; }
+      // if (a.brand.localeCompare(b.brand) < 0) { return -1; }
+      // if (a.model.localeCompare(b.model) > 0) { return 1; }
+      // return -1;
     });
     return p;
   }

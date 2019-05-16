@@ -53,7 +53,7 @@ input, select {
     font-family: Helvetica-Light;
     font-size: 1.4vw;
     border: 1px solid black;
-    margin-top: .5vw;
+    margin-top: .2vw;
     padding-bottom: 0px;
 }
 
@@ -73,7 +73,7 @@ li, ul {
     appearance: none;   
     list-style-type: none;
     padding: 0px !important;
-    line-height: 1.8vw;
+    /* line-height: 1.8vw; */
 }
 
 .content {
@@ -85,7 +85,7 @@ li, ul {
 }
 
 .search {
-    width: 26vw;
+    width: 24vw;
     padding-left: 2vw;
     padding-right: 1vw;
     margin-right: 4vw;
@@ -95,6 +95,8 @@ li, ul {
 }
 
 .search-by-text {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     text-align: left;
 }
 
@@ -112,17 +114,13 @@ cdk-virtual-scroll-viewport {
     overflow-x: hidden;
 }
 
-.dk-virtual-scroll-content-wrapper {
+.cdk-virtual-scroll-content-wrapper {
     display: flex !important;
     flex-direction: row;
     width: auto;
     flex-wrap: wrap !important;
     padding-right: 1.2vw;
 }
-
-/* cdk-virtual-scroll-viewport::-webkit-scrollbar {
-    display: none;
-} */
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
@@ -181,14 +179,14 @@ cdk-virtual-scroll-viewport {
     width: 17.8vw;
 } */
 
-li {
+/* li {
     width: 20vw;
     margin: auto;
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     display: inline-block;
     margin-bottom: 3vh;
-}
+} */
 
 .search-container {
     display: flex;
@@ -248,8 +246,21 @@ li > div {
     align-content: space-between;
     justify-content: left;
     float: left;
-    /* width: 64vw; */
     padding-top: 2.2vw;
+    /* from cdk */
+    width: auto;
+    margin: auto;
+    height: 72.3vw;
+    overflow-x: hidden;
+}
+
+.flex-div > li {
+    width: 20vw;
+    margin: auto;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    display: inline-block;
+    margin-bottom: 3vh;
 }
 
 .arrow {
@@ -269,7 +280,24 @@ li > div {
 }
 
 .filters > ul > li {
-    margin-bottom: 0px;
+    width: 17vw;
+    margin: auto;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    display: inline-block;
+    /* margin-bottom: 3vh; */
+}
+
+.subfilters {
+    line-height: 1.83vw;
+}
+
+.subfilters > li {
+    width: 17vw;
+    margin: auto;
+    margin-left: 1vw;
+    margin-right: 1.5vw;
+    display: inline-block;
 }
 
 .non-remove > div > span {
@@ -293,20 +321,6 @@ li > div {
 .search-img:hover {
     transform: scale(1.3);
 }
-
-/* .fav-button {
-    text-align: right;
-    float: right;
-    margin-right: 5px;
-    margin-top: 5px;
-    height: 15px;
-}
-
-.fav-button:hover {
-    background-image: url("/assets/Images/Common/fav_icon_filled.png");
-    background-size: contain;
-    transition: all .3s ease;
-} */
 
 .pic-frame {
     width: 21vw; /* 20vw; */
@@ -382,11 +396,6 @@ li > div {
     color: black;
     /* transition: all .5s ease; */
 }
-
-/* .card-product:hover {
-    color: #DBBB76;
-    transition: all .3s ease;
-} */
 
 #expertise, #surMesure, #votreProjet {
     margin-bottom: 60px;

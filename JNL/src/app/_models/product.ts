@@ -11,6 +11,11 @@ export interface ProductEF {
     familyFr: string;
     familyEn: string;
     model: string;
+    indexFamily: number;
+    indexModel: number;
+    indexBrand: number;
+    imageAltFr: string;
+    imageAltEn: string;
 }
 
 export interface ProductHeroImage {
