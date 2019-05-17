@@ -239,6 +239,31 @@ li > div {
     text-align: left;
 }
 
+.products-container {
+    height: 99vh;;
+    overflow-y: auto;
+}
+
+.family-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.family-name {
+    display: block;
+    width: auto;
+    font-family: Helvetica-Light;
+    font-size: 1.7vw;
+    line-height: 1.9vw;
+    text-align: left;
+    margin-top: 0;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+}
+
 .flex-div {
     display: flex;
     flex-direction: row;
@@ -250,7 +275,7 @@ li > div {
     /* from cdk */
     width: auto;
     margin: auto;
-    height: 72.3vw;
+    /* height: 72.3vw; */
     overflow-x: hidden;
 }
 

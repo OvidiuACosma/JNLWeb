@@ -38,49 +38,54 @@
     <!-- PRODUCTS -->
     <div class="products">
       <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
-      <ul class="list">
-        <cdk-virtual-scroll-viewport itemSize="30" maxBufferPx="40000">
-          <div class="flex-div">
-          <ng-container *cdkVirtualFor="let n of productsFiltered">
-            <li> 
-              <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
-              <div class="card-product">
-                <div class="pic-frame" (click)="goToProduct(n)">
-                  <figure class="center-product">
-                    <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
-                  </figure>
-                </div>
+      <div class="products-container">
+        <div class="family-container" *ngFor="let family of getFamiliesGroup()">
+          <span class="family-name">&nbsp;{{family}}</span>
+          <ul class="list">
+            <!-- <cdk-virtual-scroll-viewport itemSize="30" maxBufferPx="40000"> -->
+              <div class="flex-div">
+              <!-- <ng-container *cdkVirtualFor="let n of getProductsOfFamily(family)"> -->
+                <li *ngFor="let n of getProductsOfFamily(family)"> 
+                  <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
+                  <div class="card-product">
+                    <div class="pic-frame" (click)="goToProduct(n)">
+                      <figure class="center-product">
+                        <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
+                      </figure>
+                    </div>
 
-                <p class="product-name">
-                  <span>
-                      <i class="far fa-heart heart" (click)="addToFavorites('product')"></i>
-                  </span>
-                  <span class="product-name-text" (click)="goToProduct(n)">
-                    {{getProductName(n)}}
-                  </span>
-                </p>
-              </div>
-            </li>
-          </ng-container>
-          
-          <!-- <li *ngFor="let m of [0]">  -->
-                  <!-- , 1, 2 -->
-                  <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->
-            <!-- <div>
-              <div class="pic-frame">
-                <div>
-                  <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-button">
+                    <p class="product-name">
+                      <span>
+                          <i class="far fa-heart heart" (click)="addToFavorites('product')"></i>
+                      </span>
+                      <span class="product-name-text" (click)="goToProduct(n)">
+                        {{getProductName(n)}}
+                      </span>
+                    </p>
+                  </div>
+                </li>
+              <!-- </ng-container> -->
+              
+              <!-- <li *ngFor="let m of [0]">  -->
+                      <!-- , 1, 2 -->
+                      <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->
+                <!-- <div>
+                  <div class="pic-frame">
+                    <div>
+                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-button">
+                    </div>
+                    <div class="center-product">
+                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="search-img">
+                    </div>
+                  </div>
+                  <span>&nbsp;</span>
                 </div>
-                <div class="center-product">
-                  <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="search-img">
-                </div>
-              </div>
-              <span>&nbsp;</span>
+              </li> -->
             </div>
-          </li> -->
+            <!-- </cdk-virtual-scroll-viewport> -->
+          </ul>
         </div>
-        </cdk-virtual-scroll-viewport>
-      </ul>
+      </div>
     </div>
   </div>
 </div>

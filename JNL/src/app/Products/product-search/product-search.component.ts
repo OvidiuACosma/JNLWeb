@@ -204,6 +204,7 @@ export class ProductSearchComponent implements OnInit {
           return -1; // preserve
         }
       }
+      return -1;
 
       // if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
       // if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
@@ -455,6 +456,28 @@ export class ProductSearchComponent implements OnInit {
       return 'assets/Images/Common/arrow_up_gold.png';
     }
     return 'assets/Images/Common/arrow_down_gold.png';
+  }
+
+  getFamiliesGroup(): any[] {
+    switch (this.language.toLowerCase()) {
+      case 'fr': {
+        return this.familiesFr;
+      }
+      case 'en': {
+        return this.familiesEn;
+      }
+    }
+  }
+
+  getProductsOfFamily(family: string): ProductEF[] {
+    switch (this.language.toLowerCase()) {
+      case 'fr': {
+        return this.productsFiltered.filter(f => f.familyFr === family);
+      }
+      case 'en': {
+        return this.productsFiltered.filter(f => f.familyEn === family);
+      }
+    }
   }
 
   getProductImage(product: ProductEF): string {
