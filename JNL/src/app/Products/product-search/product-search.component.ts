@@ -458,13 +458,14 @@ export class ProductSearchComponent implements OnInit {
     return 'assets/Images/Common/arrow_down_gold.png';
   }
 
-  getFamiliesGroup(): any[] {
+  getFamiliesGroup(): any {
     switch (this.language.toLowerCase()) {
       case 'fr': {
-        return this.familiesFr;
+        // this.productsFiltered
+        return new Set(this.productsFiltered.map(f => f.familyFr));
       }
       case 'en': {
-        return this.familiesEn;
+        return new Set(this.productsFiltered.map(f => f.familyEn));
       }
     }
   }
