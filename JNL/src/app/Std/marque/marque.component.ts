@@ -81,7 +81,7 @@ export class MarqueComponent implements OnInit {
 
   getIndicatorsText(): string[] {
     const indicators: string[] = [];
-    for (const ind of this.text.productCategories){
+    for (const ind of this.text.productCategories) {
       indicators.push(this.stringCapitalAndNoFinalS(ind));
     }
     return indicators;
