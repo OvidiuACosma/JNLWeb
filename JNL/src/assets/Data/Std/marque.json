@@ -3,7 +3,7 @@
         "Collections": {
             "EN": {
                 "JNL": {
-                    "collectionTitle": "JNL Collection",
+                    "collectionTitle": "JNL collection",
                 
                     "marqueImgSrc": "assets/Images/Marque/JNL/MKJ_first.jpg",
 
@@ -23,7 +23,7 @@
                         "DAYBEDS",
                         "CHAIRS",
                         "FURNITURES",
-                        "LIGHTING",
+                        "LIGHTINGS",
                         "ACCESORIES"
                     ],
                     "productImages": [
@@ -103,7 +103,6 @@
                         "assets/Images/Marque/Ungaro/MKU_assises.png",
                         "assets/Images/Marque/Ungaro/MKU_assises.png",
                         "assets/Images/Marque/Ungaro/MKU_assises.png",
-                        "assets/Images/Marque/Ungaro/MKU_assises.png",
                         "assets/Images/Marque/Ungaro/MKU_mobilier.png",
                         "assets/Images/Marque/Ungaro/MKU_luminaires.png",
                         "assets/Images/Marque/Ungaro/MKU_accesoires.png"
@@ -151,7 +150,7 @@
             },
             "FR": {
                 "JNL": {
-                    "collectionTitle": "JNL Collection",
+                    "collectionTitle": "JNL collection",
                     
                     "marqueImgSrc": "assets/Images/Marque/JNL/MKJ_first.jpg",
 
@@ -247,13 +246,12 @@
                     ],
                     "productImages": [
                         "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_mobilier.png",
-                            "assets/Images/Marque/Ungaro/MKU_luminaires.png",
-                            "assets/Images/Marque/Ungaro/MKU_accesoires.png"
+                        "assets/Images/Marque/Ungaro/MKU_assises.png",
+                        "assets/Images/Marque/Ungaro/MKU_assises.png",
+                        "assets/Images/Marque/Ungaro/MKU_assises.png",
+                        "assets/Images/Marque/Ungaro/MKU_mobilier.png",
+                        "assets/Images/Marque/Ungaro/MKU_luminaires.png",
+                        "assets/Images/Marque/Ungaro/MKU_accesoires.png"
                     ],
 
                     "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
@@ -279,7 +277,7 @@
                         "MéRIDIENNES",
                         "POUFS",
                         "CHAISES",
-                        "MOBILIER",
+                        "MEUBLES",
                         "LUMINAIRES"
                     ],
                     "productImages": [

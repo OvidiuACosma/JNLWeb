@@ -1,6 +1,7 @@
 <div class="marque-main" *ngIf="text">
   <div>
-  <h1>{{text.collectionTitle | uppercase}}</h1>
+  <!-- <h1>{{text.collectionTitle}}</h1> -->
+  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png">
 
   <div id="first_picture">
       <div>
@@ -28,7 +29,7 @@
             
           <!-- Indicators -->
           <ol class='carousel-indicators'>
-              <li data-target='#carousel-custom'  *ngFor="let itemC of text.productCategories; let x = index" 
+              <li data-target='#carousel-custom'  *ngFor="let itemC of getIndicatorsText(); let x = index" 
                 [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'>
                 <span>{{itemC}}</span>
               </li>

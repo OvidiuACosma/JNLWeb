@@ -20,37 +20,14 @@ h3 {
     margin-bottom: 1.2vw;
 }
 
-/* .location {
-    font-family: Atak-Regular;
-    font-size: 1.1vw;
-    margin-bottom: 5.5vw;
-} */
-
 .marques_selected {
     text-decoration: underline !important;
 }
 
-/* .home_links {
-    font-family: Helvetica-Light;
-    color: #666;
-    border: 1.5px solid #666;
-    padding: .15vw 1.59vw;
-    font-size: 1vw;
-    font-style: italic;
-    text-transform: uppercase;
-    letter-spacing : 1.28px;
-    transition: all .5s ease;
-}
-
-.home_links:hover {
-    color: #DBBB76;
-    transition: all .5s ease;
-    cursor: pointer;
-} */
-
 .marques-image {
     width: 76.17vw;
-    margin-top: 1.5vw;
+    /* margin-top: 1.5vw; */
+    margin-bottom: 4vw;
 }
 
 .les-marques-main {
@@ -58,7 +35,7 @@ h3 {
     display: flex;
     padding-top: 5.9vw;
     margin: auto;
-    margin-bottom: 10.13vw;
+    margin-bottom: 6vw;
 }
 
 .les-marques-main > div {
@@ -117,6 +94,7 @@ h3 {
 
 #jnl, #vanhamme, #ungaro, #luz {
     padding-top: 2.74vw;
+    cursor: pointer;
 }
 
 

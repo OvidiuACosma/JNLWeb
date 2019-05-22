@@ -34,36 +34,17 @@ h4 {
     text-align: center;
 }
 
-/* .home_links {
-    border: 1.5px solid #DBBB76;
-    padding: .15vw 1.59vw;
-    font-size: 1vw;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-style: italic;
-} */
-
 #presse_list {
     margin: auto;
     font-family: Helvetica-Light;
-    font-size: 1em;
-    width: 45vw;
+    width: 33vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-    /* margin-bottom: 4vw; */
     text-align: center;
-}
-
-#presse_list > a {
-    margin: auto;
-    font-size: 1.5em;
-    margin-right: 20px;
-    left: 0;
-    text-transform: uppercase;
 }
 
 #presse_list > a:first-child {
@@ -76,7 +57,7 @@ h4 {
 
 #presse_list > a {
     margin: auto;
-    font-size: 1.8vw;
+    font-size: 1.4vw;
     line-height: 2vw;
     left: 0;
     text-transform: uppercase;

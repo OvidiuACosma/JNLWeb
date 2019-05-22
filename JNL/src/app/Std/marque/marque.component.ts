@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, DownloaderService } from '../../_services';
 import * as _ from 'lodash';
 import * as FileSaver from 'file-saver';
-// declare var $: any;
 
 @Component({
   selector: 'app-marque',
@@ -53,10 +52,6 @@ export class MarqueComponent implements OnInit {
       this.getText(lang);
       this.getAlt(this.page);
     });
-    // activate carousel
-    // $(document).ready(function() {
-    //   $('.carousel').carousel();
-    // });
   }
 
   getText(lang: string) {
@@ -82,6 +77,14 @@ export class MarqueComponent implements OnInit {
 
   getAltText(res: any, page: string): any {
     return res[page];
+  }
+
+  getIndicatorsText(): string[] {
+    const indicators: string[] = [];
+    for (const ind of this.text.productCategories){
+      indicators.push(this.stringCapitalAndNoFinalS(ind));
+    }
+    return indicators;
   }
 
   getOthers(nr: number) {
@@ -141,17 +144,23 @@ export class MarqueComponent implements OnInit {
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
     const categories = ['ASSISES', 'MEUBLES', 'LUMINAIRES', 'ACCESSOIRES', 'SEATING', 'FURNITURES', 'LIGHTINGS', 'ACCESORIES'];
     if (categories.includes(param.toUpperCase())) {
-      param = param.replace('MEUBLES', 'MOBILIERS');
       param = this.stringCapitalAndNoFinalS(param);
       this.router.navigate(['products', { b: brand, c: param }]);
     } else {
-      param = this.stringCapitalAndNoFinalS(param);
+      // param = this.stringCapitalAndNoFinalS(param);
       this.router.navigate(['products', { b: brand, f: param }]);
     }
   }
 
   stringCapitalAndNoFinalS(str: string): string {
-    str = str[0].toUpperCase() + str.slice(1, -1).toLowerCase();
+    // TODO: slice to -1 if final is 's'
+    if (str.substr(str.length - 3).toLowerCase() !== 'ies') {
+      // str = str.slice(0, -3).concat('y');
+      if (str.substr(str.length - 1).toLowerCase() === 's') {
+        str = str.slice(0, -1);
+      }
+    }
+    str = _.startCase(_.toLower(str));
     return str;
   }
 
