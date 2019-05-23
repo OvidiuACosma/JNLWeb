@@ -24,7 +24,7 @@
                         "CHAIRS",
                         "FURNITURES",
                         "LIGHTINGS",
-                        "ACCESORIES"
+                        "ACCESSORIES"
                     ],
                     "productImages": [
                         "assets/Images/Marque/JNL/MKJ_assises.png", 
@@ -95,7 +95,7 @@
                         "CHAIRS",
                         "FURNITURES",
                         "LIGHTINGS",
-                        "ACCESORIES"
+                        "ACCESSORIES"
                         
                     ],
                     "productImages": [
@@ -132,7 +132,8 @@
                         "FOOTSTOOLS",
                         "CHAIRS",
                         "FURNITURES",
-                        "LIGHTINGS"
+                        "LIGHTINGS",
+                        "ACCESSORIES"
                     ],
                     "productImages": [
                         "assets/Images/Marque/Luz/MKL_assises.png",
@@ -141,7 +142,8 @@
                         "assets/Images/Marque/Luz/MKL_assises.png",
                         "assets/Images/Marque/Luz/MKL_assises.png",
                         "assets/Images/Marque/Luz/MKL_mobilier.png",
-                        "assets/Images/Marque/Luz/MKL_luminaires.png"
+                        "assets/Images/Marque/Luz/MKL_luminaires.png",
+                        "assets/Images/Marque/Luz/MKL_mobilier.png"
                     ],
 
                     "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
@@ -278,7 +280,8 @@
                         "POUFS",
                         "CHAISES",
                         "MEUBLES",
-                        "LUMINAIRES"
+                        "LUMINAIRES",
+                        "ACCESSOIRES"
                     ],
                     "productImages": [
                         "assets/Images/Marque/Luz/MKL_assises.png",
@@ -287,7 +290,8 @@
                         "assets/Images/Marque/Luz/MKL_assises.png",
                         "assets/Images/Marque/Luz/MKL_assises.png",
                         "assets/Images/Marque/Luz/MKL_mobilier.png",
-                        "assets/Images/Marque/Luz/MKL_luminaires.png"
+                        "assets/Images/Marque/Luz/MKL_luminaires.png",
+                        "assets/Images/Marque/Luz/MKL_mobilier.png"
                     ],
 
                     "style":  "assets/Images/Marque/Luz/MKL_style.jpg",

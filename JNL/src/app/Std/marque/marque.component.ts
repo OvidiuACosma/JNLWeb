@@ -142,7 +142,7 @@ export class MarqueComponent implements OnInit {
 
   goProductsByCategoryOrFamily(marque: string, param: string) {
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
-    const categories = ['ASSISES', 'MEUBLES', 'LUMINAIRES', 'ACCESSOIRES', 'SEATING', 'FURNITURES', 'LIGHTINGS', 'ACCESORIES'];
+    const categories = ['ASSISES', 'MEUBLES', 'LUMINAIRES', 'ACCESSOIRES', 'SEATING', 'FURNITURES', 'LIGHTINGS', 'ACCESSORIES'];
     if (categories.includes(param.toUpperCase())) {
       param = this.stringCapitalAndNoFinalS(param);
       this.router.navigate(['products', { b: brand, c: param }]);
@@ -153,12 +153,11 @@ export class MarqueComponent implements OnInit {
   }
 
   stringCapitalAndNoFinalS(str: string): string {
-    // TODO: slice to -1 if final is 's'
-    if (str.substr(str.length - 3).toLowerCase() !== 'ies') {
-      // str = str.slice(0, -3).concat('y');
-      if (str.substr(str.length - 1).toLowerCase() === 's') {
-        str = str.slice(0, -1);
-      }
+    if (str.substr(str.length - 3).toLowerCase() === 'ies') {
+      str = str.slice(0, -3).concat('y');
+    }
+    if (str.substr(str.length - 1).toLowerCase() === 's') {
+      str = str.slice(0, -1);
     }
     str = _.startCase(_.toLower(str));
     return str;
