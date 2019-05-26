@@ -123,7 +123,7 @@ export class MarqueComponent implements OnInit {
   }
 
   download(marque: string, type: string) {
-    // NOT WORKING FOR IE AND EDGE
+    // NOT WORKING FOR IE
     this.downloader.getFile(marque, type).subscribe(data => {
       this.blob = new Blob([data], {
         type: 'application/pdf'

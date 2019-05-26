@@ -37,7 +37,7 @@ h4 {
 #presse_list {
     margin: auto;
     font-family: Helvetica-Light;
-    width: 33vw;
+    width: 38vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -82,24 +82,18 @@ h4 {
     align-self: center;
     height: auto;
     width: 12vw !important;
-    /* object-fit: contain; */
 }
 
-.four-flex {
+.bloc-four-flex {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 67.9vw;
     margin: auto;
 }
 
-.four-flex > div {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.four-flex > div > div {
+.elements {
     margin: auto;
     width: 15.47vw;
     display: flex;
@@ -107,123 +101,18 @@ h4 {
     margin-right: 1vw;
 }
 
-.four-flex > div > div > img {
+.elements > img {
     width: 15.47vw;
     margin-bottom: 1vw;
 }
 
-.four-flex > div > div > span {
-    /* font-family: Helvetica-Light;
-    font-size: 1.8vw; */
+.elements > span {
     width: 15.47vw;
     margin-bottom: .6vw;
-    /* word-wrap: normal; */
-    /* height: 6.5vw; */
-}
-
-.carousel-inner {
-    margin: auto;
-    width: 60vw;
-    height: 70vh;
-    display: flex;
-}
-
-#blogCarousel {
-    height: 60vw;
-    margin: auto;
 }
 
 .row {
     margin: auto;
-}
-
-.slide-image {
-    margin: auto;
-    width: 100%;
-    height: 90%;
-    object-fit: cover;
-    text-align: left;
-    float: left;
-    position: relative;
-}
-
-.carousel-marques {
-    width: 100%;
-    margin: auto;
-}
-
-.carousel-control-prev, .carousel-control-next {
-    display: flex;
-    width: 5vw !important;
-}
-
-.carousel-arrows {
-    height: 4vw;
-    width: 2vw;
-    margin: auto;
-}
-
-.carousel-arrows {
-    margin-top: auto;
-}
-
-.carousel-item-content {
-    width: 23.7vw;
-}
-
-.carousel-item-image {
-    float: left;
-    padding-left: 0px;
-    width: 60vw;
-    display: flex;
-}
-
-.carousel-indicators {
-    width: auto;
-    margin: auto;
-    margin-bottom: 2.8vw;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    margin-top: 1vw;
-    position: relative;
-}
-
-.carousel-indicators > li {
-    height: 0;
-    width: auto;
-    text-transform: uppercase;
-    text-indent: 0;
-    font-size: 1.88vw;
-}
-
-.carousel-indicators > span {
-    color: #555;
-}
-
-.carousel-indicators .active > span{
-    background-color: #555;
-}
-
-.carousel-indicators .active {
-    background-color: rgb(46, 46, 46);
-}
-
-input[type="radio"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    height: 15px;
-    width: 15px;
-    border: none;
-    border-radius: 100%;
-    cursor: pointer;
-    display: inline-block;
-    margin-right: 0.5em;
-    outline: none;
-    background-color: #BFBFBF;
 }
 
 .container {
@@ -238,47 +127,9 @@ input[type="radio"] {
     margin-bottom: 5vw;
 }
 
-.parutions-text {
-    width: 23.7vw;
-    padding-top: 3vw;
-    font-family: Helvetica-Light;
-    font-size: 1.4vw;
-    text-align: left;
-    text-transform: uppercase;
-}
-
-.parutions-text > div {
-    margin: auto;
-}
-
-.parutions-text > div > span {
-    font-family: Helvetica-Light;
-    font-size: 1.8vw;
-    text-transform: uppercase;
-}
-
-.modal-backdrop {
-    position: relative;
-  }
-
-.modal-body {
-    padding: 0px !important;
-}
-
-.modal-dialog {
-    width: 80vw;
-    max-width: 1440px;
-    min-height: 0px;
-    margin-top: 60px;
-}
-
 #catalogues, #banqueImages, #pressKit, #parutions {
     padding-top: 5.9vw;
 }
-
-/* #catalogues, #banqueImages {
-    margin-bottom: 8.05vw;
-} */
 
 
 @media only screen and (max-width: 800px) {

@@ -1,26 +1,100 @@
 [
     {
         "EN": {
-            "press": "PRESS",
-            "bank": "Inspiration Gallery",
-            "catalog": "Catalogues",
-            "review": "Press Review",
-            "interiors": "Interiors",
-            "products": "Products",
-            "download": "Download",
-            "pressReleases": "Press Releases",
-            "pressReview": "Press Review"
+            "Generic": {
+                "press": "PRESS",
+                "bank": "Inspiration Gallery",
+                "catalog": "Catalogues",
+                "review": "Press Review",
+                "interiors": "Interiors",
+                "products": "Products",
+                "download": "Download",
+                "pressReleases": "Press Releases",
+                "pressReview": "Press Review",
+                "imgLocation": "assets/Images/Presse/",
+                "downloadText": "DOWNLOAD",
+                "productsText": "PRODUCTS"
+            },
+            "Catalog": {
+                "id": ["0", "1", "2", "3"],
+                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "imgSrc": ["PS_jnlB.jpg", "PS_vanhammeB.jpg", "PS_ungaroB.jpg", "PS_luzB.jpg"],
+                "imgAlt": ["JNL Collection Catalog",
+                    "Vanhamme Collection Catalog", 
+                    "Emanuel Ungaro Home Catalog",
+                    "Luz Interiors Catalog"]
+            },
+            "Inspiration": {
+                "id": ["0", "1", "2", "3"],
+                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "imgSrc": ["PS_JNL.jpg", "PS_vanhamme.jpg", "PS_ungaro.jpg", "PS_Luz.jpg"],
+                "imgAlt": ["jnl collection ray salon maison et objet 2019",
+                                "jnl collection oscar gainé interior",
+                                "jnl collection ungaro home salon maison et objet",
+                                "jnl collection luz interiors salon maison et objet"],
+                "imgLogoSrc": ["PS_logo_JNL.png", "PS_logo_VH.png", "PS_logo_Ungaro.png", "PS_logo_LUZ.png"],
+                "imgLogoAlt": ["JNL Collection Logo",
+                            "Vanhamme Collection Logo", 
+                            "Emanuel Ungaro Home Logo",
+                            "Luz Interiors Logo"]
+            },
+            "Review": {
+                "id": ["0", "1", "2", "3"],
+                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "imgSrc": ["PS_jnlY.jpg", "PS_vanhammeY.jpg", "PS_ungaroY.jpg", "PS_luzY.jpg"],
+                "imgAlt": ["JNL Collection Press",
+                        "Vanhamme Collection Press", 
+                        "Emanuel Ungaro Home Press",
+                        "Luz Interiors Press"]
+            }
         },
-        "FR": { 
-            "press": "PRESSE",
-            "bank": "Galerie d'Images",
-            "catalog": "Catalogues",
-            "review": "Parutions",
-            "interiors": "Ambiances",
-            "products": "Produits",
-            "download": "TÉLÉCHARGER",
-            "pressReleases": "Press releases",
-            "pressReview": "Press Review"
+        "FR": {
+            "Generic": {
+                "press": "PRESSE",
+                "bank": "Galerie d'Images",
+                "catalog": "Catalogues",
+                "review": "Parutions",
+                "interiors": "Ambiances",
+                "products": "Produits",
+                "download": "TÉLÉCHARGER",
+                "pressReleases": "Press releases",
+                "pressReview": "Press Review",
+                "imgLocation": "assets/Images/Presse/",
+                "downloadText": "TÉLÉCHARGER",
+                "productsText": "PRODUITS"
+            },
+            "Catalog": {
+                "id": ["0", "1", "2", "3"],
+                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "imgSrc": ["PS_jnlB.jpg", "PS_vanhammeB.jpg", "PS_ungaroB.jpg", "PS_luzB.jpg"],
+                "imgAlt": ["JNL Collection Catalogue",
+                        "Vanhamme Collection Catalogue", 
+                        "Emanuel Ungaro Home Catalogue",
+                        "Luz Interiors Catalogue"]
+            },
+            "Inspiration": {
+                "id": ["0", "1", "2", "3"],
+                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "imgSrc": ["PS_JNL.jpg", "PS_vanhamme.jpg", "PS_ungaro.jpg", "PS_Luz.jpg"],
+                "imgAlt": ["jnl collection ray salon maison et objet 2019",
+                                "jnl collection oscar gainé interior",
+                                "jnl collection ungaro home salon maison et objet",
+                                "jnl collection luz interiors salon maison et objet"],
+                "imgLogoSrc": ["PS_logo_JNL.png", "PS_logo_VH.png", "PS_logo_Ungaro.png", "PS_logo_LUZ.png"],
+                "imgLogoAlt": ["JNL Collection Logo",
+                            "Vanhamme Collection Logo", 
+                            "Emanuel Ungaro Home Logo",
+                            "Luz Interiors Logo"]
+            },
+            "Review": {
+                "id": ["0", "1", "2", "3"],
+                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "imgSrc": ["PS_jnlY.jpg", "PS_vanhammeY.jpg", "PS_ungaroY.jpg", "PS_luzY.jpg"],
+                "imgAlt": ["JNL Collection Presse",
+                        "Vanhamme Collection Presse", 
+                        "Emanuel Ungaro Home Presse",
+                        "Luz Interiors Presse"]
+            }
         }
     }
 ]

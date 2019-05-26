@@ -8,104 +8,37 @@
   </div>
 
   <div>
-    <img class="first-image" alt="{{altText['img0']['alt'][language]}}" src="assets/Images/Presse/{{altText['img0']['src']}}">
+    <img class="first-image" alt="{{altText['img0']['alt'][language]}}" src="{{text.imgLocation}}{{altText['img0']['src']}}">
   </div>
 
   <div id="catalogues">
     <h2>{{text.catalog}}</h2>
-
-    <div class="four-flex">
-      <div>
-        <div>
-          <img alt="JNL Collection" src="assets/Images/Presse/PS_jnlB.jpg">
-          <span class="home_links" (click)="download('jnl', 'catalog')">{{text.download}}</span>
-        </div>
-
-        <div>
-          <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhammeB.jpg">
-          <span class="home_links" (click)="download('vanhamme', 'catalog')">{{text.download}}</span>
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaroB.jpg">
-          <span class="home_links" (click)="download('ungaro', 'catalog')">{{text.download}}</span>
-        </div>
-
-        <div>
-          <img alt="Luz Interiors" src="assets/Images/Presse/PS_luzB.jpg">
-          <span class="home_links" (click)="download('luz', 'catalog')">{{text.download}}</span>
-        </div>
+    <div class="bloc-four-flex">
+      <div class="elements" *ngFor="let c of textCatalog">
+        <img alt="{{c[3]}}" src="{{text.imgLocation}}{{c[2]}}">
+        <span class="home_links" (click)="download(c[1], 'catalog')">{{text.download}}</span>
       </div>
     </div>
   </div>
 
   <div id="banqueImages">
     <h2>{{text.bank}}</h2>
-
-    <div class="four-flex">
-      <div>
-        <div>
-          <img alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Presse/{{altText['img1']['src']}}">
-          <img class="logo" alt="JNL Collection Logo" src="assets/Images/Presse/PS_logo_JNL.png">
-          <!--goAllProductsOfBrand(marque) <span class="home_links" (click)="download('jnl', 'interiors')">{{text.interiors}}</span> -->
-          <span class="home_links" (click)="download('jnl', 'products')">{{text.products}}</span>
-        </div>
-
-        <div>
-          <img alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Presse/{{altText['img2']['src']}}">
-          <img class="logo" alt="Vanhamme Collection Logo" src="assets/Images/Presse/PS_logo_VH.png">
-          <!-- <span class="home_links" (click)="download('vanhamme', 'interiors')">{{text.interiors}}</span> -->
-          <span class="home_links" (click)="download('vanhamme', 'products')">{{text.products}}</span>
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <img alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Presse/{{altText['img3']['src']}}">
-          <img class="logo" alt="Ungaro Home Collection Logo" src="assets/Images/Presse/PS_logo_Ungaro.png">
-          <!-- <span class="home_links" (click)="download('ungaro', 'interiors')">{{text.interiors}}</span> -->
-          <span class="home_links" (click)="download('ungaro', 'products')">{{text.products}}</span>
-        </div>
-
-        <div>
-          <img alt="{{altText['img4']['alt'][language]}}" src="assets/Images/Presse/{{altText['img4']['src']}}">
-          <img class="logo" alt="LUZ Interiors Collection Logo" src="assets/Images/Presse/PS_logo_LUZ.png">
-          <!-- <span class="home_links" (click)="download('luz', 'interiors')">{{text.interiors}}</span> -->
-          <span class="home_links" (click)="download('luz', 'products')">{{text.products}}</span>
-        </div>
+    <div class="bloc-four-flex">
+      <div class="elements" *ngFor="let i of textInspiration">
+        <img alt="{{i[3]}}" src="{{text.imgLocation}}{{i[2]}}">
+        <img class="logo" alt="{{i[5]}}" src="{{text.imgLocation}}{{i[4]}}">
+        <span class="home_links" (click)="goAllProductsOfBrand(i[1])">{{text.products}}</span>
       </div>
     </div>
   </div>
     
     <div id="parutions">
       <h2>{{text.review}}</h2>
-  
-      <div class="four-flex">
-        <div>
-          <div>
-            <img alt="JNL Collection" src="assets/Images/Presse/PS_jnlY.jpg">
-            <span class="home_links" (click)="download('jnl', 'review')">{{text.download}}</span>
+      <div class="bloc-four-flex">
+        <div class="elements" *ngFor="let p of textReview">
+            <img alt="{{p[3]}}" src="{{text.imgLocation}}{{p[2]}}">
+            <span class="home_links" (click)="download(p[1], 'review')">{{text.download}}</span>
           </div>
-    
-          <div>
-            <img alt="Vanhamme" src="assets/Images/Presse/PS_vanhammeY.jpg">
-            <span class="home_links" (click)="download('vanhamme', 'review')">{{text.download}}</span>
-          </div>
-        </div>
-
-        <div>
-          <div>
-            <img alt="Emanuel Ungaro Home" src="assets/Images/Presse/PS_ungaroY.jpg">
-            <span class="home_links" (click)="download('ungaro', 'review')">{{text.download}}</span>
-          </div>
-    
-          <div>
-            <img alt="Luz Interiors" src="assets/Images/Presse/PS_luzY.jpg">
-            <span class="home_links" (click)="download('luz', 'review')">{{text.download}}</span>
-          </div>
-        </div>
      </div>
    </div>
 </div>

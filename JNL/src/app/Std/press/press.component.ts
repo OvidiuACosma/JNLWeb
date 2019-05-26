@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, DownloaderService, AltImgService } from '../../_services';
+import * as _ from 'lodash';
+import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-press',
@@ -11,12 +13,16 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   public section: string;
   language: string;
-  text: any;
+  text: any[];
+  textCatalog: any[];
+  textInspiration: any[];
+  textReview: any[];
+  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors'];
+  collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'luz'];
   scroller = true;
   anchor: number;
   blob: any;
   url: any;
-
   altText: any;
   page = 'press';
 
@@ -49,7 +55,25 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
   }
 
   getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
+    this.textCatalog = [];
+    this.textInspiration = [];
+    this.textReview = [];
+    this.text = res[this.language.toUpperCase()]['Generic'];
+    const tc = res[this.language.toUpperCase()]['Catalog'];
+    for (let c = 0; c < 4; c++) {
+      this.textCatalog.push([ tc.id[c], tc.coll[c], tc.imgSrc[c], tc.imgAlt[c]]);
+    }
+    this.textCatalog = _.orderBy(this.textCatalog, this.textCatalog[0], 'asc');
+    const ti = res[this.language.toUpperCase()]['Inspiration'];
+    for (let i = 0; i < 4; i++) {
+      this.textInspiration.push([ti.id[i], ti.coll[i], ti.imgSrc[i], ti.imgAlt[i], ti.imgLogoSrc[i], ti.imgLogoAlt[i]]);
+    }
+    this.textInspiration = _.orderBy(this.textInspiration, this.textInspiration[0], 'asc');
+    const tp = res[this.language.toUpperCase()]['Review'];
+    for (let p = 0; p < 4; p++) {
+      this.textReview.push([ tp.id[p], tp.coll[p], tp.imgSrc[p], tp.imgAlt[p]]);
+    }
+    this.textReview = _.orderBy(this.textReview, this.textReview[0], 'asc');
   }
 
   getAlt(page: string) {
@@ -64,25 +88,23 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
     return res[page];
   }
 
-  download(marque: any, type: any) {
 
-    // NOT WORKING FOR IE AND EDGE
+  download(marque: string, type: string) {
     this.downloader.getFile(marque, type).subscribe(data => {
       this.blob = new Blob([data], {
         type: 'application/pdf'
       });
-      this.url = window.URL.createObjectURL(this.blob);
-      window.open(this.url, '_blank');
-
+      const brand = this.collectionsText[this.collectionsLink.findIndex(f => f === type)];
+      // const fileName = brand[0].toUpperCase() + brand.slice(1) + ' ' + type[0].toUpperCase() + type.slice(1) + '.pdf';
+      const fileName = marque[0].toUpperCase() + marque.slice(1) + ' ' + type[0].toUpperCase() + type.slice(1) + '.pdf';
+      FileSaver.saveAs(this.blob, fileName);
     });
-
     this.scroller = false;
   }
 
   goAllProductsOfBrand(marque: string) {
-    // TODO: from marque
-    // const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
-    // this.router.navigate(['products', { b: brand }]);
+    const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
+    this.router.navigate(['products', { b: brand }]);
   }
 
   ngAfterViewInit() {

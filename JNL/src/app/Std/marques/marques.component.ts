@@ -96,8 +96,8 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   navigateToMarque(marque: string) {
-    this.router.navigate(['/marque', marque]);
     this.scrollTop();
+    this.router.navigate(['/marque', marque]);
   }
 
   scrollTop() {

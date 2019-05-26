@@ -203,7 +203,7 @@ li {
     position: fixed;
     top: 0;
     left: 0;
-    width: 5.347vw;
+    width: 4vw; /* 5.347vw;*/
     height: var(--search-bar-height);
     text-align: center;
     align-items: center;

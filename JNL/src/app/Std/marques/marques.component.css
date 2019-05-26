@@ -14,9 +14,9 @@ h2 {
 h3 {
     text-transform: uppercase;
     font-family: Helvetica-Light;
-    /* color: #DBBB76; */
     color: #666;
     font-size: 1.38vw;
+    margin-top: .8vw;
     margin-bottom: 1.2vw;
 }
 
@@ -43,30 +43,24 @@ h3 {
     left: 0;
     text-align: center;
 }
-/* 
-.location {
-    text-align: center;
-    font-family: Atak-Regular;
-    font-size: 1.1vw;
-} */
 
 #marques_list {
     margin: auto;
     font-family: Helvetica-Light;
-    width: 76.17vw;
+    width: 57vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-between;
     padding: 0px;
     justify-content: center;
-    margin-bottom: 2.74vw;
+    margin-bottom: .5vw; /* 2.74vw;*/
     text-align: center;
 }
 
 #marques_list > a {
     margin: auto;
-    font-size: 1.8vw;
+    font-size: 1.4vw;
     line-height: 2vw;
     left: 0;
     text-transform: uppercase;
@@ -74,11 +68,19 @@ h3 {
     transition: all .5s ease;
 }
 
-/* #marques_list > a:hover {
+#marques_list > a:hover {
     color: black;
     border-bottom: 1px solid black;
     transition: all .5s ease;
-} */
+}
+
+#marques_list > a:first-child {
+    margin-left: 0;
+}
+
+#marques_list > a:last-child {
+    margin-right: 0;
+}
 
 #marques_list > a > img {
     width: 15vw;
@@ -93,8 +95,26 @@ h3 {
 }
 
 #jnl, #vanhamme, #ungaro, #luz {
-    padding-top: 2.74vw;
+    padding-top: 1.2vw; /* 2.74vw; */
     cursor: pointer;
+}
+
+#jnl > a > img, 
+#vanhamme > a > img,
+#ungaro > a > img,
+#luz > a > img {
+    width: 20vw;
+    height: auto;
+    opacity: .85;
+    transition: all .3s ease;
+}
+
+#jnl > a > img:hover, 
+#vanhamme > a > img:hover,
+#ungaro > a > img:hover,
+#luz > a > img:hover {
+    opacity: 1;
+    transition: all .3s ease;
 }
 
 
