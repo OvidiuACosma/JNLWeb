@@ -17,7 +17,7 @@
         placeholder="{{text.subject}}" maxlength="50" *ngIf="requestType === 2">
       <textarea formControlName="message" name="message"
         placeholder="{{text.message}}&nbsp;*" maxlength="500" rows="4"></textarea>
-      <p><small>{{500 - requestForm.value?.message?.length}} characters left.</small></p>
+      <p><small>{{500 - requestForm.value?.message?.length}}&nbsp;{{text.counter}}.</small></p>
       <input type="text" formControlName="name" name="name"
         placeholder="{{text.name}} *" maxlength="50"/>
       <input type="text" formControlName="surname" name="surname"
