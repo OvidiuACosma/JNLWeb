@@ -91,6 +91,7 @@
                     "productCategories": [
                         "SOFAS",
                         "ARMCHAIRS",
+                        "FOOTSTOOLS",
                         "CHAIRS",
                         "FURNITURES",
                         "LIGHTINGS",
@@ -99,6 +100,7 @@
                     ],
                     "productImages": [
                         "assets/Images/Marque/Ungaro/MKU_canape.png",
+                        "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
                         "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
                         "assets/Images/Marque/Ungaro/MKU_chaise.png",
                         "assets/Images/Marque/Ungaro/MKU_mobilier.png",
@@ -238,6 +240,7 @@
                     "productCategories": [
                         "CANAPéS",
                         "FAUTEUILS",
+                        "POUFS",
                         "CHAISES",
                         "MEUBLES",
                         "LUMINAIRES",
@@ -245,6 +248,7 @@
                     ],
                     "productImages": [
                         "assets/Images/Marque/Ungaro/MKU_canape.png",
+                        "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
                         "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
                         "assets/Images/Marque/Ungaro/MKU_chaise.png",
                         "assets/Images/Marque/Ungaro/MKU_mobilier.png",
