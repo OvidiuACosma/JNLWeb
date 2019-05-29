@@ -18,7 +18,8 @@
                 "projecttype": "type de projet",
                 "contactreq": "I would like to be contacted",
                 "quotationreq": "I would like to be sent a rate/ quotation",
-                "send": "envoyer"
+                "send": "envoyer",
+                "counter": "caractères restants"
             },
             "EN":
             {
@@ -36,7 +37,8 @@
                 "projecttype": "project type",
                 "contactreq": "I would like to be contacted",
                 "quotationreq": "I would like to be sent a rate/ quotation",
-                "send": "send"
+                "send": "send",
+                "counter": "characters left"
             }
         },
         "activity":
