@@ -5,9 +5,9 @@
     <h5 class="gold">{{family | uppercase}}</h5>
   </div>
 
-  
+
   <div id='carousel-custom' class='carousel slide carousel-fade' data-ride='carousel' data-pause="false">
-    <div class="carousel-inner w-56">
+    <div class="carousel-inner">
       <div class='carousel-item' *ngFor="let heroImage of heroImages; let i = index"
         [ngClass]="i === 0 ? 'item active' : 'item'">
         <div class="carousel-item-image">
@@ -26,9 +26,18 @@
     </a>
   </div>
 
-  
-
-
+  <br>
+  <br>
+  <div>
+    <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
+      *ngIf="galleryImages.length>1">
+      <li *ngFor="let galleryImage of galleryImages; let j = index"
+        (click)="switchImageList(j)">
+        <img [src]="galleryImage.src" alt="{{galleryImage.alt}}"
+          class="img-responsive pointer">
+      </li>
+    </ol>
+  </div>
   <br>
   <br>
 

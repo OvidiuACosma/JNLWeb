@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
 import { Product, Img, ProductHeroImage } from '../../_models';
-declare var $: any;
 
 @Component({
   selector: 'app-product',
@@ -20,8 +19,11 @@ export class ProductComponent implements OnInit {
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
+  public galleryImages: Img[] = [];
+  public galleryCopy: Img[] = [];
   public prodHeroImages: ProductHeroImage[];
   public imgs: string[] = [];
+  public gallery: string[] = [];
   public imgCount = 0;
 
   scroller = true;
@@ -53,11 +55,6 @@ export class ProductComponent implements OnInit {
           });
       });
 
-    // activate carousel
-    // $(document).ready(function () {
-    //   $('.carousel').carousel();
-    // });
-
   }
 
   getProductData(product: Product) {
@@ -69,6 +66,7 @@ export class ProductComponent implements OnInit {
         if (this.language === 'FR') { this.family = this.prodDesc.familyFr; } else { this.family = this.prodDesc.familyEn; }
         this.model = this.prodDesc.model;
         this.getHeroImages();
+        this.getGalleryImages();
       });
   }
 
@@ -83,10 +81,36 @@ export class ProductComponent implements OnInit {
         for (let i = 0; i < this.imgs.length; i++) {
           this.heroImages[i] = {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.imgs[i]}`,
-            alt: `${this.product.brand} ${this.product.family} ${this.product.model}`
+            alt: `${this.product.brand} ${this.family} ${this.product.model}`
           };
         }
       });
+  }
+
+  getGalleryImages() {
+    this.productsService.getProdGalleryImages()
+      .subscribe(params => {
+        this.gallery = params.filter(f => f.Brand === this.product.brand && f.Family === this.product.family
+                       && f.Image.includes(this.product.model)).map(m => m.Image);
+        for (let i = 0; i < this.gallery.length; i++) {
+          this.galleryImages[i] = {
+            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/Thumbs/${this.gallery[i]}`,
+            alt: `${this.product.brand} ${this.family} ${this.product.model}`
+          };
+        }
+        for (let i = 0; i < this.gallery.length; i++) {
+          this.galleryCopy[i] = {
+            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.gallery[i]}`,
+            alt: `${this.product.brand} ${this.family} ${this.product.model}`
+          };
+        }
+      });
+  }
+
+  switchImageList(idx: number) {  // TO DO: carousel doesn't detect source(this.heroImages) changes
+      this.heroImages.length = 0;
+      this.heroImages = null;
+      this.heroImages = this.galleryCopy.slice(idx).concat(this.galleryCopy.slice(0, idx));
   }
 
   setDetail(index: number) {
