@@ -61,7 +61,7 @@ export class ProductsService {
            {headers: this.headers});
   }
 
-  public getGalleryImages(): Observable<any[]> {
+  public getProdGalleryImages(): Observable<any[]> {
     return this.http.get<any[]>(`${this.urlAssets}/Products/gallery.json`, {headers: this.headers});
   }
 }

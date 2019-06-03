@@ -22,11 +22,11 @@ export class ProductGalleryComponent implements OnInit {
     this.family = this.product.family;
     this.model = this.product.model;
 
-    this.productsService.getGalleryImages()
-      .subscribe(params => {
-        this.gallery = params.filter(f => f.Brand === this.brand && f.Family === this.family && f.Image.includes(this.model))
-          .map(m => m.Image);
-      });
+    // this.productsService.getGalleryImages()
+    //   .subscribe(params => {
+    //     this.gallery = params.filter(f => f.Brand === this.brand && f.Family === this.family && f.Image.includes(this.model))
+    //       .map(m => m.Image);
+    //   });
 
     // $(document).ready(function () {
     //     $('#carouselGallery').carousel('pause');
