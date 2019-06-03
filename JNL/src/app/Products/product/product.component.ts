@@ -110,9 +110,7 @@ export class ProductComponent implements OnInit {
 
   switchImageList(idx: number) {
       this.heroImages.length = 0;
-      // this.heroImages = this.galleryCopy.slice(idx).concat(this.galleryCopy.slice(0, idx));
       this.heroImages = this.galleryCopy.slice();
-      console.log('TEST: ', idx);
       $('#carousel-custom').carousel(idx);
   }
 

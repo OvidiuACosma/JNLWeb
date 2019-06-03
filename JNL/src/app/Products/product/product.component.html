@@ -32,7 +32,7 @@
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
       *ngIf="galleryImages.length>1">
       <li *ngFor="let galleryImage of galleryImages; let j = index">
-        <img id ="test" [src]="galleryImage.src" alt="{{galleryImage.alt}}"
+        <img [src]="galleryImage.src" alt="{{galleryImage.alt}}"
           class="img-responsive pointer" (click)="switchImageList(j)">
       </li>
     </ol>
