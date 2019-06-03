@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
 import { Product, Img, ProductHeroImage } from '../../_models';
+declare var $: any;
 
 @Component({
   selector: 'app-product',
@@ -107,10 +108,12 @@ export class ProductComponent implements OnInit {
       });
   }
 
-  switchImageList(idx: number) {  // TO DO: carousel doesn't detect source(this.heroImages) changes
+  switchImageList(idx: number) {
       this.heroImages.length = 0;
-      this.heroImages = null;
-      this.heroImages = this.galleryCopy.slice(idx).concat(this.galleryCopy.slice(0, idx));
+      // this.heroImages = this.galleryCopy.slice(idx).concat(this.galleryCopy.slice(0, idx));
+      this.heroImages = this.galleryCopy.slice();
+      console.log('TEST: ', idx);
+      $('#carousel-custom').carousel(idx);
   }
 
   setDetail(index: number) {
