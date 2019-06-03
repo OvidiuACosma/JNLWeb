@@ -141,22 +141,15 @@ export class MarqueComponent implements OnInit {
   }
 
   goProductsByCategoryOrFamily(marque: string, param: string) {
+    console.log('Param from HTML: ', param);
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
-    const categories = ['ASSISES', 'MEUBLES', 'LUMINAIRES', 'ACCESSOIRES', 'SEATING',
-                        'FURNITURES', 'LIGHTINGS', 'ACCESSORIES', 'FIRESIDE CHAIRS'];
-    if (categories.includes(param.toUpperCase())) {
-      param = this.stringCapitalAndNoFinalS(param);
-      this.router.navigate(['products', { b: brand, c: param }]);
-    } else {
-      // param = this.stringCapitalAndNoFinalS(param);
-      this.router.navigate(['products', { b: brand, f: param }]);
-    }
+    // const categories = ['SOFAS', 'MEUBLES', 'LUMINAIRES', 'ACCESSOIRES', 'SEATING',
+    //                     'FURNITURES', 'LIGHTINGS', 'ACCESSORIES', 'FIRESIDE CHAIRS'];
+    param = this.stringCapitalAndNoFinalS(param);
+    this.router.navigate(['products', { b: brand, f: param }]);
   }
 
   stringCapitalAndNoFinalS(str: string): string {
-    if (str.toLowerCase() === 'fireside chair') {
-      str = 'Fireside Chair';
-    }
     if (str.substr(str.length - 3).toLowerCase() === 'ies') {
       str = str.slice(0, -3).concat('y');
     }
