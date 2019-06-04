@@ -110,8 +110,10 @@ export class ProductComponent implements OnInit {
 
   switchImageList(idx: number) {
       this.heroImages.length = 0;
-      this.heroImages = this.galleryCopy.slice();
       $('#carousel-custom').carousel(idx);
+      this.heroImages = this.galleryCopy.slice();
+      this.imgCount = this.heroImages.length;
+      // $('#carousel-custom').carousel(idx);
   }
 
   setDetail(index: number) {

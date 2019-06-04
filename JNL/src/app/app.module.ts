@@ -27,7 +27,6 @@ import { WINDOW_PROVIDERS } from './_services/window.service';
 import { RequestFormComponent, DialogAnswerComponent } from './Std/request-form/request-form.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductGalleryComponent } from './Products/product-gallery/product-gallery.component';
 import { MatDialogModule } from '@angular/material';
 
 
@@ -63,7 +62,6 @@ import { MatDialogModule } from '@angular/material';
     FavoritesComponent,
     LeftStripComponent,
     RequestFormComponent,
-    ProductGalleryComponent,
     DialogAnswerComponent
   ],
   imports: [
