@@ -23,6 +23,7 @@
                         "DAYBEDS",
                         "CHAIRS",
                         "FURNITURES",
+                        "TABLES",
                         "LIGHTINGS",
                         "ACCESSORIES"
                     ],
@@ -32,6 +33,7 @@
                         "assets/Images/Marque/JNL/MKJ_pouf.png",
                         "assets/Images/Marque/JNL/MKJ_meridienne.png",
                         "assets/Images/Marque/JNL/MKJ_chaise.png", 
+                        "assets/Images/Marque/JNL/MKJ_mobilier.png",
                         "assets/Images/Marque/JNL/MKJ_mobilier.png",
                         "assets/Images/Marque/JNL/MKJ_luminaires.png",
                         "assets/Images/Marque/JNL/MKJ_accesoires.png"
@@ -94,6 +96,7 @@
                         "FOOTSTOOLS",
                         "CHAIRS",
                         "FURNITURES",
+                        "TABLES",
                         "LIGHTINGS",
                         "ACCESSORIES"
                         
@@ -103,6 +106,7 @@
                         "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
                         "assets/Images/Marque/Ungaro/MKU_pouf.png",
                         "assets/Images/Marque/Ungaro/MKU_chaise.png",
+                        "assets/Images/Marque/Ungaro/MKU_mobilier.png",
                         "assets/Images/Marque/Ungaro/MKU_mobilier.png",
                         "assets/Images/Marque/Ungaro/MKU_luminaires.png",
                         "assets/Images/Marque/Ungaro/MKU_accesoires.png"
@@ -132,6 +136,7 @@
                         "FOOTSTOOLS",
                         "CHAIRS",
                         "FURNITURES",
+                        "TABLES",
                         "LIGHTINGS",
                         "ACCESSORIES"
                     ],
@@ -141,6 +146,7 @@
                         "assets/Images/Marque/Luz/MKL_meridienne.png",
                         "assets/Images/Marque/Luz/MKL_pouf.png",
                         "assets/Images/Marque/Luz/MKL_chaise.png",
+                        "assets/Images/Marque/Luz/MKL_mobilier.png",
                         "assets/Images/Marque/Luz/MKL_mobilier.png",
                         "assets/Images/Marque/Luz/MKL_luminaires.png",
                         "assets/Images/Marque/Luz/MKL_accessoire.png"
@@ -172,6 +178,7 @@
                         "MéRIDIENNES",
                         "CHAISES",
                         "MEUBLES",
+                        "TABLES",
                         "LUMINAIRES",
                         "ACCESSOIRES"
                     ],
@@ -181,6 +188,7 @@
                         "assets/Images/Marque/JNL/MKJ_pouf.png",
                         "assets/Images/Marque/JNL/MKJ_meridienne.png",
                         "assets/Images/Marque/JNL/MKJ_chaise.png", 
+                        "assets/Images/Marque/JNL/MKJ_mobilier.png",
                         "assets/Images/Marque/JNL/MKJ_mobilier.png",
                         "assets/Images/Marque/JNL/MKJ_luminaires.png",
                         "assets/Images/Marque/JNL/MKJ_accesoires.png"
@@ -243,6 +251,7 @@
                         "POUFS",
                         "CHAISES",
                         "MEUBLES",
+                        "TABLES",
                         "LUMINAIRES",
                         "ACCESSOIRES"
                     ],
@@ -251,6 +260,7 @@
                         "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
                         "assets/Images/Marque/Ungaro/MKU_pouf.png",
                         "assets/Images/Marque/Ungaro/MKU_chaise.png",
+                        "assets/Images/Marque/Ungaro/MKU_mobilier.png",
                         "assets/Images/Marque/Ungaro/MKU_mobilier.png",
                         "assets/Images/Marque/Ungaro/MKU_luminaires.png",
                         "assets/Images/Marque/Ungaro/MKU_accesoires.png"
@@ -280,6 +290,7 @@
                         "POUFS",
                         "CHAISES",
                         "MEUBLES",
+                        "TABLES",
                         "LUMINAIRES",
                         "ACCESSOIRES"
                     ],
@@ -289,6 +300,7 @@
                         "assets/Images/Marque/Luz/MKL_meridienne.png",
                         "assets/Images/Marque/Luz/MKL_pouf.png",
                         "assets/Images/Marque/Luz/MKL_chaise.png",
+                        "assets/Images/Marque/Luz/MKL_mobilier.png",
                         "assets/Images/Marque/Luz/MKL_mobilier.png",
                         "assets/Images/Marque/Luz/MKL_luminaires.png",
                         "assets/Images/Marque/Luz/MKL_accessoire.png"

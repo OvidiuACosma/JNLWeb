@@ -141,12 +141,16 @@ export class MarqueComponent implements OnInit {
   }
 
   goProductsByCategoryOrFamily(marque: string, param: string) {
-    console.log('Param from HTML: ', param);
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
-    // const categories = ['SOFAS', 'MEUBLES', 'LUMINAIRES', 'ACCESSOIRES', 'SEATING',
-    //                     'FURNITURES', 'LIGHTINGS', 'ACCESSORIES', 'FIRESIDE CHAIRS'];
     param = this.stringCapitalAndNoFinalS(param);
-    this.router.navigate(['products', { b: brand, f: param }]);
+    console.log('Param without s: ', param);
+    const categories = ['ASSISE', 'MEUBLE', 'LUMINAIRE', 'ACCESSOIRE', 'SEATING',
+                        'FURNITURE', 'LIGHTING', 'ACCESSORY', 'TABLE'];
+    if (categories.includes(param.toUpperCase())) {
+      this.router.navigate(['products', { b: brand, c: param }]);
+     } else {
+      this.router.navigate(['products', { b: brand, f: param }]);
+     }
   }
 
   stringCapitalAndNoFinalS(str: string): string {
