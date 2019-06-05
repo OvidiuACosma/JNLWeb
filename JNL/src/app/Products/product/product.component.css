@@ -173,6 +173,7 @@ button
     white-space: nowrap;
     width: 100%;
 }
+
 .carousel-thumbnails li {
     background-color: transparent;
     -webkit-border-radius: 0;
@@ -182,16 +183,17 @@ button
     margin: 2px !important;
     width: auto;
 }
+
 .carousel-thumbnails li img {
     display: block;
     /* opacity: 0.5; */
-    border: 1px solid#959595;
+    border: 1px solid #959595;
     max-width: 100px;
     max-height: 60px;
     object-fit: contain;
     text-align: center;
-
 }
+
 /* 
 .carousel-thumbnails li.active img {
     opacity: 1;
