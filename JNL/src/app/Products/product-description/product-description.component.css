@@ -61,24 +61,24 @@ h5 {
 }
 
 .fin {
-    width: 90px;
+    width: 4.687vw;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-right: 10px;
+    padding-right: 0.52vw;
 }
 
-.fin-img {
+#fin-img {
     object-fit: cover;
     text-align: center;
 }
 
 .samples {
-    width: 80px;
-    height: 80px;
+    width: 4.166vw;
+    height: 4.166vw;
 }
 
-.modal-dialog {
+.modal-dim {
     max-width: 700px !important;
     width: 70vw !important;
     min-width: 400px;

@@ -188,8 +188,9 @@ button
     display: block;
     /* opacity: 0.5; */
     border: 1px solid #959595;
-    max-width: 100px;
-    max-height: 60px;
+    width: 4.166vw;
+    /* max-width: 100px;
+    max-height: 60px; */
     object-fit: contain;
     text-align: center;
 }
