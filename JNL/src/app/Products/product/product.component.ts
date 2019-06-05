@@ -20,8 +20,11 @@ export class ProductComponent implements OnInit {
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
+  public galleryImages: Img[] = [];
+  public galleryCopy: Img[] = [];
   public prodHeroImages: ProductHeroImage[];
   public imgs: string[] = [];
+  public gallery: string[] = [];
   public imgCount = 0;
 
   scroller = true;
@@ -34,11 +37,11 @@ export class ProductComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-              private productsService: ProductsService,
-              private router: Router,
-              private dataex: DataExchangeService,
-              private textService: TranslationService,
-              private archiveService: ArchiveService) { }
+    private productsService: ProductsService,
+    private router: Router,
+    private dataex: DataExchangeService,
+    private textService: TranslationService,
+    private archiveService: ArchiveService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -53,34 +56,6 @@ export class ProductComponent implements OnInit {
           });
       });
 
-    // activate carousel
-    /* $(document).ready(function () {
-      $('.carousel').carousel();
-    }); */
-
-    $(document).ready(function () {
-      $('.carousel').carousel();
-        $('.multi-item-carousel').carousel({
-         interval: 10000
-       });
-       /*
-       // for every slide in carousel, copy the next slide's item in the slide.
-       // Do the same for the next, next item.
-       $('.multi-item-carousel .item').each(function () {
-         let next = $(this).next();
-         if (!next.length) {
-           next = $(this).siblings(':first');
-         }
-         next.children(':first-child').clone().appendTo($(this));
-
-         if (next.next().length > 0) {
-           next.next().children(':first-child').clone().appendTo($(this));
-         } else {
-           $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-         }
-       }); */
-    });
-
   }
 
   getProductData(product: Product) {
@@ -92,6 +67,7 @@ export class ProductComponent implements OnInit {
         if (this.language === 'FR') { this.family = this.prodDesc.familyFr; } else { this.family = this.prodDesc.familyEn; }
         this.model = this.prodDesc.model;
         this.getHeroImages();
+        this.getGalleryImages();
       });
   }
 
@@ -106,10 +82,38 @@ export class ProductComponent implements OnInit {
         for (let i = 0; i < this.imgs.length; i++) {
           this.heroImages[i] = {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.imgs[i]}`,
-            alt: `${this.product.brand} ${this.product.family} ${this.product.model}`
+            alt: `${this.product.brand} ${this.family} ${this.product.model}`
           };
         }
       });
+  }
+
+  getGalleryImages() {
+    this.productsService.getProdGalleryImages()
+      .subscribe(params => {
+        this.gallery = params.filter(f => f.Brand === this.product.brand && f.Family === this.product.family
+                       && f.Image.includes(this.product.model)).map(m => m.Image);
+        for (let i = 0; i < this.gallery.length; i++) {
+          this.galleryImages[i] = {
+            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/Thumbs/${this.gallery[i]}`,
+            alt: `${this.product.brand} ${this.family} ${this.product.model}`
+          };
+        }
+        for (let i = 0; i < this.gallery.length; i++) {
+          this.galleryCopy[i] = {
+            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.gallery[i]}`,
+            alt: `${this.product.brand} ${this.family} ${this.product.model}`
+          };
+        }
+      });
+  }
+
+  switchImageList(idx: number) {
+      this.heroImages.length = 0;
+      $('#carousel-custom').carousel(idx);
+      this.heroImages = this.galleryCopy.slice();
+      this.imgCount = this.heroImages.length;
+      // $('#carousel-custom').carousel(idx);
   }
 
   setDetail(index: number) {

@@ -3,7 +3,7 @@
         "Collections": {
             "EN": {
                 "JNL": {
-                    "collectionTitle": "JNL Collection",
+                    "collectionTitle": "JNL collection",
                 
                     "marqueImgSrc": "assets/Images/Marque/JNL/MKJ_first.jpg",
 
@@ -22,17 +22,19 @@
                         "FOOTSTOOLS",
                         "DAYBEDS",
                         "CHAIRS",
-                        "FURNITURE",
-                        "LIGHTING",
-                        "ACCESORIES"
+                        "FURNITURES",
+                        "TABLES",
+                        "LIGHTINGS",
+                        "ACCESSORIES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/JNL/MKJ_assises.png", 
-                        "assets/Images/Marque/JNL/MKJ_assises.png",
-                        "assets/Images/Marque/JNL/MKJ_assises.png",
-                        "assets/Images/Marque/JNL/MKJ_assises.png",
-                        "assets/Images/Marque/JNL/MKJ_assises.png", 
+                        "assets/Images/Marque/JNL/MKJ_canape.png", 
+                        "assets/Images/Marque/JNL/MKJ_fauteuil.png",
+                        "assets/Images/Marque/JNL/MKJ_pouf.png",
+                        "assets/Images/Marque/JNL/MKJ_meridienne.png",
+                        "assets/Images/Marque/JNL/MKJ_chaise.png", 
                         "assets/Images/Marque/JNL/MKJ_mobilier.png",
+                        "assets/Images/Marque/JNL/MKJ_table.png",
                         "assets/Images/Marque/JNL/MKJ_luminaires.png",
                         "assets/Images/Marque/JNL/MKJ_accesoires.png"
                     ],
@@ -66,9 +68,9 @@
                         "assets/Images/Marque/Vanhamme/MKV_canapes.png",
                         "assets/Images/Marque/Vanhamme/MKV_fauteuils.png", 
                         "assets/Images/Marque/Vanhamme/MKV_poufs.png",
-                        "assets/Images/Marque/Vanhamme/MKV_poufs.png",
-                        "assets/Images/Marque/Vanhamme/MKV_poufs.png",
-                        "assets/Images/Marque/Vanhamme/MKV_poufs.png"
+                        "assets/Images/Marque/Vanhamme/MKV_meridienne.png",
+                        "assets/Images/Marque/Vanhamme/MKV_chauffeuse.png",
+                        "assets/Images/Marque/Vanhamme/MKV_table.png"
                     ],
 
                     "style":  "assets/Images/Marque/Vanhamme/MKV_style.jpg",
@@ -91,21 +93,21 @@
                     "productCategories": [
                         "SOFAS",
                         "ARMCHAIRS",
-                        "DAYBEDS",
                         "FOOTSTOOLS",
                         "CHAIRS",
                         "FURNITURES",
+                        "TABLES",
                         "LIGHTINGS",
-                        "ACCESORIES"
+                        "ACCESSORIES"
                         
                     ],
                     "productImages": [
-                        "assets/Images/Marque/Ungaro/MKU_assises.png",
-                        "assets/Images/Marque/Ungaro/MKU_assises.png",
-                        "assets/Images/Marque/Ungaro/MKU_assises.png",
-                        "assets/Images/Marque/Ungaro/MKU_assises.png",
-                        "assets/Images/Marque/Ungaro/MKU_assises.png",
+                        "assets/Images/Marque/Ungaro/MKU_canape.png",
+                        "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
+                        "assets/Images/Marque/Ungaro/MKU_pouf.png",
+                        "assets/Images/Marque/Ungaro/MKU_chaise.png",
                         "assets/Images/Marque/Ungaro/MKU_mobilier.png",
+                        "assets/Images/Marque/Ungaro/MKU_table.png",
                         "assets/Images/Marque/Ungaro/MKU_luminaires.png",
                         "assets/Images/Marque/Ungaro/MKU_accesoires.png"
                     ],
@@ -134,16 +136,20 @@
                         "FOOTSTOOLS",
                         "CHAIRS",
                         "FURNITURES",
-                        "LIGHTINGS"
+                        "TABLES",
+                        "LIGHTINGS",
+                        "ACCESSORIES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
+                        "assets/Images/Marque/Luz/MKL_canape.png",
+                        "assets/Images/Marque/Luz/MKL_fauteuil.png",
+                        "assets/Images/Marque/Luz/MKL_meridienne.png",
+                        "assets/Images/Marque/Luz/MKL_pouf.png",
+                        "assets/Images/Marque/Luz/MKL_chaise.png",
                         "assets/Images/Marque/Luz/MKL_mobilier.png",
-                        "assets/Images/Marque/Luz/MKL_luminaires.png"
+                        "assets/Images/Marque/Luz/MKL_table.png",
+                        "assets/Images/Marque/Luz/MKL_luminaires.png",
+                        "assets/Images/Marque/Luz/MKL_accessoire.png"
                     ],
 
                     "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
@@ -152,7 +158,7 @@
             },
             "FR": {
                 "JNL": {
-                    "collectionTitle": "JNL Collection",
+                    "collectionTitle": "JNL collection",
                     
                     "marqueImgSrc": "assets/Images/Marque/JNL/MKJ_first.jpg",
 
@@ -172,16 +178,18 @@
                         "MéRIDIENNES",
                         "CHAISES",
                         "MEUBLES",
+                        "TABLES",
                         "LUMINAIRES",
                         "ACCESSOIRES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/JNL/MKJ_assises.png", 
-                        "assets/Images/Marque/JNL/MKJ_assises.png",
-                        "assets/Images/Marque/JNL/MKJ_assises.png",
-                        "assets/Images/Marque/JNL/MKJ_assises.png",
-                        "assets/Images/Marque/JNL/MKJ_assises.png", 
+                        "assets/Images/Marque/JNL/MKJ_canape.png", 
+                        "assets/Images/Marque/JNL/MKJ_fauteuil.png",
+                        "assets/Images/Marque/JNL/MKJ_pouf.png",
+                        "assets/Images/Marque/JNL/MKJ_meridienne.png",
+                        "assets/Images/Marque/JNL/MKJ_chaise.png", 
                         "assets/Images/Marque/JNL/MKJ_mobilier.png",
+                        "assets/Images/Marque/JNL/MKJ_table.png",
                         "assets/Images/Marque/JNL/MKJ_luminaires.png",
                         "assets/Images/Marque/JNL/MKJ_accesoires.png"
                     ],
@@ -215,9 +223,9 @@
                         "assets/Images/Marque/Vanhamme/MKV_canapes.png",
                         "assets/Images/Marque/Vanhamme/MKV_fauteuils.png", 
                         "assets/Images/Marque/Vanhamme/MKV_poufs.png",
-                        "assets/Images/Marque/Vanhamme/MKV_poufs.png",
-                        "assets/Images/Marque/Vanhamme/MKV_poufs.png",
-                        "assets/Images/Marque/Vanhamme/MKV_poufs.png"
+                        "assets/Images/Marque/Vanhamme/MKV_meridienne.png",
+                        "assets/Images/Marque/Vanhamme/MKV_chauffeuse.png",
+                        "assets/Images/Marque/Vanhamme/MKV_table.png"
                     ],
 
                     "style":  "assets/Images/Marque/Vanhamme/MKV_style.jpg",
@@ -240,22 +248,22 @@
                     "productCategories": [
                         "CANAPéS",
                         "FAUTEUILS",
-                        "MéRIDIENNES",
                         "POUFS",
                         "CHAISES",
                         "MEUBLES",
+                        "TABLES",
                         "LUMINAIRES",
                         "ACCESSOIRES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_assises.png",
-                            "assets/Images/Marque/Ungaro/MKU_mobilier.png",
-                            "assets/Images/Marque/Ungaro/MKU_luminaires.png",
-                            "assets/Images/Marque/Ungaro/MKU_accesoires.png"
+                        "assets/Images/Marque/Ungaro/MKU_canape.png",
+                        "assets/Images/Marque/Ungaro/MKU_fauteuil.png",
+                        "assets/Images/Marque/Ungaro/MKU_pouf.png",
+                        "assets/Images/Marque/Ungaro/MKU_chaise.png",
+                        "assets/Images/Marque/Ungaro/MKU_mobilier.png",
+                        "assets/Images/Marque/Ungaro/MKU_table.png",
+                        "assets/Images/Marque/Ungaro/MKU_luminaires.png",
+                        "assets/Images/Marque/Ungaro/MKU_accesoires.png"
                     ],
 
                     "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
@@ -281,17 +289,21 @@
                         "MéRIDIENNES",
                         "POUFS",
                         "CHAISES",
-                        "MOBILIER",
-                        "LUMINAIRES"
+                        "MEUBLES",
+                        "TABLES",
+                        "LUMINAIRES",
+                        "ACCESSOIRES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
-                        "assets/Images/Marque/Luz/MKL_assises.png",
+                        "assets/Images/Marque/Luz/MKL_canape.png",
+                        "assets/Images/Marque/Luz/MKL_fauteuil.png",
+                        "assets/Images/Marque/Luz/MKL_meridienne.png",
+                        "assets/Images/Marque/Luz/MKL_pouf.png",
+                        "assets/Images/Marque/Luz/MKL_chaise.png",
                         "assets/Images/Marque/Luz/MKL_mobilier.png",
-                        "assets/Images/Marque/Luz/MKL_luminaires.png"
+                        "assets/Images/Marque/Luz/MKL_table.png",
+                        "assets/Images/Marque/Luz/MKL_luminaires.png",
+                        "assets/Images/Marque/Luz/MKL_accessoire.png"
                     ],
 
                     "style":  "assets/Images/Marque/Luz/MKL_style.jpg",

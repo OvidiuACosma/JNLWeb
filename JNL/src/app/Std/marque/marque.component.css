@@ -1,7 +1,7 @@
 h1 {
     font-family: Helvetica;
     font-size: 3vw; /* 5.03vw */
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-align: center !important;
     margin-bottom: 0;
 }
@@ -115,9 +115,9 @@ h6 {
     margin-bottom: 4vw;
 }
 
-.heritage > div > h2 {
+/* .heritage > div > h2 {
     text-transform: capitalize;
-}
+} */
 
 .heritage > div > div > span {
     display: flex;
@@ -132,7 +132,7 @@ h6 {
 .full-image {
     margin-top: 2.63vw;
     left: 0;
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 

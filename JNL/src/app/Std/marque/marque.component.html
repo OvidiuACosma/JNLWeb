@@ -1,6 +1,6 @@
 <div class="marque-main" *ngIf="text">
   <div>
-  <h1>{{text.collectionTitle | uppercase}}</h1>
+  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png">
 
   <div id="first_picture">
       <div>
@@ -14,7 +14,7 @@
       <h2>{{text.sectionTitle}}</h2>
       <p [innerHTML]="text.sectionText"></p>
       <div class="home-links-flex">
-        <span class="home_links" (click)="goAllProducts(marque)">{{textG.link1}}</span>
+        <span class="home_links" (click)="goAllProductsOfBrand(marque)">{{textG.link1}}</span>
         <span class="home_links" (click)="download(marque, 'catalog')">{{textG.link2}}</span>
         <span class="home_links">{{textG.link3}}</span>
       </div>
@@ -28,7 +28,7 @@
             
           <!-- Indicators -->
           <ol class='carousel-indicators'>
-              <li data-target='#carousel-custom'  *ngFor="let itemC of text.productCategories; let x = index" 
+              <li data-target='#carousel-custom'  *ngFor="let itemC of getIndicatorsText(); let x = index" 
                 [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'>
                 <span>{{itemC}}</span>
               </li>
@@ -41,7 +41,7 @@
                       <img src='{{item}}' alt='{{text.collectionTitle}}' class="slide-image">
                     </div>
                     <p class="voir">
-                      <span class="home_links" (click)="navigateTo('marques', 'jnl')">{{textG.discover}} {{text.productCategories[k]}}</span>
+                      <span class="home_links" (click)="goProductsByCategoryOrFamily(marque, text.productCategories[k])">{{textG.discover}} {{text.productCategories[k]}}</span>
                     </p>
                   </div>
                 </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, DownloaderService } from '../../_services';
 import * as _ from 'lodash';
-declare var $: any;
+import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-marque',
@@ -52,10 +52,6 @@ export class MarqueComponent implements OnInit {
       this.getText(lang);
       this.getAlt(this.page);
     });
-    // activate carousel
-    $(document).ready(function() {
-      $('.carousel').carousel();
-    });
   }
 
   getText(lang: string) {
@@ -81,6 +77,14 @@ export class MarqueComponent implements OnInit {
 
   getAltText(res: any, page: string): any {
     return res[page];
+  }
+
+  getIndicatorsText(): string[] {
+    const indicators: string[] = [];
+    for (const ind of this.text.productCategories) {
+      indicators.push(this.stringCapitalAndNoFinalS(ind));
+    }
+    return indicators;
   }
 
   getOthers(nr: number) {
@@ -118,20 +122,46 @@ export class MarqueComponent implements OnInit {
     });
   }
 
-  download(marque: any, type: any) {
-    // NOT WORKING FOR IE AND EDGE
+  download(marque: string, type: string) {
+    // NOT WORKING FOR IE
     this.downloader.getFile(marque, type).subscribe(data => {
       this.blob = new Blob([data], {
         type: 'application/pdf'
       });
-      this.url = window.URL.createObjectURL(this.blob);
-      window.open(this.url, '_blank');
+      const fileName = marque[0].toUpperCase() + marque.slice(1) + ' ' + type[0].toUpperCase() + type.slice(1) + '.pdf';
+      FileSaver.saveAs(this.blob, fileName);
+      // this.url = window.URL.createObjectURL(this.blob);
+      // window.open(this.url, '_blank');
     });
   }
 
-  goAllProducts(marque: string) {
+  goAllProductsOfBrand(marque: string) {
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
     this.router.navigate(['products', { b: brand }]);
+  }
+
+  goProductsByCategoryOrFamily(marque: string, param: string) {
+    const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
+    param = this.stringCapitalAndNoFinalS(param);
+    console.log('Param without s: ', param);
+    const categories = ['ASSISE', 'MEUBLE', 'LUMINAIRE', 'ACCESSOIRE', 'SEATING',
+                        'FURNITURE', 'LIGHTING', 'ACCESSORY', 'TABLE'];
+    if (categories.includes(param.toUpperCase())) {
+      this.router.navigate(['products', { b: brand, c: param }]);
+     } else {
+      this.router.navigate(['products', { b: brand, f: param }]);
+     }
+  }
+
+  stringCapitalAndNoFinalS(str: string): string {
+    if (str.substr(str.length - 3).toLowerCase() === 'ies') {
+      str = str.slice(0, -3).concat('y');
+    }
+    if (str.substr(str.length - 1).toLowerCase() === 's') {
+      str = str.slice(0, -1);
+    }
+    str = _.startCase(_.toLower(str));
+    return str;
   }
 
   ScrollTop() {

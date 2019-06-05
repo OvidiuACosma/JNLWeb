@@ -16,8 +16,8 @@
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
                 <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal" data-target="#finisageModal">
                   <a>
-                    <img id="fin-img" *ngIf="testErable" class="samples"
-                      src="assets\Images\Products\JNL Collection\Samples\{{fin.img}}">
+                    <img id="fin-img" *ngIf="checkMat" class="samples"
+                      src="assets\Images\Products\{{brand}}\Samples\{{fin.img}}">
                   </a>
                   <span class="fin-text">{{fin.name}}</span>
                 </div>
@@ -46,11 +46,11 @@
       </div>
       <div class="modal-body flex-container">
         <div class="whiteSpace">
-          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')" *ngIf="currentFinList.length>1">
         </div>
         <div class="cardContainer">
           <div class="card">
-            <img src="assets\Images\Products\JNL Collection\Samples\Print\{{finisage.img}}" class="card-img-top"
+            <img src="assets\Images\Products\{{brand}}\Samples\Print\{{finisage.img}}" class="card-img-top"
               alt="...">
             <div class="card-body">
               <!--
@@ -58,17 +58,13 @@
                 <ul style="list-style-type:none">
                   <li><b>Name: </b><label>{{material.model}}</label></li>
                   <li><b>Code: </b><label>{{material.codeProd}}</label></li>
-                  <li><b>Dimensions: </b><label>{{material.dimensions}}</label></li>
-                  <li><b>Martindale: </b><label>{{material.martindale}}</label></li>
-                  <li><b>Composition: </b></li>
-                  <li><label>{{material.compositionFR}}</label></li>
                 </ul>
               -->
             </div>
           </div>
         </div>
         <div class="whiteSpace">
-          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')" *ngIf="currentFinList.length>1">
         </div>
       </div>
     </div>

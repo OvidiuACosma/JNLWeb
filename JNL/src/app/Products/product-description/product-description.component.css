@@ -79,9 +79,9 @@ h5 {
 }
 
 .modal-dialog {
+    max-width: 700px !important;
     width: 70vw !important;
     min-width: 400px;
-    max-width: 700px !important;
 }
 
 .modal-header {
@@ -91,7 +91,7 @@ h5 {
 
 /* close button of modal */
 .close {
-    margin-left: 0px !important;
+    margin-left: 0 !important;
 }
 
 .modal-content {

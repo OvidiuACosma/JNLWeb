@@ -157,8 +157,7 @@ button {
 #group_list {
     margin: auto;
     font-family: Helvetica-Light;
-    font-size: 1em;
-    width: 80%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -171,7 +170,7 @@ button {
 
 #group_list > a {
     margin: auto;
-    font-size: 1.8vw;
+    font-size: 1.4vw;
     line-height: 2vw;
     left: 0;
     text-transform: uppercase;

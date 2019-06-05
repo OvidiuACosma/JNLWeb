@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import { Product, ProductEF } from '../../_models';
@@ -45,7 +45,6 @@ export class ProductSearchComponent implements OnInit {
   filterBy: string[] = ['Brand', 'Type', 'Family'];
   brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors']);
   filterElements: IFilterElements[] = [];
-  // selected = [0, 0, 0, 0, 0];
   scroller = true;
   numbers: number[] = [];
   total: number;
@@ -74,10 +73,8 @@ export class ProductSearchComponent implements OnInit {
       .subscribe(p => {
         this.products = this.sortProducts(p);
         this.productsFiltered = _.clone(this.products);
-        this.categoriesFr = new Set(this.products.map(c => c.categoryFr));
-        this.categoriesEn = new Set(this.products.map(c => c.categoryEn));
-        this.familiesFr = new Set(this.products.map(f => f.familyFr));
-        this.familiesEn = new Set(this.products.map(f => f.familyEn));
+        this.getCategories();
+        this.getFamilies();
         this.getRouteParameters();
         this.setFilterElements();
         if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
@@ -87,6 +84,7 @@ export class ProductSearchComponent implements OnInit {
         }
      });
     });
+
     this.toggle = new Array(this.filterBy.length);
     for (let i = 0; i < this.filterBy.length; i++) {
       this.toggle[i] = true;
@@ -109,6 +107,35 @@ export class ProductSearchComponent implements OnInit {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getCategories(brand: string[] = ['all']) {
+    let products = _.clone(this.products);
+    if (!brand.includes('all')) {
+      products = products.filter(f => brand.includes(f.brand));
+    }
+      this.categoriesFr = new Set(products.map(c => c.categoryFr));
+      this.categoriesEn = new Set(products.map(c => c.categoryEn));
+  }
+
+  getFamilies(brand: string[] = ['all'], category: string[] = ['all']) {
+    let products = _.clone(this.products);
+    if (!brand.includes('all')) {
+      products = products.filter(f => brand.includes(f.brand));
+    }
+    if (!category.includes('all')) {
+      switch (this.language.toLowerCase()) {
+        case 'en': {
+          products = products.filter(f => category.includes(f.categoryEn));
+          break;
+        }
+        case 'fr': {
+          products = products.filter(f => category.includes(f.categoryFr));
+        }
+      }
+    }
+    this.familiesFr = new Set(products.map(f => f.familyFr));
+    this.familiesEn = new Set(products.map(f => f.familyEn));
   }
 
   getRouteParameters() {
@@ -165,19 +192,59 @@ export class ProductSearchComponent implements OnInit {
 
   sortProducts(p: ProductEF[]): ProductEF[] {
     p.sort(function(a, b) {
-      if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
-      if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
-      if (a.brand.localeCompare(b.brand) > 0) { return 1; }
-      if (a.brand.localeCompare(b.brand) < 0) { return -1; }
-      if (a.model.localeCompare(b.model) > 0) { return 1; }
+      if (a.indexFamily > b.indexFamily) {
+        return 1; // reverse
+      } else  if (a.indexFamily < b.indexFamily) {
+        return -1; // preserve
+      } else {
+        if (a.indexBrand > b.indexBrand) {
+          return 1; // reverse
+          // return a.indexModel - b.indexModel;
+        } else {
+          return -1; // preserve
+        }
+      }
       return -1;
+
+      // if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
+      // if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
+      // if (a.brand.localeCompare(b.brand) > 0) { return 1; }
+      // if (a.brand.localeCompare(b.brand) < 0) { return -1; }
+      // if (a.model.localeCompare(b.model) > 0) { return 1; }
+      // return -1;
     });
     return p;
   }
 
   getFilters(category: string): any {
       const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
-      const fg: IFilter[] = fe[0].filterElement;
+      let fg: IFilter[] = fe[0].filterElement;
+      switch (category) {
+        case 'Type': {
+          switch (this.language.toLowerCase()) {
+            case 'en': {
+              fg = fg.filter(f => this.categoriesEn.has(f.displayName));
+              break;
+            }
+            case 'fr': {
+              fg = fg.filter(f => this.categoriesFr.has(f.displayName));
+            }
+          }
+          break;
+        }
+        case 'Family': {
+          switch (this.language.toLowerCase()) {
+            case 'en': {
+              fg = fg.filter(f => this.familiesEn.has(f.displayName));
+              break;
+            }
+            case 'fr': {
+              fg = fg.filter(f => this.familiesFr.has(f.displayName));
+            }
+          }
+          break;
+        }
+      }
       return  fg;
   }
 
@@ -198,18 +265,20 @@ export class ProductSearchComponent implements OnInit {
   }
 
   resetFilter() {
+    this.getCategories(['all']);
+    this.getFamilies(['all']);
     this.setFilterElements();
     this.productsFiltered = _.clone(this.products);
   }
 
-  selectFilter(c = '', i = 0) {
+  selectFilter(c = '', displayName = '') {
     this.scrollAfterFilter('content');
     let filteredElements: IFilterElements[];
     let filterItems: number[];
     let filteredItems: boolean[];
-    if (c !== '') {
-      this.toggleItemSelection(c, i);
-    }
+
+    this.toggleSelection(c, displayName);
+
     // Determine filtering parameters
     filteredElements = _.cloneDeep(this.filterElements);
     _.map(filteredElements, element => {
@@ -225,17 +294,59 @@ export class ProductSearchComponent implements OnInit {
     this.scroller = false;
   }
 
-  toggleItemSelection(c: string, i: number) {
-    this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked =
-      !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.index === i).checked;
+  toggleSelection(c: string, displayName: string) {
+    if (c !== '') {
+      this.toggleItemSelection(c, displayName);
+      // filter the list of filter elements brand -> category -> familiy
+      if (c === 'Brand') {
+        this.resetCategories();
+        this.resetFamilies();
+      }
+      if (c === 'Type') {
+        this.resetFamilies();
+      }
+    }
+  }
+
+  toggleItemSelection(c: string, displayName: string) {
+    this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked =
+      !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
+  }
+
+  resetCategories() {
+    this.getCategories(this.getselectedItemsOfGroup('Brand'));
+  }
+
+  resetFamilies() {
+    this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
+  }
+
+  getselectedItemsOfGroup(group: string): string[] {
+    let selectedItems: string[] = this.filterElements.find(f => f.filterGroup === group)
+      .filterElement.filter(v => v.checked).map(m => m.displayName);
+    if (selectedItems.length === 0) { selectedItems = ['all']; }
+    return selectedItems;
   }
 
   activateItemSelection(routeParams: IRouteParams) {
-    // TODO: select item from Route Parameters
     if (routeParams.brand) {
-      this.filterElements.find(f => f.filterGroup === 'Brand')
-      .filterElement.find(f => f.displayName === routeParams.brand).checked = true;
+      this.activateElementSelection('Brand', routeParams.brand);
+      this.resetCategories();
+      this.resetFamilies();
     }
+    if (routeParams.category) {
+      this.activateElementSelection('Type', routeParams.category);
+      this.resetFamilies();
+    }
+    if (routeParams.family) {
+      this.activateElementSelection('Family', routeParams.family);
+    }
+    // filter the list of filters
+  }
+
+  activateElementSelection(group: string, param: string) {
+    this.filterElements.find(f => f.filterGroup === group)
+    .filterElement.find(f => f.displayName === param).checked = true;
   }
 
   getFilterItems(): number[] {
@@ -243,6 +354,7 @@ export class ProductSearchComponent implements OnInit {
     for (let k = 0; k < this.filterElements.length; k++) {
       filterItems.push(this.filterElements[k].filterElement.length);
     }
+    // console.log('filterItems: ', filterItems);
     return filterItems;
   }
 
@@ -344,6 +456,29 @@ export class ProductSearchComponent implements OnInit {
       return 'assets/Images/Common/arrow_up_gold.png';
     }
     return 'assets/Images/Common/arrow_down_gold.png';
+  }
+
+  getFamiliesGroup(): any {
+    switch (this.language.toLowerCase()) {
+      case 'fr': {
+        // this.productsFiltered
+        return new Set(this.productsFiltered.map(f => f.familyFr));
+      }
+      case 'en': {
+        return new Set(this.productsFiltered.map(f => f.familyEn));
+      }
+    }
+  }
+
+  getProductsOfFamily(family: string): ProductEF[] {
+    switch (this.language.toLowerCase()) {
+      case 'fr': {
+        return this.productsFiltered.filter(f => f.familyFr === family);
+      }
+      case 'en': {
+        return this.productsFiltered.filter(f => f.familyEn === family);
+      }
+    }
   }
 
   getProductImage(product: ProductEF): string {
