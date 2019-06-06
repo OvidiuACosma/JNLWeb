@@ -30,9 +30,9 @@
   <br>
   <div>
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
-      *ngIf="galleryImages.length>1">
-      <li *ngFor="let galleryImage of galleryImages; let j = index">
-        <img [src]="galleryImage.src" alt="{{galleryImage.alt}}"
+      *ngIf="galleryThumbs.length>1">
+      <li *ngFor="let image of galleryThumbs; let j = index">
+        <img [src]="image.src" alt="{{image.alt}}"
           class="img-responsive pointer" (click)="switchImageList(j)">
       </li>
     </ol>

@@ -171,51 +171,6 @@
     },
     {
         "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Seth_0.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Seth_1.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Seth_2.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Seth_3.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Sultan_0.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Sultan_1.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Sultan_2.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Sultan_3.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
-        "Family": "Buffet",
-        "Image": "Sultan_4.jpg"
-    },
-    {
-        "Brand": "Emanuel Ungaro Home",
         "Family": "Bureau",
         "Image": "Dantes_0.jpg"
     },
@@ -352,47 +307,47 @@
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_0.jpg"
+        "Image": "Chrysanthe droit_0.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_1.jpg"
+        "Image": "Chrysanthe droit_1.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_2.jpg"
+        "Image": "Chrysanthe droit_2.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_3.jpg"
+        "Image": "Chrysanthe droit_3.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_4.jpg"
+        "Image": "Chrysanthe droit_4.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_5.jpg"
+        "Image": "Chrysanthe droit_5.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_6.jpg"
+        "Image": "Chrysanthe droit_6.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_7.jpg"
+        "Image": "Chrysanthe gauche_0.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Canapé",
-        "Image": "Chrysanthe_8.jpg"
+        "Image": "Chrysanthe gauche_1.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
@@ -587,6 +542,31 @@
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Chevet",
+        "Image": "Thémis_0.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Chevet",
+        "Image": "Thémis_1.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Chevet",
+        "Image": "Thémis_2.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Chevet",
+        "Image": "Thémis_3.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Chevet",
+        "Image": "Thémis_4.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Chevet",
         "Image": "Timeo_0.jpg"
     },
     {
@@ -777,32 +757,32 @@
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Fauteuil",
-        "Image": "Cléance pivotant_0.jpg"
+        "Image": "Cléance swivelling_0.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Fauteuil",
-        "Image": "Cléance pivotant_1.jpg"
+        "Image": "Cléance swivelling_1.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Fauteuil",
-        "Image": "Cléance pivotant_2.jpg"
+        "Image": "Cléance swivelling_2.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Fauteuil",
-        "Image": "Cléance pivotant_3.jpg"
+        "Image": "Cléance swivelling_3.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Fauteuil",
-        "Image": "Cléance pivotant_4.jpg"
+        "Image": "Cléance swivelling_4.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Fauteuil",
-        "Image": "Cléance pivotant_5.jpg"
+        "Image": "Cléance swivelling_5.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
@@ -1103,6 +1083,56 @@
         "Brand": "Emanuel Ungaro Home",
         "Family": "Fauteuil",
         "Image": "Fiacre_9.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_0.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_1.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_2.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_3.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_4.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_5.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_6.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_7.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_8.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Fauteuil",
+        "Image": "Filibert_9.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
@@ -1582,6 +1612,26 @@
     {
         "Brand": "Emanuel Ungaro Home",
         "Family": "Meuble",
+        "Image": "Seth_0.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Seth_1.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Seth_2.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Seth_3.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
         "Image": "Sirine Sun_0.jpg"
     },
     {
@@ -1603,6 +1653,31 @@
         "Brand": "Emanuel Ungaro Home",
         "Family": "Meuble",
         "Image": "Sirine_2.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Sultan_0.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Sultan_1.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Sultan_2.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Sultan_3.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Meuble",
+        "Image": "Sultan_4.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
@@ -1863,6 +1938,31 @@
         "Brand": "Emanuel Ungaro Home",
         "Family": "Suspension",
         "Image": "Lyssa_2.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Table Basse",
+        "Image": "Takara_0.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Table Basse",
+        "Image": "Takara_1.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Table Basse",
+        "Image": "Takara_2.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Table Basse",
+        "Image": "Takara_3.jpg"
+    },
+    {
+        "Brand": "Emanuel Ungaro Home",
+        "Family": "Table Basse",
+        "Image": "Takara_4.jpg"
     },
     {
         "Brand": "Emanuel Ungaro Home",
@@ -2292,7 +2392,7 @@
     {
         "Brand": "JNL Collection",
         "Family": "Applique",
-        "Image": "Bilbao 1_0.jpg"
+        "Image": "Bilbao_0.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -2777,26 +2877,6 @@
     {
         "Brand": "JNL Collection",
         "Family": "Bureau",
-        "Image": "Pandore_0.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
-        "Image": "Pandore_1.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
-        "Image": "Pandore_2.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
-        "Image": "Pandore_3.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
         "Image": "Secretwood_0.jpg"
     },
     {
@@ -2817,22 +2897,22 @@
     {
         "Brand": "JNL Collection",
         "Family": "Bureau",
-        "Image": "St Johns 2 tiroirs_0.jpg"
+        "Image": "St Johns_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Bureau",
-        "Image": "St Johns 2 tiroirs_1.jpg"
+        "Image": "St Johns_1.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Bureau",
-        "Image": "St Johns 2 tiroirs_2.jpg"
+        "Image": "St Johns_2.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Bureau",
-        "Image": "St Johns 2 tiroirs_3.jpg"
+        "Image": "St Johns_3.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -2853,26 +2933,6 @@
         "Brand": "JNL Collection",
         "Family": "Bureau",
         "Image": "Study_3.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
-        "Image": "Vivaldi_0.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
-        "Image": "Vivaldi_1.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
-        "Image": "Vivaldi_2.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Bureau",
-        "Image": "Vivaldi_3.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -3222,21 +3282,6 @@
     {
         "Brand": "JNL Collection",
         "Family": "Canapé",
-        "Image": "Urbino d'angle_0.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino d'angle_1.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino d'angle_2.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
         "Image": "Urbino Marco_0.jpg"
     },
     {
@@ -3263,21 +3308,6 @@
         "Brand": "JNL Collection",
         "Family": "Canapé",
         "Image": "Urbino_2.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino_3.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino_4.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino_5.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -3687,17 +3717,17 @@
     {
         "Brand": "JNL Collection",
         "Family": "Chevet",
-        "Image": "Goodnight 1_0.jpg"
+        "Image": "Goodnight_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Chevet",
-        "Image": "Goodnight 1_1.jpg"
+        "Image": "Goodnight_1.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Chevet",
-        "Image": "Goodnight 1_2.jpg"
+        "Image": "Goodnight_2.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -3887,27 +3917,27 @@
     {
         "Brand": "JNL Collection",
         "Family": "Console",
-        "Image": "Moderato 2 tiroirs_0.jpg"
+        "Image": "Moderato_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Console",
-        "Image": "Moderato 2 tiroirs_1.jpg"
+        "Image": "Moderato_1.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Console",
-        "Image": "Moderato 2 tiroirs_2.jpg"
+        "Image": "Moderato_2.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Console",
-        "Image": "Moderato 2 tiroirs_3.jpg"
+        "Image": "Moderato_3.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Console",
-        "Image": "Moderato 2 tiroirs_4.jpg"
+        "Image": "Moderato_4.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -3933,31 +3963,6 @@
         "Brand": "JNL Collection",
         "Family": "Console",
         "Image": "Salto_4.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Console",
-        "Image": "Stèle Mikado_0.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Console",
-        "Image": "Stèle Mikado_1.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Console",
-        "Image": "Stèle Mikado_2.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Console",
-        "Image": "Stèle Zebra_0.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Console",
-        "Image": "Stèle Zebra_1.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -4417,47 +4422,47 @@
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_0.jpg"
+        "Image": "Oscar Gainé_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_1.jpg"
+        "Image": "Oscar Gainé_1.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_2.jpg"
+        "Image": "Oscar Gainé_2.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_3.jpg"
+        "Image": "Oscar Gainé_3.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_4.jpg"
+        "Image": "Oscar Gainé_4.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_5.jpg"
+        "Image": "Oscar Gainé_5.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_6.jpg"
+        "Image": "Oscar Gainé_6.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_7.jpg"
+        "Image": "Oscar Gainé_7.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Fauteuil",
-        "Image": "Oscar gainé_8.jpg"
+        "Image": "Oscar Gainé_8.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -4847,17 +4852,17 @@
     {
         "Brand": "JNL Collection",
         "Family": "Lampadaire",
-        "Image": "Salam 3_0.jpg"
+        "Image": "Salam_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Lampadaire",
-        "Image": "Salam 3_1.jpg"
+        "Image": "Salam_1.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Lampadaire",
-        "Image": "Salam 3_2.jpg"
+        "Image": "Salam_2.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -5062,6 +5067,51 @@
     {
         "Brand": "JNL Collection",
         "Family": "Meuble",
+        "Image": "Ecrin_0.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_1.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_2.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_3.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_4.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_5.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_6.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_7.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Ecrin_8.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
         "Image": "Hoodoo_0.jpg"
     },
     {
@@ -5243,6 +5293,16 @@
         "Brand": "JNL Collection",
         "Family": "Meuble",
         "Image": "Level_6.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Madmax 6 tiroirs garni_0.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Meuble",
+        "Image": "Madmax 6 tiroirs garni_1.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -6062,12 +6122,12 @@
     {
         "Brand": "JNL Collection",
         "Family": "Suspension",
-        "Image": "Wave 18 Rond_0.jpg"
+        "Image": "Wave_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Suspension",
-        "Image": "Wave 18 Rond_1.jpg"
+        "Image": "Wave_1.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -6292,27 +6352,27 @@
     {
         "Brand": "JNL Collection",
         "Family": "Table Basse",
-        "Image": "Plato inox_0.jpg"
+        "Image": "Plato_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Table Basse",
-        "Image": "Plato inox_1.jpg"
+        "Image": "Plato_1.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Table Basse",
-        "Image": "Plato inox_2.jpg"
+        "Image": "Plato_2.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Table Basse",
-        "Image": "Plato inox_3.jpg"
+        "Image": "Plato_3.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Table Basse",
-        "Image": "Plato inox_4.jpg"
+        "Image": "Plato_4.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -8652,42 +8712,42 @@
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ferme_0.jpg"
+        "Image": "Essentiel_0.jpg"
     },
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ferme_1.jpg"
+        "Image": "Essentiel_1.jpg"
     },
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ferme_2.jpg"
+        "Image": "Essentiel_2.jpg"
     },
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ferme_3.jpg"
+        "Image": "Essentiel_3.jpg"
     },
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ferme_4.jpg"
+        "Image": "Essentiel_4.jpg"
     },
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ouvert_0.jpg"
+        "Image": "Essentiel_5.jpg"
     },
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ouvert_1.jpg"
+        "Image": "Essentiel_6.jpg"
     },
     {
         "Brand": "Vanhamme",
         "Family": "Fauteuil",
-        "Image": "Essentiel Ouvert_2.jpg"
+        "Image": "Essentiel_7.jpg"
     },
     {
         "Brand": "Vanhamme",
