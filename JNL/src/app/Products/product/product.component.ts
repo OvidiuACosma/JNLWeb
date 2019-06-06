@@ -20,8 +20,8 @@ export class ProductComponent implements OnInit {
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
+  public galleryThumbs: Img[] = [];
   public galleryImages: Img[] = [];
-  public galleryCopy: Img[] = [];
   public prodHeroImages: ProductHeroImage[];
   public imgs: string[] = [];
   public gallery: string[] = [];
@@ -92,15 +92,15 @@ export class ProductComponent implements OnInit {
     this.productsService.getProdGalleryImages()
       .subscribe(params => {
         this.gallery = params.filter(f => f.Brand === this.product.brand && f.Family === this.product.family
-                       && f.Image.includes(this.product.model)).map(m => m.Image);
+                       && f.Image.substring(0, f.Image.indexOf('_')) === this.product.model).map(m => m.Image);
         for (let i = 0; i < this.gallery.length; i++) {
-          this.galleryImages[i] = {
+          this.galleryThumbs[i] = {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/Thumbs/${this.gallery[i]}`,
             alt: `${this.product.brand} ${this.family} ${this.product.model}`
           };
         }
         for (let i = 0; i < this.gallery.length; i++) {
-          this.galleryCopy[i] = {
+          this.galleryImages[i] = {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.gallery[i]}`,
             alt: `${this.product.brand} ${this.family} ${this.product.model}`
           };
@@ -110,9 +110,9 @@ export class ProductComponent implements OnInit {
 
   switchImageList(idx: number) {
       this.heroImages.length = 0;
-      $('#carousel-custom').carousel(idx);
-      this.heroImages = this.galleryCopy.slice();
+      this.heroImages = this.galleryImages.slice();
       this.imgCount = this.heroImages.length;
+      $('.carousel').carousel(idx);
       // $('#carousel-custom').carousel(idx);
   }
 

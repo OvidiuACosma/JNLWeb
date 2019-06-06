@@ -92,6 +92,10 @@ button
     /*width: 20%;*/
 }
 
+ol {
+    padding-inline-start: 0 !important;
+}
+
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
