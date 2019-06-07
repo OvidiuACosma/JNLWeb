@@ -184,17 +184,16 @@ ol {
     border-radius: 0;
     display: inline-block;
     height: auto;
-    margin: 2px !important;
+    /* margin: 2px !important; */
     width: auto;
 }
 
 .carousel-thumbnails li img {
     display: block;
-    /* opacity: 0.5; */
+    margin: 0 2px !important;
     border: 1px solid #959595;
     width: 4.166vw;
-    /* max-width: 100px;
-    max-height: 60px; */
+    height: 4.166vw;
     object-fit: contain;
     text-align: center;
 }
@@ -211,7 +210,6 @@ ol {
     cursor: pointer;
 }
 
-
 #header {
     display:flex;
     flex-direction: column;
@@ -221,7 +219,6 @@ ol {
 #footer {
     text-align: center;
 }
-
 
 #fav-download {
     margin: auto;

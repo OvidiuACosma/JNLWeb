@@ -56,6 +56,9 @@ export class ProductComponent implements OnInit {
           });
       });
 
+    $(document).ready(function () {
+      $('#carousel-custom').carousel();
+    });
   }
 
   getProductData(product: Product) {
@@ -92,7 +95,7 @@ export class ProductComponent implements OnInit {
     this.productsService.getProdGalleryImages()
       .subscribe(params => {
         this.gallery = params.filter(f => f.Brand === this.product.brand && f.Family === this.product.family
-                       && f.Image.substring(0, f.Image.indexOf('_')) === this.product.model).map(m => m.Image);
+          && f.Image.substring(0, f.Image.indexOf('_')) === this.product.model).map(m => m.Image);
         for (let i = 0; i < this.gallery.length; i++) {
           this.galleryThumbs[i] = {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/Thumbs/${this.gallery[i]}`,
@@ -109,11 +112,10 @@ export class ProductComponent implements OnInit {
   }
 
   switchImageList(idx: number) {
-      this.heroImages.length = 0;
-      this.heroImages = this.galleryImages.slice();
-      this.imgCount = this.heroImages.length;
-      $('.carousel').carousel(idx);
-      // $('#carousel-custom').carousel(idx);
+    this.heroImages.length = 0;
+    this.heroImages = this.galleryImages.slice();
+    this.imgCount = this.heroImages.length;
+    $('.carousel').carousel(idx);
   }
 
   setDetail(index: number) {
