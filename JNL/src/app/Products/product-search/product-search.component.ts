@@ -471,14 +471,21 @@ export class ProductSearchComponent implements OnInit {
   }
 
   getProductsOfFamily(family: string): ProductEF[] {
+    let productsOfFamily: ProductEF[];
     switch (this.language.toLowerCase()) {
       case 'fr': {
-        return this.productsFiltered.filter(f => f.familyFr === family);
+        productsOfFamily = this.productsFiltered
+        .filter(f => f.familyFr === family);
+        break;
       }
       case 'en': {
-        return this.productsFiltered.filter(f => f.familyEn === family);
+        productsOfFamily = this.productsFiltered
+        .filter(f => f.familyEn === family);
+        break;
       }
     }
+    productsOfFamily = _.sortBy(productsOfFamily, 'indexModel');
+    return productsOfFamily;
   }
 
   getProductImage(product: ProductEF): string {
