@@ -113,10 +113,20 @@ export class ProductComponent implements OnInit {
 
   switchImageList(idx: number) {
     this.heroImages.length = 0;
+    $('.carousel').carousel(idx);
+    $('.carousel').carousel('cycle');
+    // const resolvedProm = Promise.resolve(this.test());
+    // const thenProm = resolvedProm.then((value) => {
+      // return value;
     this.heroImages = this.galleryImages.slice();
     this.imgCount = this.heroImages.length;
-    $('.carousel').carousel(idx);
+    // });
   }
+
+  test() {
+    //
+  }
+
 
   setDetail(index: number) {
     this.detail = this.tabList[index];
