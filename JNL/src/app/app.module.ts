@@ -19,15 +19,15 @@ import { DataExchangeService, ConfigService, AlertService, AuthenticationService
          TranslationService, ProductsService, PagerService, ArchiveService, DownloaderService,
          RequestsService} from './_services';
 import { AuthGuard } from './_guards';
-import { BrowserXhr } from '@angular/http';
-import { CustExtBrowserXhr, ErrorInterceptor, JwtInterceptor } from './_helpers';
+// import { BrowserXhr } from '@angular/http';
+import { ErrorInterceptor, JwtInterceptor } from './_helpers';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { WINDOW_PROVIDERS } from './_services/window.service';
 import { RequestFormComponent, DialogAnswerComponent } from './Std/request-form/request-form.component';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -96,7 +96,7 @@ import { MatDialogModule } from '@angular/material';
     UserService,
       { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-      { provide: BrowserXhr, useClass: CustExtBrowserXhr },
+      // { provide: BrowserXhr, useClass: CustExtBrowserXhr },
       { provide: LOCALE_ID, useValue: 'en-BE' },
   [ WINDOW_PROVIDERS ]
   ],
