@@ -10,7 +10,7 @@
     <div class="carousel-inner">
       <div class='carousel-item' *ngFor="let heroImage of heroImages; let i = index"
         [ngClass]="i === 0 ? 'item active' : 'item'">
-        <div class="carousel-item-image" *ngIf="heroImages.length>0">
+        <div class="carousel-item-image" *ngIf="heroImages">
           <img [src]="heroImage.src" alt="{{heroImage.alt}}" class="slide-image">
         </div>
       </div>
@@ -31,8 +31,8 @@
   <div>
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
       *ngIf="galleryThumbs.length>1">
-      <li *ngFor="let image of galleryThumbs; let j = index" (click)="switchImageList(j)">
-        <img [src]="image.src" alt="{{image.alt}}"
+      <li *ngFor="let image of galleryThumbs; let j = index">
+        <img [src]="image.src" alt="{{image.alt}}" (click)="switchImageList(j)"
           class="img-responsive pointer">
       </li>
     </ol>
