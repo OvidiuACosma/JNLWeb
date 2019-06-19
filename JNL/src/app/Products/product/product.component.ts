@@ -127,6 +127,7 @@ export class ProductComponent implements OnInit {
       for (let i = 0; i < this.newHeroImages.length; i++) {
         this.heroImages.push(this.newHeroImages[i]);
       }
+      this.imgCount = this.heroImages.length;
       $('.carousel').carousel(idx);
       $('.carousel').carousel('cycle');
     // }
