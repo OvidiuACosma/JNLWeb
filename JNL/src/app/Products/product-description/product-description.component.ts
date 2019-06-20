@@ -71,11 +71,11 @@ export class ProductDescriptionComponent implements OnInit {
   getParts() {
     switch (this.language.toLowerCase()) {
       case 'fr': {
-        this.parts = new Set(this.productDesc.map(m => m.partNameFr));
+        this.parts = new Set(this.productDesc.filter(f => f.partNameFr !== null).map(m => m.partNameFr));
         break;
       }
       case 'en': {
-        this.parts = new Set(this.productDesc.map(m => m.partNameEn));
+        this.parts = new Set(this.productDesc.filter(f => f.partNameEn !== null).map(m => m.partNameEn));
         break;
       }
     }
@@ -96,25 +96,11 @@ export class ProductDescriptionComponent implements OnInit {
       }
     }
     return matList;
-    // const matList: string[] = [];
-    // this.productDesc.forEach(item => {
-    // if (item.partNameFr === part) {
-    //  matList.push((item.materialNameFr || '').toString());
-    // }
-    // });
-    // this.materials = _.uniq(matList);
-    // if (this.materials.length > 0) {
-    // const mats =  this.materials.join(', ');
-    // return mats;
-    // } else { return ''; }
   }
 
   getFinitions(part: string, material: string) {
     this.checkMat = true; // testing...
-    if (material === 'Tissu' || material === 'Cuir' || material === 'Fabric' || material === 'Leather'
-    || material === 'Simili Cuir' || material === 'Simili cuir' || material === 'Faux Leather'
-    || material === 'Fake Leather') { this.checkMat = false; }
-
+    if (material === 'Tissu' || material === 'Fabric') { this.checkMat = false; }
     const finList: Finisage[] = [];
     this.productDesc.forEach(item => {
       if (item.finisageNameFr) { // to do

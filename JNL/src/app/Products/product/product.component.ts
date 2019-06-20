@@ -20,6 +20,7 @@ export class ProductComponent implements OnInit {
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
+  public newHeroImages: Img[] = [];
   public galleryThumbs: Img[] = [];
   public galleryImages: Img[] = [];
   public prodHeroImages: ProductHeroImage[];
@@ -112,19 +113,24 @@ export class ProductComponent implements OnInit {
   }
 
   switchImageList(idx: number) {
-    this.heroImages.length = 0;
-    $('.carousel').carousel(idx);
-    $('.carousel').carousel('cycle');
-    // const resolvedProm = Promise.resolve(this.test());
-    // const thenProm = resolvedProm.then((value) => {
-      // return value;
-    this.heroImages = this.galleryImages.slice();
-    this.imgCount = this.heroImages.length;
-    // });
-  }
-
-  test() {
-    //
+    // if (this.newHeroImages.length === 0) {
+    //   this.heroImages.length = 0;
+    //   this.newHeroImages = this.galleryImages.slice(idx).concat(this.galleryImages.slice(0, idx));
+    //   for (let i = 0; i < this.newHeroImages.length; i++) {
+    //     this.heroImages.push(this.newHeroImages[i]);
+    //   }
+    //   $('.carousel').carousel(0);
+    //   $('.carousel').carousel('cycle');
+    // } else {
+      this.heroImages.length = 0;
+      this.newHeroImages = this.galleryImages.slice();
+      for (let i = 0; i < this.newHeroImages.length; i++) {
+        this.heroImages.push(this.newHeroImages[i]);
+      }
+      this.imgCount = this.heroImages.length;
+      $('.carousel').carousel(idx);
+      $('.carousel').carousel('cycle');
+    // }
   }
 
 
