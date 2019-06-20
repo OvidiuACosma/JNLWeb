@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
 import { Product, Img, ProductHeroImage } from '../../_models';
+import * as _ from 'lodash';
 declare var $: any;
 
 @Component({
@@ -122,17 +123,28 @@ export class ProductComponent implements OnInit {
     //   $('.carousel').carousel(0);
     //   $('.carousel').carousel('cycle');
     // } else {
-      this.heroImages.length = 0;
-      this.newHeroImages = this.galleryImages.slice();
-      for (let i = 0; i < this.newHeroImages.length; i++) {
-        this.heroImages.push(this.newHeroImages[i]);
-      }
-      this.imgCount = this.heroImages.length;
-      $('.carousel').carousel(idx);
-      $('.carousel').carousel('cycle');
+      // this.heroImages.length = 0;
+      // this.newHeroImages = this.galleryImages.slice();
+      // for (let i = 0; i < this.newHeroImages.length; i++) {
+      //   this.heroImages.push(this.newHeroImages[i]);
+      // }
+      // this.imgCount = this.heroImages.length;
+      // $('.carousel').carousel(idx);
+      // $('.carousel').carousel('cycle');
     // }
-  }
 
+    $('.carousel').carousel('pause');
+    const heroImagesTmp = _.cloneDeep(this.galleryImages);
+    if (idx > 0) {
+      let firstElement: Img[];
+      for (let j = 0; j < idx; j++) {
+        firstElement = heroImagesTmp.splice(0, 1);
+        heroImagesTmp.push(firstElement[0]);
+      }
+    }
+    this.heroImages = _.cloneDeep(heroImagesTmp);
+    $('.carousel').carousel('cycle');
+  }
 
   setDetail(index: number) {
     this.detail = this.tabList[index];
