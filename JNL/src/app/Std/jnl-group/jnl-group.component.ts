@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewChecked, AfterViewInit, AfterContentInit, A
 import { Router, ActivatedRoute, NavigationEnd, Scroll } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService, AltImgService } from '../../_services';
 import * as _ from 'lodash';
-import { filter } from 'rxjs/operators';
 declare var $: any; // import jQuery
 
 @Component({
