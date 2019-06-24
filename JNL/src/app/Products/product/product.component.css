@@ -242,6 +242,15 @@ ol {
     width: 20vw;
     text-transform: uppercase;
 } */
+ 
+.desc {
+    margin: auto;
+    width: 80vw;
+}
+
+.center {
+    text-align: center;
+}
 
 .info_div {
     background-color: #e3d9c6;
