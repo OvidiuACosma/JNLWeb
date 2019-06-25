@@ -243,6 +243,10 @@ ol {
     text-transform: uppercase;
 } */
  
+.nav-item {
+    margin-left: 2px !important;
+}
+
 .desc {
     margin: auto;
     width: 80vw;
