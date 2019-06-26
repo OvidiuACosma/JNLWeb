@@ -244,7 +244,11 @@ ol {
 } */
  
 .nav-item {
-    margin-left: 2px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2px !important;
+    height: 60px !important;    
 }
 
 .desc {
