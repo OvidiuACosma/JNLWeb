@@ -242,6 +242,23 @@ ol {
     width: 20vw;
     text-transform: uppercase;
 } */
+ 
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2px !important;
+    height: 60px !important;    
+}
+
+.desc {
+    margin: auto;
+    width: 80vw;
+}
+
+.center {
+    text-align: center;
+}
 
 .info_div {
     background-color: #e3d9c6;

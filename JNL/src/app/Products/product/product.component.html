@@ -32,8 +32,7 @@
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
       *ngIf="galleryThumbs.length>1">
       <li *ngFor="let image of galleryThumbs; let j = index">
-        <img [src]="image.src" alt="{{image.alt}}" (click)="switchImageList(j)"
-          class="img-responsive pointer">
+        <img [src]="image.src" alt="{{image.alt}}" (click)="switchImageList(j)" class="img-responsive pointer">
       </li>
     </ol>
   </div>
@@ -57,26 +56,52 @@
       <h3 *ngIf="stdText">&nbsp;&nbsp;{{stdText.print}}</h3>
     </div>
   </div>
+  <br>
+  <br>
 
-  <!-- PRODUCT DESCRIPTION-->
-  <div class="prod-desc" *ngIf="product">
-    <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
+  <div class="desc">
+    <br>
+    <nav class="nav-justified center">
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
+          aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>
+        <a class="nav-item nav-link" id="nav-matFin-tab" data-toggle="tab" href="#nav-matFin" role="tab"
+          aria-controls="nav-matFin" aria-selected="false">MATERIALS AND FINISAGES</a>
+        <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
+          aria-controls="nav-dim" aria-selected="false">DRAWINGS AND CAD</a>
+        <a class="nav-item nav-link" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab"
+          aria-controls="nav-cat" aria-selected="false">DOWNLOADS</a>
+      </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
+        <!-- PRODUCT DESCRIPTION-->
+        <div class="prod-desc" *ngIf="product">
+          <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
+        <!-- PRODUCT MATERIALS AND FINISAGES -->
+        <div class="prod-desc" *ngIf="category==='Assise'">
+          <app-product-mat-fin [product]="product"></app-product-mat-fin>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-dim" role="tabpanel" aria-labelledby="nav-dim-tab">
+        <!-- PRODUCT TECHNICAL DRAWINGS -->
+        <div class="prod-desc">
+          <app-product-dimensions></app-product-dimensions>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
+        <!-- PRODUCT DOWNLOADS -->
+        <div class="prod-desc">
+          <app-product-catalogues></app-product-catalogues>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- PRODUCT MATERIALS AND FINISAGES-->
-  <div class="prod-desc" *ngIf="category==='Assise'">
-    <app-product-mat-fin [product]="product"></app-product-mat-fin>
-  </div>
-
-  <!-- PRODUCT TECHNICAL DRAWINGS-->
-  <div class="prod-desc">
-    <app-product-dimensions></app-product-dimensions>
-  </div>
-
-  <!-- PRODUCT DOWNLOADS-->
-  <div class="prod-desc">
-    <app-product-catalogues></app-product-catalogues>
-  </div>
 
   <!-- REQUEST FORM -->
   <div class="info_div" *ngIf="text">
