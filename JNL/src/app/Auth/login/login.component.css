@@ -1,17 +1,21 @@
 .container {
-    margin-top: 1rem;
+    margin-top: 1vw;
     display: flex;
     justify-content: center;
 }
 
 .card-login{
-    width: 55vh;
+    width: 45vw;
     margin: 2px;
     text-align: center;
-
 }
 
 .textbox {
-    width: 45vh;
+    width: 25vw;
     margin: 0 auto;
+}
+
+.btn {
+    margin-left: 2px;
+    margin-right: 2px;
 }

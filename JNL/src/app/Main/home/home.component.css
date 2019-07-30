@@ -1,6 +1,28 @@
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+.animated {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-delay: .4s;
+}
+
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
 h1 {
     font-family: Helvetica;
-    font-size: 3vw; /* 4em; */
+    font-size: 3vw;
     margin-bottom: 1.1vw;
     text-transform: uppercase;
 }
@@ -29,18 +51,6 @@ hr {
     margin-bottom: 1.11vw;
     width: 87.13vw;
 }
-
-/* .home_links {
-    border: 1.5px solid #DBBB76;
-    padding: .15vw; 
-    padding-left: 1.59vw; 
-    padding-right: 1.59vw; 
-    font-size: 1vw;
-    text-transform: uppercase;
-    letter-spacing : 1.28px;
-    font-family: Helvetica-light;
-    font-style: italic;
-} */
 
 .gallery_buttons {
     height: 100%;
@@ -110,7 +120,6 @@ hr {
 .slide-image-projects {
     width: 59vw;
     height: auto;
-    /* max-height: 31vw; */
     object-fit: contain;
 }
 
@@ -133,7 +142,6 @@ hr {
 }
 
 .carousel-indicators > li > img {
-    /* color: black !important; */
     margin: auto;
     height: auto;
     width: 13vw;
@@ -153,12 +161,10 @@ hr {
     line-height: 2vw;
     left: 0;
     text-transform: uppercase;
-    /* border-bottom: 1px solid transparent; */
     transition: all .5s ease;
 }
 
 .carousel-indicators > li > span:hover {
-    /* border-color: black; */
     transition: all .5s ease;
     color: black;
 }
@@ -170,7 +176,6 @@ hr {
 
 .marque-text
  {
-     /* width: 80%; */
      padding-top: 6vw;
      margin: auto;
      text-align: left;
@@ -220,7 +225,7 @@ hr {
     margin: 1px;
   } */
 
-#first_picture {
+.first-picture {
     max-width: 100%;
     width: auto;
     height: 100vh;
@@ -234,33 +239,19 @@ hr {
     text-align: center;
 }
 
-#first_picture > div {
+.wrapper {
     margin: auto;
     margin-top: 42.2vh;
 }
 
-#first_picture > div > img {
+.wrapper img {
     max-width: 56vw;
     height: auto;
     width: 30vw;
     mix-blend-mode: multiply;
 }
 
-#first_picture > div > p {
-    text-align: center;
-    font-size: 5.5vw;
-}
-
-#first_picture > div > p > a> img {
-    /* max-height: 13vh; */
-    vertical-align: bottom;
-    /* padding-top: 20vw; */
-    max-width: 15vw;
-    height: auto;
-    width: 3.2vw;
-}
-
-#first_picture > a > img {
+.first-picture > a > img {
     object-fit: contain;
     bottom: 0;
     margin-top: auto;
@@ -298,9 +289,8 @@ hr {
 
 #les_marques {
     width: 100%;
-    /* height: 100vh;  */
     height: auto;
-    background-color: #f3f5f5; /* RAL 1013: #e3d9c6; RAL 7047: #c8c8c7*/
+    background-color: #f3f5f5;
     color: black;
     display: flex;
     flex-direction: row;
@@ -320,36 +310,21 @@ hr {
     margin-top: 1.2vw;
     font-family: Helvetica;
     font-size: 3vw;
-
 }
 
-/* #marques_list {
-    margin: auto;
-    width: 100vw;
-    
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: center;
-} */
 
 #marques_show {
     margin: auto;
 
     display: flex;
     flex-direction: row;
-
-    /*padding-left: 245px;
-    padding-right: 245px;*/
 }
 
 #marques_show > p {
     width: 60%;
     margin: auto;
-
     text-align: left;
-    font-size: 1.5vw; /*1.2em;*/
+    font-size: 1.5vw;
 }
 
 .container > .carousel-item-image > .slide-image {
@@ -369,13 +344,10 @@ hr {
 
 #actualites > div > p {
     width: 25.4vw;
-
     margin: auto;
     margin-bottom: 0px;
-
     text-align: left;
     text-justify: justify;
-
     font-family: Helvetica-Light;
 }
 
@@ -461,7 +433,7 @@ hr {
 }
 
 video {
-    width: 87vw; /*87.3vw;*/
+    width: 87vw;
     height: 49vw;
     margin: auto;
 }
@@ -475,14 +447,11 @@ video {
 #savoir > div > span {
     margin: auto;
     margin-top: 40px;
-    /* color: #bbb; */
 }
 
 #projets {
     width: 100%;
     text-align: center;
-    /* display: flex; */
-    /* padding-top: 8vw; */
     margin-top: 7.12vw;
     margin-bottom: 8vw;
 }
@@ -507,12 +476,10 @@ video {
     width: 55.5vw;
 }
 
-
 #projets > .gallery_buttons
 {
     text-align: right;
 }
-
 
 #carousel-projets {
     width: 73.8vw;
@@ -531,7 +498,6 @@ video {
     margin: auto;
     font-family: Helvetica-light;
     font-size: 1.8vw;
-
 }
 
 .container2 > div > img {
@@ -547,7 +513,6 @@ video {
 #carousel-projets > a {
     width: 3.1vw;
     min-width: 20px;
-
     padding-top: 20%;
 }
 
@@ -582,8 +547,6 @@ video {
         min-width: 20px;
     }
 
-
-
     #une_histoire {
         height: 100% !important;
         padding: 0px;
@@ -607,10 +570,8 @@ video {
         width: 100vw;
         padding: 10px;
         height: 130vw;
-
         background-color: #D3D3D3;
         color: black;
-
         display: flex;
         flex-direction: row;
     }
@@ -627,11 +588,9 @@ video {
 
     #marques_show {
         margin: 0px;
-
         flex-direction: column;
         align-content: center;
         justify-content: center;
-
         padding-left: 0px !important;
         padding-right: 0px  !important;
     }
@@ -639,14 +598,11 @@ video {
     #marques_show > p {
         width: 100%;
         margin: auto;
-
         display: flex;
         flex-direction: column;
-
         text-align: center;
         font-size: 5.3vw;
     }
-
 
     #marques_show > p > a{
         width: fit-content;
@@ -659,9 +615,7 @@ video {
     }
 
     #actualites {
-        padding-top: 8.33vw; /*120px; */
-        /*padding-left: 3.47vw; /*50px; */
-       /* padding-right: 50px; */
+        padding-top: 8.33vw;
     }
 
     #actualites > div {
@@ -675,7 +629,6 @@ video {
     #actualites > div > p:first-child {
         display: block;
         width: 100%;
-
         text-align: center;
     }
 
@@ -719,9 +672,7 @@ video {
         margin-bottom: 14vw;
         width: 100vw;
         height: auto;
-
         text-align: center;
-
         display: flex;
         flex-direction: column;
         align-content: space-between;
@@ -756,7 +707,6 @@ video {
 
     .container {
         width: 100%;
-
         display: flex;
         flex-direction: column;
     }
@@ -769,7 +719,6 @@ video {
     .carousel-marques {
         height: auto;
     }
-
 
     .marque-text{
         text-align: center;
@@ -809,5 +758,41 @@ video {
     #savoir > div:last-child {
         margin-top: 5%;
         margin-bottom: 0px;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .d-large {
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #une_histoire {
+        width: 1200px;
+        height: auto; 
+        min-height: 39vw;
+    }
+
+    #une_histoire > div {
+        margin: auto;
+        width: 730px;
+    }
+
+    #une_histoire > div > h1 {
+        font-size: 36px;
+        line-height: 43.2px;
+        margin-bottom: 13.2px;
+    }
+
+    #une_histoire > div > p {
+        font-size: 19.2px;
+        line-height: 24px;
+    }
+
+    #une_histoire > div > span {
+        font-size: 12px;
+        line-height: 18px;
     }
 }

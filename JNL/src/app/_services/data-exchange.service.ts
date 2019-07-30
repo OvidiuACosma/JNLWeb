@@ -7,9 +7,8 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 @Injectable({
   providedIn: 'root'
 })
-export class DataExchangeService {
 
-  private language: string;
+export class DataExchangeService {
 
   private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable();

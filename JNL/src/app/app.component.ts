@@ -1,12 +1,14 @@
-import { Component, Inject, LOCALE_ID, HostListener } from '@angular/core';
+import { Component, Inject, LOCALE_ID, HostListener, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { WINDOW } from './_services/window.service';
+import { DataExchangeService, WINDOW } from './_services';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
 
   title = 'JNL';

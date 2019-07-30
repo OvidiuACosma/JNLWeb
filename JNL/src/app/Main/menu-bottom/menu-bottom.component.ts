@@ -15,6 +15,7 @@ export class MenuBottomComponent implements OnInit {
   language: string;
   text: any;
   email: FormControl;
+  isMobile = false;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
@@ -26,6 +27,10 @@ export class MenuBottomComponent implements OnInit {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+    });
+    this.dataex.currentBrowser
+    .subscribe(b => {
+      this.isMobile = b.isMobile;
     });
     this.emailReset();
   }
