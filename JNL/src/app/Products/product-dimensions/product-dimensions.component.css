@@ -1,15 +1,9 @@
-hr{
-    height: 0;
-    border-top: 1px solid #DBBB76;
-}
-
 h2 {
     font-family: Helvetica;
     font-size: 2.4vw;
 }
 
 h5 {
-    text-transform: uppercase;
     font-size: 1.68vw;
     font-weight: 100;
     font-family: Helvetica-Light;
@@ -24,13 +18,35 @@ h5 {
 }
 
 #container {
-    /* padding-top: 30px; */
-    display: flex;
+    background-color: #f3f5f5;
 }
+
+.center {
+    text-align: center;
+} 
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+
+.img-container {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.img-button {
+    max-height: 200px;
+    max-width: 200px;
+}
+
 
 #staticText {
     width: 30.55vw;
 }
+
 
 
 @media only screen and (max-width: 800px){
