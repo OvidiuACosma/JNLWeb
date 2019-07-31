@@ -4,7 +4,7 @@ import { RequestsService, TranslationService, DataExchangeService, ArchiveServic
 import { RequestForm } from '../../_models';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export interface DialogData {
+export interface IDialogData {
   title: string;
   text: string;
 }
@@ -17,7 +17,7 @@ export class DialogAnswerComponent {
 
   constructor(
     public dialogRef: MatDialogRef<DialogAnswerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: IDialogData) {}
 
   okClick(): void {
     this.dialogRef.close();

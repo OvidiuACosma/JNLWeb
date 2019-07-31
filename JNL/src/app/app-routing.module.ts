@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'searchResults/:searchText', component: SearchResultsComponent },
 
-  { path: 'favorites', component: FavoritesComponent },
+  { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
   { path: 'product', component: ProductComponent },
   { path: 'products', component: ProductSearchComponent },
   { path: 'productSearch', component: ProductSearchComponent },

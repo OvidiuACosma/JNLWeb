@@ -112,18 +112,20 @@
         <h2>{{text.projets}}</h2>
         <h3>{{text.projetsSub}}</h3>
         <div class="proj-flex">
-          <div [innerHTML]="text.projetsText">
-            </div>
-          </div>
+          <div [innerHTML]="text.projetsText"></div>
+        </div>
 
-      <div id='carousel-projets' class='carousel slide carousel-group' data-ride='carousel'  data-interval="3000">
+      <div id='carousel-projets' class='carousel slide carousel-group' 
+            data-ride='carousel'  data-interval="3000">
           <div class="carousel-inner">
               <div class='carousel-item active'>
                 <div class="container3">
                   <h2>{{text.projetsCity1}}</h2>
                   <h2>{{text.projets1}}</h2>
                  <div class="carousel-item-image">
-                   <img src="assets/Images/Projects/{{altText['img4']['src']}}" alt="{{altText['img4']['alt'][language]}}" class="slide-image slide-image-project">
+                   <img src="assets/Images/Projects/{{altText['img4']['src']}}" 
+                        alt="{{altText['img4']['alt'][language]}}" 
+                        class="slide-image slide-image-project">
                  </div>
                    <div class="projets-text">
                       <h4>
@@ -138,7 +140,9 @@
                     <h2>{{text.projetsCity2}}</h2>
                     <h2>{{text.projets2}}</h2>
                    <div class="carousel-item-image">
-                     <img src="assets/Images/Projects/{{altText['img5']['src']}}" alt="{{altText['img5']['alt'][language]}}" class="slide-image slide-image-project">
+                     <img src="assets/Images/Projects/{{altText['img5']['src']}}" 
+                          alt="{{altText['img5']['alt'][language]}}" 
+                          class="slide-image slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -152,7 +156,9 @@
                     <h2>{{text.projetsCity3}}</h2>
                     <h2>{{text.projets3}}</h2>
                    <div class="carousel-item-image">
-                     <img src="assets/Images/Projects/{{altText['img6']['src']}}" alt="{{altText['img6']['alt'][language]}}" class="slide-image slide-image-project">
+                     <img src="assets/Images/Projects/{{altText['img6']['src']}}" 
+                          alt="{{altText['img6']['alt'][language]}}" 
+                          class="slide-image slide-image-project">
                    </div>
                      <div class="projets-text">
                         <h4>
@@ -172,20 +178,6 @@
               <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
               <span class="sr-only">Next</span>
           </a>
-
-          <!-- 
-        <div class='carousel-indicators'>
-            <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='0' class='active'>
-            <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='1'>
-            <input type="radio" name="equipe-cr" data-target='#carousel-projets' data-slide-to='2'>
-          </div>
-        
-        <ol class='carousel-indicators'>
-            <li data-target='#carousel-custom' data-slide-to='0' class='active'><span>JNL Collection</span></li>
-            <li data-target='#carousel-custom' data-slide-to='1'><span>Vanhamme</span></li>
-            <li data-target='#carousel-custom' data-slide-to='2'><span>Emanuel Ungaro Home</span></li>
-            <li data-target='#carousel-custom' data-slide-to='3'><span>Luz-Interiors</span></li>
-        </ol>-->
       </div>
     </div>
 
