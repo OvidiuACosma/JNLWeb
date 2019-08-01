@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataExchangeService, ProductsService } from '../../_services';
-import { Product } from '../../_models';
+import { Product, ProductTDImage } from '../../_models';
 
 import * as _ from 'lodash';
 
@@ -14,7 +14,7 @@ export class ProductDimensionsComponent implements OnInit {
   @Input() product: Product;
   public family: string;
   public images: string[] = [];
-  public imgThumbs: string[] = [];
+  public imgThumbs: ProductTDImage[] = [];
   public imgPrint: string[] = [];
 
   language: string;
@@ -47,7 +47,10 @@ export class ProductDimensionsComponent implements OnInit {
         this.images = params.filter(f => f.Brand === this.product.brand && f.Family === this.product.family
           && f.Image.substring(0, f.Image.indexOf('_')) === this.product.model).map(m => m.Image);
         for (let i = 0; i < this.images.length; i++) {
-          this.imgThumbs[i] = `assets/Images/Products/${this.product.brand}/${this.product.family}/TD/${this.images[i]}`;
+          this.imgThumbs[i] = {
+            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/TD/${this.images[i]}`,
+            prodCode: this.images[i].substring(this.images[i].indexOf('_') + 1, this.images[i].indexOf('.'))
+          };
           // this.imgPrint[i] = `assets/Images/Products/${this.product.brand}/${this.product.family}/TD/Print/${this.images[i]}`;
         }
       });
