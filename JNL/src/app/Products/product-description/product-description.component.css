@@ -153,7 +153,8 @@ h5 {
 }
 
 #description {
-    width: 48.5vw;
+    width: 40vw;
+    margin: auto;
 }
 
 #description > p {

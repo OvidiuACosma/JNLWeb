@@ -31,3 +31,8 @@ export interface Finisage {
     material: string;
     img: string;
 }
+
+export interface ProductTDImage {
+    src: string;
+    prodCode: string;
+}

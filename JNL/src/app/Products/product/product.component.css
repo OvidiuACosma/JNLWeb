@@ -38,6 +38,11 @@ h5 {
     font-size: 1.1vw;
 }
 
+.nav-text {
+    font-family: Helvetica;
+    font-size: 0.9vw;
+}
+
 
 textarea{
     margin: auto;
@@ -235,6 +240,11 @@ ol {
     flex-direction: row;
 }
 
+.nav-dimension {
+    width: 49vw;
+    margin: auto;
+}
+
 /* .home_links {
     border: 1.5px solid #DBBB76;
     padding: .15vw 1.59vw;
@@ -247,13 +257,30 @@ ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 2px !important;
-    height: 60px !important;    
+    margin-right: 1.5px !important;
+    margin-left: 1.5px !important;
+    height: 4vw !important; 
+    border: none;  
+}
+
+.nav-item:hover {
+    background-color: #f3f5f5;
+}
+
+.nav-tabs {
+    border: none !important;
+}
+
+.nav-link {
+    border-radius: 0px !important;
+}
+
+.nav-item.active {
+    background-color: #f3f5f5;
 }
 
 .desc {
-    margin: auto;
-    width: 80vw;
+    width: 100vw;
 }
 
 .center {
@@ -266,10 +293,10 @@ ol {
     width: 100%;
     left: 0;
     text-align: center;
-    margin-top: 7.5vw !important;
+    /* margin-top: 7.5vw !important; */
     font-family: Helvetica-Light;
     font-size: 20px;
-    padding-top: 3.7vw;
+    /* padding-top: 3.7vw; */
 }
 
 .info_div > h2 {
@@ -350,8 +377,7 @@ ol {
 
 .prod-desc {
     width: 100%;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    background-color: #f3f5f5;
 }
 
 @media only screen and (max-width: 800px){

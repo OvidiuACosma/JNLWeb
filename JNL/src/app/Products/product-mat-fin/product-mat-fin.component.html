@@ -1,14 +1,16 @@
-<br>
-
 <!-- CONTAINER -->
 <div id="container">
+  <!--
   <div id="staticText" (click)="toggleElement()">
     <h5 *ngIf="stdText" [innerHTML]="stdText.matFin"></h5>
     <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow-down">
   </div>
+  -->
+  <br>
+  <br>
+  <br>
   <div id="contentMatFin" [ngClass]="(this.toggleMat) ? 'hide-item' :'show-item'">
     <div id="static">
-      <br>
       <div class="nav flex-column nav-pills" id="pills" role="tablist" aria-orientation="vertical" *ngIf="stdText">
         <a class="nav-link nav-position active" id="tissu-tab" data-toggle="pill" href="#tissu" role="tab"
           aria-controls="tissu" aria-selected="true" *ngIf="tissus" (click)="setCategory('tissu')">{{stdText.tissus}}</a>
@@ -37,6 +39,7 @@
     </div>
     <div id="content">
       <div class="tab-content" id="tabContent">
+        <br>
 
         <!-- TISSUS TAB------------------------->
         <div class="tab-pane fade show active" id="tissu" role="tabpanel" aria-labelledby="tissu-tab">
@@ -135,7 +138,6 @@
     </div>
   </div>
 </div>
-<br>
 
 <!-- MODAL -->
 <div class="modal fade" id="garnissageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
