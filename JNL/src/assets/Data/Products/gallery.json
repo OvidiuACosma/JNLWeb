@@ -3282,6 +3282,21 @@
     {
         "Brand": "JNL Collection",
         "Family": "Canapé",
+        "Image": "Urbino d'angle_0.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Urbino d'angle_1.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Urbino d'angle_2.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
         "Image": "Urbino Marco_0.jpg"
     },
     {
@@ -3293,21 +3308,6 @@
         "Brand": "JNL Collection",
         "Family": "Canapé",
         "Image": "Urbino Marco_2.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino_0.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino_1.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Canapé",
-        "Image": "Urbino_2.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -3873,16 +3873,6 @@
         "Brand": "JNL Collection",
         "Family": "Console",
         "Image": "Domino_4.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Console",
-        "Image": "Domino_5.jpg"
-    },
-    {
-        "Brand": "JNL Collection",
-        "Family": "Console",
-        "Image": "Domino_6.jpg"
     },
     {
         "Brand": "JNL Collection",
@@ -5867,17 +5857,17 @@
     {
         "Brand": "JNL Collection",
         "Family": "Pouf",
-        "Image": "Oxo capitonné_0.jpg"
+        "Image": "Oxo_0.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Pouf",
-        "Image": "Oxo capitonné_1.jpg"
+        "Image": "Oxo_1.jpg"
     },
     {
         "Brand": "JNL Collection",
         "Family": "Pouf",
-        "Image": "Oxo capitonné_2.jpg"
+        "Image": "Oxo_2.jpg"
     },
     {
         "Brand": "JNL Collection",
