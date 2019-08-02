@@ -54,8 +54,6 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          console.log('Login:', data);
-          // TODO: check login
           this.success = true;
           this.close();
         },
