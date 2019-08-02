@@ -15,8 +15,6 @@ li {
     cursor: pointer;
     height: 1.78vw;
     mix-blend-mode: difference;
-    /* max-width: 93px;
-    max-height: 21px; */
 } 
 
 .searchInput {
