@@ -2,6 +2,51 @@
     {
         "Brand": "JNL Collection",
         "Family": "Canapé",
+        "Image": "Brazil_CABR01.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Brazil_CABR04.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Confidence_CACO31.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Confidence_CACO32.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Don Juan_CADJ01.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Don Juan_CADJ02.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Lady_CALD01.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Lamartine_CALM31.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Mata Hari_CAMH01.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
         "Image": "Molière_CAMO31.jpg"
     },
     {
@@ -13,5 +58,55 @@
         "Brand": "JNL Collection",
         "Family": "Canapé",
         "Image": "Molière_CAMO33.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Montaigne_CAMT01.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Montaigne_CAMT03.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Shangor_CASG01.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Smoking_CASM31.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Smoking_CASM32.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Sunset Boulevard_CASB01.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Urbino Marco_CAUR39.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Urbino_CAUR51.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Urbino_CAUR52.jpg"
+    },
+    {
+        "Brand": "JNL Collection",
+        "Family": "Canapé",
+        "Image": "Vientiane_CAVT01.jpg"
     }
 ]

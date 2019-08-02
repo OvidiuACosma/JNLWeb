@@ -74,26 +74,26 @@
     </nav>
 
     <div class="tab-content" id="nav-tabContent">
+      <!-- PRODUCT DESCRIPTION-->
       <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
-        <!-- PRODUCT DESCRIPTION-->
         <div class="prod-desc" *ngIf="product">
           <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
         </div>
       </div>
+      <!-- PRODUCT MATERIALS AND FINISAGES -->
       <div class="tab-pane fade" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
-        <!-- PRODUCT MATERIALS AND FINISAGES -->
         <div class="prod-desc" *ngIf="category==='Assise'">
           <app-product-mat-fin [product]="product"></app-product-mat-fin>
         </div>
       </div>
+      <!-- PRODUCT TECHNICAL DRAWINGS -->
       <div class="tab-pane fade" id="nav-dim" role="tabpanel" aria-labelledby="nav-dim-tab">
-        <!-- PRODUCT TECHNICAL DRAWINGS -->
         <div class="prod-desc">
           <app-product-dimensions [product]="product"></app-product-dimensions>
         </div>
       </div>
+      <!-- PRODUCT DOWNLOADS -->
       <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
-        <!-- PRODUCT DOWNLOADS -->
         <div class="prod-desc">
           <app-product-catalogues></app-product-catalogues>
         </div>
