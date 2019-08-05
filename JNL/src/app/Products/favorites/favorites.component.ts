@@ -2,6 +2,8 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
+import { FavoritesService } from 'src/app/_services/favorites.service';
+import { IFavorites } from 'src/app/_models/favorites';
 
 @Component({
   selector: 'app-favorites',
@@ -12,6 +14,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
 
   language: string;
   text: any;
+  favoritesList: IFavorites[];
 
   selected = [0, 0, 0, 0, 0];
   scroller = true;
@@ -23,9 +26,10 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   nrEmpty = 0;
 
   constructor(private router: Router,
-    private route: ActivatedRoute,
-    private dataex: DataExchangeService,
-    private textService: TranslationService) {
+              private route: ActivatedRoute,
+              private dataex: DataExchangeService,
+              private textService: TranslationService,
+              private favoritesService: FavoritesService) {
     }
 
   ngOnInit() {
@@ -40,6 +44,14 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.numbers.push(index);
       this.removed[index] = 0;
     }
+    this.dataex.currentUser
+    .subscribe(user => {
+      this.favoritesService.getFavoritesOfRelation(user.userName)
+      .subscribe(fav => {
+        this.favoritesList = fav;
+        console.log('Favorites list:', this.favoritesList);
+      });
+    });
   }
 
   removeItem(index: number) {

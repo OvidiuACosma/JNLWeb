@@ -1,6 +1,16 @@
 <div class="fav-main">
   <h1>{{text.title}}</h1>
 
+  <div class="fav-list">
+    <div class="filters">
+      <ul>
+        <li *ngFor="let favItem of favoritesList; let i=index">
+          {{favItem.listName}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div id="favs">
     <div id="remove-download">
       <div (click)="removeAllItems()">
