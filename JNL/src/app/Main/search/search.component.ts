@@ -1,14 +1,14 @@
 import { Component, OnInit, Output, EventEmitter, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from '../../_services';
-import { Browser } from '../../_models';
+import { Browser, User } from '../../_models';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
+export class SearchComponent implements OnInit {
 
   public language: string;
   otherLanguages: string[];
@@ -21,6 +21,8 @@ export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
   navBarButtonText: string;
   isHome: boolean;
   browser: Browser;
+  currentUser: User;
+  userType: string = null;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
@@ -44,11 +46,14 @@ export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
     this.router.events.subscribe(r => {
       this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
     });
-  }
 
-  // ngAfterViewChecked() {
-  //   // this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
-  // }
+    this.getUser();
+    const userLocal: User = JSON.parse(localStorage.getItem('currentUser'));
+    if (userLocal && this.currentUser !== userLocal) {
+      this.resetUser(userLocal);
+      this.getUser();
+    }
+  }
 
   getText(lang: string) {
     this.textService.getTextSearch()
@@ -60,6 +65,20 @@ export class SearchComponent implements OnInit/*, AfterViewChecked*/ {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getUser() {
+    this.dataex.currentUser
+    .subscribe(user => {
+      this.currentUser = user;
+      if (user) {
+        this.userType = user.type;
+      }
+    });
+  }
+
+  resetUser(user: User) {
+    this.dataex.setCurrentUser(user);
   }
 
   goSearchMode() {
