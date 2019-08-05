@@ -16,6 +16,7 @@ export class ProductDimensionsComponent implements OnInit {
   public images: string[] = [];
   public imgThumbs: ProductTDImage[] = [];
   public imgPrint: string[] = [];
+  public currentTDImg = '';
 
   language: string;
   prodDesc: any;
@@ -51,9 +52,24 @@ export class ProductDimensionsComponent implements OnInit {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/TD/${this.images[i]}`,
             prodCode: this.images[i].substring(this.images[i].indexOf('_') + 1, this.images[i].indexOf('.'))
           };
-          // this.imgPrint[i] = `assets/Images/Products/${this.product.brand}/${this.product.family}/TD/Print/${this.images[i]}`;
+          this.imgPrint[i] = `assets/Images/Products/${this.product.brand}/${this.product.family}/TD/Print/${this.images[i]}`;
         }
       });
+  }
+
+  sendToModal(i: number) {
+    this.currentTDImg = this.imgPrint[i];
+  }
+
+  closeModal() {
+    const modal = document.getElementById('TDModal');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        document.getElementById('td-img').click();
+      }
+    };
   }
 
   toggleElement() {
