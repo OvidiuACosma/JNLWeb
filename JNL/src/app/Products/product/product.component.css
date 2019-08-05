@@ -38,12 +38,6 @@ h5 {
     font-size: 1.1vw;
 }
 
-.nav-text {
-    font-family: Helvetica;
-    font-size: 0.9vw;
-}
-
-
 textarea{
     margin: auto;
     background-color: #F6EEDD;
@@ -257,6 +251,8 @@ ol {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: Helvetica;
+    font-size: 1vw;
     margin-right: 1.5px !important;
     margin-left: 1.5px !important;
     height: 4vw !important; 
