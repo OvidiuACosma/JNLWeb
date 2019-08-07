@@ -15,8 +15,8 @@ export class ProductDimensionsComponent implements OnInit {
   public family: string;
   public images: string[] = [];
   public TDImages: ProductTDImage[] = [];
-  public currentImgSRC = '';
-  public currentImgCode = '';
+  public currentTDImage: ProductTDImage;
+  public index: number;
 
   language: string;
   prodDesc: any;
@@ -29,6 +29,7 @@ export class ProductDimensionsComponent implements OnInit {
       .subscribe(lang => {
         this.language = lang || 'EN';
         this.getProductFamily();
+        this.currentTDImage = this.TDImages[0];
       });
 
     this.getImages();
@@ -56,9 +57,22 @@ export class ProductDimensionsComponent implements OnInit {
       });
   }
 
-  sendToModal(i: number) {
-    this.currentImgSRC = this.TDImages[i].src;
-    this.currentImgCode = this.TDImages[i].prodCode;
+  sendToModal(j: number) {
+    this.currentTDImage = this.TDImages[j];
+  }
+
+  navigate(direction: string) {
+    this.index = this.TDImages.findIndex(idx => idx.prodCode === this.currentTDImage.prodCode);
+    // console.log('INDEX: ', this.index);
+    if (direction === 'previous') {
+      this.index--;
+      if (this.index === -1) {
+        this.index = this.TDImages.length - 1;
+      }
+    } else if (direction === 'next') {
+      this.index = (this.index + 1) % this.TDImages.length;
+    }
+    this.currentTDImage = this.TDImages[this.index];
   }
 
   closeModal() {

@@ -36,23 +36,29 @@
       <div class="modal-header">
         <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
         <div>
-          <h4 class="modal-title" id="ModalLabel">{{product.model}}</h4>
+          <h4 class="modal-title" id="ModalLabel">{{family}} {{product.model}}</h4>
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body modal-style">
-        <div class="whiteSpace"></div>
+        <div class="whiteSpace">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" 
+            (click)="navigate('previous')" *ngIf="TDImages.length>1"> 
+        </div>
         <div class="cardContainer">
           <div class="card">
-            <img id="td-img" [src]="currentImgSRC" class="card-img-top" alt="...">
+            <img id="td-img" [src]="currentTDImage.src" class="card-img-top" alt="...">
             <div class="card-body">
-                  <label>{{currentImgCode}}</label>
+                  <label>{{currentTDImage.prodCode}}</label>
             </div>
           </div>
         </div>
-        <div class="whiteSpace"></div>
+        <div class="whiteSpace">
+          <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_right.png"
+          (click)="navigate('next')" *ngIf="TDImages.length>1">
+        </div>
       </div>
     </div>
   </div>
