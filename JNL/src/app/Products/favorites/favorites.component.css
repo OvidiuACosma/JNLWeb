@@ -98,6 +98,14 @@ cdk-virtual-scroll-viewport {
     color: black;
 }
 
+.content {
+    width: calc(99vw - var(--left-strip-width));
+    padding-top: 3vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .list {
     width: 24vw;
     padding-left: 2vw;
@@ -106,6 +114,12 @@ cdk-virtual-scroll-viewport {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.products {
+    width: 73vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .filters {
@@ -132,8 +146,8 @@ cdk-virtual-scroll-viewport {
 .fav-main {
     margin: auto;
     margin-top: 60px;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .fav-main > div {
