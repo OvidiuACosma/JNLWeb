@@ -122,6 +122,12 @@ cdk-virtual-scroll-viewport {
     flex-direction: column;
 }
 
+.products-container {
+    height: 99vh;;
+    overflow-y: auto;
+    margin-top: 6.6vw;
+}
+
 .filters {
     margin-top: 1vw;
     text-align: left;
@@ -215,10 +221,6 @@ cdk-virtual-scroll-viewport {
 
 .option-label:hover {
     cursor: default;
-}
-
-.products {
-    margin-top: 6.6vw;
 }
 
 .products-group {
