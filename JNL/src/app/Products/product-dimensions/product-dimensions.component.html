@@ -13,7 +13,7 @@
     <div class="image-list">
       <div *ngFor="let item of TDImages; let i=index" class="img-container">
         <a>
-          <img class="img-button" [src]="item.src" alt="" (click)="sendToModal(i)" data-toggle="modal"
+          <img class="img-button" [src]="item.src" alt="" (click)="sendToModal(item)" data-toggle="modal"
             data-target="#TDModal">
         </a>
         <div class="center">
@@ -49,9 +49,9 @@
         </div>
         <div class="cardContainer">
           <div class="card">
-            <img id="td-img" [src]="currentTDImage.src" class="card-img-top" alt="...">
+            <img id="td-img" [src]=currentTDImage?.src class="card-img-top" alt="...">
             <div class="card-body">
-                  <label>{{currentTDImage.prodCode}}</label>
+                  <label>{{currentTDImage?.prodCode}}</label>
             </div>
           </div>
         </div>

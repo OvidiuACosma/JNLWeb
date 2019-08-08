@@ -29,7 +29,6 @@ export class ProductDimensionsComponent implements OnInit {
       .subscribe(lang => {
         this.language = lang || 'EN';
         this.getProductFamily();
-        this.currentTDImage = this.TDImages[0];
       });
 
     this.getImages();
@@ -57,13 +56,12 @@ export class ProductDimensionsComponent implements OnInit {
       });
   }
 
-  sendToModal(j: number) {
-    this.currentTDImage = this.TDImages[j];
+  sendToModal(item: ProductTDImage) {
+    this.currentTDImage = item;
   }
 
   navigate(direction: string) {
     this.index = this.TDImages.findIndex(idx => idx.prodCode === this.currentTDImage.prodCode);
-    // console.log('INDEX: ', this.index);
     if (direction === 'previous') {
       this.index--;
       if (this.index === -1) {
