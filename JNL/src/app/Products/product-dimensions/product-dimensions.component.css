@@ -17,10 +17,6 @@ h5 {
     display: none;
 }
 
-/* #container {
-    background-color: #f3f5f5;
-} */
-
 .center {
     text-align: center;
 } 
@@ -60,14 +56,20 @@ h5 {
 
 /****************************************************************/
 
+#td-img {
+    object-fit:cover;
+    max-height: 360px;
+}
+
 .modal-header {
     display: flex;
     justify-content: space-between;
 }
 
 .modal-content {
-    background-color: #f3f5f4;
+    background-color: #f3f5f5;
     text-align: center; 
+    max-height: 540px;
 }
 
 /* close button of modal */
@@ -83,8 +85,18 @@ h5 {
     width: 100px;
 }
 
+.modal-arrow {
+    height: 2vw;
+    width: 1vw;
+    margin-top: 250%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .card {
-    background-color: #f3f5f4;
+    background-color: #f3f5f5;
     border: 0 !important;
 }
 
