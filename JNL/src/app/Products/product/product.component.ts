@@ -143,6 +143,7 @@ export class ProductComponent implements OnInit {
       }
     }
     this.heroImages = _.cloneDeep(heroImagesTmp);
+    this.imgCount = this.heroImages.length;
     $('.carousel').carousel('cycle');
   }
 
