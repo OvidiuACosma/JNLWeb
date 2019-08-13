@@ -172,7 +172,7 @@ export class ProductDescriptionComponent implements OnInit {
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target === modal) {
-        document.getElementById('fin-img').click();
+        document.getElementById('btnClose').click();
       }
     };
   }

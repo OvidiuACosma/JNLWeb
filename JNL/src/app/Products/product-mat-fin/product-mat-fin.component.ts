@@ -209,7 +209,7 @@ export class ProductMatFinComponent implements OnInit {
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target === modal) {
-        document.getElementById('thumbnail-img').click();
+        document.getElementById('bClose').click();
       }
     };
   }
