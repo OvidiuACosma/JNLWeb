@@ -9,6 +9,11 @@ h5 {
     font-family: Helvetica-Light;
 }
 
+h6 {
+    font-family: Helvetica-Light;
+    font-size: 0.9vw;
+}
+
 .hide-item, .show-item {
     display: block;
 }
@@ -56,9 +61,13 @@ h5 {
 
 /****************************************************************/
 
-#td-img {
-    object-fit:cover;
-    max-height: 360px;
+#modal-large {
+    min-width: 1000px !important;
+}
+
+/* close button of modal */
+.close {
+    margin-left: 0 !important;
 }
 
 .modal-header {
@@ -69,26 +78,29 @@ h5 {
 .modal-content {
     background-color: #f3f5f5;
     text-align: center; 
-    max-height: 540px;
-}
-
-/* close button of modal */
-.close {
-    margin-left: 0 !important;
+    min-height: 600px; 
 }
 
 .modal-style {
     display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 
 .whiteSpace {
-    width: 100px;
+    width: 150px;
+}
+
+#td-img {
+    object-fit: contain;
+    max-height: 500px;
+    text-align: center;
 }
 
 .modal-arrow {
     height: 2vw;
     width: 1vw;
-    margin-top: 250%;
+    margin-top: 200%;
 }
 
 .cursor-pointer {

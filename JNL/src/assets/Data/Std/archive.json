@@ -1,5 +1,33 @@
 [
     {
+        "2019": {
+            "imgSrc": [
+                "assets/Images/Archive/AR_2019/AR_2019_pic1.jpg",
+                "assets/Images/Archive/AR_2019/AR_2019_pic2.jpg",
+                "assets/Images/Archive/AR_2019/AR_2019_pic3.jpg",
+                "assets/Images/Archive/AR_2019/AR_2019_pic4.jpg",
+                "assets/Images/Archive/AR_2019/AR_2019_pic5.jpg"
+            ]
+    },
+        "2018": {
+            "imgSrc": [
+                "assets/Images/Archive/AR_2018/AR_2018_pic1.jpg",
+                "assets/Images/Archive/AR_2018/AR_2018_pic2.jpg",
+                "assets/Images/Archive/AR_2018/AR_2018_pic3.jpg",
+                "assets/Images/Archive/AR_2018/AR_2018_pic4.jpg",
+                "assets/Images/Archive/AR_2018/AR_2018_pic5.jpg"
+            ]
+    },
+        "2017": {
+            "imgSrc": [
+                "assets/Images/Archive/AR_2017/AR_2017_pic1.jpg",
+                "assets/Images/Archive/AR_2017/AR_2017_pic2.jpg",
+                "assets/Images/Archive/AR_2017/AR_2017_pic3.jpg",
+                "assets/Images/Archive/AR_2017/AR_2017_pic4.jpg",
+                "assets/Images/Archive/AR_2017/AR_2017_pic5.jpg",
+                "assets/Images/Archive/AR_2017/AR_2017_pic6.jpg"
+            ]
+    },
         "2016": {
                 "imgSrc": [
                     "assets/Images/Archive/AR_2016/AR_2016_pic1.jpg",
