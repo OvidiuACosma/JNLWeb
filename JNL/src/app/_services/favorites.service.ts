@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ConfigService } from '.';
-import { IFavorites } from '../_models/favorites';
+import { ConfigService } from './config.service';
+import { IFavorites, IFavoritesProducts } from '../_models/favorites';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -24,5 +24,9 @@ export class FavoritesService {
 
     public getFavoritesOfRelation(relation: string): Observable<IFavorites[]> {
       return this.http.get<IFavorites[]>(`${this.apiUrl}/${relation}`, {headers: this.headers});
+    }
+
+    public getFavoritesProducts(favListId: number): Observable<IFavoritesProducts[]> {
+      return this.http.get<IFavoritesProducts[]>(`${this.apiUrl}/LG/${favListId}`, {headers: this.headers});
     }
 }

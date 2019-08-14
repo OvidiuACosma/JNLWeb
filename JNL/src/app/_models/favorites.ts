@@ -5,3 +5,11 @@ export interface IFavorites {
     listName: string;
     rowguid: string;
 }
+
+export interface IFavoritesProducts {
+    id: number;
+    favoritesId: number;
+    creationDate: Date;
+    productBrand: string;
+    productId: number;
+}

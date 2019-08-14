@@ -8,7 +8,7 @@
       opacity: 1;
     }
   }
-  
+
 .animated {
     animation-duration: 3s;
     animation-fill-mode: both;
@@ -241,13 +241,13 @@ hr {
 
 .wrapper {
     margin: auto;
-    margin-top: 42.2vh;
+    margin-top: 43.5vh;
 }
 
 .wrapper img {
     max-width: 56vw;
     height: auto;
-    width: 30vw;
+    width: 13vw;
     mix-blend-mode: multiply;
 }
 
@@ -266,7 +266,7 @@ hr {
 #une_histoire
 {
     width: 100%;
-    height: auto; 
+    height: auto;
     min-height: 39vw;
     background-color: white;
     display: flex;
@@ -332,9 +332,9 @@ hr {
 }
 
 #actualites {
-    padding-top: 8vw; 
-    padding-left: 3.88vw; 
-    padding-right: 3.88vw; 
+    padding-top: 8vw;
+    padding-left: 3.88vw;
+    padding-right: 3.88vw;
 }
 
 #actualites > div {
@@ -771,7 +771,7 @@ video {
 
     #une_histoire {
         width: 1200px;
-        height: auto; 
+        height: auto;
         min-height: 39vw;
     }
 
