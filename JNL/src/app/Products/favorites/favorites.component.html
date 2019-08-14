@@ -4,7 +4,7 @@
     <div class="fav-list">
       <div class="filters">
         <ul>
-          <li *ngFor="let favItem of favoritesList; let i=index">
+          <li *ngFor="let favItem of favoritesList; let i=index" (click)="getProductsOfFavoriteList(favItem.id)">
             {{favItem.listName}}
           </li>
         </ul>
@@ -28,6 +28,17 @@
 
       <div [ngClass]="(this.removeAll===true) ? 'remove-item' :'products-container'">
         <ul class="list">
+          <div class="flex-div">
+              <li *ngFor="let f of favoritesProducts">
+                  <div class="card-product">
+                    <div class="pic-frame" (click)="goToProduct(f)">
+                      {{f.productBrand}} {{f.id}}
+                    </div>
+                  </div>
+              </li>
+          </div>
+
+
           <cdk-virtual-scroll-viewport itemSize="30">
             <div class="flex-div">
             <ng-container *cdkVirtualFor="let n of numbers">

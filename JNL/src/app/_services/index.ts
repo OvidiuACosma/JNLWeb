@@ -10,4 +10,5 @@ export * from './pager.service';
 export * from './archive.service';
 export * from './downloader.service';
 export * from './requests.service';
+export * from './favorites.service';
 export * from './window.service';

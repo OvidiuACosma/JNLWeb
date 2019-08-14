@@ -1,9 +1,8 @@
 
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService, ArchiveService } from 'src/app/_services';
-import { FavoritesService } from 'src/app/_services/favorites.service';
-import { IFavorites } from 'src/app/_models/favorites';
+import { DataExchangeService, TranslationService, FavoritesService } from '../../_services';
+import { IFavorites, ProductEF, IFavoritesProducts } from '../../_models';
 
 @Component({
   selector: 'app-favorites',
@@ -15,6 +14,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   language: string;
   text: any;
   favoritesList: IFavorites[];
+  favoritesProducts: IFavoritesProducts[];
 
   selected = [0, 0, 0, 0, 0];
   scroller = true;
@@ -107,5 +107,18 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     //       window.scrollTo(0, 0);
     //     }
     // });
+  }
+
+  getProductsOfFavoriteList(favListId: number) {
+    console.log('Load Favorites List:', favListId);
+    this.favoritesService.getFavoritesProducts(favListId)
+    .subscribe(products => {
+      console.log('Favorites Products:', products);
+      this.favoritesProducts = products;
+    });
+  }
+
+  goToProduct(f: any) {
+    
   }
 }
