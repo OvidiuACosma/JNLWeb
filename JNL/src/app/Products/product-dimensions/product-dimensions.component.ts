@@ -79,7 +79,7 @@ export class ProductDimensionsComponent implements OnInit {
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target === modal) {
-        document.getElementById('td-img').click();
+        document.getElementById('btClose').click();
       }
     };
   }
