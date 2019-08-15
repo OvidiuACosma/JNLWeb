@@ -31,12 +31,12 @@
 <!-- MODAL -->
 <div class="modal fade" id="TDModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
   (click)="closeModal()" data-backdrop="false">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div id="modal-large" class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
         <div>
-          <h4 class="modal-title" id="ModalLabel">{{family}} {{product.model}}</h4>
+          <h2 class="modal-title" id="ModalLabel">{{family}} {{product.model}}</h2>
         </div>
         <button type="button" id="btClose" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -51,7 +51,7 @@
           <div class="card">
             <img id="td-img" [src]=currentTDImage?.src class="card-img-top" alt="...">
             <div class="card-body">
-                  <label>{{currentTDImage?.prodCode}}</label>
+                  <h5>{{currentTDImage?.prodCode}}</h5>
             </div>
           </div>
         </div>

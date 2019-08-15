@@ -35,6 +35,10 @@ button {
     outline: none;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .group_selected {
     text-decoration: underline !important;
 }
