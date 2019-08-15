@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {  DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { materialize } from 'rxjs/operators';
-import * as _ from 'lodash';
 import { Product } from '../../_models';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-product-mat-fin',

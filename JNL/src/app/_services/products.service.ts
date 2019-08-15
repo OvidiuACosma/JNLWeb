@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
-import { Product, ProductEF, ProductHeroImage } from '../_models';
+import { Product, ProductEF, ProductHeroImage, IGarnissage } from '../_models';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +28,12 @@ export class ProductsService {
     return this.http.get<ProductEF[]>(`${this.product}`, {headers: this.headers});
   }
 
-  public getTissus(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.product}/tissus`, {headers: this.headers});
+  public getGarnissages(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.product}/GA`, {headers: this.headers});
+  }
+
+  public getTissus(): Observable<IGarnissage[]> {
+    return this.http.get<IGarnissage[]>(`${this.product}/tissus`, {headers: this.headers});
   }
 
   public getCuirs(): Observable<any[]> {

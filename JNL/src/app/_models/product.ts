@@ -33,6 +33,26 @@ export interface Finisage {
 }
 
 export interface ProductTDImage {
-    src: string;
-    prodCode: string;
+  src: string;
+  prodCode: string;
+}
+
+export interface IGarnissage {
+  id: number;
+  codeProd: string;
+  familyFr: string;
+  familyEn: string;
+  materialFr: string;
+  materialEn: string;
+  model: string;
+  dimensions: string;
+  compositionFr: string;
+  compositionEn: string;
+  martindale: string;
+  gACoussinOnly: boolean;
+  brand: number;
+  colorEn: string;
+  colorFr: string;
+  colorRef: string;
+  ordIndex: number;
 }

@@ -28,6 +28,7 @@ import { RequestFormComponent, DialogAnswerComponent } from './Std/request-form/
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ProductGarnissagesComponent } from './Products/product-garnissages/product-garnissages.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FavoritesComponent,
     LeftStripComponent,
     RequestFormComponent,
-    DialogAnswerComponent
+    DialogAnswerComponent,
+    ProductGarnissagesComponent
   ],
   imports: [
     BrowserModule,
