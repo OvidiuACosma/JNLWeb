@@ -1,3 +1,16 @@
+li, ul {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  list-style-type: none;
+  padding: 0px !important;
+  /* line-height: 1.8vw; */
+}
+
+i {
+  outline: none;
+}
+
 .wrapper {
   width: 99vw;
   padding-top: 6vw;
@@ -27,6 +40,34 @@
   width: 73vw;
   height: 94vh;;
   overflow-y: auto;
+}
+
+.scroll-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 10px 10px 10px 0px;
+}
+
+.scroll-item {
+  display: flex;
+  flex-direction:column;
+  width: 14.86vw;
+  margin-right: 2vw;
+  align-items: center;
+}
+
+.img-button {
+  width:14.86vw;
+  height: 8vw;
+  max-width: 380px;
+  max-height: 200px;
+}
+
+.product-name {
+  font-family: Helvetica-Light;
+  font-size: 1.1vw;
 }
 
 div > ul > li {

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService, DataExchangeService } from 'src/app/_services';
 import { IGarnissage } from 'src/app/_models';
 import * as _ from 'lodash';
-import { getRtlScrollAxisType } from '@angular/cdk/platform';
 
 interface IFilter {
   index: number;
@@ -60,7 +59,7 @@ export class ProductGarnissagesComponent implements OnInit {
         this.productsFiltered = _.cloneDeep(this.products);
         this.getColors(); // p.categories
         this.getMaterials(); // p.families
-        // this.getTypes();
+        this.getTypes();
         this.setFilterElements();
         // this.getFilters(res);
       });
@@ -83,7 +82,7 @@ export class ProductGarnissagesComponent implements OnInit {
             dimensions: m.dimensions,
             composition: m.compositionEn,
             martindale: m.martindale,
-            type: this.getTypeStringFromBoolean(m.gACoussinOnly, lang),
+            type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
             brand: this.getBrandStringFromNumeric(m.brand),
             color: m.colorEn,
             colorRef: m.colorRef
@@ -100,7 +99,7 @@ export class ProductGarnissagesComponent implements OnInit {
             dimensions: m.dimensions,
             composition: m.compositionFr,
             martindale: m.martindale,
-            type: this.getTypeStringFromBoolean(m.gACoussinOnly, lang),
+            type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
             brand: this.getBrandStringFromNumeric(m.brand),
             color: m.colorFr,
             colorRef: m.colorRef
@@ -111,14 +110,14 @@ export class ProductGarnissagesComponent implements OnInit {
     return productsMapped;
   }
 
-  getTypeStringFromBoolean(t: boolean, lang: string): string {
+  getTypeStringFromBoolean(t: boolean = false, lang: string): string {
     if (!!t) {
-      switch (lang) {
+      switch (lang.toLowerCase()) {
         case 'en': {return 'Cushions only'; }
         case 'fr' : {return 'Coussins seulement'; }
       }
     } else {
-      switch (lang) {
+      switch (lang.toLowerCase()) {
         case 'en': {return 'Upholstery'; }
         case 'fr' : {return 'Garnissage'; }
       }
@@ -161,6 +160,20 @@ export class ProductGarnissagesComponent implements OnInit {
       products = products.filter(f => color.includes(f.color));
     }
     this.material = new Set(products.map(f => f.material));
+  }
+
+  getTypes(brand: string[] = ['all'], color: string[] = ['all'], material: string[] = ['all']) {
+    let products = _.clone(this.products);
+    if (!brand.includes('all')) {
+      products = products.filter(f => brand.includes(f.brand));
+    }
+    if (!color.includes('all')) {
+      products = products.filter(f => color.includes(f.color));
+    }
+    if (!material.includes('all')) {
+      products = products.filter(f => material.includes(f.material));
+    }
+    this.type = new Set(products.map(f => f.type));
   }
 
   setFilterElements() {
@@ -255,5 +268,150 @@ export class ProductGarnissagesComponent implements OnInit {
       }
     }
     return  fg;
+  }
+
+  selectFilter(c = '', displayName = '') {
+    console.log('selectFilter(', c, ',', displayName);
+    this.scrollAfterFilter('content');
+    let filteredElements: IFilterElements[];
+    let filterItems: number[];
+    let filteredItems: boolean[];
+
+    this.toggleSelection(c, displayName);
+
+    // Determine filtering parameters
+    filteredElements = _.cloneDeep(this.filterElements);
+    _.map(filteredElements, element => {
+      element.filterElement = _.filter(element.filterElement, fe => fe.checked);
+      return element;
+    });
+    filterItems = this.getFilterItems();
+    filteredItems = this.getFilteredItems(filteredElements, filterItems);
+    this.applyFilters(filteredItems, filteredElements);
+    // if (this.searchText !== '') {
+    //   this.searchByText();
+    // }
+    // this.scroller = false;
+  }
+
+  scrollAfterFilter(fragment: string) {
+    // window.scrollTo(0, window.innerWidth / 100 * 9);
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+  }
+
+  toggleSelection(c: string, displayName: string) {
+    if (c !== '') {
+      this.toggleItemSelection(c, displayName);
+      // filter the list of filter elements brand -> category -> familiy
+      switch (c) {
+        case 'Brand': {
+          this.resetColors();
+          this.resetMaterials();
+          this.resetTypes();
+          break;
+        }
+        case 'Color': {
+          this.resetMaterials();
+          this.resetTypes();
+          break;
+        }
+        case 'Material': {
+          this.resetColors();
+          this.resetTypes();
+          break;
+        }
+        case 'Type': {
+          this.resetMaterials();
+          this.resetColors();
+          break;
+        }
+      }
+    }
+  }
+
+  toggleItemSelection(c: string, displayName: string) {
+    this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked =
+      !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
+  }
+
+  getselectedItemsOfGroup(group: string): string[] {
+    let selectedItems: string[] = this.filterElements.find(f => f.filterGroup === group)
+      .filterElement.filter(v => v.checked).map(m => m.displayName);
+    if (selectedItems.length === 0) { selectedItems = ['all']; }
+    return selectedItems;
+  }
+
+  resetColors() {
+    this.getColors(this.getselectedItemsOfGroup('Brand'));
+  }
+
+  resetMaterials() {
+    this.getMaterials(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
+  }
+
+  resetTypes() {
+    this.getTypes(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Color'),
+          this.getselectedItemsOfGroup('Material'));
+  }
+
+  getFilterItems(): number[] {
+    const filterItems: number[] = [];
+    for (let k = 0; k < this.filterElements.length; k++) {
+      filterItems.push(this.filterElements[k].filterElement.length);
+    }
+    return filterItems;
+  }
+
+  getFilteredItems(filteredElements: IFilterElements[], filterItems: number[]): boolean[] {
+    const filteredItems: boolean[] = [];
+    for (let j = 0; j < filteredElements.length; j++) {
+      if ((filteredElements[j].filterElement.length %
+        (filterItems[j] || filteredElements[j].filterElement.length)) === 0) {
+          filteredItems.push(false);
+        } else {
+          filteredItems.push(true);
+        }
+    }
+    return filteredItems;
+  }
+
+  applyFilters(filteredItems: boolean[], filteredElements: IFilterElements[]) {
+    console.log('filteredItems:', filteredItems, 'filteredElements:', filteredElements);
+    let filterItemsList: string[] = [];
+    this.productsFiltered = _.clone(this.products);
+    for (let l = 0; l < filteredItems.length; l++) {
+      if (filteredItems[l]) {
+        filterItemsList = this.getListOfFilterItems(filteredElements[l].filterElement);
+        switch (l) {
+          case 0: {
+            this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.color));
+            break;
+          }
+          case 1: {
+            this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.material));
+            break;
+          }
+          case 2: {
+            this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.type));
+            break;
+          }
+          case 3: {
+            this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.brand));
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  getListOfFilterItems(filteredElements: IFilter[]): string[] {
+    const filterList: string[] = [];
+      for (const f of filteredElements) {
+        filterList.push(f.displayName);
+      }
+    return filterList;
   }
 }
