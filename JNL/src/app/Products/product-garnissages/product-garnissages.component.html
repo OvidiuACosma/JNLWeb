@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <div class="filters">
+      <ul>
+        <li *ngFor="let c of filterBy; let i=index">
+          <div class="header-arrow"  (click)="toggleFilters(i)">
+              <span class="header-filter">{{c}}
+              <img class="arrow" [src]="getArrow(i)"></span>
+          </div>
+          <!-- <ul id="filter-{{c}}" *ngIf="toggle[i]" class="subfilters">
+            <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index">
+                <span (click)="selectFilter(c, d.displayName)">
+                  <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
+                  &nbsp;{{d.displayName}}
+                </span>
+            </li>
+          </ul> -->
+        </li>
+      </ul>
+    </div>
+<!---->
+  <!-- <div class="filters">
+    filters color:
+    <ul>
+      <li *ngFor="let color of filtersColorList" (click)="filterByColor(color.color)">
+        {{color.color}}
+      </li>
+    </ul>
+    filters material:
+    <ul>
+      <li *ngFor="let material of filtersMaterialsList" (click)="filterByMaterial(material.material)">
+        {{material.material}}
+      </li>
+    </ul>
+    filters brand:
+    <ul>
+      <li *ngFor="let brand of filtersBrandsList" (click)="filterByBrand(brand.id)">
+        {{brand.brand}}
+      </li>
+    </ul>
+  </div> -->
+
+
+  <div class="products">
+    <ul>
+      <li *ngFor="let ga of productsFilteres">
+        {{ga.materialFr}} {{ga.model}} {{ga.colorFr}}
+      </li>
+    </ul>
+  </div>
+</div>

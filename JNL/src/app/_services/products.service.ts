@@ -28,12 +28,12 @@ export class ProductsService {
     return this.http.get<ProductEF[]>(`${this.product}`, {headers: this.headers});
   }
 
-  public getGarnissages(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.product}/GA`, {headers: this.headers});
+  public getGarnissages(): Observable<IGarnissage[]> {
+    return this.http.get<IGarnissage[]>(`${this.product}/GA`, {headers: this.headers});
   }
 
-  public getTissus(): Observable<IGarnissage[]> {
-    return this.http.get<IGarnissage[]>(`${this.product}/tissus`, {headers: this.headers});
+  public getTissus(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.product}/tissus`, {headers: this.headers});
   }
 
   public getCuirs(): Observable<any[]> {
