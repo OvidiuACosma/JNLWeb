@@ -177,7 +177,7 @@ export class ProductGarnissagesComponent implements OnInit {
       case 'Brand': { return this.setFilterListFromSet(this.brands); }
       case 'Color': { return this.setFilterListFromSet(this.color); }
       case 'Material': { return this.setFilterListFromSet(this.material); }
-      case 'Type': { return this.setFilterListFromSet(this.typeFr); }
+      case 'Type': { return this.setFilterListFromSet(this.type); }
     }
     return [];
   }
