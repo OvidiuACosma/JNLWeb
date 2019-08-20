@@ -49,7 +49,7 @@ export interface IGarnissage {
   compositionFr: string;
   compositionEn: string;
   martindale: string;
-  gACoussinOnly: boolean;
+  gaCoussinOnly: boolean;
   brand: number;
   colorEn: string;
   colorFr: string;
