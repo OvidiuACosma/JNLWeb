@@ -1,9 +1,9 @@
 <div id="bar">
    <div id="top-bar">
-       <div id="menu-button">
+       <div class="menu-button">
            <div class="menu-button-flex">
-                <img class="menu-button-img" src="{{navBarButtonSrc}}" 
-                    (click)="toggleNav()" (mouseover)="toggleNav()">
+                <img class="menu-button-img" src="{{navBarButtonSrc}}"
+                    (click)="toggleNav()" (mouseover)="toggleNav()" alt="menu button">
                     <!-- [ngClass]="navBarStatus ? 'menu-button-img-active' : ''" -->
                 <!-- <p class="menu-text" (click)="toggleNav()" (mouseover)="toggleNav()">{{navBarButtonText}}</p> -->
             </div>
@@ -30,7 +30,7 @@
            </span>
            <span class="dash">&#8213;</span>
            <span>
-               <a class="top-button" *ngIf="!searchMode" 
+               <a class="top-button" *ngIf="!searchMode"
                     (click)="goSearchMode()">
                     <i class="material-icons magnifier">search</i>
                 </a>
@@ -68,14 +68,14 @@
 </div>
 
 <!--MOBILE VERSION-->
-<div id="mob-searchbar"> 
-    <span id="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
+<div id="mob-searchbar">
+    <span class="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
         <i class="material-icons">menu</i>
     </span>
     <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
     <span>
         <i class="fa fa-search" aria-hidden="true" id="loupe"></i>
-        <a class="top-button" *ngIf="!searchMode" 
+        <a class="top-button" *ngIf="!searchMode"
             (click)="goSearchMode()"></a>
         <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
             (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">

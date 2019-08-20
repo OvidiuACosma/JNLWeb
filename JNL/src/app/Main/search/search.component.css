@@ -15,7 +15,7 @@ li {
     cursor: pointer;
     height: 1.78vw;
     mix-blend-mode: difference;
-} 
+}
 
 .searchInput {
     border: solid 1px #888;
@@ -44,7 +44,7 @@ li {
     outline: 0;
 
     transform: none;
-    -o-transform: none; 
+    -o-transform: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -102,7 +102,7 @@ li {
 
 /*CLEAR BUTTON*/
 #search_bar > button {
-    border: 0;  
+    border: 0;
     background-color: black;
     border-radius: 100%;
     box-sizing: border-box;
@@ -151,7 +151,7 @@ li {
     margin: auto;
     margin-left: 1vw;
     /* margin-right: 1vw; */
-    text-align: center; 
+    text-align: center;
     text-decoration: none;
     mix-blend-mode: difference;
     transition: all .3s ease;
@@ -199,7 +199,7 @@ li {
     margin-right: 1vw;
 }
 
-#menu-button {
+.menu-button {
     position: fixed;
     top: 0;
     left: 0;
@@ -292,7 +292,7 @@ li {
         justify-content: space-between;
     }
 
-    #menu-button {
+    .menu-button {
         color: white !important;
         background-color: transparent;
         margin-top: -5px;
