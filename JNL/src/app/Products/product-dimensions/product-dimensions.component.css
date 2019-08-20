@@ -61,9 +61,9 @@ h6 {
 
 /****************************************************************/
 
-#modal-large {
-    min-width: 1000px !important;
-}
+/* #modal-large {
+    min-width: 1000px !important; 
+} */
 
 /* close button of modal */
 .close {
@@ -81,35 +81,42 @@ h6 {
     min-height: 600px; 
 }
 
-.modal-style {
+.modal-body{
+    padding: 16px 0px !important;
+}
+
+.modal-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
 }
 
 .whiteSpace {
-    width: 150px;
+    width: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #td-img {
     object-fit: contain;
     max-height: 500px;
+    height: auto;
+    width: 600px;
     text-align: center;
 }
 
 .modal-arrow {
     height: 2vw;
     width: 1vw;
-    margin-top: 200%;
 }
 
 .cursor-pointer {
     cursor: pointer;
 }
 
-.card {
-    background-color: #f3f5f5;
-    border: 0 !important;
+.prod-code {
+    margin-top: 2vw;
 }
 
 
