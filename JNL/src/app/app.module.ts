@@ -29,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ProductGarnissagesComponent } from './Products/product-garnissages/product-garnissages.component';
+import { ProductGarnissageDetailsComponent } from './Products/product-garnissage-details/product-garnissage-details.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { ProductGarnissagesComponent } from './Products/product-garnissages/prod
     LeftStripComponent,
     RequestFormComponent,
     DialogAnswerComponent,
-    ProductGarnissagesComponent
+    ProductGarnissagesComponent,
+    ProductGarnissageDetailsComponent
   ],
   imports: [
     BrowserModule,
