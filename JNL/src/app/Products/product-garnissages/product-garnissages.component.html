@@ -18,15 +18,13 @@
       </ul>
     </div>
   <div class="products scroll-container">
-    <!-- <div> -->
-      <div *ngFor="let ga of productsFiltered" class="scroll-item">
-          <a>
-            <img id="thumbnail-img" class="img-button"
-              src="assets\Images\Products\Garnissages\{{ga.codeProd | uppercase }}.jpg"
-              alt="">
-            <p class="product-name">{{ga.model}}</p>
-        </a>
-      </div>
-    <!-- </div> -->
+    <div *ngFor="let ga of productsFiltered" class="scroll-item">
+        <a>
+          <img class="img-button"
+            src="assets\Images\Products\Garnissages\{{ga.codeProd | uppercase }}.jpg"
+            alt="">
+          <p class="product-name">{{ga.model}}</p>
+      </a>
+    </div>
   </div>
 </div>

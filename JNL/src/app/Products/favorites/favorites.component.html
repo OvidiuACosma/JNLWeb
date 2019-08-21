@@ -1,10 +1,11 @@
 <div class="fav-main">
   <h1>{{text.title}}</h1>
+  <h3>{{currentFavoriteList.listName}}</h3>
   <div class="content">
     <div class="fav-list">
       <div class="filters">
         <ul>
-          <li *ngFor="let favItem of favoritesList; let i=index" (click)="getProductsOfFavoriteList(favItem.id)">
+          <li *ngFor="let favItem of favoritesList; let i=index" (click)="setFavoriteList(favItem.id)">
             {{favItem.listName}}
           </li>
         </ul>
@@ -12,9 +13,9 @@
     </div>
 
     <div class="products">
-      <div id="remove-download">
+      <!-- <div id="remove-download">
         <div (click)="removeAllItems()">
-          <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png"  height="16px">
+          <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png" height="16px">
           <h3>&nbsp;&nbsp;{{text.remove}}</h3>
         </div>
 
@@ -24,58 +25,39 @@
             <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png" height="16px">
             <h3>&nbsp;&nbsp;{{text.download}}</h3>
           </div>
-      </div>
-
+      </div> -->
       <div [ngClass]="(this.removeAll===true) ? 'remove-item' :'products-container'">
         <ul class="list">
-          <div class="flex-div">
-              <li *ngFor="let f of favoritesProducts">
-                  <div class="card-product">
-                    <div class="pic-frame" (click)="goToProduct(f)">
-                      {{f.productBrand}} {{f.id}}
-                    </div>
-                  </div>
-              </li>
-          </div>
-
-
-          <cdk-virtual-scroll-viewport itemSize="30">
-            <div class="flex-div">
-            <ng-container *cdkVirtualFor="let n of numbers">
-              <li [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'">
-                <div>
-                  <div class="pic-frame">
-                    <div>
-                      <img alt="JNL Collection" src="\assets\Images\Common\remove_fav_icon.png" class="remover" (click)="removeItem(n)">
-                    </div>
-                    <div class="center-product">
-                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_example{{n}}.png" class="fav-img">
-                    </div>
-                  </div>
-                  <span>Product Name</span>
+          <div class="flex-div" *ngIf="favoritesProductsDetails">
+            <li *ngFor="let f of favoritesProducts">
+              <div class="card-product">
+                <div class="pic-frame" (click)="goToProduct(findProductDetails(f.productId))">
+                  <figure class="center-product">
+                    <img class="search-img" [src]="getProductImage(f.productId)" alt="getAltText(f.productId)">
+                  </figure>
                 </div>
-              </li>
-            </ng-container>
-            
-            <li *ngFor="let m of [0, 1, 2]" [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'">
-              <div>
-                <div class="pic-frame">
-                  <div>
-                    <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="remover">
-                  </div>
-                  <div class="center-product">
-                    <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-img">
-                  </div>
-                </div>
-                <span>&nbsp;</span>
+                <p class="product-name">
+                    <span>
+                      <img src="/assets/Images/Common/remove_all_fav_icon.png" height="14px" (click)="remove(f)">
+                      <!-- <i class="far fa-heart heart" (click)="remove(f)"></i> -->
+                    </span>
+                    <span class="product-name-text" (click)="goToProduct(findProductDetails(f.productId))">
+                      {{getProductName(findProductDetails(f.productId))}}
+                    </span>
+                  </p>
+                  <p class="product-name">
+                    <span class="product-brand-text" (click)="goToProduct(findProductDetails(f.productId))">
+                      {{f.productBrand}}
+                    </span>
+                  </p>
               </div>
             </li>
           </div>
-          </cdk-virtual-scroll-viewport>
         </ul>
       </div>
     </div>
   </div>
+
     <div class="fav_div">
       <h2>{{text.infoTitle}}</h2>
       <app-request-form [requestType]='5'></app-request-form>

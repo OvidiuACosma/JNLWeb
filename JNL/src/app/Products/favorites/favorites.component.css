@@ -14,10 +14,11 @@ h2 {
 
 h3 {
     text-transform: uppercase;
+    text-align: center;
     font-family: Helvetica-Light;
     color: #DBBB76;
-    font-size: 1.1vw; /*20px;*/
-    margin-bottom: 1.5vw;
+    font-size: 1.6vw; /*20px;*/
+    margin: 1.5vw 0;
 }
 
 h4 {
@@ -45,9 +46,9 @@ i {
 
 input, select
 {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none; 
+    appearance: none;
     outline: none;
     border: hidden;
     width: 21vw;
@@ -72,9 +73,9 @@ button
 }
 
 li, ul {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;   
+    appearance: none;
     list-style-type: none;
     padding: 0px !important;
 }
@@ -89,17 +90,17 @@ cdk-virtual-scroll-viewport {
     color: black;
     opacity: 1; /* Firefox */
 }
-  
+
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: black;
 }
-  
+
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: black;
 }
 
 .content {
-    width: calc(99vw - var(--left-strip-width));
+    width: 99vw;
     padding-top: 3vw;
     display: flex;
     flex-direction: row;
@@ -125,7 +126,8 @@ cdk-virtual-scroll-viewport {
 .products-container {
     height: 99vh;;
     overflow-y: auto;
-    margin-top: 6.6vw;
+    overflow-x: hidden;
+    margin-top: 1vw; /*6.6vw;*/
 }
 
 .list {
@@ -133,7 +135,7 @@ cdk-virtual-scroll-viewport {
 }
 
 .filters {
-    margin-top: 1vw;
+    margin-top: 7vw;
     text-align: left;
 }
 
@@ -262,11 +264,11 @@ li {
     align-content: space-between;
     justify-content: left;
     float: left;
-    padding-top: 2.2vw;
+    /* padding-top: 2.2vw; */
     width: auto;
     margin: auto;
     overflow-x: hidden;
-    width: 75.5vw;
+    width: 73vw;
 }
 
 .flex-div > li {
@@ -295,7 +297,7 @@ li {
 
 .fav-img {
     max-width: 16.5vw;
-    max-height: 18.9vw;  
+    max-height: 18.9vw;
     padding: 0px;
     margin: auto;
 }
@@ -316,24 +318,79 @@ li {
 }
 
 .center-product {
-    width: 17.8vw;
-    height: 18.9vw;  
+    /* width: 17.8vw;
+    height: 18.9vw;
     margin-bottom: 0;
     position: relative;
+    display: flex; */
+    margin: auto;
+    margin-bottom: 0;
+    vertical-align: middle;
     display: flex;
+    overflow: visible;
 }
 
-.cdk-virtual-scroll-content-wrapper {
-    display: flex !important;
-    flex-direction: row;
-    width: 75.7vw;
-    flex-wrap: wrap !important;
+.search-img {
+  max-width: 19vw;
+  max-height: 19vw;
+  padding: 0px;
+  vertical-align: middle;
+  margin: auto;
+  object-fit: contain;
+  transition: .5s;
 }
 
-#expertise, #surMesure, #votreProjet {
-    margin-bottom: 60px;
-    padding-top: 60px;
+.search-img:hover {
+  transform: scale(1.2);
 }
+
+.product-name {
+  max-width: 19.45vw;
+  text-align: center;
+  margin-bottom: 0;
+  height: 1.5vw;;
+}
+
+.product-name > span > i {
+  padding-right: .6vw;
+  font-size:  1vw;
+  transition: all .3s ease;
+}
+
+.product-name > span > i:hover {
+  color: #DBBB76;
+  transition: all .3s ease;
+}
+
+.product-name > span > img {
+  height: 14px;
+  padding-bottom: 2px;
+}
+
+.product-name > span > img:hover {
+  transform: scale(1.15);
+}
+
+.product-name-text {
+  transition: all .3s ease;
+}
+
+.product-name-text:hover {
+  color: #DBBB76;
+  transition: all .3s ease;
+}
+
+.product-brand-text {
+  font-size: 1vw;
+  /* line-height: 1.2vw; */
+  transition: all .3s ease;
+}
+
+.product-brand-text:hover {
+  color: #DBBB76;
+  transition: all .3s ease;
+}
+
 
 #details {
     display: flex;
@@ -442,7 +499,7 @@ li {
         width: 80vw;
         justify-content: space-between;
     }
-    
+
     .sur-flex > div:last-child {
         flex-direction: column-reverse;
     }
@@ -464,7 +521,7 @@ li {
         width: 80vw !important;
     }
 
-    
+
     .fav_form > div > div:first-child {
         margin-bottom: 5vw;
     }
@@ -472,37 +529,37 @@ li {
     h2 {
         font-size: 5.6vw;
     }
-    
+
     h4 {
         font-size: 4.2vw;
     }
-    
+
     .quote-bar > p {
         font-family: Helvetica-Light;
         font-size: 4.2vw;
     }
-    
+
     .quote-bar > h4 {
         font-size: 3.9vw;
     }
-    
+
     .sur-flex > div > div {
         font-size: 4.5vw;
-    } 
+    }
 
     .sur-flex > div > div > span {
         font-size: 4.4vw;
-    } 
-    
+    }
+
     .sur-flex > div:nth-child(2) > div:first-child {
-        font-size: 4.5vw; 
-    } 
-   
+        font-size: 4.5vw;
+    }
+
     .fav_div
     {
         font-size: 4.5vw;
     }
-    
+
     .fav_div > div > p {
         font-size: 4.5vw;
     }

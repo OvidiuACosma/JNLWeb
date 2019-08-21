@@ -48,6 +48,10 @@ export class ProductsService {
     return this.http.get<any[]>(`${this.product}/similicuirs`, {headers: this.headers});
   }
 
+  public getProductsListFromIds(productsIds: number[]): Observable<ProductEF[]> {
+    return this.http.post<ProductEF[]>(`${this.product}/Ids`, productsIds, {headers: this.headers});
+  }
+
   public getMaterials(): Observable<any[]> {
     return this.http.get<any[]>(`${this.product}/materials`, {headers: this.headers});
   }

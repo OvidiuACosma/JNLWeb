@@ -1,14 +1,14 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent, ContactComponent, SearchResultsComponent, PageNotFoundComponent } from './Main';
 import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
-import { CreditsComponent, GDPRComponent, LegalComponent } from './Extras';
 import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
-         ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent} from './Products';
+          ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent} from './Products';
 import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
-  SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
+          SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 import { ProductGarnissagesComponent } from './Products/product-garnissages/product-garnissages.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch : 'full' },
@@ -35,24 +35,30 @@ const routes: Routes = [
   { path: 'savoirFaire', component: SavoirFaireComponent },
   { path: 'services', component: ServicesComponent },
 
-  { path: 'legal', component: LegalComponent },
-  { path: 'gdpr', component: GDPRComponent },
-  { path: 'credits', component: CreditsComponent },
+  { path: 'credits', loadChildren: './Extras/extras.module#ExtrasModule' },
+  { path: 'legal', loadChildren: './Extras/extras.module#ExtrasModule' },
+  { path: 'gdpr', loadChildren: './Extras/extras.module#ExtrasModule' },
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'enabled',
-    anchorScrolling: 'enabled' /** ,
+    anchorScrolling: 'enabled',
+    onSameUrlNavigation: 'reload'
+    /** ,
     scrollOffset: [0, 64] // [x, y]*/
   })
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ],
+  providers: []
 })
 export class AppRoutingModule { }
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'});
+// export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'});

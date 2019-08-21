@@ -13,7 +13,7 @@ export class RequestsService {
   private reqUrl: string;
 
   constructor(private http: HttpClient,
-    private configService: ConfigService) {
+      private configService: ConfigService) {
       this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
       this.reqUrl = configService.getApiURI() + '/requests';
     }

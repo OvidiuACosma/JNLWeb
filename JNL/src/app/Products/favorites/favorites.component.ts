@@ -1,20 +1,22 @@
 
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, TranslationService, FavoritesService } from '../../_services';
-import { IFavorites, ProductEF, IFavoritesProducts } from '../../_models';
+import { Router } from '@angular/router';
+import { DataExchangeService, TranslationService, FavoritesService, ProductsService } from '../../_services';
+import { IFavorites, IFavoritesProducts, ProductEF } from '../../_models';
 
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.css']
 })
-export class FavoritesComponent implements OnInit, AfterViewChecked  {
+export class FavoritesComponent implements OnInit  {
 
   language: string;
   text: any;
   favoritesList: IFavorites[];
+  currentFavoriteList: IFavorites;
   favoritesProducts: IFavoritesProducts[];
+  favoritesProductsDetails: ProductEF[];
 
   selected = [0, 0, 0, 0, 0];
   scroller = true;
@@ -26,10 +28,10 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
   nrEmpty = 0;
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private favoritesService: FavoritesService) {
+              private favoritesService: FavoritesService,
+              private productsService: ProductsService) {
     }
 
   ngOnInit() {
@@ -49,7 +51,7 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
       this.favoritesService.getFavoritesOfRelation(user.userName)
       .subscribe(fav => {
         this.favoritesList = fav;
-        console.log('Favorites list:', this.favoritesList);
+        this.setFavoriteList(this.favoritesList[0].id);
       });
     });
   }
@@ -86,39 +88,75 @@ export class FavoritesComponent implements OnInit, AfterViewChecked  {
     }
   }
 
-  selectMarque(nr: number) {
-    if (this.selected[nr] === 1) {
-      this.selected[nr] = 0;
-    } else {
-      this.selected[nr] = 1;
-    }
-    this.scroller = false;
-  }
-
-  ngAfterViewChecked() {
-    // this.route.fragment.subscribe(fragment => {
-    //   if (fragment) {
-    //     const element = document.getElementById(fragment);
-    //     if (element && this.scroller === true ) {
-    //       element.scrollIntoView({block: 'start', behavior: 'smooth'});
-    //     }
-    //     this.scroller = true;
-    //   } else if (this.scroller === true) {
-    //       window.scrollTo(0, 0);
-    //     }
-    // });
+  setFavoriteList(favListId: number) {
+    this.currentFavoriteList = this.favoritesList.find(f => f.id === favListId);
+    this.getProductsOfFavoriteList(favListId);
   }
 
   getProductsOfFavoriteList(favListId: number) {
-    console.log('Load Favorites List:', favListId);
     this.favoritesService.getFavoritesProducts(favListId)
     .subscribe(products => {
-      console.log('Favorites Products:', products);
       this.favoritesProducts = products;
+      const prodIds: number[] = [];
+      products.forEach(element => {
+        prodIds.push(element.productId);
+      });
+      if (prodIds.length > 0) {
+        this.getProductsDetails(prodIds);
+      }
     });
   }
 
-  goToProduct(f: any) {
-    
+  getProductsDetails(ids: number[]) {
+    this.productsService.getProductsListFromIds(ids)
+    .subscribe(prod => {
+      this.favoritesProductsDetails = prod;
+    });
+  }
+
+  getProductImage(id: number): string {
+    const product: ProductEF = this.findProductDetails(id);
+    const src = `assets/Images/Products/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
+    return src;
+  }
+
+  getAltText(id: number): string {
+    const product: ProductEF = this.findProductDetails(id);
+    const productAlt = `${product.brand} ${product.familyFr} ${product.model}`;
+    return productAlt;
+  }
+
+  findProductDetails(id: number): ProductEF {
+    const product: ProductEF = this.favoritesProductsDetails.find(f => f.id === id);
+    return product;
+  }
+
+  goToProduct(product: ProductEF) {
+    this.router.navigate(['product', {b: product.brand, f: product.familyFr, m: product.model}]);
+    this.scrollTop();
+  }
+
+  getProductName(product: ProductEF): string {
+    let productName: string;
+    switch (this.language.toLowerCase()) {
+      case 'fr': {
+        productName = product.familyFr;
+        break;
+      }
+      case 'en': {
+        productName = product.familyEn;
+        break;
+      }
+    }
+    productName = `${productName} ${product.model}`;
+    return productName;
+  }
+
+  remove(f: IFavoritesProducts) {
+    console.log('Remove from favorites:', f);
+  }
+
+  scrollTop() {
+    window.scrollTo(0, 0);
   }
 }

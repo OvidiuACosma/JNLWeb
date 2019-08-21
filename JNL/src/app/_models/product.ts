@@ -16,6 +16,7 @@ export interface ProductEF {
     indexBrand: number;
     imageAltFr: string;
     imageAltEn: string;
+    id: number;
 }
 
 export interface ProductHeroImage {
