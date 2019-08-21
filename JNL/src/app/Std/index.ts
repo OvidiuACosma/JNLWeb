@@ -5,3 +5,4 @@ export * from './savoir-faire/savoir-faire.component';
 export * from './services/services.component';
 export * from './marque/marque.component';
 export * from './actualite/actualite.component';
+export * from './request-form/request-form.component';

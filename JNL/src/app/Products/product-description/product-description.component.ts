@@ -15,7 +15,6 @@ export class ProductDescriptionComponent implements OnInit {
   public productDesc: any[];
   public parts = new Set();
   public materials: string[] = [];
-  public checkMat = false;
   public showLevel = null;
   public finisage: Finisage;
   // public modalActive = false;
@@ -99,11 +98,9 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   getFinitions(part: string, material: string) {
-    this.checkMat = true; // testing...
-    if (material === 'Tissu' || material === 'Fabric') { this.checkMat = false; }
     const finList: Finisage[] = [];
     this.productDesc.forEach(item => {
-      if (item.finisageNameFr) { // to do
+      if (item.finisageNameFr) {
         switch (this.language.toLowerCase()) {
           case 'fr': {
             if (item.partNameFr === part && item.materialNameFr === material) {

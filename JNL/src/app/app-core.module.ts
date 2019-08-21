@@ -16,12 +16,11 @@ import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, Con
           SearchResultsComponent, PageNotFoundComponent, LeftStripComponent } from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
-          MarqueComponent, ActualiteComponent } from './Std';
+          MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
 import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
-          ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent } from './Products';
+          ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent,
+          ProductGarnissagesComponent, ProductGarnissageDetailsComponent } from './Products';
 import { LoginComponent, RegisterComponent } from './Auth';
-import { RequestFormComponent, DialogAnswerComponent } from './Std/request-form/request-form.component';
-import { ProductGarnissagesComponent } from './Products/product-garnissages/product-garnissages.component';
 
 
 
@@ -54,7 +53,8 @@ import { ProductGarnissagesComponent } from './Products/product-garnissages/prod
     LeftStripComponent,
     RequestFormComponent,
     DialogAnswerComponent,
-    ProductGarnissagesComponent
+    ProductGarnissagesComponent,
+    ProductGarnissageDetailsComponent
   ],
   exports: [
     HomeComponent,

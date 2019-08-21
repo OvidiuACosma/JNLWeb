@@ -8,6 +8,7 @@ import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, 
 import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
           SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 import { ProductGarnissagesComponent } from './Products/product-garnissages/product-garnissages.component';
+import { ProductGarnissageDetailsComponent } from './Products/product-garnissage-details/product-garnissage-details.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,8 @@ const routes: Routes = [
   { path: 'productDimensions', component: ProductDimensionsComponent },
   { path: 'productCatalogues', component: ProductCataloguesComponent},
   { path: 'productGarnissages', component: ProductGarnissagesComponent},
+  { path: 'productGarnissageDetails', component: ProductGarnissageDetailsComponent},
+
 
   { path: 'actualites', component: ActualiteComponent },
   { path: 'jnlGroup', component: JnlGroupComponent },
