@@ -88,7 +88,7 @@ export class SearchComponent implements OnInit {
   doSearch(searchText: string) {
     this.searchMode = !this.searchMode;
     if (searchText) {
-    this.router.navigate(['products', { s: searchText }]);
+    this.router.navigate(['product/productSearch', { s: searchText }]);
     this.scrollTop();
     }
   }

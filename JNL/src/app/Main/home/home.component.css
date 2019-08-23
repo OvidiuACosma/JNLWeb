@@ -248,7 +248,8 @@ hr {
     max-width: 56vw;
     height: auto;
     width: 13vw;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; */
+    margin-right: 1.9vw;
 }
 
 .first-picture > a > img {

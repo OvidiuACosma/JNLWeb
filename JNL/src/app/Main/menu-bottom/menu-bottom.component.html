@@ -3,9 +3,9 @@
     <div id="bottom_nav_links">
         <div>
           <p class="columnHead">
-            <a (click)="NavigateTo('products')">{{text.produits}}</a>
+            <a (click)="NavigateTo('product/productSearch')">{{text.produits}}</a>
           </p>
-          <a (click)="NavigateTo('products')">{{text.chercher}}</a><br>
+          <a (click)="NavigateTo('product/productSearch')">{{text.chercher}}</a><br>
           <!--<a (click)="NavigateTo('products')">{{text.telecharger}}</a>-->
         </div>
 
@@ -86,9 +86,9 @@
 
   <div id="bottom_line">
       <br>
-      <a (click)="NavigateTo('legal')">{{text.mentions}}</a>
-      <a (click)="NavigateTo('gdpr')">{{text.politique}}</a>
-      <a (click)="NavigateTo('credits')">{{text.credits}}</a>
+      <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>
+      <a (click)="NavigateTo('extras/gdpr')">{{text.politique}}</a>
+      <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>
   </div>
 </nav>
 
@@ -122,8 +122,8 @@
     </div> -->
   </div>
   <div class="mob-links">
-      <a (click)="NavigateTo('legal')">{{text.mentions}}</a>
-      <a (click)="NavigateTo('gdpr')">{{text.politique}}</a>
-      <a (click)="NavigateTo('credits')">{{text.credits}}</a>
+      <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>
+      <a (click)="NavigateTo('extras/gdpr')">{{text.politique}}</a>
+      <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>
   </div>
 </nav>

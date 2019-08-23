@@ -3,12 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent, ContactComponent, SearchResultsComponent, PageNotFoundComponent } from './Main';
 import { AuthGuard } from './_guards';
 import { LoginComponent, RegisterComponent } from './Auth';
-import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
-          ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent} from './Products';
 import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
           SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
-import { ProductGarnissagesComponent } from './Products/product-garnissages/product-garnissages.component';
-import { ProductGarnissageDetailsComponent } from './Products/product-garnissage-details/product-garnissage-details.component';
 
 
 const routes: Routes = [
@@ -18,17 +14,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'searchResults/:searchText', component: SearchResultsComponent },
 
-  { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
-  { path: 'product', component: ProductComponent },
-  { path: 'products', component: ProductSearchComponent },
-  { path: 'productSearch', component: ProductSearchComponent },
-  { path: 'productDescription', component: ProductDescriptionComponent },
-  { path: 'productMatFin', component: ProductMatFinComponent },
-  { path: 'productDimensions', component: ProductDimensionsComponent },
-  { path: 'productCatalogues', component: ProductCataloguesComponent},
-  { path: 'productGarnissages', component: ProductGarnissagesComponent},
-  { path: 'productGarnissageDetails', component: ProductGarnissageDetailsComponent},
-
+  { path: 'product', loadChildren: './Products/products.module#ProductsModule' },
 
   { path: 'actualites', component: ActualiteComponent },
   { path: 'jnlGroup', component: JnlGroupComponent },
@@ -38,9 +24,7 @@ const routes: Routes = [
   { path: 'savoirFaire', component: SavoirFaireComponent },
   { path: 'services', component: ServicesComponent },
 
-  { path: 'credits', loadChildren: './Extras/extras.module#ExtrasModule' },
-  { path: 'legal', loadChildren: './Extras/extras.module#ExtrasModule' },
-  { path: 'gdpr', loadChildren: './Extras/extras.module#ExtrasModule' },
+  { path: 'extras', loadChildren: './Extras/extras.module#ExtrasModule' },
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },

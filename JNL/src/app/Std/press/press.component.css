@@ -37,7 +37,7 @@ h4 {
 #presse_list {
     margin: auto;
     font-family: Helvetica-Light;
-    width: 38vw;
+    width: 26vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -180,7 +180,7 @@ h4 {
     .four-flex > div > div > img {
         width: 30vw;
     }
-    
+
     .four-flex > div > div > span {
         width: auto;
         font-size: 2.5vw;

@@ -132,7 +132,7 @@ export class FavoritesComponent implements OnInit  {
   }
 
   goToProduct(product: ProductEF) {
-    this.router.navigate(['product', {b: product.brand, f: product.familyFr, m: product.model}]);
+    this.router.navigate(['product/product', {b: product.brand, f: product.familyFr, m: product.model}]);
     this.scrollTop();
   }
 

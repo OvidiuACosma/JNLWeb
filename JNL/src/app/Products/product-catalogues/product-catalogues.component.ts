@@ -17,7 +17,6 @@ export class ProductCataloguesComponent implements OnInit {
 
   toggleElement() {
     this.toggleCatalogues = !this.toggleCatalogues;
-    console.log(this.toggleCatalogues);
   }
 
 }

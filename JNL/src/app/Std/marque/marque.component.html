@@ -7,7 +7,7 @@
     <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
       </div>
   </div>
-  
+
   <div id="go-up">
   <div class="heritage" id="heritage">
     <div>
@@ -25,16 +25,16 @@
       <div id="produits_main">
           <h1>{{textG.productsTitle}}</h1>
           <div id='carousel-custom' class='carousel slide carousel-produits' data-ride='carousel' data-interval="4000">
-            
+
           <!-- Indicators -->
           <ol class='carousel-indicators'>
-              <li data-target='#carousel-custom'  *ngFor="let itemC of getIndicatorsText(); let x = index" 
+              <li data-target='#carousel-custom'  *ngFor="let itemC of getIndicatorsText(); let x = index"
                 [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'>
                 <span>{{itemC}}</span>
               </li>
           </ol>
             <div class="carousel-inner">
-                <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index" 
+                <div  class='carousel-item' *ngFor="let item of text.productImages; let k = index"
                   [ngClass]="k === 0 ? 'item active' : 'item'">
                   <div class="container">
                     <div class="carousel-item-image">
@@ -46,7 +46,7 @@
                   </div>
                 </div>
             </div>
-            
+
             <!-- Controls -->
             <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
                 <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
@@ -56,7 +56,7 @@
                 <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
                 <span class="sr-only">Next</span>
             </a>
-            
+
         </div>
       </div>
     </div>

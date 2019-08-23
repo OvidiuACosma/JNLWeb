@@ -7,7 +7,7 @@
     </div>
     <div id="side_nav_links" *ngIf="text">
         <div>
-            <span (click)="NavigateTo('products')">{{text.produits}}</span>
+            <span (click)="NavigateTo('product/productSearch')">{{text.produits}}</span>
             <!--<a (click)="NavigateTo('products')">{{text.chercher}}</a>
             <a (click)="NavigateTo('products')">{{text.telecharger}}</a>-->
         </div>
@@ -70,9 +70,9 @@
         </div>
 
         <div id="side_bottom_line">
-            <a (click)="NavigateTo('legal')">{{text.mentions}}</a>
-            <a (click)="NavigateTo('gdpr')">{{text.politique}}</a><br>
-            <a (click)="NavigateTo('credits')">{{text.credits}}</a>
+            <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>
+            <a (click)="NavigateTo('extras/gdpr')">{{text.politique}}</a><br>
+            <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>
         </div>
     </div>
     <!-- <div id="menu-image-div">

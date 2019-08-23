@@ -137,19 +137,18 @@ export class MarqueComponent implements OnInit {
 
   goAllProductsOfBrand(marque: string) {
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
-    this.router.navigate(['products', { b: brand }]);
+    this.router.navigate(['product/productSearch', { b: brand }]);
   }
 
   goProductsByCategoryOrFamily(marque: string, param: string) {
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
     param = this.stringCapitalAndNoFinalS(param);
-    console.log('Param without s: ', param);
     const categories = ['ASSISE', 'MEUBLE', 'LUMINAIRE', 'ACCESSOIRE', 'SEATING',
                         'FURNITURE', 'LIGHTING', 'ACCESSORY', 'TABLE'];
     if (categories.includes(param.toUpperCase())) {
-      this.router.navigate(['products', { b: brand, c: param }]);
+      this.router.navigate(['product/productSearch', { b: brand, c: param }]);
      } else {
-      this.router.navigate(['products', { b: brand, f: param }]);
+      this.router.navigate(['product/productSearch', { b: brand, f: param }]);
      }
   }
 

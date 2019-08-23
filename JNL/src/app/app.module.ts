@@ -10,6 +10,7 @@ import { SharedModule } from './app-shared.module';
 import { CoreModule } from './app-core.module';
 import { ExtrasModule } from './Extras/extras.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductsModule } from './Products/products.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule.forRoot(),
     CoreModule,
     BrowserAnimationsModule,
-    ExtrasModule
+    ExtrasModule,
+    ProductsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en-BE' },
