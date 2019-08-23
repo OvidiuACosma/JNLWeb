@@ -60,7 +60,7 @@ import { DialogAnswerComponent } from '../Std';
   ],
   providers: [
     ProductsService,
-    DataExchangeService,
+    // DataExchangeService,
     ConfigService,
     AlertService,
     AuthGuard,

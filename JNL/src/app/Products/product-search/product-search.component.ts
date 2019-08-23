@@ -66,6 +66,7 @@ export class ProductSearchComponent implements OnInit {
   ngOnInit() {
     this.dataex.currentLanguage
       .subscribe(lang => {
+        console.log('Lang:', lang);
       this.language = lang || 'EN';
       this.getText(lang);
 

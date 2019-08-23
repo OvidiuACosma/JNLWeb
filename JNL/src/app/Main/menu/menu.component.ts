@@ -53,6 +53,7 @@ export class MenuComponent implements OnInit {
   }
 
   NavigateTo(target: string, fragment: string = '') {
+    console.log('Language (menu):', this.language);
     if (fragment === '') {
       this.router.navigate([target]);
       this.ScrollTop();

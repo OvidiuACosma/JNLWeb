@@ -80,7 +80,6 @@ import { LoginComponent, RegisterComponent } from './Auth';
     DialogAnswerComponent
   ],
   providers: [
-    DataExchangeService,
     ConfigService,
     AlertService,
     AuthGuard,
