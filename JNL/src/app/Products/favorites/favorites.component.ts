@@ -48,7 +48,7 @@ export class FavoritesComponent implements OnInit  {
     // }
     this.dataex.currentUser
     .subscribe(user => {
-      console.log('Current User:', user);
+      console.log('Current User (Favorites):', user);
 
       this.favoritesService.getFavoritesOfRelation(user.userName)
       .subscribe(fav => {
