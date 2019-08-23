@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataExchangeService, ConfigService, AlertService, AuthenticationService,
-          ArchiveService, DownloaderService, TranslationService, ProductsService, PagerService,
+          ArchiveService, DownloaderService, TranslationService, PagerService,
           RequestsService, UserService } from './_services';
 import { AuthGuard } from './_guards';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -17,9 +17,6 @@ import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, Con
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
-import { ProductSearchComponent, ProductComponent, ProductDescriptionComponent, ProductMatFinComponent,
-          ProductDimensionsComponent, ProductCataloguesComponent, FavoritesComponent,
-          ProductGarnissagesComponent, ProductGarnissageDetailsComponent } from './Products';
 import { LoginComponent, RegisterComponent } from './Auth';
 
 

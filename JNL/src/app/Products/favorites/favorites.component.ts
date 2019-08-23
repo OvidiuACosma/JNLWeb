@@ -40,14 +40,16 @@ export class FavoritesComponent implements OnInit  {
       this.language = lang || 'EN';
       this.getText(lang);
     });
-    const numberAll = 15;
-    this.total = numberAll;
-    for (let index = 0; index < numberAll; index++) {
-      this.numbers.push(index);
-      this.removed[index] = 0;
-    }
+    // const numberAll = 15;
+    // this.total = numberAll;
+    // for (let index = 0; index < numberAll; index++) {
+    //   this.numbers.push(index);
+    //   this.removed[index] = 0;
+    // }
     this.dataex.currentUser
     .subscribe(user => {
+      console.log('Current User:', user);
+
       this.favoritesService.getFavoritesOfRelation(user.userName)
       .subscribe(fav => {
         this.favoritesList = fav;
