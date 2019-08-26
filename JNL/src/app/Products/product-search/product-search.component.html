@@ -1,7 +1,7 @@
 
 <div class="search-main">
   <h1>Product Finder</h1>
-  
+
   <div class="content" id="content">
     <!-- SEARCH -->
     <div class="search">
@@ -11,7 +11,7 @@
           <div class="header-filter">SEARCH</div>
           <div class="reset-filter" (click)="resetFilter()">reset</div>
         </span>
-        <input class="search-textbox" name="searchBox" type="text" 
+        <input class="search-textbox" name="searchBox" type="text"
           [(ngModel)]="searchText" (change)="searchByText()"><br>
       </div>
 
@@ -45,7 +45,7 @@
             <!-- <cdk-virtual-scroll-viewport itemSize="30" maxBufferPx="40000"> -->
               <div class="flex-div">
               <!-- <ng-container *cdkVirtualFor="let n of getProductsOfFamily(family)"> -->
-                <li *ngFor="let n of getProductsOfFamily(family)"> 
+                <li *ngFor="let n of getProductsOfFamily(family)">
                   <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
                   <div class="card-product">
                     <div class="pic-frame" (click)="goToProduct(n)">
@@ -56,7 +56,7 @@
 
                     <p class="product-name">
                       <span>
-                          <i class="far fa-heart heart" (click)="addToFavorites('product')"></i>
+                          <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
                       </span>
                       <span class="product-name-text" (click)="goToProduct(n)">
                         {{getProductName(n)}}
@@ -70,7 +70,7 @@
                   </div>
                 </li>
               <!-- </ng-container> -->
-              
+
               <!-- <li *ngFor="let m of [0]">  -->
                       <!-- , 1, 2 -->
                       <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->

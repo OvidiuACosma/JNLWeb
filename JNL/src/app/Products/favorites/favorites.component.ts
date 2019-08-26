@@ -48,8 +48,6 @@ export class FavoritesComponent implements OnInit  {
     // }
     this.dataex.currentUser
     .subscribe(user => {
-      console.log('Current User (Favorites):', user);
-
       this.favoritesService.getFavoritesOfRelation(user.userName)
       .subscribe(fav => {
         this.favoritesList = fav;
@@ -155,7 +153,11 @@ export class FavoritesComponent implements OnInit  {
   }
 
   remove(f: IFavoritesProducts) {
-    console.log('Remove from favorites:', f);
+    console.log('favProd:', f);
+    this.favoritesService.deleteFavoritesLG(f.id)
+    .subscribe(res => {
+      console.log(res.productBrand, res.productId, 'removed from favorites.');
+    });
   }
 
   scrollTop() {

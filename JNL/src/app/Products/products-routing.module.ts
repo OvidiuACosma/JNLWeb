@@ -10,11 +10,13 @@ import { ProductGarnissagesComponent } from './product-garnissages/product-garni
 import { ProductDimensionsComponent } from './product-dimensions/product-dimensions.component';
 import { ProductCataloguesComponent } from './product-catalogues/product-catalogues.component';
 import { ProductGarnissageDetailsComponent } from './product-garnissage-details/product-garnissage-details.component';
+import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-list.component';
 
 
 const routes: Routes = [
   { path: '', component: ProductSearchComponent },
   { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
+  { path: 'favoritesSelList', component: FavoritesSelListComponent, canActivate: [AuthGuard] },
   { path: 'product', component: ProductComponent },
   { path: 'products', component: ProductSearchComponent },
   { path: 'productSearch', component: ProductSearchComponent },

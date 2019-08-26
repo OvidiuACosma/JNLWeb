@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { Product, ProductEF } from '../../_models';
+import { Product, ProductEF, User } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
+import { Observable } from 'rxjs';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { FavoritesSelListComponent } from '../favorites-sel-list/favorites-sel-list.component';
+import { map } from 'rxjs/operators';
 
 interface IFilter {
   index: number;
@@ -42,6 +46,7 @@ export class ProductSearchComponent implements OnInit {
   public searchText = '';
   language: string;
   text: any;
+  user: User;
   filterBy: string[] = ['Brand', 'Type', 'Family'];
   brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors']);
   filterElements: IFilterElements[] = [];
@@ -55,7 +60,8 @@ export class ProductSearchComponent implements OnInit {
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private productService: ProductsService) {
+              private productService: ProductsService,
+              private dialog: MatDialog) {
     this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.ngOnInit();
@@ -66,7 +72,6 @@ export class ProductSearchComponent implements OnInit {
   ngOnInit() {
     this.dataex.currentLanguage
       .subscribe(lang => {
-        console.log('Lang:', lang);
       this.language = lang || 'EN';
       this.getText(lang);
 
@@ -515,10 +520,27 @@ export class ProductSearchComponent implements OnInit {
     this.scrollTop();
   }
 
-  addToFavorites(product: Product) {
-    // TODO: check the user - login if not yet
-    // post the product to user's favorites
-    window.alert(`Product added to favorites.`);
+  addToFavorites(product: ProductEF) {
+    this.dataex.currentUser.subscribe( user => {
+      this.user = user;
+      this.openDialog(product, user);
+    });
+  }
+
+  openDialog(product: ProductEF, user: User): Observable<boolean> {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '70vw';
+    dialogConfig.data = { product, user };
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(FavoritesSelListComponent, dialogConfig);
+
+    return dialogRef.afterClosed()
+    .pipe(
+      map(result => {
+      return result;
+    }));
   }
 
   scrollTop() {

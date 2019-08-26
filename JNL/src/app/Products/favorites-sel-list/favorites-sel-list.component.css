@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2vw;
+  font-weight: 300;
+}
+
+.fav-list {
+  cursor: pointer;
+}
+
+.c-green {
+  color: green;
+}
+
+.c-blue {
+  color: blue;
+}
+
+.a-center {
+  text-align: center;
+}

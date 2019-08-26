@@ -14,7 +14,6 @@ import { GDPRComponent } from './gdpr/gdpr.component';
     CommonModule,
     ExtrasRoutingModule,
     CoreModule,
-    SharedModule,
     FormsModule,
     ReactiveFormsModule
   ],

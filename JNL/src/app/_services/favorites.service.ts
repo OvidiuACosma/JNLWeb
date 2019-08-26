@@ -29,4 +29,22 @@ export class FavoritesService {
     public getFavoritesProducts(favListId: number): Observable<IFavoritesProducts[]> {
       return this.http.get<IFavoritesProducts[]>(`${this.apiUrl}/LG/${favListId}`, {headers: this.headers});
     }
+
+
+    public postFavoritesList(favList: IFavorites): Observable<IFavorites> {
+      return this.http.post<IFavorites>(`${this.apiUrl}`, favList, {headers: this.headers});
+    }
+
+    public postFavoritesLG(favProduct: IFavoritesProducts): Observable<IFavoritesProducts> {
+      return this.http.post<IFavoritesProducts>(`${this.apiUrl}/LG`, favProduct, {headers: this.headers});
+    }
+
+
+    public deleteFavoritesList(favListId: number): Observable<IFavorites> {
+      return this.http.delete<IFavorites>(`${this.apiUrl}/delete/${favListId}`, {headers: this.headers});
+    }
+
+    public deleteFavoritesLG(favId: number): Observable<IFavoritesProducts> {
+      return this.http.delete<IFavoritesProducts>(`${this.apiUrl}/LG/delete/${favId}`, {headers: this.headers});
+    }
 }

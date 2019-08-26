@@ -11,7 +11,6 @@ import { CoreModule } from './app-core.module';
 import { ExtrasModule } from './Extras/extras.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsModule } from './Products/products.module';
-import { DataExchangeModule } from './app-data-exchange.module';
 
 
 @NgModule({
@@ -23,7 +22,6 @@ import { DataExchangeModule } from './app-data-exchange.module';
     AppRoutingModule,
     HttpClientModule,
     SharedModule.forRoot(),
-    DataExchangeModule.forRoot(),
     CoreModule,
     BrowserAnimationsModule,
     ExtrasModule,

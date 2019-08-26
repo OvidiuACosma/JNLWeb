@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>
+  Add to Favorites
+</h1>
+
+<div mat-dialog-content>
+  <p>{{user.userName}}</p>
+  <p>{{product.brand}} {{product.familyEn}} {{product.model}}</p>
+</div>
+<div class="c-blue">select the list to add the product to:</div>
+<div *ngFor="let fav of favoritesList" (click)="selectFavList(fav)" class="fav-list">
+  {{fav.listName}}
+</div>
+<br>
+<div class="c-blue">or create a new list to add to:</div>
+<div>
+  <form (ngSubmit)="createNewFavList()" name="newListForm">
+    <input type="text" name="newList" placeholder="new list name" maxlength="100" [(ngModel)]="newFavList">&nbsp;
+    <button type="submit">create</button>
+  </form>
+</div>
+<br>
+<div class="c-green">{{addedToList}}</div>
+<br>
+<div mat-dialog-actions class="a-center">
+  <button mat-button (click)="close()">OK</button>
+</div>

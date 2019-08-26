@@ -19,6 +19,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthGuard } from '../_guards';
 import { DialogAnswerComponent } from '../Std';
+import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-list.component';
 
 
 @NgModule({
@@ -26,7 +27,6 @@ import { DialogAnswerComponent } from '../Std';
     CommonModule,
     ProductsRoutingModule,
     CoreModule,
-    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     OverlayModule,
@@ -42,7 +42,8 @@ import { DialogAnswerComponent } from '../Std';
     ProductDescriptionComponent,
     ProductCataloguesComponent,
     ProductComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    FavoritesSelListComponent
   ],
   exports: [
     ProductSearchComponent,
