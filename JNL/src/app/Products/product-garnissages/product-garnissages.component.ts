@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService, DataExchangeService } from 'src/app/_services';
 import { IGarnissage } from 'src/app/_models';
 import * as _ from 'lodash';
+import { Observable } from 'rxjs';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
+import { map } from 'rxjs/operators';
 
 interface IFilter {
   index: number;
@@ -45,8 +49,10 @@ export class ProductGarnissagesComponent implements OnInit {
   type: any;
   filterElements: IFilterElements[] = [];
 
+
   constructor(private productService: ProductsService,
-              private dataex: DataExchangeService) { }
+              private dataex: DataExchangeService,
+              private dialog: MatDialog) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -413,5 +419,22 @@ export class ProductGarnissagesComponent implements OnInit {
         filterList.push(f.displayName);
       }
     return filterList;
+  }
+
+  openDialog(garn: IProdGarnissage): Observable<boolean> {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '60vw';
+    dialogConfig.width = '80vh';
+    dialogConfig.data = garn;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
+
+    return dialogRef.afterClosed()
+    .pipe(
+      map(result => {
+      return result;
+    }));
   }
 }
