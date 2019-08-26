@@ -185,6 +185,7 @@ export class ProductMatFinComponent implements OnInit {
 
   sendItemToModal(mat: any) {
     this.material = mat;
+    console.log('GARN: ', this.material);
   }
 
   navigate(direction: string) {
