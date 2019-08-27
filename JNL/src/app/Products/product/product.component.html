@@ -82,8 +82,9 @@
       </div>
       <!-- PRODUCT MATERIALS AND FINISAGES -->
       <div class="tab-pane fade" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
-        <div class="prod-desc" *ngIf="category==='Assise'">
-          <app-product-mat-fin [product]="product"></app-product-mat-fin>
+        <div class="prod-desc">  <!-- *ngIf="category==='Assise'"> -->
+          <!-- <app-product-mat-fin [product]="product"></app-product-mat-fin> -->
+          <app-product-garnissages></app-product-garnissages>
         </div>
       </div>
       <!-- PRODUCT TECHNICAL DRAWINGS -->
