@@ -423,8 +423,9 @@ export class ProductGarnissagesComponent implements OnInit {
 
   openDialog(garn: IProdGarnissage): Observable<boolean> {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '60vw';
-    dialogConfig.width = '80vh';
+    dialogConfig.width = '40vw';
+    dialogConfig.maxWidth = '960px';
+    // dialogConfig.maxHeight = '825px';
     dialogConfig.data = garn;
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = false;
