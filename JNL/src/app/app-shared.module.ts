@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataExchangeService } from './_services';
+import { DataExchangeService, AuthenticationService } from './_services';
+import { AuthGuard } from './_guards';
 
 
 
@@ -15,7 +16,9 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
-        DataExchangeService
+        DataExchangeService,
+        AuthGuard,
+        AuthenticationService
       ]
     };
   }

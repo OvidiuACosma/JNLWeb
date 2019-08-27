@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User, IFavorites, IFavoritesProducts, ProductEF } from 'src/app/_models';
 import { FavoritesService } from 'src/app/_services';
+import { AuthGuard } from 'src/app/_guards';
 
 @Component({
   selector: 'app-favorites-sel-list',

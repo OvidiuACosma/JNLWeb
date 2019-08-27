@@ -1,7 +1,7 @@
-<div class="fav-main">
+<div class="fav-main" *ngIf="currentFavoriteList">
   <h1>{{text.title}}</h1>
   <h3>{{currentFavoriteList.listName}}</h3>
-  <div class="content">
+  <div class="content" *ngIf="favoritesList">
     <div class="fav-list">
       <div class="filters">
         <ul>
@@ -13,6 +13,7 @@
     </div>
 
     <div class="products">
+      <!--  -->
       <!-- <div id="remove-download">
         <div (click)="removeAllItems()">
           <img alt="JNL Collection" src="/assets/Images/Common/remove_all_fav_icon.png" height="16px">
@@ -26,27 +27,29 @@
             <h3>&nbsp;&nbsp;{{text.download}}</h3>
           </div>
       </div> -->
-      <div [ngClass]="(this.removeAll===true) ? 'remove-item' :'products-container'">
+      <!--  -->
+
+      <div class="products-container">
         <ul class="list">
           <div class="flex-div" *ngIf="favoritesProductsDetails">
             <li *ngFor="let f of favoritesProducts">
               <div class="card-product">
-                <div class="pic-frame" (click)="goToProduct(findProductDetails(f.productId))">
+                <div class="pic-frame" (click)="goToProduct(f)">
                   <figure class="center-product">
-                    <img class="search-img" [src]="getProductImage(f.productId)" alt="getAltText(f.productId)">
+                    <img class="search-img" [src]="getProductImage(f)" alt="getAltText(f)">
                   </figure>
                 </div>
                 <p class="product-name">
                     <span>
-                      <img src="/assets/Images/Common/remove_all_fav_icon.png" height="14px" (click)="remove(f)">
-                      <!-- <i class="far fa-heart heart" (click)="remove(f)"></i> -->
+                      <img src="/assets/Images/Common/remove_all_fav_icon.png" height="14px"
+                        (click)="remove(f)">
                     </span>
-                    <span class="product-name-text" (click)="goToProduct(findProductDetails(f.productId))">
-                      {{getProductName(findProductDetails(f.productId))}}
+                    <span class="product-name-text" (click)="goToProduct(f)">
+                      {{getProductName(f)}}
                     </span>
                   </p>
                   <p class="product-name">
-                    <span class="product-brand-text" (click)="goToProduct(findProductDetails(f.productId))">
+                    <span class="product-brand-text" (click)="goToProduct(f)">
                       {{f.productBrand}}
                     </span>
                   </p>
@@ -58,8 +61,8 @@
     </div>
   </div>
 
-    <div class="fav_div">
-      <h2>{{text.infoTitle}}</h2>
-      <app-request-form [requestType]='5'></app-request-form>
-    </div>
+  <div class="fav_div">
+    <h2>{{text.infoTitle}}</h2>
+    <app-request-form [requestType]='5'></app-request-form>
+  </div>
 </div>

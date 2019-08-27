@@ -1,38 +1,10 @@
-<!-- <div class="container">
-  <div class="card card-login">
-      <h2>Login</h2>
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" formControlName="username" class="form-control textbox" 
-                      [ngClass]="{ 'is-invalid': submitted && f.username.errors }" 
-                      autocomplete="on"/>
-                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                      <div *ngIf="f.username.errors.required">Username is required</div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" formControlName="password" class="form-control textbox" 
-                      [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                      <div *ngIf="f.password.errors.required">Password is required</div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <button [disabled]="loading" class="btn btn-primary">Login</button>
-              </div>
-          </form>
-  </div>
-</div> -->
-
 <h2 mat-dialog-title>Login</h2>
 <div mat-dialog-content>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" formControlName="username" class="form-control textbox" 
-                [ngClass]="{ 'is-invalid': submitted && f.username.errors }" 
+            <input type="text" formControlName="username" class="form-control textbox"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
                 autocomplete="on"/>
             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">Username is required</div>
@@ -40,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" formControlName="password" class="form-control textbox" 
+            <input type="password" formControlName="password" class="form-control textbox"
                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>

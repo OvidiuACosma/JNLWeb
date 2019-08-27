@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataExchangeService, ConfigService, AlertService, AuthenticationService,
+import { ConfigService, AlertService,
           ArchiveService, DownloaderService, TranslationService, PagerService,
           RequestsService, UserService } from './_services';
-import { AuthGuard } from './_guards';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -82,8 +81,7 @@ import { LoginComponent, RegisterComponent } from './Auth';
   providers: [
     ConfigService,
     AlertService,
-    AuthGuard,
-    AuthenticationService,
+
     ArchiveService,
     DownloaderService,
     TranslationService,

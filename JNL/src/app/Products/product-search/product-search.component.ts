@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { FavoritesSelListComponent } from '../favorites-sel-list/favorites-sel-list.component';
 import { map } from 'rxjs/operators';
+import { AuthGuard } from 'src/app/_guards';
 
 interface IFilter {
   index: number;
@@ -61,7 +62,8 @@ export class ProductSearchComponent implements OnInit {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private productService: ProductsService,
-              private dialog: MatDialog) {
+              private dialog: MatDialog,
+              private authGuard: AuthGuard) {
     this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.ngOnInit();
@@ -523,7 +525,12 @@ export class ProductSearchComponent implements OnInit {
   addToFavorites(product: ProductEF) {
     this.dataex.currentUser.subscribe( user => {
       this.user = user;
-      this.openDialog(product, user);
+      // TODO: check the login, as the dialog loads a component not using router
+      if (this.authGuard.isLoggedIn()) {
+        this.openDialog(product, user);
+      } else {
+        console.log('Not logged in. Can\'t add to favorites');
+      }
     });
   }
 

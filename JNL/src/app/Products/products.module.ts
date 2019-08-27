@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { CoreModule } from '../app-core.module';
-import { SharedModule } from '../app-shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { ProductMatFinComponent } from './product-mat-fin/product-mat-fin.component';
@@ -13,11 +12,10 @@ import { ProductDescriptionComponent } from './product-description/product-descr
 import { ProductCataloguesComponent } from './product-catalogues/product-catalogues.component';
 import { ProductComponent } from './product/product.component';
 import { FavoritesComponent } from './favorites/favorites.component';
-import { ProductsService, DataExchangeService, ConfigService, AlertService, TranslationService } from '../_services';
+import { ProductsService, ConfigService, AlertService, TranslationService } from '../_services';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
-import { AuthGuard } from '../_guards';
 import { DialogAnswerComponent } from '../Std';
 import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-list.component';
 
@@ -54,17 +52,16 @@ import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-li
     ProductDescriptionComponent,
     ProductCataloguesComponent,
     ProductComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    FavoritesSelListComponent
   ],
   entryComponents: [
     DialogAnswerComponent
   ],
   providers: [
     ProductsService,
-    // DataExchangeService,
     ConfigService,
     AlertService,
-    AuthGuard,
     TranslationService
   ]
 })
