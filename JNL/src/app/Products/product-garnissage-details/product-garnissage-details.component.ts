@@ -29,5 +29,6 @@ export class ProductGarnissageDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  navigate(direction: string) {}
 
 }
