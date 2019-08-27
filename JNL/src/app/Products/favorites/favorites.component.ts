@@ -153,7 +153,6 @@ export class FavoritesComponent implements OnInit  {
   }
 
   remove(f: IFavoritesProducts) {
-    console.log('favProd:', f);
     this.favoritesService.deleteFavoritesLG(f.id)
     .subscribe(res => {
       console.log(res.productBrand, res.productId, 'removed from favorites.');
