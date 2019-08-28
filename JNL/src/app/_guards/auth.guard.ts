@@ -2,26 +2,25 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../Auth';
-import { map, first } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { DataExchangeService } from '../_services';
-import { User } from '../_models';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+
+  returnUrl = '';
 
   constructor(public dialog: MatDialog,
               private dataex: DataExchangeService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    this.returnUrl = state.url;
     return this.isLoggedIn();
   }
 
-  isLoggedIn() {
+  public isLoggedIn() {
     if (localStorage.getItem('currentUser')) {
-      // this.dataex.currentUser.subscribe( user => {
-      //   if (!user.id) { this.SetCurrentUser(); }
-      // });
       // logged in so return true
       return true;
     }
@@ -31,16 +30,10 @@ export class AuthGuard implements CanActivate {
     });
   }
 
-  SetCurrentUser() {
-    const user: User = JSON.parse(localStorage.getItem('currentUser'));
-    this.dataex.setCurrentUser(user);
-  }
-
-
   openDialog(): Observable<boolean> {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '30vw';
-    // dialogConfig.data = message;
+    dialogConfig.data = this.returnUrl;
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

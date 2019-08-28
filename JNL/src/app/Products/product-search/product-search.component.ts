@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { Product, ProductEF, User } from '../../_models';
+import { ProductEF, User } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
 import { Observable } from 'rxjs';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { FavoritesSelListComponent } from '../favorites-sel-list/favorites-sel-list.component';
 import { map } from 'rxjs/operators';
-import { AuthGuard } from 'src/app/_guards';
+import { LoginComponent } from 'src/app/Auth';
 
 interface IFilter {
   index: number;
@@ -62,8 +62,7 @@ export class ProductSearchComponent implements OnInit {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private productService: ProductsService,
-              private dialog: MatDialog,
-              private authGuard: AuthGuard) {
+              private dialog: MatDialog) {
     this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.ngOnInit();
@@ -103,6 +102,7 @@ export class ProductSearchComponent implements OnInit {
     for (let index = 0; index < numberAll; index++) {
       this.numbers.push(index);
     }
+    this.getUser();
   }
 
   getText(lang: string) {
@@ -115,6 +115,12 @@ export class ProductSearchComponent implements OnInit {
 
   getLanguageText(res: any) {
     this.text = res[this.language.toUpperCase()];
+  }
+
+  getUser() {
+    this.dataex.currentUser.subscribe( user => {
+      this.user = user;
+    });
   }
 
   getCategories(brand: string[] = ['all']) {
@@ -523,16 +529,35 @@ export class ProductSearchComponent implements OnInit {
   }
 
   addToFavorites(product: ProductEF) {
-    this.dataex.currentUser.subscribe( user => {
-      this.user = user;
       // TODO: check the login, as the dialog loads a component not using router
-      if (this.authGuard.isLoggedIn()) {
-        this.openDialog(product, user);
+      if (this.productService.isLoggedIn()) {
+        this.openDialog(product, this.user);
       } else {
-        console.log('Not logged in. Can\'t add to favorites');
+        this.productService.openLoginDialog().subscribe( answer => {
+          if (answer) {
+            this.openDialog(product, this.user);
+          } else {
+            console.log('Not logged in. Can\'t add to favorites');
+          }
+        });
       }
-    });
   }
+
+  // openLoginDialog(): Observable<boolean> {
+  //   const dialogConfig = new MatDialogConfig();
+  //   dialogConfig.width = '30vw';
+  //   dialogConfig.data = '';
+  //   dialogConfig.hasBackdrop = true;
+  //   dialogConfig.disableClose = true;
+  //   dialogConfig.autoFocus = true;
+  //   const dialogRef = this.dialog.open(LoginComponent, dialogConfig);
+
+  //   return dialogRef.afterClosed()
+  //   .pipe(
+  //     map(result => {
+  //     return result;
+  //   }));
+  // }
 
   openDialog(product: ProductEF, user: User): Observable<boolean> {
     const dialogConfig = new MatDialogConfig();

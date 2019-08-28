@@ -8,6 +8,10 @@ import { AuthGuard } from './_guards';
 @NgModule({
   imports: [
     CommonModule
+  ],
+  providers: [
+    AuthGuard,
+    AuthenticationService
   ]
 })
 
@@ -16,9 +20,7 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
-        DataExchangeService,
-        AuthGuard,
-        AuthenticationService
+        DataExchangeService
       ]
     };
   }

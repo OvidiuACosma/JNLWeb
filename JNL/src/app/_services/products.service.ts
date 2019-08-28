@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
 import { Product, ProductEF, ProductHeroImage, IGarnissage } from '../_models';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { LoginComponent } from '../Auth/login/login.component';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +20,8 @@ export class ProductsService {
   private prodHeroImages = '';
 
   constructor(private http: HttpClient,
-              private configService: ConfigService) {
+              private configService: ConfigService,
+              private dialog: MatDialog) {
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
     this.product = configService.getApiURI() + '/products';
     this.prodDescURL = configService.getApiURI() + '/productsdescriptions';
@@ -75,5 +79,29 @@ export class ProductsService {
 
   public getProdTechDetImages(): Observable<any[]> {
     return this.http.get<any[]>(`${this.urlAssets}/Products/techDetImages.json`, {headers: this.headers});
+  }
+
+
+  public isLoggedIn(): boolean {
+    if (localStorage.getItem('currentUser')) {
+      return true;
+    }
+    return false;
+  }
+
+  openLoginDialog(): Observable<boolean> {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '30vw';
+    dialogConfig.data = '';
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(LoginComponent, dialogConfig);
+
+    return dialogRef.afterClosed()
+    .pipe(
+      map(result => {
+      return result;
+    }));
   }
 }

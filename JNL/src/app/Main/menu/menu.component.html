@@ -53,6 +53,11 @@
         <div>
             <span (click)="NavigateTo('contact')">{{text.contact}}</span>
         </div>
+
+        <div *ngIf="isLoggedIn()">
+          <span (click)="signOut()">Sign Out</span>
+        </div>
+
         <div>
             <a href="https://www.instagram.com/jnl_design/" target="_blank" rel="noreferrer">
                 <img alt="JNL Collection Instagram"

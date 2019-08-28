@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService, AuthenticationService } from 'src/app/_services';
 import { Browser } from '../../_models';
 
 @Component({
@@ -16,7 +16,8 @@ export class MenuComponent implements OnInit {
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
     this.dataex.currentNavBarStatus
@@ -50,6 +51,18 @@ export class MenuComponent implements OnInit {
   goProducts() {
     this.router.navigate(['/products']);
     this.toggleMenuBar();
+  }
+
+  isLoggedIn(): boolean {
+      if (localStorage.getItem('currentUser')) {
+        return true;
+      }
+      return false;
+    }
+
+  signOut() {
+    this.NavigateTo('home');
+    this.authenticationService.logout();
   }
 
   NavigateTo(target: string, fragment: string = '') {

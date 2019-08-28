@@ -33,7 +33,6 @@ import { LoginComponent, RegisterComponent } from './Auth';
     ServicesComponent,
     SavoirFaireComponent,
     MarquesComponent,
-    LoginComponent,
     RegisterComponent,
     SearchResultsComponent,
     MarqueComponent,
@@ -42,6 +41,7 @@ import { LoginComponent, RegisterComponent } from './Auth';
     LeftStripComponent,
     RequestFormComponent,
     DialogAnswerComponent,
+    LoginComponent
   ],
   exports: [
     HomeComponent,
@@ -55,7 +55,6 @@ import { LoginComponent, RegisterComponent } from './Auth';
     ServicesComponent,
     SavoirFaireComponent,
     MarquesComponent,
-    LoginComponent,
     RegisterComponent,
     SearchResultsComponent,
     MarqueComponent,
@@ -64,6 +63,7 @@ import { LoginComponent, RegisterComponent } from './Auth';
     LeftStripComponent,
     RequestFormComponent,
     DialogAnswerComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -76,7 +76,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
     MatDialogModule
   ],
   entryComponents: [
-    DialogAnswerComponent
+    DialogAnswerComponent,
+    LoginComponent
   ],
   providers: [
     ConfigService,

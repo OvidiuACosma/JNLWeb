@@ -18,6 +18,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogAnswerComponent } from '../Std';
 import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-list.component';
+import { LoginComponent } from '../Auth';
+import { AuthGuard } from '../_guards';
 
 
 @NgModule({
@@ -56,7 +58,8 @@ import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-li
     FavoritesSelListComponent
   ],
   entryComponents: [
-    DialogAnswerComponent
+    DialogAnswerComponent,
+    FavoritesSelListComponent
   ],
   providers: [
     ProductsService,

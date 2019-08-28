@@ -26,7 +26,7 @@ const routes: Routes = [
 
   { path: 'extras', loadChildren: './Extras/extras.module#ExtrasModule' },
 
-  { path: 'login', component: LoginComponent },
+  // { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
 
   { path: '**', component: PageNotFoundComponent }
