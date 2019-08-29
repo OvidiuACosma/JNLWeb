@@ -7,7 +7,7 @@
     </div> -->
 
     <div>
-      <img alt="JNL Collection" src={{text.pic1}} class="ac-img">
+      <img *ngIf="text.pic1!==''" alt="JNL Collection" src={{text.pic1}} class="ac-img">
       <p class="parag" [innerHTML] = "text.articleText1"></p>
       <img alt="JNL Collection" src={{text.pic2}} class="ac-img2">
       <p class="parag" [innerHTML] = "text.articleText2"></p>
