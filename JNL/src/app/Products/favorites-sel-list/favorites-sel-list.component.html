@@ -3,24 +3,43 @@
 </h1>
 
 <div mat-dialog-content>
-  <p>{{user.userName}}</p>
+  <!-- <p>{{user.userName}}</p> -->
+  <br>
+  <br>
   <p>{{product.brand}} {{product.familyEn}} {{product.model}}</p>
 </div>
-<div class="c-blue">select the list to add the product to:</div>
-<div *ngFor="let fav of favoritesList" (click)="selectFavList(fav)" class="fav-list">
-  {{fav.listName}}
-</div>
+<form (ngSubmit)="createNewFavList()" name="newListForm">
+<table>
+  <thead>
+    <tr>
+      <td>Your Favorites Lists</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fav of favoritesList">
+      <td class="fav-list" style="width: 40%" (click)="selectFavList(fav)">{{fav.listName}}</td>
+      <td style="width: 20%" class="link" (click)="editFavList(fav)">edit list name</td>
+      <td style="width: 20%" class="link" (click)="selectFavList(fav)">add to this list</td>
+      <td style="width: 10%" class="link" (click)="viewFavList(fav)">view</td>
+      <td style="width: 10%" class="link-red" (click)="deleteFavList(fav)">delete list</td>
+    </tr>
+    <tr>
+      <td style="width: 40%">
+          <input type="text" name="newList" placeholder="new list name" maxlength="100" [(ngModel)]="newFavList">
+      </td>
+      <td style="width: 20%" class="link" (click)="simulateSubmit()">
+        create
+        <button type="submit" id="submitButton" style="display: none">Submit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
 <br>
-<div class="c-blue">or create a new list to add to:</div>
-<div>
-  <form (ngSubmit)="createNewFavList()" name="newListForm">
-    <input type="text" name="newList" placeholder="new list name" maxlength="100" [(ngModel)]="newFavList">&nbsp;
-    <button type="submit">create</button>
-  </form>
-</div>
 <br>
 <div class="c-green">{{addedToList}}</div>
 <br>
+
 <div mat-dialog-actions class="a-center">
   <button mat-button (click)="close()">OK</button>
 </div>

@@ -59,6 +59,22 @@ export class FavoritesSelListComponent implements OnInit {
     });
   }
 
+  editFavList(fav: IFavorites) {
+    console.log('edit list name:', fav.listName);
+  }
+
+  viewFavList(fav: IFavorites) {
+    console.log('view list name:', fav.listName);
+  }
+
+  deleteFavList(fav: IFavorites) {
+    console.log('delete list name:', fav.listName);
+  }
+
+  simulateSubmit() {
+    document.getElementById('submitButton').click();
+  }
+
   close(): void {
     this.dialogRef.close();
   }
