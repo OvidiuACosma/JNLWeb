@@ -48,25 +48,27 @@
                 <li *ngFor="let n of getProductsOfFamily(family)">
                   <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
                   <div class="card-product">
-                    <div class="pic-frame" (click)="goToProduct(n)">
+                    <div class="pic-frame" style="position: relative" (click)="goToProduct(n)">
                       <figure class="center-product">
                         <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
                       </figure>
                     </div>
 
-                    <p class="product-name">
-                      <span>
-                          <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
-                      </span>
-                      <span class="product-name-text" (click)="goToProduct(n)">
-                        {{getProductName(n)}}
-                      </span>
-                    </p>
-                    <p class="product-name">
-                      <span class="product-brand-text" (click)="goToProduct(n)">
-                        {{n.brand}}
-                      </span>
-                    </p>
+                    <div style="position: relative">
+                      <p class="product-name">
+                        <span>
+                            <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
+                        </span>
+                        <span class="product-name-text" (click)="goToProduct(n)">
+                          {{getProductName(n)}}
+                        </span>
+                      </p>
+                      <p class="product-name">
+                        <span class="product-brand-text" (click)="goToProduct(n)">
+                          {{n.brand}}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </li>
               <!-- </ng-container> -->

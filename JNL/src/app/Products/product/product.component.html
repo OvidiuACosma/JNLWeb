@@ -25,9 +25,9 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <br>
+  <br>
 
-  <br>
-  <br>
   <div>
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
       *ngIf="galleryThumbs.length>1">
@@ -44,9 +44,9 @@
   </div>
 
   <div id="fav-download">
-    <div>
-      <img alt="JNL Collection" src="/assets/Images/Common/add_fav_icon.png" height="16px">
-      <h3 *ngIf="stdText">&nbsp;&nbsp;{{stdText.addToFavorites}}</h3>
+    <div (click)="addToFavorites(prodDesc)">
+      <img class="fav-link" alt="JNL Collection" src="/assets/Images/Common/add_fav_icon.png" height="16px">
+      <h3 class="fav-link" *ngIf="stdText">&nbsp;&nbsp;{{stdText.addToFavorites}}</h3>
     </div>
 
     <h3>&nbsp;&nbsp;&#8213;&nbsp;&nbsp;</h3>
