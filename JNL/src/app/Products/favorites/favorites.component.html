@@ -5,7 +5,8 @@
     <div class="fav-list">
       <div class="filters">
         <ul>
-          <li *ngFor="let favItem of favoritesList; let i=index" (click)="setFavoriteList(favItem.id)">
+          <li *ngFor="let favItem of favoritesList; let i=index" class="single-filters"
+            (click)="setFavoriteList(favItem.id)">
             {{favItem.listName}}
           </li>
         </ul>
@@ -33,13 +34,14 @@
         <ul class="list">
           <div class="flex-div" *ngIf="favoritesProductsDetails">
             <li *ngFor="let f of favoritesProducts">
-              <div class="card-product">
+              <div class="card-product" style="position: relative">
                 <div class="pic-frame" (click)="goToProduct(f)">
                   <figure class="center-product">
                     <img class="search-img" [src]="getProductImage(f)" alt="getAltText(f)">
                   </figure>
                 </div>
-                <p class="product-name">
+                <div style="position: relative">
+                  <p class="product-name">
                     <span>
                       <img src="/assets/Images/Common/remove_all_fav_icon.png" height="14px"
                         (click)="remove(f)">
@@ -53,6 +55,7 @@
                       {{f.productBrand}}
                     </span>
                   </p>
+                </div>
               </div>
             </li>
           </div>

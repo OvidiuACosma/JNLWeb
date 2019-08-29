@@ -44,9 +44,9 @@ i {
 }
 
 input, select {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none; 
+    appearance: none;
     outline: none;
     width: auto;
     background-color: transparent;
@@ -68,9 +68,9 @@ button {
 }
 
 li, ul {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;   
+    appearance: none;
     list-style-type: none;
     padding: 0px !important;
     /* line-height: 1.8vw; */
@@ -126,11 +126,11 @@ cdk-virtual-scroll-viewport {
     color: black;
     opacity: 1; /* Firefox */
 }
-  
+
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: black;
 }
-  
+
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: black;
 }
@@ -266,7 +266,7 @@ li > div {
 }
 
 .arrow {
-    width: 1.7vw; 
+    width: 1.7vw;
     height: auto;
     float: right;
     text-align: right;
@@ -325,7 +325,7 @@ li > div {
 
 .pic-frame {
     width: 21vw; /* 20vw; */
-    height: 20vw;  
+    height: 20vw;
     background-color: white;
     border: 0.88px solid transparent;
 }
@@ -334,7 +334,7 @@ li > div {
     max-width: 19.45vw;
     text-align: center;
     margin-bottom: 0;
-    height: 1.5vw;;
+    min-height: 1.5vw;
 }
 
 .product-name > span > i {
@@ -511,7 +511,7 @@ li > div {
         width: 80vw;
         justify-content: space-between;
     }
-    
+
     .sur-flex > div:last-child {
         flex-direction: column-reverse;
     }
@@ -523,29 +523,29 @@ li > div {
     h2 {
         font-size: 5.6vw;
     }
-    
+
     h4 {
         font-size: 4.2vw;
     }
-    
+
     .sur-flex > div > div {
         font-size: 4.5vw;
-    } 
+    }
     .sur-flex > div > div > span {
         font-size: 4.4vw;
-    
-    } 
-    
+
+    }
+
     .sur-flex > div:nth-child(2) > div:first-child {
-        font-size: 4.5vw; 
-    } 
+        font-size: 4.5vw;
+    }
     .fav_div
     {
         font-size: 4.5vw;
-        
+
     }
-    
-   
+
+
     .fav_div > div > p {
         font-size: 4.5vw;
     }

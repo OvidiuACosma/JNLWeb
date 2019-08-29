@@ -4,11 +4,7 @@ import { DataExchangeService, TranslationService, ProductsService } from '../../
 import { ProductEF, User } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
-import { Observable } from 'rxjs';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { FavoritesSelListComponent } from '../favorites-sel-list/favorites-sel-list.component';
-import { map } from 'rxjs/operators';
-import { LoginComponent } from 'src/app/Auth';
+import { MatDialog } from '@angular/material/dialog';
 
 interface IFilter {
   index: number;
@@ -475,7 +471,6 @@ export class ProductSearchComponent implements OnInit {
   getFamiliesGroup(): any {
     switch (this.language.toLowerCase()) {
       case 'fr': {
-        // this.productsFiltered
         return new Set(this.productsFiltered.map(f => f.familyFr));
       }
       case 'en': {
@@ -529,50 +524,17 @@ export class ProductSearchComponent implements OnInit {
   }
 
   addToFavorites(product: ProductEF) {
-      // TODO: check the login, as the dialog loads a component not using router
       if (this.productService.isLoggedIn()) {
-        this.openDialog(product, this.user);
+        this.productService.openDialog(product, this.user);
       } else {
-        this.productService.openLoginDialog().subscribe( answer => {
+        this.productService.openLoginDialog().subscribe(answer => {
           if (answer) {
-            this.openDialog(product, this.user);
+            this.productService.openDialog(product, this.user);
           } else {
             console.log('Not logged in. Can\'t add to favorites');
           }
         });
       }
-  }
-
-  // openLoginDialog(): Observable<boolean> {
-  //   const dialogConfig = new MatDialogConfig();
-  //   dialogConfig.width = '30vw';
-  //   dialogConfig.data = '';
-  //   dialogConfig.hasBackdrop = true;
-  //   dialogConfig.disableClose = true;
-  //   dialogConfig.autoFocus = true;
-  //   const dialogRef = this.dialog.open(LoginComponent, dialogConfig);
-
-  //   return dialogRef.afterClosed()
-  //   .pipe(
-  //     map(result => {
-  //     return result;
-  //   }));
-  // }
-
-  openDialog(product: ProductEF, user: User): Observable<boolean> {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '70vw';
-    dialogConfig.data = { product, user };
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(FavoritesSelListComponent, dialogConfig);
-
-    return dialogRef.afterClosed()
-    .pipe(
-      map(result => {
-      return result;
-    }));
   }
 
   scrollTop() {

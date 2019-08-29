@@ -154,6 +154,18 @@ cdk-virtual-scroll-viewport {
     transition: all .3s ease;
 }
 
+.single-filter {
+  margin-bottom: 0px;
+  font-family: Helvetica-Light;
+  font-size: 1.3vw;
+  line-height: 1.5vw;
+}
+
+.single-filter > span > i {
+  line-height: 1.4vw;
+  font-size: 1vw;
+}
+
 .remove-item {
     display: none;
 }
@@ -257,6 +269,12 @@ li {
     margin-bottom: 5vh;
 }
 
+li > div {
+  font-family: Helvetica-Light;
+  font-size: 1.2vw;
+  text-align: left;
+}
+
 .flex-div {
     display: flex;
     flex-direction: row;
@@ -348,7 +366,7 @@ li {
   max-width: 19.45vw;
   text-align: center;
   margin-bottom: 0;
-  height: 1.5vw;;
+  min-height: 1.5vw;;
 }
 
 .product-name > span > i {
@@ -368,7 +386,7 @@ li {
 }
 
 .product-name > span > img:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .product-name-text {

@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
-import { Product, ProductEF, ProductHeroImage, IGarnissage } from '../_models';
+import { Product, ProductEF, ProductHeroImage, IGarnissage, User } from '../_models';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../Auth/login/login.component';
 import { map } from 'rxjs/operators';
+import { FavoritesSelListComponent } from '../Products/favorites-sel-list/favorites-sel-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -60,8 +61,8 @@ export class ProductsService {
     return this.http.get<any[]>(`${this.product}/materials`, {headers: this.headers});
   }
 
-  public getProduct(product: Product): Observable<ProductEF[]> {
-    return this.http.get<ProductEF[]>(`${this.product}/${product.brand}/${product.family}/${product.model}`, {headers: this.headers});
+  public getProduct(product: Product): Observable<ProductEF> {
+    return this.http.get<ProductEF>(`${this.product}/${product.brand}/${product.family}/${product.model}`, {headers: this.headers});
   }
 
   public getProductDesc(product: Product): Observable<any[]> {
@@ -97,6 +98,22 @@ export class ProductsService {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     const dialogRef = this.dialog.open(LoginComponent, dialogConfig);
+
+    return dialogRef.afterClosed()
+    .pipe(
+      map(result => {
+      return result;
+    }));
+  }
+
+  openDialog(product: ProductEF, user: User): Observable<boolean> {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '70vw';
+    dialogConfig.data = { product, user };
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(FavoritesSelListComponent, dialogConfig);
 
     return dialogRef.afterClosed()
     .pipe(

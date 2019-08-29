@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
-import { Product, Img, ProductHeroImage } from '../../_models';
+import { Product, Img, ProductHeroImage, ProductEF, User } from '../../_models';
 import * as _ from 'lodash';
 declare var $: any;
 
@@ -13,7 +13,7 @@ declare var $: any;
 export class ProductComponent implements OnInit {
 
   public detail = 'description';
-  public prodDesc: any;
+  public prodDesc: ProductEF;
   public brand = '';
   public family = '';
   public model = '';
@@ -36,6 +36,7 @@ export class ProductComponent implements OnInit {
   selected = [0, 0, 0, 0, 0];
   country: any;
   countryName: any;
+  user: User;
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -57,14 +58,14 @@ export class ProductComponent implements OnInit {
             this.getProductData(this.product);
           });
       });
-
+    this.getUser();
     $(document).ready(function () {
       $('#carousel-custom').carousel();
     });
   }
 
   getProductData(product: Product) {
-    this.productsService.getProduct(this.product)
+    this.productsService.getProduct(product)
       .subscribe(desc => {
         this.prodDesc = desc;
         this.brand = this.prodDesc.brand;
@@ -113,6 +114,11 @@ export class ProductComponent implements OnInit {
       });
   }
 
+  getUser() {
+    this.dataex.currentUser.subscribe( user => {
+      this.user = user;
+    });
+  }
   switchImageList(idx: number) {
     // if (this.newHeroImages.length === 0) {
     //   this.heroImages.length = 0;
@@ -183,6 +189,20 @@ export class ProductComponent implements OnInit {
   getCountryList(source: any) {
     this.countryName = source[this.language.toUpperCase()]['countries'];
   }
+
+  addToFavorites(product: ProductEF) {
+    if (this.productsService.isLoggedIn()) {
+      this.productsService.openDialog(product, this.user);
+    } else {
+      this.productsService.openLoginDialog().subscribe(answer => {
+        if (answer) {
+          this.productsService.openDialog(product, this.user);
+        } else {
+          console.log('Not logged in. Can\'t add to favorites');
+        }
+      });
+    }
+}
 
   NavigateTo(target: string, fragment: string = '') {
     if (fragment === '') {
