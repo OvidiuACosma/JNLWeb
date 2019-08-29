@@ -2,14 +2,14 @@
     {
         "EN": {
             "1": {
-                "articleTitle": "JNL Collection",
-                "articleSubtitle": "Subtitle 1",
+                "articleTitle": "",
+                "articleSubtitle": "",
                
                 "articleText1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
                 "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
 
-                "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+                "pic1":  "",
+                "pic2":  "",
 
                 "back": "Back"
             },
@@ -40,14 +40,14 @@
         },
         "FR": {
             "1": {
-                "articleTitle": "JNL Collection",
-                "articleSubtitle": "Subtitle 1",
+                "articleTitle": "",
+                "articleSubtitle": "",
             
-                "articleText1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
-                "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
+                "articleText1": "<br><br>C’est à l’occasion du prochain salon Maison & Objet de septembre 2019, que le groupe JNL proposera en exclusivité une nouvelle gamme de canapés, sièges et compléments plus spécialement destinée à une clientèle « nomade » en recherche d’un produit modulable, de qualité et respectueux de l’environnement.<br><br>L’accent est porté sur « le pratique au quotidien » mais aussi sur une grande flexibilité au niveau de l’offre.<br><br>Pour ce faire JNL a misé sur un produit adaptable à tous les intérieurs tant au niveau des volumes qu’au niveau du choix des revêtements, en proposant des canapés et sièges déhoussables, de même que des éléments de rangements évolutifs.<br><br>Pour répondre à une demande croissante, reflet de notre époque où la mobilité est une des clefs du d’un nouveau style de vie, il sera désormais possible de louer ce mobilier pour une période allant d’un mois à plusieurs années.<br><br>Qu’il s’agisse de quelques éléments ou d’ambiances complètes adaptées à vos lieux de vie et de travail, JNL vous offrira un service personnalisé en accord avec vos besoins, mettant à votre disposition un savoir-faire inégalé mais néanmoins abordable.<br><br>Inventivité, créativité, flexibilité telles sont les directions données à cette gamme de mobilier que l’on peut qualifier de « prêt à utiliser », en référence à la déclinaison « prêt à porter » d’une maison haute couture comme l’est actuellement le label JNL dans l’univers de la décoration d’intérieur.<br><br><br>Du 7 au 11 septembre 2019<br><br>Hall 6 – TODAY<br><br>STAND H16 / I 15",
+                "articleText2": "",
 
-                "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
+                "pic1":  "",
+                "pic2":  "",
 
                 "back": "Retour"
             },

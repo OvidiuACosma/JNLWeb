@@ -23,6 +23,15 @@ h4
     margin-bottom: 5vw;
 }
 
+.logo {
+    text-align: center;
+}
+
+.logo > img {
+    height: auto;
+    width: 13vw;
+}
+
 .first-picture {
     width: 76vw;
     margin: auto;

@@ -1,16 +1,17 @@
   <div id="actualites-div">
-    <h1>{{text.articleTitle}}</h1>
-    <h4>{{text.articleSubtitle}}</h4>
+    <div class="logo" *ngIf="actual==='1'"><img src="assets/Images/Actualite/HM_logo_Studio.png"></div>
+    <h1 *ngIf="text?.articleTitle!==''">{{text.articleTitle}}</h1>
+    <h4 *ngIf="text?.articleSubtitle!==''">{{text.articleSubtitle}}</h4>
     
     <!-- <div class="image-div">
       <img class="first-picture" alt="JNL Collection" src="assets/Images/Marque_V/MKV_pic1.jpg">
     </div> -->
 
     <div>
-      <img alt="JNL Collection" src={{text.pic1}} class="ac-img">
+      <img *ngIf="text?.pic1!==''" alt="JNL Collection" src={{text.pic1}} class="ac-img">
       <p class="parag" [innerHTML] = "text.articleText1"></p>
-      <img alt="JNL Collection" src={{text.pic2}} class="ac-img2">
-      <p class="parag" [innerHTML] = "text.articleText2"></p>
+      <img *ngIf="text.pic2!==''" alt="JNL Collection" src={{text.pic2}} class="ac-img2">
+      <p *ngIf="text.articleText2!==''" class="parag" [innerHTML] = "text.articleText2"></p>
     </div>
 
     <!-- <div id="autres">
