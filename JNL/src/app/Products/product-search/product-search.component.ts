@@ -45,7 +45,7 @@ export class ProductSearchComponent implements OnInit {
   text: any;
   user: User;
   filterBy: string[] = ['Brand', 'Type', 'Family'];
-  brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors']);
+  brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio']);
   filterElements: IFilterElements[] = [];
   scroller = true;
   numbers: number[] = [];

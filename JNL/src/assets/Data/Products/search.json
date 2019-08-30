@@ -4,7 +4,7 @@
                 {"category": "brand", "content": "JNL Collection"},
                 {"category": "brand", "content": "Vanhamme"},
                 {"category": "brand", "content": "Emanuel Ungaro Home"},
-                {"category": "brand", "content": "Luz Interiors"},
+                {"category": "brand", "content": "JNL Studio"},
                 {"category": "type", "content": "Sofa"},
                 {"category": "type", "content": "Chair"}
             ]
@@ -18,7 +18,7 @@
                 {"category": "brand",
                 "content": "Emanuel Ungaro Home"},
                 {"category": "brand",
-                "content": "Luz Interiors"},
+                "content": "JNL Studio"},
                 {"category": "type",
                 "content": "Sofa"},
                 {"category": "type",

@@ -23,7 +23,7 @@
     <h2>{{text.consultingTitle}}</h2>
       <div class="sur-flex">
         <div>
-            <div>{{text.consultingText1}} 
+            <div>{{text.consultingText1}}
               <br><br>
             </div>
             <div>
@@ -35,7 +35,7 @@
                 <img alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Services/{{altText['img2']['src']}}">
             </div>
             <div>
-              {{text.consultingText2}} 
+              {{text.consultingText2}}
             </div>
         </div>
     </div>
@@ -45,65 +45,6 @@
     <div class="contact-div">
         <h2>{{text.projectTitle}}</h2>
         <p>{{text.projectText}}</p>
-      <!-- <form class="contact_form">
-        <div>
-          <div>
-            <div>
-            <select>
-              <option selected disabled>Type de projet* 🡫</option>
-              <option>Sujet 1</option>
-              <option>Sujet 2</option>
-              <option>Sujet 3</option>
-            </select>
-          </div>
-            <div>
-              <span>Pouvez vous preciser?</span><br>
-              <textarea placeholder="Votre message*" rows="6" required maxlength="500"></textarea><br>
-              <span class="small_text">Max 500 caractères.</span>
-            </div>
-            <div>
-              <span>Sélectionnez les marques qui vous intéressent:</span>
-
-              <div id="checks">
-                <div>
-                    <div (click)="selectMarque(0)">
-                        <span><i [ngClass]="(this.selected[0]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
-                        <span>&nbsp;JNL Collection</span>
-                    </div>
-                    <div (click)="selectMarque(1)">
-                        <span><i [ngClass]="(this.selected[1]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
-                        <span>&nbsp;Luz Interiors</span>
-                    </div>
-                </div>
-                <div>
-                    <div (click)="selectMarque(2)">
-                        <span><i [ngClass]="(this.selected[2]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
-                        <span>&nbsp;Emmanuel Ungaro Home</span>
-                    </div>
-                    <div (click)="selectMarque(3)">
-                        <span><i [ngClass]="(this.selected[3]===1) ? 'fas fa-square' :'far fa-square'"></i></span>
-                        <span>&nbsp;Vanhamme</span>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <input placeholder="Prenom*" reaquired/>
-            <input placeholder="Nom*" required/>
-            <input placeholder="Société*" required/>
-            <input placeholder="Poste*" required/>
-            <input placeholder="Pays*" required/>
-            <input placeholder="Adresse"/>
-            <input placeholder="Ville*" required/>
-            <input placeholder="Province"/>
-            <input placeholder="Code Postal*"/>
-            <input placeholder="Email*" required/>
-          </div>
-       </div>
-        <br>
-        <button class="send">ENVOYER</button>
-      </form> -->
     </div>
     <app-request-form [requestType]='3'></app-request-form>
   </div>

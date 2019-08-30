@@ -140,22 +140,22 @@
             "studio": {
                 "img0": {
                     "alt": {
-                        "EN": "jnl collection luz interiors salon maison et objet paris",
-                        "FR": "jnl collection luz interiors salon maison et objet paris"
+                        "EN": "jnl collection jnl studio salon maison et objet paris",
+                        "FR": "jnl collection jnl studio salon maison et objet paris"
                     },
                     "src": "Studio/MKL_first.jpg"
                 },
                 "img1": {
                     "alt": {
-                        "EN": "jnl collection luz interiors ligne furniture",
-                        "FR": "jnl collection luz interiors ligne meuble"
+                        "EN": "jnl collection jnl studio ligne furniture",
+                        "FR": "jnl collection jnl studio ligne meuble"
                     },
                     "src": "Studio/MKL_style.jpg"
                 },
                 "img2": {
                     "alt": {
-                        "EN": "jnl collection luz interiors daisy side table",
-                        "FR": "jnl collection luz interiors daisy bout de canapé"
+                        "EN": "jnl collection jnl studio daisy side table",
+                        "FR": "jnl collection jnl studio daisy bout de canapé"
                     },
                     "src": "Studio/MKL_iconique.png"
                 },
@@ -206,10 +206,10 @@
             },
             "img3": {
                 "alt": {
-                    "EN": "jnl collection luz interiors salon maison et objet paris",
-                    "FR": "jnl collection luz interiors salon maison et objet paris"
+                    "EN": "jnl collection jnl studio salon maison et objet paris",
+                    "FR": "jnl collection jnl studio salon maison et objet paris"
                 },
-                "src": "MK_Luz.jpg"
+                "src": "MK_Studio.jpg"
             }
         },
         "savoir": {
@@ -418,10 +418,10 @@
             },
             "img4": {
                 "alt": {
-                    "EN": "jnl collection luz interiors salon maison et objet",
-                    "FR": "jnl collection luz interiors salon maison et objet"
+                    "EN": "jnl collection jnl studio salon maison et objet",
+                    "FR": "jnl collection jnl studio salon maison et objet"
                 },
-                "src": "PS_Luz.jpg"
+                "src": "PS_Studio.jpg"
             }
         }
     }

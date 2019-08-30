@@ -4,7 +4,7 @@
             "EN": {
                 "JNL": {
                     "collectionTitle": "JNL collection",
-                
+
                     "marqueImgSrc": "assets/Images/Marque/JNL/MKJ_first.jpg",
 
                     "sectionTitle": "CONTEMPORARY CLACISSISM",
@@ -15,10 +15,10 @@
 
                     "rightTitle": "THE ICON",
                     "rightText": "Available as a two, three, or four-seater, the «Molière» model is one of JNL Collection’s iconic models. Coated in fabric or leather, it astounds both in style and dimension. Its maple structure rests on a uniquely sculptural base that highlights the JNL group artisans’ exceptional craftsmanship. ",
-                
+
                     "productCategories": [
                         "SOFAS",
-                        "ARMCHAIRS", 
+                        "ARMCHAIRS",
                         "FOOTSTOOLS",
                         "DAYBEDS",
                         "CHAIRS",
@@ -28,11 +28,11 @@
                         "ACCESSORIES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/JNL/MKJ_canape.png", 
+                        "assets/Images/Marque/JNL/MKJ_canape.png",
                         "assets/Images/Marque/JNL/MKJ_fauteuil.png",
                         "assets/Images/Marque/JNL/MKJ_pouf.png",
                         "assets/Images/Marque/JNL/MKJ_meridienne.png",
-                        "assets/Images/Marque/JNL/MKJ_chaise.png", 
+                        "assets/Images/Marque/JNL/MKJ_chaise.png",
                         "assets/Images/Marque/JNL/MKJ_mobilier.png",
                         "assets/Images/Marque/JNL/MKJ_table.png",
                         "assets/Images/Marque/JNL/MKJ_luminaires.png",
@@ -44,7 +44,7 @@
                 },
                 "VANHAMME": {
                     "collectionTitle": "Vanhamme",
-                
+
                     "marqueImgSrc": "assets/Images/Marque/Vanhamme/MKV_first.jpg",
 
                     "sectionTitle": "A PASSION FOR HERITAGE",
@@ -55,10 +55,10 @@
 
                     "rightTitle": "L'EXCESSIF",
                     "rightText": "Armchairs of generous dimensions (116 cm x 140cm) excessively comfortable, coated in fabric or leather. Its design speaks a language of sophistication and craftsmanship proper to Maison Vanhamme : quality, generosity, comfort, and exclusivity. With its matching stool, it invites you to relish in long moments of relaxation.  ",
-                
+
                     "productCategories": [
                         "SOFAS",
-                        "ARMCHAIRS", 
+                        "ARMCHAIRS",
                         "FOOTSTOOLS",
                         "DAYBEDS",
                         "FIRESIDE CHAIRS",
@@ -66,7 +66,7 @@
                     ],
                     "productImages": [
                         "assets/Images/Marque/Vanhamme/MKV_canapes.png",
-                        "assets/Images/Marque/Vanhamme/MKV_fauteuils.png", 
+                        "assets/Images/Marque/Vanhamme/MKV_fauteuils.png",
                         "assets/Images/Marque/Vanhamme/MKV_poufs.png",
                         "assets/Images/Marque/Vanhamme/MKV_meridienne.png",
                         "assets/Images/Marque/Vanhamme/MKV_chauffeuse.png",
@@ -78,7 +78,7 @@
                 },
                 "UNGARO": {
                     "collectionTitle": "Emanuel Ungaro Home",
-                
+
                     "marqueImgSrc": "assets/Images/Marque/Ungaro/MKU_first.jpg",
 
                     "sectionTitle": "Dress your interiors in haute couture… ",
@@ -89,7 +89,7 @@
 
                     "rightTitle": "The Prestigious Theodora… ",
                     "rightText": "Named after the historic and prestigious empress Theodora, the Theodora table speaks the language of high luxury. With enigmatic details that exist beyond the realm of the everyday, it comes in different wood finishings or with deer horn or ostrich egg inlays. Its base, as detailed as jewelry, comes in golden brass or stainless steel finishing. Whether round, square, or rectangular, this refined table alone sums up the elegance that has defined the Emanuel Ungaro Home collection. ",
-                
+
                     "productCategories": [
                         "SOFAS",
                         "ARMCHAIRS",
@@ -99,7 +99,7 @@
                         "TABLES",
                         "LIGHTINGS",
                         "ACCESSORIES"
-                        
+
                     ],
                     "productImages": [
                         "assets/Images/Marque/Ungaro/MKU_canape.png",
@@ -117,18 +117,18 @@
                 },
                 "STUDIO": {
                     "collectionTitle": "JNL Studio",
-                
+
                     "marqueImgSrc": "assets/Images/Marque/Studio/MKL_first.jpg",
 
                     "sectionTitle": "The elegance of understated style",
-                    "sectionText": "The Luz Interiors collection timelessly furnishes your living spaces with conviviality. Entirely made of quality materials, furnishings, seats, and lamps employ an aesthetic that has been at the core of the brand’s success. With a sharp eye for detail, impeccable fabrication and exceptional choice of finishings, the Luz Interiors style continues to answer to its clients’ desires since 1995. ",
+                    "sectionText": "The JNL Studio collection timelessly furnishes your living spaces with conviviality. Entirely made of quality materials, furnishings, seats, and lamps employ an aesthetic that has been at the core of the brand’s success. With a sharp eye for detail, impeccable fabrication and exceptional choice of finishings, the JNL Studio style continues to answer to its clients’ desires since 1995. ",
 
                     "leftTitle": "Clarity of design",
-                    "leftText": "« Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away. » Antoine de Saint-Exupery (sic.) <br><br>Such could be the definition of the Luz Interiors collection. With simplicity and clarity of design, each component is characterized by long-lasting value. ",
+                    "leftText": "« Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away. » Antoine de Saint-Exupery (sic.) <br><br>Such could be the definition of the JNL Studio collection. With simplicity and clarity of design, each component is characterized by long-lasting value. ",
 
                     "rightTitle": "THE DAISY LINE",
-                    "rightText": "The Daisy line offers a complete gamut of minimal furnishings: simple, practical, and robust. As the icon of the Luz Interiors collection, its success lies in its contemporary linear elements with delicate proportions and a high-end fabrication process. ",
-    
+                    "rightText": "The Daisy line offers a complete gamut of minimal furnishings: simple, practical, and robust. As the icon of the JNL Studio collection, its success lies in its contemporary linear elements with delicate proportions and a high-end fabrication process. ",
+
                     "productCategories": [
                         "SOFAS",
                         "ARMCHAIRS",
@@ -159,7 +159,7 @@
             "FR": {
                 "JNL": {
                     "collectionTitle": "JNL collection",
-                    
+
                     "marqueImgSrc": "assets/Images/Marque/JNL/MKJ_first.jpg",
 
                     "sectionTitle": "LE CLASSICISME MODERNE",
@@ -170,10 +170,10 @@
 
                     "rightTitle": "L’ICONE",
                     "rightText": "Réalisable en deux, trois ou quatre places le modèle «Molière» est un des modèles phares de la gamme JNL Collection. Disponible revêtu de tissu ou de cuir, il étonne par son style et par ses dimensions généreuses. Sa structure en érable repose sur un  piètement faisant l’objet d’un travail de sculpture tout particulier, révélant tout le savoir-faire des artisans du Groupe JNL.",
-                    
+
                     "productCategories": [
                         "CANAPéS",
-                        "FAUTEUILS", 
+                        "FAUTEUILS",
                         "POUFS",
                         "MéRIDIENNES",
                         "CHAISES",
@@ -183,11 +183,11 @@
                         "ACCESSOIRES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/JNL/MKJ_canape.png", 
+                        "assets/Images/Marque/JNL/MKJ_canape.png",
                         "assets/Images/Marque/JNL/MKJ_fauteuil.png",
                         "assets/Images/Marque/JNL/MKJ_pouf.png",
                         "assets/Images/Marque/JNL/MKJ_meridienne.png",
-                        "assets/Images/Marque/JNL/MKJ_chaise.png", 
+                        "assets/Images/Marque/JNL/MKJ_chaise.png",
                         "assets/Images/Marque/JNL/MKJ_mobilier.png",
                         "assets/Images/Marque/JNL/MKJ_table.png",
                         "assets/Images/Marque/JNL/MKJ_luminaires.png",
@@ -199,7 +199,7 @@
                 },
                 "VANHAMME": {
                     "collectionTitle": "Vanhamme",
-                    
+
                     "marqueImgSrc": "assets/Images/Marque/Vanhamme/MKV_first.jpg",
 
                     "sectionTitle": "LA PASSION POUR HERITAGE",
@@ -210,10 +210,10 @@
 
                     "rightTitle": "L'EXCESSIF",
                     "rightText": "Fauteuil aux dimensions généreuses (116 cm x 140cm), excessivement confortable, revêtu de tissu ou de cuir. Son design traduit toute la sophistication et le savoir faire de la maison Vanhamme : la qualité, la générosité, le confort et l’exclusivité. Accompagné de son pouf il vous procurera de longs moments de détentes.",
-                    
+
                     "productCategories": [
                         "CANAPéS",
-                        "FAUTEUILS", 
+                        "FAUTEUILS",
                         "POUFS",
                         "MéRIDIENNES",
                         "CHAUFFEUSES",
@@ -221,7 +221,7 @@
                     ],
                     "productImages": [
                         "assets/Images/Marque/Vanhamme/MKV_canapes.png",
-                        "assets/Images/Marque/Vanhamme/MKV_fauteuils.png", 
+                        "assets/Images/Marque/Vanhamme/MKV_fauteuils.png",
                         "assets/Images/Marque/Vanhamme/MKV_poufs.png",
                         "assets/Images/Marque/Vanhamme/MKV_meridienne.png",
                         "assets/Images/Marque/Vanhamme/MKV_chauffeuse.png",
@@ -233,7 +233,7 @@
                 },
                 "UNGARO": {
                     "collectionTitle": "Emanuel Ungaro Home",
-                    
+
                     "marqueImgSrc": "assets/Images/Marque/Ungaro/MKU_first.jpg",
 
                     "sectionTitle": "La haute couture habille vos intérieurs.",
@@ -244,7 +244,7 @@
 
                     "rightTitle": "Théodora la prestigieuse…",
                     "rightText": "La table Théodora, dont le nom est emprunté à une ancienne et prestigieuse impératrice Byzantine, traduit à elle seule les codes du luxe. Enigmatique par ses finitions hors du commun, elle se décline dans des placages de bois précieux ou s’agrémente de marqueterie de cornes de cerf ou d’œuf d’autruche. Son piétement travaillé tel un bijou est proposé en laiton doré ou en finition inox. Ronde, carrée ou rectangulaire cette table aux lignes épurée résume à elle seule tout le raffinement de la collection Emanuel Ungaro Home.",
-                    
+
                     "productCategories": [
                         "CANAPéS",
                         "FAUTEUILS",
@@ -271,18 +271,18 @@
                 },
                 "STUDIO": {
                     "collectionTitle": "JNL Studio",
-                    
+
                     "marqueImgSrc": "assets/Images/Marque/Studio/MKL_first.jpg",
 
                     "sectionTitle": "L’élégance d’un style discret.",
-                    "sectionText": "La collection Luz Interiors empreinte d’intemporalité est conçue pour meubler vos espaces de vie en toute convivialité. Entièrement réalisée dans des matériaux de qualité, meubles sièges et luminaires revoient à une esthétique légère qui fait le succès de la marque. Grace a un sens aigu du détail, une fabrication parfaite et un grand choix de finitions, le style Luz Interiors a su répondre aux attentes des clients les plus exigeants depuis 1995. ",
+                    "sectionText": "La collection JNL Studio empreinte d’intemporalité est conçue pour meubler vos espaces de vie en toute convivialité. Entièrement réalisée dans des matériaux de qualité, meubles sièges et luminaires revoient à une esthétique légère qui fait le succès de la marque. Grace a un sens aigu du détail, une fabrication parfaite et un grand choix de finitions, le style JNL Studio a su répondre aux attentes des clients les plus exigeants depuis 1995. ",
 
                     "leftTitle": "La clarté d’un design",
-                    "leftText": "« La perfection est atteinte, non pas lorsqu’il n’y a plus rien à ajouter, mais lorsqu’il n’y a plus rien à retirer », Antoine de Saint- Exupery (sic).<br><br>Telle pourrait-être la définition de la collection Luz Interiors. La simplicité et la clarté du design assurant une valeur pérenne à chaque élément de la gamme.",
+                    "leftText": "« La perfection est atteinte, non pas lorsqu’il n’y a plus rien à ajouter, mais lorsqu’il n’y a plus rien à retirer », Antoine de Saint- Exupery (sic).<br><br>Telle pourrait-être la définition de la collection JNL Studio. La simplicité et la clarté du design assurant une valeur pérenne à chaque élément de la gamme.",
 
                     "rightTitle": "LA LIGNE DAISY",
-                    "rightText": "La ligne Daisy est une gamme complète de mobilier minimaliste, simple, pratique et robuste. Devenue icône de la collection Luz Interiors, son succès est assuré par des lignes contemporaines aux proportions délicates et une grande qualité de fabrication.",
-                    
+                    "rightText": "La ligne Daisy est une gamme complète de mobilier minimaliste, simple, pratique et robuste. Devenue icône de la collection JNL Studio, son succès est assuré par des lignes contemporaines aux proportions délicates et une grande qualité de fabrication.",
+
                     "productCategories": [
                         "CANAPéS",
                         "FAUTEUILS",
@@ -340,5 +340,5 @@
             }
         }
     }
-    
+
 ]
