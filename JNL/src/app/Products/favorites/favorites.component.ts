@@ -1,8 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, FavoritesService, ProductsService } from '../../_services';
-import { IFavorites, IFavoritesProducts, ProductEF } from '../../_models';
+import { IFavorites, IFavoritesProducts, ProductEF, User } from '../../_models';
+import { concatMap, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-favorites',
@@ -17,10 +18,12 @@ export class FavoritesComponent implements OnInit  {
   currentFavoriteList: IFavorites;
   favoritesProducts: IFavoritesProducts[];
   favoritesProductsDetails: ProductEF[];
+  listId = 0;
 
   removeAll = false;
 
-  constructor(private router: Router,
+  constructor(private route: ActivatedRoute,
+              private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private favoritesService: FavoritesService,
@@ -33,13 +36,28 @@ export class FavoritesComponent implements OnInit  {
       this.language = lang || 'EN';
       this.getText(lang);
     });
-    this.dataex.currentUser
-    .subscribe(user => {
-      this.favoritesService.getFavoritesOfRelation(user.userName)
-      .subscribe(fav => {
-        this.favoritesList = fav;
-        this.setFavoriteList(fav[0].id);
-      });
+
+    this.route.params
+    .pipe(
+      mergeMap( p => (this.dataex.currentUser)
+        .pipe(
+          concatMap( user => this.favoritesService.getFavoritesOfRelation(user.userName)
+            .pipe(
+              map(resp => ({
+                p: p,
+                user: user,
+                fav: resp
+              }))
+            )
+          )
+        )
+      )
+    )
+    .subscribe(response => {
+      this.favoritesList = response.fav;
+      this.listId = response.p.id;
+      this.currentFavoriteList = response.fav.find(f => f.id === (response.p.id !== 0 ? response.p.id : response.fav[0].id));
+      this.setFavoriteList(response.p.id !== 0 ? response.p.id : response.fav[0].id, response.fav);
     });
   }
 
@@ -55,8 +73,9 @@ export class FavoritesComponent implements OnInit  {
     this.text = res[lang.toUpperCase()];
   }
 
-  setFavoriteList(favListId: number) {
-    this.currentFavoriteList = this.favoritesList.find(f => f.id === favListId);
+  setFavoriteList(favListId: number, favList: IFavorites[]) {
+    // this.currentFavoriteList = favList.find(f => f.id === favListId); //_.find(favList, { 'id': favListId});
+    // console.log('currentFavList:', _.find(favList, { 'id': favListId}), 'of:', favList);
     this.getProductsOfFavoriteList(favListId);
   }
 
@@ -125,11 +144,15 @@ export class FavoritesComponent implements OnInit  {
     this.favoritesService.deleteFavoritesLG(f.id)
     .subscribe(res => {
       console.log(res.productBrand, res.productId, 'removed from favorites.');
-      this.setFavoriteList(res.favoritesId);
+      this.setFavoriteList(res.favoritesId, this.favoritesList);
     });
   }
 
   scrollTop() {
     window.scrollTo(0, 0);
+  }
+
+  showListId() {
+    console.log('Show list id:', this.listId);
   }
 }

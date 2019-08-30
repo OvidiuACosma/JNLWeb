@@ -39,6 +39,9 @@ export class FavoritesService {
       return this.http.post<IFavoritesProducts>(`${this.apiUrl}/LG`, favProduct, {headers: this.headers});
     }
 
+    public patchFavoritesList(favList: any): Observable<IFavorites> {
+      return this.http.patch<IFavorites>(`${this.apiUrl}/patch/${favList.id}`, favList, {headers: this.headers});
+    }
 
     public deleteFavoritesList(favListId: number): Observable<IFavorites> {
       return this.http.delete<IFavorites>(`${this.apiUrl}/delete/${favListId}`, {headers: this.headers});

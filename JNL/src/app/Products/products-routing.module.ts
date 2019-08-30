@@ -14,7 +14,7 @@ import { ProductGarnissageDetailsComponent } from './product-garnissage-details/
 
 const routes: Routes = [
   { path: '', component: ProductSearchComponent },
-  { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
+  { path: 'favorites/:id', component: FavoritesComponent, canActivate: [AuthGuard] },
   // { path: 'favoritesSelList', component: FavoritesSelListComponent, canActivate: [AuthGuard] },
   { path: 'product', component: ProductComponent },
   { path: 'products', component: ProductSearchComponent },

@@ -6,40 +6,63 @@
   <!-- <p>{{user.userName}}</p> -->
   <br>
   <br>
-  <p>{{product.brand}} {{product.familyEn}} {{product.model}}</p>
+  <p>{{product.familyEn}} {{product.model}} - {{product.brand}}</p>
 </div>
-<form (ngSubmit)="createNewFavList()" name="newListForm">
-<table>
-  <thead>
-    <tr>
-      <td>Your Favorites Lists</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let fav of favoritesList">
-      <td class="fav-list" style="width: 40%" (click)="selectFavList(fav)">{{fav.listName}}</td>
-      <td style="width: 20%" class="link" (click)="editFavList(fav)">edit list name</td>
-      <td style="width: 20%" class="link" (click)="selectFavList(fav)">add to this list</td>
-      <td style="width: 10%" class="link" (click)="viewFavList(fav)">view</td>
-      <td style="width: 10%" class="link-red" (click)="deleteFavList(fav)">delete list</td>
-    </tr>
-    <tr>
-      <td style="width: 40%">
-          <input type="text" name="newList" placeholder="new list name" maxlength="100" [(ngModel)]="newFavList">
-      </td>
-      <td style="width: 20%" class="link" (click)="simulateSubmit()">
-        create
-        <button type="submit" id="submitButton" style="display: none">Submit</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!-- <form (ngSubmit)="createNewFavList()" name="newListForm"> -->
+<form [formGroup]="favListForm">
+  <table style="width: 100%;">
+    <thead>
+      <tr>
+        <td style="font-family: Helvetica; font-size: 1.8vw;">Your Favorites Lists:</td>
+      </tr>
+    </thead>
+    <tbody formArrayName="favListArray">
+      <tr *ngFor="let fav of favListArray.controls; let i=index" [formGroupName]="i"
+        style="line-height: 2.5vw;">
+        <td class="fav-list" style="width: 40%">
+          <input formControlName="listName" class="fade-input" readonly="readonly" *ngIf="!fav.get('editMode').value">
+          <input formControlName="listName" class="input-edit" *ngIf="fav.get('editMode').value">
+        </td>
+        <td style="width: 19%">
+          <label *ngIf="!lockActions && !fav.get('editMode').value"  (click)="editFavList(i)">edit list name</label>
+          <label *ngIf="fav.get('editMode').value" (click)="saveFavList(i)" class="label-red">save</label> &nbsp;
+          <label *ngIf="fav.get('editMode').value" (click)="cancelEditFavList(i)">cancel</label>
+        </td>
+        <td style="width: 19%" class="link">
+          <label *ngIf="!lockActions && !fav.get('editMode').value" (click)="selectFavList(fav.value)">add to this list</label>
+        </td>
+        <td style="width: 10%" class="link">
+          <label *ngIf="!lockActions && !lockActions && !fav.get('editMode').value"
+            (click)="viewFavList(i)">view</label>
+          <!-- cancel delete -->
+          <label *ngIf="fav.get('deleteMode').value"
+            (click)="cancelDeleteFavList(i)">cancel</label>
+        </td>
+        <td style="width: 12%">
+          <label *ngIf="!lockActions && !fav.get('deleteMode').value && !fav.get('editMode').value" class="label-red"
+            (click)="tryDeleteFavList(i)">delete list</label>
+          <label *ngIf="fav.get('deleteMode').value" class="label-red"
+            (click)="deleteFavList(i)">DELETE</label>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td style="width: 40%">
+            <input type="text" name="newList" placeholder="new list name" maxlength="100" [(ngModel)]="newFavList">
+        </td>
+        <td style="width: 20%" class="link" (click)="simulateSubmit()">
+          create
+          <button type="submit" id="submitButton" style="display: none">Submit</button>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
 </form>
+<!-- </form> -->
 <br>
 <br>
 <div class="c-green">{{addedToList}}</div>
 <br>
 
 <div mat-dialog-actions class="a-center">
-  <button mat-button (click)="close()">OK</button>
+  <label (click)="close()" style="font-size: 1.8vw; font-family: Helvetica;">CLOSE</label>
 </div>

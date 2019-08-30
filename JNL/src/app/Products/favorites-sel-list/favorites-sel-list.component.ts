@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User, IFavorites, IFavoritesProducts, ProductEF } from 'src/app/_models';
 import { FavoritesService } from 'src/app/_services/favorites.service';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-favorites-sel-list',
@@ -15,14 +16,31 @@ export class FavoritesSelListComponent implements OnInit {
   favoritesList: IFavorites[];
   newFavList: string;
   addedToList: string = null;
+  favListForm: FormGroup;
+  lockActions = false;
 
   constructor(public dialogRef: MatDialogRef<FavoritesSelListComponent>,
               @Inject(MAT_DIALOG_DATA) public data: { product: ProductEF, user: User},
-              private favoritesService: FavoritesService) { }
+              private favoritesService: FavoritesService,
+              private fb: FormBuilder) {
+    this.createForm();
+  }
 
   ngOnInit() {
     this.product = this.data.product;
     this.user = this.data.user;
+    // this.getFavoritesList();
+    this.rebuildForm();
+  }
+
+  createForm() {
+    this.favListForm = this.fb.group({
+      favListArray: this.fb.array([])
+    });
+  }
+
+  rebuildForm() {
+    this.favListForm.reset();
     this.getFavoritesList();
   }
 
@@ -30,7 +48,33 @@ export class FavoritesSelListComponent implements OnInit {
     this.favoritesService.getFavoritesOfRelation(this.user.userName)
     .subscribe(favList => {
       this.favoritesList = favList;
+
+      this.setFavListArray(favList);
     });
+  }
+
+  setFavListArray(favList: IFavorites[]) {
+    // favList.sort(function(a, b) {
+    //   return a.listName - b.listName;
+    // });
+    const favListsFGs: Array<any> = [];
+    favList.forEach(element => {
+      const obj = {
+        listName: element.listName,
+        id: element.id,
+        editMode: false,
+        deleteMode: false
+      };
+      favListsFGs.push(obj);
+    });
+    const favListsFGsSorted = favListsFGs;
+    const favoritesListsFGs = favListsFGsSorted.map(p => this.fb.group(p));
+    const favoritesListsFormArray = this.fb.array(favoritesListsFGs);
+    this.favListForm.setControl('favListArray', favoritesListsFormArray);
+  }
+
+  get favListArray(): FormArray {
+    return this.favListForm.get('favListArray') as FormArray;
   }
 
   selectFavList(favList: IFavorites) {
@@ -59,16 +103,49 @@ export class FavoritesSelListComponent implements OnInit {
     });
   }
 
-  editFavList(fav: IFavorites) {
-    console.log('edit list name:', fav.listName);
+  editFavList(i: number) {
+    this.favListArray.at(i).get('editMode').setValue(true);
+    this.lockActions = true;
   }
 
-  viewFavList(fav: IFavorites) {
-    console.log('view list name:', fav.listName);
+  cancelEditFavList(i: number) {
+    this.favListArray.at(i).get('editMode').setValue(false);
+    this.lockActions = false;
   }
 
-  deleteFavList(fav: IFavorites) {
-    console.log('delete list name:', fav.listName);
+  saveFavList(i: number) {
+    const fList = { id: this.favListArray.at(i).get('id').value,
+        listName: this.favListArray.at(i).get('listName').value
+      };
+    this.favoritesService.patchFavoritesList(fList)
+    .subscribe(res => {
+      this.rebuildForm();
+      this.lockActions = false;
+    });
+  }
+
+  viewFavList(i: number) {
+    const favId: number = this.favListArray.at(i).get('id').value;
+    console.log('view list no#:', favId);
+  }
+
+  tryDeleteFavList(i: number) {
+    this.favListArray.at(i).get('deleteMode').setValue(true);
+    this.lockActions = true;
+  }
+
+  cancelDeleteFavList(i: number) {
+    this.favListArray.at(i).get('deleteMode').setValue(false);
+    this.lockActions = false;
+  }
+
+  deleteFavList(i: number) {
+    const id = this.favListArray.at(i).get('id').value;
+    this.favoritesService.deleteFavoritesList(id)
+    .subscribe(fav => {
+      this.rebuildForm();
+      this.lockActions = false;
+    });
   }
 
   simulateSubmit() {
