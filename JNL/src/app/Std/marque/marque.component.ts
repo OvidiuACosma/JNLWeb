@@ -14,8 +14,8 @@ export class MarqueComponent implements OnInit {
   language: string;
   text: any;
   textG: any;
-  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors'];
-  collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'luz'];
+  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio'];
+  collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'studio'];
   othersText: string[];
   othersLink: string[];
   i: number;

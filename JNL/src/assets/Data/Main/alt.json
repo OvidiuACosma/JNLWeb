@@ -137,27 +137,27 @@
                     "src": "MK_services.jpg"
                 }
             },
-            "luz": {
+            "studio": {
                 "img0": {
                     "alt": {
                         "EN": "jnl collection luz interiors salon maison et objet paris",
                         "FR": "jnl collection luz interiors salon maison et objet paris"
                     },
-                    "src": "Luz/MKL_first.jpg"
+                    "src": "Studio/MKL_first.jpg"
                 },
                 "img1": {
                     "alt": {
                         "EN": "jnl collection luz interiors ligne furniture",
                         "FR": "jnl collection luz interiors ligne meuble"
                     },
-                    "src": "Luz/MKL_style.jpg"
+                    "src": "Studio/MKL_style.jpg"
                 },
                 "img2": {
                     "alt": {
                         "EN": "jnl collection luz interiors daisy side table",
                         "FR": "jnl collection luz interiors daisy bout de canapé"
                     },
-                    "src": "Luz/MKL_iconique.png"
+                    "src": "Studio/MKL_iconique.png"
                 },
                 "img3": {
                     "alt": {

@@ -94,7 +94,7 @@ h3 {
     transition: all .3s ease;
 }
 
-#jnl, #vanhamme, #ungaro, #luz {
+#jnl, #vanhamme, #ungaro, #studio {
     padding-top: 1.2vw; /* 2.74vw; */
     cursor: pointer;
 }
@@ -102,7 +102,7 @@ h3 {
 #jnl > a > img, 
 #vanhamme > a > img,
 #ungaro > a > img,
-#luz > a > img {
+#studio > a > img {
     width: 20vw;
     height: auto;
     opacity: .85;
@@ -112,7 +112,7 @@ h3 {
 #jnl > a > img:hover, 
 #vanhamme > a > img:hover,
 #ungaro > a > img:hover,
-#luz > a > img:hover {
+#studio > a > img:hover {
     opacity: 1;
     transition: all .3s ease;
 }

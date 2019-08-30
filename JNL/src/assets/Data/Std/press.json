@@ -17,7 +17,7 @@
             },
             "Catalog": {
                 "id": ["0", "1", "2", "3"],
-                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "coll": ["jnl","vanhamme", "ungaro", "studio"],
                 "imgSrc": ["PS_jnlB.jpg", "PS_vanhammeB.jpg", "PS_ungaroB.jpg", "PS_luzB.jpg"],
                 "imgAlt": ["JNL Collection Catalog",
                     "Vanhamme Collection Catalog", 
@@ -26,17 +26,17 @@
             },
             "Inspiration": {
                 "id": ["0", "1", "2", "3"],
-                "coll": ["jnl","vanhamme", "ungaro", "luz"],
+                "coll": ["jnl","vanhamme", "ungaro", "studio"],
                 "imgSrc": ["PS_JNL.jpg", "PS_vanhamme.jpg", "PS_ungaro.jpg", "PS_Luz.jpg"],
                 "imgAlt": ["jnl collection ray salon maison et objet 2019",
                                 "jnl collection oscar gainé interior",
                                 "jnl collection ungaro home salon maison et objet",
                                 "jnl collection luz interiors salon maison et objet"],
-                "imgLogoSrc": ["PS_logo_JNL.png", "PS_logo_VH.png", "PS_logo_Ungaro.png", "PS_logo_LUZ.png"],
+                "imgLogoSrc": ["PS_logo_JNL.png", "PS_logo_VH.png", "PS_logo_Ungaro.png", "PS_logo_Studio.png"],
                 "imgLogoAlt": ["JNL Collection Logo",
                             "Vanhamme Collection Logo", 
                             "Emanuel Ungaro Home Logo",
-                            "Luz Interiors Logo"]
+                            "JNL Studio Logo"]
             },
             "Review": {
                 "id": ["0", "1", "2", "3"],
