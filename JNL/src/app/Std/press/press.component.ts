@@ -17,8 +17,8 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
   textCatalog: any[];
   textInspiration: any[];
   textReview: any[];
-  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'LUZ Interiors'];
-  collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'luz'];
+  collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio'];
+  collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'studio'];
   scroller = true;
   anchor: number;
   blob: any;

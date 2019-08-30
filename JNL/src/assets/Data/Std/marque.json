@@ -115,10 +115,10 @@
                     "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
                     "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png"
                 },
-                "LUZ": {
-                    "collectionTitle": "Luz Interiors",
+                "STUDIO": {
+                    "collectionTitle": "JNL Studio",
                 
-                    "marqueImgSrc": "assets/Images/Marque/Luz/MKL_first.jpg",
+                    "marqueImgSrc": "assets/Images/Marque/Studio/MKL_first.jpg",
 
                     "sectionTitle": "The elegance of understated style",
                     "sectionText": "The Luz Interiors collection timelessly furnishes your living spaces with conviviality. Entirely made of quality materials, furnishings, seats, and lamps employ an aesthetic that has been at the core of the brand’s success. With a sharp eye for detail, impeccable fabrication and exceptional choice of finishings, the Luz Interiors style continues to answer to its clients’ desires since 1995. ",
@@ -141,19 +141,19 @@
                         "ACCESSORIES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/Luz/MKL_canape.png",
-                        "assets/Images/Marque/Luz/MKL_fauteuil.png",
-                        "assets/Images/Marque/Luz/MKL_meridienne.png",
-                        "assets/Images/Marque/Luz/MKL_pouf.png",
-                        "assets/Images/Marque/Luz/MKL_chaise.png",
-                        "assets/Images/Marque/Luz/MKL_mobilier.png",
-                        "assets/Images/Marque/Luz/MKL_table.png",
-                        "assets/Images/Marque/Luz/MKL_luminaires.png",
-                        "assets/Images/Marque/Luz/MKL_accessoire.png"
+                        "assets/Images/Marque/Studio/MKL_canape.png",
+                        "assets/Images/Marque/Studio/MKL_fauteuil.png",
+                        "assets/Images/Marque/Studio/MKL_meridienne.png",
+                        "assets/Images/Marque/Studio/MKL_pouf.png",
+                        "assets/Images/Marque/Studio/MKL_chaise.png",
+                        "assets/Images/Marque/Studio/MKL_mobilier.png",
+                        "assets/Images/Marque/Studio/MKL_table.png",
+                        "assets/Images/Marque/Studio/MKL_luminaires.png",
+                        "assets/Images/Marque/Studio/MKL_accessoire.png"
                     ],
 
-                    "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
-                    "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png"
+                    "style":  "assets/Images/Marque/Studio/MKL_style.jpg",
+                    "iconique":  "assets/Images/Marque/Studio/MKL_iconique.png"
                 }
             },
             "FR": {
@@ -269,10 +269,10 @@
                     "style":  "assets/Images/Marque/Ungaro/MKU_style.jpg",
                     "iconique":  "assets/Images/Marque/Ungaro/MKU_iconique.png"
                 },
-                "LUZ": {
-                    "collectionTitle": "Luz Interiors",
+                "STUDIO": {
+                    "collectionTitle": "JNL Studio",
                     
-                    "marqueImgSrc": "assets/Images/Marque/Luz/MKL_first.jpg",
+                    "marqueImgSrc": "assets/Images/Marque/Studio/MKL_first.jpg",
 
                     "sectionTitle": "L’élégance d’un style discret.",
                     "sectionText": "La collection Luz Interiors empreinte d’intemporalité est conçue pour meubler vos espaces de vie en toute convivialité. Entièrement réalisée dans des matériaux de qualité, meubles sièges et luminaires revoient à une esthétique légère qui fait le succès de la marque. Grace a un sens aigu du détail, une fabrication parfaite et un grand choix de finitions, le style Luz Interiors a su répondre aux attentes des clients les plus exigeants depuis 1995. ",
@@ -295,19 +295,19 @@
                         "ACCESSOIRES"
                     ],
                     "productImages": [
-                        "assets/Images/Marque/Luz/MKL_canape.png",
-                        "assets/Images/Marque/Luz/MKL_fauteuil.png",
-                        "assets/Images/Marque/Luz/MKL_meridienne.png",
-                        "assets/Images/Marque/Luz/MKL_pouf.png",
-                        "assets/Images/Marque/Luz/MKL_chaise.png",
-                        "assets/Images/Marque/Luz/MKL_mobilier.png",
-                        "assets/Images/Marque/Luz/MKL_table.png",
-                        "assets/Images/Marque/Luz/MKL_luminaires.png",
-                        "assets/Images/Marque/Luz/MKL_accessoire.png"
+                        "assets/Images/Marque/Studio/MKL_canape.png",
+                        "assets/Images/Marque/Studio/MKL_fauteuil.png",
+                        "assets/Images/Marque/Studio/MKL_meridienne.png",
+                        "assets/Images/Marque/Studio/MKL_pouf.png",
+                        "assets/Images/Marque/Studio/MKL_chaise.png",
+                        "assets/Images/Marque/Studio/MKL_mobilier.png",
+                        "assets/Images/Marque/Studio/MKL_table.png",
+                        "assets/Images/Marque/Studio/MKL_luminaires.png",
+                        "assets/Images/Marque/Studio/MKL_accessoire.png"
                     ],
 
-                    "style":  "assets/Images/Marque/Luz/MKL_style.jpg",
-                    "iconique":  "assets/Images/Marque/Luz/MKL_iconique.png"
+                    "style":  "assets/Images/Marque/Studio/MKL_style.jpg",
+                    "iconique":  "assets/Images/Marque/Studio/MKL_iconique.png"
                 }
             }
         },
