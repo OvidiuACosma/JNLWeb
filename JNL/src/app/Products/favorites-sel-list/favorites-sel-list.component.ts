@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User, IFavorites, IFavoritesProducts, ProductEF } from 'src/app/_models';
 import { FavoritesService } from 'src/app/_services/favorites.service';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favorites-sel-list',
@@ -22,7 +23,8 @@ export class FavoritesSelListComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<FavoritesSelListComponent>,
               @Inject(MAT_DIALOG_DATA) public data: { product: ProductEF, user: User},
               private favoritesService: FavoritesService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private router: Router) {
     this.createForm();
   }
 
@@ -126,7 +128,7 @@ export class FavoritesSelListComponent implements OnInit {
 
   viewFavList(i: number) {
     const favId: number = this.favListArray.at(i).get('id').value;
-    console.log('view list no#:', favId);
+    this.navigateTo(`product/favorites/${favId}`);
   }
 
   tryDeleteFavList(i: number) {
@@ -146,6 +148,16 @@ export class FavoritesSelListComponent implements OnInit {
       this.rebuildForm();
       this.lockActions = false;
     });
+  }
+
+  navigateTo(target: string, fragment: string = '') {
+    if (fragment === '') {
+      this.router.navigate([target]);
+      window.scrollTo(0, 0);
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+    this.close();
   }
 
   simulateSubmit() {

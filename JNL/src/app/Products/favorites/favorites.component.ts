@@ -55,9 +55,10 @@ export class FavoritesComponent implements OnInit  {
     )
     .subscribe(response => {
       this.favoritesList = response.fav;
-      this.listId = response.p.id;
-      this.currentFavoriteList = response.fav.find(f => f.id === (response.p.id !== 0 ? response.p.id : response.fav[0].id));
-      this.setFavoriteList(response.p.id !== 0 ? response.p.id : response.fav[0].id, response.fav);
+      this.listId = parseInt(response.p.id, 10);
+      const i = this.listId !== 0 ? this.listId : response.fav[0].id;
+      this.currentFavoriteList = response.fav.find(f => f.id === i);
+      this.setFavoriteList(i);
     });
   }
 
@@ -73,9 +74,7 @@ export class FavoritesComponent implements OnInit  {
     this.text = res[lang.toUpperCase()];
   }
 
-  setFavoriteList(favListId: number, favList: IFavorites[]) {
-    // this.currentFavoriteList = favList.find(f => f.id === favListId); //_.find(favList, { 'id': favListId});
-    // console.log('currentFavList:', _.find(favList, { 'id': favListId}), 'of:', favList);
+  setFavoriteList(favListId: number) {
     this.getProductsOfFavoriteList(favListId);
   }
 
@@ -144,7 +143,7 @@ export class FavoritesComponent implements OnInit  {
     this.favoritesService.deleteFavoritesLG(f.id)
     .subscribe(res => {
       console.log(res.productBrand, res.productId, 'removed from favorites.');
-      this.setFavoriteList(res.favoritesId, this.favoritesList);
+      this.setFavoriteList(res.favoritesId);
     });
   }
 
