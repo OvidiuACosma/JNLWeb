@@ -1,11 +1,22 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
+import {trigger,state,style,animate,transition}from '@angular/animations';
+declare var $: any;
 
 @Component({
   selector: 'app-marques',
   templateUrl: './marques.component.html',
-  styleUrls: ['./marques.component.css']
+  styleUrls: ['./marques.component.css'],
+  animations: [
+    trigger('simpleFadeAnimation', [
+      state('in', style({opacity: 1})),
+      transition(':enter', [
+        style({opacity: 0}),
+        animate(1200)
+      ])
+    ])
+  ]
 })
 export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked {
 

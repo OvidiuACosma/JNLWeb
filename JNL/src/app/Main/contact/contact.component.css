@@ -13,7 +13,7 @@
 
 h1 {
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 30px;
     margin-bottom: 3vh;
     text-transform: uppercase;
 }
@@ -49,7 +49,8 @@ select {
 
 .contact-div > p {
     font-family: Helvetica-Light;
-    font-size: 1.8vw;
+    font-size: 15px;
+    line-height: 24px;
     padding-left: 18.9vw;
     padding-right: 18.9vw;
 }

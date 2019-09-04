@@ -1,6 +1,6 @@
 h1 {
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 30px;
     margin-bottom: 3vh;
     text-align: center;
 }
@@ -8,14 +8,14 @@ h1 {
 h2 {
     margin-bottom: 3.45vw;
     font-family: Helvetica;
-    font-size: 3.5vw;
+    font-size: 27px;
     text-align: center;
 }
 
 h4 {
     margin: auto;
     width: 58.3vw;
-    font-size: 1.8vw;
+    font-size: 24px;
     font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
@@ -57,8 +57,8 @@ h4 {
 
 #presse_list > a {
     margin: auto;
-    font-size: 1.4vw;
-    line-height: 2vw;
+    font-size: 15px;
+    line-height: 24px;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -131,6 +131,9 @@ h4 {
     padding-top: 5.9vw;
 }
 
+#catalogues h2, #banqueImages h2, #pressKit h2, #parutions h2 {
+    text-transform: uppercase;
+}
 
 @media only screen and (max-width: 800px) {
     .parutions-text {

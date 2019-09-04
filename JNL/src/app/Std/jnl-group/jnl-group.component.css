@@ -1,13 +1,13 @@
 h1 {
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 30px;
     margin-bottom: 3vh;
     text-align: center;
 }
 h2 {
     /* margin-top: 5.9vw; */
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 27px;
     text-align: center;
     margin-bottom: 0;
 }
@@ -16,7 +16,7 @@ h3 {
     text-transform: uppercase;
     font-family: Helvetica-Light;
     /* color: #DBBB76; */
-    font-size: 1.4vw;
+    font-size: 26px;
     margin-bottom: 1.5vw;
     text-align: center;
     margin-top: .6vw;
@@ -25,7 +25,7 @@ h3 {
 h4 {
     margin: auto;
     width: 54vw;
-    font-size: 1.8vw;
+    font-size: 24px;
     font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
@@ -59,7 +59,7 @@ button {
 .location {
     text-align: center;
     font-family: Helvetica-Light;
-    font-size: 1.2vw;
+    font-size: 15px;
 }
 
 .full-image {
@@ -87,12 +87,12 @@ button {
 
 .quote-bar > p {
     font-family: Helvetica-Light;
-    font-size: 1.8vw;
+    font-size: 15px;
 }
 
 .quote-bar > h4 {
     font-family: Helvetica-Light;
-    font-size: 1vw;
+    font-size: 15px;
     margin-top: 0px;
 }
 
@@ -114,8 +114,8 @@ button {
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
     font-family: Helvetica-Light;
-    font-size: 1.41vw;
-    line-height: 1.2;
+    font-size: 15px !important;
+    line-height: 24px;
 }
 
 #impg2 {
@@ -153,7 +153,7 @@ button {
     justify-content: space-between;
     text-align: left;
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
     margin: auto;
     width: 80%;
 }
@@ -170,12 +170,13 @@ button {
     justify-content: center;
     /* margin-bottom: 4vw; */
     text-align: center;
+    font-size: 15px;
 }
 
 #group_list > a {
     margin: auto;
-    font-size: 1.4vw;
-    line-height: 2vw;
+    font-size: 15px;
+    line-height: 24px;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -208,14 +209,15 @@ button {
     margin-top: 0px;
     width: 28.79vw;
     font-family: Helvetica-Light;
-    font-size: 1.1vw;
+    font-size: 15px;
     text-align: center;
 }
 
 #equipe > div > div > p {
     margin: auto;
     font-family: Helvetica-Light;
-    font-size: 1.1vw;
+    font-size: 15px;
+    line-height: 24px;
     text-align: justify;
 }
 
@@ -229,7 +231,7 @@ button {
 
 #equipe > div > div > h3 {
     font-family: Helvetica;
-    font-size: 1.2vw;
+    font-size: 15px;
     width: auto;
     margin: auto;
     margin-top: .8vw; 
@@ -274,8 +276,8 @@ button {
 
 .staff > div > div > p {
     font-family: Helvetica-light;
-    font-size: 1vw;
-    line-height: 1.2vw;
+    font-size: 12px;
+    line-height: 15px;
     padding-left: 1vw;
     padding-right: 1vw;
     margin-bottom: .5vw;
@@ -370,7 +372,7 @@ button {
 #les-projets > p {
     text-align: center;
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
     margin: auto;
     width: 49.2%;
 }
@@ -413,7 +415,7 @@ button {
 }
 .gallery_buttons > div {
     margin: auto;
-    font-size: 5em;
+    font-size: 15px;
     font-family: Helvetica-Light;
 }
 
@@ -453,7 +455,7 @@ button {
 #archives > div > div > span {
     margin: auto;
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 15px;
     font-style: italic;
 }
 
@@ -463,6 +465,19 @@ button {
 
 #histoire, #equipe, #engagement, #projets, #archives {
     padding-top: 5.9vw;
+}
+
+#histoire h2, #equipe h2, #engagement h2, #projets h2, #archives h2 {
+    text-transform: uppercase;
+}
+
+#histoire h3, #equipe h3, #engagement h3, #projets h3, #archives h3 {
+    font-size: 18px;
+}
+
+#histoire h4, #equipe h4, #engagement h4, #projets h4, #archives h4 {
+    font-size: 15px;
+    line-height: 24px;
 }
 
 #projets {
@@ -484,7 +499,7 @@ button {
 
 #projets > p {
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
     width: 48.4%;
     margin: auto;
 }
@@ -563,7 +578,7 @@ button {
     margin-right: .6vw;
     text-transform: uppercase;
     text-indent: 0;
-    font-size: 1.88vw;
+    font-size: 15px;
     background-color: #666;
     border-radius: 100%;
 }
@@ -614,14 +629,14 @@ input[type="radio"] {
     flex-direction: row;
     width: 62.78vw;
     font-family: Helvetica-Light;
-    font-size: 1.1vw;
+    font-size: 15px;
     padding: 0px;
 }
 
 .group-text {
     padding-top: 6vw;
     text-align: left;
-    font-size: 1.4vw;
+    font-size: 15px;
     margin-top: 0px  !important;
     width: 38.9vw;
     padding: 3vw;
@@ -649,12 +664,12 @@ input[type="radio"] {
 }
 
 .people-name {
-    font-size: 1.8vw;
+    font-size: 15px;
 }
 
 .people-title {
     text-transform: uppercase;
-    font-size: 1vw;
+    font-size: 15px;
 }
 
 .projets {
@@ -668,6 +683,7 @@ input[type="radio"] {
 
 #carousel-projets > div > div > div > h2 {
     margin-top: 0px !important;
+    font-size: 15px;
 }
 
 #carousel-projets > div > div > div > h4 {
@@ -722,13 +738,13 @@ input[type="radio"] {
  }
 
  .container3 > h2 {
-    font-size: 3.05vw;
+    font-size: 15px;
 }
 
  .container3 > h2:first-child {
      text-transform: uppercase;
-     font-size: 1.1vw;
-     margin-top: 1.5vw;
+     font-size: 15px;
+     margin-top: 15px;
  }
 
  .container3 > .carousel-item-image > img {
@@ -766,28 +782,12 @@ input[type="radio"] {
 
 @media only screen and (max-width: 800px)
 {
-    h1 {
-        font-size: 9.7vw;
-    }
-
-    h2 {
-        font-size: 5.6vw;
-    }
-
-    h3 {
-        font-size: 3.8vw;
-    }
 
     h4 {
-        font-size: 4.5vw;
         width: 80vw;
         margin-top: 10vw;
 
         text-align: center !important;
-    }
-
-    span {
-        font-size: 4.2vw;
     }
 
     .staff > div {
@@ -800,8 +800,6 @@ input[type="radio"] {
 
     .staff > div > div > p {
         width: auto;
-        font-size: 4vw;
-        line-height: 5vw;
     }
 
     .staff > div > div > img {
@@ -809,26 +807,9 @@ input[type="radio"] {
         max-width:  38vw;
     }
 
-    .container3 > h2:first-child {
-        font-size: 5vw; 
-    }
-
-    .container3 > h2 {
-        font-size: 4.5vw; 
-    }
-
-    .quote-bar > h4 {
-        font-size: 4.2vw;
-    }
-
     .image-parag > div > p {
-        font-size: 4.2vw !important;
         margin-bottom: 5vw;
         height: auto;
-    }
-
-    .group-main {
-        font-size: 200% !important;
     }
 
     #group_list {
@@ -838,22 +819,13 @@ input[type="radio"] {
     
     #group_list > a{
         margin: auto;
-        font-size: 4.5vw;
-        line-height: 6vw;
+        
         left: 0;
     }
 
     #equipe > div > div {
         width: 70vw;
         margin: auto;
-    }
-
-    #equipe > div > div > p, .group-text, .quote-bar > p {
-        font-size: 4.2vw;
-    }
-
-    #equipe > div > div > h3 {
-        font-size: 3.5vw;
     }
 
     #equipe > div {
@@ -947,19 +919,12 @@ input[type="radio"] {
         padding-left: 0px;
     }
 
-    .proj-flex {
-        font-size: 4.2vw;
-    }
 
     .respo_img {
         margin-top: 4vw;
         padding-left: 80vw;
         padding-bottom: 100%;
         background-size: 80vw 100vw;
-    }
-
-    .group-text > span {
-        font-size: 4.2vw;
     }
 }
 

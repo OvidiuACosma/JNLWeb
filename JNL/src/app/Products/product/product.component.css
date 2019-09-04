@@ -6,7 +6,7 @@ html *
 h1 {
     font-family: Helvetica;
     text-transform: uppercase;
-    font-size: 3vw;
+    font-size: 30px;
     margin-bottom: 0;
     text-align: center;
 }
@@ -14,7 +14,7 @@ h1 {
 h2 {
     /* margin-top: 5.9vw; */
     font-family: Helvetica;
-    font-size: 3.5vw;
+    font-size: 27px;
 
     text-align: center;
 }
@@ -23,19 +23,19 @@ h3 {
     text-transform: uppercase;
     font-family: Helvetica-Light;
     color: #DBBB76;
-    font-size: 1.1vw; /*20px;*/
+    font-size: 26px; /*20px;*/
 
     margin-bottom: 1.5vw;
 }
 
 h4 {
     font-family: Helvetica-Light;
-    font-size: 1.3vw;
+    font-size: 20px;
 }
 
 h5 {
     font-family: Helvetica-Light;
-    font-size: 1.1vw;
+    font-size: 15px;
 }
 
 textarea{
@@ -228,6 +228,10 @@ ol {
     align-content: space-between;
 }
 
+#fav-download h3 {
+    font-size: 15px;
+}
+
 #fav-download > div {
     margin: auto;
     display: flex;
@@ -252,7 +256,7 @@ ol {
     align-items: center;
     justify-content: center;
     font-family: Helvetica;
-    font-size: 1vw;
+    font-size: 15px;
     margin-right: 1.5px !important;
     margin-left: 1.5px !important;
     height: 4vw !important; 
@@ -453,6 +457,11 @@ ol {
 
     h3 {
         font-size: 4.11vw;
+    }
+    
+    .carousel-thumbnails li img {
+        width: 50px;
+        height: 50px;
     }
    
 }

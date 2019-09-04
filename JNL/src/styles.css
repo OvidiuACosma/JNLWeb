@@ -76,13 +76,17 @@ a:hover {
     url('/assets/Fonts/Helvetica-Light.woff') format('woff');
 }
 
+.js-fadein {
+    opacity: 0;
+}
+
 /* Buttons */
 .home_links {
   font-family: Helvetica-Light;
   color: #666;
   border: 1.5px solid #666;
-  padding: .15vw 1.59vw;
-  font-size: 1vw;
+  padding: 3px 10px 7px 10px;
+  font-size: 15px;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing : 1.28px;

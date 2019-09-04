@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from 'src/app/_services';
 import { Browser } from '../../_models';
+declare var $: any;
 
 @Component({
   selector: 'app-menu',
@@ -28,6 +29,11 @@ export class MenuComponent implements OnInit {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
+    });
+    $(document).ready(function() {
+        $('.js-fadein').animate({
+            opacity : 1
+          }, 700);
     });
   }
 
