@@ -94,6 +94,12 @@ h5 {
     margin-left: 0 !important;
 }
 
+/* remove the blue outline */
+.close:focus, .close:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .modal-content {
     text-align: center; 
 }
