@@ -70,6 +70,11 @@ h6 {
     margin-left: 0 !important;
 }
 
+.close:focus, .close:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .modal-header {
     display: flex;
     justify-content: space-between;
