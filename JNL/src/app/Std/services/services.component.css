@@ -1,6 +1,6 @@
 h1 {
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 30px;
     margin-bottom: 3vh;
     text-align: center;
     text-transform: uppercase;
@@ -8,14 +8,14 @@ h1 {
 
 h2 {
     font-family: Helvetica;
-    font-size: 3.5vw;
+    font-size: 27px;
     text-align: center;
 }
 
 h4 {
     margin: auto;
     width: 58.3vw;
-    font-size: 1.8vw;
+    font-size: 24px;
     font-family: Helvetica-Light;
     margin-top: 3.3vw;
     text-align: center;
@@ -61,12 +61,13 @@ video {
 
 .quote-bar > p {
     font-family: Helvetica-Light;
-    font-size: 1.8vw;
+    font-size: 15px;
+    line-height: 24px;
 }
 
 .quote-bar > h4 {
     font-family: Helvetica-Light;
-    font-size: 1vw;
+    font-size: 24px;
     margin-top: 0px;
 }
 
@@ -97,12 +98,14 @@ video {
 
 .sur-flex > div > div {
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
+    line-height: 24px;
 } 
 
 .sur-flex > div > div > span {
     font-family: Helvetica-Light;
-    font-size: 1.1vw;
+    font-size: 15px;
+    line-height: 24px;
 } 
 
 .sur-flex > div > div > h5 {
@@ -113,7 +116,8 @@ video {
     margin-top: 0px !important;
     margin-bottom: 1.5vw;
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
+    line-height: 24px;
     text-align: left;
 } 
 
@@ -156,8 +160,8 @@ video {
 
 #services_list > a {
     margin: auto;
-    font-size: 1.4vw;
-    line-height: 2vw;
+    font-size: 15px;
+    line-height: 24px;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -229,11 +233,14 @@ i {
 .contact-div > p {
     width: 45vw;
     margin: auto;
+    font-size: 15px;
+    line-height: 24px;
 }
 
 .contact-div > div > p {
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
+    line-height: 24px;
     text-align: center;
 }
 
@@ -263,6 +270,7 @@ input {
     border-bottom: 1.5px solid black;
     margin-top: 1.5vw;
     padding-bottom: 0px;
+    font-size: 15px;
 }
 
 input[type="checkbox"] {
@@ -304,6 +312,11 @@ select {
     border: none;
     border-bottom: 1.5px solid black;
     margin-bottom: 1em;
+    font-size: 15px;
+}
+
+textarea {
+    font-size: 15px;
 }
 
 .send {
@@ -361,6 +374,15 @@ select {
     margin-top: 2.57vw;
 }
 
+#expertise h2, #surMesure h2, #votreProjet h2 {
+    text-transform: uppercase;
+}
+
+#expertise > h4, #surMesure > h4, #votreProjet > h4 {
+    font-size: 15px;
+    line-height: 24px;
+}
+
 #surMesure {
     margin-top: 5.75vw;
     margin-bottom: 5.48vw;
@@ -368,14 +390,9 @@ select {
 
 @media only screen and (max-width: 800px){
     .contact-div > p {
-        font-size: 1em;
         width: 80vw;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    h1 {
-        font-size: 9.7vw;
     }
 
     h2 {
@@ -383,7 +400,6 @@ select {
         margin-right: auto;
         width: 80vw;
         word-wrap: normal;
-        font-size: 5.6vw !important;
     }
 
     h4 {
@@ -433,43 +449,12 @@ select {
         margin-bottom: 5vw;
     }
 
-    h2 {
-        font-size: 5.6vw;
-    }
-
-    h4 {
-        font-size: 4.2vw;
-    }
-
     .quote-bar > p {
         font-family: Helvetica-Light;
-        font-size: 4.2vw;
-    }
-
-    .quote-bar > h4 {
-        font-size: 3.9vw;
     }
 
     .sur-flex > div > div {
-        font-size: 4.5vw;
         text-align: center;
-    }
-
-    .sur-flex > div > div > span {
-        font-size: 4.4vw;
-    }
-
-    .sur-flex > div:nth-child(2) > div:first-child {
-        font-size: 4.5vw; 
-    }
-
-    .contact-div
-    {
-        font-size: 4.5vw;
-    }
-
-    .contact-div > div > p {
-        font-size: 4.5vw;
     }
 
     #services_list > a {

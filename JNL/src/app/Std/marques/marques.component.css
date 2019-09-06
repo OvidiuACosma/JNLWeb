@@ -1,13 +1,13 @@
 h1 {
     font-family: Helvetica;
-    font-size: 3vw; /*4em;*/
+    font-size: 30px; /*4em;*/
     margin-bottom: 3vh;
     text-transform: uppercase;
 }
 
 h2 {
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 27px;
     margin-bottom: 0;
 }
 
@@ -15,7 +15,7 @@ h3 {
     text-transform: uppercase;
     font-family: Helvetica-Light;
     color: #666;
-    font-size: 1.38vw;
+    font-size: 26px;
     margin-top: .8vw;
     margin-bottom: 1.2vw;
 }
@@ -60,8 +60,8 @@ h3 {
 
 #marques_list > a {
     margin: auto;
-    font-size: 1.4vw;
-    line-height: 2vw;
+    font-size: 15px;
+    line-height: 24px;
     left: 0;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -123,6 +123,10 @@ h3 {
     /*h2 {
         font-size: 3.5vw;7.9vw;
     }*/
+    
+    h3 {
+        font-size: 15px;
+    }
 
     #marques_list {
         flex-direction: column;
@@ -130,8 +134,7 @@ h3 {
     }
     
     #marques_list > a{
-        margin: auto;
-        font-size: 1.5em;
+        margin: initial;
         left: 0;
     }
 

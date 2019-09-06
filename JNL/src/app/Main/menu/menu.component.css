@@ -32,6 +32,10 @@
     100% {-webkit-opacity: 1;}
 }
 
+.js-fadein {
+    opacity: 0;
+}
+
 .menu-close {
     float: right;
     padding-top: 1.3vw;
@@ -112,13 +116,13 @@
     font-family: Helvetica-light;
     margin-right: 1.38vw;;
     transition: all .5s ease;
-    font-size: 1.1vw;
+    font-size: 13px;
 }
 
 #side_nav_links > div > span {
     font-family: Helvetica;
     flex: 0 0 100%;
-    line-height: 1em;
+    line-height: 1.4em;
     transition: all .5s ease;
 }
 
@@ -136,12 +140,12 @@
     text-transform: uppercase;
     font-family: Helvetica;
     color: #C1C1C1;
-    font-size: 1.6vw;
+    font-size: 20px;
 }
 
 #side_bottom_line > a {
     font-family: Helvetica-Light;
-    font-size: .7vw !important;
+    font-size: 10px !important;
 }
 
 #menu-image-div {
@@ -174,20 +178,23 @@ a:focus, img:focus {
         display: block;
     }
 
+    #side_nav_links {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        height: 80vh;
+    }
+    
     #side_nav_links > div {
         flex-direction: column;
     }
 
     #side_nav_links > div > span {
-        font-size: 7.2vw;
-    }
-
-    #side_nav_links {
-        width: 100vw;
+        font-size: 20px;
     }
 
     #side_nav_links > div > a {
+        display: none;
         margin: 0px;
-        font-size: 3.5vw;
     }
 }

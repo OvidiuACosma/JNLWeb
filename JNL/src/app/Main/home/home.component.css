@@ -22,13 +22,13 @@
 
 h1 {
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 30px;
     margin-bottom: 1.1vw;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 3.2vw;
+    font-size: 27px;
     margin-bottom: .5vw;
 }
 
@@ -179,7 +179,8 @@ hr {
      padding-top: 6vw;
      margin: auto;
      text-align: left;
-     font-size: 1.5vw;
+     font-size: 15px;
+     line-height: 24px;
  }
 
  .marque-text > p {
@@ -237,6 +238,7 @@ hr {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    opacity: 0;
 }
 
 .wrapper {
@@ -273,6 +275,11 @@ hr {
     display: flex;
 }
 
+#une_histoire h1
+{
+    font-size: 30px;
+}
+
 #une_histoire > div {
     margin: auto;
     margin-top: 9.12vw;
@@ -282,8 +289,8 @@ hr {
 }
 
 #une_histoire > div > p {
-    font-size: 1.6vw;
-    line-height: 2vw;
+    font-size: 15px;
+    line-height: 24px;
     margin-bottom: 3.68vw;
     font-family: Helvetica-Light;
 }
@@ -310,7 +317,7 @@ hr {
     margin: auto;
     margin-top: 1.2vw;
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 30px;
 }
 
 
@@ -369,7 +376,7 @@ hr {
 }
 
 #actualites > div > p >span {
-    font-size: 2.08vw;
+    font-size: 20px;
     margin-bottom: .98vw;
     display: block;
 }
@@ -530,7 +537,7 @@ video {
 @media only screen and (max-width: 768px){
 
     h1 {
-        font-size: 4.5vw !important;
+        font-size: 30px !important;
         margin: auto;
         margin-bottom: 2vw;
         text-align: center;
@@ -539,6 +546,11 @@ video {
     h4 {
         font-size: 3.2vw;
     }
+    
+    .wrapper img {
+        width: 50vw;
+    }
+    
     .gallery_buttons > div {
         padding: 1vw;
     }
@@ -556,11 +568,6 @@ video {
     #une_histoire > div {
         margin: auto;
         text-align: center;
-    }
-
-    #une_histoire > div > p {
-        font-size: 4.2vw;
-        line-height: 1.24em;
     }
 
     #une_histoire > div > p > a {
@@ -646,7 +653,7 @@ video {
     }
 
     .more_links {
-        font-size: 3vw;
+        font-size: 15px;
     }
 
     #savoir {
@@ -745,17 +752,6 @@ video {
         height: auto;
     }
 
-    .marque-text {
-        font-size: 4.2vw;
-    }
-
-    .home_links {
-        font-size: 3.9vw;
-    }
-
-    #actualites > div > p >span {
-        font-size: 3.6vw;
-    }
     #savoir > div:last-child {
         margin-top: 5%;
         margin-bottom: 0px;
@@ -782,14 +778,9 @@ video {
     }
 
     #une_histoire > div > h1 {
-        font-size: 36px;
+        font-size: 30px;
         line-height: 43.2px;
         margin-bottom: 13.2px;
-    }
-
-    #une_histoire > div > p {
-        font-size: 19.2px;
-        line-height: 24px;
     }
 
     #une_histoire > div > span {

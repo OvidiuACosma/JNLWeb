@@ -9,7 +9,7 @@
     /* z-index: 1002; /* bigger than .menu, to preserve the close button,  */
                       /* same color to trick the menu presence in full
 } */
-
+                      
 .menu {
     position: fixed;
     top: 0;
@@ -78,8 +78,8 @@
 
 @media only screen and (max-width: 768px) {
     .content {
+        position: relative;
         margin-left: 0px !important;
-        margin-top: 60px !important;
     }
 
     .search-bar {
