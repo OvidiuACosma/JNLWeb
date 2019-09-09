@@ -1,6 +1,6 @@
 h1 {
     font-family: Helvetica;
-    font-size: 3vw;
+    font-size: 30px;
     margin-bottom: 3vh;
     text-align: center;
     text-transform: uppercase;
@@ -8,7 +8,7 @@ h1 {
 
 h2 {
     font-family: Helvetica;
-    font-size: 3.5vw;
+    font-size: 27px;
     text-align: center;
 }
 
@@ -16,7 +16,7 @@ h3 {
     text-transform: uppercase;
     font-family: Helvetica-Light;
     color: #DBBB76;
-    font-size: 1.1vw;
+    font-size: 26px;
     /* margin-bottom: 1.5vw; */
 }
 
@@ -173,7 +173,7 @@ cdk-virtual-scroll-viewport {
 
 .header-filter {
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
     text-transform: uppercase;
     color: #DBBB76;
     margin-bottom: 0;
@@ -182,7 +182,7 @@ cdk-virtual-scroll-viewport {
 
 .reset-filter {
     font-family: Helvetica-Light;
-    font-size: 1.4vw;
+    font-size: 15px;
     padding: 0 .2vw;
     margin-bottom: 0;
     text-align: right;
@@ -201,13 +201,13 @@ cdk-virtual-scroll-viewport {
 .single-filter {
     margin-bottom: 0px;
     font-family: Helvetica-Light;
-    font-size: 1.3vw;
+    font-size: 13px;
     line-height: 1.5vw;
 }
 
 .single-filter > span > i {
     line-height: 1.4vw;
-    font-size: 1vw;
+    font-size: 14px;
 }
 
 li > div {
@@ -230,10 +230,10 @@ li > div {
     display: block;
     width: auto;
     font-family: Helvetica-Light;
-    font-size: 1.7vw;
-    line-height: 2.1vw;
+    font-size: 20px;
+    line-height: 25px;
     text-align: left;
-    margin-top: 1vw;;
+    margin-top: 1vw;
     word-wrap: break-word;
     white-space: nowrap;
     overflow: hidden;
@@ -391,8 +391,8 @@ li > div {
     display: block;
     width: auto;
     font-family: Helvetica-Light;
-    font-size: 1.2vw;
-    line-height: 1.4vw;
+    font-size:14px;
+    line-height: 20px;
     text-align: left;
     margin-top: 0;
     margin-bottom: .5vw;
@@ -552,5 +552,18 @@ li > div {
 
     #services_list > a {
         margin: 0px;
+    }
+    
+    .search {
+        width: 50vw;
+    }
+    
+    .subfilters > li {
+        width: 40vw;
+    }
+    
+    .single-filter, .single-filter > span > i {
+        font-size: 9px;
+        line-height: 12px;
     }
 }

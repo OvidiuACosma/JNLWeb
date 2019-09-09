@@ -20,7 +20,7 @@
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
                 <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal"
                   data-target="#finisageModal">
-                  <a>
+                  <a *ngIf="(fin.name !=='A définir' && fin.name !== 'To define')">
                     <img id="fin-img" class="samples"
                       src="assets\Images\Products\{{brand}}\Samples\{{fin.img}}">
                   </a>

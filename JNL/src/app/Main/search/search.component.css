@@ -142,7 +142,7 @@ li {
     flex-wrap: nowrap;
     height: var(--search-bar-height);
     float: right;
-    font-size: 1.1vw;
+    font-size: 13px; /* 0.8vw */
 }
 
 #top_buttons > span { /*, #top_buttons > ul > li > span {*/
@@ -183,8 +183,8 @@ li {
 
 .magnifier {
     color: #666 !important;
-    font-size: 1.5vw !important;
-    padding-top: .5vw;
+    font-size: 18px !important;
+    padding-top: 5px;
 }
 
 .magnifier:hover {
@@ -295,10 +295,9 @@ li {
     .menu-button {
         color: white !important;
         background-color: transparent;
-        margin-top: -5px;
         position: relative;
         width: auto;
-        font-size: 3vw;
+        font-size: 24px;
         display: flex;
     }
 
@@ -309,6 +308,7 @@ li {
     }
 
     #loupe {
+        font-size: 22px;
         padding-right: 10px;
     }
 
