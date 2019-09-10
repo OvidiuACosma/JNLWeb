@@ -14,7 +14,7 @@
       <div class="materials">
         <span *ngFor="let mat of getMaterials(part); let i2 = index;" (click)="toggleFin('idx'+i+'idx'+i2)"
           [ngClass]="{'pointer': hasFinitions(part, mat)}">{{mat}}
-          <img *ngIf="hasFinitions(part, mat)" src="\assets\Images\Common\mobile_arrow_down.png" class="mat-arrow">
+          <img *ngIf="hasFinitions(part, mat)" src="\assets\Images\Common\mobile_arrow_down.png" class="mat-arrow d-print-none">
           <div class="finitions" *ngIf="getFinitions(part, mat)">
             <div *ngFor="let fin of getFinitions(part, mat)">
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">

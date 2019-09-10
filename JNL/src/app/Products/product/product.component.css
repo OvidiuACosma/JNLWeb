@@ -384,6 +384,14 @@ ol {
     background-color: #f3f5f5;
 }
 
+@media print {
+    #top-container {
+        width: 90%;
+        margin: auto;
+        padding: 0px;
+    }
+}
+
 @media only screen and (max-width: 800px){
     .info_div > p{
         font-size: 1em;

@@ -16,11 +16,11 @@
       </div>
     </div>
 
-    <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev' *ngIf="imgCount>1">
+    <a class='carousel-control-prev d-print-none' data-target="#carousel-custom" data-slide='prev' *ngIf="imgCount>1">
       <img alt="" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
       <span class="sr-only">Previous</span>
     </a>
-    <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next' *ngIf="imgCount>1">
+    <a class='carousel-control-next d-print-none' data-target="#carousel-custom" data-slide='next' *ngIf="imgCount>1">
       <img alt="" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
       <span class="sr-only">Next</span>
     </a>
@@ -28,7 +28,7 @@
   <br>
   <br>
 
-  <div>
+  <div class="d-print-none">
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
       *ngIf="galleryThumbs.length>1">
       <li *ngFor="let image of galleryThumbs; let j = index">
@@ -39,11 +39,11 @@
   <br>
   <br>
 
-  <div id="footer" *ngIf="stdText">
+  <div id="footer" class="d-print-none" *ngIf="stdText">
     <span class="home_links">{{stdText.priceListRequest}}</span><br>
   </div>
 
-  <div id="fav-download">
+  <div id="fav-download" class="d-print-none">
     <div (click)="addToFavorites(prodDesc)">
       <img class="fav-link" alt="JNL Collection" src="/assets/Images/Common/add_fav_icon.png" height="16px">
       <h3 class="fav-link" *ngIf="stdText">&nbsp;&nbsp;{{stdText.addToFavorites}}</h3>
@@ -51,7 +51,7 @@
 
     <h3>&nbsp;&nbsp;&#8213;&nbsp;&nbsp;</h3>
 
-    <div>
+    <div class="pointer d-print-none" (click)="printProductSheet()">
       <img alt="JNL Collection" src="/assets/Images/Common/download_icon.png" height="16px">
       <h3 *ngIf="stdText">&nbsp;&nbsp;{{stdText.print}}</h3>
     </div>
@@ -64,11 +64,11 @@
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
           aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>
-        <a class="nav-item nav-link" id="nav-matFin-tab" data-toggle="tab" href="#nav-matFin" role="tab"
+        <a class="nav-item nav-link d-print-none" id="nav-matFin-tab" data-toggle="tab" href="#nav-matFin" role="tab"
           aria-controls="nav-matFin" aria-selected="false">UPHOLSTERY</a>
-        <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
-          aria-controls="nav-dim" aria-selected="false">DRAWINGS AND CAD</a>
-        <a class="nav-item nav-link" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab"
+        <a class="nav-item nav-link d-print-none" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
+          aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
+        <a class="nav-item nav-link d-print-none" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab"
           aria-controls="nav-cat" aria-selected="false">DOWNLOADS</a>
       </div>
     </nav>
@@ -81,20 +81,20 @@
         </div>
       </div>
       <!-- PRODUCT MATERIALS AND FINISAGES -->
-      <div class="tab-pane fade" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
+      <div class="tab-pane fade d-print-none" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
         <div class="prod-desc">  <!-- *ngIf="category==='Assise'"> -->
           <!-- <app-product-mat-fin [product]="product"></app-product-mat-fin> -->
           <app-product-garnissages></app-product-garnissages>
         </div>
       </div>
       <!-- PRODUCT TECHNICAL DRAWINGS -->
-      <div class="tab-pane fade" id="nav-dim" role="tabpanel" aria-labelledby="nav-dim-tab">
+      <div class="tab-pane fade d-print-none" id="nav-dim" role="tabpanel" aria-labelledby="nav-dim-tab">
         <div class="prod-desc">
           <app-product-dimensions [product]="product"></app-product-dimensions>
         </div>
       </div>
       <!-- PRODUCT DOWNLOADS -->
-      <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
+      <div class="tab-pane fade d-print-none" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
         <div class="prod-desc">
           <app-product-catalogues></app-product-catalogues>
         </div>
@@ -104,7 +104,7 @@
 
 
   <!-- REQUEST FORM -->
-  <div class="info_div" *ngIf="text">
+  <div class="info_div d-print-none" *ngIf="text">
     <br>
     <h2>{{text.infoTitle}}</h2>
     <app-request-form [requestType]='4'></app-request-form>

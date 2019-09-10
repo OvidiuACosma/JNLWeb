@@ -222,4 +222,8 @@ export class ProductComponent implements OnInit {
     this.scroller = false;
   }
 
+  printProductSheet() {
+    window.print();
+  }
+
 }
