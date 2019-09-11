@@ -21,6 +21,7 @@ export class ProductComponent implements OnInit {
   public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   public product: Product;
   public heroImages: Img[] = [];
+  public heroImageToPrint: Img;
   public newHeroImages: Img[] = [];
   public galleryThumbs: Img[] = [];
   public galleryImages: Img[] = [];
@@ -91,6 +92,7 @@ export class ProductComponent implements OnInit {
             alt: `${this.product.brand} ${this.family} ${this.product.model}`
           };
         }
+        this.heroImageToPrint = this.heroImages[0];
       });
   }
 

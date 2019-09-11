@@ -119,6 +119,13 @@ ol {
     color: inherit;
 }
 
+.print-image {
+    width: 800px;
+    height: auto;
+    object-fit: contain;
+    text-align: center;
+}
+
 .slide-image {
     max-width: 56.52vw;
     max-height: 37.43vw;
@@ -390,6 +397,11 @@ ol {
         margin: auto;
         padding: 0px;
     }
+
+    .break {
+        break-after: page;
+    }
+
 }
 
 @media only screen and (max-width: 800px){
