@@ -15,6 +15,11 @@ h6 {
     font-size: 0.9vw;
 }
 
+.code-text {
+    font-family: Helvetica-Light;
+    font-size: 0.9vw;
+}
+
 .hide-item, .show-item {
     display: block;
 }
@@ -140,8 +145,13 @@ h6 {
     
     .img-button {
         width: 100%;
-        height: auto;
+        /* height: auto; */
         object-fit: contain;
+    }
+
+    .code-text {
+        font-family: Helvetica;
+        font-size: 4.2vw;
     }
 }
 
