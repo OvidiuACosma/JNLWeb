@@ -1,83 +1,83 @@
 h1 {
-  font-family: Helvetica;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2vw;
+	font-family: Helvetica;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2vw;
 }
 
 table {
-  font-family: Helvetica-Light;
+	font-family: Helvetica-Light;
 }
 
 input {
-  height: 2.5vw;
+	height: 2.5vw;
 }
 
 input:focus {
-  outline: none;
+	outline: none;
 }
 
 .fav-list {
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .link {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .link:hover {
-  color: rgb(97, 97, 255);
+	color: rgb(97, 97, 255);
 }
 
 label {
-  cursor: pointer;
-  margin-bottom: 0;
-  font-size: 1.5vw;
+	cursor: pointer;
+	margin-bottom: 0;
+	font-size: 1.5vw;
 }
 
 label:hover {
-  color: rgb(97, 97, 255);
-  font-weight: bold;
+	color: rgb(97, 97, 255);
+	font-weight: bold;
 }
 
 .label-red {
-  color: rgb(255, 97, 97);
+	color: rgb(255, 97, 97);
 }
 
 .label-red:hover {
-  color: red;
-  font-weight: bold;
+	color: red;
+	font-weight: bold;
 }
 
 .link-red {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .link-red:hover {
-  color: rgb(255, 97, 97);
+	color: rgb(255, 97, 97);
 }
 
 .c-green {
-  color: green;
+	color: green;
 }
 
 .c-blue {
-  color: blue;
+	color: blue;
 }
 
 .a-center {
-  text-align: center;
+	text-align: center;
 }
 
 .fade-input {
-    border-style: none;
-    border-width: 0px;
-    background-color: transparent;
-    width: 100%;
+	border-style: none;
+	border-width: 0px;
+	background-color: transparent;
+	width: 100%;
 }
 
 .input-edit {
-  color: rgb(97, 97, 255);
+	color: rgb(97, 97, 255);
 }

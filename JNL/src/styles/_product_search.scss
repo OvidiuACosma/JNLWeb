@@ -1,53 +1,50 @@
-
 h1 {
 	font-family: Helvetica;
 	font-size: 30px;
 	margin-bottom: 3vh;
 	text-align: center;
 	text-transform: uppercase;
-  }
-  
-  h2 {
+}
+
+h2 {
 	font-family: Helvetica;
 	font-size: 27px;
 	text-align: center;
-  }
-  
-  h3 {
+}
+
+h3 {
 	text-transform: uppercase;
 	font-family: Helvetica-Light;
-	color: #DBBB76;
+	color: #dbbb76;
 	font-size: 26px;
 	/* margin-bottom: 1.5vw; */
-  }
-  
-  h4 {
+}
+
+h4 {
 	margin: auto;
 	font-size: 1.8vw;
 	font-family: Helvetica-Light;
 	margin-top: 0px;
 	text-align: left;
 	margin-bottom: 3vw;
-  }
-  
-  
-  
-  
-  textarea{
+}
+
+textarea {
 	margin: auto;
-	background-color: #F6EEDD;
+	background-color: #f6eedd;
 	border: none;
 	width: 100%;
 	outline: none;
 	font-family: Helvetica-Light;
 	font-size: 1.4vw;
-  }
-  
-  i {
+}
+
+i {
 	outline: none;
-  }
-  
-  input, select {
+}
+
+input,
+select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -57,11 +54,11 @@ h1 {
 	font-family: Helvetica-Light;
 	font-size: 1.4vw;
 	border: 1px solid black;
-	margin-top: .2vw;
+	margin-top: 0.2vw;
 	padding-bottom: 0px;
-  }
-  
-  button {
+}
+
+button {
 	text-transform: uppercase;
 	margin: auto;
 	background-color: white;
@@ -69,26 +66,27 @@ h1 {
 	margin-top: 5.3em;
 	margin-bottom: 4em;
 	border: none;
-  }
-  
-  li, ul {
+}
+
+li,
+ul {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	list-style-type: none;
 	padding: 0px !important;
 	/* line-height: 1.8vw; */
-  }
-  
-  .content {
+}
+
+.content {
 	width: calc(99vw - var(--left-strip-width));
 	padding-top: 3vw;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-  }
-  
-  .search {
+}
+
+.search {
 	width: 24vw;
 	padding-left: 2vw;
 	padding-right: 1vw;
@@ -96,141 +94,146 @@ h1 {
 	height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
-  }
-  
-  .search-by-text {
+}
+
+.search-by-text {
 	margin-left: 1.5vw;
 	margin-right: 1.5vw;
 	text-align: left;
-  }
-  
-  .search-textbox {
+}
+
+.search-textbox {
 	width: 100%;
 	font-size: 1.1vw;
 	color: #444;
-	padding-left: .3vw;
-  }
-  
-  cdk-virtual-scroll-viewport {
+	padding-left: 0.3vw;
+}
+
+cdk-virtual-scroll-viewport {
 	width: auto;
 	margin: auto;
 	height: 72.3vw;
 	overflow-x: hidden;
-  }
-  
-  .cdk-virtual-scroll-content-wrapper {
+}
+
+.cdk-virtual-scroll-content-wrapper {
 	display: flex !important;
 	flex-direction: row;
 	width: auto;
 	flex-wrap: wrap !important;
 	padding-right: 1.2vw;
-  }
-  
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+}
+
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
 	color: black;
 	opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
 	color: black;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
 	color: black;
-  }
-  
-  .list {
+}
+
+.list {
 	margin-top: 1vw;
-  }
-  
-  .remove-item, .hide-item {
+}
+
+.remove-item,
+.hide-item {
 	display: none;
-  }
-  
-  .non-remove, .show-item {
+}
+
+.non-remove,
+.show-item {
 	display: block;
-  }
-  
-  .search-main {
+}
+
+.search-main {
 	margin: auto;
-	padding-top: 5.9vw;;
-  }
-  
-  .option-label {
+	padding-top: 5.9vw;
+}
+
+.option-label {
 	font-family: Helvetica-Light;
 	font-size: 1.4vw;
-  }
-  
-  .option-label:hover {
+}
+
+.option-label:hover {
 	cursor: default;
-  }
-  
-  .products {
+}
+
+.products {
 	width: 73vw;
-  }
-  
-  .search-container {
+}
+
+.search-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-  }
-  
-  .header-filter {
+}
+
+.header-filter {
 	font-family: Helvetica-Light;
 	font-size: 15px;
 	text-transform: uppercase;
-	color: #DBBB76;
+	color: #dbbb76;
 	margin-bottom: 0;
 	float: left;
-  }
-  
-  .reset-filter {
+}
+
+.reset-filter {
 	font-family: Helvetica-Light;
 	font-size: 15px;
-	padding: 0 .2vw;
+	padding: 0 0.2vw;
 	margin-bottom: 0;
 	text-align: right;
 	float: right;
 	white-space: nowrap;
 	cursor: pointer;
-	transition: all .3s ease-in;
-  }
-  
-  .reset-filter:hover {
+	transition: all 0.3s ease-in;
+}
+
+.reset-filter:hover {
 	background-color: #eee;
 	font-weight: bold;
-	transition: all .3s ease-out;
-  }
-  
-  .single-filter {
+	transition: all 0.3s ease-out;
+}
+
+.single-filter {
 	margin-bottom: 0px;
 	font-family: Helvetica-Light;
 	font-size: 13px;
 	line-height: 1.5vw;
-  }
-  
-  .single-filter > span > i {
+}
+
+.single-filter > span > i {
 	line-height: 1.4vw;
 	font-size: 14px;
-  }
-  
-  li > div {
+}
+
+li > div {
 	font-family: Helvetica-Light;
 	font-size: 1.2vw;
 	text-align: left;
-  }
-  
-  .products-container {
-	height: 99vh;;
+}
+
+.products-container {
+	height: 99vh;
 	overflow-y: auto;
-  }
-  
-  .family-container {
+}
+
+.family-container {
 	display: flex;
 	flex-direction: column;
-  }
-  
-  .family-name {
+}
+
+.family-name {
 	display: block;
 	width: auto;
 	font-family: Helvetica-Light;
@@ -243,9 +246,9 @@ h1 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: black;
-  }
-  
-  .flex-div {
+}
+
+.flex-div {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -258,234 +261,234 @@ h1 {
 	margin: auto;
 	/* height: 72.3vw; */
 	overflow-x: hidden;
-  }
-  
-  .flex-div > li {
+}
+
+.flex-div > li {
 	width: 20vw;
 	margin: auto;
 	margin-left: 1.5vw;
 	margin-right: 1.5vw;
 	display: inline-block;
 	margin-bottom: 3vh;
-  }
-  
-  .arrow {
+}
+
+.arrow {
 	width: 1.7vw;
 	height: auto;
 	float: right;
 	text-align: right;
-	padding-top: .2vw;
+	padding-top: 0.2vw;
 	cursor: pointer;
-  }
-  
-  .header-arrow {
+}
+
+.header-arrow {
 	width: auto;
 	margin-top: 1.7vw;
 	margin-bottom: 1vw;
 	justify-content: baseline;
-  }
-  
-  .filters > ul > li {
+}
+
+.filters > ul > li {
 	width: 17vw;
 	margin: auto;
 	margin-left: 1.5vw;
 	margin-right: 1.5vw;
 	display: inline-block;
-  }
-  
-  .subfilters {
+}
+
+.subfilters {
 	line-height: 1.83vw;
-  }
-  
-  .subfilters > li {
+}
+
+.subfilters > li {
 	width: 17vw;
 	margin: auto;
 	margin-left: 1vw;
 	margin-right: 1.5vw;
 	display: inline-block;
-  }
-  
-  .non-remove > div > span {
+}
+
+.non-remove > div > span {
 	font-family: Helvetica-Light;
 	font-size: 1.2vw;
 	text-align: left;
 	float: left;
 	margin-top: 1.1vw;
-  }
-  
-  .search-img {
+}
+
+.search-img {
 	max-width: 19vw;
 	max-height: 19vw;
 	padding: 0px;
 	vertical-align: middle;
 	margin: auto;
 	object-fit: contain;
-	transition: .5s;
-  }
-  
-  .search-img:hover {
+	transition: 0.5s;
+}
+
+.search-img:hover {
 	transform: scale(1.3);
-  }
-  
-  .pic-frame {
+}
+
+.pic-frame {
 	width: 21vw; /* 20vw; */
 	height: 20vw;
 	background-color: white;
 	border: 0.88px solid transparent;
-  }
-  
-  .product-name {
+}
+
+.product-name {
 	max-width: 19.45vw;
 	text-align: center;
 	margin-bottom: 0;
 	min-height: 1.5vw;
-  }
-  
-  .product-name > span > i {
-	padding-right: .6vw;
-	font-size:  1vw;
-	transition: all .3s ease;
-  }
-  
-  .product-name > span > i:hover {
-	color: #DBBB76;
-	transition: all .3s ease;
-  }
-  
-  .product-name-text {
-	transition: all .3s ease;
-  }
-  
-  .product-name-text:hover {
-	color: #DBBB76;
-	transition: all .3s ease;
-  }
-  
-  .product-brand-text {
+}
+
+.product-name > span > i {
+	padding-right: 0.6vw;
+	font-size: 1vw;
+	transition: all 0.3s ease;
+}
+
+.product-name > span > i:hover {
+	color: #dbbb76;
+	transition: all 0.3s ease;
+}
+
+.product-name-text {
+	transition: all 0.3s ease;
+}
+
+.product-name-text:hover {
+	color: #dbbb76;
+	transition: all 0.3s ease;
+}
+
+.product-brand-text {
 	font-size: 1vw;
 	/* line-height: 1.2vw; */
-	transition: all .3s ease;
-  }
-  
-  .product-brand-text:hover {
-	color: #DBBB76;
-	transition: all .3s ease;
-  }
-  
-  .center-product {
+	transition: all 0.3s ease;
+}
+
+.product-brand-text:hover {
+	color: #dbbb76;
+	transition: all 0.3s ease;
+}
+
+.center-product {
 	margin: auto;
 	margin-bottom: 0;
 	vertical-align: middle;
 	display: flex;
 	overflow: visible;
-  }
-  
-  .filters {
+}
+
+.filters {
 	margin-top: 1vw;
 	text-align: left;
-  }
-  
-  .filter-type {
+}
+
+.filter-type {
 	text-align: left;
 	display: flex;
 	flex-direction: column;
-  }
-  
-  .prod-name {
+}
+
+.prod-name {
 	display: block;
 	width: auto;
 	font-family: Helvetica-Light;
-	font-size:14px;
+	font-size: 14px;
 	line-height: 20px;
 	text-align: left;
 	margin-top: 0;
-	margin-bottom: .5vw;
+	margin-bottom: 0.5vw;
 	word-wrap: break-word;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: black;
-	transition: all .3s ease;
-  }
-  
-  .card-product {
+	transition: all 0.3s ease;
+}
+
+.card-product {
 	width: 21vw;
 	cursor: pointer;
 	color: black;
 	/* transition: all .5s ease; */
-  }
-  
-  #expertise, #surMesure, #votreProjet {
+}
+
+#expertise,
+#surMesure,
+#votreProjet {
 	margin-bottom: 60px;
 	padding-top: 60px;
-  }
-  
-  #details {
+}
+
+#details {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin-top: 3.5vw;
-  }
-  
-  #services {
+}
+
+#services {
 	margin: auto;
 	width: 87.3vw;
 	height: 55vw;
 	display: flex;
 	color: white;
-  }
-  
-  #services > div:first-child {
+}
+
+#services > div:first-child {
 	margin: auto;
 	width: 87vw;
 	height: 48.5vw;
 	display: flex;
 	flex-direction: column;
-  }
-  
-  #checks {
+}
+
+#checks {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-content: center;
 	margin-bottom: 5.1vw;
-  }
-  
-  #checks > div {
+}
+
+#checks > div {
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
-  }
-  
-  #send {
+}
+
+#send {
 	width: 16.5vw;
 	margin-top: 4.3vw;
-	font-family : Helvetica-Light;
-	font-size : 1.4vw;
-	letter-spacing : 1.28px;
-	text-transform : uppercase;
-  }
-  
-  #remove-download {
+	font-family: Helvetica-Light;
+	font-size: 1.4vw;
+	letter-spacing: 1.28px;
+	text-transform: uppercase;
+}
+
+#remove-download {
 	margin: auto;
 	width: 39.9vw;
 	display: flex;
 	flex-direction: row;
-  }
-  
-  #remove-download > div {
+}
+
+#remove-download > div {
 	margin: auto;
 	display: flex;
 	flex-direction: row;
-  }
-  
-  
-  @media only screen and (max-width: 800px){
-  
+}
+
+@media only screen and (max-width: 800px) {
 	h1 {
 		font-size: 9.7vw;
 	}
-  
+
 	h2 {
 		margin-left: auto;
 		margin-right: auto;
@@ -493,81 +496,78 @@ h1 {
 		word-wrap: normal;
 		font-size: 5.6vw !important;
 	}
-  
+
 	h4 {
 		width: 80vw;
 	}
-  
+
 	button {
 		margin-top: 0px;
 	}
-  
+
 	input {
 		margin-top: 20px;
 	}
-  
+
 	.sur-flex {
 		flex-direction: column;
 		width: 80vw;
 	}
-  
+
 	.sur-flex > div {
 		width: 80vw;
 		justify-content: space-between;
 	}
-  
+
 	.sur-flex > div:last-child {
 		flex-direction: column-reverse;
 	}
-  
+
 	.sur-flex > div > div > img {
 		width: 80vw;
 	}
-  
+
 	h2 {
 		font-size: 5.6vw;
 	}
-  
+
 	h4 {
 		font-size: 4.2vw;
 	}
-  
+
 	.sur-flex > div > div {
 		font-size: 4.5vw;
 	}
 	.sur-flex > div > div > span {
 		font-size: 4.4vw;
-  
 	}
-  
+
 	.sur-flex > div:nth-child(2) > div:first-child {
 		font-size: 4.5vw;
 	}
-	.fav_div
-	{
+	.fav_div {
 		font-size: 4.5vw;
-  
 	}
-  
-  
+
 	.fav_div > div > p {
 		font-size: 4.5vw;
 	}
-  
+
 	#services_list > a {
 		margin: 0px;
 	}
-	
+
 	.search {
 		width: 50vw;
 	}
-	
+
 	.subfilters > li {
 		width: 40vw;
 	}
-	
-	.single-filter, .single-filter > span > i {
+
+	.single-filter,
+	.single-filter > span > i {
 		font-size: 9px;
 		line-height: 12px;
 	}
-  }
+}

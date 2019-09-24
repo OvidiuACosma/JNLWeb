@@ -1,21 +1,21 @@
 h1 {
-    text-align: center;
-    font-size: 3.55vw;
+	text-align: center;
+	font-size: 3.55vw;
 }
 
 h2 {
-    font-size: 2.4vw;
+	font-size: 2.4vw;
 }
 
 h3 {
-    font-size: 1.8vw;
+	font-size: 1.8vw;
 }
 
 h5 {
-    text-transform: uppercase;
-    font-size: 1.68vw;
-    font-weight: 100;
-    font-family: Helvetica-Light;
+	text-transform: uppercase;
+	font-size: 1.68vw;
+	font-weight: 100;
+	font-family: Helvetica-Light;
 }
 
 /*
@@ -53,60 +53,60 @@ input {
 */
 
 #container {
-    font-family: Helvetica-Light;
+	font-family: Helvetica-Light;
 }
 
-.hide-item, .show-item {
-    display: block;
+.hide-item,
+.show-item {
+	display: block;
 }
 
 .arrow {
-    display: none;
+	display: none;
 }
 
 #content {
-    width: 40vw;
-    margin: auto;
+	width: 40vw;
+	margin: auto;
 }
 
 #info-form {
-    display: flex;
-    width: 88,2vw;
-    background-color: #DBBB76;
-    justify-content: center;
-    padding:5vw;
+	display: flex;
+	width: 88, 2vw;
+	background-color: #dbbb76;
+	justify-content: center;
+	padding: 5vw;
 }
 
 @media only screen and (max-width: 800px) {
+	.arrow {
+		/* display: inline; */
+		margin: auto;
+		margin-left: 0px;
+		display: block;
+		width: 13px;
+		height: 13px;
+	}
 
-    .arrow {
-        /* display: inline; */
-        margin: auto;
-        margin-left: 0px;
-        display: block;
-        width: 13px;
-        height: 13px;
-    }
+	.hide-item {
+		display: none !important;
+	}
 
-    .hide-item {
-        display: none !important;
-    }
+	#staticText {
+		width: 88.3vw;
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: baseline;
+	}
 
-    #staticText {
-        width: 88.3vw;
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: baseline;
-    }
+	#staticText > h5 {
+		font-size: 4.16vw;
+		text-align: center;
+		width: 75.22vw;
+	}
 
-    #staticText > h5 {
-        font-size: 4.16vw;
-        text-align: center;
-        width: 75.22vw;
-    }
-
-    #container {
-        flex-direction: column;
-    }
+	#container {
+		flex-direction: column;
+	}
 }

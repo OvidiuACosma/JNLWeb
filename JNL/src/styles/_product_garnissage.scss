@@ -4,26 +4,22 @@ li, ul {
   appearance: none;
   list-style-type: none;
   padding: 0px !important;
-  /* line-height: 1.8vw; */
 }
 
 i {
   outline: none;
 }
 
-.wrapper {
+.wrapper.wrapper_garnissage {
   width: 80vw;
   margin: auto;
   padding-top: 6vw;
   padding-bottom: 4vw;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 
 .filters {
-  /* display: flex;
-  flex-direction: column; */
   text-align: left;
   width: 24vw;
   padding-left: 2vw;

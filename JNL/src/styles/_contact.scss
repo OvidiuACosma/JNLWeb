@@ -1,84 +1,86 @@
-
 .contact-div {
 	text-align: center;
 	padding-top: 5.9vw;
 	font-family: Helvetica-Light;
 	font-size: 1.4vw;
 	margin-bottom: 6vw;
-  
+
 	> p {
-	  font-family: Helvetica-Light;
-	  font-size: 15px;
-	  line-height: 24px;
-	  padding-left: 18.9vw;
-	  padding-right: 18.9vw;
+		font-family: Helvetica-Light;
+		font-size: 15px;
+		line-height: 24px;
+		padding-left: 18.9vw;
+		padding-right: 18.9vw;
 	}
-  
+
 	> div {
-	  width: 100vw;
-	  background-color: #e3d9c6;
+		width: 100vw;
+		background-color: #e3d9c6;
 	}
-  }
-  
-  .contact_form {
+}
+
+.contact_form {
 	width: 90%;
 	margin-top: 4.8vw;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-  
-	&:focus, input:focus, textarea:focus, select:focus, button:focus {
-	  outline: none;
+
+	&:focus,
+	input:focus,
+	textarea:focus,
+	select:focus,
+	button:focus {
+		outline: none;
 	}
-  
+
 	input {
-	  margin: auto;
-	  -webkit-appearance: none; 
-	  -moz-appearance: none;
-	  appearance: none; 
-	  outline: none;
-	  border: hidden;
-	  width: 45vw;
-	  background-color: transparent;
-	  border: none;
-	  border-bottom: 1.5px solid black;
-	  margin-top: 1.5vw !important;
-	  margin-bottom: 0px !important;
-	  padding-bottom: 0px;
+		margin: auto;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: none;
+		border: hidden;
+		width: 45vw;
+		background-color: transparent;
+		border: none;
+		border-bottom: 1.5px solid black;
+		margin-top: 1.5vw !important;
+		margin-bottom: 0px !important;
+		padding-bottom: 0px;
 	}
-  
+
 	textarea {
-	  margin: auto;
-	  background-color: #F6EEDD;
-	  border: none;
-	  width: 45vw;
-	  outline: none;
+		margin: auto;
+		background-color: #f6eedd;
+		border: none;
+		width: 45vw;
+		outline: none;
 	}
-  
+
 	select {
-	  margin: auto;
-	  -webkit-appearance: none; 
-	  -moz-appearance: none;
-	  appearance: none;  
-	  width: 45vw;
-	  background-color: transparent;
-	  border: none;
-	  border-bottom: 1.5px solid black;
-	  margin-bottom: 1em;
-	  margin-top: 4vw;
+		margin: auto;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 45vw;
+		background-color: transparent;
+		border: none;
+		border-bottom: 1.5px solid black;
+		margin-bottom: 1em;
+		margin-top: 4vw;
 	}
-  }
-  
-  .contact_top {
+}
+
+.contact_top {
 	margin: auto;
 	margin-right: 0px !important;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
-  
-  }
-  .contact_form > button {
+}
+.contact_form > button {
 	text-transform: uppercase;
 	margin: auto;
 	background-color: white;
@@ -86,22 +88,20 @@
 	margin-top: 5.3em;
 	margin-bottom: 4em;
 	border: none;
-  
-  }
-  
-  .contact_form > div{
+}
+
+.contact_form > div {
 	margin: auto;
 	text-align: left;
-  }
-  
-  
-  @media only screen and (max-width: 800px){
+}
+
+@media only screen and (max-width: 800px) {
 	.contact-div > p {
 		font-size: 4.4vw;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
-  
+
 	/*input, select, textarea {
 		width: 90vw !important;
 		font-size: 3.5vw;
@@ -110,21 +110,20 @@
 	h1 {
 		font-size: 9.7vw;
 	}*/
-	
-	
+
 	.contact-div {
 		font-size: 4.2vw;
 	}
-  
+
 	.contact-div > p {
 		font-size: 4.2vw;
 	}
-  
+
 	.contact_form > button {
 		margin-top: 0px;
 	}
-  
+
 	.contact_form > input {
 		margin-top: 5vw;
 	}
-  }
+}

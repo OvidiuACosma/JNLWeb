@@ -1,108 +1,94 @@
+/* FONTS */
+@font-face {
+	font-family: "Helvetica-Light";
+	font-display: auto;
+	src: url("/assets/Fonts/Helvetica-Light.otf"), url("/assets/Fonts/Helvetica-Light.woff") format("woff");
+}
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 :root {
-    --search-bar-height: 4.531vw; /*56px;*/
-    --left-strip-width: 0; /*5.347vw;*/
-    --mobile-width: 768px;
+	--search-bar-height: 4.531vw; /*56px;*/
+	--left-strip-width: 0; /*5.347vw;*/
+	--mobile-width: 768px;
 }
 
 /* SCROLL BAR */
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
-  }
+	width: 5px;
+}
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    /* background: #777;  */
-    background: #888; /* #121A2D; */
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+	/* background: #777;  */
+	background: #888; /* #121A2D; */
+}
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
 /* Scroll Bar */
 
 .material-icons {
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
 
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+	/* Support for IE. */
+	font-feature-settings: "liga";
+}
+
+html,
+body {
+	height: 100%;
 }
 
 html {
-  scroll-behavior: smooth;
-}
-
-body
-{
-    font-family: 'Century Gothic';
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    text-decoration: none;
-    color: #888;
-    cursor: pointer;
-}
-
-/* FONTS */
-@font-face {
-    font-family: "Helvetica-Light";
-    font-display: auto;
-    src: url('/assets/Fonts/Helvetica-Light.otf'),
-    url('/assets/Fonts/Helvetica-Light.woff') format('woff');
-}
-
-.js-fadein {
-    opacity: 0;
-}
-
-/* Buttons */
-.home_links {
-  font-family: Helvetica-Light;
-  color: #666;
-  border: 1.5px solid #666;
-  padding: 3px 10px 7px 10px;
-  font-size: 15px;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing : 1.28px;
-  transition: all .5s ease;
-}
-
-.home_links:hover {
-  color: #DBBB76;
-  transition: all .5s ease;
-  cursor: pointer;
-}
-
-html, body {
-  height: 100%;
+	scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+	overflow-x: hidden;
+	margin: 0;
+	// font-family: Roboto, "Helvetica Neue", sans-serif;
+	font-family: Helvetica;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #888;
+	cursor: pointer;
+}
+
+.js-fadein {
+	opacity: 0;
+}
+
+.flex-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }

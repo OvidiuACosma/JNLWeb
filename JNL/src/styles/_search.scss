@@ -21,7 +21,9 @@ li {
 	border: solid 1px #888;
 }
 
-.searchInput:focus, input:focus, a:focus {
+.searchInput:focus,
+input:focus,
+a:focus {
 	outline: none;
 }
 
@@ -30,12 +32,12 @@ li {
 	mix-blend-mode: difference;
 	/* text-shadow: 0px 0px 5px white; */
 	/* text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white; */
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 }
 
 .top-button:hover {
-	color: #DBBB76;
-	transition: all .3s ease;
+	color: #dbbb76;
+	transition: all 0.3s ease;
 	cursor: pointer;
 }
 
@@ -86,17 +88,16 @@ li {
 }
 
 /*TEXT SEARCH*/
-#search_bar >  input {
+#search_bar > input {
 	width: 97vw;
 	min-height: var(--search-bar-height);
 	height: auto;
 	padding-left: 5vw;
 	border: 0;
-	background-color:lightgray;
-
+	background-color: lightgray;
 }
 
-#search_bar >  input:focus {
+#search_bar > input:focus {
 	outline: none;
 }
 
@@ -112,14 +113,14 @@ li {
 	color: white;
 }
 
-#search_bar >form > button:focus {
+#search_bar > form > button:focus {
 	outline: 0;
 }
 
 #search_bar > button:hover {
 	outline: 0;
-	background-color: #DBBB76;
-	transition: all .3s ease;
+	background-color: #dbbb76;
+	transition: all 0.3s ease;
 	cursor: pointer;
 }
 
@@ -145,7 +146,8 @@ li {
 	font-size: 13px; /* 0.8vw */
 }
 
-#top_buttons > span { /*, #top_buttons > ul > li > span {*/
+#top_buttons > span {
+	/*, #top_buttons > ul > li > span {*/
 	flex: 0 0 auto;
 	width: auto;
 	margin: auto;
@@ -154,23 +156,25 @@ li {
 	text-align: center;
 	text-decoration: none;
 	mix-blend-mode: difference;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 }
 
-#top_buttons > ul > li > span:hover { /*, #top_buttons span:hover, #top_buttons span i:hover {*/
-	color: #DBBB76;
-	transition: all .3s ease;
+#top_buttons > ul > li > span:hover {
+	/*, #top_buttons span:hover, #top_buttons span i:hover {*/
+	color: #dbbb76;
+	transition: all 0.3s ease;
 }
 
-#top_buttons > span > a:link, #top_buttons > span > a:visited {
+#top_buttons > span > a:link,
+#top_buttons > span > a:visited {
 	text-decoration: none;
 	color: black;
 	mix-blend-mode: difference;
 }
 
-#top_buttons > span >a:hover {
-	color: #DBBB76;
-	transition: all .3s ease;
+#top_buttons > span > a:hover {
+	color: #dbbb76;
+	transition: all 0.3s ease;
 }
 
 .heart {
@@ -178,7 +182,7 @@ li {
 }
 
 .heart:hover {
-	color: #DBBB76 !important;
+	color: #dbbb76 !important;
 }
 
 .magnifier {
@@ -188,10 +192,11 @@ li {
 }
 
 .magnifier:hover {
-	color: #DBBB76 !important;
+	color: #dbbb76 !important;
 }
 
-.dash, .dash:hover {
+.dash,
+.dash:hover {
 	color: #666 !important;
 }
 
@@ -232,7 +237,7 @@ li {
 }
 
 .menu-text {
-	font-size: .842vw;
+	font-size: 0.842vw;
 	color: #666;
 	padding: 1.111vw 0 0 0;
 	margin: 0;
@@ -243,7 +248,7 @@ li {
 	align-items: center !important;
 	margin: auto;
 	margin-left: 0 !important;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	padding-left: 5.5vw;
 }
 
@@ -262,7 +267,7 @@ li {
 }
 
 .menu-text {
-	font-size: .842vw; /*.758rem;*/
+	font-size: 0.842vw; /*.758rem;*/
 	padding: 1.111vw 0 0 0;
 	margin: 0;
 }
@@ -283,7 +288,7 @@ li {
 		max-width: 100%;
 		height: 40px;
 		display: block;
-		background-color: #121A2D;
+		background-color: #121a2d;
 		color: white !important;
 
 		padding: 11px;
@@ -302,7 +307,7 @@ li {
 	}
 
 	.top-button {
-		font-family: 'FontAwesome';
+		font-family: "FontAwesome";
 		content: "\faSearch";
 		color: white !important;
 	}
@@ -315,11 +320,9 @@ li {
 	.image-link {
 		height: 19px;
 	}
-
-
 }
 
 .search {
 	width: calc(100vw - var(--left-strip-width));
 	padding-top: var(--search-bar-height);
-}   
+}
