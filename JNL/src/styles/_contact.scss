@@ -70,6 +70,21 @@
 		margin-bottom: 1em;
 		margin-top: 4vw;
 	}
+
+	> button {
+		text-transform: uppercase;
+		margin: auto;
+		background-color: white;
+		color: black;
+		margin-top: 5.3em;
+		margin-bottom: 4em;
+		border: none;
+	}
+
+	> div {
+		margin: auto;
+		text-align: left;
+	}
 }
 
 .contact_top {
@@ -80,20 +95,6 @@
 	justify-content: center;
 	align-content: center;
 }
-.contact_form > button {
-	text-transform: uppercase;
-	margin: auto;
-	background-color: white;
-	color: black;
-	margin-top: 5.3em;
-	margin-bottom: 4em;
-	border: none;
-}
-
-.contact_form > div {
-	margin: auto;
-	text-align: left;
-}
 
 @media only screen and (max-width: 800px) {
 	.contact-div > p {
@@ -101,15 +102,6 @@
 		padding-left: 10px;
 		padding-right: 10px;
 	}
-
-	/*input, select, textarea {
-		width: 90vw !important;
-		font-size: 3.5vw;
-	}
-  
-	h1 {
-		font-size: 9.7vw;
-	}*/
 
 	.contact-div {
 		font-size: 4.2vw;

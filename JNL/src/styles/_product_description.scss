@@ -1,202 +1,196 @@
-hr {
-	height: 0;
-	border-top: 1px solid #dbbb76;
-}
-
-h2 {
-	font-size: 2.4vw;
-}
-
-h5 {
-	text-transform: uppercase;
-	font-size: 1.68vw;
-	font-weight: 100;
-	font-family: Helvetica-Light;
-}
-
-.hide-item,
-.show-item {
-	display: block;
-}
-
-.arrow {
-	display: none;
-}
-
-.parts {
-	font-family: Helvetica;
-	font-size: 15px;
-}
-
-.materials {
-	font-family: Helvetica-light;
-	font-size: 15px;
-	margin-bottom: 0.5vw;
-}
-
-.finitions {
+.product-description {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	font-family: Helvetica-light;
-	font-size: 0.7vw;
-	font-style: italic;
-	cursor: default !important;
-	color: initial !important;
-}
 
-.pointer:hover {
-	cursor: pointer;
-	color: #dbbb76;
-}
+	@media only screen and (max-width: 800px) {
+		flex-direction: column;
+	}
 
-.pointer {
-	transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-}
+	hr {
+		height: 0;
+		border-top: 1px solid #dbbb76;
+	}
 
-.mat-arrow {
-	height: 0.8vw;
-	width: 0.8vw;
-	margin-bottom: 0.2vw;
-}
+	h2 {
+		font-size: 2.4vw;
+	}
 
-.fin {
-	width: 4.687vw;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	padding-right: 0.52vw;
-}
+	h5 {
+		text-transform: uppercase;
+		font-size: 1.68vw;
+		font-weight: 100;
+		font-family: Helvetica-Light;
+	}
 
-#fin-img {
-	object-fit: cover;
-	text-align: center;
-}
+	.hide-item,
+	.show-item {
+		display: block;
+	}
 
-.samples {
-	width: 4.166vw;
-	height: 4.166vw;
-}
+	.arrow {
+		display: none;
+	}
 
-/* .modal-dim {
-    max-width: 700px !important;
-    width: 70vw !important;
-    min-width: 400px;
-} */
+	.parts {
+		font-family: Helvetica;
+		font-size: 15px;
+	}
 
-.modal-header {
-	display: flex;
-	justify-content: space-between;
-}
+	.materials {
+		font-family: Helvetica-light;
+		font-size: 15px;
+		margin-bottom: 0.5vw;
+	}
 
-/* close button of modal */
-.close {
-	margin-left: 0 !important;
-}
+	.finitions {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		font-family: Helvetica-light;
+		font-size: 0.7vw;
+		font-style: italic;
+		cursor: default !important;
+		color: initial !important;
+	}
 
-/* remove the blue outline */
-.close:focus,
-.close:active {
-	outline: none !important;
-	box-shadow: none !important;
-}
+	.pointer:hover {
+		cursor: pointer;
+		color: #dbbb76;
+	}
 
-.modal-content {
-	text-align: center;
-}
+	.pointer {
+		transition: color 0.3s ease;
+		-webkit-transition: color 0.3s ease;
+	}
 
-.modal-arrow {
-	height: 2vw;
-	width: 1vw;
-	margin-top: 130%;
-}
+	.mat-arrow {
+		height: 0.8vw;
+		width: 0.8vw;
+		margin-bottom: 0.2vw;
+	}
 
-.whiteSpace {
-	flex: 1;
-}
+	.fin {
+		width: 4.687vw;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		padding-right: 0.52vw;
+	}
 
-.cardContainer {
-	flex: 4;
-}
+	#fin-img {
+		object-fit: cover;
+		text-align: center;
+	}
 
-.card {
-	margin: auto;
-	border: 0px !important;
-}
+	.samples {
+		width: 4.166vw;
+		height: 4.166vw;
+	}
 
-.card-body {
-	height: 30px;
+	/* close button of modal */
+	.close {
+		margin-left: 0 !important;
+	}
+
+	/* remove the blue outline */
+	.close:focus,
+	.close:active {
+		outline: none !important;
+		box-shadow: none !important;
+	}
+
+	.whiteSpace {
+		flex: 1;
+	}
+
+	.cardContainer {
+		flex: 4;
+	}
+
+	.card {
+		margin: auto;
+		border: 0px !important;
+	}
+
+	.card-body {
+		height: 30px;
+	}
+
+	/****************************************************************/
+
+	#staticText {
+		width: 30.55vw;
+	}
+
+	#description {
+		width: 40vw;
+		margin: auto;
+	}
+
+	#description > p {
+		font-family: Helvetica-Light;
+		font-size: 1.1vw;
+		text-align: justify;
+	}
+
+	@media print {
+		#description {
+			width: 100%;
+			text-align: left;
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		.arrow {
+			/* display: inline; */
+			margin: auto;
+			margin-left: 0px;
+			display: block;
+			width: 13px;
+			height: 13px;
+		}
+
+		.hide-item {
+			display: none !important;
+		}
+
+		#staticText {
+			width: 88.3vw;
+			display: flex;
+			flex-direction: row;
+			align-content: center;
+			justify-content: baseline;
+		}
+
+		#staticText > h5 {
+			font-size: 4.16vw;
+			text-align: center;
+			width: 75.22vw;
+		}
+	}
 }
 
 /* workaround to fix bootstrap`s modal bug in Angular
-   Without this fix the dark background will cover the modal. */
-.modal {
+			Without this fix the dark background will cover the modal. */
+.modal#finisageModal {
 	background-color: rgba(127, 127, 127, 0.5);
-}
 
-.modal-backdrop {
-	position: relative;
-}
-
-/****************************************************************/
-
-#container {
-	/* padding-top: 30px; */
-	display: flex;
-}
-
-#staticText {
-	width: 30.55vw;
-}
-
-#description {
-	width: 40vw;
-	margin: auto;
-}
-
-#description > p {
-	font-family: Helvetica-Light;
-	font-size: 1.1vw;
-	text-align: justify;
-}
-
-@media print {
-	#description {
-		width: 100%;
-		text-align: left;
-	}
-}
-
-@media only screen and (max-width: 800px) {
-	.arrow {
-		/* display: inline; */
-		margin: auto;
-		margin-left: 0px;
-		display: block;
-		width: 13px;
-		height: 13px;
-	}
-
-	.hide-item {
-		display: none !important;
-	}
-
-	#staticText {
-		width: 88.3vw;
+	
+	.modal-header {
 		display: flex;
-		flex-direction: row;
-		align-content: center;
-		justify-content: baseline;
+		justify-content: space-between;
 	}
 
-	#staticText > h5 {
-		font-size: 4.16vw;
+	.modal-content {
 		text-align: center;
-		width: 75.22vw;
 	}
 
-	#container {
-		flex-direction: column;
+	.modal-arrow {
+		height: 2vw;
+		width: 1vw;
+		margin-top: 130%;
+	}
+
+	.modal-backdrop {
+		position: relative;
 	}
 }

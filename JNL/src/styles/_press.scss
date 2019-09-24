@@ -1,197 +1,174 @@
-h1 {
-	font-family: Helvetica;
-	font-size: 30px;
-	margin-bottom: 3vh;
-	text-align: center;
-}
-
-h2 {
-	margin-bottom: 3.45vw;
-	font-family: Helvetica;
-	font-size: 27px;
-	text-align: center;
-}
-
-h4 {
-	margin: auto;
-	width: 58.3vw;
-	font-size: 24px;
-	font-family: Helvetica-Light;
-	margin-top: 3.3vw;
-	text-align: center;
-}
 
 .presse-main {
 	margin: auto;
 	width: 100%;
 	padding-top: 5.9vw;
-}
 
-.presse-main > div {
-	margin: auto;
-	left: 0;
-	width: 100%;
-	text-align: center;
-}
-
-#presse_list {
-	margin: auto;
-	font-family: Helvetica-Light;
-	width: 26vw;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-content: space-between;
-	padding: 0px;
-	justify-content: center;
-	text-align: center;
-}
-
-#presse_list > a:first-child {
-	margin-left: 0px;
-}
-
-#presse_list > a:last-child {
-	margin-right: 0px;
-}
-
-#presse_list > a {
-	margin: auto;
-	font-size: 15px;
-	line-height: 24px;
-	left: 0;
-	text-transform: uppercase;
-	border-bottom: 1px solid transparent;
-	transition: all 0.5s ease;
-}
-
-#presse_list > a:hover {
-	color: black;
-	border-bottom: 1px solid black;
-	transition: all 0.5s ease;
-}
-
-.first-image {
-	width: 100%;
-	left: 0;
-	margin-top: 3.81vw;
-	margin-bottom: 3.01vw;
-}
-
-.logo {
-	align-self: center;
-	height: auto;
-	width: 12vw !important;
-}
-
-.bloc-four-flex {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	width: 67.9vw;
-	margin: auto;
-}
-
-.elements {
-	margin: auto;
-	width: 15.47vw;
-	display: flex;
-	flex-direction: column;
-	margin-right: 1vw;
-}
-
-.elements > img {
-	width: 15.47vw;
-	margin-bottom: 1vw;
-}
-
-.elements > span {
-	width: 15.47vw;
-	margin-bottom: 0.6vw;
-}
-
-.row {
-	margin: auto;
-}
-
-.container {
-	padding: 0px;
-	font-family: Helvetica-Light;
-	font-size: 16px;
-	display: flex;
-	height: 70vh;
-}
-
-#parutions {
-	margin-bottom: 5vw;
-}
-
-#catalogues,
-#banqueImages,
-#pressKit,
-#parutions {
-	padding-top: 5.9vw;
-}
-
-#catalogues h2,
-#banqueImages h2,
-#pressKit h2,
-#parutions h2 {
-	text-transform: uppercase;
-}
-
-@media only screen and (max-width: 800px) {
-	.parutions-text {
-		width: 80vw;
-		height: 40vw;
-		position: relative;
-		top: 0;
-	}
-
-	h1 {
-		font-size: 9.7vw;
+	> div {
+		margin: auto;
+		left: 0;
+		width: 100%;
+		text-align: center;
 	}
 
 	h2 {
-		font-size: 7.6vw;
+		margin-bottom: 3.45vw;
 	}
 
 	h4 {
-		font-size: 7.2vw;
+		margin: auto;
+		width: 58.3vw;
+		font-size: 24px;
+		font-family: Helvetica-Light;
+		margin-top: 3.3vw;
+		text-align: center;
 	}
 
-	.parutions-text {
-		font-size: 5.5vw;
+
+	#presse_list {
+		margin: auto;
+		font-family: Helvetica-Light;
+		width: 26vw;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: space-between;
+		padding: 0px;
+		justify-content: center;
+		text-align: center;
 	}
 
-	.parutions-text > div > span {
-		font-size: 7.2vw;
+	#presse_list > a:first-child {
+		margin-left: 0px;
+	}
+
+	#presse_list > a:last-child {
+		margin-right: 0px;
 	}
 
 	#presse_list > a {
 		margin: auto;
+		font-size: 15px;
+		line-height: 24px;
+		left: 0;
+		text-transform: uppercase;
+		border-bottom: 1px solid transparent;
+		transition: all 0.5s ease;
 	}
 
-	.four-flex {
-		width: 80vw;
-		justify-content: center;
+	#presse_list > a:hover {
+		color: black;
+		border-bottom: 1px solid black;
+		transition: all 0.5s ease;
 	}
 
-	.four-flex > div {
+	.first-image {
+		width: 100%;
+		left: 0;
+		margin-top: 3.81vw;
+		margin-bottom: 3.01vw;
+	}
+
+	.logo {
+		align-self: center;
+		height: auto;
+		width: 12vw !important;
+	}
+
+	.bloc-four-flex {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 67.9vw;
+		margin: auto;
+	}
+
+	.elements {
+		margin: auto;
+		width: 15.47vw;
+		display: flex;
 		flex-direction: column;
+		margin-right: 1vw;
 	}
 
-	.four-flex > div > div {
-		width: 30vw;
+	.elements > img {
+		width: 15.47vw;
+		margin-bottom: 1vw;
 	}
 
-	.four-flex > div > div > img {
-		width: 30vw;
+	.elements > span {
+		width: 15.47vw;
+		margin-bottom: 0.6vw;
 	}
 
-	.four-flex > div > div > span {
-		width: auto;
-		font-size: 2.5vw;
+	.row {
+		margin: auto;
+	}
+
+	.container {
+		padding: 0px;
+		font-family: Helvetica-Light;
+		font-size: 16px;
+		display: flex;
+		height: 70vh;
+	}
+
+	#parutions {
+		margin-bottom: 5vw;
+	}
+
+	#catalogues,
+	#banqueImages,
+	#pressKit,
+	#parutions {
+		padding-top: 5.9vw;
+	}
+
+	@media only screen and (max-width: 800px) {
+		.parutions-text {
+			width: 80vw;
+			height: 40vw;
+			position: relative;
+			top: 0;
+		}
+
+		h4 {
+			font-size: 7.2vw;
+		}
+
+		.parutions-text {
+			font-size: 5.5vw;
+		}
+
+		.parutions-text > div > span {
+			font-size: 7.2vw;
+		}
+
+		#presse_list > a {
+			margin: auto;
+		}
+
+		.four-flex {
+			width: 80vw;
+			justify-content: center;
+		}
+
+		.four-flex > div {
+			flex-direction: column;
+		}
+
+		.four-flex > div > div {
+			width: 30vw;
+		}
+
+		.four-flex > div > div > img {
+			width: 30vw;
+		}
+
+		.four-flex > div > div > span {
+			width: auto;
+			font-size: 2.5vw;
+		}
 	}
 }

@@ -1,7 +1,7 @@
 <div id="actualites-div">
   <div class="logo" *ngIf="actual==='1'"><img src="assets/Images/Actualite/HM_logo_Studio.png"></div>
   <h1 *ngIf="text?.articleTitle!==''">{{text?.articleTitle}}</h1>
-  <h4 *ngIf="text?.articleSubtitle!==''">{{text?.articleSubtitle}}</h4>
+  <h4 class="news-subtitle" *ngIf="text?.articleSubtitle!==''">{{text?.articleSubtitle}}</h4>
 
   <!-- <div class="image-div">
       <img class="news-first-picture" alt="JNL Collection" src="assets/Images/Marque_V/MKV_pic1.jpg">

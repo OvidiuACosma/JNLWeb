@@ -1,112 +1,67 @@
-h1 {
-	text-align: center;
-	font-size: 3.55vw;
-}
-
-h2 {
-	font-size: 2.4vw;
-}
-
-h3 {
-	font-size: 1.8vw;
-}
-
-h5 {
-	text-transform: uppercase;
-	font-size: 1.68vw;
-	font-weight: 100;
-	font-family: Helvetica-Light;
-}
-
-/*
-span {
-    font-family: Helvetica-Light;
-    font-size: 1.896vw;
-}
-input {
-    border-width: 0.5px 0px 0px 0px;
-    border-color: black;
-    border-style: solid;
-    background-color: #DBBB76;
-    width: 50vw;
-}
-
-.chk-option {
-    width: 0.972vw;
-    height: 0.972vw;
-    background-color: #DBBB76;
-}
-
-.required:after { 
-    content:" *"; 
-}
-
-.btn-envoyer {
-    background-color: white;
-    padding: 0.2em;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    font-size: 1.48vw;
-    width: 35vw;
-}
-
-*/
-
-#container {
-	font-family: Helvetica-Light;
-}
-
-.hide-item,
-.show-item {
-	display: block;
-}
-
-.arrow {
-	display: none;
-}
-
-#content {
-	width: 40vw;
-	margin: auto;
-}
-
-#info-form {
-	display: flex;
-	width: 88, 2vw;
-	background-color: #dbbb76;
-	justify-content: center;
-	padding: 5vw;
-}
-
-@media only screen and (max-width: 800px) {
-	.arrow {
-		/* display: inline; */
-		margin: auto;
-		margin-left: 0px;
-		display: block;
-		width: 13px;
-		height: 13px;
-	}
-
-	.hide-item {
-		display: none !important;
-	}
-
-	#staticText {
-		width: 88.3vw;
-		display: flex;
-		flex-direction: row;
-		align-content: center;
-		justify-content: baseline;
-	}
-
-	#staticText > h5 {
-		font-size: 4.16vw;
-		text-align: center;
-		width: 75.22vw;
+.product-catalog {
+	h5 {
+		text-transform: uppercase;
+		font-size: 1.68vw;
+		font-weight: 100;
+		font-family: Helvetica-Light;
 	}
 
 	#container {
-		flex-direction: column;
+		font-family: Helvetica-Light;
+	}
+
+	.hide-item,
+	.show-item {
+		display: block;
+	}
+
+	.arrow {
+		display: none;
+	}
+
+	#content {
+		width: 40vw;
+		margin: auto;
+	}
+
+	#info-form {
+		display: flex;
+		width: 88, 2vw;
+		background-color: #dbbb76;
+		justify-content: center;
+		padding: 5vw;
+	}
+
+	@media only screen and (max-width: 800px) {
+		.arrow {
+			/* display: inline; */
+			margin: auto;
+			margin-left: 0px;
+			display: block;
+			width: 13px;
+			height: 13px;
+		}
+
+		.hide-item {
+			display: none !important;
+		}
+
+		#staticText {
+			width: 88.3vw;
+			display: flex;
+			flex-direction: row;
+			align-content: center;
+			justify-content: baseline;
+		}
+
+		#staticText > h5 {
+			font-size: 4.16vw;
+			text-align: center;
+			width: 75.22vw;
+		}
+
+		#container {
+			flex-direction: column;
+		}
 	}
 }

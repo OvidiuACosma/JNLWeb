@@ -3,7 +3,7 @@
       <h1>{{text.title}}</h1>
 
 
-      <div id="group_list">
+      <div class="submenu">
         <a (click)="navigateTo('jnlGroup', 'histoire')">{{text.histoire}}</a>
         <a (click)="navigateTo('jnlGroup', 'equipe')">{{text.equipe}}</a>
         <a (click)="navigateTo('jnlGroup', 'engagement')">{{text.engagement}}</a>
@@ -80,7 +80,7 @@
               </div>
             </div>
             </div>
-          <ol class='carousel-indicators'>
+          <ol class='carousel-indicators carousel-jnlgroup-indicators'>
               <li data-target='#carousel-custom' [attr.data-slide-to]='j'
               *ngFor="let p of people; let j = index"
               [ngClass]="j === 0 ? 'active' : ''"></li>

@@ -9,12 +9,6 @@
 	box-sizing: border-box;
 }
 
-:root {
-	--search-bar-height: 4.531vw; /*56px;*/
-	--left-strip-width: 0; /*5.347vw;*/
-	--mobile-width: 768px;
-}
-
 /* SCROLL BAR */
 /* width */
 ::-webkit-scrollbar {
@@ -91,4 +85,68 @@ a:hover {
 
 .cursor-pointer {
 	cursor: pointer;
+}
+
+.container-main {
+	position: relative;
+	width: calc(100vw - var(--left-strip-width));
+	margin-left: var(--left-strip-width);
+
+	@media only screen and (max-width: 768px) {
+		position: relative;
+		width: 100vw;
+		margin-left: 0;
+	}
+
+	> .content {
+		width: 100%;
+		background-color: #fff;
+		top: 0;
+		z-index: 801;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
+			margin-left: 0px !important;
+		}
+
+		> .main {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: block;
+			z-index: 800;
+		}
+	}
+}
+
+.router-outlet {
+	min-height: 57.5vh;
+}
+
+.button-go-top > img {
+	display: none;
+	position: fixed;
+	object-fit: contain;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 0.6vw;
+	margin-right: 0.2vw;
+	z-index: 2099;
+	cursor: pointer;
+	min-width: 30px;
+	width: 3.2vw;
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+/*.active {
+	display: block !important;
+	transition: all 0.3s ease;
+}*/
+
+@media only screen and (max-width: 768px) {
+	.left-strip {
+		display: none;
+	}
 }

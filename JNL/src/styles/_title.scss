@@ -3,13 +3,24 @@
 h1 {
 	font-family: Helvetica;
 	font-size: 30px;
-	margin-bottom: 1.1vw;
 	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 30px;
+
+	@media only screen and (max-width: 800px) {
+		font-size: 20px;
+	}
 }
 
 h2 {
+	font-family: Helvetica;
 	font-size: 27px;
+	text-transform: uppercase;
 	margin-bottom: 0.5vw;
+
+	@media only screen and (max-width: 768px) {
+		font-size: 18px;
+	}
 }
 
 h3 {

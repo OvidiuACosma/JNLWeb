@@ -2,11 +2,10 @@
 @import "~@angular/cdk/overlay-prebuilt.css";
 
 /**** GLOBAL ****/
+@import "styles/variables";
 @import "styles/global";
 @import "styles/title";
-@import "styles/btn";
-
-@import "styles/app";
+@import "styles/submenu";
 
 @import "styles/menu";
 @import "styles/menu_bottom";

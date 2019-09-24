@@ -1,83 +1,79 @@
-h1 {
-	font-family: Helvetica;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 2vw;
-}
+.fav_sel_list {
 
-table {
-	font-family: Helvetica-Light;
-}
+	table {
+		font-family: Helvetica-Light;
+	}
 
-input {
-	height: 2.5vw;
-}
+	input {
+		height: 2.5vw;
+	}
 
-input:focus {
-	outline: none;
-}
+	input:focus {
+		outline: none;
+	}
 
-.fav-list {
-	cursor: pointer;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
+	.fav-list {
+		cursor: pointer;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 
-.link {
-	cursor: pointer;
-}
+	.link {
+		cursor: pointer;
+	}
 
-.link:hover {
-	color: rgb(97, 97, 255);
-}
+	.link:hover {
+		color: rgb(97, 97, 255);
+	}
 
-label {
-	cursor: pointer;
-	margin-bottom: 0;
-	font-size: 1.5vw;
-}
+	label {
+		cursor: pointer;
+		margin-bottom: 0;
+		font-size: 1.5vw;
+	}
 
-label:hover {
-	color: rgb(97, 97, 255);
-	font-weight: bold;
-}
+	label:hover {
+		color: rgb(97, 97, 255);
+		font-weight: bold;
+	}
 
-.label-red {
-	color: rgb(255, 97, 97);
-}
+	.label-red {
+		color: rgb(255, 97, 97);
+	}
 
-.label-red:hover {
-	color: red;
-	font-weight: bold;
-}
+	.label-red:hover {
+		color: red;
+		font-weight: bold;
+	}
 
-.link-red {
-	cursor: pointer;
-}
+	.link-red {
+		cursor: pointer;
+	}
 
-.link-red:hover {
-	color: rgb(255, 97, 97);
-}
+	.link-red:hover {
+		color: rgb(255, 97, 97);
+	}
 
-.c-green {
-	color: green;
-}
+	.c-green {
+		color: green;
+	}
 
-.c-blue {
-	color: blue;
-}
+	.c-blue {
+		color: blue;
+	}
 
-.a-center {
-	text-align: center;
-}
+	.a-center {
+		text-align: center;
+	}
 
-.fade-input {
-	border-style: none;
-	border-width: 0px;
-	background-color: transparent;
-	width: 100%;
-}
+	.fade-input {
+		border-style: none;
+		border-width: 0px;
+		background-color: transparent;
+		width: 100%;
+	}
 
-.input-edit {
-	color: rgb(97, 97, 255);
+	.input-edit {
+		color: rgb(97, 97, 255);
+	}
 }

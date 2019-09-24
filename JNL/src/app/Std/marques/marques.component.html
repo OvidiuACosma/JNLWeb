@@ -1,21 +1,12 @@
-
 <div class="les-marques-main" *ngIf="text">
   <div>
     <h1>{{text.title}}</h1>
 
-    <div id="marques_list">
-      <a (click)="navigateTo('marques', 'jnl')">
-        JNL COLLECTION
-      </a>
-      <a (click)="navigateTo('marques', 'vanhamme')">
-        VANHAMME
-      </a>
-      <a (click)="navigateTo('marques', 'ungaro')">
-        EMANUEL UNGARO HOME
-      </a>
-      <a (click)="navigateTo('marques', 'studio')">
-        JNL STUDIO
-      </a>
+    <div class="submenu">
+      <a (click)="navigateTo('marques', 'jnl')">JNL COLLECTION</a>
+      <a (click)="navigateTo('marques', 'vanhamme')">VANHAMME</a>
+      <a (click)="navigateTo('marques', 'ungaro')">EMANUEL UNGARO HOME</a>
+      <a (click)="navigateTo('marques', 'studio')">JNL STUDIO</a>
     </div>
 
     <div id="jnl" (click)="navigateToMarque('jnl')">

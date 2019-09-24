@@ -1,27 +1,29 @@
-.container {
-	margin-top: 1vw;
-	display: flex;
-	justify-content: center;
-}
+.login-wrapper {
+	.container {
+		margin-top: 1vw;
+		display: flex;
+		justify-content: center;
+	}
 
-.card-login {
-	width: 45vw;
-	margin: 2px;
-	text-align: center;
-}
+	.card-login {
+		width: 45vw;
+		margin: 2px;
+		text-align: center;
+	}
 
-.textbox {
-	width: 25vw;
-	margin: 0 auto;
-}
+	.textbox {
+		width: 25vw;
+		margin: 0 auto;
+	}
 
-.btn {
-	margin-left: 2px;
-	margin-right: 2px;
+	.btn {
+		margin-left: 2px;
+		margin-right: 2px;
+	}
 }
 
 /* Register */
-.wrapper.wrapper_register {
+.wrapper.register-wrapper {
 	margin: 7vw 30vw;
 	padding: 2vw;
 }
