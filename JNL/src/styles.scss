@@ -1,0 +1,41 @@
+@import '~bootstrap/dist/css/bootstrap.min.css'; /* npm install bootstrap@4.1.3 */
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+/**** GLOBAL ****/
+@import 'styles/global';
+@import 'styles/app';
+
+@import 'styles/menu';
+@import 'styles/menu_bottom';
+@import 'styles/search';
+
+/**** HOME ****/
+@import 'styles/home';
+
+/**** PRODUCTS ****/
+@import 'styles/product';
+@import 'styles/product_search';
+@import 'styles/product_mat_fin';
+@import 'styles/product_favorites';
+@import 'styles/product_catalogues';
+@import 'styles/product_description';
+@import 'styles/product_dimensions';
+@import 'styles/product_garnissage';
+@import 'styles/product_garnissage_details';
+@import 'styles/favorites_sel_list';
+@import 'styles/marque';
+@import 'styles/marques';
+
+/**** PAGES ****/
+@import 'styles/actualites';
+@import 'styles/credits';
+@import 'styles/login';
+@import 'styles/register';
+@import 'styles/contact';
+@import 'styles/services';
+@import 'styles/savoir_faire';
+@import 'styles/request_form';
+@import 'styles/jnl_group';
+@import 'styles/press';
+@import 'styles/gdpr';
+@import 'styles/legal';

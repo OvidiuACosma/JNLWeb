@@ -6,8 +6,7 @@ import * as _ from 'lodash';
 
 @Component({
   selector: 'app-product-dimensions',
-  templateUrl: './product-dimensions.component.html',
-  styleUrls: ['./product-dimensions.component.css']
+  templateUrl: './product-dimensions.component.html'
 })
 export class ProductDimensionsComponent implements OnInit {
 

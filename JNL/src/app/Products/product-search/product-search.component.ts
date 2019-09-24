@@ -27,8 +27,7 @@ interface IRouteParams {
 
 @Component({
   selector: 'app-product-search',
-  templateUrl: './product-search.component.html',
-  styleUrls: ['./product-search.component.css']
+  templateUrl: './product-search.component.html'
 })
 
 export class ProductSearchComponent implements OnInit {

@@ -7,8 +7,7 @@ import { ValidatorEmail } from '../../_validators';
 
 @Component({
   selector: 'app-menu-bottom',
-  templateUrl: './menu-bottom.component.html',
-  styleUrls: ['./menu-bottom.component.css']
+  templateUrl: './menu-bottom.component.html'
 })
 export class MenuBottomComponent implements OnInit {
 

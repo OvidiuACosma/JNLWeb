@@ -7,7 +7,6 @@ declare var $: any;
 @Component({
   selector: 'app-marques',
   templateUrl: './marques.component.html',
-  styleUrls: ['./marques.component.css'],
   animations: [
     trigger('simpleFadeAnimation', [
       state('in', style({opacity: 1})),
