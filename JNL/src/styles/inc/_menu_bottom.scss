@@ -1,4 +1,20 @@
 .bottom_nav {
+	padding: 1.8vw 5.48vw 0.8vw 4.44vw;
+	width: 100%;
+	margin: 0;
+	left: 0;
+	background-color: #f3f5f5;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+
+	> div {
+		font-size: 0.9vw;
+		letter-spacing: 0.1vw;
+		color: #212529;
+	}
+
 	a:hover {
 		color: #dbbb76 !important;
 	}
@@ -67,20 +83,6 @@
 	.columnHead > a:hover {
 		border-color: #dbbb76;
 		transition: all 0.3s ease;
-	}
-
-	.bottom_nav > div {
-		font-size: 0.9vw;
-		letter-spacing: 0.1vw;
-		color: #212529;
-	}
-
-	.bottom_nav {
-		padding: 1.8vw 5.48vw 0.8vw 4.44vw;
-		width: 100%;
-		margin: 0;
-		left: 0;
-		background-color: #f3f5f5;
 	}
 
 	#bottom_nav_links {
@@ -206,9 +208,6 @@
 	}
 
 	@media only screen and (max-width: 768px) {
-		.bottom_nav {
-			display: none;
-		}
 
 		.bottom-nav-mob {
 			display: block;

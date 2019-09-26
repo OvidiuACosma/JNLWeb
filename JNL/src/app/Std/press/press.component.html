@@ -15,7 +15,7 @@
     <div class="bloc-four-flex">
       <div class="elements" *ngFor="let c of textCatalog">
         <img alt="{{c[3]}}" src="{{text.imgLocation}}{{c[2]}}">
-        <a href="" class="jbtn" (click)="download(c[1], 'catalog')">{{text.download}}</a>
+        <button class="jbtn" (click)="download(c[1], 'catalog')">{{text.download}}</button>
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@
       <div class="elements" *ngFor="let i of textInspiration">
         <img alt="{{i[3]}}" src="{{text.imgLocation}}{{i[2]}}">
         <img class="logo" alt="{{i[5]}}" src="{{text.imgLocation}}{{i[4]}}">
-        <a href="" class="jbtn" (click)="goAllProductsOfBrand(i[1])">{{text.products}}</a>
+        <button class="jbtn" (click)="goAllProductsOfBrand(i[1])">{{text.products}}</button>
       </div>
     </div>
   </div>
