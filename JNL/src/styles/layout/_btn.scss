@@ -12,6 +12,10 @@
 	text-transform: uppercase;
 	transition: all 250ms ease;
 
+	@media only screen and (max-width: 768px) {
+		line-height: 17px;
+	}
+
 	&:hover {
 		// color: $color_or;
 		border-color: $color_or;

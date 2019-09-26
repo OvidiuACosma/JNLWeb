@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
     // activate carousel
     $(document).ready(function() {
       $('.carousel').carousel();
+
       $('.js-fadein').animate({
         opacity : 1
       }, 700);

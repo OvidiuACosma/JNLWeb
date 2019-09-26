@@ -61,6 +61,12 @@ export class ProductComponent implements OnInit {
     this.getUser();
     $(document).ready(function () {
       $('#carousel-custom').carousel();
+
+      $('.product_change_tab select').on('change',function(){
+        var val = $(this).val();
+        console.log('current val '+val);
+        $('#nav-'+val+'-tab').click();
+      });
     });
   }
 

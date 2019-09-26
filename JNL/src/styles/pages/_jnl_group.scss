@@ -57,6 +57,10 @@
 		left: 0;
 		width: 100%;
 		height: auto;
+
+		@media only screen and (max-width: 768px) {
+			display: none;
+		}
 	}
 
 	.quote-bar {
@@ -152,54 +156,58 @@
 		width: 62.78vw;
 		margin: auto;
 		text-align: center;
-	}
 
-	#equipe > div {
-		margin: auto;
-		display: flex;
-		flex-direction: row;
-		align-content: center;
-		justify-content: space-between;
-		text-align: center;
-	}
+		@media only screen and (max-width: 768px) {
+			width: 83vw;
+		}
 
-	#equipe > div > div {
-		margin: 0px;
-		margin-top: 0px;
-		width: 28.79vw;
-		font-family: Helvetica-Light;
-		font-size: 15px;
-		text-align: center;
-	}
+		> div {
+			margin: auto;
+			display: flex;
+			flex-direction: row;
+			align-content: center;
+			justify-content: space-between;
+			text-align: center;
 
-	#equipe > div > div > p {
-		margin: auto;
-		font-family: Helvetica-Light;
-		font-size: 15px;
-		line-height: 24px;
-		text-align: justify;
-	}
+			> div {
+				margin: 0px;
+				margin-top: 0px;
+				width: 28.79vw;
+				font-family: Helvetica-Light;
+				font-size: 15px;
+				text-align: center;
 
-	#equipe > div > div > h4 {
-		font-family: Helvetica;
-		width: auto;
-		margin: auto;
-		margin-top: 2.2vw;
-		margin-bottom: 1vw;
-	}
+				> h3 {
+					font-family: Helvetica;
+					font-size: 15px;
+					width: auto;
+					margin: auto;
+					margin-top: 0.8vw;
+					margin-bottom: 2.2vw;
+				}
 
-	#equipe > div > div > h3 {
-		font-family: Helvetica;
-		font-size: 15px;
-		width: auto;
-		margin: auto;
-		margin-top: 0.8vw;
-		margin-bottom: 2.2vw;
-	}
+				> h4 {
+					font-family: Helvetica;
+					width: auto;
+					margin: auto;
+					margin-top: 2.2vw;
+					margin-bottom: 1vw;
+				}
 
-	#equipe > div > div > img {
-		margin-top: 4vw;
-		width: 28.9vw;
+				> p {
+					margin: auto;
+					font-family: Helvetica-Light;
+					font-size: 15px;
+					line-height: 24px;
+					text-align: justify;
+				}
+
+				> img {
+					margin-top: 4vw;
+					width: 28.9vw;
+				}
+			}
+		}
 	}
 
 	.staff {
@@ -211,11 +219,11 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;
-	}
 
-	.staff > div {
-		display: flex;
-		flex-wrap: nowrap;
+		> div {
+			display: flex;
+			flex-wrap: nowrap;
+		}
 	}
 
 	.left {
@@ -758,7 +766,7 @@
 
 		#equipe > div > div {
 			width: 70vw;
-			margin: auto;
+			margin: 15px auto;
 		}
 
 		#equipe > div {

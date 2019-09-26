@@ -35,43 +35,6 @@
 		outline: none;
 	}
 
-	input,
-	select {
-		/* margin: auto; */
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-
-		outline: none;
-		border: hidden;
-
-		background-color: transparent;
-
-		font-family: Helvetica-Light;
-		font-size: 1.4vw;
-		width: 21vw;
-
-		border: none;
-		border-bottom: 1.5px solid black;
-
-		margin-top: 1.5vw;
-		padding-bottom: 0px;
-	}
-
-	button {
-		text-transform: uppercase;
-
-		margin: auto;
-		background-color: white;
-		color: black;
-
-		margin-top: 5.3em;
-		margin-bottom: 4em;
-		border: none;
-
-		/*width: 20%;*/
-	}
-
 	ol {
 		padding-inline-start: 0 !important;
 	}
@@ -453,5 +416,16 @@
 			width: 50px;
 			height: 50px;
 		}
+	}
+}
+
+.product_change_tab {
+	padding: 10px;
+	width: 100%;
+
+	select {
+		width: 100%;
+		border: 1.5px solid #666;
+		padding: 10px;
 	}
 }

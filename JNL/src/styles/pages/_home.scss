@@ -14,6 +14,34 @@
 	text-align: center;
 	opacity: 0;
 
+	.wrapper_img {
+		margin: auto;
+		margin-top: 43.5vh;
+
+		img {
+			max-width: 56vw;
+			height: auto;
+			width: 13vw;
+			/* mix-blend-mode: multiply; */
+			margin-right: 1.9vw;
+
+			@media only screen and (max-width: 768px) {
+				width: 50vw;
+			}
+
+			&.animated {
+				animation-duration: 3s;
+				animation-fill-mode: both;
+				animation-delay: 0.4s;
+			}
+
+			&.zoomIn {
+				-webkit-animation-name: zoomIn;
+				animation-name: zoomIn;
+			}
+		}
+	}
+
 	a.go_down {
 		> img {
 			object-fit: contain;
@@ -29,17 +57,6 @@
 			@media only screen and (max-width: 768px) {
 				margin-bottom: 10px;
 			}
-
-			&.animated {
-				animation-duration: 3s;
-				animation-fill-mode: both;
-				animation-delay: 0.4s;
-			}
-
-			&.zoomIn {
-				-webkit-animation-name: zoomIn;
-				animation-name: zoomIn;
-			}
 		}
 	}
 }
@@ -49,22 +66,7 @@
 	font-family: Helvetica;
 }
 
-.wrapper_img {
-	margin: auto;
-	margin-top: 43.5vh;
 
-	img {
-		max-width: 56vw;
-		height: auto;
-		width: 13vw;
-		/* mix-blend-mode: multiply; */
-		margin-right: 1.9vw;
-
-		@media only screen and (max-width: 768px) {
-			width: 50vw;
-		}
-	}
-}
 
 .home_wrapper {
 	hr {
@@ -148,6 +150,10 @@
 			flex-wrap: wrap;
 			position: relative;
 
+			@media only screen and (max-width: 768px) {
+				display: none;
+			}
+
 			> li {
 				color: black !important;
 				height: 0;
@@ -198,10 +204,16 @@
 		text-align: left;
 		font-size: 15px;
 		line-height: 24px;
-	}
 
-	.marque-text > p {
-		font-family: Helvetica-Light;
+		@media only screen and (max-width: 768px) {
+			padding-top: 0px;
+			width: 100% !important;
+			text-align: center;
+		}
+
+		> p {
+			font-family: Helvetica-Light;
+		}
 	}
 
 	.carousel-project {
@@ -271,7 +283,7 @@
 	#une_histoire > div > p {
 		font-size: 15px;
 		line-height: 24px;
-		margin-bottom: 3.68vw;
+		margin-bottom: 30px;
 		font-family: Helvetica-Light;
 	}
 
@@ -506,6 +518,10 @@
 
 	.container div {
 		width: 50%;
+
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
 	}
 
 	@media only screen and (max-width: 768px) {
@@ -538,8 +554,8 @@
 
 		#les_marques {
 			width: 100vw;
+			height: auto;
 			padding: 10px;
-			height: 130vw;
 			background-color: #d3d3d3;
 			color: black;
 			display: flex;
@@ -626,6 +642,7 @@
 			display: flex;
 			flex-direction: column;
 			align-content: space-between;
+			padding-top: 30px;
 		}
 
 		#projets > div > div > div > img {
@@ -661,17 +678,8 @@
 			flex-direction: column;
 		}
 
-		.marque-text {
-			padding-top: 0px;
-			width: 100% !important;
-		}
-
 		.carousel-marques {
 			height: auto;
-		}
-
-		.marque-text {
-			text-align: center;
 		}
 
 		#une_histoire {
