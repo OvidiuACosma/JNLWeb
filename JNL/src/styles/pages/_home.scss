@@ -46,24 +46,6 @@
 }
 
 .home_wrapper {
-	.home_links {
-		font-family: Helvetica-Light;
-		color: #666;
-		border: 1.5px solid #666;
-		padding: 3px 10px 7px 10px;
-		font-size: 15px;
-		font-style: italic;
-		text-transform: uppercase;
-		letter-spacing: 1.28px;
-		transition: all 0.5s ease;
-	}
-
-	.home_links:hover {
-		color: #dbbb76;
-		transition: all 0.5s ease;
-		cursor: pointer;
-	}
-
 	@keyframes zoomIn {
 		from {
 			opacity: 0;
