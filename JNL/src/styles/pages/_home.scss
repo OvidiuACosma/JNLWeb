@@ -212,33 +212,43 @@
 
 		> h2 {
 			font-family: Helvetica-Light;
-			font-size: 2vw;
-			margin-top: 0;
 
 			&.project-city {
 				text-transform: uppercase;
 				font-size: 15px;
 				margin-top: 0;
+
+				@media only screen and (max-width: 768px) {
+					font-size: 13px;
+				}
 			}
 
 			&.project-name {
 				font-size: 24px;
 				width: 59.3vw;
 				margin: auto;
-				margin-bottom: 0.54vw;
+				margin-bottom: 10px;
+
+				@media only screen and (max-width: 768px) {
+					font-size: 18px;
+				}
 			}
 		}
 
 		.projets-text {
-			width: 59.3vw;
-			margin: auto;
 			font-family: Helvetica-light;
 			font-size: 15px;
-			margin-top: 1.09vw;
+			width: 59.3vw;
+			margin: auto;
+			margin-top: 10px;
 		}
 
 		> div > img {
 			width: 59.3vw;
+
+			@media only screen and (max-width: 768px) {
+				width: 90vw;
+			}
 		}
 	}
 
