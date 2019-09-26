@@ -4,7 +4,7 @@
   <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
 
   <div id="go-up">
-  <div class="heritage" id="heritage">
+  <div class="heritage">
     <div>
       <h2>{{text.sectionTitle}}</h2>
       <p [innerHTML]="text.sectionText"></p>
@@ -59,31 +59,31 @@
       </div>
     </div>
 
-    <div class="flex-marque-div">
+    <div class="brand_content_cols2">
       <div>
         <img alt="{{altText[marque]['img1']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img1']['src']}}">
-        <span class="style-title">{{text.leftTitle}}</span>
+        <h4>{{text.leftTitle}}</h4>
         <p [innerHTML]="text.leftText"></p>
       </div>
 
       <div>
-        <div>
-          <h6>&nbsp;</h6>
-          <span>{{text.rightTitle}}</span>
-        </div>
+        <h4>{{text.rightTitle}}</h4>
         <img alt="{{altText[marque]['img2']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img2']['src']}}">
         <p [innerHTML]="text.rightText"></p>
       </div>
     </div>
 
-      <h6>{{textG.autres}}</h6>
-      <div class="flex-marque-div" id="autres" *ngIf="othersLink">
-        <span *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
-          {{othersText[getOthers(i)] | uppercase}}
-        </span>
-      </div>
+    <div class="other_brands">
+      <h4 class="other_brands_title">{{textG.autres}}</h4>
 
-      <div id="other-links">
+      <div class="other_brands_links" *ngIf="othersLink">
+        <button *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
+          {{othersText[getOthers(i)] | uppercase}}
+        </button>
+      </div>
+    </div>
+
+      <div class="other_links">
         <div (click)="navigateTo('jnlGroup')">
           <img  alt="{{altText[marque]['img3']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img3']['src']}}">
           <h4>{{textG.groupe}}</h4>
