@@ -124,27 +124,6 @@ a:hover {
 	min-height: 57.5vh;
 }
 
-.button-go-top > img {
-	display: none;
-	position: fixed;
-	object-fit: contain;
-	bottom: 0;
-	right: 0;
-	margin-bottom: 0.6vw;
-	margin-right: 0.2vw;
-	z-index: 2099;
-	cursor: pointer;
-	min-width: 30px;
-	width: 3.2vw;
-	height: auto;
-	transition: all 0.3s ease;
-}
-
-/*.active {
-	display: block !important;
-	transition: all 0.3s ease;
-}*/
-
 @media only screen and (max-width: 768px) {
 	.left-strip {
 		display: none;

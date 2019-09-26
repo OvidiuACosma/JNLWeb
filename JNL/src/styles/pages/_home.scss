@@ -14,44 +14,54 @@
 	text-align: center;
 	opacity: 0;
 
-	> a > img {
-		object-fit: contain;
-		bottom: 0;
-		margin-top: auto;
-		padding-bottom: 1vw;
-		text-align: center;
-		max-width: 15vw;
-		height: auto;
-		min-width: 30px;
-		width: 3.2vw;
-	}
+	a.go_down {
+		> img {
+			object-fit: contain;
+			bottom: 0;
+			margin-top: auto;
+			padding-bottom: 1vw;
+			text-align: center;
+			max-width: 15vw;
+			height: auto;
+			min-width: 30px;
+			width: 3.2vw;
 
-	.animated {
-		animation-duration: 3s;
-		animation-fill-mode: both;
-		animation-delay: 0.4s;
-	}
+			@media only screen and (max-width: 768px) {
+				margin-bottom: 10px;
+			}
 
-	.zoomIn {
-		-webkit-animation-name: zoomIn;
-		animation-name: zoomIn;
+			&.animated {
+				animation-duration: 3s;
+				animation-fill-mode: both;
+				animation-delay: 0.4s;
+			}
+
+			&.zoomIn {
+				-webkit-animation-name: zoomIn;
+				animation-name: zoomIn;
+			}
+		}
 	}
 }
 
 .main_divs {
 	text-align: center;
 	font-family: Helvetica;
+}
 
-	.wrapper {
-		margin: auto;
-		margin-top: 43.5vh;
+.wrapper_img {
+	margin: auto;
+	margin-top: 43.5vh;
 
-		img {
-			max-width: 56vw;
-			height: auto;
-			width: 13vw;
-			/* mix-blend-mode: multiply; */
-			margin-right: 1.9vw;
+	img {
+		max-width: 56vw;
+		height: auto;
+		width: 13vw;
+		/* mix-blend-mode: multiply; */
+		margin-right: 1.9vw;
+
+		@media only screen and (max-width: 768px) {
+			width: 50vw;
 		}
 	}
 }
@@ -194,20 +204,41 @@
 		font-family: Helvetica-Light;
 	}
 
-	.container2 {
+	.carousel-project {
 		display: flex;
 		flex-direction: column;
+		text-align: center;
+		height: auto;
 
 		> h2 {
 			font-family: Helvetica-Light;
 			font-size: 2vw;
 			margin-top: 0;
 
-			&:first-child {
+			&.project-city {
 				text-transform: uppercase;
-				font-size: 1.1vw;
+				font-size: 15px;
 				margin-top: 0;
 			}
+
+			&.project-name {
+				font-size: 24px;
+				width: 59.3vw;
+				margin: auto;
+				margin-bottom: 0.54vw;
+			}
+		}
+
+		.projets-text {
+			width: 59.3vw;
+			margin: auto;
+			font-family: Helvetica-light;
+			font-size: 15px;
+			margin-top: 1.09vw;
+		}
+
+		> div > img {
+			width: 59.3vw;
 		}
 	}
 
@@ -348,32 +379,68 @@
 		height: 49vw;
 		display: flex;
 		color: white;
-	}
 
-	/*NO VIDEO*/
-	#savoir > div:first-child {
-		margin: auto;
-		width: 87vw;
-		height: 49vw;
-		/*
-		background-image: url("/assets/Images/Home/HM_video.png");
-		background-size: cover;
-		background-position: center center;*/
-		display: flex;
-		flex-direction: column;
-	}
+		@media only screen and (max-width: 768px) {
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-bottom: 30px;
+			width: 100%;
+			height: auto;
+			min-height: 200px;
+			display: flex;
+		}
 
-	#savoir > div:last-child {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		width: 87vw;
-		height: 49vw;
-		margin: auto;
-	}
+		> div {
+			@media only screen and (max-width: 768px) {
+				margin: auto;
+				width: 100% !important;
+			}
 
-	#savoir > div:last-child > div {
-		margin: auto;
+			> h1 {
+				margin: auto;
+				margin-bottom: 0px;
+				color: white;
+			}
+
+			> button {
+				margin: auto;
+				margin-top: 40px;
+				color: white;
+				border-color: white;
+			}
+
+			/*NO VIDEO*/
+			&:first-child {
+				margin: auto;
+				width: 87vw;
+				height: 49vw;
+				/*
+				background-image: url("/assets/Images/Home/HM_video.png");
+				background-size: cover;
+				background-position: center center;*/
+				display: flex;
+				flex-direction: column;
+			}
+
+			&:last-child {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				width: 87vw;
+				height: 49vw;
+				margin: auto;
+
+				@media only screen and (max-width: 768px) {
+					margin-top: 5%;
+					margin-bottom: 0px;
+				}
+
+				> div {
+					margin: auto;
+				}
+			}
+		}
+		
 	}
 
 	video {
@@ -382,27 +449,11 @@
 		margin: auto;
 	}
 
-	#savoir > div > h1 {
-		margin: auto;
-		margin-bottom: 0px;
-		color: white;
-	}
-
-	#savoir > div > span {
-		margin: auto;
-		margin-top: 40px;
-	}
-
 	#projets {
 		width: 100%;
 		text-align: center;
 		margin-top: 7.12vw;
 		margin-bottom: 8vw;
-	}
-
-	.projets-text > h4 {
-		font-size: 1.3vw;
-		margin-top: 1.09vw;
 	}
 
 	#projets > div {
@@ -431,28 +482,6 @@
 		margin-bottom: 5vw;
 	}
 
-	.container2 {
-		text-align: center;
-		height: auto;
-	}
-
-	.container2 > .projets-text {
-		width: 59.3vw;
-		margin: auto;
-		font-family: Helvetica-light;
-		font-size: 1.8vw;
-	}
-
-	.container2 > div > img {
-		width: 59.3vw;
-	}
-
-	.container2 > h2:nth-child(2) {
-		width: 59.3vw;
-		margin: auto;
-		margin-bottom: 0.54vw;
-	}
-
 	#carousel-projets > a {
 		width: 3.1vw;
 		min-width: 20px;
@@ -472,10 +501,6 @@
 	@media only screen and (max-width: 768px) {
 		h4 {
 			font-size: 3.2vw;
-		}
-
-		.wrapper img {
-			width: 50vw;
 		}
 
 		.gallery_buttons > div {
@@ -583,26 +608,6 @@
 			font-size: 15px;
 		}
 
-		#savoir {
-			margin-left: 0px;
-			margin-right: 0px;
-			margin-bottom: 30px;
-			width: 100%;
-			height: auto;
-			min-height: 200px;
-			display: flex;
-		}
-
-		#savoir > div {
-			margin: auto;
-			width: 100%;
-		}
-
-		#savoir > div {
-			margin: auto;
-			width: 100% !important;
-		}
-
 		#projets {
 			margin-bottom: 14vw;
 			width: 100vw;
@@ -677,11 +682,6 @@
 		video {
 			width: 100%;
 			height: auto;
-		}
-
-		#savoir > div:last-child {
-			margin-top: 5%;
-			margin-bottom: 0px;
 		}
 	}
 

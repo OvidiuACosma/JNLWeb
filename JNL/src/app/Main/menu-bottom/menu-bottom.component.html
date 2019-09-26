@@ -1,4 +1,5 @@
-<nav class="bottom_nav d-print-none" *ngIf="text && !isMobile">
+<div class="bottom-nav-wrapper">
+<nav class="bottom-nav" *ngIf="text && !isMobile">
   <div id="bottom-inline">
     <div id="bottom_nav_links">
         <div>
@@ -127,3 +128,4 @@
       <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>
   </div>
 </nav>
+</div>

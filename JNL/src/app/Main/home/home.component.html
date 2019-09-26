@@ -1,9 +1,9 @@
 <div id="first_picture" class="home-first-picture main_divs js-fadein">
-  <div class="wrapper">
+  <div class="wrapper_img">
     <img alt="JNL Collection" src="assets\Images\Home\HM_JNL_Logo.png" class="animated zoomIn">
   </div>
-  <a (click)="navigateToAnchor('une_histoire')">
-    <img  alt="arrow_down" src="assets\Images\Common\arrow_down.png">
+  <a (click)="navigateToAnchor('une_histoire')" class="go_down">
+    <img alt="arrow_down" src="assets\Images\Common\arrow_down.png">
   </a>
 </div>
 
@@ -138,46 +138,35 @@
     <div id='carousel-projets' class='carousel slide carousel-fade carousel-projets' data-ride='carousel' data-pause="false">
       <div class="carousel-inner">
           <div class='carousel-item active'>
-            <div class="container2">
-              <h2>{{text.projetsCity1}}</h2>
-              <h2>{{text.projets1}}</h2>
+            <div class="carousel-project">
+              <h2 class="project-city">{{text.projetsCity1}}</h2>
+              <h2 class="project-name">{{text.projets1}}</h2>
               <div class="carousel-item-image">
                 <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image-projects">
               </div>
-                <div class="projets-text">
-                  <h4>
-                    {{text.projetsDescription1}}
-                  </h4>
-                </div>
+              <p class="projets-text">{{text.projetsDescription1}}</p>
             </div>
           </div>
 
           <div class='carousel-item' active="setActiveSlide(1)">
-            <div class="container2">
-              <h2>{{text.projetsCity2}}</h2>
-              <h2>{{text.projets2}}</h2>
-            <div class="carousel-item-image">
-              <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image-projects">
-            </div>
-              <div class="projets-text">
-                  <h4>
-                  {{text.projetsDescription2}}
-                  </h4>
+            <div class="carousel-project">
+              <h2 class="project-city">{{text.projetsCity2}}</h2>
+              <h2 class="project-name">{{text.projets2}}</h2>
+              <div class="carousel-item-image">
+                <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image-projects">
               </div>
+              <p class="projets-text">{{text.projetsDescription2}}</p>
             </div>
           </div>
+
           <div class='carousel-item' active="setActiveSlide(2)">
-            <div class="container2">
-              <h2>{{text.projetsCity3}}</h2>
-              <h2>{{text.projets3}}</h2>
-            <div class="carousel-item-image">
-              <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image-projects">
-            </div>
-              <div class="projets-text">
-                  <h4>
-                  {{text.projetsDescription3}}
-                  </h4>
+            <div class="carousel-project">
+              <h2 class="project-city">{{text.projetsCity3}}</h2>
+              <h2 class="project-name">{{text.projets3}}</h2>
+              <div class="carousel-item-image">
+                <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image-projects">
               </div>
+              <p class="projets-text">{{text.projetsDescription3}}</p>
             </div>
           </div>
       </div>
