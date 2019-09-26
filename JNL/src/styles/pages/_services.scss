@@ -10,12 +10,6 @@
 		text-align: center;
 	}
 
-	h2 {
-		font-family: Helvetica;
-		font-size: 27px;
-		text-align: center;
-	}
-
 	h4 {
 		margin: auto;
 		width: 58.3vw;
@@ -134,37 +128,6 @@
 		object-fit: contain;
 	}
 
-	#services_list {
-		margin: auto;
-		font-family: Helvetica-Light;
-		font-size: 16px;
-		width: 38vw;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-content: space-between;
-		padding: 0px;
-		justify-content: center;
-		margin-bottom: 4vw;
-		text-align: center;
-	}
-
-	#services_list > a {
-		margin: auto;
-		font-size: 15px;
-		line-height: 24px;
-		left: 0;
-		text-transform: uppercase;
-		border-bottom: 1px solid transparent;
-		transition: all 0.5s ease;
-	}
-
-	#services_list > a:hover {
-		color: black;
-		border-bottom: 1px solid black;
-		transition: all 0.5s ease;
-	}
-
 	::placeholder {
 		/* Chrome, Firefox, Opera, Safari 10.1+ */
 		color: black;
@@ -211,7 +174,8 @@
 		font-size: 1.11vw;
 	}
 
-	.contact-div {
+	.services_your_project {
+		width: 100%;
 		background-color: #e3d9c6;
 		left: 0;
 		text-align: center;
@@ -219,74 +183,13 @@
 		font-size: 1.4vw;
 		padding-top: 3.7vw;
 		padding-bottom: 3vw;
-	}
 
-	.contact-div > h2 {
-		margin-top: 0;
-	}
-
-	.contact-div > p {
-		width: 45vw;
-		margin: auto;
-		font-size: 15px;
-		line-height: 24px;
-	}
-
-	.contact-div > div > p {
-		font-family: Helvetica-Light;
-		font-size: 15px;
-		line-height: 24px;
-		text-align: center;
-	}
-
-	.contact_form {
-		margin: auto;
-		margin-top: 4.8vw;
-		display: flex;
-		flex-direction: column;
-		align-content: center;
-		text-align: left;
-	}
-
-	.contact_form:focus,
-	input:focus,
-	textarea:focus,
-	select:focus,
-	button:focus {
-		outline: none;
-	}
-
-	input {
-		margin: auto;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		outline: none;
-		border: hidden;
-		width: 100%;
-		background-color: transparent;
-		border: none;
-		border-bottom: 1.5px solid black;
-		margin-top: 1.5vw;
-		padding-bottom: 0px;
-		font-size: 15px;
-	}
-
-	input[type="checkbox"] {
-		margin: auto;
-		-webkit-appearance: checkbox;
-		-moz-appearance: checkbox;
-		appearance: checkbox;
-		outline: none;
-		border: hidden;
-		width: auto;
-		margin-top: 0px;
-		padding-bottom: 0px;
-		margin-right: 5px;
-	}
-
-	label {
-		margin: 0px;
+		> p {
+			width: 45vw;
+			margin: auto;
+			font-size: 15px;
+			line-height: 24px;
+		}
 	}
 
 	#checks {
@@ -302,22 +205,6 @@
 		flex-direction: column;
 	}
 
-	select {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		width: 100%;
-		background-color: transparent;
-		border: none;
-		border-bottom: 1.5px solid black;
-		margin-bottom: 1em;
-		font-size: 15px;
-	}
-
-	textarea {
-		font-size: 15px;
-	}
-
 	.send {
 		text-transform: uppercase;
 		margin: auto;
@@ -330,39 +217,6 @@
 		font-family: Helvetica-Light;
 		font-size: 1.11vw;
 		letter-spacing: 1.28px;
-	}
-
-	#votreProjet {
-		width: 100%;
-	}
-
-	.contact_form > div {
-		display: flex;
-		flex-direction: row;
-		align-content: center;
-		justify-content: space-between;
-		width: 64.79vw;
-		margin: auto;
-	}
-
-	.contact_form > div > div:first-child {
-		width: 34vw;
-		margin-top: 0px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-
-	.contact_form > div > div:last-child > input:first-child {
-		margin-top: 0px;
-	}
-
-	.contact_form > div > div:last-child {
-		width: 25.59vw;
-		margin-top: 0px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
 	}
 
 	#expertise,
@@ -387,18 +241,11 @@
 		margin-bottom: 5.48vw;
 	}
 
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 768px) {
 		.contact-div > p {
 			width: 80vw;
 			margin-left: auto;
 			margin-right: auto;
-		}
-
-		h2 {
-			margin-left: auto;
-			margin-right: auto;
-			width: 80vw;
-			word-wrap: normal;
 		}
 
 		h4 {
@@ -431,33 +278,12 @@
 			width: 80vw;
 		}
 
-		.contact_form {
-			width: 100vw;
-		}
-
-		.contact_form > div {
-			flex-direction: column;
-			width: 80vw;
-		}
-
-		.contact_form > div > div {
-			width: 80vw !important;
-		}
-
-		.contact_form > div > div:first-child {
-			margin-bottom: 5vw;
-		}
-
 		.quote-bar > p {
 			font-family: Helvetica-Light;
 		}
 
 		.sur-flex > div > div {
 			text-align: center;
-		}
-
-		#services_list > a {
-			margin: auto;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 .product-dimensions {
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 768px) {
 		flex-direction: column;
 	}
 
@@ -113,7 +113,7 @@
 		}
 	}
 
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 768px) {
 		.arrow {
 			/* display: inline; */
 			margin: auto;

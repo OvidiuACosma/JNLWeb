@@ -12,7 +12,7 @@
 	text-align: center;
 	font-size: 15px;
 
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 768px) {
 		flex-direction: column;
 		flex-wrap: nowrap;
 	}
@@ -52,7 +52,7 @@
 			margin-right: 0;
 		}
 
-		@media only screen and (max-width: 800px) {
+		@media only screen and (max-width: 768px) {
 			margin: auto;
 			left: 0;
 

@@ -3,13 +3,7 @@
 	margin: auto;
 	width: 100%;
 	padding-top: 5.9vw;
-
-	> div {
-		margin: auto;
-		left: 0;
-		width: 100%;
-		text-align: center;
-	}
+	text-align: center;
 
 	h2 {
 		margin-bottom: 3.45vw;
@@ -22,44 +16,6 @@
 		font-family: Helvetica-Light;
 		margin-top: 3.3vw;
 		text-align: center;
-	}
-
-
-	#presse_list {
-		margin: auto;
-		font-family: Helvetica-Light;
-		width: 26vw;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-content: space-between;
-		padding: 0px;
-		justify-content: center;
-		text-align: center;
-	}
-
-	#presse_list > a:first-child {
-		margin-left: 0px;
-	}
-
-	#presse_list > a:last-child {
-		margin-right: 0px;
-	}
-
-	#presse_list > a {
-		margin: auto;
-		font-size: 15px;
-		line-height: 24px;
-		left: 0;
-		text-transform: uppercase;
-		border-bottom: 1px solid transparent;
-		transition: all 0.5s ease;
-	}
-
-	#presse_list > a:hover {
-		color: black;
-		border-bottom: 1px solid black;
-		transition: all 0.5s ease;
 	}
 
 	.first-image {
@@ -82,6 +38,10 @@
 		flex-wrap: wrap;
 		width: 67.9vw;
 		margin: auto;
+
+		@media only screen and (max-width: 768px) {
+			flex-direction: column;
+		}
 	}
 
 	.elements {
@@ -90,16 +50,21 @@
 		display: flex;
 		flex-direction: column;
 		margin-right: 1vw;
-	}
 
-	.elements > img {
-		width: 15.47vw;
-		margin-bottom: 1vw;
-	}
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+			margin-bottom: 30px;
+		}
 
-	.elements > span {
-		width: 15.47vw;
-		margin-bottom: 0.6vw;
+		> img {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+
+		> span {
+			width: 100%;
+			margin-bottom: 0.6vw;
+		}
 	}
 
 	.row {
@@ -125,7 +90,7 @@
 		padding-top: 5.9vw;
 	}
 
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 768px) {
 		.parutions-text {
 			width: 80vw;
 			height: 40vw;
@@ -143,10 +108,6 @@
 
 		.parutions-text > div > span {
 			font-size: 7.2vw;
-		}
-
-		#presse_list > a {
-			margin: auto;
 		}
 
 		.four-flex {

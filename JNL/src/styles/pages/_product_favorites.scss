@@ -465,7 +465,7 @@
 		flex-direction: column;
 	}
 
-	@media only screen and (max-width: 800px) {
+	@media only screen and (max-width: 768px) {
 		.fav_div > p {
 			font-size: 1em;
 			width: 80vw;
@@ -563,10 +563,6 @@
 
 		.fav_div > div > p {
 			font-size: 4.5vw;
-		}
-
-		#services_list > a {
-			margin: 0px;
 		}
 	}
 }
