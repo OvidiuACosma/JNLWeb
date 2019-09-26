@@ -2,6 +2,25 @@
 	text-align: center;
 	padding-top: 5.9vw;
 
+	.logo_marque {
+		margin-bottom: 20px;
+
+		@media only screen and (max-width: 768px) {
+			width: 60vw;
+		}
+	}
+
+	.full-image {
+		display: block;
+		margin: 20px auto;
+		width: 80vw;
+		height: auto;
+
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
+	}
+
 	h3 {
 		text-transform: uppercase;
 		font-family: Helvetica-Light;
@@ -47,18 +66,27 @@
 		margin: auto;
 		display: flex;
 		justify-content: space-between;
+
+		@media only screen and (max-width: 768px) {
+			flex-direction: column;
+			width: 100%;
+			margin: 20px auto;
+
+			> button {
+				font-size: 12px;
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 	}
 
 	.marques-image {
 		width: 76vw;
 		margin-top: 1.6vw;
 		margin-bottom: 4.2vw;
-	}
-
-	.marque-main {
-		text-align: center;
-		display: flex;
-		padding-top: 5.9vw;
 	}
 
 	.location {
@@ -101,13 +129,6 @@
 		margin: auto;
 	}
 
-	.full-image {
-		margin-top: 2.63vw;
-		left: 0;
-		width: 80%;
-		height: auto;
-	}
-
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -130,12 +151,13 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-	}
+		padding: 30px 0;
 
-	#produits_main > h1 {
-		margin: auto;
-		margin-top: 2.41vw;
-		text-transform: uppercase;
+		> h1 {
+			margin: auto;
+			margin-bottom: 15px;
+			text-transform: uppercase;
+		}
 	}
 
 	.style-title {
@@ -145,6 +167,10 @@
 	.carousel-produits {
 		width: 100%;
 		padding-top: 3.15vw;
+
+		@media only screen and (max-width: 768px) {
+			height: auto;
+		}
 	}
 
 	.carousel-arrows {
@@ -195,10 +221,6 @@
 			text-indent: 0;
 			margin-right: 1.38vw;
 
-			@media only screen and (max-width: 768px) {
-				font-size: 0.8em;
-			}
-
 			> span {
 				color: black !important;
 				margin: auto;
@@ -208,6 +230,10 @@
 				text-transform: uppercase;
 				border-bottom: 1px solid transparent;
 				transition: all 0.5s ease;
+
+				@media only screen and (max-width: 768px) {
+					font-size: 13px;
+				}
 
 				&:hover {
 					border-color: black;
@@ -233,77 +259,101 @@
 	}
 
 	.voir {
-		/* margin: auto; */
 		margin-top: 1.1vw;
 		text-align: center;
-		margin-bottom: 2.41vw;
 	}
 
-	.flex-div {
+	.flex-marque-div {
 		width: 80.12vw;
 		margin: auto;
 		margin-bottom: 6.24vw;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-	}
 
-	.flex-div > div {
-		margin: auto;
-		margin-top: 0px;
-		margin-bottom: 0px;
-		width: 35.17vw;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+		@media only screen and (max-width: 768px) {
+			flex-direction: column;
+		}
 
-	.flex-div > div > img {
-		width: 35.1vw;
-		margin-bottom: 1.7vw;
-	}
+		> div {
+			margin: auto;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			width: 35.17vw;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
-	.flex-div > div > span {
-		font-family: Helvetica-Light;
-		font-size: 20px;
-		text-transform: uppercase;
-	}
+			@media only screen and (max-width: 768px) {
+				width: 80vw !important;
+			}
 
-	.flex-div > div > p {
-		/* margin-top: 1.7vw; */
-		font-family: Helvetica-Light;
-		font-size: 15px;
-		padding: 1.3vw;
-		width: 31.1vw;
-		margin: auto;
-		margin-top: 0;
-		line-height: 24px;
-	}
+			> img {
+				width: 35.1vw;
+				margin-bottom: 15px;
 
-	.flex-div > div > div > span {
-		font-family: Helvetica-Light;
-		font-size: 1.4vw;
-	}
+				@media only screen and (max-width: 768px) {
+					width: 80vw !important;
+				}
+			}
 
-	.flex-div > div:nth-child(2) {
-		background-color: #e3d9c6;
-		align-content: space-around;
-		width: 39.12vw;
-	}
+			> span {
+				font-family: Helvetica-Light;
+				font-size: 20px;
+				text-transform: uppercase;
 
-	.flex-div > div:nth-child(2) > img {
-		width: 33vw;
-		margin: auto;
-		margin-top: 2.79vw;
-		margin-bottom: 3.56vw;
-	}
+				@media only screen and (max-width: 768px) {
+					font-size: 13px;
+					line-height: 20px;
+					width: auto;
+					line-height: normal;
+				}
+			}
 
-	.flex-div > div:nth-child(2) > p {
-		font-family: Helvetica-Light;
-		font-size: 15px;
-		width: 33.8vw;
-		line-height: 24px;
+			> p {
+				font-family: Helvetica-Light;
+				font-size: 15px;
+				line-height: 24px;
+				padding: 1.3vw;
+				width: 31.1vw;
+				margin: auto;
+				margin-top: 0;
+
+				@media only screen and (max-width: 768px) {
+					font-size: 13px;
+					line-height: 20px;
+					width: auto;
+					line-height: normal;
+				}
+			}
+
+			> div > span {
+				font-family: Helvetica-Light;
+				font-size: 1.4vw;
+			}
+
+			&:nth-child(2) {
+				background-color: #e3d9c6;
+				align-content: space-around;
+				width: 39.12vw;
+
+				> p {
+					width: 33.8vw;
+
+					@media only screen and (max-width: 768px) {
+						width: auto;
+					}
+				}
+
+				> img {
+					width: 33vw;
+					margin: auto;
+					margin-top: 2.79vw;
+					margin-bottom: 3.56vw;
+				}
+			}
+		}
 	}
 
 	#les_produits {
@@ -362,22 +412,6 @@
 		cursor: pointer;
 	}
 
-	#first_picture > div > p {
-		text-align: center;
-		/*TREBUIE MODIFICAT*/
-		position: relative;
-		margin-top: -6vh;
-		background-color: rgba(255, 255, 255, 0.7);
-	}
-
-	#first_picture > div > p > a > img {
-		max-height: 6vh;
-		max-width: 6vw;
-		height: auto;
-		width: auto;
-		margin: 0;
-	}
-
 	@media only screen and (max-width: 768px) {
 		.heritage > div {
 			width: 80vw;
@@ -395,21 +429,6 @@
 			margin-top: 2vw;
 		}
 
-		.flex-div {
-			flex-direction: column;
-		}
-
-		.flex-div > div {
-			width: 80vw !important;
-		}
-
-		.flex-div > div > img {
-			width: 80vw !important;
-			text-align: center;
-			margin: auto;
-			margin-bottom: 1.7vw;
-		}
-
 		#other-links {
 			flex-direction: column;
 		}
@@ -420,17 +439,6 @@
 
 		#other-links > div > img {
 			width: 80vw;
-		}
-
-		.home-links-flex {
-			flex-direction: column;
-			width: 60vw;
-			font-size: 0.8em;
-		}
-
-		.home-links-flex > span {
-			font-size: 1.1em;
-			margin-bottom: 10px;
 		}
 
 		.style-title {
@@ -448,21 +456,6 @@
 			height: 10vw;
 			text-align: center !important;
 			display: flex;
-		}
-
-		.carousel-produits {
-			height: 60vw;
-		}
-
-		.flex-div > div > p,
-		.flex-div > div:nth-child(2) > p,
-		.flex-div > div > span,
-		h6,
-		.flex-div > div > div > span {
-			font-size: 13px;
-			line-height: 20px;
-			width: auto;
-			line-height: normal;
 		}
 
 		#autres > p > span {

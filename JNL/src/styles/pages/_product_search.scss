@@ -85,6 +85,11 @@
 		margin-left: 1.5vw;
 		margin-right: 1.5vw;
 		text-align: left;
+
+		@media only screen and (max-width: 800px) {
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 
 	.search-textbox {
@@ -259,7 +264,9 @@
 		margin-bottom: 3vh;
 
 		@media only screen and (max-width: 800px) {
-			width: 100%;
+			width: 50%;
+			margin: 0;
+			padding: 10px !important;
 		}
 	}
 
@@ -274,8 +281,8 @@
 
 	.header-arrow {
 		width: auto;
-		margin-top: 1.7vw;
-		margin-bottom: 1vw;
+		margin-top: 15px;
+		margin-bottom: 15px;
 		justify-content: baseline;
 		font-family: Helvetica-Light;
 		font-size: 1.2vw;
@@ -300,7 +307,8 @@
 			cursor: pointer;
 
 			@media only screen and (max-width: 800px) {
-				display: none;
+				width: 20px;
+				margin-right: 10px;
 			}
 		}
 	}
@@ -315,19 +323,29 @@
 		@media only screen and (max-width: 800px) {
 			display: block;
 			width: 100%;
+			margin: 0;
 		}
 	}
 
 	.subfilters {
 		line-height: 1.83vw;
-	}
+		display: none;
 
-	.subfilters > li {
-		width: 17vw;
-		margin: auto;
-		margin-left: 1vw;
-		margin-right: 1.5vw;
-		display: inline-block;
+		&.active {
+			display: block;
+		}
+
+		> li {
+			width: 17vw;
+			margin: auto;
+			margin-left: 1vw;
+			margin-right: 1.5vw;
+			display: inline-block;
+
+			@media only screen and (max-width: 800px) {
+				width: 40vw;
+			}
+		}
 	}
 
 	.non-remove > div > span {
@@ -489,10 +507,6 @@
 		#services_list > a {
 			margin: 0px;
 		}
-
-		.subfilters > li {
-			width: 40vw;
-		}
 	}
 }
 
@@ -547,6 +561,10 @@
 		min-height: 1.5vw;
 		font-size: 22px;
 
+		@media only screen and (max-width: 800px) {
+			font-size: 16px;
+		}
+
 		> span > i {
 			padding-right: 0.6vw;
 			transition: all 0.3s ease;
@@ -570,6 +588,10 @@
 	.product-brand-text {
 		font-size: 14px;
 		transition: all 0.3s ease;
+
+		@media only screen and (max-width: 800px) {
+			font-size: 12px;
+		}
 
 		&:hover {
 			color: #dbbb76;

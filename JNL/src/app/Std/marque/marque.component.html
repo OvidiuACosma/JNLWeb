@@ -1,12 +1,7 @@
 <div class="marque-main" *ngIf="text">
-  <div>
-  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png">
+  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png" class="logo_marque">
 
-  <div id="first_picture">
-      <div>
-    <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
-      </div>
-  </div>
+  <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
 
   <div id="go-up">
   <div class="heritage" id="heritage">
@@ -24,6 +19,7 @@
   <div id="les_produits" class="main_divs">
       <div id="produits_main">
           <h1>{{textG.productsTitle}}</h1>
+
           <div id='carousel-custom' class='carousel slide carousel-produits' data-ride='carousel' data-interval="4000">
 
           <!-- Indicators -->
@@ -63,7 +59,7 @@
       </div>
     </div>
 
-    <div class="flex-div">
+    <div class="flex-marque-div">
       <div>
         <img alt="{{altText[marque]['img1']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img1']['src']}}">
         <span class="style-title">{{text.leftTitle}}</span>
@@ -81,7 +77,7 @@
     </div>
 
       <h6>{{textG.autres}}</h6>
-      <div class="flex-div" id="autres" *ngIf="othersLink">
+      <div class="flex-marque-div" id="autres" *ngIf="othersLink">
         <span *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
           {{othersText[getOthers(i)] | uppercase}}
         </span>
@@ -102,5 +98,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>

@@ -103,14 +103,14 @@
 
 	.subfilters {
 		line-height: 1.83vw;
-	}
 
-	.subfilters > li {
-		width: 17vw;
-		margin: auto;
-		margin-left: 1vw;
-		margin-right: 1.5vw;
-		display: inline-block;
+		> li {
+			width: 17vw;
+			margin: auto;
+			margin-left: 1vw;
+			margin-right: 1.5vw;
+			display: inline-block;
+		}
 	}
 
 	.single-filter {
