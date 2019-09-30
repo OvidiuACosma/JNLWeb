@@ -5,7 +5,7 @@
 		text-transform: uppercase;
 		font-family: Helvetica-Light;
 		color: #dbbb76;
-		font-size: 26px; /*20px;*/
+		font-size: 26px;
 
 		margin-bottom: 1.5vw;
 	}
@@ -231,18 +231,35 @@
 
 	.info_div {
 		background-color: #e3d9c6;
-		/* width: calc(100vw - 77px); */
 		width: 100%;
 		left: 0;
 		text-align: center;
-		/* margin-top: 7.5vw !important; */
 		font-family: Helvetica-Light;
 		font-size: 20px;
-		/* padding-top: 3.7vw; */
-	}
 
-	.info_div > h2 {
-		margin-top: 0;
+		@media only screen and (max-width: 768px) {
+			font-size: 4.5vw;
+			width: 100vw;
+		}
+
+		> h2 {
+			margin-top: 0;
+		}
+
+		> div > p {
+			@media only screen and (max-width: 768px) {
+				font-size: 4.5vw;
+			}
+		}
+
+		> p{
+			@media only screen and (max-width: 768px) {
+				font-size: 1em;
+				width: 80vw;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
 	}
 
 	.info_form {
@@ -327,17 +344,10 @@
 	}
 
 	@media print {
-		@page {
-			size: auto;
-			margin-bottom: 0cm;
-		}
-		#top-container {
-			width: auto;
-			border: 0;
-			margin: 0 5%;
-			padding: 0;
-			/* float: none !important; */
-		}
+		width: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
 
 		.break {
 			break-after: page;
@@ -349,13 +359,6 @@
 	}
 
 	@media only screen and (max-width: 768px) {
-		.info_div > p {
-			font-size: 1em;
-			width: 80vw;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
 		h2 {
 			margin-left: auto;
 			margin-right: auto;
@@ -393,15 +396,6 @@
 
 		h4 {
 			font-size: 4.2vw;
-		}
-
-		.info_div {
-			font-size: 4.5vw;
-			width: 100vw;
-		}
-
-		.info_div > div > p {
-			font-size: 4.5vw;
 		}
 
 		#fav-download {

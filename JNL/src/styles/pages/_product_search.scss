@@ -533,7 +533,6 @@
 			margin: auto;
 			margin-bottom: 0;
 			vertical-align: middle;
-			display: flex;
 			overflow: visible;
 
 			.search-img {
@@ -541,7 +540,6 @@
 				padding: 0px;
 				vertical-align: middle;
 				margin: auto;
-				object-fit: contain;
 				transition: 0.5s;
 
 				&:hover {

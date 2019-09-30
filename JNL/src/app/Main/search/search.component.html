@@ -20,11 +20,11 @@
 
 		<div id="top_buttons" *ngIf="text" (mouseleave)="closeLangSelection()"
 			[ngStyle]="isHome ? {'color': '#666'} : {'color': 'black'}">
-				<span *ngIf="userType==='A'">
+			<span *ngIf="userType==='A'">
 				<a (click)="navigateTo('register')" class="top-button">register</a>
-				</span>
-				<span class="dash" *ngIf="userType==='A'">&#8213;</span>
-				<span>
+			</span>
+			<span class="dash" *ngIf="userType==='A'">&#8213;</span>
+			<span>
 				<a (click)="navigateTo('product/favorites/0')" class="top-button">
 					<i class="far fa-heart heart"></i>
 				</a>
@@ -49,7 +49,7 @@
 					<span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>
 					</li>
 				</ul>
-				</span>
+			</span>
 			<span class="top-button">
 				<span style="margin-right: 2px" (click)="toggleLangStatus()">
 						{{language}}
@@ -57,8 +57,7 @@
 				<span (click)="toggleLangStatus()">
 					<i class="fa fa-sort-down fa-1 m-right"></i>
 				</span>
-				</span>
-
+			</span>
 			<!--<span>
 				<select #l [value]="language" (change)="onChangeLanguage(l.value)" class="select-lang">
 					<option *ngFor="let lang of languages" [ngValue]="lang">{{lang}}</option>
@@ -70,16 +69,15 @@
 
 	<!--MOBILE VERSION-->
 	<div id="mob-searchbar">
-	<span class="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
-		<i class="material-icons">menu</i>
-	</span>
-	<img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
-	<span>
-		<i class="fa fa-search" aria-hidden="true" id="loupe"></i>
-		<a class="top-button" *ngIf="!searchMode"
-		(click)="goSearchMode()"></a>
-		<input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
-		(blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
-	</span>
+		<span class="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
+			<i class="material-icons">menu</i>
+		</span>
+		<img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
+		<span>
+			<a class="top-button" *ngIf="!searchMode" (click)="goSearchMode()">
+				<i class="fa fa-search" aria-hidden="true" id="loupe"></i>
+			</a>
+			<input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode" (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
+		</span>
 	</div>
 </div>
