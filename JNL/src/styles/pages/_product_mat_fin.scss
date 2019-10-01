@@ -185,41 +185,39 @@
 			flex-direction: column;
 		}
 	}
-}
+	
+	/* data list from modal */
+	#garnissageModal {
+		ul {
+			padding: 0px !important;
+		}
 
-/* data list from modal */
-#garnissageModal {
-	ul {
-		padding: 0px !important;
+		label {
+			margin: 0px !important;
+		}
 	}
 
-	label {
-		margin: 0px !important;
+	.modal-header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	/* close button of modal */
+	.close {
+		margin-left: 0px !important;
+	}
+
+	.modal-content {
+		text-align: center;
+	}
+
+	/* workaround to fix bootstrap`s modal bug in Angular
+	Without this fix the dark background will cover the modal. */
+	.modal {
+		background-color: rgba(127, 127, 127, 0.5);
+	}
+
+	.modal-backdrop {
+		position: relative;
 	}
 }
-
-.modal-header {
-	display: flex;
-	justify-content: space-between;
-}
-
-/* close button of modal */
-.close {
-	margin-left: 0px !important;
-}
-
-.modal-content {
-	text-align: center;
-}
-
-/* workaround to fix bootstrap`s modal bug in Angular
-   Without this fix the dark background will cover the modal. */
-.modal {
-	background-color: rgba(127, 127, 127, 0.5);
-}
-
-.modal-backdrop {
-	position: relative;
-}
-
-/****************************************************************/
