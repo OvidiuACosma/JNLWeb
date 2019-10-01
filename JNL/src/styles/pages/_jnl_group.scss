@@ -96,19 +96,72 @@
 		display: flex;
 		flex-direction: row;
 		align-content: flex-start;
+		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 0px;
 		text-align: left;
+
+		@media only screen and (max-width: 768px) {
+			width: 80vw;
+			flex-direction: column;
+			height: auto;
+			text-align: center;
+		}
+
+		> div {
+			&.col_img {
+				width: 100vh;
+
+				@media only screen and (max-width: 1200px) {
+					width: 150vh;
+				}
+
+				@media only screen and (max-width: 768px) {
+					margin: 15px 0;
+				}
+			}
+
+			> p {
+				margin-top: 0px;
+				padding-right: 4vw;
+				padding-bottom: 0px !important;
+				margin-bottom: 0px !important;
+				font-family: Helvetica-Light;
+				font-size: 15px !important;
+				line-height: 24px;
+
+				@media only screen and (max-width: 768px) {
+					margin-bottom: 5vw;
+					height: auto;
+					width: 80vw;
+					padding-right: 0px !important;
+					padding-top: 5vw;
+					padding-bottom: 5vw;
+					font-family: Helvetica-Light;
+				}
+			}
+
+			> img {
+				width: 100%;
+				margin-top: 0;
+				display: inline-block;
+				height: auto;
+
+				@media only screen and (max-width: 768px) {
+					width: 80vw;
+					max-height: 100% !important;
+				}
+			}
+		}
 	}
 
-	.image-parag > div > p {
-		margin-top: 0px;
-		padding-right: 4vw;
-		padding-bottom: 0px !important;
-		margin-bottom: 0px !important;
-		font-family: Helvetica-Light;
-		font-size: 15px !important;
-		line-height: 24px;
+	#engagement .image-parag > p {
+		padding-right: 0px;
+		padding-left: 7.8vw;
+
+		@media only screen and (max-width: 768px) {
+			padding-left: 0vw;
+		}
 	}
 
 	#impg2 {
@@ -119,22 +172,6 @@
 	#impg2 > div > p {
 		padding-right: 0px;
 		padding-left: 7.14vw;
-	}
-
-	.image-parag > div > img,
-	.respo_img {
-		margin-top: 0;
-		width: 0vw;
-		padding-left: 30vw;
-		display: inline-block;
-		height: auto;
-		background-image: url("/assets/Images/Groupe/GP_vertical.jpg");
-		background-size: cover;
-		object-fit: cover;
-	}
-
-	#img2 {
-		background-image: url("/assets/Images/Groupe/GP_leaf.jpg");
 	}
 
 	.group-img {
@@ -263,11 +300,6 @@
 		max-width: 18vw;
 		max-height: 18vw;
 		object-fit: contain;
-	}
-
-	#engagement .image-parag > p {
-		padding-right: 0px;
-		padding-left: 7.8vw;
 	}
 
 	#engagement {
@@ -419,8 +451,7 @@
 
 	#archives > div > div > span {
 		margin: auto;
-		font-family: Helvetica;
-		font-size: 15px;
+		font-size: 25px;
 		font-style: italic;
 	}
 
@@ -759,11 +790,6 @@
 			max-width: 38vw;
 		}
 
-		.image-parag > div > p {
-			margin-bottom: 5vw;
-			height: auto;
-		}
-
 		#equipe > div > div {
 			width: 70vw;
 			margin: 15px auto;
@@ -785,26 +811,6 @@
 		.group-image {
 			width: 100vw;
 			height: auto;
-		}
-
-		.image-parag {
-			width: 80vw;
-			flex-direction: column;
-			height: auto;
-			text-align: center;
-		}
-
-		.image-parag > div > p {
-			width: 80vw;
-			padding-right: 0px !important;
-			padding-top: 5vw;
-			padding-bottom: 5vw;
-			font-family: Helvetica-Light;
-		}
-
-		.image-parag > div > img {
-			width: 80vw;
-			max-height: 100% !important;
 		}
 
 		.proj-flex {
@@ -848,21 +854,9 @@
 			padding-left: 0vw;
 		}
 
-		#engagement .image-parag > p {
-			padding-right: 0px;
-			padding-left: 0vw;
-		}
-
 		#impg2 > div > p {
 			max-height: 100%;
 			padding-left: 0px;
-		}
-
-		.respo_img {
-			margin-top: 4vw;
-			padding-left: 80vw;
-			padding-bottom: 100%;
-			background-size: 80vw 100vw;
 		}
 	}
 }
