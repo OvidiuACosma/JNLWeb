@@ -1,6 +1,7 @@
 h2 {
     font-family: Helvetica;
     font-size: 2.4vw;
+    border: none !important;
 }
 
 h5 {
@@ -10,6 +11,11 @@ h5 {
 }
 
 h6 {
+    font-family: Helvetica-Light;
+    font-size: 0.9vw;
+}
+
+.code-text {
     font-family: Helvetica-Light;
     font-size: 0.9vw;
 }
@@ -39,7 +45,6 @@ h6 {
 }
 
 .img-button {
-    /* max-height: 200px; */
     width: 14vw;
 }
 
@@ -61,9 +66,6 @@ h6 {
 
 /****************************************************************/
 
-/* #modal-large {
-    min-width: 1000px !important; 
-} */
 
 /* close button of modal */
 .close {
@@ -125,7 +127,33 @@ h6 {
     margin-top: 2vw;
 }
 
+@media print {
+    .image-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .img-container {
+        border: 2px solid #ddd;
+        margin: 2vw;
+        max-width: 40vw;
+    }
+    
+    .img-button {
+        width: 100%;
+        /* height: auto; */
+        object-fit: contain;
+    }
 
+    .code-text {
+        font-family: Helvetica;
+        font-size: 4.2vw;
+    }
+}
 
 
 @media only screen and (max-width: 800px){

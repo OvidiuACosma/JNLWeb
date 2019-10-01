@@ -1,4 +1,4 @@
-<br>
+<br class="d-print-none">
 <div id="container">
   <!--
   <div id="staticText" (click)="toggleElement()">
@@ -7,7 +7,7 @@
   </div>
 -->
   <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'" *ngIf="productDesc">
-    <br>
+    <br class="d-print-none">
     <br>
     <p>{{productDesc[0].descriptionFr}}</p>
     <div class="parts" *ngFor="let part of parts; let i = index;"><b>{{part}}:</b>

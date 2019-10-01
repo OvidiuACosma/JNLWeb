@@ -1,12 +1,16 @@
 <div id="top-container">
+  <br class="d-none d-print-block">
   <div id="header" *ngIf="prodDesc">
     <h1>{{model}}</h1>
     <h4>{{brand}}</h4>
     <h5 class="gold">{{family | uppercase}}</h5>
   </div>
 
+  <div class="d-none d-print-block text-center">
+    <img [src]="heroImageToPrint?.src" class="print-image">
+  </div>
 
-  <div id='carousel-custom' class='carousel slide carousel-fade' data-ride='carousel' data-pause="false">
+  <div id='carousel-custom' class='carousel slide carousel-fade d-print-none' data-ride='carousel' data-pause="false">
     <div class="carousel-inner">
       <div class='carousel-item' *ngFor="let heroImage of heroImages; let i = index"
         [ngClass]="i === 0 ? 'item active' : 'item'">
@@ -25,8 +29,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <br>
-  <br>
+  <br class="d-print-none">
+  <br class="d-print-none">
 
   <div class="d-print-none">
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
@@ -59,16 +63,16 @@
   <br>
   <br>
 
-  <div class="desc">
+  <div class="desc d-print-none">
     <nav class="nav-justified nav-dimension center">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
           aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>
-        <a class="nav-item nav-link d-print-none" id="nav-matFin-tab" data-toggle="tab" href="#nav-matFin" role="tab"
+        <a class="nav-item nav-link" id="nav-matFin-tab" data-toggle="tab" href="#nav-matFin" role="tab"
           aria-controls="nav-matFin" aria-selected="false">UPHOLSTERY</a>
-        <a class="nav-item nav-link d-print-none" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
+        <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
           aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
-        <a class="nav-item nav-link d-print-none" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab"
+        <a class="nav-item nav-link" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab"
           aria-controls="nav-cat" aria-selected="false">DOWNLOADS</a>
       </div>
     </nav>
@@ -82,7 +86,8 @@
       </div>
       <!-- PRODUCT MATERIALS AND FINISAGES -->
       <div class="tab-pane fade d-print-none" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
-        <div class="prod-desc">  <!-- *ngIf="category==='Assise'"> -->
+        <div class="prod-desc">
+          <!-- *ngIf="category==='Assise'"> -->
           <!-- <app-product-mat-fin [product]="product"></app-product-mat-fin> -->
           <app-product-garnissages></app-product-garnissages>
         </div>
@@ -100,6 +105,24 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- PRODUCT SHEET TO PRINT-->
+  <div class="d-none d-print-block" *ngIf="product">
+    <div class="text-left">
+      <span>DESCRIPTION</span>
+      <hr>
+    </div>
+    <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
+  </div>
+
+  <div class="d-none d-print-inline-block break" *ngIf="product">
+    <br>
+    <div class="text-left">
+      <span>DRAWINGS</span>
+      <hr>
+    </div>
+    <app-product-dimensions [product]="product"></app-product-dimensions>
   </div>
 
 

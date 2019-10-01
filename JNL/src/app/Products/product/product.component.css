@@ -119,6 +119,13 @@ ol {
     color: inherit;
 }
 
+.print-image {
+    width: 800px;
+    height: auto;
+    object-fit: contain;
+    text-align: center;
+}
+
 .slide-image {
     max-width: 56.52vw;
     max-height: 37.43vw;
@@ -385,12 +392,28 @@ ol {
 }
 
 @media print {
-    #top-container {
-        width: 90%;
-        margin: auto;
-        padding: 0px;
+    @page {
+        size: auto;
+        margin-bottom: 0cm;
     }
+    #top-container {
+        width: auto;
+        border: 0;
+        margin: 0 5%;
+        padding: 0;
+        /* float: none !important; */
+    }
+
+    .break {
+        break-after: page;
+    }
+
+    hr {
+        width: 90vw;
+    }
+
 }
+
 
 @media only screen and (max-width: 800px){
     .info_div > p{

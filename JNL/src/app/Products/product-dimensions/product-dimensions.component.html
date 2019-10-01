@@ -1,15 +1,15 @@
 <div id="container">
-  <br>
+  <br class="d-print-none">
   <!-- <div id="staticText" (click)="toggleElement()">
     <h5>TECHNICAL<br>DRAWINGS</h5>
     <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow">
   </div>
    <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'"> -->
   <div>
-    <br>
-    <h5 class="center">Technical Drawings</h5>
-    <br>
-    <br>
+    <br class="d-print-none">
+    <h5 class="center d-print-none">Technical Drawings</h5>
+    <br d-print-none>
+    <br d-print-none>
     <div class="image-list">
       <div *ngFor="let item of TDImages; let i=index" class="img-container">
         <a>
@@ -18,7 +18,7 @@
         </a>
         <div class="center">
           <br>
-          <h6>{{item.prodCode}}</h6>
+          <span id="code-text">{{item.prodCode}}</span>
         </div>
       </div>
     </div>
