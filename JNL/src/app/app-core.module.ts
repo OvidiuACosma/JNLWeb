@@ -82,7 +82,6 @@ import { LoginComponent, RegisterComponent } from './Auth';
   providers: [
     ConfigService,
     AlertService,
-
     ArchiveService,
     DownloaderService,
     TranslationService,
