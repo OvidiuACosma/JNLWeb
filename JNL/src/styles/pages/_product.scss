@@ -20,17 +20,6 @@
 		font-size: 15px;
 	}
 
-	textarea {
-		margin: auto;
-		background-color: #f6eedd;
-		border: none;
-		width: 100%;
-		outline: none;
-
-		font-family: Helvetica-Light;
-		font-size: 1.4vw;
-	}
-
 	i {
 		outline: none;
 	}
@@ -172,20 +161,19 @@
 	#fav-download {
 		margin: auto;
 		margin-top: 3.2vw;
-		width: 20.7vw;
 		display: flex;
 		flex-direction: row;
-		align-content: space-between;
-	}
+		align-content: center;
+		justify-content: center;
 
-	#fav-download h3 {
-		font-size: 15px;
-	}
+		h3 {
+			font-size: 15px;
+		}
 
-	#fav-download > div {
-		margin: auto;
-		display: flex;
-		flex-direction: row;
+		> div {
+			display: flex;
+			flex-direction: row;
+		}
 	}
 
 	.nav-dimension {

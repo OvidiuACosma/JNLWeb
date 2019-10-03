@@ -1,11 +1,11 @@
 .submenu {
 	margin: auto;
 	font-family: Helvetica-Light;
-	width: 50%;
+	// width: 50%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	align-content: space-between;
+	align-content: center;
 	padding: 0px;
 	justify-content: center;
 	/* margin-bottom: 4vw; */
@@ -18,7 +18,7 @@
 	}
 
 	> a {
-		margin: auto;
+		margin: 0 30px;
 		font-size: 15px;
 		line-height: 24px;
 		left: 0;

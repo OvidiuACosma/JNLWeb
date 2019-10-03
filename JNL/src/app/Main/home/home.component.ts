@@ -32,6 +32,10 @@ export class HomeComponent implements OnInit {
     // activate carousel
     $(document).ready(function() {
       $('.carousel').carousel();
+
+      $('.home-first-picture').animate({
+        opacity : 1
+      }, 700);
     });
   }
 
