@@ -43,6 +43,13 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
       this.getText(lang);
       this.getAlt(this.page);
     });
+
+    $(document).ready(function() {
+      console.log('test marques');
+        $('.js-fadein').animate({
+            opacity : 1
+          }, 700);
+    });
   }
 
   getText(lang: string) {

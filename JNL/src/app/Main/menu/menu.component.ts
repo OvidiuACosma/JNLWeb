@@ -30,11 +30,6 @@ export class MenuComponent implements OnInit {
       this.language = lang || 'EN';
       this.getText(lang);
     });
-    $(document).ready(function() {
-        $('.js-fadein').animate({
-            opacity : 1
-          }, 700);
-    });
   }
 
   getText(lang: string) {
