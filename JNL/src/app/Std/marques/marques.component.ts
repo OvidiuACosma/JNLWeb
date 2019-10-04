@@ -7,7 +7,6 @@ declare var $: any;
 @Component({
   selector: 'app-marques',
   templateUrl: './marques.component.html',
-  styleUrls: ['./marques.component.css'],
   animations: [
     trigger('simpleFadeAnimation', [
       state('in', style({opacity: 1})),
@@ -43,6 +42,13 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
       this.language = lang || 'EN';
       this.getText(lang);
       this.getAlt(this.page);
+    });
+
+    $(document).ready(function() {
+      console.log('test marques');
+        $('.js-fadein').animate({
+            opacity : 1
+          }, 700);
     });
   }
 

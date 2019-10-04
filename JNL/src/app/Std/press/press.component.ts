@@ -6,8 +6,7 @@ import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-press',
-  templateUrl: './press.component.html',
-  styleUrls: ['./press.component.css']
+  templateUrl: './press.component.html'
 })
 export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
 

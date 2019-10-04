@@ -3,8 +3,7 @@ import { DataExchangeService } from 'src/app/_services';
 
 @Component({
   selector: 'app-left-strip',
-  templateUrl: './left-strip.component.html',
-  styleUrls: ['./left-strip.component.css']
+  templateUrl: './left-strip.component.html'
 })
 export class LeftStripComponent implements OnInit {
 

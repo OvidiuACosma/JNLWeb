@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
-  templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.css']
+  templateUrl: './search-results.component.html'
 })
 export class SearchResultsComponent implements OnInit {
 

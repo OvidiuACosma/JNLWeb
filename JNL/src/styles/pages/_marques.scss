@@ -1,0 +1,72 @@
+.les-marques-main {
+	width: 100%;
+	display: flex;
+	padding-top: 5.9vw;
+	margin: auto;
+	margin-bottom: 6vw;
+
+	> div {
+		margin: auto;
+		left: 0;
+		text-align: center;
+	}
+
+	h2 {
+		margin-bottom: 0;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		font-family: Helvetica-Light;
+		color: #666;
+		font-size: 26px;
+		margin-top: 0.8vw;
+		margin-bottom: 1.2vw;
+	}
+
+	.marques_selected {
+		text-decoration: underline !important;
+	}
+
+	.marques-image {
+		width: 76.17vw;
+		/* margin-top: 1.5vw; */
+		margin-bottom: 4vw;
+	}
+
+	#jnl,
+	#vanhamme,
+	#ungaro,
+	#studio {
+		padding-top: 1.2vw; /* 2.74vw; */
+		cursor: pointer;
+	}
+
+	#jnl > a > img,
+	#vanhamme > a > img,
+	#ungaro > a > img,
+	#studio > a > img {
+		width: 20vw;
+		height: auto;
+		opacity: 0.85;
+		transition: all 0.3s ease;
+	}
+
+	#jnl > a > img:hover,
+	#vanhamme > a > img:hover,
+	#ungaro > a > img:hover,
+	#studio > a > img:hover {
+		opacity: 1;
+		transition: all 0.3s ease;
+	}
+
+	@media only screen and (max-width: 768px) {
+		h3 {
+			font-size: 15px;
+		}
+
+		.location {
+			font-size: 4.7vw;
+		}
+	}
+}

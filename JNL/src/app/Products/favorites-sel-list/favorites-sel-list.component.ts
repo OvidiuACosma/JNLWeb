@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favorites-sel-list',
-  templateUrl: './favorites-sel-list.component.html',
-  styleUrls: ['./favorites-sel-list.component.css']
+  templateUrl: './favorites-sel-list.component.html'
 })
 export class FavoritesSelListComponent implements OnInit {
 

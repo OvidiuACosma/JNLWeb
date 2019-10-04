@@ -1,0 +1,128 @@
+/* FONTS */
+@font-face {
+	font-family: "Helvetica-Light";
+	font-display: auto;
+	src: url("/assets/Fonts/Helvetica-Light.otf"), url("/assets/Fonts/Helvetica-Light.woff") format("woff");
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	/* background: #777;  */
+	background: #888; /* #121A2D; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+/* Scroll Bar */
+
+.material-icons {
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: "liga";
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	margin: 0;
+	// font-family: Roboto, "Helvetica Neue", sans-serif;
+	font-family: Helvetica;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #888;
+	cursor: pointer;
+}
+
+.flex-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.container-main {
+	position: relative;
+	width: calc(100vw - var(--left-strip-width));
+	margin-left: var(--left-strip-width);
+
+	@media only screen and (max-width: 768px) {
+		position: relative;
+		width: 100vw;
+		margin-left: 0;
+		padding-top: 40px;
+	}
+
+	> .content {
+		width: 100%;
+		background-color: #fff;
+		top: 0;
+		z-index: 801;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
+			margin-left: 0px !important;
+		}
+
+		> .main {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: block;
+			z-index: 800;
+		}
+	}
+}
+
+.router-outlet {
+	min-height: 57.5vh;
+}
+
+@media only screen and (max-width: 768px) {
+	.left-strip {
+		display: none;
+	}
+}

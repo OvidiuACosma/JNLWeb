@@ -3,8 +3,7 @@ import { DataExchangeService } from 'src/app/_services';
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  templateUrl: './contact.component.html'
 })
 
 export class ContactComponent implements OnInit {
