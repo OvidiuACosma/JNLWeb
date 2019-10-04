@@ -1,0 +1,45 @@
+.contact-div {
+	text-align: center;
+	padding-top: 5.9vw;
+	font-family: Helvetica-Light;
+	font-size: 1.4vw;
+	margin-bottom: 6vw;
+
+	> p {
+		font-family: Helvetica-Light;
+		font-size: 15px;
+		line-height: 24px;
+		padding-left: 18.9vw;
+		padding-right: 18.9vw;
+	}
+
+	> div {
+		width: 100vw;
+		background-color: #e3d9c6;
+	}
+}
+
+.contact_top {
+	margin: auto;
+	margin-right: 0px !important;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.contact-div > p {
+		font-size: 4.4vw;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.contact-div {
+		font-size: 4.2vw;
+	}
+
+	.contact-div > p {
+		font-size: 4.2vw;
+	}
+}

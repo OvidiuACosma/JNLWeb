@@ -6,8 +6,7 @@ declare var $: any; // import jQuery
 
 @Component({
   selector: 'app-jnl-group',
-  templateUrl: './jnl-group.component.html',
-  styleUrls: ['./jnl-group.component.css']
+  templateUrl: './jnl-group.component.html'
 })
 export class JnlGroupComponent implements OnInit, AfterViewInit, AfterViewChecked {
 

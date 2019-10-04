@@ -26,8 +26,7 @@ export class DialogAnswerComponent {
 
 @Component({
   selector: 'app-request-form',
-  templateUrl: './request-form.component.html',
-  styleUrls: ['./request-form.component.css']
+  templateUrl: './request-form.component.html'
 })
 export class RequestFormComponent implements OnInit {
 

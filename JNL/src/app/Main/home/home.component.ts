@@ -5,8 +5,7 @@ declare var $: any;
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
 
@@ -33,7 +32,8 @@ export class HomeComponent implements OnInit {
     // activate carousel
     $(document).ready(function() {
       $('.carousel').carousel();
-      $('.js-fadein').animate({
+
+      $('.home-first-picture').animate({
         opacity : 1
       }, 700);
     });

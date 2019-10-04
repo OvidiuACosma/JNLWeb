@@ -5,8 +5,7 @@ import { Browser, User } from '../../_models';
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
 
@@ -82,6 +81,7 @@ export class SearchComponent implements OnInit {
   }
 
   goSearchMode() {
+    console.log('goSearchMode',this.searchMode);
     this.searchMode = !this.searchMode;
   }
 
@@ -100,12 +100,18 @@ export class SearchComponent implements OnInit {
   }
 
   toggleNav() {
-    if (!this.navBarStatus) {
-      if ((event.type === 'mouseover' && this.browser.isDesktopDevice) ||
-           (event.type === 'click' && (this.browser.isTablet || this.browser.isMobile ||
-                                       (this.browser.isDesktopDevice && window.innerWidth <= 768)))) {
-             this.dataex.setNavBarStatus(!this.navBarStatus);
-           }
+    // Hover - Desktop
+    if (event.type === 'mouseover' && this.browser.isDesktopDevice){
+      // Avoid flickering
+      if (!this.navBarStatus) {
+        this.dataex.setNavBarStatus(!this.navBarStatus);
+      }
+    }
+    // Click - Mobile
+    else if (event.type === 'click') {
+      if (this.browser.isTablet || this.browser.isMobile || (this.browser.isDesktopDevice && window.innerWidth <= 768)) {
+        this.dataex.setNavBarStatus(!this.navBarStatus);
+      }
     }
   }
 

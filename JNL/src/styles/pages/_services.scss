@@ -1,0 +1,276 @@
+.les-services-main {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	padding-top: 5.9vw;
+
+	> div {
+		margin: auto;
+		left: 0;
+		text-align: center;
+	}
+
+	h4 {
+		margin: auto;
+		width: 58.3vw;
+		font-size: 24px;
+		font-family: Helvetica-Light;
+		margin-top: 3.3vw;
+		text-align: center;
+	}
+
+	video {
+		width: 72.63vw;
+		height: 51.5vw;
+		margin: auto;
+	}
+
+	.first-image {
+		width: 76vw;
+		margin: auto;
+		margin-top: 1.6vw;
+		margin-bottom: 4.2vw;
+	}
+
+	.quote-bar {
+		margin-top: 4.54vw !important;
+		left: 0;
+		display: flex;
+		flex-direction: column !important;
+		background-color: #f3f5f5;
+		position: relative;
+		padding: 7.7vw;
+		padding-top: 4.2vw;
+		padding-bottom: 4.2vw;
+	}
+
+	.quote-bar > p {
+		font-family: Helvetica-Light;
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	.quote-bar > h4 {
+		font-family: Helvetica-Light;
+		font-size: 24px;
+		margin-top: 0px;
+	}
+
+	.sur-flex {
+		width: 76vw;
+		margin: auto;
+		margin-top: 5.2vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: left;
+	}
+
+	.sur-flex > div {
+		width: 31.2vw;
+		margin: auto;
+		margin-top: 0;
+		margin-bottom: 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.sur-flex > div > div > img {
+		width: 31.2vw;
+		margin: 0px;
+	}
+
+	.sur-flex > div > div {
+		font-family: Helvetica-Light;
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	.sur-flex > div > div > span {
+		font-family: Helvetica-Light;
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	.sur-flex > div > div > h5 {
+		margin-bottom: 2em;
+	}
+
+	.sur-flex > div:nth-child(2) > div:first-child {
+		margin-top: 0px !important;
+		margin-bottom: 1.5vw;
+		font-family: Helvetica-Light;
+		font-size: 15px;
+		line-height: 24px;
+		text-align: left;
+	}
+
+	#services {
+		margin: auto;
+		width: 80vw;
+		// display: flex;
+		color: white;
+		margin-top: 30px;
+
+		@media only screen and (max-width: 768px) {
+			margin-top: 0;
+		}
+
+		> img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+
+	::placeholder {
+		/* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: black;
+		opacity: 1; /* Firefox */
+	}
+
+	:-ms-input-placeholder {
+		/* Internet Explorer 10-11 */
+		color: black;
+	}
+
+	::-ms-input-placeholder {
+		/* Microsoft Edge */
+		color: black;
+	}
+
+	textarea {
+		margin: auto;
+		background-color: #f6eedd;
+		border: none;
+		width: 100%;
+		outline: none;
+	}
+
+	i {
+		outline: none;
+	}
+
+	.small_text {
+		font-size: 1.11vw;
+	}
+
+	.services_your_project {
+		width: 100%;
+		background-color: #e3d9c6;
+		left: 0;
+		text-align: center;
+		font-family: Helvetica-Light;
+		font-size: 1.4vw;
+		padding-top: 3.7vw;
+		padding-bottom: 3vw;
+
+		> p {
+			width: 45vw;
+			margin: auto;
+			font-size: 15px;
+			line-height: 24px;
+
+			@media only screen and (max-width: 768px) {
+				width: 80vw;
+			}
+		}
+	}
+
+	#checks {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: center;
+	}
+
+	#checks > div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.send {
+		text-transform: uppercase;
+		margin: auto;
+		background-color: white;
+		color: black;
+		margin-top: 5.3em;
+		margin-bottom: 4em;
+		border: none;
+		width: 16.65vw;
+		font-family: Helvetica-Light;
+		font-size: 1.11vw;
+		letter-spacing: 1.28px;
+	}
+
+	#expertise,
+	#surMesure,
+	#votreProjet {
+		padding-top: 5.9vw;
+	}
+
+	#expertise {
+		margin-top: 2.57vw;
+	}
+
+	#expertise > h4,
+	#surMesure > h4,
+	#votreProjet > h4 {
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	#surMesure {
+		margin-top: 5.75vw;
+		margin-bottom: 5.48vw;
+		width:80vw;
+	}
+
+	@media only screen and (max-width: 768px) {
+		.contact-div > p {
+			width: 80vw;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		h4 {
+			width: 80vw;
+		}
+
+		button {
+			margin-top: 0px;
+		}
+
+		input {
+			margin-top: 20px;
+		}
+
+		.sur-flex {
+			flex-direction: column;
+			width: 80vw;
+		}
+
+		.sur-flex > div {
+			width: 80vw;
+			justify-content: space-between;
+		}
+
+		.sur-flex > div:last-child {
+			flex-direction: column-reverse;
+		}
+
+		.sur-flex > div > div > img {
+			width: 80vw;
+		}
+
+		.quote-bar > p {
+			font-family: Helvetica-Light;
+		}
+
+		.sur-flex > div > div {
+			text-align: center;
+			    margin-bottom: 30px;
+		}
+	}
+}

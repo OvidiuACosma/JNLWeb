@@ -1,4 +1,3 @@
-
 <div class="search-main">
   <h1>Product Finder</h1>
 
@@ -22,7 +21,7 @@
                 <span class="header-filter">{{c}}</span>
                 <img class="arrow" [src]="getArrow(i)">
             </div>
-            <ul id="filter-{{c}}" *ngIf="toggle[i]" class="subfilters">
+            <ul id="filter-{{c}}" class="subfilters" [ngClass]="{'active' : toggle[i]}">
               <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index">
                   <span (click)="selectFilter(c, d.displayName)">
                     <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>

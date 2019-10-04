@@ -5,8 +5,7 @@ import * as _ from 'lodash';
 
 @Component({
   selector: 'app-product-mat-fin',
-  templateUrl: './product-mat-fin.component.html',
-  styleUrls: ['./product-mat-fin.component.css']
+  templateUrl: './product-mat-fin.component.html'
 })
 export class ProductMatFinComponent implements OnInit {
 

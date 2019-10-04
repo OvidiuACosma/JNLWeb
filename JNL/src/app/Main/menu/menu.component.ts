@@ -6,8 +6,7 @@ declare var $: any;
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
 
@@ -30,11 +29,6 @@ export class MenuComponent implements OnInit {
     .subscribe(lang => {
       this.language = lang || 'EN';
       this.getText(lang);
-    });
-    $(document).ready(function() {
-        $('.js-fadein').animate({
-            opacity : 1
-          }, 700);
     });
   }
 

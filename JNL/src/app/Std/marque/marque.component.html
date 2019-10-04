@@ -1,22 +1,17 @@
 <div class="marque-main" *ngIf="text">
-  <div>
-  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png">
+  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png" class="logo_marque">
 
-  <div id="first_picture">
-      <div>
-    <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
-      </div>
-  </div>
+  <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
 
   <div id="go-up">
-  <div class="heritage" id="heritage">
+  <div class="heritage">
     <div>
       <h2>{{text.sectionTitle}}</h2>
       <p [innerHTML]="text.sectionText"></p>
       <div class="home-links-flex">
-        <span class="home_links" (click)="goAllProductsOfBrand(marque)">{{textG.link1}}</span>
-        <span class="home_links" (click)="download(marque, 'catalog')">{{textG.link2}}</span>
-        <span class="home_links">{{textG.link3}}</span>
+        <button class="jbtn" (click)="goAllProductsOfBrand(marque)">{{textG.link1}}</button>
+        <button class="jbtn" (click)="download(marque, 'catalog')">{{textG.link2}}</button>
+        <button class="jbtn">{{textG.link3}}</button>
       </div>
     </div>
   </div>
@@ -24,10 +19,11 @@
   <div id="les_produits" class="main_divs">
       <div id="produits_main">
           <h1>{{textG.productsTitle}}</h1>
+
           <div id='carousel-custom' class='carousel slide carousel-produits' data-ride='carousel' data-interval="4000">
 
           <!-- Indicators -->
-          <ol class='carousel-indicators'>
+          <ol class='carousel-indicators carousel-marque-indicators'>
               <li data-target='#carousel-custom'  *ngFor="let itemC of getIndicatorsText(); let x = index"
                 [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'>
                 <span>{{itemC}}</span>
@@ -41,7 +37,9 @@
                       <img src='{{item}}' alt='{{text.collectionTitle}}' class="slide-image">
                     </div>
                     <p class="voir">
-                      <span class="home_links" (click)="goProductsByCategoryOrFamily(marque, text.productCategories[k])">{{textG.discover}} {{text.productCategories[k]}}</span>
+                      <button class="jbtn" (click)="goProductsByCategoryOrFamily(marque, text.productCategories[k])">
+						  {{textG.discover}} {{text.productCategories[k]}}
+					  </button>
                     </p>
                   </div>
                 </div>
@@ -61,31 +59,31 @@
       </div>
     </div>
 
-    <div class="flex-div">
+    <div class="brand_content_cols2">
       <div>
         <img alt="{{altText[marque]['img1']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img1']['src']}}">
-        <span class="style-title">{{text.leftTitle}}</span>
+        <h4>{{text.leftTitle}}</h4>
         <p [innerHTML]="text.leftText"></p>
       </div>
 
       <div>
-        <div>
-          <h6>&nbsp;</h6>
-          <span>{{text.rightTitle}}</span>
-        </div>
+        <h4>{{text.rightTitle}}</h4>
         <img alt="{{altText[marque]['img2']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img2']['src']}}">
         <p [innerHTML]="text.rightText"></p>
       </div>
     </div>
 
-      <h6>{{textG.autres}}</h6>
-      <div class="flex-div" id="autres" *ngIf="othersLink">
-        <span *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
-          {{othersText[getOthers(i)] | uppercase}}
-        </span>
-      </div>
+    <div class="other_brands">
+      <h4 class="other_brands_title">{{textG.autres}}</h4>
 
-      <div id="other-links">
+      <div class="other_brands_links" *ngIf="othersLink">
+        <button *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
+          {{othersText[getOthers(i)] | uppercase}}
+        </button>
+      </div>
+    </div>
+
+      <div class="other_links">
         <div (click)="navigateTo('jnlGroup')">
           <img  alt="{{altText[marque]['img3']['alt'][language]}}" src="assets/Images/Marque/{{altText[marque]['img3']['src']}}">
           <h4>{{textG.groupe}}</h4>
@@ -100,5 +98,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>

@@ -3,7 +3,7 @@
       <h1>{{text.title}}</h1>
 
 
-      <div id="group_list">
+      <div class="submenu d-none d-sm-flex">
         <a (click)="navigateTo('jnlGroup', 'histoire')">{{text.histoire}}</a>
         <a (click)="navigateTo('jnlGroup', 'equipe')">{{text.equipe}}</a>
         <a (click)="navigateTo('jnlGroup', 'engagement')">{{text.engagement}}</a>
@@ -19,12 +19,11 @@
         <br><br>
 
         <div class="image-parag">
-          <div>
+          <div class="col_txt">
             <p style="font-size: 1.69vw" [innerHTML]="text.histoireText2"></p>
           </div>
-          <div class="respo_img" id="img1">&nbsp;
-            <!-- <img alt="JNL Collection">
-            <img alt="JNL Collection" src="assets/Images/Groupe/GP_vertical.jpg"> -->
+          <div class="col_img">
+            <img alt="JNL Collection" src="assets/Images/Groupe/GP_vertical.jpg">
           </div>
         </div>
 
@@ -35,13 +34,13 @@
         <h2>{{text.todayTitle}}</h2>
         <h3>{{text.todaySub}}</h3>
         <div>
-          <div>
+          <div class="jnl_user">
             <img class="group-img" alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img2']['src']}}">
             <h4>Dominique Waxmann</h4>
             <h3>{{text.dominiqueTitle}}</h3>
             <p [innerHTML]="text.dominiqueText"></p>
           </div>
-          <div>
+          <div class="jnl_user">
               <img class="group-img" alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img3']['src']}}">
               <h4>Alain Lahy</h4>
               <h3>{{text.alainTitle}}</h3>
@@ -80,7 +79,7 @@
               </div>
             </div>
             </div>
-          <ol class='carousel-indicators'>
+          <ol class='carousel-indicators carousel-jnlgroup-indicators'>
               <li data-target='#carousel-custom' [attr.data-slide-to]='j'
               *ngFor="let p of people; let j = index"
               [ngClass]="j === 0 ? 'active' : ''"></li>
@@ -97,10 +96,9 @@
         <h2>{{text.engagementTitle}}</h2>
         <h3>{{text.engagementSub}}</h3>
         <div class='image-parag' id="impg2">
-            <div class="respo_img" id="img2">&nbsp;
-                <!-- <img alt="JNL Collection"> 
-                <img alt="JNL Collection" src="assets/Images/Groupe/GP_leaf.jpg"> -->
-              </div>
+            <div class="col_img">
+              <img alt="JNL Collection" src="assets/Images/Groupe/GP_leaf.jpg">
+            </div>
           <div>
             <p [innerHTML]="text.engagementText">
             </p>
