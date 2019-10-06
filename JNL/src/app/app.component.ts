@@ -1,11 +1,11 @@
-import { Component, Inject, LOCALE_ID, HostListener, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { DataExchangeService, WINDOW } from './_services';
-import { MatDialog } from '@angular/material/dialog';
+import { WINDOW } from './_services';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 
 export class AppComponent {
@@ -20,8 +20,7 @@ export class AppComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const offset = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
-    // console.log('Scroll Y offset: ', offset);
-   offset >= 200 ? this.scrollTopVisible = true : this.scrollTopVisible = false;
+    offset >= 200 ? this.scrollTopVisible = true : this.scrollTopVisible = false;
   }
 
   scrollTop() {

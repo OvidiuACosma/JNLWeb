@@ -5,7 +5,8 @@ import { DataExchangeService, TranslationService, AltImgService } from '../../_s
 
 @Component({
   selector: 'app-services',
-  templateUrl: './services.component.html'
+  templateUrl: './services.component.html',
+  styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit, AfterViewInit, AfterViewChecked {
 

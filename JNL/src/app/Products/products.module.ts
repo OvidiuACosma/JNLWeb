@@ -4,7 +4,6 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { CoreModule } from '../app-core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductSearchComponent } from './product-search/product-search.component';
-import { ProductMatFinComponent } from './product-mat-fin/product-mat-fin.component';
 import { ProductGarnissagesComponent } from './product-garnissages/product-garnissages.component';
 import { ProductGarnissageDetailsComponent } from './product-garnissage-details/product-garnissage-details.component';
 import { ProductDimensionsComponent } from './product-dimensions/product-dimensions.component';
@@ -18,8 +17,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogAnswerComponent } from '../Std';
 import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-list.component';
-import { LoginComponent } from '../Auth';
-import { AuthGuard } from '../_guards';
 
 
 @NgModule({
@@ -35,7 +32,6 @@ import { AuthGuard } from '../_guards';
   ],
   declarations: [
     ProductSearchComponent,
-    ProductMatFinComponent,
     ProductGarnissagesComponent,
     ProductGarnissageDetailsComponent,
     ProductDimensionsComponent,
@@ -47,7 +43,6 @@ import { AuthGuard } from '../_guards';
   ],
   exports: [
     ProductSearchComponent,
-    ProductMatFinComponent,
     ProductGarnissagesComponent,
     ProductGarnissageDetailsComponent,
     ProductDimensionsComponent,

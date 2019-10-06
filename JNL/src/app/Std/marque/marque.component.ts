@@ -6,7 +6,8 @@ import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-marque',
-  templateUrl: './marque.component.html'
+  templateUrl: './marque.component.html',
+  styleUrls: ['./marque.component.scss']
 })
 export class MarqueComponent implements OnInit {
 

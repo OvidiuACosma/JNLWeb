@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent, ContactComponent, SearchResultsComponent, PageNotFoundComponent } from './Main';
+import { HomeComponent, ContactComponent, PageNotFoundComponent } from './Main';
 import { AuthGuard } from './_guards';
-import { LoginComponent, RegisterComponent } from './Auth';
+import { RegisterComponent } from './Auth';
 import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
           SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 
@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
 
   { path: 'contact', component: ContactComponent },
-  { path: 'searchResults/:searchText', component: SearchResultsComponent },
 
   { path: 'product', loadChildren: './Products/products.module#ProductsModule' },
 
@@ -26,7 +25,6 @@ const routes: Routes = [
 
   { path: 'extras', loadChildren: './Extras/extras.module#ExtrasModule' },
 
-  // { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
 
   { path: '**', component: PageNotFoundComponent }

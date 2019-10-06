@@ -1,11 +1,11 @@
-.contact_div.request_div {
+.contact-div {
 	text-align: center;
 	/* padding-top: 5.9vw; */
 	font-family: Helvetica-Light;
 	font-size: 15px;
 }
 
-.contact_form {
+.contact-form {
 	background-color: #e3d9c6;
 	width: 100%;
 	padding-top: 2vw;
@@ -24,7 +24,7 @@
 		border: none;
 		width: 45vw;
 		outline: none;
-		font-size: 15px;
+		font-size: 1.44vw;
 		border-radius: 0;
 	}
 
@@ -39,7 +39,7 @@
 		border-bottom: 1px solid black;
 		margin: auto;
 		margin-top: 1.5vw;
-		font-size: 15px;
+		font-size: 1.44vw;
 		border-radius: 0;
 	}
 
@@ -73,9 +73,9 @@
 		border: none;
 		border-bottom: 1px solid black;
 		margin-top: 1.5vw !important;
-		margin-bottom: 0px !important;
-		padding-bottom: 0px;
-		font-size: 15px;
+		margin-bottom: 0 !important;
+		padding-bottom: 0;
+		font-size: 1.44vw;
 	}
 
 	> input.ng-invalid {
@@ -86,15 +86,6 @@
 		border-bottom: none;
 	}
 
-	.contact_top {
-		margin: auto;
-		margin-right: 0px !important;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-content: center;
-	}
-
 	> button {
 		text-transform: uppercase;
 		margin: auto;
@@ -102,10 +93,9 @@
 		color: black;
 		margin-top: 3vw;
 		margin-bottom: 4vw;
-		border: none;
-		font-size: 15px;
-		padding: 15px 50px;
-		line-height: 12px;
+    border: none;
+    width: 15vw;
+		font-size: 1.2vw;
 		transition: all 0.3s ease-out;
 
 		&:hover:not([disabled]) {
@@ -115,11 +105,6 @@
 			font-weight: bold;
 			transition: all 0.1s ease-in;
 		}
-	}
-
-	> div {
-		width: 100vw;
-		background-color: #e3d9c6;
 	}
 
 	> div {

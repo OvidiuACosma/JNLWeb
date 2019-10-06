@@ -1,5 +1,9 @@
 #actualites-div {
-	padding-top: 5.9vw;
+  padding-top: 5.9vw;
+
+  h1 {
+    margin-bottom: .7vw;
+  }
 
 	.logo {
 		text-align: center;
@@ -23,7 +27,7 @@
 	.news-first-picture {
 		width: 76vw;
 		margin: auto;
-		margin-top: 0px;
+		margin-top: 0;
 		text-align: center;
 	}
 
@@ -58,30 +62,27 @@
 		margin: auto;
 		margin-bottom: 3vw;
 		justify-content: space-between;
-		display: flex;
-	}
-
-	#autres > p {
-		background-color: #d3d3d3 !important;
-		width: 37.5vw;
-		text-align: center;
-		display: flex;
-		margin: 0;
-	}
-
-	#autres > p > span {
-		margin: auto;
-		font-family: Helvetica-light;
-		font-size: 1.8vw;
+    display: flex;
+    > p {
+      background-color: #d3d3d3 !important;
+      width: 37.5vw;
+      text-align: center;
+      display: flex;
+      margin: 0;
+      > span {
+        margin: auto;
+        font-family: Helvetica-light;
+        font-size: 1.8vw;
+      }
+    }
 	}
 
 	#links {
 		width: 100vw;
 		display: flex;
-		margin-bottom: 5vw;
-	}
-
-	#links > span {
-		margin: auto;
+    margin-bottom: 5vw;
+    > button {
+      margin: auto;
+    }
 	}
 }

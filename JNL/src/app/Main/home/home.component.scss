@@ -1,4 +1,13 @@
-
+@keyframes zoomIn {
+	from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	50% {
+		opacity: 1;
+	}
+}
 
 .home-first-picture {
 	max-width: 100%;
@@ -77,28 +86,28 @@
 		width: 87.13vw;
 	}
 
-	.gallery_buttons {
-		height: 100%;
-		width: 10vw;
-		display: flex;
-		margin-top: auto;
-		margin-bottom: auto;
-	}
+	// .gallery_buttons {
+	// 	height: 100%;
+	// 	width: 10vw;
+	// 	display: flex;
+	// 	margin-top: auto;
+	// 	margin-bottom: auto;
+	// }
 
-	.gallery_buttons > div {
-		margin: auto;
+	// .gallery_buttons > div {
+	// 	margin: auto;
 
-		font-size: 5em;
-		font-family: Helvetica-light;
-	}
+	// 	font-size: 5em;
+	// 	font-family: Helvetica-light;
+	// }
 
-	.gallery_buttons > div > img {
-		width: 2vw;
-	}
+	// .gallery_buttons > div > img {
+	// 	width: 2vw;
+	// }
 
-	.marques_selected {
-		text-decoration: underline !important;
-	}
+	// .marques_selected {
+	// 	text-decoration: underline !important;
+	// }
 
 	.carousel-arrows {
 		height: 2vw;
@@ -202,11 +211,11 @@
 		padding-top: 6vw;
 		margin: auto;
 		text-align: left;
-		font-size: 15px;
-		line-height: 24px;
+		font-size: 1.5vw;
+		// line-height: 24px;
 
 		@media only screen and (max-width: 768px) {
-			padding-top: 0px;
+			padding-top: 0;
 			width: 100% !important;
 			text-align: center;
 		}
@@ -227,7 +236,7 @@
 
 			&.project-city {
 				text-transform: uppercase;
-				font-size: 15px;
+				font-size: 1.1vw;
 				margin-top: 0;
 
 				@media only screen and (max-width: 768px) {
@@ -236,10 +245,10 @@
 			}
 
 			&.project-name {
-				font-size: 24px;
+				font-size: 2vw;
 				width: 59.3vw;
 				margin: auto;
-				margin-bottom: 10px;
+				margin-bottom: .54vw;
 
 				@media only screen and (max-width: 768px) {
 					font-size: 18px;
@@ -249,10 +258,10 @@
 
 		.projets-text {
 			font-family: Helvetica-light;
-			font-size: 15px;
+			font-size: 1.25vw;
 			width: 59.3vw;
 			margin: auto;
-			margin-top: 10px;
+			margin-top: 1.09vw;
 		}
 
 		> div > img {
@@ -269,22 +278,22 @@
 		height: auto;
 		min-height: 39vw;
 		background-color: white;
-		display: flex;
-	}
+    display: flex;
 
-	#une_histoire > div {
-		margin: auto;
-		margin-top: 9.12vw;
-		margin-bottom: 8.12vw;
-		width: 60.8vw;
-		text-align: center;
-	}
+    > div {
+      margin: auto;
+      margin-top: 9.12vw;
+      margin-bottom: 8.12vw;
+      width: 60.8vw;
+      text-align: center;
 
-	#une_histoire > div > p {
-		font-size: 15px;
-		line-height: 24px;
-		margin-bottom: 30px;
-		font-family: Helvetica-Light;
+      > p {
+        font-size: 1.6vw;
+        line-height: 2vw;
+        margin-bottom: 3.68vw;
+        font-family: Helvetica-Light;
+      }
+    }
 	}
 
 	#les_marques {
@@ -342,7 +351,7 @@
 	#actualites > div > p {
 		width: 25.4vw;
 		margin: auto;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		text-align: left;
 		text-justify: justify;
 		font-family: Helvetica-Light;
@@ -383,11 +392,11 @@
 	}
 
 	#actualites_arrows > a:nth-child(1) {
-		margin-left: 0px;
+		margin-left: 0;
 	}
 
 	#actualites_arrows > a:nth-child(2) {
-		margin-right: 0px;
+		margin-right: 0;
 	}
 
 	#actualites_arrows > a > img {
@@ -397,14 +406,14 @@
 	#savoir {
 		margin: auto;
 		margin-top: 10.08vw;
-		width: 87vw; /*87.3vw;*/
+		width: 87vw;
 		height: 49vw;
 		display: flex;
 		color: white;
 
 		@media only screen and (max-width: 768px) {
-			margin-left: 0px;
-			margin-right: 0px;
+			margin-left: 0;
+			margin-right: 0;
 			margin-bottom: 30px;
 			width: 100%;
 			height: auto;
@@ -420,15 +429,15 @@
 
 			> h1 {
 				margin: auto;
-				margin-bottom: 0px;
+				margin-bottom: 0;
 				color: white;
 			}
 
 			> button {
 				margin: auto;
 				margin-top: 40px;
-				color: white;
-				border-color: white;
+				// color: white;
+				// border-color: white;
 			}
 
 			/*NO VIDEO*/
@@ -454,7 +463,7 @@
 
 				@media only screen and (max-width: 768px) {
 					margin-top: 5%;
-					margin-bottom: 0px;
+					margin-bottom: 0;
 				}
 
 				> div {
@@ -462,7 +471,7 @@
 				}
 			}
 		}
-		
+
 	}
 
 	video {
@@ -491,10 +500,6 @@
 	#projets > div > div > div > h2 {
 		margin: auto;
 		width: 55.5vw;
-	}
-
-	#projets > .gallery_buttons {
-		text-align: right;
 	}
 
 	#carousel-projets {
@@ -529,18 +534,9 @@
 			font-size: 3.2vw;
 		}
 
-		.gallery_buttons > div {
-			padding: 1vw;
-		}
-
-		.gallery_buttons > div > img {
-			width: 2vw;
-			min-width: 20px;
-		}
-
 		#une_histoire {
 			height: 100% !important;
-			padding: 0px;
+			padding: 0;
 		}
 
 		#une_histoire > div {
@@ -573,12 +569,12 @@
 		}
 
 		#marques_show {
-			margin: 0px;
+			margin: 0;
 			flex-direction: column;
 			align-content: center;
 			justify-content: center;
-			padding-left: 0px !important;
-			padding-right: 0px !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
 		}
 
 		#marques_show > p {
@@ -657,7 +653,7 @@
 		}
 
 		#projets h3 {
-			margin: 0px;
+			margin: 0;
 			text-align: center;
 			width: auto;
 			font-size: 5.3vw;
@@ -689,7 +685,7 @@
 		}
 
 		#une_histoire > div {
-			padding: 0px;
+			padding: 0;
 			width: 77.7vw;
 		}
 

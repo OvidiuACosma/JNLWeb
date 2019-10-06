@@ -9,9 +9,9 @@
       "projectType": "application",
       "prefix": "app",
       "schematics": {
-            "@schematics/angular:component": {
-            "styleext": "scss"
-          }
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
       },
       "architect": {
         "build": {
@@ -139,5 +139,10 @@
       }
     }
   },
-  "defaultProject": "JNL"
+  "defaultProject": "JNL",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

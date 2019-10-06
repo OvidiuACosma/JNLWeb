@@ -5,7 +5,8 @@ declare var $: any;
 
 @Component({
   selector: 'app-savoir-faire',
-  templateUrl: './savoir-faire.component.html'
+  templateUrl: './savoir-faire.component.html',
+  styleUrls: ['./savoir-faire.component.scss']
 })
 export class SavoirFaireComponent implements OnInit, AfterViewInit, AfterViewChecked {
 

@@ -1,41 +1,206 @@
 @import "~bootstrap/dist/css/bootstrap.min.css"; /* npm install bootstrap@4.1.3 */
 @import "~@angular/cdk/overlay-prebuilt.css";
 
-/**** GLOBAL ****/
-@import "styles/layout/variables";
-@import "styles/layout/animations";
-@import "styles/layout/global";
-@import "styles/layout/title";
-@import "styles/layout/btn";
-@import "styles/layout/submenu";
+:root {
+	--search-bar-height: 4.531vw; /*56px;*/
+}
 
-@import "styles/inc/menu";
-@import "styles/inc/menu_bottom";
-@import "styles/inc/search_bar";
+$color_gray : #666;
+$color_or : #dbbb76;
+$color_white : #ffffff;
 
-/**** HOME ****/
-@import "styles/pages/home";
+@font-face {
+	font-family: "Helvetica-Light";
+	font-display: auto;
+  src: url("/assets/Fonts/Helvetica-Light.otf"),
+       url("/assets/Fonts/Helvetica-Light.woff") format("woff");
+}
 
-/**** PRODUCTS ****/
-@import "styles/pages/product";
-@import "styles/pages/product_search";
-@import "styles/pages/product_mat_fin";
-@import "styles/pages/product_favorites";
-@import "styles/pages/product_catalogues";
-@import "styles/pages/product_description";
-@import "styles/pages/product_dimensions";
-@import "styles/pages/product_garnissage";
-@import "styles/pages/product_garnissage_details";
-@import "styles/pages/favorites_sel_list";
-@import "styles/pages/marque";
-@import "styles/pages/marques";
+* {
+	box-sizing: border-box;
+}
 
-/**** PAGES ****/
-@import "styles/pages/actualites";
-@import "styles/pages/login_register";
-@import "styles/pages/contact";
-@import "styles/pages/services";
-@import "styles/pages/savoir_faire";
-@import "styles/pages/request_form";
-@import "styles/pages/jnl_group";
-@import "styles/pages/press";
+/* SCROLL BAR */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+/* Scroll Bar */
+
+.material-icons {
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: "liga";
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	margin: 0;
+	font-family: Helvetica;
+}
+
+a {
+	text-decoration: none;
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: #888;
+    cursor: pointer;
+  }
+}
+
+.flex-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+/* from title */
+
+h1 {
+	font-family: Helvetica;
+	font-size: 3vw;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 3vh;
+
+	@media only screen and (max-width: 768px) {
+		font-size: 20px;
+	}
+}
+
+h2 {
+	font-family: Helvetica;
+	font-size: 2.25vw;
+	// text-transform: uppercase;
+	margin-bottom: .8vw;
+
+	@media only screen and (max-width: 768px) {
+		font-size: 18px;
+	}
+}
+
+h3 {
+	font-family: Helvetica-light;
+	font-size: 24px;
+}
+
+h4 {
+	font-family: Helvetica-Light;
+	font-size: 18px;
+}
+
+/* from btn */
+.jbtn {
+	display: inline-block;
+	font-family: Helvetica-Light;
+	background: transparent;
+	color: $color_gray;
+	border: 1.5px solid $color_gray;
+	padding: .15vw 1.59vw;
+	font-size: 1vw;
+	font-style: italic;
+	// line-height: 11px;
+	letter-spacing: 1.28px;
+	text-transform: uppercase;
+  transition: all .5s ease;
+  outline: none !important;
+
+	@media only screen and (max-width: 768px) {
+		line-height: 17px;
+	}
+
+	&:hover {
+		color: $color_or;
+    // border-color: $color_or;
+    transition: all .5s ease;
+	}
+}
+
+/* from submenu */
+.submenu {
+	margin: auto auto .5vw;
+	font-family: Helvetica-Light;
+	// width: 50%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	padding: 0;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.4vw;
+
+	@media only screen and (max-width: 768px) {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+
+	> a {
+		margin: auto;
+		font-size: 1.4vw;
+		line-height: 2vw;
+		left: 0;
+		text-transform: uppercase;
+		border-bottom: 1px solid transparent;
+		transition: all 0.5s ease;
+
+		&:hover {
+			color: black;
+			border-bottom: 1px solid black;
+			transition: all 0.5s ease;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@media only screen and (max-width: 768px) {
+			margin: auto;
+			left: 0;
+
+			&:first-child, &:last-child {
+				margin: auto;
+			}
+		}
+	}
+}

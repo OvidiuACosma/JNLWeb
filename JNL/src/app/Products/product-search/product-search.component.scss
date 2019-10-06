@@ -14,7 +14,7 @@
 		margin: auto;
 		font-size: 1.8vw;
 		font-family: Helvetica-Light;
-		margin-top: 0px;
+		margin-top: 0;
 		text-align: left;
 		margin-bottom: 3vw;
 	}
@@ -49,12 +49,12 @@
 		-moz-appearance: none;
 		appearance: none;
 		list-style-type: none;
-		padding: 0px !important;
+		padding: 0 !important;
 		/* line-height: 1.8vw; */
 	}
 
 	.content {
-		width: calc(99vw - var(--left-strip-width));
+		width: 99vw;
 		padding-top: 3vw;
 		display: flex;
 		flex-direction: row;
@@ -94,10 +94,10 @@
 
 	.search-textbox {
 		font-family: Helvetica-Light;
-		font-size: 16px;
-		width: 100%;
+    width: 100%;
+    font-size: 1.1vw;
 		margin-top: 0.2vw;
-		padding: 10px;
+		padding-left: .3vw;
 		appearance: none;
 		outline: none;
 		background-color: transparent;
@@ -175,7 +175,7 @@
 
 	.reset-filter {
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.4vw;
 		padding: 0 0.2vw;
 		margin-bottom: 0;
 		text-align: right;
@@ -192,9 +192,9 @@
 	}
 
 	.single-filter {
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		font-family: Helvetica-Light;
-		font-size: 13px;
+		font-size: 1.3vw;
 		line-height: 1.5vw;
 
 		@media only screen and (max-width: 768px) {
@@ -214,10 +214,10 @@
 	}
 
 	.products-container {
-		@media only screen and (min-width: 801px) {
+		// @media only screen and (min-width: 801px) {
 			height: 99vh;
 			overflow-y: auto;
-		}
+		// }
 	}
 
 	.family-container {
@@ -229,8 +229,8 @@
 		display: block;
 		width: auto;
 		font-family: Helvetica-Light;
-		font-size: 20px;
-		line-height: 25px;
+		font-size: 1.7vw;
+		line-height: 2.1vw;
 		text-align: left;
 		margin-top: 1vw;
 		word-wrap: break-word;
@@ -261,7 +261,7 @@
 		margin-left: 1.5vw;
 		margin-right: 1.5vw;
 		display: inline-block;
-		margin-bottom: 3vh;
+		margin-bottom: 5.5vh/* 3vh */;
 
 		@media only screen and (max-width: 768px) {
 			width: 50%;
@@ -272,7 +272,7 @@
 
 	.header-filter {
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.4vw;
 		text-transform: uppercase;
 		color: #dbbb76;
 		margin-bottom: 0;
@@ -281,8 +281,8 @@
 
 	.header-arrow {
 		width: auto;
-		margin-top: 15px;
-		margin-bottom: 15px;
+		margin-top: 1.7vw;
+		margin-bottom: 1vw;
 		justify-content: baseline;
 		font-family: Helvetica-Light;
 		font-size: 1.2vw;
@@ -337,9 +337,7 @@
 
 		> li {
 			width: 17vw;
-			margin: auto;
-			margin-left: 1vw;
-			margin-right: 1.5vw;
+			margin: auto 1.5vw auto 1vw;
 			display: inline-block;
 
 			@media only screen and (max-width: 768px) {
@@ -371,8 +369,8 @@
 		display: block;
 		width: auto;
 		font-family: Helvetica-Light;
-		font-size: 14px;
-		line-height: 20px;
+		font-size: 1.2vw;
+		line-height: 1.4vw;
 		text-align: left;
 		margin-top: 0;
 		margin-bottom: 0.5vw;
@@ -465,7 +463,7 @@
 		}
 
 		button {
-			margin-top: 0px;
+			margin-top: 0;
 		}
 
 		.sur-flex {
@@ -507,7 +505,7 @@
 }
 
 .card-product {
-	width: 100%;
+	width: 21vw;
 	cursor: pointer;
 	color: black;
 	font-family: Helvetica-Light;
@@ -515,32 +513,37 @@
 
 	.pic-frame {
 		position: relative;
-		width: 100%;
-		background-color: white;
-		border: 0.88px solid transparent;
+    width: 21vw;
+    height: 20vw;
+    background-color: white;
+    border: 0.88px solid transparent;
 
-		&:after {
-			content: '';
-			display: block;
-			padding-bottom: 100%;
-		}
+		// &:after {
+		// 	content: '';
+		// 	display: block;
+		// 	padding-bottom: 100%;
+		// }
 
 		figure.center-product {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			// width: 100%;
 			margin: auto;
 			margin-bottom: 0;
-			vertical-align: middle;
+      vertical-align: middle;
+      display: flex;
 			overflow: visible;
 
 			.search-img {
-				width: 100%;
-				padding: 0px;
-				vertical-align: middle;
-				margin: auto;
-				transition: 0.5s;
+				// width: 100%;
+        max-width: 19vw;
+        max-height: 19vw;
+        padding: 0;
+        vertical-align: middle;
+        margin: auto;
+        object-fit: contain;
+        transition: .5s;
 
 				&:hover {
 					transform: scale(1.3);
@@ -550,10 +553,11 @@
 	}
 
 	.product-name {
-		text-align: center;
-		margin-bottom: 0;
-		min-height: 1.5vw;
-		font-size: 22px;
+    max-width: 19.45vw;
+    text-align: center;
+    margin-bottom: 0;
+    min-height: 1.5vw;
+    line-height: 1.6vw;
 
 		@media only screen and (max-width: 768px) {
 			font-size: 16px;
@@ -561,7 +565,8 @@
 
 		> span > i {
 			padding-right: 0.6vw;
-			transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      font-size: 1vw;
 
 			&:hover {
 				color: #dbbb76;
@@ -570,6 +575,9 @@
 		}
 
 		.product-name-text {
+      font-family: Helvetica-Light;
+      font-size: 1.2vw;
+      text-align: left;
 			transition: all 0.3s ease;
 
 			&:hover {
@@ -580,7 +588,7 @@
 	}
 
 	.product-brand-text {
-		font-size: 14px;
+		font-size: 1vw;
 		transition: all 0.3s ease;
 
 		@media only screen and (max-width: 768px) {

@@ -7,7 +7,8 @@ declare var $: any;
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html'
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
 
@@ -61,11 +62,11 @@ export class ProductComponent implements OnInit {
     this.getUser();
     $(document).ready(function () {
       $('#carousel-custom').carousel();
-
-      $('.product_change_tab select').on('change',function(){
-        var val = $(this).val();
-        console.log('current val '+val);
-        $('#nav-'+val+'-tab').click();
+      // TODO: check this in html
+      $('.product_change_tab select').on('change', function() {
+        const val = $(this).val();
+        // console.log('current val ' + val);
+        $('#nav-' + val + '-tab').click();
       });
     });
   }

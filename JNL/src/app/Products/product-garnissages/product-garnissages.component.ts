@@ -33,8 +33,10 @@ interface IProdGarnissage {
 
 @Component({
   selector: 'app-product-garnissages',
-  templateUrl: './product-garnissages.component.html'
+  templateUrl: './product-garnissages.component.html',
+  styleUrls: ['./product-garnissages.component.scss']
 })
+
 export class ProductGarnissagesComponent implements OnInit {
 
   language: string;

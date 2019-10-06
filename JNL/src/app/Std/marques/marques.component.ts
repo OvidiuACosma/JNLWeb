@@ -1,12 +1,13 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
-import {trigger,state,style,animate,transition}from '@angular/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 declare var $: any;
 
 @Component({
   selector: 'app-marques',
   templateUrl: './marques.component.html',
+  styleUrls: ['./marques.component.scss'],
   animations: [
     trigger('simpleFadeAnimation', [
       state('in', style({opacity: 1})),

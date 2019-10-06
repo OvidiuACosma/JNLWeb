@@ -47,7 +47,7 @@
                 <li *ngFor="let n of getProductsOfFamily(family)">
                   <!-- [ngClass]="(this.removed[n]===1) ? 'remove-item' :'non-remove'" -->
                   <div class="card-product">
-                    <div class="pic-frame" style="position: relative" (click)="goToProduct(n)">
+                    <div class="pic-frame" (click)="goToProduct(n)">
                       <figure class="center-product">
                         <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
                       </figure>

@@ -5,17 +5,19 @@ import { Browser, User } from '../../_models';
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html'
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
+
 export class SearchComponent implements OnInit {
 
-  public language: string;
+  language: string;
   otherLanguages: string[];
   languages: string[] = ['EN', 'FR'];
   isLangSelectMode = false;
-  public text: any;
-  public searchMode = false;
-  public navBarStatus = true;
+  text: any;
+  searchMode = false;
+  navBarStatus = true;
   navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
   navBarButtonText: string;
   isHome: boolean;
@@ -81,7 +83,6 @@ export class SearchComponent implements OnInit {
   }
 
   goSearchMode() {
-    console.log('goSearchMode',this.searchMode);
     this.searchMode = !this.searchMode;
   }
 
@@ -101,14 +102,12 @@ export class SearchComponent implements OnInit {
 
   toggleNav() {
     // Hover - Desktop
-    if (event.type === 'mouseover' && this.browser.isDesktopDevice){
+    if (event.type === 'mouseover' && this.browser.isDesktopDevice) {
       // Avoid flickering
       if (!this.navBarStatus) {
         this.dataex.setNavBarStatus(!this.navBarStatus);
       }
-    }
-    // Click - Mobile
-    else if (event.type === 'click') {
+    }  else if (event.type === 'click') { // Click - Mobile
       if (this.browser.isTablet || this.browser.isMobile || (this.browser.isDesktopDevice && window.innerWidth <= 768)) {
         this.dataex.setNavBarStatus(!this.navBarStatus);
       }

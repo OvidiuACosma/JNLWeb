@@ -5,7 +5,8 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-actualite',
-  templateUrl: './actualite.component.html'
+  templateUrl: './actualite.component.html',
+  styleUrls: ['./actualite.component.scss']
 })
 export class ActualiteComponent implements OnInit {
 

@@ -7,8 +7,10 @@ import { concatMap, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-favorites',
-  templateUrl: './favorites.component.html'
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.scss']
 })
+
 export class FavoritesComponent implements OnInit  {
 
   language: string;

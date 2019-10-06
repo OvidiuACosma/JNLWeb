@@ -5,7 +5,6 @@ import { ProductSearchComponent } from './product-search/product-search.componen
 import { AuthGuard } from '../_guards';
 import { ProductComponent } from './product/product.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
-import { ProductMatFinComponent } from './product-mat-fin/product-mat-fin.component';
 import { ProductGarnissagesComponent } from './product-garnissages/product-garnissages.component';
 import { ProductDimensionsComponent } from './product-dimensions/product-dimensions.component';
 import { ProductCataloguesComponent } from './product-catalogues/product-catalogues.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: 'products', component: ProductSearchComponent },
   { path: 'productSearch', component: ProductSearchComponent },
   { path: 'productDescription', component: ProductDescriptionComponent },
-  { path: 'productMatFin', component: ProductMatFinComponent },
   { path: 'productDimensions', component: ProductDimensionsComponent },
   { path: 'productCatalogues', component: ProductCataloguesComponent},
   { path: 'productGarnissages', component: ProductGarnissagesComponent},

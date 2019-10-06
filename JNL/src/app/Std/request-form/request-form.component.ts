@@ -11,7 +11,7 @@ export interface IDialogData {
 
 @Component({
   selector: 'app-dialog-answer',
-  templateUrl: 'dialog-answer.html',
+  templateUrl: 'dialog-answer.html'
 })
 export class DialogAnswerComponent {
 
@@ -26,7 +26,8 @@ export class DialogAnswerComponent {
 
 @Component({
   selector: 'app-request-form',
-  templateUrl: './request-form.component.html'
+  templateUrl: './request-form.component.html',
+  styleUrls: ['./request-form.component.scss']
 })
 export class RequestFormComponent implements OnInit {
 

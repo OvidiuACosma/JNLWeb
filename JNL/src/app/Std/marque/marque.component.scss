@@ -80,11 +80,15 @@
 
 			@media only screen and (max-width: 768px) {
 				width: 80vw;
-			}
+      }
+
+      h2 {
+        font-size: 3.5vw;
+      }
 
 			> p {
-				font-size: 15px;
-				line-height: 24px;
+				font-size: 1.4vw;
+				line-height: 2vw;
 				width: 55vw;
 				margin: auto;
 				font-family: Helvetica-Light;
@@ -98,11 +102,10 @@
 				}
 			}
 
-			> div > span {
+			> div > button {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-
 				width: 13vw;
 				height: 3.5vw;
 				margin: auto;
@@ -124,7 +127,7 @@
 
 	#les_produits {
 		width: 100%;
-		padding: 0px;
+		padding: 0;
 		height: auto;
 		background-color: #f3f5f5;
 		color: black;
@@ -208,8 +211,8 @@
 			> span {
 				color: black !important;
 				margin: auto;
-				font-size: 20px;
-				line-height: 24px;
+				font-size: 1.5vw;
+				line-height: 1.7vw;
 				left: 0;
 				text-transform: uppercase;
 				border-bottom: 1px solid transparent;
@@ -262,8 +265,8 @@
 
 	> div {
 		margin: auto;
-		margin-top: 0px;
-		margin-bottom: 0px;
+		margin-top: 0;
+		margin-bottom: 0;
 		width: 35.17vw;
 		text-align: center;
 		display: flex;
@@ -272,11 +275,15 @@
 
 		@media only screen and (max-width: 768px) {
 			width: 83vw !important;
-		}
+    }
+
+    .style-title {
+      font-size: 1.8vw !important;
+    }
 
 		img {
 			width: 35.1vw;
-			margin-bottom: 15px;
+			margin-bottom: 1.7vw;
 
 			@media only screen and (max-width: 768px) {
 				width: 100%;
@@ -285,10 +292,9 @@
 
 		h4 {
 			font-family: Helvetica-Light;
-			font-size: 20px;
-			text-transform: uppercase;
+			font-size: 1.4vw;
 			margin: 0;
-			margin-bottom: 10px;
+			// margin-bottom: 10px;
 
 			@media only screen and (max-width: 768px) {
 				font-size: 16px;
@@ -361,7 +367,15 @@
 }
 
 .other_brands {
-	padding: 40px 0;
+  padding: 0;
+
+  h4 {
+    margin-top: 1.7vw;
+    font-family: Helvetica-Light;
+    font-size: 1.2vw;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
 	.other_brands_title {
 		text-align: center;
@@ -376,7 +390,7 @@
 	.other_brands_links {
 		width: 83vw;
 		height: 6vw;
-		margin: auto;
+    margin: auto auto 5.48vw;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -388,13 +402,14 @@
 		button {
 			background-color: #d3d3d3 !important;
 			width: 41vw !important;
-			text-align: center !important;
-			margin: 0;
+      text-align: center !important;
+      padding: 0;
+			margin: auto;
 			font-family: Helvetica-Light;
-			font-size: 22px;
-			line-height: 22px;
-			padding: 20px;
-			border: none;
+			font-size: 1.8vw;
+			line-height: 5vw;
+      border: none;
+      outline: none;
 
 			@media only screen and (max-width: 768px) {
 				font-size: 12px;
@@ -434,7 +449,7 @@
 		}
 
 		> h4 {
-			margin: 10px auto;
+			margin-top: 1vw;
 
 			@media only screen and (max-width: 768px) {
 				font-size: 14px;

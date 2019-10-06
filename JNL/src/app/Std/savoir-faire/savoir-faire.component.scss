@@ -1,19 +1,28 @@
 .savoir-faire-main {
 	display: flex;
 	margin: auto;
-	padding-top: 5.9vw;
+  padding-top: 5.9vw;
+
+  .submenu {
+    width: 22vw;
+  }
 
 	> div {
 		margin: auto;
 		left: 0;
 		text-align: center;
-	}
+  }
+
+  h2 {
+    font-size: 3.5vw;
+    margin-bottom: .7vw;
+    text-transform: capitalize;
+  }
 
 	h3 {
 		text-transform: uppercase;
 		font-family: Helvetica-Light;
-		/* color: #DBBB76; */
-		font-size: 26px;
+		font-size: 1.38vw;
 		margin-bottom: 1.5vw;
 		text-align: center;
 	}
@@ -21,16 +30,16 @@
 	h4 {
 		margin: auto;
 		width: 54vw;
-		font-size: 24px;
+		font-size: 2vw;
 		font-family: Helvetica-Light;
 		margin-top: 3.3vw;
 		text-align: center;
 	}
 	h5 {
 		font-family: Helvetica-Light;
-		font-size: 20px;
+		font-size: 1.8vw;
 		text-align: left;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		margin-top: 0.98vw;
 	}
 
@@ -56,7 +65,7 @@
 	.location {
 		text-align: center;
 		font-family: Helvetica-Light;
-		font-size: 17px;
+		font-size: 1.5vw;
 	}
 
 	.full-image {
@@ -70,15 +79,15 @@
 
 	#atelier > h3,
 	#fabrication h3 {
-		font-size: 18px;
+		font-size: 1.38vw;
 	}
 
 	#atelier > h4 {
 		font-family: Helvetica-Light;
 		width: 59.7vw;
 		margin-bottom: 1.75vw;
-		font-size: 15px;
-		line-height: 24px;
+		font-size: 1.42vw;
+		line-height: 2vw;
 	}
 
 	.ateliers-flex {
@@ -93,7 +102,7 @@
 		width: 31.2vw;
 		margin: auto;
 		margin-top: 13.1vw;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -101,27 +110,23 @@
 
 	.ateliers-flex > div > div > img {
 		width: 31.2vw;
-		margin: 0px !important;
+		margin: 0 !important;
 	}
 
 	.ateliers-flex > div > div {
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.3vw;
 	}
 	.ateliers-flex > div > div > span {
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: .97vw;
 	}
 
-	/* .ateliers-flex > div > div > h5 {
-		margin-bottom: 2vw;
-	} */
-
 	.ateliers-flex > div:nth-child(2) > div:first-child {
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 		margin-bottom: 2vw;
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.3vw;
 		text-align: left;
 	}
 
@@ -144,7 +149,7 @@
 	}
 
 	#af2 > div > div {
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 
 	.gallery-flex {
@@ -158,7 +163,7 @@
 	.carousel-inner {
 		width: 81.86vw;
 		height: 30vw;
-		margin: 0px !important;
+		margin: 0 !important;
 		display: flex;
 		flex-direction: row;
 	}
@@ -169,8 +174,8 @@
 		max-width: 47.8vw;
 		max-height: 30vw;
 		object-fit: cover;
-		margin-left: 0px;
-		margin-top: 0px !important;
+		margin-left: 0;
+		margin-top: 0 !important;
 		text-align: left;
 		float: left;
 		position: absolute;
@@ -179,14 +184,14 @@
 
 	.steps-text {
 		margin: auto;
-		margin-top: 0px !important;
-		margin-right: 0px !important;
+		margin-top: 0 !important;
+		margin-right: 0 !important;
 		background-color: #f3f5f5;
 		width: 34.1vw;
 		height: 30vw;
 		padding: 3vw;
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.4vw;
 		text-align: center !important;
 		display: flex;
 		flex-direction: column;
@@ -198,7 +203,7 @@
 
 			> span {
 				font-family: Helvetica-Light;
-				font-size: 15px;
+				font-size: 1.8vw;
 				text-transform: uppercase;
 			}
 		}
@@ -206,7 +211,7 @@
 
 	.equipe-card > div > h4 {
 		text-align: left !important;
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 	}
 
 	.equipe-radio {
@@ -223,14 +228,14 @@
 			-ms-appearance: none;
 			-o-appearance: none;
 			appearance: none;
-			height: 15px;
-			width: 15px;
+			height: 1.3vw;
+			width: 1.3vw;
 			border: none;
 			border-radius: 100%;
 			cursor: pointer;
 			display: inline-block;
 			margin-right: 0.5em;
-			margin-top: 10px;
+			margin-top: .75vw;
 			outline: none;
 			background-color: #bfbfbf;
 
@@ -245,8 +250,8 @@
 	}
 
 	#services {
-		margin-top: 30px;
-		margin-bottom: 30px;
+		margin-top: 2.6vw;
+		margin-bottom: 2.6vw;
 
 		> img {
 			width: 25.8vw;
@@ -255,7 +260,7 @@
 
 			@media only screen and (max-width: 768px) {
 				width: 80vw;
-				margin: 15px 0;
+				margin: 1.3vw 0;
 			}
 		}
 
@@ -263,8 +268,8 @@
 			font-family: Helvetica-Light;
 			width: 59.7vw;
 			margin-bottom: 1.75vw;
-			font-size: 15px;
-			line-height: 24px;
+			font-size: 1.42vw;
+			line-height: 2vw;
 		}
 	}
 
@@ -309,7 +314,6 @@
 		margin: auto;
 		display: flex;
 		flex-direction: column !important;
-		/* margin-top: 5.3vw; */
 	}
 
 	.carousel-control-prev,
@@ -338,7 +342,7 @@
 
 	.carousel-item-image {
 		float: left;
-		padding-left: 0px;
+		padding-left: 0;
 	}
 
 	.carousel-savoirfaire-indicators {
@@ -355,7 +359,7 @@
 			width: auto;
 			text-transform: uppercase;
 			text-indent: 0;
-			font-size: 15px;
+			font-size: 1.3vw;
 		}
 
 		> span {
@@ -384,7 +388,6 @@
 		cursor: pointer;
 		display: inline-block;
 		margin-right: 0.5em;
-		/* margin-top: 2vw; */
 		outline: none;
 		background-color: #bfbfbf;
 	}
@@ -394,7 +397,7 @@
 		display: flex;
 		flex-direction: row;
 		align-content: center;
-		padding: 0px;
+		padding: 0;
 		font-family: Helvetica-Light;
 		font-size: 16px;
 		width: 81.86vw;
@@ -403,10 +406,10 @@
 
 	.group-text > span {
 		text-align: left !important;
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 		margin: auto;
 		width: 54vw;
-		font-size: 15px;
+		font-size: 1.3vw;
 		font-family: Helvetica-Light;
 		margin-top: 3.3vw;
 		text-align: center;

@@ -15,7 +15,8 @@ interface IProductGarnissage {
 
 @Component({
   selector: 'app-product-garnissage-details',
-  templateUrl: './product-garnissage-details.component.html'
+  templateUrl: './product-garnissage-details.component.html',
+  styleUrls: ['./product-garnissage-details.component.scss']
 })
 
 

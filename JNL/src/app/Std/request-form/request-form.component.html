@@ -1,6 +1,6 @@
-<div class="contact_div request_div">
+<div class="contact-div">
   <div>
-    <form class="contact_form" [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+    <form class="contact-form" [formGroup]="requestForm" (ngSubmit)="onSubmit()">
       <br>
       <div class="a-left" *ngIf="requestType === 4 || requestType === 5">
         <input type="checkbox" formControlName="contactReq" class="i-checkbox">&nbsp;&nbsp;{{text.contactreq}}<br>

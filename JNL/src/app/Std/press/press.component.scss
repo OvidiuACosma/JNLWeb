@@ -2,10 +2,15 @@
 	margin: auto;
 	width: 100%;
 	padding-top: 5.9vw;
-	text-align: center;
+  text-align: center;
+
+  .submenu {
+    width: 26vw;
+  }
 
 	h2 {
-		margin-bottom: 3.45vw;
+    margin-bottom: 3.45vw;
+    font-size: 3.5vw;
 	}
 
 	h4 {
@@ -69,46 +74,14 @@
 		}
 	}
 
-	.row {
-		margin: auto;
-	}
-
-	.container {
-		padding: 0px;
-		font-family: Helvetica-Light;
-		font-size: 16px;
-		display: flex;
-		height: 70vh;
-	}
-
-	#parutions {
-		margin-bottom: 5vw;
-	}
-
 	#catalogues,
-	#banqueImages,
-	#pressKit,
-	#parutions {
+	#banqueImages  {
 		padding-top: 5.9vw;
 	}
 
 	@media only screen and (max-width: 768px) {
-		.parutions-text {
-			width: 80vw;
-			height: 40vw;
-			position: relative;
-			top: 0;
-		}
 
 		h4 {
-			font-size: 7.2vw;
-		}
-
-		.parutions-text {
-			font-size: 5.5vw;
-		}
-
-		.parutions-text > div > span {
 			font-size: 7.2vw;
 		}
 

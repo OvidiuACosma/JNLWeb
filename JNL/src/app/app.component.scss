@@ -1,0 +1,96 @@
+.container-main {
+	position: relative;
+	width: 100vw;
+	margin-left: 0;
+
+	@media only screen and (max-width: 768px) {
+		position: relative;
+		width: 100vw;
+		margin-left: 0;
+		padding-top: 40px;
+	}
+
+	> .content {
+		width: 100%;
+		background-color: #fff;
+		top: 0;
+		z-index: 801;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
+			margin-left: 0 !important;
+    }
+
+    > .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1001;
+    }
+
+		> .main {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: block;
+      z-index: 800;
+
+      > .router-outlet {
+        min-height: 57.5vh;
+      }
+
+      > .button-go-top {
+        > img {
+          display: none; /* Hidden by default */
+          position: fixed;
+          object-fit: contain;
+          bottom: 0;
+          right: 0;
+          margin-bottom: .6vw;
+          margin-right: .2vw;
+          z-index: 2099;
+          cursor: pointer;
+          min-width: 30px;
+          width: 3.2vw;
+          height: auto;
+          transition: all .3s ease;
+        }
+      }
+    }
+
+    > .search-bar {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: var(--search-bar-height);
+      max-height: var(--search-bar-height);
+      background: transparent;
+      z-index: 1000;
+    }
+	}
+}
+
+.active {
+  display: block !important;
+  transition: all .3s ease;
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    margin-left: 0 !important;
+    margin-top: 60px !important;
+  }
+
+  .search-bar {
+    background-color: transparent;
+    left: 0;
+  }
+
+  .container-main {
+    position: relative;
+    width: 100vw;
+    margin-left: 0;
+  }
+}

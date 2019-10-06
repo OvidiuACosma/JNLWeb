@@ -1,195 +1,176 @@
 <div class="savoir-faire-main" *ngIf="text">
-    <div>
-        <h1>{{text.title}}</h1>
+  <div>
+    <h1>{{text.title}}</h1>
 
-        <div class="submenu d-none d-sm-flex">
-			<a (click)="navigateTo('savoirFaire', 'atelier')">{{text.ateliers}}</a>
-			<a (click)="navigateTo('savoirFaire', 'fabrication')">{{text.fabrication}}</a>
-        </div>
-
-        <div id="savoir">
-            <video width="87.3vw" height="33.3vw" autoplay muted loop playsinline>
-                <source src="assets/Video/JNL_video.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div id="atelier">
-            <h2>{{text.ateliers}}</h2>
-            <h3>{{text.subText}}</h3>
-            <h4>{{text.firstText}}</h4>
-        </div>
-        <img class="full-image" alt="{{altText['img0']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img0']['src']}}" style="margin-top: 0px;">
-
-        <div class="ateliers-flex">
-            <div>
-                <div>
-                    <img alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img1']['src']}}">
-
-                    <!-- <h5>{{text.pic1}}</h5> -->
-                </div>
-
-                <div>
-                    <p [innerHTML]="text.quote"></p>
-                    <span>DOMINIQUE WAXMANN, CEO</span>
-                </div>
-
-            </div>
-
-            <div>
-                <div>
-                    {{text.secondText}}
-                </div>
-
-                <div>
-                    <img alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img2']['src']}}">
-                    <!-- <h5>{{text.pic2}}</h5> -->
-                </div>
-            </div>
-        </div>
-
-        
-        <div class="ateliers-flex" id="af1">
-            <div>
-                <img alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img3']['src']}}">
-
-                <!-- <h5>{{text.pic3}}</h5> -->
-            </div>   
-            <div>
-                <img alt="{{altText['img4']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img4']['src']}}">
-
-                <!-- <h5>{{text.pic4}}</h5> -->
-            </div>
-        </div>
-
-        <img class="full-image" alt="{{altText['img5']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img5']['src']}}">
-
-        <div class="ateliers-flex" id="af2">
-            <div>
-                <div>
-                    <img alt="{{altText['img6']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img6']['src']}}">
-                    <!-- <h5>{{text.pic5}}</h5> -->
-                </div>
-            </div>
-            <div>
-                <div>
-                    <img alt="{{altText['img7']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img7']['src']}}">
-                    <!-- <h5>{{text.pic6}}</h5> -->
-                </div>
-            </div>
-        </div>
-
-    <div id="fabrication">
-        <h2>{{text.fabrication}}</h2>
-        <h3>{{text.steps}}</h3>
-
-
-        <!--CAROUSEL-->
-        <div id='carousel-steps' class='carousel slide carousel-marques' data-ride='carousel' 
-            data-interval="7000" data-pause="false">
-                <div class="carousel-inner">
-                    <div class='carousel-item active'>
-                    <div class="container">
-                        <div class="carousel-item-image">
-                            <img src="assets/Images/Savoir/{{altText['img8']['src']}}" alt="{{altText['img8']['alt'][language]}}" class="slide-image">
-                        </div>
-                        <div class="steps-text">
-                            <div>
-                                1<br>
-                                <span>{{text.step1Title}}</span><br><br>
-                                {{text.step1Text}}
-                            </div>  
-                        </div>
-                    </div>
-                    </div>
-        
-                    <div class='carousel-item' active="setActiveSlide(1)">
-                        <div class="container">
-                            <div class="carousel-item-image">
-                                <img src="assets/Images/Savoir/{{altText['img9']['src']}}" alt="{{altText['img9']['alt'][language]}}" class="slide-image">
-                            </div>
-                            <div class="steps-text">
-                                <div>
-                                    2<br>
-                                    <span>{{text.step2Title}}</span><br><br>
-                                    {{text.step2Text}}
-                                </div>
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class='carousel-item'>
-                        <div class="container">
-                            <div class="carousel-item-image">
-                                <img src="assets/Images/Savoir/{{altText['img10']['src']}}" alt="{{altText['img10']['alt'][language]}}" class="slide-image">
-                            </div>
-                            <div class="steps-text">
-                                <div>
-                                    3<br>
-                                    <span>{{text.step3Title}}</span><br><br>
-                                    {{text.step3Text}}
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class='carousel-item'>
-                        <div class="container">
-                            <div class="carousel-item-image">
-                                <img src="assets/Images/Savoir/{{altText['img11']['src']}}" alt="{{altText['img11']['alt'][language]}}" class="slide-image">
-                            </div>
-                            <div class="steps-text">
-                                <div>
-                                    4<br>
-                                    <span>{{text.step4Title}}</span><br><br>
-                                    {{text.step4Text}}
-                                </div> 
-                            </div>
-                            </div>
-                    </div>
-                    <div class='carousel-item'>
-                        <div class="container">
-                            <div class="carousel-item-image">
-                                <img src="assets/Images/Savoir/{{altText['img12']['src']}}" alt="{{altText['img12']['alt'][language]}}" class="slide-image">
-                            </div>
-                            <div class="steps-text">
-                                <div>
-                                    5<br>
-                                    <span>{{text.step5Title}}</span><br><br>
-                                    {{text.step5Text}}
-                                </div>  
-                            </div>
-                            </div>
-                    </div>
-                </div>
-                
-                <!-- Controls 
-                <a class='carousel-control-prev' data-target="#carousel-custom" data-slide='prev'>
-                    <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class='carousel-control-next' data-target="#carousel-custom" data-slide='next'>
-                    <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
-                    <span class="sr-only">Next</span>
-                </a>-->
-
-                
-            <div class='carousel-indicators carousel-savoirfaire-indicators'>
-                <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='0' class='active'>
-                <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='1'>
-                <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='2'>
-                <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='3'>
-                <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='4'>
-                </div>
-            </div>
-            <!--CAROUSEL-->
-
-            
-
-            <div id="services">
-                <h2 (click)="navigateTo('services')">{{text.services}}</h2>
-                <h4 [innerHTML]="text.servicesText1"></h4>
-                <img alt="{{altText['img13']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img13']['src']}}" (click)="navigateTo('services')">
-                <h4 [innerHTML]="text.servicesText2" style="margin-top: 1.5vw"></h4>
-            </div>
-        </div>
+    <div class="submenu d-none d-sm-flex">
+      <a (click)="navigateTo('savoirFaire', 'atelier')">{{text.ateliers}}</a>
+      <a (click)="navigateTo('savoirFaire', 'fabrication')">{{text.fabrication}}</a>
     </div>
+
+    <div id="savoir">
+      <video width="87.3vw" height="33.3vw" autoplay muted loop playsinline>
+        <source src="assets/Video/JNL_video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div id="atelier">
+      <h2>{{text.ateliers}}</h2>
+      <h3>{{text.subText}}</h3>
+      <h4>{{text.firstText}}</h4>
+    </div>
+    <img class="full-image" alt="{{altText['img0']['alt'][language]}}"
+      src="assets/Images/Savoir/{{altText['img0']['src']}}" style="margin-top: 0px;">
+
+    <div class="ateliers-flex">
+      <div>
+        <div>
+          <img alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img1']['src']}}">
+        </div>
+
+        <div>
+          <p [innerHTML]="text.quote"></p>
+          <span>DOMINIQUE WAXMANN, CEO</span>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          {{text.secondText}}
+        </div>
+
+        <div>
+          <img alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img2']['src']}}">
+        </div>
+      </div>
+    </div>
+
+    <div class="ateliers-flex" id="af1">
+      <div>
+        <img alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img3']['src']}}">
+      </div>
+      <div>
+        <img alt="{{altText['img4']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img4']['src']}}">
+      </div>
+    </div>
+    <img class="full-image" alt="{{altText['img5']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img5']['src']}}">
+
+    <div class="ateliers-flex" id="af2">
+      <div>
+        <div>
+          <img alt="{{altText['img6']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img6']['src']}}">
+        </div>
+      </div>
+      <div>
+        <div>
+            <img alt="{{altText['img7']['alt'][language]}}" src="assets/Images/Savoir/{{altText['img7']['src']}}">
+        </div>
+      </div>
+    </div>
+
+<div id="fabrication">
+  <h2>{{text.fabrication}}</h2>
+  <h3>{{text.steps}}</h3>
+
+
+  <!--CAROUSEL-->
+  <div id='carousel-steps' class='carousel slide carousel-marques' data-ride='carousel'
+      data-interval="7000" data-pause="false">
+    <div class="carousel-inner">
+      <div class='carousel-item active'>
+        <div class="container">
+          <div class="carousel-item-image">
+            <img src="assets/Images/Savoir/{{altText['img8']['src']}}"
+              alt="{{altText['img8']['alt'][language]}}" class="slide-image">
+          </div>
+          <div class="steps-text">
+            <div>
+              1<br>
+              <span>{{text.step1Title}}</span><br><br>
+              {{text.step1Text}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='carousel-item' active="setActiveSlide(1)">
+        <div class="container">
+          <div class="carousel-item-image">
+            <img src="assets/Images/Savoir/{{altText['img9']['src']}}"
+              alt="{{altText['img9']['alt'][language]}}" class="slide-image">
+          </div>
+          <div class="steps-text">
+            <div>
+              2<br>
+              <span>{{text.step2Title}}</span><br><br>
+              {{text.step2Text}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='carousel-item'>
+        <div class="container">
+          <div class="carousel-item-image">
+            <img src="assets/Images/Savoir/{{altText['img10']['src']}}"
+              alt="{{altText['img10']['alt'][language]}}" class="slide-image">
+          </div>
+          <div class="steps-text">
+            <div>
+              3<br>
+              <span>{{text.step3Title}}</span><br><br>
+              {{text.step3Text}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='carousel-item'>
+        <div class="container">
+          <div class="carousel-item-image">
+            <img src="assets/Images/Savoir/{{altText['img11']['src']}}"
+              alt="{{altText['img11']['alt'][language]}}" class="slide-image">
+          </div>
+          <div class="steps-text">
+            <div>
+                4<br>
+              <span>{{text.step4Title}}</span><br><br>
+              {{text.step4Text}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='carousel-item'>
+        <div class="container">
+          <div class="carousel-item-image">
+            <img src="assets/Images/Savoir/{{altText['img12']['src']}}"
+              alt="{{altText['img12']['alt'][language]}}" class="slide-image">
+          </div>
+          <div class="steps-text">
+            <div>
+              5<br>
+              <span>{{text.step5Title}}</span><br><br>
+              {{text.step5Text}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class='carousel-indicators carousel-savoirfaire-indicators'>
+        <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='0' class='active'>
+        <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='1'>
+        <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='2'>
+        <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='3'>
+        <input type="radio" name="ind-steps" data-target='#carousel-steps' data-slide-to='4'>
+      </div>
+    </div>
+    <!--CAROUSEL-->
+
+      <div id="services">
+        <h2 (click)="navigateTo('services')">{{text.services}}</h2>
+        <h4 [innerHTML]="text.servicesText1"></h4>
+        <img alt="{{altText['img13']['alt'][language]}}"
+          src="assets/Images/Savoir/{{altText['img13']['src']}}" (click)="navigateTo('services')">
+        <h4 [innerHTML]="text.servicesText2" style="margin-top: 1.5vw"></h4>
+      </div>
+    </div>
+  </div>
 </div>

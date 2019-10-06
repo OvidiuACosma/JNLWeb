@@ -2,17 +2,21 @@
 	margin: auto;
 	text-align: center;
 	padding-top: 5.9vw;
-	overflow: hidden;
+  overflow: hidden;
+
+  .submenu {
+    width: 50vw;
+  }
 
 	h2 {
-		margin-bottom: 0;
+    // margin-bottom: 0;
+    font-size: 3vw;
 	}
 
 	h3 {
 		text-transform: uppercase;
 		font-family: Helvetica-Light;
-		/* color: #DBBB76; */
-		font-size: 26px;
+		font-size: 1.4vw;
 		margin-bottom: 1.5vw;
 		text-align: center;
 		margin-top: 0.6vw;
@@ -21,7 +25,7 @@
 	h4 {
 		margin: auto;
 		width: 54vw;
-		font-size: 24px;
+		font-size: 1.4vw;
 		font-family: Helvetica-Light;
 		margin-top: 3.3vw;
 		text-align: center;
@@ -81,25 +85,25 @@
 
 	.quote-bar > p {
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.4vw;
 	}
 
 	.quote-bar > h4 {
 		font-family: Helvetica-Light;
-		font-size: 15px;
-		margin-top: 0px;
+		font-size: 1.4vw;
+		margin-top: 0;
 	}
 
 	.image-parag {
 		width: 76%;
-		margin: auto;
+		margin: auto auto 0;
 		height: auto;
 		display: flex;
 		flex-direction: row;
 		align-content: flex-start;
 		align-items: center;
 		justify-content: space-between;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		text-align: left;
 
 		@media only screen and (max-width: 768px) {
@@ -110,16 +114,17 @@
 		}
 
 		> div {
-			&.col_txt {
+			&.col-txt {
 				@media only screen and (max-width: 768px) {
 					order: 2;
 				}
 			}
 
-			&.col_img {
-				width: 100vh;
+			&.col-img {
+				// width: 30vw;
 
-				@media only screen and (max-width: 1200px) {
+				@media only screen and (min-width: 1200) {
+          /* TODO: adjust in px - fixed size for width 1200 and up */
 					width: 150vh;
 				}
 
@@ -130,19 +135,19 @@
 			}
 
 			> p {
-				margin-top: 0px;
+				margin-top: 0;
 				padding-right: 4vw;
-				padding-bottom: 0px !important;
-				margin-bottom: 0px !important;
+				padding-bottom: 0 !important;
+				margin-bottom: 0 !important;
 				font-family: Helvetica-Light;
-				font-size: 15px !important;
-				line-height: 24px;
+				font-size: 1.6vw;
+				line-height: 2.4vw;
 
 				@media only screen and (max-width: 768px) {
 					margin-bottom: 5vw;
 					height: auto;
 					width: 80vw;
-					padding-right: 0px !important;
+					padding-right: 0 !important;
 					padding-top: 5vw;
 					padding-bottom: 5vw;
 					font-family: Helvetica-Light;
@@ -150,7 +155,7 @@
 			}
 
 			> img {
-				width: 100%;
+				width: 30vw;
 				margin-top: 0;
 				display: inline-block;
 				height: auto;
@@ -164,7 +169,7 @@
 	}
 
 	#engagement .image-parag > p {
-		padding-right: 0px;
+		padding-right: 0;
 		padding-left: 7.8vw;
 
 		@media only screen and (max-width: 768px) {
@@ -178,7 +183,7 @@
 	}
 
 	#impg2 > div > p {
-		padding-right: 0px;
+		padding-right: 0;
 		padding-left: 7.14vw;
 	}
 
@@ -192,7 +197,7 @@
 		justify-content: space-between;
 		text-align: left;
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.4vw;
 		margin: auto;
 		width: 80%;
 	}
@@ -215,16 +220,16 @@
 			text-align: center;
 
 			> div {
-				margin: 0px;
-				margin-top: 0px;
+				margin: 0;
+				margin-top: 0;
 				width: 28.79vw;
 				font-family: Helvetica-Light;
-				font-size: 15px;
+				font-size: 1.4vw;
 				text-align: center;
 
 				> h3 {
 					font-family: Helvetica;
-					font-size: 15px;
+					font-size: 1.2vw;
 					width: auto;
 					margin: auto;
 					margin-top: 0.8vw;
@@ -242,8 +247,8 @@
 				> p {
 					margin: auto;
 					font-family: Helvetica-Light;
-					font-size: 15px;
-					line-height: 24px;
+					font-size: 1.1vw;
+					line-height: 1.6vw;
 					text-align: justify;
 				}
 
@@ -288,8 +293,8 @@
 
 	.staff > div > div > p {
 		font-family: Helvetica-light;
-		font-size: 12px;
-		line-height: 15px;
+		font-size: 1.1vw;
+		line-height: 1.3vw;
 		padding-left: 1vw;
 		padding-right: 1vw;
 		margin-bottom: 0.5vw;
@@ -312,7 +317,6 @@
 
 	#engagement {
 		height: auto;
-		margin-bottom: 10.41vw;
 	}
 
 	.gallery-flex {
@@ -325,7 +329,7 @@
 	.equipe-card {
 		width: 62.78vw;
 		height: 29vw;
-		margin: 0px !important;
+		margin: 0 !important;
 
 		display: flex;
 		flex-direction: row;
@@ -333,22 +337,22 @@
 
 	.equipe-card > img {
 		margin: auto;
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 	}
 
 	.equipe-card > div {
 		margin: auto;
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 		width: 47%;
 		padding: 3vw;
-		padding-right: 0px;
-		padding-top: 0px;
+		padding-right: 0;
+		padding-top: 0;
 		text-align: left !important;
 	}
 
 	.equipe-card > div > h4 {
 		text-align: left !important;
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 	}
 
 	.equipe-radio {
@@ -410,7 +414,7 @@
 	}
 
 	.gallery > div > div > div > h4 {
-		margin-top: 20px;
+		margin-top: 20;
 	}
 
 	.gallery_buttons {
@@ -432,7 +436,6 @@
 		width: 77.28vw;
 		margin: auto;
 		margin-bottom: 5vw;
-		margin-top: 8.44vw;
 	}
 
 	#archives > div {
@@ -446,8 +449,7 @@
 
 	#archives > div > div {
 		margin-top: 3%;
-		/* margin-right: 3%; */
-		height: 20.25vw; /*20.2vw;*/
+		height: 20.25vw;
 		width: 23.34vw;
 		background-color: #e3d9c6;
 		display: flex;
@@ -458,8 +460,9 @@
 	}
 
 	#archives > div > div > span {
-		margin: auto;
-		font-size: 25px;
+    margin: auto;
+    font-family: Helvetica;
+		font-size: 3vw;
 		font-style: italic;
 	}
 
@@ -480,7 +483,7 @@
 	#engagement h3,
 	#projets h3,
 	#archives h3 {
-		font-size: 18px;
+		font-size: 1.4vw;
 	}
 
 	#histoire h4,
@@ -488,12 +491,13 @@
 	#engagement h4,
 	#projets h4,
 	#archives h4 {
-		font-size: 15px;
-		line-height: 24px;
+		font-size: 1.8vw;
+		line-height: 2vw;
 	}
 
 	#projets {
-		margin-bottom: 8.44vw;
+		width: 100%;
+    text-align: center;
 	}
 
 	#histoire {
@@ -505,19 +509,20 @@
 	}
 
 	#histoire > h4 {
+    font-size: 1.4vw;
 		margin-top: 2.74vw;
 		width: 60.84vw;
 	}
 
 	#projets > p {
 		font-family: Helvetica-Light;
-		font-size: 15px;
+		font-size: 1.4vw;
 		width: 48.4%;
 		margin: auto;
 	}
 
 	.modal {
-		left: calc(var(--left-strip-width) / 2);
+		left: 0;
 	}
 
 	.modal-header {
@@ -526,10 +531,9 @@
 		padding-top: 0;
 	}
 
-	.carousel-group {
-		width: 100%;
-		/* padding-top: 3.15vw; */
-	}
+	// .carousel-group {
+	// 	width: 100%;
+	// }
 
 	#carousel-custom {
 		margin-top: 10vw;
@@ -567,7 +571,7 @@
 	}
 
 	.slide-image-archive {
-		width: 100%;
+		width: 55.5vw;
 		object-fit: cover;
 	}
 
@@ -635,24 +639,24 @@
 		width: 62.78vw;
 		font-family: Helvetica-Light;
 		font-size: 15px;
-		padding: 0px;
+		padding: 0;
 	}
 
 	.group-text {
 		padding-top: 6vw;
 		text-align: left;
 		font-size: 15px;
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 		width: 38.9vw;
 		padding: 3vw;
-		padding-right: 0px;
-		padding-top: 0px;
+		padding-right: 0;
+		padding-top: 0;
 		text-align: left !important;
 	}
 
 	.group-text > span {
 		text-align: left !important;
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 		margin: auto;
 		width: 54%;
 
@@ -679,42 +683,53 @@
 
 	.projets {
 		width: 60%;
-		padding: 0px;
+		padding: 0;
 	}
 
-	#carousel-projets .container {
-		flex-direction: column;
+	// #carousel-projets .container {
+	// 	flex-direction: column;
+	// }
+
+	// #carousel-projets > div > div > div > h2 {
+  //   margin-top: 0 !important;
+  //   margin-bottom: .8vw;
+	// 	font-size: 1.1vw;
+	// }
+
+	// #carousel-projets > div > div > div > h4 {
+	// 	width: 60%;
+	// 	padding-bottom: 0;
+	// }
+
+	// #carousel-projets > div > div > div > div > .slide-image {
+	// 	max-width: 60%;
+	// }
+
+	#carousel-projets {
+		width: 73.8vw;
+		height: auto;
+		margin: auto;
 	}
 
-	#carousel-projets > div > div > div > h2 {
-		margin-top: 0px !important;
-		font-size: 15px;
+	#carousel-projets > a {
+		width: 3.1vw;
+		min-width: 20px;
+		padding-top: 20%;
 	}
-
-	#carousel-projets > div > div > div > h4 {
-		width: 60%;
-		padding-bottom: 0px;
-	}
-
-	#carousel-projets > div > div > div > div > .slide-image {
-		max-width: 60%;
-	}
-
-
 
 	.modal-backdrop {
 		position: relative;
 	}
 
 	.modal-body {
-		padding: 0px !important;
+		padding: 0 !important;
 	}
 
 	.modal-dialog {
 		width: 80%;
 		max-width: 1440px;
-		min-height: 0px;
-		/* margin-top: 60px; */
+		min-height: 0;
+		/* margin-top: 60; */
 
 		@media only screen and (max-width: 768px) {
 			width: 100%;
@@ -723,7 +738,7 @@
 	}
 
 	.container2 {
-		padding: 0px;
+		padding: 0;
 		font-family: Helvetica-Light;
 		font-size: 16px;
 		display: flex;
@@ -734,23 +749,71 @@
 		}
 	}
 
-	.container3 {
+	// .container3 {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// }
+
+	// .container3 > h2 {
+	// 	font-size: 15px;
+	// }
+
+	// .container3 > h2:first-child {
+	// 	text-transform: uppercase;
+	// 	font-size: 15px;
+	// 	margin-top: 15px;
+	// }
+
+	// .container3 > .carousel-item-image > img {
+	// 	width: 59.3vw;
+  // }
+
+  .carousel-project {
 		display: flex;
 		flex-direction: column;
-	}
+		text-align: center;
+		height: auto;
 
-	.container3 > h2 {
-		font-size: 15px;
-	}
+		> h2 {
+			font-family: Helvetica-Light;
 
-	.container3 > h2:first-child {
-		text-transform: uppercase;
-		font-size: 15px;
-		margin-top: 15px;
-	}
+			&.project-city {
+				text-transform: uppercase;
+				font-size: 1.1vw;
+				margin-top: 0;
 
-	.container3 > .carousel-item-image > img {
-		width: 59.3vw;
+				@media only screen and (max-width: 768px) {
+					font-size: 13px;
+				}
+			}
+
+			&.project-name {
+				font-size: 2vw;
+				width: 59.3vw;
+				margin: auto;
+				margin-bottom: .54vw;
+
+				@media only screen and (max-width: 768px) {
+					font-size: 18px;
+				}
+			}
+		}
+
+		.projets-text {
+			font-family: Helvetica-light;
+			font-size: 1.25vw;
+			width: 59.3vw;
+			margin: auto;
+			margin-top: 1.09vw;
+		}
+
+		> div > img {
+			width: 59.3vw;
+
+			@media only screen and (max-width: 768px) {
+				width: 90vw;
+			}
+		}
 	}
 
 	.carousel-item-image2 {
@@ -842,18 +905,18 @@
 			flex-direction: column;
 			height: auto;
 			width: 70vw;
-			padding: 0px;
+			padding: 0;
 			text-align: center;
 		}
 
-		.carousel-group {
-			height: auto;
-		}
+		// .carousel-group {
+		// 	height: auto;
+		// }
 
 		.group-text {
 			text-align: center !important;
 			width: 70vw;
-			padding: 0px;
+			padding: 0;
 		}
 
 		.group-img {
@@ -877,7 +940,7 @@
 
 		#impg2 > div > p {
 			max-height: 100%;
-			padding-left: 0px;
+			padding-left: 0;
 		}
 	}
 }

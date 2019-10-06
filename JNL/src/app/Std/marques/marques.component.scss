@@ -9,7 +9,11 @@
 		margin: auto;
 		left: 0;
 		text-align: center;
-	}
+  }
+
+  .submenu {
+    width: 57vw;
+  }
 
 	h2 {
 		margin-bottom: 0;
@@ -19,7 +23,7 @@
 		text-transform: uppercase;
 		font-family: Helvetica-Light;
 		color: #666;
-		font-size: 26px;
+		font-size: 1.38vw;
 		margin-top: 0.8vw;
 		margin-bottom: 1.2vw;
 	}
@@ -52,10 +56,7 @@
 		transition: all 0.3s ease;
 	}
 
-	#jnl > a > img:hover,
-	#vanhamme > a > img:hover,
-	#ungaro > a > img:hover,
-	#studio > a > img:hover {
+	.marque > a > img:hover {
 		opacity: 1;
 		transition: all 0.3s ease;
 	}

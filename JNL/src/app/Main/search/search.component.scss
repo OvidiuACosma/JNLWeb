@@ -14,7 +14,7 @@
 		left: 0;
 		max-height: 100%;
 	}
-	
+
 	ul {
 		list-style-type: none;
 		padding: 0;
@@ -38,7 +38,7 @@
 		border: solid 1px #888;
 
 		@media only screen and (max-width: 768px) {
-		    padding: 0px 10px;
+		    padding: 0 10px;
 		}
 	}
 
@@ -67,7 +67,7 @@
 	}
 
 	.select-lang {
-		border: 0px none;
+		border: 0 none;
 		outline: 0;
 
 		transform: none;
@@ -99,7 +99,7 @@
 	}
 
 	#search_bar_div:hover {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 
 	#search_bar {
@@ -108,52 +108,48 @@
 		width: 100%;
 		min-height: var(--search-bar-height);
 		height: auto;
-		/* background-color: lightgray; */
 		transition: 0.5s;
-	}
 
-	/*TEXT SEARCH*/
-	#search_bar > input {
-		width: 97vw;
-		min-height: var(--search-bar-height);
-		height: auto;
-		padding-left: 5vw;
-		border: 0;
-		background-color: lightgray;
-	}
+    > input {
+      width: 97vw;
+      min-height: var(--search-bar-height);
+      height: auto;
+      padding-left: 5vw;
+      border: 0;
+      background-color: lightgray;
 
-	#search_bar > input:focus {
-		outline: none;
-	}
+      &:focus {
+        outline: none;
+      }
+    }
 
-	/*CLEAR BUTTON*/
-	#search_bar > button {
-		border: 0;
-		background-color: black;
-		border-radius: 100%;
-		box-sizing: border-box;
-		padding-left: 0.6em;
-		padding-right: 0.6em;
-		text-align: center;
-		color: white;
-	}
+    > button {
+      border: 0;
+      background-color: black;
+      border-radius: 100%;
+      box-sizing: border-box;
+      padding-left: 0.6em;
+      padding-right: 0.6em;
+      text-align: center;
+      color: white;
+      &:hover {
+        outline: 0;
+        background-color: #dbbb76;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+    }
 
-	#search_bar > form > button:focus {
-		outline: 0;
-	}
-
-	#search_bar > button:hover {
-		outline: 0;
-		background-color: #dbbb76;
-		transition: all 0.3s ease;
-		cursor: pointer;
-	}
+    > form > button:focus {
+      outline: 0;
+    }
+  }
 
 	/*TOP MENU BAR*/
 	#top-bar {
 		min-height: var(--search-bar-height);
 		height: var(--search-bar-height);
-		padding: 0px;
+		padding: 0;
 		color: grey;
 		display: flex;
 		flex: 1;
@@ -168,61 +164,61 @@
 		flex-wrap: nowrap;
 		height: var(--search-bar-height);
 		float: right;
-		font-size: 13px; /* 0.8vw */
-	}
+    font-size: 1.1vw;
 
-	#top_buttons > span {
-		/*, #top_buttons > ul > li > span {*/
-		flex: 0 0 auto;
-		width: auto;
-		margin: auto;
-		margin-left: 1vw;
-		/* margin-right: 1vw; */
-		text-align: center;
-		text-decoration: none;
-		mix-blend-mode: difference;
-		transition: all 0.3s ease;
-	}
+    > span {
+      flex: 0 0 auto;
+      width: auto;
+      margin: auto;
+      margin-left: 1vw;
+      text-align: center;
+      text-decoration: none;
+      mix-blend-mode: difference;
+      transition: all 0.3s ease;
 
-	#top_buttons > ul > li > span:hover {
-		/*, #top_buttons span:hover, #top_buttons span i:hover {*/
-		color: #dbbb76;
-		transition: all 0.3s ease;
-	}
+      > a {
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: black;
+          mix-blend-mode: difference;
+        }
+        &:hover {
+          color: #dbbb76;
+          transition: all 0.3s ease;
+        }
+      }
+    }
 
-	#top_buttons > span > a:link,
-	#top_buttons > span > a:visited {
-		text-decoration: none;
-		color: black;
-		mix-blend-mode: difference;
-	}
-
-	#top_buttons > span > a:hover {
-		color: #dbbb76;
-		transition: all 0.3s ease;
+    > ul > li > span:hover {
+      color: #dbbb76;
+      transition: all 0.3s ease;
+    }
 	}
 
 	.heart {
-		color: #666 !important;
+    color: #666 !important;
+
+    &:hover {
+      color: #dbbb76 !important;
+    }
 	}
 
-	.heart:hover {
-		color: #dbbb76 !important;
-	}
 
 	.magnifier {
 		color: #666 !important;
-		font-size: 18px !important;
-		padding-top: 5px;
+		font-size: 1.5vw !important;
+    padding-top: .5vw;
+
+    &:hover {
+      color: #dbbb76 !important;
+    }
 	}
 
-	.magnifier:hover {
-		color: #dbbb76 !important;
-	}
-
-	.dash,
-	.dash:hover {
-		color: #666 !important;
+	.dash {
+    &:hover {
+      color: #666 !important;
+    }
 	}
 
 	.m-right {
@@ -341,7 +337,7 @@
 	}
 
 	.search {
-		width: calc(100vw - var(--left-strip-width));
+		width: 100vw;
 		padding-top: var(--search-bar-height);
 	}
 }

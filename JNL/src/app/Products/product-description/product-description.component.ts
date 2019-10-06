@@ -5,7 +5,8 @@ import { Product, Finisage } from '../../_models';
 
 @Component({
   selector: 'app-product-description',
-  templateUrl: './product-description.component.html'
+  templateUrl: './product-description.component.html',
+  styleUrls: ['./product-description.component.scss']
 })
 export class ProductDescriptionComponent implements OnInit {
 

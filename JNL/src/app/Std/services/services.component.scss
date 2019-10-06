@@ -2,18 +2,27 @@
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	padding-top: 5.9vw;
+  padding-top: 5.9vw;
+
+  .submenu {
+    width: 38vw;
+    margin: auto auto 4vw;
+  }
 
 	> div {
 		margin: auto;
 		left: 0;
 		text-align: center;
-	}
+  }
+
+  h2 {
+    font-size: 3.5vw;
+  }
 
 	h4 {
 		margin: auto;
 		width: 58.3vw;
-		font-size: 24px;
+		font-size: 1.8vw;
 		font-family: Helvetica-Light;
 		margin-top: 3.3vw;
 		text-align: center;
@@ -32,30 +41,6 @@
 		margin-bottom: 4.2vw;
 	}
 
-	.quote-bar {
-		margin-top: 4.54vw !important;
-		left: 0;
-		display: flex;
-		flex-direction: column !important;
-		background-color: #f3f5f5;
-		position: relative;
-		padding: 7.7vw;
-		padding-top: 4.2vw;
-		padding-bottom: 4.2vw;
-	}
-
-	.quote-bar > p {
-		font-family: Helvetica-Light;
-		font-size: 15px;
-		line-height: 24px;
-	}
-
-	.quote-bar > h4 {
-		font-family: Helvetica-Light;
-		font-size: 24px;
-		margin-top: 0px;
-	}
-
 	.sur-flex {
 		width: 76vw;
 		margin: auto;
@@ -70,7 +55,7 @@
 		width: 31.2vw;
 		margin: auto;
 		margin-top: 0;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -78,27 +63,17 @@
 
 	.sur-flex > div > div > img {
 		width: 31.2vw;
-		margin: 0px;
+		margin: 0;
 	}
 
 	.sur-flex > div > div {
 		font-family: Helvetica-Light;
-		font-size: 15px;
-		line-height: 24px;
-	}
-
-	.sur-flex > div > div > span {
-		font-family: Helvetica-Light;
-		font-size: 15px;
-		line-height: 24px;
-	}
-
-	.sur-flex > div > div > h5 {
-		margin-bottom: 2em;
+		font-size: 1.4vw;
+		line-height: 2vw;
 	}
 
 	.sur-flex > div:nth-child(2) > div:first-child {
-		margin-top: 0px !important;
+		margin-top: 0 !important;
 		margin-bottom: 1.5vw;
 		font-family: Helvetica-Light;
 		font-size: 15px;
@@ -151,11 +126,7 @@
 		outline: none;
 	}
 
-	.small_text {
-		font-size: 1.11vw;
-	}
-
-	.services_your_project {
+	.services-your-project {
 		width: 100%;
 		background-color: #e3d9c6;
 		left: 0;
@@ -163,45 +134,17 @@
 		font-family: Helvetica-Light;
 		font-size: 1.4vw;
 		padding-top: 3.7vw;
-		padding-bottom: 3vw;
 
 		> p {
 			width: 45vw;
 			margin: auto;
-			font-size: 15px;
-			line-height: 24px;
+			font-size: 1.4vw;
+			line-height: 2vw;
 
 			@media only screen and (max-width: 768px) {
 				width: 80vw;
 			}
 		}
-	}
-
-	#checks {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-content: center;
-	}
-
-	#checks > div {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.send {
-		text-transform: uppercase;
-		margin: auto;
-		background-color: white;
-		color: black;
-		margin-top: 5.3em;
-		margin-bottom: 4em;
-		border: none;
-		width: 16.65vw;
-		font-family: Helvetica-Light;
-		font-size: 1.11vw;
-		letter-spacing: 1.28px;
 	}
 
 	#expertise,
@@ -217,8 +160,8 @@
 	#expertise > h4,
 	#surMesure > h4,
 	#votreProjet > h4 {
-		font-size: 15px;
-		line-height: 24px;
+		font-size: 1.8vw;
+		line-height: 2.2vw;
 	}
 
 	#surMesure {
@@ -239,7 +182,7 @@
 		}
 
 		button {
-			margin-top: 0px;
+			margin-top: 0;
 		}
 
 		input {
@@ -270,7 +213,7 @@
 
 		.sur-flex > div > div {
 			text-align: center;
-			    margin-bottom: 30px;
+      margin-bottom: 30px;
 		}
 	}
 }

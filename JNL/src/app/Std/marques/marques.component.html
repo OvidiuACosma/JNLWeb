@@ -9,7 +9,7 @@
       <a (click)="navigateTo('marques', 'studio')">JNL STUDIO</a>
     </div>
 
-    <div id="jnl" (click)="navigateToMarque('jnl')">
+    <div id="jnl" class="marque" (click)="navigateToMarque('jnl')">
       <a (click)="navigateTo('marques', 'jnl')">
         <img src="assets/Images/Marques/MK_logo_JNL.png">
       </a>
@@ -17,7 +17,7 @@
       <img class="marques-image" alt="{{altText['img0']['alt'][language]}}" src="assets/Images/Marques/{{altText['img0']['src']}}" [@simpleFadeAnimation]="'in'">
     </div>
 
-    <div id="vanhamme" (click)="navigateToMarque('vanhamme')">
+    <div id="vanhamme" class="marque" (click)="navigateToMarque('vanhamme')">
       <a (click)="navigateTo('marques', 'vanhamme')">
         <img src="assets/Images/Marques/MK_logo_VH.png">
       </a>
@@ -25,8 +25,8 @@
       <img class="marques-image" alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Marques/{{altText['img1']['src']}}">
     </div>
 
-    
-    <div id="ungaro" (click)="navigateToMarque('ungaro')">
+
+    <div id="ungaro" class="marque" (click)="navigateToMarque('ungaro')">
       <a (click)="navigateTo('marques', 'ungaro')">
         <img src="assets/Images/Marques/MK_logo_Ungaro.png">
       </a>
@@ -34,7 +34,7 @@
       <img class="marques-image" alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Marques/{{altText['img2']['src']}}">
     </div>
 
-    <div id="studio"(click)="navigateToMarque('studio')">
+    <div id="studio" class="marque" (click)="navigateToMarque('studio')">
       <a (click)="navigateTo('marques', 'studio')">
         <img src="assets/Images/Marques/MK_logo_Studio.png">
       </a>

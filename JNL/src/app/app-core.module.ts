@@ -12,7 +12,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
-          SearchResultsComponent, PageNotFoundComponent, LeftStripComponent } from './Main';
+          PageNotFoundComponent } from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
@@ -34,11 +34,9 @@ import { LoginComponent, RegisterComponent } from './Auth';
     SavoirFaireComponent,
     MarquesComponent,
     RegisterComponent,
-    SearchResultsComponent,
     MarqueComponent,
     ActualiteComponent,
     PageNotFoundComponent,
-    LeftStripComponent,
     RequestFormComponent,
     DialogAnswerComponent,
     LoginComponent
@@ -56,11 +54,9 @@ import { LoginComponent, RegisterComponent } from './Auth';
     SavoirFaireComponent,
     MarquesComponent,
     RegisterComponent,
-    SearchResultsComponent,
     MarqueComponent,
     ActualiteComponent,
     PageNotFoundComponent,
-    LeftStripComponent,
     RequestFormComponent,
     DialogAnswerComponent,
     LoginComponent
