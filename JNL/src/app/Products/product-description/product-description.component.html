@@ -1,26 +1,20 @@
 <br class="d-print-none">
-<div id="container" class="product-description">
-  <!--
-  <div id="staticText" (click)="toggleElement()">
-    <h5 *ngIf="stdText" [innerHTML]="stdText.description"></h5>
-    <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow">
-  </div>
--->
+<div id="container">
   <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'" *ngIf="productDesc">
-    <br class="d-print-none">
+    <br>
     <br>
     <p>{{productDesc[0].descriptionFr}}</p>
     <div class="parts" *ngFor="let part of parts; let i = index;"><b>{{part}}:</b>
       <div class="materials">
         <span *ngFor="let mat of getMaterials(part); let i2 = index;" (click)="toggleFin('idx'+i+'idx'+i2)"
           [ngClass]="{'pointer': hasFinitions(part, mat)}">{{mat}}
-          <img *ngIf="hasFinitions(part, mat)" src="\assets\Images\Common\mobile_arrow_down.png" class="mat-arrow d-print-none">
+          <img *ngIf="hasFinitions(part, mat)" src="\assets\Images\Common\mobile_arrow_down.png" class="mat-arrow">
           <div class="finitions" *ngIf="getFinitions(part, mat)">
             <div *ngFor="let fin of getFinitions(part, mat)">
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
                 <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal"
                   data-target="#finisageModal">
-                  <a *ngIf="(fin.name !=='A définir' && fin.name !== 'To define')">
+                  <a>
                     <img id="fin-img" class="samples"
                       src="assets\Images\Products\{{brand}}\Samples\{{fin.img}}">
                   </a>

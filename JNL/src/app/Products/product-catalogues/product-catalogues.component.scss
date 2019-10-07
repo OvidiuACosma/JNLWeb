@@ -21,7 +21,8 @@
 
 	#content {
 		width: 40vw;
-		margin: auto;
+    margin: auto;
+    font-family: Helvetica-Light;
 	}
 
 	#info-form {
@@ -36,7 +37,7 @@
 		.arrow {
 			/* display: inline; */
 			margin: auto;
-			margin-left: 0px;
+			margin-left: 0;
 			display: block;
 			width: 13px;
 			height: 13px;

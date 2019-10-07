@@ -1,123 +1,129 @@
-.product-dimensions {
-	@media only screen and (max-width: 768px) {
-		flex-direction: column;
-	}
+h2 {
+  font-family: Helvetica;
+  font-size: 2.4vw;
+}
 
-	h5 {
-		font-size: 1.68vw;
-		font-weight: 100;
-		font-family: Helvetica-Light;
-	}
+h5 {
+  font-size: 1.68vw;
+  font-weight: 100;
+  font-family: Helvetica-Light;
+}
 
-	h6 {
-		font-family: Helvetica-Light;
-		font-size: 0.9vw;
-	}
+h6 {
+  font-family: Helvetica-Light;
+  font-size: 0.9vw;
+}
 
-	.code-text {
-		font-family: Helvetica-Light;
-		font-size: 0.9vw;
-	}
+.hide-item, .show-item {
+  display: block;
+}
 
-	.hide-item,
-	.show-item {
-		display: block;
-	}
+.arrow {
+  display: none;
+}
 
-	.arrow {
-		display: none;
-	}
+.center {
+  text-align: center;
+}
 
-	.center {
-		text-align: center;
-	}
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 54vw;
+  margin: auto;
+}
 
-	.image-list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		width: 54vw;
-		margin: auto;
-	}
+.img-container {
+  padding: 0vw 2vw;
+}
 
-	.img-container {
-		padding: 0vw 2vw;
-	}
+.img-button {
+  /* max-height: 200px; */
+  width: 14vw;
+}
 
-	.img-button {
-		width: 14vw;
-	}
 
-	#staticText {
-		width: 30.55vw;
-	}
+#staticText {
+  width: 30.55vw;
+}
 
-	/****************************************************************/
 
-	/* close button of modal */
-	.close {
-		margin-left: 0 !important;
-	}
+/* workaround to fix bootstrap`s modal bug in Angular
+ Without this fix the dark background will cover the modal. */
+ .modal {
+  background-color: rgba(127, 127, 127, 0.5);
+}
 
-	/* remove the blue outline */
-	.close:focus,
-	.close:active {
-		outline: none !important;
-		box-shadow: none !important;
-	}
+.modal-backdrop {
+  position: relative;
+}
 
-	.whiteSpace {
-		width: 99px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+/****************************************************************/
 
-	#td-img {
-		object-fit: contain;
-		max-height: 500px;
-		height: auto;
-		width: 600px;
-		text-align: center;
-	}
+/* #modal-large {
+  min-width: 1000px !important;
+} */
 
-	.prod-code {
-		margin-top: 2vw;
-	}
+/* close button of modal */
+.close {
+  margin-left: 0 !important;
+}
 
-	@media print {
-		.image-list {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-start;
-			align-content: flex-start;
-			width: 100%;
-			margin: 0;
-		}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
 
-		.img-container {
-			border: 2px solid #ddd;
-			margin: 2vw;
-			max-width: 40vw;
-		}
+.modal-content {
+  background-color: #f3f5f5;
+  text-align: center;
+  min-height: 600px;
+}
 
-		.img-button {
-			width: 100%;
-			/* height: auto; */
-			object-fit: contain;
-		}
+.modal-body{
+  padding: 16px 0 !important;
+}
 
-		.code-text {
-			font-family: Helvetica;
-			font-size: 4.2vw;
-		}
-	}
+.modal-nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.whiteSpace {
+  width: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#td-img {
+  object-fit: contain;
+  max-height: 500px;
+  height: auto;
+  width: 600px;
+  text-align: center;
+}
+
+.modal-arrow {
+  height: 2vw;
+  width: 1vw;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.prod-code {
+  margin-top: 2vw;
+}
 
 	@media only screen and (max-width: 768px) {
 		.arrow {
 			/* display: inline; */
 			margin: auto;
-			margin-left: 0px;
+			margin-left: 0;
 			display: block;
 			width: 13px;
 			height: 13px;
@@ -142,38 +148,31 @@
 			width: 75.22vw;
 		}
 	}
-}
 
-.modal#TDModal {
-	background-color: rgba(127, 127, 127, 0.5);
+@media print {
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    margin: 0;
+  }
 
-	.modal-backdrop {
-		position: relative;
-	}
+  .img-container {
+    border: 2px solid #ddd;
+    margin: 2vw;
+    max-width: 40vw;
+  }
 
-	.modal-header {
-		display: flex;
-		justify-content: space-between;
-	}
+  .img-button {
+    width: 100%;
+    /* height: auto; */
+    object-fit: contain;
+  }
 
-	.modal-content {
-		background-color: #f3f5f5;
-		text-align: center;
-		min-height: 600px;
-	}
-
-	.modal-body {
-		padding: 16px 0px !important;
-	}
-
-	.modal-nav {
-		display: flex;
-		justify-content: center;
-		text-align: center;
-	}
-
-	.modal-arrow {
-		height: 2vw;
-		width: 1vw;
-	}
+  .code-text {
+    font-family: Helvetica;
+    font-size: 4.2vw;
+  }
 }

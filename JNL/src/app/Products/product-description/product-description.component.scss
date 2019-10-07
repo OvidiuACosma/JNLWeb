@@ -1,193 +1,217 @@
-.product-description {
-	display: flex;
+hr{
+  height: 0;
+  border-top: 1px solid #DBBB76;
+}
 
-	@media only screen and (max-width: 768px) {
-		flex-direction: column;
-	}
+h2 {
+  font-size: 2.4vw;
+}
 
-	hr {
-		height: 0;
-		border-top: 1px solid #dbbb76;
-	}
+h5 {
+  text-transform: uppercase;
+  font-size: 1.68vw;
+  font-weight: 100;
+  font-family: Helvetica-Light;
+}
 
-	h2 {
-		font-size: 2.4vw;
-	}
+.hide-item, .show-item {
+  display: block;
+}
 
-	h5 {
-		text-transform: uppercase;
-		font-size: 1.68vw;
-		font-weight: 100;
-		font-family: Helvetica-Light;
-	}
+.arrow {
+  display: none;
+}
 
-	.hide-item,
-	.show-item {
-		display: block;
-	}
+.parts {
+  font-family: Helvetica;
+  font-size: 1.1vw;
+}
 
-	.arrow {
-		display: none;
-	}
+.materials {
+  font-family: Helvetica-light;
+  font-size: 1vw;
+  margin-bottom: .5vw;
+}
 
-	.parts {
-		font-family: Helvetica;
-		font-size: 15px;
-	}
+.finitions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: Helvetica-light;
+  font-size: .7vw;
+  font-style: italic;
+  cursor: default !important;
+  color: initial !important;
+}
 
-	.materials {
-		font-family: Helvetica-light;
-		font-size: 15px;
-		margin-bottom: 0.5vw;
-	}
+.pointer:hover {
+  cursor: pointer;
+  color: #DBBB76;
+}
 
-	.finitions {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		font-family: Helvetica-light;
-		font-size: 0.7vw;
-		font-style: italic;
-		cursor: default !important;
-		color: initial !important;
-	}
+.pointer {
+  transition: color .3s ease;
+  -webkit-transition: color .3s ease;
+}
 
-	.pointer:hover {
-		cursor: pointer;
-		color: #dbbb76;
-	}
+.mat-arrow {
+  height: 0.8vw;
+  width: 0.8vw;
+  margin-bottom: 0.2vw;
+}
 
-	.pointer {
-		transition: color 0.3s ease;
-		-webkit-transition: color 0.3s ease;
-	}
+.fin {
+  width: 4.687vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-right: 0.52vw;
+}
 
-	.mat-arrow {
-		height: 0.8vw;
-		width: 0.8vw;
-		margin-bottom: 0.2vw;
-	}
+#fin-img {
+  object-fit: cover;
+  text-align: center;
+}
 
-	.fin {
-		width: 4.687vw;
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		padding-right: 0.52vw;
-	}
+.samples {
+  width: 4.166vw;
+  height: 4.166vw;
+}
 
-	#fin-img {
-		object-fit: cover;
-		text-align: center;
-	}
+/* .modal-dim {
+  max-width: 700px !important;
+  width: 70vw !important;
+  min-width: 400px;
+} */
 
-	.samples {
-		width: 4.166vw;
-		height: 4.166vw;
-	}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
 
-	/* close button of modal */
-	.close {
-		margin-left: 0 !important;
-	}
+/* close button of modal */
+.close {
+  margin-left: 0 !important;
+}
 
-	/* remove the blue outline */
-	.close:focus,
-	.close:active {
-		outline: none !important;
-		box-shadow: none !important;
-	}
+.modal-content {
+  text-align: center;
+}
 
-	.whiteSpace {
-		flex: 1;
-	}
+.modal-arrow {
+  height: 2vw;
+  width: 1vw;
+  margin-top: 130%;
+}
 
-	.cardContainer {
-		flex: 4;
-	}
+.cursor-pointer {
+  cursor: pointer;
+}
 
-	.card {
-		margin: auto;
-		border: 0px !important;
-	}
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 
-	.card-body {
-		height: 30px;
-	}
+.whiteSpace {
+  flex: 1;
+}
 
-	/****************************************************************/
+.cardContainer {
+  flex: 4;
+}
 
-	#staticText {
-		width: 30.55vw;
-	}
+.card {
+  margin: auto;
+  border: 0 !important;
+}
 
-	#description {
-		width: 40vw;
-		margin: auto;
-	}
+.card-body {
+  height: 30px;
+}
 
-	#description > p {
-		font-family: Helvetica-Light;
-		font-size: 1.1vw;
-		text-align: justify;
-	}
+/* workaround to fix bootstrap`s modal bug in Angular
+ Without this fix the dark background will cover the modal. */
+.modal {
+  background-color: rgba(127, 127, 127, 0.5);
+}
 
-	@media print {
-		#description {
-			width: 100%;
-			text-align: left;
-		}
-	}
+.modal-backdrop {
+  position: relative;
+}
 
-	@media only screen and (max-width: 768px) {
-		.arrow {
-			/* display: inline; */
-			margin: auto;
-			margin-left: 0px;
-			display: block;
-			width: 13px;
-			height: 13px;
-		}
+/****************************************************************/
 
-		.hide-item {
-			display: none !important;
-		}
+#container {
+  /* padding-top: 30px; */
+  display: flex;
+}
 
-		#staticText {
-			width: 88.3vw;
-			display: flex;
-			flex-direction: row;
-			align-content: center;
-			justify-content: baseline;
-		}
+#staticText {
+  width: 30.55vw;
+}
 
-		#staticText > h5 {
-			font-size: 4.16vw;
-			text-align: center;
-			width: 75.22vw;
-		}
-	}
+#description {
+  width: 40vw;
+  margin: auto;
+}
+
+#description > p {
+  font-family: Helvetica-Light;
+  font-size: 1.1vw;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 768px){
+
+  .arrow {
+      /* display: inline; */
+      margin: auto;
+      margin-left: 0;
+      display: block;
+      width: 13px;
+      height: 13px;
+  }
+
+  .hide-item {
+      display: none !important;
+  }
+
+  #staticText {
+      width: 88.3vw;
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      justify-content: baseline;
+  }
+
+  #staticText > h5 {
+      font-size: 4.16vw;
+      text-align: center;
+      width: 75.22vw;
+  }
+
+  #container {
+      flex-direction: column;
+  }
+}
+
+@media print {
+  #description {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 /* workaround to fix bootstrap`s modal bug in Angular
 			Without this fix the dark background will cover the modal. */
-.modal#finisageModal {
+.modal {
 	background-color: rgba(127, 127, 127, 0.5);
 
-	
 	.modal-header {
 		display: flex;
 		justify-content: space-between;
-	}
-
-	.modal-content {
-		text-align: center;
-	}
-
-	.modal-arrow {
-		height: 2vw;
-		width: 1vw;
-		margin-top: 130%;
 	}
 
 	.modal-backdrop {

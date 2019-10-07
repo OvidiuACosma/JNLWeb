@@ -45,7 +45,7 @@
 		border: none;
 		border-bottom: 1.5px solid black;
 		margin-top: 1.5vw;
-		padding-bottom: 0px;
+		padding-bottom: 0;
 	}
 
 	button {
@@ -64,7 +64,7 @@
 		-moz-appearance: none;
 		appearance: none;
 		list-style-type: none;
-		padding: 0px !important;
+		padding: 0 !important;
 	}
 
 	cdk-virtual-scroll-viewport {
@@ -145,7 +145,7 @@
 	}
 
 	.single-filter {
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		font-family: Helvetica-Light;
 		font-size: 1.3vw;
 		line-height: 1.5vw;
@@ -224,7 +224,7 @@
 
 	.fav_form > div > div {
 		width: 44vw;
-		margin-top: 0px;
+		margin-top: 0;
 		display: flex;
 		flex-direction: column;
 		/* justify-content: space-between; */
@@ -307,7 +307,7 @@
 	.fav-img {
 		max-width: 16.5vw;
 		max-height: 18.9vw;
-		padding: 0px;
+		padding: 0;
 		margin: auto;
 	}
 
@@ -342,7 +342,7 @@
 	.search-img {
 		max-width: 19vw;
 		max-height: 19vw;
-		padding: 0px;
+		padding: 0;
 		vertical-align: middle;
 		margin: auto;
 		object-fit: contain;
@@ -486,7 +486,7 @@
 		}
 
 		button {
-			margin-top: 0px;
+			margin-top: 0;
 		}
 
 		input {

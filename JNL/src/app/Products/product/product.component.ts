@@ -12,24 +12,23 @@ declare var $: any;
 })
 export class ProductComponent implements OnInit {
 
-  public detail = 'description';
-  public prodDesc: ProductEF;
-  public brand = '';
-  public family = '';
-  public model = '';
-  public category = '';
-  public tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
-  public product: Product;
-  public heroImages: Img[] = [];
-  public heroImageToPrint: Img;
-  public newHeroImages: Img[] = [];
-  public galleryThumbs: Img[] = [];
-  public galleryImages: Img[] = [];
-  public prodHeroImages: ProductHeroImage[];
-  public imgs: string[] = [];
-  public gallery: string[] = [];
-  public imgCount = 0;
-
+  detail = 'description';
+  prodDesc: ProductEF;
+  brand = '';
+  family = '';
+  model = '';
+  category = '';
+  tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
+  product: Product;
+  heroImages: Img[] = [];
+  heroImageToPrint: Img;
+  newHeroImages: Img[] = [];
+  galleryThumbs: Img[] = [];
+  galleryImages: Img[] = [];
+  prodHeroImages: ProductHeroImage[];
+  imgs: string[] = [];
+  gallery: string[] = [];
+  imgCount = 0;
   scroller = true;
   language: string;
   text: any;

@@ -12,7 +12,7 @@
 		-moz-appearance: none;
 		appearance: none;
 		list-style-type: none;
-		padding: 0px !important;
+		padding: 0 !important;
 	}
 
 	i {
@@ -45,7 +45,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-content: flex-start;
-		padding: 10px 10px 10px 0px;
+		padding: 10px 10px 10p 0;
 	}
 
 	.scroll-item {
@@ -114,7 +114,7 @@
 	}
 
 	.single-filter {
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		font-family: Helvetica-Light;
 		font-size: 1.3vw;
 		line-height: 1.6vw;
