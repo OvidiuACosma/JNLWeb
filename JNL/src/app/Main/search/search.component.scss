@@ -340,4 +340,15 @@
 		width: 100vw;
 		padding-top: var(--search-bar-height);
 	}
+
+	@media only screen and (min-width: 1200px) {
+		#top_buttons {
+			font-size: 13.2px;
+		}
+
+		.magnifier {
+			font-size: 18px !important;
+		// padding-top: .5vw;
+		}
+	}
 }
