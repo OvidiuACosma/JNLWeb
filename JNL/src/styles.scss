@@ -155,7 +155,7 @@ h4 {
 
 	@media only screen and (min-width: 1200px) {
 		font-size: 12px;
-		padding: .15vw 1.59vw;
+		padding: 1.8px 19.1px;
 	}
 
 	&:hover {
@@ -214,6 +214,11 @@ h4 {
 			&:first-child, &:last-child {
 				margin: auto;
 			}
+		}
+
+		@media only screen and (min-width: 1200px) {
+			font-size: 16.8px;
+			line-height: 24px;
 		}
 	}
 }
