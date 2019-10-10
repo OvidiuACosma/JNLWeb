@@ -79,8 +79,12 @@
 
 @media only screen and (max-width: 768px) {
   .content {
-    margin-left: 0 !important;
-    margin-top: 60px !important;
+    // margin-left: 0 !important;
+    // margin-top: 60px !important;
+    width: 100%;
+		background-color: #fff;
+		top: 0;
+		z-index: 801;
   }
 
   .search-bar {

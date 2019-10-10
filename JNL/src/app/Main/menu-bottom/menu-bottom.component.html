@@ -68,35 +68,24 @@
           <img alt="JNL Collection Pinterest" src="assets/Images/Common/PinterestIcon.png" height="30vh"><br>
         </a>
         <br>
-
-        <!-- <p class="columnHead">{{text.newsletter}}</p>
-        <form id="newsletter">
-          <span class="email-placeholder">
-            <input type="email" name="email" [formControl]="email" placeholder="{{text.email}}"/>
-          </span>
-          <span class="news-button" (click)="registerForNewsletter()">
-            <i class="fas fa-angle-right"></i>
-          </span>
-        </form>
-        <br> -->
       </div>
   </div>
 
   <div id="bottom_line">
-      <br>
-      <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>
-      <a (click)="NavigateTo('extras/gdpr')">{{text.politique}}</a>
-      <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>
+    <br>
+    <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>
+    <a (click)="NavigateTo('extras/gdpr')">{{text.politique}}</a>
+    <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>
   </div>
 </nav>
 
 <!--Mobile only-->
 <nav class="bottom-nav-mob" *ngIf="text">
   <div class="mob-2flex">
-    <div>
-      <div>
-        <p class="columnHead">{{text.suivre}}</p>
-        <div id="mobile-social">
+    <!-- <div> -->
+      <!-- <div> -->
+        <div class="columnHead">{{text.suivre}}</div>
+        <div>
           <a href="https://www.instagram.com/jnl_design/" target="_blank" rel="noreferrer">
             <img alt="JNL Collection Instagram" src="assets/Images/Common/InstagramIcon.png" height="40vw">
           </a>&nbsp;&nbsp;
@@ -107,17 +96,8 @@
             <img alt="JNL Collection Pinterest" src="assets/Images/Common/PinterestIcon.png" height="40vw"><br>
           </a>
         </div>
-      </div>
-    </div>
-    <!-- <div>
-      <div>
-        <p class="columnHead">{{text.newsletter}}</p>
-        <form id="newsletter">
-            <input type="email" placeholder="{{text.email}}"/>
-            <span class="news-button"><i class="fas fa-angle-right"></i></span>
-        </form>
-      </div>
-    </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
   </div>
   <div class="mob-links">
       <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>

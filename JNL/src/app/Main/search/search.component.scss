@@ -296,7 +296,12 @@
 	.memu-button-img {
 		padding-top: 16px;
 		width: 2.777vw; /*40px;*/
-	}
+  }
+
+	.search {
+		width: 100vw;
+		padding-top: var(--search-bar-height);
+  }
 
 	@media only screen and (max-width: 768px) {
 		/*TOP BAR*/
@@ -332,12 +337,8 @@
 		}
 
 		.image-link {
-			height: 19px;
+      height: 19px;
+      margin: auto;
 		}
-	}
-
-	.search {
-		width: 100vw;
-		padding-top: var(--search-bar-height);
 	}
 }
