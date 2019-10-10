@@ -94,8 +94,8 @@
 
 	.search-textbox {
 		font-family: Helvetica-Light;
-    width: 100%;
-    font-size: 1.1vw;
+    	width: 100%;
+    	font-size: 1.1vw;
 		margin-top: 0.2vw;
 		padding-left: .3vw;
 		appearance: none;
@@ -565,8 +565,8 @@
 
 		> span > i {
 			padding-right: 0.6vw;
-      transition: all 0.3s ease;
-      font-size: 1vw;
+      		transition: all 0.3s ease;
+      		font-size: 1vw;
 
 			&:hover {
 				color: #dbbb76;
@@ -598,6 +598,71 @@
 		&:hover {
 			color: #dbbb76;
 			transition: all 0.3s ease;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.search-main {
+		.header-filter, .reset-filter {
+			font-size: 16.8px;
+		}
+
+		.search-textbox {
+			font-size: 13.2px;
+			margin-top: 2.4px;
+			padding-left: 3.6px;
+		}
+
+		.single-filter {
+			font-size: 15.6px;
+			line-height: 18px;
+	
+			> span > i {
+				line-height: 16.8px;
+			}
+		}
+
+		.header-arrow {
+			margin-top: 20.4px;
+			margin-bottom: 12px;
+			font-size: 14.4px;
+			.arrow {
+				width: 20.4px;
+				padding-top: 2.4px;
+			}
+		}
+
+		.subfilters {
+			line-height: 22px;
+	
+			> li {
+				width: 204px;
+				margin: auto 18px auto 12px;
+			}
+		}
+
+		.prod-name {
+			font-size: 14.4px;
+			line-height: 16.8px;
+			margin-bottom: 6px;
+		}
+
+		.family-name {
+			font-size: 20.5px;
+			line-height: 25.2px;
+			margin-top: 12px;
+		}
+	}
+
+	.card-product {
+		.product-name {
+			max-width: 233.5px;
+			line-height: 19.2px;
+			> span > i {
+				padding-right: 7.2px;
+				font-size: 12px;
+			}
 		}
 	}
 }

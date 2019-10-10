@@ -83,7 +83,10 @@
       }
 
       h2 {
-        font-size: 3.5vw;
+		font-size: 3.5vw;
+		@media only screen and (min-width: 1200px) { 
+				font-size: 42px;
+			}
       }
 
 			> p {
@@ -99,6 +102,11 @@
 					width: auto;
 					font-size: 13px;
 					line-height: 20px;
+				}
+
+				@media only screen and (min-width: 1200px) {
+					font-size: 16.8px;
+					line-height: 24px;
 				}
 			}
 
@@ -222,6 +230,10 @@
 					font-size: 13px;
 				}
 
+				@media only screen and (min-width: 1200px) {
+					font-size: 18px;
+				}
+
 				&:hover {
 					border-color: black;
 					transition: all 0.5s ease;
@@ -278,46 +290,54 @@
     }
 
     .style-title {
-      font-size: 1.8vw !important;
+	  	font-size: 1.8vw;
+	  	@media only screen and (min-width: 1200px) {
+			font-size: 21.6px;
+	  	}
     }
 
-		img {
-			width: 35.1vw;
-			margin-bottom: 1.7vw;
+	img {
+		width: 35.1vw;
+		margin-bottom: 1.7vw;
 
-			@media only screen and (max-width: 768px) {
-				width: 100%;
-			}
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
+	}
+
+	h4 {
+		font-family: Helvetica-Light;
+		font-size: 1.4vw;
+		margin: 0;
+		// margin-bottom: 10px;
+
+		@media only screen and (max-width: 768px) {
+			font-size: 16px;
+			line-height: 12px;;
 		}
 
-		h4 {
-			font-family: Helvetica-Light;
-			font-size: 1.4vw;
-			margin: 0;
-			// margin-bottom: 10px;
-
-			@media only screen and (max-width: 768px) {
-				font-size: 16px;
-				line-height: 12px;;
-			}
+		@media only screen and (min-width: 1200px) {
+			font-size: 16.8px;
+			line-height: 14.4px;;
 		}
+	}
 
-		p {
-			font-family: Helvetica-Light;
-			font-size: 15px;
-			line-height: 24px;
-			padding: 1.3vw;
-			width: 31.1vw;
-			margin: auto;
-			margin-top: 0;
+	p {
+		font-family: Helvetica-Light;
+		font-size: 15px;
+		line-height: 24px;
+		padding: 1.3vw;
+		width: 31.1vw;
+		margin: auto;
+		margin-top: 0;
 
-			@media only screen and (max-width: 768px) {
-				font-size: 13px;
-				line-height: 20px;
-				width: auto;
-				line-height: normal;
-			}
+		@media only screen and (max-width: 768px) {
+			font-size: 13px;
+			line-height: 20px;
+			width: auto;
+			line-height: normal;
 		}
+	}
 
 		// Left col
 		&:nth-child(1) {
@@ -385,12 +405,16 @@
 		@media only screen and (max-width: 768px) {
 			font-size: 15px;
 		}
+
+		@media only screen and (min-width: 1200px) {
+			font-size: 14.4px;
+		}
 	}
 
 	.other_brands_links {
 		width: 83vw;
 		height: 6vw;
-    margin: auto auto 5.48vw;
+    	margin: auto auto 5.48vw;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -402,18 +426,23 @@
 		button {
 			background-color: #d3d3d3 !important;
 			width: 41vw !important;
-      text-align: center !important;
-      padding: 0;
+      		text-align: center !important;
+      		padding: 0;
 			margin: auto;
 			font-family: Helvetica-Light;
 			font-size: 1.8vw;
 			line-height: 5vw;
-      border: none;
-      outline: none;
+      		border: none;
+      		outline: none;
 
 			@media only screen and (max-width: 768px) {
 				font-size: 12px;
 				line-height: 15px;
+			}
+
+			@media only screen and (min-width: 1200px) {
+				font-size: 21.6px;
+				line-height: 60px;
 			}
 		}
 	}
@@ -461,3 +490,5 @@
 		}
 	}
 }
+
+

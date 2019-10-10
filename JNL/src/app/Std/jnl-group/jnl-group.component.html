@@ -1,4 +1,4 @@
- <div class="group-main">
+<div class="group-main">
   <div *ngIf="text">
     <h1>{{text.title}}</h1>
 
@@ -19,116 +19,115 @@
 
       <div class="image-parag">
         <div class="col-txt">
-          <p style="font-size: 1.6vw; line-height: 2.47vw;" [innerHTML]="text.histoireText2"></p>
+          <p [innerHTML]="text.histoireText2"></p>
         </div>
         <div class="col-img">
           <img alt="JNL Collection" src="assets/Images/Groupe/GP_vertical.jpg">
         </div>
       </div>
 
-      <img class="full-image" alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img1']['src']}}">
+      <img class="full-image" alt="{{altText['img1']['alt'][language]}}"
+        src="assets/Images/Groupe/{{altText['img1']['src']}}">
     </div>
 
-      <div id="equipe">
-        <h2>{{text.todayTitle}}</h2>
-        <h3>{{text.todaySub}}</h3>
+    <div id="equipe">
+      <h2>{{text.todayTitle}}</h2>
+      <h3>{{text.todaySub}}</h3>
+      <div>
+        <div class="jnl-user">
+          <img class="group-img" alt="{{altText['img2']['alt'][language]}}"
+            src="assets/Images/Groupe/{{altText['img2']['src']}}">
+          <h4>Dominique Waxmann</h4>
+          <h3>{{text.dominiqueTitle}}</h3>
+          <p [innerHTML]="text.dominiqueText"></p>
+        </div>
+        <div class="jnl-user">
+          <img class="group-img" alt="{{altText['img3']['alt'][language]}}"
+            src="assets/Images/Groupe/{{altText['img3']['src']}}">
+          <h4>Alain Lahy</h4>
+          <h3>{{text.alainTitle}}</h3>
+          <p [innerHTML]="text.alainText"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="staff">
+      <div *ngFor="let s of people; let j=index" [ngClass]="j%2!=0 ? 'right' : 'left'">
         <div>
-          <div class="jnl-user">
-            <img class="group-img" alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img2']['src']}}">
-            <h4>Dominique Waxmann</h4>
-            <h3>{{text.dominiqueTitle}}</h3>
-            <p [innerHTML]="text.dominiqueText"></p>
-          </div>
-          <div class="jnl-user">
-              <img class="group-img" alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Groupe/{{altText['img3']['src']}}">
-              <h4>Alain Lahy</h4>
-              <h3>{{text.alainTitle}}</h3>
-              <p [innerHTML]="text.alainText"></p>
-          </div>
+          <p><b>{{s.name}}</b></p>
+          <p>{{s.title}}</p>
         </div>
-      </div>
-
-      <div class="staff">
-        <div *ngFor="let s of people; let j=index"
-          [ngClass]="j%2!=0 ? 'right' : 'left'">
-          <div>
-            <p><b>{{s.name}}</b></p>
-            <p>{{s.title}}</p>
-          </div>
-          <div>
-            <img [src]="s.image" alt="{{s.alt}}">
-          </div>
-        </div>
-      </div>
-
-      <div id="engagement">
-        <h2>{{text.engagementTitle}}</h2>
-        <h3>{{text.engagementSub}}</h3>
-        <div class='image-parag' id="impg2">
-            <div class="col-img">
-              <img alt="JNL Collection" src="assets/Images/Groupe/GP_leaf.jpg">
-            </div>
-          <div>
-            <p style="font-size: 1.41vw; line-height: 2.05vw;" [innerHTML]="text.engagementText">
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div id="projets">
         <div>
-          <h1>{{text.projets}}</h1>
+          <img [src]="s.image" alt="{{s.alt}}">
         </div>
-      <div id='carousel-projets' class='carousel slide carousel-fade'
-            data-ride='carousel' data-pause="false" data-interval="3000">
+      </div>
+    </div>
+
+    <div id="engagement">
+      <h2>{{text.engagementTitle}}</h2>
+      <h3>{{text.engagementSub}}</h3>
+      <div class='image-parag' id="impg2">
+        <div class="col-img">
+          <img alt="JNL Collection" src="assets/Images/Groupe/GP_leaf.jpg">
+        </div>
+        <div>
+          <p [innerHTML]="text.engagementText">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="projets">
+      <div>
+        <h1>{{text.projets}}</h1>
+      </div>
+      <div id='carousel-projets' class='carousel slide carousel-fade' data-ride='carousel' data-pause="false"
+        data-interval="3000">
         <div class="carousel-inner">
-            <div class='carousel-item active'>
-              <div class="carousel-project">
-                <h2 class="project-city">{{text.projetsCity1}}</h2>
-                <h2 class="project-name">{{text.projets1}}</h2>
-                <div class="carousel-item-image">
-                  <img src="assets/Images/Projects/{{altText['img4']['src']}}"
-                      alt="{{altText['img4']['alt'][language]}}"
-                      class="slide-image slide-image-project">
-                </div>
-                <p class="projets-text">{{text.projetsDescription1}}</p>
+          <div class='carousel-item active'>
+            <div class="carousel-project">
+              <h2 class="project-city">{{text.projetsCity1}}</h2>
+              <h2 class="project-name">{{text.projets1}}</h2>
+              <div class="carousel-item-image">
+                <img src="assets/Images/Projects/{{altText['img4']['src']}}" alt="{{altText['img4']['alt'][language]}}"
+                  class="slide-image slide-image-project">
               </div>
+              <p class="projets-text">{{text.projetsDescription1}}</p>
             </div>
+          </div>
 
-            <div class='carousel-item' active="setActiveSlide(1)">
-                <div class="carousel-project">
-                  <h2 class="project-city">{{text.projetsCity2}}</h2>
-                  <h2 class="project-name">{{text.projets2}}</h2>
-                  <div class="carousel-item-image">
-                    <img src="assets/Images/Projects/{{altText['img5']['src']}}"
-                        alt="{{altText['img5']['alt'][language]}}"
-                        class="slide-image slide-image-project">
-                  </div>
-                  <p class="projets-text">{{text.projetsDescription2}}</p>
-                </div>
+          <div class='carousel-item' active="setActiveSlide(1)">
+            <div class="carousel-project">
+              <h2 class="project-city">{{text.projetsCity2}}</h2>
+              <h2 class="project-name">{{text.projets2}}</h2>
+              <div class="carousel-item-image">
+                <img src="assets/Images/Projects/{{altText['img5']['src']}}" alt="{{altText['img5']['alt'][language]}}"
+                  class="slide-image slide-image-project">
+              </div>
+              <p class="projets-text">{{text.projetsDescription2}}</p>
             </div>
-            <div class='carousel-item'>
-                <div class="carousel-project">
-                  <h2 class="project-city">{{text.projetsCity3}}</h2>
-                  <h2 class="project-name">{{text.projets3}}</h2>
-                  <div class="carousel-item-image">
-                    <img src="assets/Images/Projects/{{altText['img6']['src']}}"
-                        alt="{{altText['img6']['alt'][language]}}"
-                        class="slide-image slide-image-project">
-                  </div>
-                  <p class="projets-text">{{text.projetsDescription3}}</p>
-                </div>
+          </div>
+          <div class='carousel-item'>
+            <div class="carousel-project">
+              <h2 class="project-city">{{text.projetsCity3}}</h2>
+              <h2 class="project-name">{{text.projets3}}</h2>
+              <div class="carousel-item-image">
+                <img src="assets/Images/Projects/{{altText['img6']['src']}}" alt="{{altText['img6']['alt'][language]}}"
+                  class="slide-image slide-image-project">
+              </div>
+              <p class="projets-text">{{text.projetsDescription3}}</p>
             </div>
+          </div>
         </div>
 
         <!-- Controls -->
         <a class='carousel-control-prev' data-target="#carousel-projets" data-slide='prev'>
-            <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
-            <span class="sr-only">Previous</span>
+          <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+          <span class="sr-only">Previous</span>
         </a>
         <a class='carousel-control-next' data-target="#carousel-projets" data-slide='next'>
-            <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
-            <span class="sr-only">Next</span>
+          <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+          <span class="sr-only">Next</span>
         </a>
       </div>
     </div>
@@ -143,37 +142,42 @@
     </div>
 
     <div class="modal fade" id="archivesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true" data-backdrop="false" *ngIf="isOpen" (click)="closeModal()">
+      aria-hidden="true" data-backdrop="false" *ngIf="isOpen" (click)="closeModal()">
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <!--<h5 class='col-12 modal-title text-center' id="ModalLabel">Archive {{year}}</h5>-->
-            <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close" (onclick)="modalClose()">
+            <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close"
+              (onclick)="modalClose()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-              <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel' data-interval="3000" >
-                <div class="carousel-inner">
+            <div id='carousel-archives' class='carousel slide carousel-archives' data-ride='carousel'
+              data-interval="3000">
+              <div class="carousel-inner">
 
-                  <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'">
-                      <div class="container2">
-                        <div class="carousel-item-image2">
-                          <img src={{item}} alt='JNL Collection' class="slide-image-archive">
-                        </div>
-                      </div>
+                <div class='carousel-item' *ngFor="let item of archive.imgSrc; let k = index"
+                  [ngClass]="k == 0 ? 'item active' : 'item'">
+                  <div class="container2">
+                    <div class="carousel-item-image2">
+                      <img src={{item}} alt='JNL Collection' class="slide-image-archive">
+                    </div>
                   </div>
                 </div>
+              </div>
 
-                <!-- Controls -->
-                <a class='carousel-control-prev' data-target="#carousel-archives" data-slide='prev' (click)="unsetScroll()">
-                    <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class='carousel-control-next' data-target="#carousel-archives" data-slide='next' (click)="unsetScroll()">
-                    <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
-                    <span class="sr-only">Next</span>
-                </a>
+              <!-- Controls -->
+              <a class='carousel-control-prev' data-target="#carousel-archives" data-slide='prev'
+                (click)="unsetScroll()">
+                <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class='carousel-control-next' data-target="#carousel-archives" data-slide='next'
+                (click)="unsetScroll()">
+                <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+                <span class="sr-only">Next</span>
+              </a>
             </div>
           </div>
         </div>

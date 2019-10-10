@@ -196,3 +196,15 @@ img:focus {
 		margin: 0;
 	}
 }
+
+@media only screen and (min-width: 1200px) {
+	#side_nav_links > div > span {
+		font-size: 19.2px;
+	}
+	#side_nav_links > div > a {
+		font-size: 13.8px;
+	} 
+	#side_bottom_line > a {
+		font-size: 8.4px !important;
+	}
+}

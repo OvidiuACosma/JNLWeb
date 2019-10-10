@@ -229,6 +229,10 @@
 				@media only screen and (max-width: 768px) {
 					font-size: 13px;
 				}
+
+				@media only screen and (min-width: 1200px) {
+					font-size: 13.2px;
+				}
 			}
 
 			&.project-name {
@@ -239,6 +243,10 @@
 
 				@media only screen and (max-width: 768px) {
 					font-size: 18px;
+				}
+
+				@media only screen and (min-width: 1200px) {
+					font-size: 24px;
 				}
 			}
 		}
@@ -265,7 +273,7 @@
 		height: auto;
 		min-height: 39vw;
 		background-color: white;
-    display: flex;
+    	display: flex;
 
     > div {
       margin: auto;
@@ -361,7 +369,7 @@
 	}
 
 	#actualites > div > p > span {
-		font-size: 20px;
+		font-size: 1.66vw;
 		margin-bottom: 0.98vw;
 		display: block;
 	}
@@ -705,14 +713,33 @@
 		}
 
 		#une_histoire > div > h1 {
-			font-size: 30px;
-			line-height: 43.2px;
+			font-size: 36px;
+			line-height: 49.2px;
 			margin-bottom: 13.2px;
 		}
 
-		#une_histoire > div > span {
+		#une_histoire > div > p {
+			font-size: 19px;
+			line-height: 24px;
+		}
+
+		.marque-text {
+			font-size: 18px;
+		}
+
+		#actualites > div > p > span {
+			font-size: 20px;
+			margin-bottom: 0.98vw;
+			display: block;
+		}
+
+		.more_links {
 			font-size: 12px;
-			line-height: 18px;
+		}
+
+		.projets-text {
+			font-size: 15px !important;
+			margin-top: 13.08px;
 		}
 	}
 }

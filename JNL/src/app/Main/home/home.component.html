@@ -18,80 +18,80 @@
 
   <div id="les_marques" class="main-divs">
     <div id="marques_main">
-        <h1>{{text.marquesTitle}}</h1>
-        <div id='carousel-brands' class='carousel slide carousel-marques' data-ride='carousel' data-pause="false"
+      <h1>{{text.marquesTitle}}</h1>
+      <div id='carousel-brands' class='carousel slide carousel-marques' data-ride='carousel' data-pause="false"
         data-interval="7000">
-          <!-- Indicators -->
+        <!-- Indicators -->
         <ul class='carousel-indicators '>
-            <li data-target='#carousel-brands' data-slide-to='0' class='active'>
-                <img src="/assets/Images/Home/HM_logo_JNL.png" alt="JNL Collection logo">
-            </li>
-            <li data-target='#carousel-brands' data-slide-to='1'>
-                <img src="/assets/Images/Home/HM_logo_VH.png" alt="Vanhamme Collection logo">
-            </li>
-            <li data-target='#carousel-brands' data-slide-to='2'>
-                <img src="/assets/Images/Home/HM_logo_Ungaro.png" alt="Emanuel Ungaro Home Collection logo">
-            </li>
-            <li data-target='#carousel-brands' data-slide-to='3'>
-                <img src="/assets/Images/Home/HM_logo_Studio.png" alt="JNL Studio logo">
-            </li>
+          <li data-target='#carousel-brands' data-slide-to='0' class='active'>
+            <img src="/assets/Images/Home/HM_logo_JNL.png" alt="JNL Collection logo">
+          </li>
+          <li data-target='#carousel-brands' data-slide-to='1'>
+            <img src="/assets/Images/Home/HM_logo_VH.png" alt="Vanhamme Collection logo">
+          </li>
+          <li data-target='#carousel-brands' data-slide-to='2'>
+            <img src="/assets/Images/Home/HM_logo_Ungaro.png" alt="Emanuel Ungaro Home Collection logo">
+          </li>
+          <li data-target='#carousel-brands' data-slide-to='3'>
+            <img src="/assets/Images/Home/HM_logo_Studio.png" alt="JNL Studio logo">
+          </li>
         </ul>
-          <div class="carousel-inner">
-              <div class='carousel-item active'>
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='/assets/Images/Home/HM_JNL.png' alt='JNL Collection' class="slide-image">
-                  </div>
-                  <div class="marque-text">
-                      <p [innerHTML]="text.marquesJNL"></p><br><br>
-                      <button class="jbtn" (click)="navigateTo('marques', 'jnl')">{{text.marquesButtonText}}</button>
-                  </div>
-                </div>
+        <div class="carousel-inner">
+          <div class='carousel-item active'>
+            <div class="container">
+              <div class="carousel-item-image">
+                <img src='/assets/Images/Home/HM_JNL.png' alt='JNL Collection' class="slide-image">
               </div>
-              <div class='carousel-item' active="setActiveSlide(1)">
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='/assets/Images/Home/HM_VANHAMME.png' alt='Vanhamme Collection' class="slide-image">
-                  </div>
-                  <div class="marque-text">
-                    <p [innerHTML]="text.marquesVanhamme"></p>
-                      <br><br>
-                    <button class="jbtn" (click)="navigateTo('marques', 'vanhamme')">{{text.marquesButtonText}}</button>
-                  </div>
-                </div>
+              <div class="marque-text">
+                <p [innerHTML]="text.marquesJNL"></p><br><br>
+                <button class="jbtn" (click)="navigateTo('marques', 'jnl')">{{text.marquesButtonText}}</button>
               </div>
-              <div class='carousel-item'>
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
-                  </div>
-                  <div class="marque-text">
-                    <p [innerHTML]="text.marquesUngaro"></p><br><br>
-                    <button class="jbtn" (click)="navigateTo('marques', 'ungaro')">{{text.marquesButtonText}}</button>
-                  </div>
-                </div>
-              </div>
-              <div class='carousel-item'>
-                <div class="container">
-                  <div class="carousel-item-image">
-                    <img src='/assets/Images/Home/HM_STUDIO.png' alt='JNL Studio Collection' class="slide-image">
-                  </div>
-                  <div class="marque-text">
-                      <p [innerHTML]="text.marquesStudio"></p><br><br>
-                    <button class="jbtn" (click)="navigateTo('marques', 'studio')">{{text.marquesButtonText}}</button>
-                  </div>
-                </div>
-              </div>
+            </div>
           </div>
-          <!-- Controls -->
-          <a class='carousel-control-prev' data-target="#carousel-brands" data-slide='prev'>
-              <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
-              <span class="sr-only">Previous</span>
-          </a>
-          <a class='carousel-control-next' data-target="#carousel-brands" data-slide='next'>
-              <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
-              <span class="sr-only">Next</span>
-          </a>
+          <div class='carousel-item' active="setActiveSlide(1)">
+            <div class="container">
+              <div class="carousel-item-image">
+                <img src='/assets/Images/Home/HM_VANHAMME.png' alt='Vanhamme Collection' class="slide-image">
+              </div>
+              <div class="marque-text">
+                <p [innerHTML]="text.marquesVanhamme"></p>
+                <br><br>
+                <button class="jbtn" (click)="navigateTo('marques', 'vanhamme')">{{text.marquesButtonText}}</button>
+              </div>
+            </div>
+          </div>
+          <div class='carousel-item'>
+            <div class="container">
+              <div class="carousel-item-image">
+                <img src='/assets/Images/Home/HM_UNGARO.png' alt='Emanuel Ungaro Home Collection' class="slide-image">
+              </div>
+              <div class="marque-text">
+                <p [innerHTML]="text.marquesUngaro"></p><br><br>
+                <button class="jbtn" (click)="navigateTo('marques', 'ungaro')">{{text.marquesButtonText}}</button>
+              </div>
+            </div>
+          </div>
+          <div class='carousel-item'>
+            <div class="container">
+              <div class="carousel-item-image">
+                <img src='/assets/Images/Home/HM_STUDIO.png' alt='JNL Studio Collection' class="slide-image">
+              </div>
+              <div class="marque-text">
+                <p [innerHTML]="text.marquesStudio"></p><br><br>
+                <button class="jbtn" (click)="navigateTo('marques', 'studio')">{{text.marquesButtonText}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Controls -->
+        <a class='carousel-control-prev' data-target="#carousel-brands" data-slide='prev'>
+          <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class='carousel-control-next' data-target="#carousel-brands" data-slide='next'>
+          <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
   </div>
@@ -111,7 +111,7 @@
         <a class="more_links" (click)="navigateToActualite('2')">+ {{text.readButton}}</a>
       </p> -->
       <p>
-          <span>{{text.actualites3}}</span>
+        <span>{{text.actualites3}}</span>
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3.jpg">
         <a class="more_links" (click)="navigateToActualite('3')">+ {{text.readButton}}</a>
       </p>
@@ -120,13 +120,13 @@
   <hr>
   <div id="savoir">
     <div>
-        <video width="87.3vw" height="33.3vw" autoplay muted loop playsinline>
-            <source src="/assets/Video/JNL_video.mp4" type="video/mp4">
-        </video>
+      <video width="87.3vw" height="33.3vw" autoplay muted loop playsinline>
+        <source src="/assets/Video/JNL_video.mp4" type="video/mp4">
+      </video>
     </div>
     <div>
-        <h1>{{text.savoirTitle}}</h1>
-        <button class="jbtn" (click)="navigateTo('savoirFaire')">{{text.savoirButton}}</button>
+      <h1>{{text.savoirTitle}}</h1>
+      <button class="jbtn" (click)="navigateTo('savoirFaire')">{{text.savoirButton}}</button>
     </div>
   </div>
 
@@ -134,50 +134,53 @@
     <div>
       <h1>{{text.projetsTitle}}</h1>
     </div>
-    <div id='carousel-projets' class='carousel slide carousel-fade carousel-projets' data-ride='carousel' data-pause="false">
+    <div id='carousel-projets' class='carousel slide carousel-fade carousel-projets' data-ride='carousel'
+      data-pause="false">
       <div class="carousel-inner">
-          <div class='carousel-item active'>
-            <div class="carousel-project">
-              <h2 class="project-city">{{text.projetsCity1}}</h2>
-              <h2 class="project-name">{{text.projets1}}</h2>
-              <div class="carousel-item-image">
-                <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image-projects">
-              </div>
-              <p class="projets-text">{{text.projetsDescription1}}</p>
+        <div class='carousel-item active'>
+          <div class="carousel-project">
+            <h2 class="project-city">{{text.projetsCity1}}</h2>
+            <h2 class="project-name">{{text.projets1}}</h2>
+            <div class="carousel-item-image">
+              <img src='assets\Images\Projects\PJ_London.jpg' alt='JNL Collection' class="slide-image-projects">
             </div>
+            <p class="projets-text">{{text.projetsDescription1}}</p>
           </div>
+        </div>
 
-          <div class='carousel-item' active="setActiveSlide(1)">
-            <div class="carousel-project">
-              <h2 class="project-city">{{text.projetsCity2}}</h2>
-              <h2 class="project-name">{{text.projets2}}</h2>
-              <div class="carousel-item-image">
-                <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image-projects">
-              </div>
-              <p class="projets-text">{{text.projetsDescription2}}</p>
+        <div class='carousel-item' active="setActiveSlide(1)">
+          <div class="carousel-project">
+            <h2 class="project-city">{{text.projetsCity2}}</h2>
+            <h2 class="project-name">{{text.projets2}}</h2>
+            <div class="carousel-item-image">
+              <img src='assets\Images\Projects\PJ_Paris.jpg' alt='JNL Collection' class="slide-image-projects">
             </div>
+            <p class="projets-text">{{text.projetsDescription2}}</p>
           </div>
+        </div>
 
-          <div class='carousel-item' active="setActiveSlide(2)">
-            <div class="carousel-project">
-              <h2 class="project-city">{{text.projetsCity3}}</h2>
-              <h2 class="project-name">{{text.projets3}}</h2>
-              <div class="carousel-item-image">
-                <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image-projects">
-              </div>
-              <p class="projets-text">{{text.projetsDescription3}}</p>
+        <div class='carousel-item' active="setActiveSlide(2)">
+          <div class="carousel-project">
+            <h2 class="project-city">{{text.projetsCity3}}</h2>
+            <h2 class="project-name">{{text.projets3}}</h2>
+            <div class="carousel-item-image">
+              <img src='assets\Images\Projects\PJ_Reims.jpg' alt='JNL Collection' class="slide-image-projects">
             </div>
+            <p class="projets-text">{{text.projetsDescription3}}</p>
           </div>
+        </div>
       </div>
 
       <!-- Controls -->
       <a class='carousel-control-prev' data-target="#carousel-projets" data-slide='prev'>
-          <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png" class="carousel-arrows carousel-arrows-projets">
-          <span class="sr-only">Previous</span>
+        <img alt="JNL Collection" src="assets\Images\Common\arrow_left.png"
+          class="carousel-arrows carousel-arrows-projets">
+        <span class="sr-only">Previous</span>
       </a>
       <a class='carousel-control-next' data-target="#carousel-projets" data-slide='next'>
-          <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png" class="carousel-arrows carousel-arrows-projets">
-          <span class="sr-only">Next</span>
+        <img alt="JNL Collection" src="assets\Images\Common\arrow_right.png"
+          class="carousel-arrows carousel-arrows-projets">
+        <span class="sr-only">Next</span>
       </a>
     </div>
   </div>

@@ -213,7 +213,42 @@
 
 		.sur-flex > div > div {
 			text-align: center;
-      margin-bottom: 30px;
+      		margin-bottom: 30px;
+		}
+	}
+
+	@media only screen and (min-width: 1200px) {
+		h2 {
+			font-size: 42px;
+		}
+
+		#expertise,
+		#surMesure,
+		#votreProjet {
+			padding-top: 70.8px;
+		}
+
+		#expertise {
+			margin-top: 31px;
+		}
+
+		#expertise > h4,
+		#surMesure > h4,
+		#votreProjet > h4 {
+			font-size: 21.6px;
+			line-height: 26.4px;
+		}
+
+		.sur-flex > div > div {
+			font-size: 16.8px;
+			line-height: 24px;
+		}
+
+		.services-your-project {
+			p {
+				font-size: 16.8px;
+				line-height: 24px;
+			}
 		}
 	}
 }

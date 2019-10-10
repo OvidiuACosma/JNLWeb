@@ -102,6 +102,10 @@ h1 {
 	@media only screen and (max-width: 768px) {
 		font-size: 20px;
 	}
+
+	@media only screen and (min-width: 1200px) {
+		font-size: 36px;
+	}
 }
 
 h2 {
@@ -112,6 +116,10 @@ h2 {
 
 	@media only screen and (max-width: 768px) {
 		font-size: 18px;
+	}
+
+	@media only screen and (min-width: 1200px) {
+		font-size: 27px;
 	}
 }
 
@@ -138,11 +146,16 @@ h4 {
 	// line-height: 11px;
 	letter-spacing: 1.28px;
 	text-transform: uppercase;
-  transition: all .5s ease;
-  outline: none !important;
+    transition: all .5s ease;
+    outline: none !important;
 
 	@media only screen and (max-width: 768px) {
 		line-height: 17px;
+	}
+
+	@media only screen and (min-width: 1200px) {
+		font-size: 12px;
+		padding: 1.8px 19.1px;
 	}
 
 	&:hover {
@@ -201,6 +214,11 @@ h4 {
 			&:first-child, &:last-child {
 				margin: auto;
 			}
+		}
+
+		@media only screen and (min-width: 1200px) {
+			font-size: 16.8px;
+			line-height: 24px;
 		}
 	}
 }
