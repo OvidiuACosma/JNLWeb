@@ -93,8 +93,8 @@
 		color: black;
 		margin-top: 3vw;
 		margin-bottom: 4vw;
-    border: none;
-    width: 15vw;
+    	border: none;
+    	width: 15vw;
 		font-size: 1.2vw;
 		transition: all 0.3s ease-out;
 
@@ -170,5 +170,25 @@
 	::-ms-input-placeholder {
 		/* Microsoft Edge */
 		color: #444;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.contact-div {
+		font-size: 16.8px;
+	}
+
+	.contact-form {
+		textarea, select, input {
+			margin-top: 18px;
+			font-size: 17.3px;
+		}
+
+		> button {
+			margin-top: 36px;
+			margin-bottom: 48px;
+			width: 180px;
+			font-size: 14.4px;
+		}
 	}
 }
