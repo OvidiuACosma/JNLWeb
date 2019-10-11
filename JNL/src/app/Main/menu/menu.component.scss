@@ -50,7 +50,13 @@
 	-webkit-animation-name: slidein;
 	transition: slidein 0.8s;
 	animation-duration: 0.8s;
-	-webkit-animation-duration: 0.8s;
+  -webkit-animation-duration: 0.8s;
+
+  @media only screen and (max-width: 768px) {
+    transition: slidein 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+  }
 }
 
 .menu-out {
@@ -85,6 +91,7 @@
     margin-left: 0;
     width:43vw;
     text-align: left;
+    transition: .5s;
   }
 
 	&::-webkit-scrollbar {

@@ -2,7 +2,7 @@
   <div *ngIf="text">
     <h1>{{text.title}}</h1>
 
-    <div class="submenu d-none d-sm-flex">
+    <div class="submenu d-none d-sm-flex hide-mobile">
       <a (click)="navigateTo('jnlGroup', 'histoire')">{{text.histoire}}</a>
       <a (click)="navigateTo('jnlGroup', 'equipe')">{{text.equipe}}</a>
       <a (click)="navigateTo('jnlGroup', 'engagement')">{{text.engagement}}</a>
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div id="projets">
+    <div id="projets" class="hide-mobile">
       <div>
         <h1>{{text.projets}}</h1>
       </div>

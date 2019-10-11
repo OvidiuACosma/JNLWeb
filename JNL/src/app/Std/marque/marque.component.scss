@@ -6,7 +6,8 @@
 		margin-bottom: 20px;
 
 		@media only screen and (max-width: 768px) {
-			width: 28vw;
+      width: 28vw;
+      margin-bottom: 1vw;
 		}
 	}
 
@@ -202,7 +203,7 @@
 		margin-bottom: 5.5vw;
 
 		@media only screen and (max-width: 768px) {
-			width: 80vw;
+			width: 82vw;
 		}
 
 		> li {
@@ -286,7 +287,12 @@
     }
 
     .style-title {
-	  	font-size: 1.8vw;
+      font-size: 1.8vw;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 14px;
+        }
+
 	  	@media only screen and (min-width: 1200px) {
 			font-size: 21.6px;
 	  	}
@@ -328,10 +334,9 @@
 		margin-top: 0;
 
 		@media only screen and (max-width: 768px) {
-			font-size: 13px;
-			line-height: 20px;
-			width: auto;
-			line-height: normal;
+      width: auto;
+      font-size: 11px;
+			line-height: 16px;
 		}
 	}
 
@@ -408,32 +413,31 @@
 	}
 
 	.other-brands-links {
-		width: 83vw;
-		height: 6vw;
-    	margin: auto auto 5.48vw;
+    margin: auto auto 5.48vw;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		width: 83vw;
+		height: 6vw;
 
 		@media only screen and (max-width: 768px) {
 			height: auto;
 		}
 
 		button {
-			background-color: #d3d3d3 !important;
+      margin: auto;
+			padding: 0;
 			width: 41vw !important;
-      		text-align: center !important;
-      		padding: 0;
-			margin: auto;
 			font-family: Helvetica-Light;
 			font-size: 1.8vw;
-			line-height: 5vw;
-      		border: none;
-      		outline: none;
+      line-height: 5vw;
+      text-align: center !important;
+      border: none;
+      outline: none;
+      background-color: #d3d3d3 !important;
 
 			@media only screen and (max-width: 768px) {
-				font-size: 12px;
-				// line-height: 15px;
+				font-size: 11px;
 			}
 
 			@media only screen and (min-width: 1200px) {
@@ -478,6 +482,7 @@
 
 			@media only screen and (max-width: 768px) {
 				font-size: 14px;
+        line-height: 30px;
 			}
 		}
 

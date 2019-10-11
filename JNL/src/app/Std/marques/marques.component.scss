@@ -25,7 +25,13 @@
 		color: #666;
 		font-size: 1.38vw;
 		margin-top: 0.8vw;
-		margin-bottom: 1.2vw;
+    margin-bottom: 1.2vw;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 2vw;
+      font-size: 12px;
+      line-height: 16px;
+    }
 	}
 
 	.marques-image {
@@ -48,7 +54,12 @@
 		width: 20vw;
 		height: auto;
 		opacity: 0.85;
-		transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 2vw;
+      width: 22vw;
+    }
 	}
 
 	.marque > a > img:hover {
@@ -57,10 +68,6 @@
 	}
 
 	@media only screen and (max-width: 768px) {
-		h3 {
-			font-size: 15px;
-		}
-
 		.location {
 			font-size: 4.7vw;
 		}
