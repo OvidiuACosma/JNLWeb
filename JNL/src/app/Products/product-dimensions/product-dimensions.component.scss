@@ -176,3 +176,49 @@ h6 {
     font-size: 4.2vw;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  #container {
+    h2 {
+      font-size: 28.8px;
+    }
+    
+    h5 {
+      font-size: 20.2px;
+    }
+    
+    h6 {
+      font-size: 10.8px;
+    }
+
+    .image-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 54vw;
+      margin: auto;
+    }
+    
+    .img-container {
+      padding: 0 24px;
+    }
+    
+    .img-button {
+      /* max-height: 200px; */
+      width: 168px;
+    }
+    
+    #staticText {
+      width: 367px;
+    }
+
+    .modal-arrow {
+      height: 24px;
+      width: 12px;
+    }
+    
+    .prod-code {
+      margin-top: 24px;
+    }
+  }
+}

@@ -45,7 +45,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-content: flex-start;
-		padding: 10px 10px 10p 0;
+		padding: 10px 10px 10px 0;
 	}
 
 	.scroll-item {
@@ -123,5 +123,74 @@
 	.single-filter > span > i {
 		line-height: 1.4vw;
 		font-size: 1vw;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.wrapper_garnissage {
+		width: 960px;
+		padding-top: 72px;
+		padding-bottom: 48px;
+
+		.filters {
+			width: 288px;
+			padding-left: 24px;
+			padding-right: 12px;
+			margin-right: 48px;
+			height:1128px;
+		}
+	
+		.products {
+			width: 876px;
+			height: 1128px;
+		}
+
+		.scroll-item {
+			width: 178.3px;
+			margin-right: 24px;
+		}
+	
+		.img-button {
+			width: 174px;
+			height: 91.6px;
+		}
+	
+		.product-name {
+			font-size: 13.2px;
+		}
+
+		.header-arrow {
+			margin-top: 20.4px;
+			margin-bottom: 12px;
+		}
+	
+		.header-filter {
+			font-size: 16.8px;
+		}
+	
+		.arrow {
+			width: 20.4px;
+			padding-top: 2.4px;
+		}
+	
+		.subfilters {
+			line-height: 22px;
+	
+			> li {
+				width: 204px;
+				margin-left: 12px;
+				margin-right: 18px;
+			}
+		}
+	
+		.single-filter {
+			font-size: 15.6px;
+			line-height: 19.2px;
+		}
+	
+		.single-filter > span > i {
+			line-height: 16.8px;
+			font-size: 12px;
+		}
 	}
 }

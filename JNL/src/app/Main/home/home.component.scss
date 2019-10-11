@@ -81,7 +81,6 @@
 }
 
 
-
 .home-wrapper {
 	hr {
 		border: 0.5px solid #dbbb76;
@@ -94,7 +93,7 @@
 	.carousel-arrows {
 		height: 2vw;
 		width: 1vw;
-    margin-top: 3vw;
+    	margin-top: 3vw;
 
     @media only screen and (max-width: 768px) {
       margin-top: 0;
@@ -230,10 +229,6 @@
 				@media only screen and (max-width: 768px) {
 					font-size: 13px;
 				}
-
-				@media only screen and (min-width: 1200px) {
-					font-size: 13.2px;
-				}
 			}
 
 			&.project-name {
@@ -244,10 +239,6 @@
 
 				@media only screen and (max-width: 768px) {
 					font-size: 18px;
-				}
-
-				@media only screen and (min-width: 1200px) {
-					font-size: 24px;
 				}
 			}
 		}
@@ -380,29 +371,29 @@
 		display: block;
 	}
 
-	#actualites_arrows {
-		display: flex;
-		justify-content: space-between;
-	}
+	// #actualites_arrows {
+	// 	display: flex;
+	// 	justify-content: space-between;
+	// }
 
-	#actualites_arrows > a {
-		margin: auto;
-		font-size: 1.7vw;
-		line-height: 1em;
-		font-family: Helvetica-light;
-	}
+	// #actualites_arrows > a {
+	// 	margin: auto;
+	// 	font-size: 1.7vw;
+	// 	line-height: 1em;
+	// 	font-family: Helvetica-light;
+	// }
 
-	#actualites_arrows > a:nth-child(1) {
-		margin-left: 0;
-	}
+	// #actualites_arrows > a:nth-child(1) {
+	// 	margin-left: 0;
+	// }
 
-	#actualites_arrows > a:nth-child(2) {
-		margin-right: 0;
-	}
+	// #actualites_arrows > a:nth-child(2) {
+	// 	margin-right: 0;
+	// }
 
-	#actualites_arrows > a > img {
-		width: 2vw;
-	}
+	// #actualites_arrows > a > img {
+	// 	width: 2vw;
+	// }
 
 	#savoir {
 		margin: auto;
@@ -702,15 +693,18 @@
 
 	@media only screen and (min-width: 1200px) {
 		.d-large {
-			width: 1200px;
+			width: 1200px !important;
 			margin-left: auto;
 			margin-right: auto;
 		}
+		
+		hr {
+			margin: 13.3px auto;
+			width: 1045px;
+		}
 
 		#une_histoire {
-			width: 1200px;
-			height: auto;
-			min-height: 39vw;
+			min-height: 468px;
 		}
 
 		#une_histoire > div {
@@ -733,9 +727,24 @@
 			font-size: 18px;
 		}
 
+		#actualites {
+			padding-top: 96px;
+			padding-left: 46.6px;
+			padding-right: 46.6px;
+		}
+
+		.actualites_img {
+			width: 305px;
+			height: 400px;
+		}
+
+		#actualites > div > p {
+			width: 305px;
+		}
+
 		#actualites > div > p > span {
 			font-size: 20px;
-			margin-bottom: 0.98vw;
+			margin-bottom: 12px;
 			display: block;
 		}
 
@@ -743,9 +752,87 @@
 			font-size: 12px;
 		}
 
-		.projets-text {
-			font-size: 15px !important;
-			margin-top: 13.08px;
+		#savoir {
+			margin-top: 130px;
+			width: 1044px;
+			height: 588px;
+			div {
+				&:first-child {
+					width: 1044px;
+					height: 588px;
+				}
+				&:last-child {
+					width: 1044px;
+					height: 588px;
+					margin: auto !important;
+				}
+			}
+			video {
+				width: 1044px;
+				height: 588px;
+			}
+		}
+
+		#projets {
+			margin-top: 85.5px;
+			margin-bottom: 96px;
+		}
+	
+		#projets > div {
+			margin-bottom: 25px;
+		}
+	
+		#projets > div > div > div > img {
+			height: 420px;
+		}
+	
+		#projets > div > div > div > h2 {
+			width: 666px;
+		}
+	
+		#carousel-projets {
+			width: 885.6px;
+			margin-bottom: 60px;
+		}
+	
+		#carousel-projets > a {
+			width: 37.2px;
+			min-width: 20px;
+			padding-top: 20%;
+		}
+
+		.carousel-arrows-projets {
+			height: 24px;
+			width: 12px;
+			margin-top: -132px;
+		}
+
+		.carousel-project {
+			> div > img {
+				width: 712px;
+			}
+
+			> h2 {
+				&.project-city {
+					font-size: 13.2px;
+				}
+	
+				&.project-name {
+					font-size: 24px;
+					width: 712px;
+					margin-bottom: 6.5px;
+				}
+			}
+
+			.projets-text {
+				font-size: 15px !important;
+				margin-top: 13.1px;
+				width: 712px;
+			}
+		}
+
+		.slide-image-projects {
+			width: 708px;
 		}
 	}
 }
