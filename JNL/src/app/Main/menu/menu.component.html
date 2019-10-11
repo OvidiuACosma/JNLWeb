@@ -54,7 +54,7 @@
           <span (click)="signOut()">Sign Out</span>
         </div>
 
-        <div>
+        <div class="hide-mobile">
             <a href="https://www.instagram.com/jnl_design/" target="_blank" rel="noreferrer">
                 <img alt="JNL Collection Instagram"
                 src="assets/Images/Menu/MN_InstagramIcon_White.png" height="30vh">
@@ -70,7 +70,7 @@
             <br>
         </div>
 
-        <div id="side_bottom_line">
+        <div class="hide-mobile">
             <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>
             <a (click)="NavigateTo('extras/gdpr')">{{text.politique}}</a><br>
             <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>

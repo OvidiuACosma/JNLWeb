@@ -1,5 +1,4 @@
 <div class="contact-div">
-  <div>
     <form class="contact-form" [formGroup]="requestForm" (ngSubmit)="onSubmit()">
       <br>
       <div class="a-left" *ngIf="requestType === 4 || requestType === 5">
@@ -36,5 +35,4 @@
       <br>
       <button type="submit" [disabled]="!isFormValid()">{{text.send}}</button>
     </form>
-  </div>
 </div>

@@ -2,11 +2,11 @@
 	text-align: center;
 	padding-top: 5.9vw;
 
-	.logo_marque {
+	.logo-marque {
 		margin-bottom: 20px;
 
 		@media only screen and (max-width: 768px) {
-			width: 60vw;
+			width: 28vw;
 		}
 	}
 
@@ -21,10 +21,6 @@
 		font-family: Helvetica-Light;
 		font-size: 1.2vw;
 		margin-bottom: 5.5vw;
-	}
-
-	.marques_selected {
-		text-decoration: underline !important;
 	}
 
 	.marques-gold,
@@ -84,7 +80,7 @@
 
       h2 {
 		font-size: 3.5vw;
-		@media only screen and (min-width: 1200px) { 
+		@media only screen and (min-width: 1200px) {
 				font-size: 42px;
 			}
       }
@@ -226,9 +222,9 @@
 				border-bottom: 1px solid transparent;
 				transition: all 0.5s ease;
 
-				@media only screen and (max-width: 768px) {
-					font-size: 13px;
-				}
+				// @media only screen and (max-width: 768px) {
+				// 	font-size: 11px;
+				// }
 
 				@media only screen and (min-width: 1200px) {
 					font-size: 18px;
@@ -262,7 +258,7 @@
 	}
 }
 
-.brand_content_cols2 {
+.brand-content-cols2 {
 	width: 80.12vw;
 	margin: auto;
 	margin-bottom: 6.24vw;
@@ -386,7 +382,7 @@
 	}
 }
 
-.other_brands {
+.other-brands {
   padding: 0;
 
   h4 {
@@ -397,7 +393,7 @@
     text-transform: uppercase;
   }
 
-	.other_brands_title {
+	.other-brands-title {
 		text-align: center;
 		text-transform: uppercase;
 		margin-bottom: 15px;
@@ -411,7 +407,7 @@
 		}
 	}
 
-	.other_brands_links {
+	.other-brands-links {
 		width: 83vw;
 		height: 6vw;
     	margin: auto auto 5.48vw;
@@ -437,7 +433,7 @@
 
 			@media only screen and (max-width: 768px) {
 				font-size: 12px;
-				line-height: 15px;
+				// line-height: 15px;
 			}
 
 			@media only screen and (min-width: 1200px) {
@@ -448,7 +444,7 @@
 	}
 }
 
-.other_links {
+.other-links {
 	width: 83vw;
 	margin: auto;
 	margin-bottom: 4.83vw;

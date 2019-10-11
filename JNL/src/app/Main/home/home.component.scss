@@ -204,7 +204,8 @@
 		@media only screen and (max-width: 768px) {
 			padding-top: 0;
 			width: 100% !important;
-			text-align: center;
+      text-align: center;
+      font-size: 10px;
 		}
 
 		> p {
@@ -287,6 +288,11 @@
         line-height: 2vw;
         margin-bottom: 3.68vw;
         font-family: Helvetica-Light;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 10px;
+          line-height: 16px;
+        }
       }
     }
 	}
@@ -358,7 +364,7 @@
 		object-fit: cover;
 	}
 
-	.more_links {
+	.more-links {
 		font-family: Helvetica-Light;
 		font-style: italic;
 		text-transform: uppercase;
@@ -621,8 +627,8 @@
 			width: 87.13vw;
 		}
 
-		.more_links {
-			font-size: 15px;
+		.more-links {
+			font-size: 12px;
 		}
 
 		#projets {
@@ -733,7 +739,7 @@
 			display: block;
 		}
 
-		.more_links {
+		.more-links {
 			font-size: 12px;
 		}
 

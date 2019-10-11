@@ -9,8 +9,7 @@
   }
 
 	h2 {
-    // margin-bottom: 0;
-    font-size: 3vw;
+    font-size: 3.5vw;
 	}
 
 	h3 {
@@ -148,9 +147,10 @@
 					height: auto;
 					width: 80vw;
 					padding-right: 0 !important;
-					padding-top: 5vw;
 					padding-bottom: 5vw;
-					font-family: Helvetica-Light;
+          font-family: Helvetica-Light;
+          font-size: 11px;
+          line-height: 16px;
 				}
 			}
 
@@ -179,14 +179,19 @@
 
 	#impg2 {
 		margin-top: 4.65vw;
-		width: 77.22vw;
-	}
+    width: 77.22vw;
 
-	#impg2 > div > p {
-		padding-right: 0;
-		padding-left: 7.14vw;
-		font-size: 1.41vw; 
-		line-height: 2.05vw;
+    > div > p {
+      padding-right: 0;
+      padding-left: 7.14vw;
+      font-size: 1.41vw;
+      line-height: 2.05vw;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 11px;
+        line-height: 16px;
+      }
+    }
 	}
 
 	.group-img {
@@ -219,7 +224,16 @@
 			flex-direction: row;
 			align-content: center;
 			justify-content: space-between;
-			text-align: center;
+      text-align: center;
+
+      @media only screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+        text-align: center;
+        width: 70vw;
+      }
 
 			> div {
 				margin: 0;
@@ -227,11 +241,16 @@
 				width: 28.79vw;
 				font-family: Helvetica-Light;
 				font-size: 1.4vw;
-				text-align: center;
+        text-align: center;
+
+        @media only screen and (max-width: 768px) {
+          width: 70vw;
+          margin: 15px auto;
+        }
 
 				> h3 {
 					font-family: Helvetica;
-					font-size: 1.2vw;
+					font-size: 10px;
 					width: auto;
 					margin: auto;
 					margin-top: 0.8vw;
@@ -239,11 +258,11 @@
 				}
 
 				> h4 {
-					font-family: Helvetica;
 					width: auto;
 					margin: auto;
 					margin-top: 2.2vw;
-					margin-bottom: 1vw;
+          margin-bottom: 1vw;
+          font-family: Helvetica;
 				}
 
 				> p {
@@ -251,7 +270,11 @@
 					font-family: Helvetica-Light;
 					font-size: 1.1vw;
 					line-height: 1.6vw;
-					text-align: justify;
+          text-align: justify;
+          @media only screen AND (max-width: 768px) {
+            font-size: 10px;
+            line-height: 16px;
+          }
 				}
 
 				> img {
@@ -270,11 +293,55 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: space-between;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 768px) {
+      width: 70vw;
+    }
 
 		> div {
 			display: flex;
-			flex-wrap: nowrap;
+      flex-wrap: nowrap;
+
+      @media only screen and (max-width: 768px) {
+        width: auto;
+      }
+
+      > div {
+        display: inline-block;
+        margin-bottom: 2vw;
+
+        @media only screen and (max-width: 768px) {
+          margin-bottom: 5vw;
+        }
+
+        > p {
+          font-family: Helvetica-light;
+          font-size: 1.1vw;
+          line-height: 1.3vw;
+          padding-left: 1vw;
+          padding-right: 1vw;
+          margin-bottom: 0.5vw;
+          width: 11vw;
+
+          @media only screen and (max-width: 768px) {
+            width: auto;
+            font-size: 11px;
+            line-height: 14px;
+          }
+        }
+
+        > img {
+          max-width: 18vw;
+          max-height: 18vw;
+          object-fit: contain;
+
+          @media only screen and (max-width: 768px) {
+            max-height: 50vw;
+            max-width: 50vw;
+          }
+        }
+      }
 		}
 	}
 
@@ -288,33 +355,12 @@
 		text-align: left;
 	}
 
-	.staff > div > div {
-		display: inline-block;
-		margin-bottom: 2vw;
-	}
-
-	.staff > div > div > p {
-		font-family: Helvetica-light;
-		font-size: 1.1vw;
-		line-height: 1.3vw;
-		padding-left: 1vw;
-		padding-right: 1vw;
-		margin-bottom: 0.5vw;
-		width: 11vw;
-	}
-
 	.p-left {
 		text-align: left;
 	}
 
 	.p-right {
 		text-align: right;
-	}
-
-	.staff > div > div > img {
-		max-width: 18vw;
-		max-height: 18vw;
-		object-fit: contain;
 	}
 
 	#engagement {
@@ -326,7 +372,13 @@
 		display: flex;
 		flex-direction: column !important;
 		margin-top: 8.7vw;
-	}
+  }
+
+  .modal-content {
+    @media only screen and (max-width: 768px) {
+      height: 50vw;
+    }
+  }
 
 	.equipe-card {
 		width: 62.78vw;
@@ -485,7 +537,11 @@
 	#engagement h3,
 	#projets h3,
 	#archives h3 {
-		font-size: 1.4vw;
+    font-size: 1.4vw;
+    @media only screen and (max-width: 768px) {
+      font-size: 13px;
+      line-height: 18px;
+    }
 	}
 
 	#histoire h4,
@@ -494,7 +550,11 @@
 	#projets h4,
 	#archives h4 {
 		font-size: 1.8vw;
-		line-height: 2vw;
+    line-height: 2vw;
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
 	}
 
 	#projets {
@@ -511,9 +571,13 @@
 	}
 
 	#histoire > h4 {
-    	font-size: 1.4vw;
+    font-size: 1.4vw;
 		margin-top: 2.74vw;
-		width: 60.84vw;
+    width: 60.84vw;
+    @media only screen and (max-width: 768px) {
+      font-size: 11px;
+      line-height: 16px;
+    }
 	}
 
 	#projets > p {
@@ -532,10 +596,6 @@
 		padding-bottom: 0;
 		padding-top: 0;
 	}
-
-	// .carousel-group {
-	// 	width: 100%;
-	// }
 
 	#carousel-custom {
 		margin-top: 10vw;
@@ -574,7 +634,10 @@
 
 	.slide-image-archive {
 		width: 55.5vw;
-		object-fit: cover;
+    object-fit: cover;
+    @media only screen and (max-width: 768px) {
+      width: 70vw;
+    }
 	}
 
 	.slide-image-projects {
@@ -688,25 +751,6 @@
 		padding: 0;
 	}
 
-	// #carousel-projets .container {
-	// 	flex-direction: column;
-	// }
-
-	// #carousel-projets > div > div > div > h2 {
-  //   margin-top: 0 !important;
-  //   margin-bottom: .8vw;
-	// 	font-size: 1.1vw;
-	// }
-
-	// #carousel-projets > div > div > div > h4 {
-	// 	width: 60%;
-	// 	padding-bottom: 0;
-	// }
-
-	// #carousel-projets > div > div > div > div > .slide-image {
-	// 	max-width: 60%;
-	// }
-
 	#carousel-projets {
 		width: 73.8vw;
 		height: auto;
@@ -750,25 +794,6 @@
 			height: auto;
 		}
 	}
-
-	// .container3 {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// }
-
-	// .container3 > h2 {
-	// 	font-size: 15px;
-	// }
-
-	// .container3 > h2:first-child {
-	// 	text-transform: uppercase;
-	// 	font-size: 15px;
-	// 	margin-top: 15px;
-	// }
-
-	// .container3 > .carousel-item-image > img {
-	// 	width: 59.3vw;
-  // }
 
   .carousel-project {
 		display: flex;
@@ -868,36 +893,6 @@
 			text-align: center !important;
 		}
 
-		.staff > div {
-			width: auto;
-		}
-
-		.staff > div > div {
-			margin-bottom: 5vw;
-		}
-
-		.staff > div > div > p {
-			width: auto;
-		}
-
-		.staff > div > div > img {
-			max-height: 38vw;
-			max-width: 38vw;
-		}
-
-		#equipe > div > div {
-			width: 70vw;
-			margin: 15px auto;
-		}
-
-		#equipe > div {
-			display: flex;
-			flex-direction: column;
-			align-content: center;
-			justify-content: space-between;
-			text-align: center;
-		}
-
 		#projets > p {
 			font-family: Helvetica-Light;
 			width: 90vw;
@@ -920,10 +915,6 @@
 			text-align: center;
 		}
 
-		// .carousel-group {
-		// 	height: auto;
-		// }
-
 		.group-text {
 			text-align: center !important;
 			width: 70vw;
@@ -932,10 +923,6 @@
 
 		.group-img {
 			width: 70vw !important;
-		}
-
-		#equipe > div {
-			width: 70vw;
 		}
 
 		.slide-image {
@@ -995,8 +982,8 @@
 						margin-bottom: 26.4px;
 					}
 					 p {
-						font-size: 13.2px;
-						line-height: 19.2px;
+						font-size: 10px;
+						line-height: 16px;
 					 }
 				}
 			}
@@ -1014,7 +1001,7 @@
 
 		#impg2 > div > p {
 			padding-left: 86px;
-			font-size: 17px; 
+			font-size: 17px;
 			line-height: 24.6px;
 		}
 

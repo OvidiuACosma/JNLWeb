@@ -1,5 +1,5 @@
 <div class="marque-main" *ngIf="text">
-  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png" class="logo_marque">
+  <img src="assets/Images/Marque/MK_logo_{{marque | uppercase}}.png" class="logo-marque">
 
   <img class="full-image" alt="{{altText[marque]['img0']['alt'][language]}}"
     src="assets/Images/Marque/{{altText[marque]['img0']['src']}}">
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="brand_content_cols2">
+    <div class="brand-content-cols2">
       <div>
         <img alt="{{altText[marque]['img1']['alt'][language]}}"
           src="assets/Images/Marque/{{altText[marque]['img1']['src']}}">
@@ -76,17 +76,17 @@
       </div>
     </div>
 
-    <div class="other_brands">
-      <h4 class="other_brands_title">{{textG.autres}}</h4>
+    <div class="other-brands">
+      <h4 class="other-brands-title">{{textG.autres}}</h4>
 
-      <div class="other_brands_links" *ngIf="othersLink">
+      <div class="other-brands-links" *ngIf="othersLink">
         <button *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
           {{othersText[getOthers(i)] | uppercase}}
         </button>
       </div>
     </div>
 
-    <div class="other_links">
+    <div class="other-links">
       <div (click)="navigateTo('jnlGroup')">
         <img alt="{{altText[marque]['img3']['alt'][language]}}"
           src="assets/Images/Marque/{{altText[marque]['img3']['src']}}">

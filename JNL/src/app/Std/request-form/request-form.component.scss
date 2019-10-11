@@ -26,7 +26,15 @@
 		outline: none;
 		font-size: 1.44vw;
 		border-radius: 0;
-	}
+  }
+
+  small {
+    @media only screen and (max-width: 768px) {
+      font-size: 8px;
+      line-height: 14px;
+      vertical-align: middle;
+    }
+  }
 
 	select {
 		margin: auto;
@@ -88,13 +96,14 @@
 
 	> button {
 		text-transform: uppercase;
-		margin: auto;
+    margin: auto;
+    margin-top: 3vw;
+		margin-bottom: 4vw;
 		background-color: white;
 		color: black;
-		margin-top: 3vw;
-		margin-bottom: 4vw;
-    	border: none;
-    	width: 15vw;
+
+    border: none;
+    width: 15vw;
 		font-size: 1.2vw;
 		transition: all 0.3s ease-out;
 
@@ -119,10 +128,8 @@
 
 	@media only screen and (max-width: 768px) {
 		> p {
-			font-size: 4.4vw;
-			padding-left: 10px;
-			padding-right: 10px;
-			width: 100%;
+      width: 90vw;
+      height: 20px;
 		}
 
 		input,
@@ -137,18 +144,15 @@
 			width: initial !important;
 		}
 
-		font-size: 4.2vw;
-
-		> p {
-			font-size: 4.2vw;
-		}
-
 		> div {
 			width: initial;
 		}
 
 		> button {
-			margin-top: 0;
+      margin-top: 3vw;
+      margin-bottom: 7vw;
+      font-size: 12px;
+      width: 20vw;
 		}
 
 		> input {

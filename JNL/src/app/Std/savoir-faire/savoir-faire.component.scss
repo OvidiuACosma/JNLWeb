@@ -50,10 +50,6 @@
 		background: #ececec;
 	}
 
-	.marques_selected {
-		text-decoration: underline !important;
-	}
-
 	.marques-image {
 		width: 76%;
 
@@ -74,7 +70,10 @@
 		left: 0;
 		/* width: calc(100vw - 77px); */
 		width: 100%;
-		height: auto;
+    height: auto;
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+    }
 	}
 
 	#atelier > h3,
@@ -131,33 +130,32 @@
 	}
 
 	#af1 {
-		margin-top: 8.76vw;
+    margin-top: 8.76vw;
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+    }
 	}
 
 	#af1 > div,
 	#af2 > div {
-		margin-top: 0;
+    margin-top: 0;
 	}
 
 	#af1 > div > img {
 		width: 31.7vw;
-		height: auto;
+    height: auto;
+    margin-bottom: 4vw;
 	}
 
 	#af2 {
-		margin-top: 6.85vw;
+    margin-top: 6.85vw;
+    @media only screen and (max-width: 768px) {
+      margin-top: 4vw;
+    }
 	}
 
 	#af2 > div > div {
 		margin-bottom: 0;
-	}
-
-	.gallery-flex {
-		width: 81.9%;
-		margin: auto;
-		display: flex;
-		flex-direction: column !important;
-		margin-top: 5.3vw;
 	}
 
 	.carousel-inner {
@@ -165,7 +163,12 @@
 		height: 30vw;
 		margin: 0 !important;
 		display: flex;
-		flex-direction: row;
+    flex-direction: row;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      height: 56vw;
+    }
 	}
 
 	.slide-image {
@@ -196,7 +199,16 @@
 		display: flex;
 		flex-direction: column;
 		align-content: center;
-		justify-content: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 2vw !important;
+      width: 80vw;
+			height: 23vw;
+			position: relative;
+      top: 0;
+      font-size: 13px;
+    }
 
 		> div {
 			margin: auto;
@@ -204,9 +216,13 @@
 			> span {
 				font-family: Helvetica-Light;
 				font-size: 1.8vw;
-				text-transform: uppercase;
+        text-transform: uppercase;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 16px;
+        }
 			}
-		}
+    }
 	}
 
 	.equipe-card > div > h4 {
@@ -313,7 +329,11 @@
 		width: 81.86vw;
 		margin: auto;
 		display: flex;
-		flex-direction: column !important;
+    flex-direction: column !important;
+
+    @media only screen and (max-width: 768px) {
+      height: 67vw;
+    }
 	}
 
 	.carousel-control-prev,
@@ -422,7 +442,7 @@
 
 		#atelier > h3,
 		#fabrication h3 {
-			font-size: 16px;
+			font-size: 14px;
 		}
 
 		#atelier > h4 {
@@ -434,29 +454,32 @@
 
 		.ateliers-flex {
 			flex-direction: column;
-			width: 80vw;
-		}
+      width: 80vw;
 
-		.ateliers-flex > div {
-			width: 80vw;
-			flex-direction: column;
-		}
+      > div {
+        width: 80vw;
+        flex-direction: column;
 
-		.ateliers-flex > div > div > img {
-			width: 80vw;
+        > div {
+          font-size: 13px;
+          text-align: center !important;
+
+          > span {
+              font-size: 16px;
+            }
+
+          > img {
+            width: 80vw;
+            margin-bottom: 4vw !important;
+          }
+        }
+      }
 		}
 
 		.container {
 			flex-direction: column;
 			height: 141.7vw !important;
 			width: 80vw;
-		}
-
-		.steps-text {
-			width: 80vw;
-			height: 85vw;
-			position: relative;
-			top: 0;
 		}
 
 		.slide-image {
@@ -473,15 +496,6 @@
 			line-height: 20px;
 		}
 
-		.carousel-inner {
-			flex-direction: column;
-			height: 180vw;
-		}
-
-		.carousel-marques {
-			height: 138.7vw;
-		}
-
 		h3 {
 			width: 90vw;
 			margin: auto;
@@ -491,29 +505,8 @@
 			font-size: 4.7vw;
 		}
 
-		.ateliers-flex > div > div {
-			font-size: 13px;
-			text-align: center !important;
-		}
-
-		.ateliers-flex > div > div > span {
-			font-size: 16px;
-		}
-
-		.ateliers-flex > div:nth-child(2) > div:first-child {
-			font-size: 13px;
-		}
-
 		#af1 > div > img {
 			width: 80vw;
-		}
-
-		.steps-text {
-			font-size: 13px;
-		}
-
-		.steps-text > div > span {
-			font-size: 16px;
 		}
 
 		.container {
@@ -558,7 +551,7 @@
 			margin-bottom: 12px;
 			font-size: 15.6px;
 		}
-		
+
 		#fabrication {
 			h2 {
 				font-size: 42px;
@@ -571,11 +564,11 @@
 
 		.steps-text {
 			font-size: 16.8px;
-		}
 
-		.steps-text > div > span {
-			font-size: 21.6px;
-		}
+      > div > span {
+        font-size: 21.6px;
+      }
+    }
 
 		#services {
 			h4 {
