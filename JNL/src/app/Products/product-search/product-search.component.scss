@@ -531,19 +531,19 @@
 			// width: 100%;
 			margin: auto;
 			margin-bottom: 0;
-      vertical-align: middle;
-      display: flex;
+      		vertical-align: middle;
+      		display: flex;
 			overflow: visible;
 
 			.search-img {
 				// width: 100%;
-        max-width: 19vw;
-        max-height: 19vw;
-        padding: 0;
-        vertical-align: middle;
-        margin: auto;
-        object-fit: contain;
-        transition: .5s;
+        		max-width: 19vw;
+        		max-height: 19vw;
+        		padding: 0;
+        		vertical-align: middle;
+        		margin: auto;
+        		object-fit: contain;
+        		transition: .5s;
 
 				&:hover {
 					transform: scale(1.3);
@@ -603,9 +603,40 @@
 }
 
 @media only screen and (min-width: 1200px) {
+	.d-large {
+		width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.search-main {
+		padding-top: 70.8px;
+	
+		.products {
+			width: 876px;
+		}
+
+		.content {
+			width: 1188px;
+			padding-top: 36px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.search {
+			width: 288px;
+			padding-left: 0px;
+			padding-right: 12px;
+			margin-right: 48px;
+			height: 100%;
+		}
+
 		.header-filter, .reset-filter {
 			font-size: 16.8px;
+		}
+
+		.search-by-text {
+			margin-left: 18px;
+			margin-right: 18px;
 		}
 
 		.search-textbox {
@@ -633,6 +664,16 @@
 			}
 		}
 
+		.filters {
+			margin-top: 12px;
+		}
+
+		.filters > ul > li {
+			width: 204px;
+			margin-left: 18px;
+			margin-right: 18px;
+		}
+
 		.subfilters {
 			line-height: 22px;
 	
@@ -640,6 +681,17 @@
 				width: 204px;
 				margin: auto 18px auto 12px;
 			}
+		}
+
+		.flex-div {
+			padding-top: 26.4px;
+		}
+	
+		.flex-div > li {
+			width: 240px;
+			margin-left: 18px;
+			margin-right: 18px;
+			margin-bottom: 66px;
 		}
 
 		.prod-name {
@@ -653,15 +705,33 @@
 			line-height: 25.2px;
 			margin-top: 12px;
 		}
-	}
 
-	.card-product {
-		.product-name {
-			max-width: 233.5px;
-			line-height: 19.2px;
-			> span > i {
-				padding-right: 7.2px;
-				font-size: 12px;
+		.card-product {
+			width: 252px;
+			.pic-frame {
+    			width: 252px;
+				height: 240px;
+			}
+			figure.center-product {
+				.search-img {
+					max-width: 228px;
+					max-height: 228px;
+				}
+			}
+			.product-name {
+				max-width: 233.5px;
+				min-height: 18px;
+				line-height: 19.2px;
+				> span > i {
+					padding-right: 7.2px;
+					font-size: 12px;
+				}
+				.product-name-text {
+					font-size: 14.4px;
+				}
+				.product-brand-text {
+					  font-size: 12px;
+				}
 			}
 		}
 	}
