@@ -427,7 +427,7 @@
 		button {
       margin: auto;
 			padding: 0;
-			width: 41vw !important;
+			width: 27vw !important;
 			font-family: Helvetica-Light;
 			font-size: 1.8vw;
       line-height: 5vw;
@@ -437,7 +437,8 @@
       background-color: #d3d3d3 !important;
 
 			@media only screen and (max-width: 768px) {
-				font-size: 11px;
+        font-size: 11px;
+        min-height: 38px;
 			}
 
 			@media only screen and (min-width: 1200px) {
