@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, DownloaderService } from '../../_services';
 import * as _ from 'lodash';
-import * as FileSaver from 'file-saver';
+// import * as FileSaver from 'file-saver';
+
+interface ICatalog {
+  brand: string;
+  catalogLink: string;
+}
 
 @Component({
   selector: 'app-marque',
@@ -16,6 +21,7 @@ export class MarqueComponent implements OnInit {
   textG: any;
   collectionsText = ['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio'];
   collectionsLink = ['jnl', 'vanhamme', 'ungaro', 'studio'];
+  catalogs: ICatalog[] = [];
   othersText: string[];
   othersLink: string[];
   i: number;
@@ -52,6 +58,7 @@ export class MarqueComponent implements OnInit {
       this.getText(lang);
       this.getAlt(this.page);
     });
+    this.getCatalogLinks();
   }
 
   getText(lang: string) {
@@ -77,6 +84,17 @@ export class MarqueComponent implements OnInit {
 
   getAltText(res: any, page: string): any {
     return res[page];
+  }
+
+  getCatalogLinks() {
+    this.catalogs.push({ brand: 'JNL Collection',
+                  catalogLink: 'https://drive.google.com/file/d/17VZXNGcpKvwN4Ts-VMMC1a8u9zsL1yJ2/view?usp=sharing' });
+    this.catalogs.push({ brand: 'Vanhamme',
+                  catalogLink: 'https://drive.google.com/file/d/1qN1_--FtTb1TZnMKEdyt1p8VlfOmv3nU/view?usp=sharing' });
+    this.catalogs.push({ brand: 'Emanuel Ungaro Home',
+                  catalogLink: 'https://drive.google.com/file/d/1Es70xbDoKdyuElATLMeaWNJFl4hVH_4K/view?usp=sharing' });
+    this.catalogs.push({ brand: 'JNL Studio',
+                  catalogLink: 'https://drive.google.com/file/d/1LRv-rBMCxl_MKshUrfI9LkBjVcR9Mcxd/view?usp=sharing' });
   }
 
   getIndicatorsText(): string[] {
@@ -124,15 +142,24 @@ export class MarqueComponent implements OnInit {
 
   download(marque: string, type: string) {
     // NOT WORKING FOR IE
-    this.downloader.getFile(marque, type).subscribe(data => {
-      this.blob = new Blob([data], {
-        type: 'application/pdf'
-      });
-      const fileName = marque[0].toUpperCase() + marque.slice(1) + ' ' + type[0].toUpperCase() + type.slice(1) + '.pdf';
-      FileSaver.saveAs(this.blob, fileName);
+    // this.downloader.getFile(marque, type).subscribe(data => {
+    //   this.blob = new Blob([data], {
+    //     type: 'application/pdf'
+    //   });
+    //   const fileName = marque[0].toUpperCase() + marque.slice(1) + ' ' + type[0].toUpperCase() + type.slice(1) + '.pdf';
+    //   FileSaver.saveAs(this.blob, fileName);
+    // });
       // this.url = window.URL.createObjectURL(this.blob);
       // window.open(this.url, '_blank');
-    });
+
+      marque = this.collectionsText[this.collectionsLink.indexOf(marque)];
+      const catalogUrl = this.catalogs.find(f => f.brand === marque).catalogLink;
+      const a = document.createElement('a');
+      a.href = catalogUrl;
+      a.target = '_blank';
+      a.rel = 'noreferrer';
+      a.setAttribute('visibility', 'hidden');
+      a.click();
   }
 
   goAllProductsOfBrand(marque: string) {

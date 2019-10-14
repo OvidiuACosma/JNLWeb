@@ -40,6 +40,7 @@ export class ProductDescriptionComponent implements OnInit {
 
         this.productsService.getProductDesc(this.product)
           .subscribe(desc => {
+            // TODO: map productDesc by language
             this.productDesc = desc.sort(function (a, b) {
               if (a.orderIndex > b.orderIndex) { return -1; }
               if (a.orderIndex < b.orderIndex) { return 1; }
@@ -47,7 +48,6 @@ export class ProductDescriptionComponent implements OnInit {
             });
             this.getParts();
           });
-
       });
   }
 

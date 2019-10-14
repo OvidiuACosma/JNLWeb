@@ -80,7 +80,7 @@
       <h4 class="other-brands-title">{{textG.autres}}</h4>
 
       <div class="other-brands-links" *ngIf="othersLink">
-        <button *ngFor="let i of [0, 1]" (click)="navigateToMarque(othersLink[getOthers(i)])">
+        <button *ngFor="let i of [0, 1, 2]" (click)="navigateToMarque(othersLink[getOthers(i)])">
           {{othersText[getOthers(i)] | uppercase}}
         </button>
       </div>
