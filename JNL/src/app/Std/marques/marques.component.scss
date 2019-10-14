@@ -72,10 +72,46 @@
 			font-size: 4.7vw;
 		}
 	}
+}
 
-	@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
+	.d-large {
+		width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.les-marques-main {
+		padding-top: 70.8px;
+		margin-bottom: 72px;
+		
 		h3 {
 			font-size: 16.6px;
+			margin-top: 9.6px;
+			margin-bottom: 14.4px;
+		}
+
+		.submenu {
+			width: 685px;
+		}
+
+		.marques-image {
+			width: 914px;
+			margin-bottom: 48px;
+		}
+
+		#jnl,
+		#vanhamme,
+		#ungaro,
+		#studio {
+			padding-top: 14.4px;
+		}
+
+		#jnl > a > img,
+		#vanhamme > a > img,
+		#ungaro > a > img,
+		#studio > a > img {
+		width: 240px;
 		}
 	}
 }

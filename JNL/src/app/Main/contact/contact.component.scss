@@ -24,3 +24,22 @@
 	}
 }
 
+@media only screen and (min-width: 1200px) {
+  .d-large {
+    width: 1200px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-div {
+    padding-top: 70.8px;
+    font-size: 16.8px;
+    margin-bottom: 72px;
+  
+    > p {
+      padding-left: 0;
+      padding-right: 0;
+      font-size: 19.2px;
+    }
+  }
+}

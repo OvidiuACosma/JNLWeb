@@ -348,13 +348,33 @@
 	}
 
 	@media only screen and (min-width: 1200px) {
+
+		.image-link {
+			margin-left: 24px;
+			height: 21.4px;
+		}
+
 		#top_buttons {
 			font-size: 13.2px;
 		}
 
 		.magnifier {
 			font-size: 18px !important;
-		// padding-top: .5vw;
+			padding-top: 6px;
+		}
+
+		.menu-button-img {
+			width: 33.4px;
+			height: 33.4px;
+		}
+	
+		.menu-text {
+			font-size: 10.1px;
+			padding: 13.33px 0 0 0;
+		}
+	
+		#menu-logo {
+			padding-left: 66px;
 		}
 	}
 }
