@@ -72,6 +72,12 @@ h6 {
         margin-top: 5px;
         font-size: 11px;
         line-height: 16px;
+
+        @media only screen and (min-width: 577px) and (max-width: 768px) {
+          margin-top: 10px;
+          font-size: 16px;
+          line-height: 20px;
+        }
       }
     }
   }
@@ -81,6 +87,10 @@ h6 {
   width: 14vw;
 
   @media only screen and (max-width: 768px) {
+    width: 180px;
+  }
+
+  @media only screen and (max-width: 576px) {
     width: 90px;
   }
 }
@@ -120,10 +130,13 @@ h6 {
 .modal-content {
   background-color: #f3f5f5;
   text-align: center;
+}
 
-  // @media only screen and (min-width: 769px) {
-  //   min-height: 600px;
-  // }
+.modal-dialog {
+
+  @media only screen and (min-width:577px) and (max-width: 768px) {
+    max-width: 600px;
+  }
 }
 
 .modal-body{
@@ -137,7 +150,7 @@ h6 {
 }
 
 .whiteSpace {
-  width: 99px;
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +160,7 @@ h6 {
   object-fit: contain;
   max-height: 500px;
   height: auto;
-  width: 80%;
+  width: 98%;
   text-align: center;
 }
 

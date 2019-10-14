@@ -1,6 +1,18 @@
 .search-main {
 	margin: auto;
-	padding-top: 5.9vw;
+  padding-top: 5.9vw;
+  // overflow-y: scroll;
+  // -webkit-overflow-scrolling: touch;
+
+  h1 {
+    @media only screen and (max-width: 768px) {
+      font-size: 32px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
 
 	h3 {
 		text-transform: uppercase;
@@ -67,12 +79,12 @@
 	}
 
 	.search {
-		width: 24vw;
+		margin-right: 4vw;
 		padding-left: 2vw;
 		padding-right: 1vw;
-		margin-right: 4vw;
-		height: 100vh;
-		overflow-y: auto;
+    width: 24vw;
+		height: auto;
+		// overflow-y: auto;
 		overflow-x: hidden;
 
 		@media only screen and (max-width: 768px) {
@@ -200,6 +212,10 @@
 
     @media only screen and (max-width: 768px) {
       margin-right: 5px;
+      font-size: 22px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 16px;
     }
 	}
@@ -225,10 +241,9 @@
 			line-height: 16px;
 		}
 
-		// > span > i {
     > span {
-			line-height: 1.4vw;
-			font-size: 14px;
+      font-size: 1.4vw;
+			line-height: 2vw;
 
 			@media only screen and (max-width: 768px) {
 				font-size: 14px;
@@ -238,9 +253,10 @@
 	}
 
 	.products-container {
-			height: 99vh;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
+      // height: 99vh;
+      height: auto;
+      // overflow-y: scroll;
+      // -webkit-overflow-scrolling: touch;
 	}
 
 	.family-container {
@@ -263,6 +279,10 @@
     color: black;
 
     @media only screen and (max-width: 768px) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+    @media only screen and (max-width: 576px) {
       font-size: 14px;
       line-height: 16px;
     }
@@ -307,6 +327,10 @@
 		color: #dbbb76;
 
     @media only screen and (max-width: 768px) {
+      font-size: 26px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 14px;
     }
 	}
@@ -397,10 +421,15 @@
       }
 
       > span {
-        font-size: 14px;
-        line-height: 1.4vw;
+        font-size: 1.4vw;
+        line-height: 2vw;
 
         @media only screen and (max-width: 768px) {
+          font-size: 27px;
+          line-height: 32px;
+        }
+
+        @media only screen and (max-width: 576px) {
           font-size: 14px;
           line-height: 20px;
         }
@@ -462,6 +491,11 @@
 
     @media only screen and (max-width: 768px) {
       margin-bottom: 2vw;
+      font-size: 22px;
+      line-height: 28px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 12px;
       line-height: 16px;
     }
@@ -626,6 +660,11 @@
         }
 
         @media only screen and (max-width: 768px) {
+          max-width: 36vw;
+          max-height: 36vw;
+        }
+
+        @media only screen and (max-width: 576px) {
           max-width: 33vw;
           max-height: 33vw;
         }
@@ -662,6 +701,11 @@
       }
 
       @media only screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      @media only screen and (max-width: 576px) {
         font-size: 12px;
         line-height: 16px;
       }
@@ -684,6 +728,11 @@
       }
 
       @media only screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      @media only screen and (max-width: 576px) {
         font-size: 12px;
         line-height: 16px;
       }
@@ -705,6 +754,11 @@
     }
 
 		@media only screen and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 10px;
       line-height: 15px;
 		}

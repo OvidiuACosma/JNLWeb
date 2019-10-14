@@ -18,6 +18,12 @@ h5 {
   display: block;
 }
 
+.modal-dialog {
+  @media only screen and (min-width: 577px) and (max-width: 768px) {
+    max-width: 600px;
+  }
+}
+
 .arrow {
   display: none;
 }
@@ -27,6 +33,12 @@ h5 {
   font-size: 1.1vw;
 
   @media only screen and (max-width: 768px) {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media only screen and (max-width: 576px) {
     margin-top: 12px;
     font-size: 12px;
     line-height: 16px;
@@ -39,8 +51,15 @@ h5 {
   margin-bottom: .5vw;
 
   @media only screen and (max-width: 768px) {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    margin-top: 8px;
     font-size: 12px;
-    line-height: 22px;
+    line-height: 18px;
   }
 }
 
@@ -69,14 +88,26 @@ h5 {
           padding-right: 0.52vw;
 
           @media only screen and (max-width: 768px) {
-            margin: 2px;
+            margin: 1px;
             height: auto;
+            width: 70px;
+          }
+
+          @media only screen and (max-width: 576px) {
+            margin: 2px;
             width: 60px;
           }
 
         > a {
           > img {
             @media only screen and (max-width: 768px) {
+              object-fit: cover;
+              height: 65px;
+              width: 65px;
+              text-align: left;
+            }
+
+            @media only screen and (max-width: 576px) {
               object-fit: cover;
               height: 55px;
               width: 55px;
@@ -134,7 +165,7 @@ h5 {
 
   .close {
     @media only screen and (max-width: 768px) {
-      padding: 5px;
+      padding: 5px 8px;
     }
   }
 }
@@ -229,6 +260,13 @@ h5 {
     text-align: justify;
 
     @media only screen and (max-width: 768px) {
+      margin-top: 18px;
+      margin-bottom: 44px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @media only screen and (max-width: 576px) {
       margin-top: 15px;
       margin-bottom: 40px;
       font-size: 13px;

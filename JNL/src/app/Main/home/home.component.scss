@@ -204,6 +204,10 @@
 			padding-top: 0;
 			width: 100% !important;
       text-align: center;
+      font-size: 12px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 10px;
 		}
 
@@ -251,6 +255,11 @@
       margin-top: 1.09vw;
 
       @media only screen and (max-width: 768px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      @media only screen and (max-width: 576px) {
         font-size: 11px;
         line-height: 16px;
 			}
@@ -279,6 +288,13 @@
       width: 60.8vw;
       text-align: center;
 
+      > h1 {
+        @media only screen and (min-width: 577px) and (max-width: 768px) {
+          font-size: 22px;
+          line-height: 32px;
+        }
+      }
+
       > p {
         font-size: 1.6vw;
         line-height: 2vw;
@@ -286,6 +302,11 @@
         font-family: Helvetica-Light;
 
         @media only screen and (max-width: 768px) {
+          font-size: 15px;
+          line-height: 23px;
+        }
+
+        @media only screen and (max-width: 576px) {
           font-size: 11px;
           line-height: 16px;
         }
@@ -313,6 +334,11 @@
     > h1 {
       margin: auto;
       margin-top: 1.2vw;
+
+      @media only screen and (min-width: 577px) and (max-width: 768px) {
+        font-size: 22px;
+        line-height: 32px;
+      }
     }
 	}
 
@@ -338,6 +364,13 @@
 		padding-left: 3.88vw;
     padding-right: 3.88vw;
 
+    > h1 {
+      @media only screen and (min-width: 577px) and (max-width: 768px) {
+        font-size: 22px;
+        line-height: 32px;
+      }
+    }
+
     > div {
       display: flex;
       flex-direction: row;
@@ -354,6 +387,11 @@
           font-size: 1.66vw;
           margin-bottom: 0.98vw;
           display: block;
+
+          @media only screen and (min-width: 577px) and (max-width: 768px) {
+            font-size: 14px;
+            line-height: 20px;
+          }
         }
       }
     }
@@ -366,13 +404,18 @@
 	}
 
 	.more-links {
-		font-family: Helvetica-Light;
+    display: block;
+    margin-top: 1.45vw;
+		margin-bottom: 0.25vw;
+    font-family: Helvetica-Light;
+    font-size: 1vw;
 		font-style: italic;
 		text-transform: uppercase;
-		font-size: 1vw;
-		margin-top: 1.45vw;
-		margin-bottom: 0.25vw;
-		display: block;
+
+    @media only screen and (min-width: 577px) and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 22px;
+    }
 	}
 
 	#savoir {
@@ -402,7 +445,12 @@
 			> h1 {
 				margin: auto;
 				margin-bottom: 0;
-				color: white;
+        color: white;
+
+        @media only screen and (min-width: 577px) and (max-width: 768px) {
+          font-size: 22px;
+          line-height: 32px;
+        }
 			}
 
 			> button {
@@ -461,6 +509,13 @@
     > div {
       margin: auto;
       margin-bottom: 2.08vw;
+
+      > h1 {
+        @media only screen and (min-width: 577px) and (max-width: 768px) {
+          font-size: 22px;
+          line-height: 32px;
+        }
+      }
 
       > div {
         > div {
@@ -708,7 +763,7 @@
 		#une_histoire > div > h1 {
 			font-size: 36px;
 			line-height: 49.2px;
-			margin-bottom: 13.2px;
+      margin-bottom: 13.2px;
 		}
 
 		#une_histoire > div > p {
@@ -809,13 +864,23 @@
 
 			> h2 {
 				&.project-city {
-					font-size: 13.2px;
+          font-size: 13.2px;
+
+          @media only screen and (min-width: 577px) and (max-width: 768px) {
+            font-size: 16px;
+            line-height: 22px;
+          }
 				}
 
 				&.project-name {
 					font-size: 24px;
 					width: 712px;
-					margin-bottom: 6.5px;
+          margin-bottom: 6.5px;
+
+          @media only screen and (min-width: 577px) and (max-width: 768px) {
+            font-size: 16px;
+            line-height: 22px;
+          }
 				}
 			}
 

@@ -6,6 +6,10 @@
     font-size: 1.5vw;
 
     @media only screen and (max-width: 768px) {
+      font-size: 22px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 18px;
     }
 	}
@@ -17,6 +21,10 @@
     font-size: 0.9vw;
 
     @media only screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 12px;
     }
 	}
@@ -35,18 +43,22 @@
 	#dialog-header {
 		width: parent;
 		text-align: center;
-		margin-bottom: 1vw;
+    margin-bottom: 1vw;
+
+    @media only screen and (min-width: 577px) and (max-width: 768px) {
+      margin-bottom: 3vw;
+    }
 	}
 
 	.whiteSpace {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 15%;
+		width: 10%;
 	}
 
 	.imgContainer {
-		width: 70%;
+		width: 80%;
 	}
 
 	#dialog-footer {

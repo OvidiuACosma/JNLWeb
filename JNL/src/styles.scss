@@ -153,11 +153,15 @@ h4 {
   border: 1.5px solid $color_gray;
   transition: all .5s ease;
 
-	@media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     padding: 0 3vw;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 3vw;
     border-width: 1.2px;
+  }
+
+	@media only screen and (max-width: 576px) {
+    font-size: 8px;
 	}
 
 	@media only screen and (min-width: 1200px) {
