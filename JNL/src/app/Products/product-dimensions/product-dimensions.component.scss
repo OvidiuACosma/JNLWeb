@@ -9,8 +9,8 @@ h2 {
 }
 
 h5 {
-  padding-top: 6vw;
-  padding-bottom: 8vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
   font-size: 1.68vw;
   font-weight: 100;
   font-family: Helvetica-Light;
@@ -121,9 +121,9 @@ h6 {
   background-color: #f3f5f5;
   text-align: center;
 
-  @media only screen and (min-width: 769px) {
-    min-height: 600px;
-  }
+  // @media only screen and (min-width: 769px) {
+  //   min-height: 600px;
+  // }
 }
 
 .modal-body{
