@@ -131,11 +131,13 @@
     position: static;
     margin: 10px 0 0;
     width: 100%;
-		overflow-x: scroll;
-		-webkit-overflow-scrolling: touch;
 		text-align: center;
-		white-space: nowrap;
+    white-space: nowrap;
 
+    @media only screen and (max-width: 768px) {
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
 	}
 
 	.carousel-thumbnails li {
@@ -193,7 +195,7 @@
 
     @media only screen and (max-width: 768px) {
       margin: 5vw auto 6vw;
-			width: 80vw;
+			// width: 80vw;
     }
 
     @media only screen and (max-width: 576px) {
