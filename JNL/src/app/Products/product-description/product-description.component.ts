@@ -142,7 +142,8 @@ export class ProductDescriptionComponent implements OnInit {
   hasFinitions(part: any, mat: any) {
     const finitions: Finisage[] = this.getFinitions(part, mat);
     if (finitions.length > 0) {
-      if (!(finitions.length === 1 && finitions[0].name.toLowerCase() === 'to define' && finitions[0].material === 'Fabric')) {
+      if (!(finitions.length === 1 && ((finitions[0].name.toLowerCase() === 'to define') ||
+       (finitions[0].name.toLowerCase() === 'a définir')))) {
         return true;
       }
     }
