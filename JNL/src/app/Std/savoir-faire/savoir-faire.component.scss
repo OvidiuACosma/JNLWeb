@@ -94,31 +94,32 @@
 		margin: auto;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
-	}
+    justify-content: space-between;
 
-	.ateliers-flex > div {
-		width: 31.2vw;
-		margin: auto;
-		margin-top: 13.1vw;
-		margin-bottom: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
+    > div {
+      width: 31.2vw;
+      margin: auto;
+      margin-top: 13.1vw;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-	.ateliers-flex > div > div > img {
-		width: 31.2vw;
-		margin: 0 !important;
-	}
+      > div {
+        font-family: Helvetica-Light;
+        font-size: 1.3vw;
 
-	.ateliers-flex > div > div {
-		font-family: Helvetica-Light;
-		font-size: 1.3vw;
-	}
-	.ateliers-flex > div > div > span {
-		font-family: Helvetica-Light;
-		font-size: .97vw;
+        > img {
+          width: 31.2vw;
+          margin: 0 !important;
+        }
+
+        > span {
+          font-family: Helvetica-Light;
+          font-size: .97vw;
+        }
+      }
+    }
 	}
 
 	.ateliers-flex > div:nth-child(2) > div:first-child {
@@ -126,7 +127,12 @@
 		margin-bottom: 2vw;
 		font-family: Helvetica-Light;
 		font-size: 1.3vw;
-		text-align: left;
+    text-align: left;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 10px;
+      line-height: 14px;
+    }
 	}
 
 	#af1 {
@@ -167,7 +173,7 @@
 
     @media only screen and (max-width: 768px) {
       flex-direction: column;
-      height: 56vw;
+      height: auto;
     }
 	}
 
@@ -202,24 +208,32 @@
     justify-content: center;
 
     @media only screen and (max-width: 768px) {
+      position: relative;
+      top: 0;
       margin-top: 2vw !important;
       width: 80vw;
-			height: 23vw;
-			position: relative;
-      top: 0;
+      height: auto;
       font-size: 13px;
     }
 
 		> div {
-			margin: auto;
+      margin: auto;
 
-			> span {
+      @media only screen and (max-width: 768px) {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 16px;
+      }
+
+			> p {
+        margin-bottom: 1vw;
+        margin-top: 1vw;
 				font-family: Helvetica-Light;
 				font-size: 1.8vw;
         text-transform: uppercase;
 
         @media only screen and (max-width: 768px) {
-          font-size: 16px;
+          font-size: 13px;
         }
 			}
     }
@@ -294,10 +308,6 @@
 		padding-top: 5.9vw;
 	}
 
-	/* #fabrication {
-		margin-top: 7.39vw;
-	} */
-
 	#fabrication > h4 {
 		margin-top: 3.94vw;
 	}
@@ -332,7 +342,8 @@
     flex-direction: column !important;
 
     @media only screen and (max-width: 768px) {
-      height: 67vw;
+      height: auto;
+      margin-bottom: 10vw;
     }
 	}
 
@@ -413,15 +424,15 @@
 	}
 
 	.container {
-		margin: auto;
+    margin: auto;
+    padding: 0;
 		display: flex;
-		flex-direction: row;
+    flex-direction: row;
+    width: 81.86vw;
+    max-width: 81.86vw;
 		align-content: center;
-		padding: 0;
 		font-family: Helvetica-Light;
 		font-size: 16px;
-		width: 81.86vw;
-		max-width: 81.86vw;
 	}
 
 	.group-text > span {
@@ -442,14 +453,14 @@
 
 		#atelier > h3,
 		#fabrication h3 {
-			font-size: 14px;
+			font-size: 13px;
 		}
 
 		#atelier > h4 {
+      padding-bottom: 16px;
 			width: 90vw;
-			font-size: 13px;
-			line-height: 20px;
-			padding-bottom: 20px;
+			font-size: 12px;
+			line-height: 16px;
 		}
 
 		.ateliers-flex {
@@ -461,11 +472,11 @@
         flex-direction: column;
 
         > div {
-          font-size: 13px;
+          font-size: 12px;
           text-align: center !important;
 
           > span {
-              font-size: 16px;
+              font-size: 13px;
             }
 
           > img {
@@ -478,8 +489,9 @@
 
 		.container {
 			flex-direction: column;
-			height: 141.7vw !important;
-			width: 80vw;
+			// height: 141.7vw !important;
+      width: 80vw;
+      font-size: 11px;
 		}
 
 		.slide-image {
@@ -507,10 +519,6 @@
 
 		#af1 > div > img {
 			width: 80vw;
-		}
-
-		.container {
-			font-size: 3.4vw;
 		}
 
 		.group-text > span {
@@ -541,12 +549,13 @@
 		}
 
 		.ateliers-flex > div > div {
-			font-size: 15.6px;
+      font-size: 15.6px;
+
+      > span {
+        font-size: 11.65px;
+      }
 		}
 
-		.ateliers-flex > div > div > span {
-			font-size: 11.65px;
-		}
 		.ateliers-flex > div:nth-child(2) > div:first-child {
 			margin-bottom: 12px;
 			font-size: 15.6px;
@@ -565,7 +574,7 @@
 		.steps-text {
 			font-size: 16.8px;
 
-      > div > span {
+      > div > p {
         font-size: 21.6px;
       }
     }

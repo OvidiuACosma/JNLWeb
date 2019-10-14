@@ -4,7 +4,11 @@
 	padding-top: 6vw;
 	padding-bottom: 4vw;
 	display: flex;
-	flex-direction: row;
+  flex-direction: row;
+
+  @media only screen and (max-width: 768px) {
+    width: 98%;
+  }
 
 	li,
 	ul {
@@ -27,7 +31,12 @@
 		margin-right: 4vw;
 		height: 94vh;
 		overflow-y: auto;
-		overflow-x: hidden;
+    overflow-x: hidden;
+
+
+    @media only screen and (max-width: 768px) {
+      width: 30vw;
+    }
 	}
 
 	.filters > ul > li {
@@ -37,7 +46,13 @@
 	.products {
 		width: 73vw;
 		height: 94vh;
-		overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+
+    @media only screen and (max-width: 768px) {
+      width: 68vw;
+    }
 	}
 
 	.scroll-container {
@@ -53,19 +68,36 @@
 		flex-direction: column;
 		width: 14.86vw;
 		margin-right: 2vw;
-		align-items: center;
+    align-items: center;
+
+
+    @media only screen and (max-width: 768px) {
+      width: 28vw;
+    }
 	}
 
 	.img-button {
 		width: 14.5vw;
 		height: 7.63vw;
 		max-width: 380px;
-		max-height: 200px;
+    max-height: 200px;
+
+
+    @media only screen and (max-width: 768px) {
+      width: 25vw;
+      height: auto;
+    }
 	}
 
 	.product-name {
 		font-family: Helvetica-Light;
-		font-size: 1.1vw;
+    font-size: 1.1vw;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 10px;
+      font-size: 10px;
+      line-height: 14px;
+    }
 	}
 
 	div > ul > li {
@@ -89,7 +121,12 @@
 		text-transform: uppercase;
 		color: #dbbb76;
 		margin-bottom: 0;
-		float: left;
+    float: left;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
 	}
 
 	.arrow {
@@ -98,7 +135,11 @@
 		float: right;
 		text-align: right;
 		padding-top: 0.2vw;
-		cursor: pointer;
+    cursor: pointer;
+
+    @media only screen and (max-width: 768px) {
+      width: 12px;
+    }
 	}
 
 	.subfilters {
@@ -109,7 +150,11 @@
 			margin: auto;
 			margin-left: 1vw;
 			margin-right: 1.5vw;
-			display: inline-block;
+      display: inline-block;
+
+      @media only screen and (max-width: 768px) {
+        width: 25vw;
+      }
 		}
 	}
 
@@ -117,14 +162,24 @@
 		margin-bottom: 0;
 		font-family: Helvetica-Light;
 		font-size: 1.3vw;
-		line-height: 1.6vw;
+    line-height: 1.6vw;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    > span > i {
+      line-height: 1.4vw;
+      font-size: 1vw;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 11px;
+        line-height: 16px;
+      }
+    }
 	}
 
-	.single-filter > span > i {
-		line-height: 1.4vw;
-		font-size: 1vw;
-	}
-}
 
 @media only screen and (min-width: 1200px) {
 	.wrapper_garnissage {
@@ -139,7 +194,7 @@
 			margin-right: 48px;
 			height:1128px;
 		}
-	
+
 		.products {
 			width: 876px;
 			height: 1128px;
@@ -149,12 +204,12 @@
 			width: 178.3px;
 			margin-right: 24px;
 		}
-	
+
 		.img-button {
 			width: 174px;
 			height: 91.6px;
 		}
-	
+
 		.product-name {
 			font-size: 13.2px;
 		}
@@ -163,34 +218,35 @@
 			margin-top: 20.4px;
 			margin-bottom: 12px;
 		}
-	
+
 		.header-filter {
 			font-size: 16.8px;
 		}
-	
+
 		.arrow {
 			width: 20.4px;
 			padding-top: 2.4px;
 		}
-	
+
 		.subfilters {
 			line-height: 22px;
-	
+
 			> li {
 				width: 204px;
 				margin-left: 12px;
-				margin-right: 18px;
+        margin-right: 18px;
 			}
 		}
-	
+
 		.single-filter {
 			font-size: 15.6px;
 			line-height: 19.2px;
 		}
-	
+
 		.single-filter > span > i {
 			line-height: 16.8px;
 			font-size: 12px;
 		}
 	}
+}
 }

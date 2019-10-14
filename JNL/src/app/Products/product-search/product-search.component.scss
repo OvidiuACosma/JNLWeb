@@ -54,14 +54,15 @@
 	}
 
 	.content {
-		width: 99vw;
-		padding-top: 3vw;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+    justify-content: space-between;
+    padding-top: 3vw;
+    width: 99vw;
 
 		@media only screen and (max-width: 768px) {
-			flex-direction: column;
+      flex-direction: column;
+      padding-top: 0;
 		}
 	}
 
@@ -75,9 +76,12 @@
 		overflow-x: hidden;
 
 		@media only screen and (max-width: 768px) {
+      margin-bottom: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
 			width: 100vw;
 			height: auto;
-			margin-bottom: 20px;
+
 		}
 	}
 
@@ -93,16 +97,23 @@
 	}
 
 	.search-textbox {
+    margin-top: 0.2vw;
+    padding-left: .3vw;
+    width: 100%;
 		font-family: Helvetica-Light;
-    	width: 100%;
-    	font-size: 1.1vw;
-		margin-top: 0.2vw;
-		padding-left: .3vw;
+    font-size: 1.1vw;
 		appearance: none;
 		outline: none;
 		background-color: transparent;
 		color: #444;
-		border: 1px solid black;
+    border: 1px solid black;
+
+    @media only screen and (max-width: 768px) {
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 98%;
+      font-size: 14px;
+    }
 	}
 
 	cdk-virtual-scroll-viewport {
@@ -174,21 +185,31 @@
 	}
 
 	.reset-filter {
+    padding: 0 0.2vw;
+    margin-bottom: 0;
+    float: right;
 		font-family: Helvetica-Light;
 		font-size: 1.4vw;
-		padding: 0 0.2vw;
-		margin-bottom: 0;
 		text-align: right;
-		float: right;
 		white-space: nowrap;
-		cursor: pointer;
-		transition: all 0.3s ease-in;
+    cursor: pointer;
+
+    @media only screen and (min-width: 769px) {
+      transition: all .3s ease-in;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-right: 5px;
+      font-size: 16px;
+    }
 	}
 
 	.reset-filter:hover {
 		background-color: #eee;
 		font-weight: bold;
-		transition: all 0.3s ease-out;
+		@media only screen and (min-width: 769px) {
+      transition: all .3s ease-out
+    }
 	}
 
 	.single-filter {
@@ -198,11 +219,14 @@
 		line-height: 1.5vw;
 
 		@media only screen and (max-width: 768px) {
+      display: flex;
+      flex-wrap: nowrap;
 			font-size: 14px;
 			line-height: 16px;
 		}
 
-		> span > i {
+		// > span > i {
+    > span {
 			line-height: 1.4vw;
 			font-size: 14px;
 
@@ -214,10 +238,9 @@
 	}
 
 	.products-container {
-		// @media only screen and (min-width: 801px) {
 			height: 99vh;
-			overflow-y: auto;
-		// }
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
 	}
 
 	.family-container {
@@ -226,18 +249,23 @@
 	}
 
 	.family-name {
-		display: block;
+    display: block;
+    margin-top: 1vw;
 		width: auto;
 		font-family: Helvetica-Light;
 		font-size: 1.7vw;
 		line-height: 2.1vw;
 		text-align: left;
-		margin-top: 1vw;
 		word-wrap: break-word;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		color: black;
+    color: black;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
 	}
 
 	.flex-div {
@@ -271,12 +299,16 @@
 	}
 
 	.header-filter {
+    margin-bottom: 0;
+    float: left;
 		font-family: Helvetica-Light;
 		font-size: 1.4vw;
 		text-transform: uppercase;
 		color: #dbbb76;
-		margin-bottom: 0;
-		float: left;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
 	}
 
 	.header-arrow {
@@ -307,7 +339,7 @@
 			cursor: pointer;
 
 			@media only screen and (max-width: 768px) {
-				width: 20px;
+				width: 14px;
 				margin-right: 10px;
 			}
 		}
@@ -329,21 +361,65 @@
 
 	.subfilters {
 		line-height: 1.83vw;
-		display: none;
+    display: none;
+
+    @media only screen and (max-width: 768px) {
+      line-height: 22px;
+    }
 
 		&.active {
-			display: block;
+      display: block;
+
+      @media only screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
 		}
 
-		> li {
-			width: 17vw;
+
+    .single-filter {
+      display: inline-block;
 			margin: auto 1.5vw auto 1vw;
-			display: inline-block;
+      margin-bottom: 0;
+      width: 17vw;
+      font-family: Helvetica-Light;
+      font-size: 1.3vw;
+      line-height: 1.5vw;
 
-			@media only screen and (max-width: 768px) {
-				width: 40vw;
-			}
-		}
+      @media only screen and (max-width: 768px) {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 45vw;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      > span {
+        font-size: 14px;
+        line-height: 1.4vw;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .left {
+    @media only screen and (max-width: 768px) {
+      flex-direction: row;
+      text-align: right;
+    }
+	}
+
+	.right {
+    @media only screen and (max-width: 768px) {
+      flex-direction: row-reverse;
+      text-align: left;
+    }
 	}
 
 	.non-remove > div > span {
@@ -366,20 +442,29 @@
 	}
 
 	.prod-name {
-		display: block;
-		width: auto;
+    display: block;
+    margin-top: 0;
+		margin-bottom: 0.5vw;
+    width: auto;
 		font-family: Helvetica-Light;
 		font-size: 1.2vw;
 		line-height: 1.4vw;
 		text-align: left;
-		margin-top: 0;
-		margin-bottom: 0.5vw;
 		word-wrap: break-word;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		color: black;
-		transition: all 0.3s ease;
+    color: black;
+
+    @media only screen and (min-width: 769px) {
+      transition: all .3s ease;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 2vw;
+      font-size: 12px;
+      line-height: 16px;
+    }
 	}
 
 	#expertise,
@@ -505,7 +590,7 @@
 }
 
 .card-product {
-	width: 21vw;
+	// width: 21vw;
 	cursor: pointer;
 	color: black;
 	font-family: Helvetica-Light;
@@ -513,51 +598,56 @@
 
 	.pic-frame {
 		position: relative;
-    width: 21vw;
-    height: 20vw;
     background-color: white;
     border: 0.88px solid transparent;
 
-		// &:after {
-		// 	content: '';
-		// 	display: block;
-		// 	padding-bottom: 100%;
-		// }
+    @media only screen and (min-width: 769px) {
+      width: 21vw;
+      height: 20vw;
+    }
 
 		figure.center-product {
-			// position: absolute;
-			// top: 0;
-			// left: 0;
-			// width: 100%;
 			margin: auto;
 			margin-bottom: 0;
-      		vertical-align: middle;
-      		display: flex;
+      vertical-align: middle;
+      display: flex;
 			overflow: visible;
 
 			.search-img {
-				// width: 100%;
-        		max-width: 19vw;
-        		max-height: 19vw;
-        		padding: 0;
-        		vertical-align: middle;
-        		margin: auto;
-        		object-fit: contain;
-        		transition: .5s;
+        max-width: 19vw;
+        max-height: 19vw;
+        padding: 0;
+        vertical-align: middle;
+        margin: auto;
+        object-fit: contain;
+
+        @media only screen and (min-width: 769px) {
+          transition: .5s;
+        }
+
+        @media only screen and (max-width: 768px) {
+          max-width: 33vw;
+          max-height: 33vw;
+        }
 
 				&:hover {
-					transform: scale(1.3);
+          @media only screen and (min-width: 769px) {
+            transform: scale(1.3);
+          }
 				}
 			}
 		}
 	}
 
 	.product-name {
-    max-width: 19.45vw;
-    text-align: center;
     margin-bottom: 0;
     min-height: 1.5vw;
+    text-align: center;
     line-height: 1.6vw;
+
+    @media only screen and (min-width: 769px) {
+      max-width: 19.45vw;
+    }
 
 		@media only screen and (max-width: 768px) {
 			font-size: 16px;
@@ -565,12 +655,22 @@
 
 		> span > i {
 			padding-right: 0.6vw;
-      		transition: all 0.3s ease;
-      		font-size: 1vw;
+      font-size: 1vw;
+
+      @media only screen and (min-width: 769px) {
+        transition: all .3s ease;
+      }
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
 
 			&:hover {
-				color: #dbbb76;
-				transition: all 0.3s ease;
+        @media only screen and (min-width: 769px) {
+          color: #dbbb76;
+          transition: all .3s ease;
+        }
 			}
 		}
 
@@ -578,26 +678,42 @@
       font-family: Helvetica-Light;
       font-size: 1.2vw;
       text-align: left;
-			transition: all 0.3s ease;
+
+      @media only screen and (min-width: 769px) {
+        transition: all 0.3s ease;
+      }
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
 
 			&:hover {
-				color: #dbbb76;
-				transition: all 0.3s ease;
+        @media only screen and (min-width: 769px) {
+          color: #dbbb76;
+          transition: all 0.3s ease;
+        }
 			}
 		}
 	}
 
 	.product-brand-text {
 		font-size: 1vw;
-		transition: all 0.3s ease;
+
+    @media only screen and (min-width: 769px) {
+      transition: all 0.3s ease;
+    }
 
 		@media only screen and (max-width: 768px) {
-			font-size: 12px;
+      font-size: 10px;
+      line-height: 15px;
 		}
 
 		&:hover {
-			color: #dbbb76;
-			transition: all 0.3s ease;
+      @media only screen and (min-width: 769px) {
+        color: #dbbb76;
+        transition: all 0.3s ease;
+      }
 		}
 	}
 }
@@ -610,7 +726,7 @@
 	}
 	.search-main {
 		padding-top: 70.8px;
-	
+
 		.products {
 			width: 876px;
 		}
@@ -648,7 +764,7 @@
 		.single-filter {
 			font-size: 15.6px;
 			line-height: 18px;
-	
+
 			> span > i {
 				line-height: 16.8px;
 			}
@@ -676,7 +792,7 @@
 
 		.subfilters {
 			line-height: 22px;
-	
+
 			> li {
 				width: 204px;
 				margin: auto 18px auto 12px;
@@ -686,7 +802,7 @@
 		.flex-div {
 			padding-top: 26.4px;
 		}
-	
+
 		.flex-div > li {
 			width: 240px;
 			margin-left: 18px;

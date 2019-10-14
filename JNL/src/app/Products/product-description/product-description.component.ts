@@ -140,7 +140,13 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   hasFinitions(part: any, mat: any) {
-    return this.getFinitions(part, mat).length !== 0 ? true : false;
+    const finitions: Finisage[] = this.getFinitions(part, mat);
+    if (finitions.length > 0) {
+      if (!(finitions.length === 1 && finitions[0].name.toLowerCase() === 'to define' && finitions[0].material === 'Fabric')) {
+        return true;
+      }
+    }
+    return false;
   }
 
   sendItemToModal(fin: any, finlist: Finisage[]) {

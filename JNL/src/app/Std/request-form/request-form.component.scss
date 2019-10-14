@@ -119,7 +119,12 @@
 	> div {
 		width: 45vw;
 		margin: auto;
-		text-align: left;
+    text-align: left;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
 	}
 
 	.a-left {

@@ -3,6 +3,10 @@
 
   h1 {
     margin-bottom: 0;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 26px;
+    }
   }
 
   h2 {
@@ -21,12 +25,22 @@
 
 	h4 {
 		font-family: Helvetica-Light;
-		font-size: 1.3vw;
+    font-size: 1.3vw;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 13px;
+      line-height: 16px;
+		}
 	}
 
 	h5 {
 		font-family: Helvetica-Light;
-		font-size: 1.1vw;
+    font-size: 1.1vw;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+      line-height: 16px;;
+		}
 	}
 
 	i {
@@ -70,14 +84,15 @@
 		max-height: 37.43vw;
 		object-fit: contain;
 		text-align: center;
-	}
+  }
 
-	/* #carousel-item-image {
-		display: flex !important;
-		justify-content: center;
-		width: 56.72vw;
-		margin: auto;
-	}  */
+  .carousel {
+    margin-bottom: 4vw;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 6vw;
+    }
+  }
 
 	.carousel-custom {
 		display: flex !important;
@@ -113,12 +128,14 @@
 	}
 
 	.carousel-thumbnails {
-		margin: 10px 0 0;
-		overflow: auto;
-		position: static;
+    position: static;
+    margin: 10px 0 0;
+    width: 100%;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
 		text-align: center;
 		white-space: nowrap;
-		width: 100%;
+
 	}
 
 	.carousel-thumbnails li {
@@ -139,19 +156,19 @@
 		height: 4.166vw;
 		object-fit: contain;
 		text-align: center;
-	}
+  }
+
+  .galery-thumbs {
+    margin-bottom: 4vw;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 6vw;
+    }
+  }
 
 	.fav-link {
 		cursor: pointer;
 	}
-
-	/*
-	.carousel-thumbnails li.active img {
-		opacity: 1;
-	}
-	.carousel-thumbnails li:hover img {
-		opacity: 0.80;
-	} */
 
 	.pointer:hover {
 		cursor: pointer;
@@ -168,15 +185,28 @@
 	}
 
 	#fav-download {
-		margin: auto;
-		margin-top: 3.2vw;
 		display: flex;
 		flex-direction: row;
-		align-content: center;
-		justify-content: center;
+    justify-content: center;
+    margin: 3.2vw auto 4.5vw auto;
+    align-content: center;
+
+    @media only screen and (max-width: 768px) {
+      margin: 5vw auto 6vw;
+			width: 80vw;
+    }
+
+    @media only screen and (max-width: 576px) {
+      margin: 5vw auto 8vw;
+    }
 
 		h3 {
-			font-size: 1.1vw;
+      font-size: 1.1vw;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
 		}
 
 		> div {
@@ -186,20 +216,33 @@
 	}
 
 	.nav-dimension {
-		width: 49vw;
-		margin: auto;
+		width: 47vw;
+    margin: auto;
+
+    @media only screen and (max-width: 768px) {
+      width: 98%;
+    }
 	}
 
 	.nav-item {
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: Helvetica;
-		font-size: 1.1vw;
 		margin-right: 1.5px !important;
 		margin-left: 1.5px !important;
-		height: 4vw !important;
-		border: none;
+    justify-content: center;
+    height: 4vw !important;
+		font-family: Helvetica;
+    font-size: 1.1vw;
+    align-items: center;
+    border: none;
+
+    @media only screen and (max-width: 768px) {
+      height: 40px !important;
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      font-size: 10px;
+    }
 	}
 
 	.nav-item:hover {
@@ -211,7 +254,11 @@
 	}
 
 	.nav-link {
-		border-radius: 0 !important;
+    border-radius: 0 !important;
+
+    @media only screen and (max-width: 768px) {
+      padding: 0 3px;
+    }
 	}
 
 	.nav-item.active {
@@ -391,21 +438,18 @@
 			width: 80vw !important;
 		}
 
-		h4 {
-			font-size: 4.2vw;
-		}
-
-		#fav-download {
-			width: 70vw;
-		}
-
 		h3 {
 			font-size: 4.11vw;
 		}
 
 		.carousel-thumbnails li img {
 			width: 50px;
-			height: 50px;
+      height: 50px;
+
+      @media only screen and (max-width: 576px) {
+        width: 40px;
+        height: 40px;
+      }
 		}
 	}
 }
@@ -426,7 +470,8 @@
 		width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
-	}
+  }
+
 	#top-container {
 		h4 {
 			font-size: 15.6px;
@@ -445,7 +490,7 @@
 			width: 681px;
 			height: 445px;
 		}
-	
+
 		.carousel-arrows {
 			height: 24px;
 			width: 12px;
@@ -458,7 +503,7 @@
 
 		#fav-download {
 			margin-top: 38.4px;
-			
+
 			h3 {
 				font-size: 13.2px;
 			}
@@ -467,7 +512,7 @@
 		.nav-dimension {
 			width: 588px;
 		}
-	
+
 		.nav-item {
 			font-size: 13.2px;
 			margin-right: 1.5px !important;

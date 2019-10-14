@@ -29,10 +29,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <br class="d-print-none">
-  <br class="d-print-none">
 
-  <div class="d-print-none">
+  <div class="galery-thumbs d-print-none">
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
       *ngIf="galleryThumbs.length>1">
       <li *ngFor="let image of galleryThumbs; let j = index">
@@ -40,8 +38,6 @@
       </li>
     </ol>
   </div>
-  <br>
-  <br>
 
   <div id="footer" class="d-print-none" *ngIf="stdText">
     <button class="jbtn">{{stdText.priceListRequest}}</button><br>
@@ -60,11 +56,9 @@
       <h3 *ngIf="stdText">&nbsp;&nbsp;{{stdText.print}}</h3>
     </div>
   </div>
-  <br>
-  <br>
 
   <div class="desc d-print-none">
-    <div class="product_change_tab d-block d-sm-none">
+    <!-- <div class="product_change_tab d-block d-sm-none">
       <select>
         <option></option>
         <option value="desc" selected>DESCRIPTION</option>
@@ -72,8 +66,10 @@
         <option value="dim">DRAWINGS</option>
         <option value="cat">DOWNLOADS</option>
       </select>
-    </div>
-    <nav class="nav-justified nav-dimension center d-none d-sm-block">
+    </div> -->
+
+    <!-- <nav class="nav-justified nav-dimension center d-none d-sm-block"> -->
+    <nav class="nav-justified nav-dimension center">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
           aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>

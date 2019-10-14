@@ -25,12 +25,23 @@ h5 {
 .parts {
   font-family: Helvetica;
   font-size: 1.1vw;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
 .materials {
   font-family: Helvetica-light;
   font-size: 1vw;
   margin-bottom: .5vw;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+    line-height: 22px;
+  }
 }
 
 .finitions {
@@ -42,6 +53,53 @@ h5 {
   font-style: italic;
   cursor: default !important;
   color: initial !important;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 5px;
+    justify-content: left;
+  }
+
+  > div {
+    > div {
+      > .fin {
+          width: 4.687vw;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          padding-right: 0.52vw;
+
+          @media only screen and (max-width: 768px) {
+            margin: 2px;
+            height: auto;
+            width: 60px;
+          }
+
+        > a {
+          > img {
+            @media only screen and (max-width: 768px) {
+              object-fit: cover;
+              height: 55px;
+              width: 55px;
+              text-align: center;
+            }
+          }
+        }
+
+        > span {
+          @media only screen and (max-width: 768px) {
+            font-size: 10px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-body {
+  @media only screen and (max-width: 768px) {
+    padding: 5px 0;
+  }
 }
 
 .pointer:hover {
@@ -55,22 +113,14 @@ h5 {
 }
 
 .mat-arrow {
-  height: 0.8vw;
-  width: 0.8vw;
-  margin-bottom: 0.2vw;
-}
+  margin-bottom: .2vw;
+  height: .7vw;
+  width: 1.1vw;
 
-.fin {
-  width: 4.687vw;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding-right: 0.52vw;
-}
-
-#fin-img {
-  object-fit: cover;
-  text-align: center;
+  @media only screen and (max-width: 768px) {
+    height: 8px;
+    width: 12px;
+  }
 }
 
 .samples {
@@ -78,18 +128,17 @@ h5 {
   height: 4.166vw;
 }
 
-/* .modal-dim {
-  max-width: 700px !important;
-  width: 70vw !important;
-  min-width: 400px;
-} */
-
 .modal-header {
   display: flex;
   justify-content: space-between;
+
+  .close {
+    @media only screen and (max-width: 768px) {
+      padding: 5px;
+    }
+  }
 }
 
-/* close button of modal */
 .close {
   margin-left: 0 !important;
 }
@@ -101,7 +150,11 @@ h5 {
 .modal-arrow {
   height: 2vw;
   width: 1vw;
-  margin-top: 130%;
+
+  @media only screen and (max-width: 768px) {
+    height: 16px;
+    width: 8px;
+  }
 }
 
 .cursor-pointer {
@@ -116,10 +169,14 @@ h5 {
 
 .whiteSpace {
   flex: 1;
+
+  @media only screen and (max-width: 768px) {
+    margin: auto;
+  }
 }
 
 .cardContainer {
-  flex: 4;
+  flex: 10;
 }
 
 .card {
@@ -129,6 +186,10 @@ h5 {
 
 .card-body {
   height: 30px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 /* workaround to fix bootstrap`s modal bug in Angular
@@ -144,7 +205,7 @@ h5 {
 /****************************************************************/
 
 #container {
-  /* padding-top: 30px; */
+  padding-top: 18px;
   display: flex;
 }
 
@@ -153,17 +214,30 @@ h5 {
 }
 
 #description {
-  width: 40vw;
   margin: auto;
+  margin-bottom: 36px;
+  width: 40vw;
+
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+  }
+
+  > p {
+    font-family: Helvetica-Light;
+    font-size: 1.1vw;
+    text-align: justify;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 15px;
+      margin-bottom: 40px;
+      font-size: 13px;
+      line-height: 17px;
+    }
+  }
 }
 
-#description > p {
-  font-family: Helvetica-Light;
-  font-size: 1.1vw;
-  text-align: justify;
-}
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
 
   .arrow {
       /* display: inline; */
@@ -228,12 +302,12 @@ h5 {
     .parts {
       font-size: 13.2px;
     }
-    
+
     .materials {
       font-size: 12px;
       margin-bottom: 6px;
     }
-    
+
     .finitions {
       font-size: 8.4px;
     }

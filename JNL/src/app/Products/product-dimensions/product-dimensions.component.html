@@ -1,31 +1,15 @@
 <div id="container">
-  <br>
-  <!-- <div id="staticText" (click)="toggleElement()">
-    <h5>TECHNICAL<br>DRAWINGS</h5>
-    <img alt="JNL Collection" src="\assets\Images\Common\mobile_arrow_down.png" class="arrow">
-  </div>
-   <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'"> -->
-  <div>
-    <br>
-    <h5 class="center">Technical Drawings</h5>
-    <br>
-    <br>
-    <div class="image-list">
-      <div *ngFor="let item of TDImages; let i=index" class="img-container">
-        <a>
-          <img class="img-button" [src]="item.src" alt="" (click)="sendToModal(item)" data-toggle="modal"
-            data-target="#TDModal">
-        </a>
-        <div class="center">
-          <br>
-          <h6>{{item.prodCode}}</h6>
-        </div>
+  <div class="image-list">
+    <div *ngFor="let item of TDImages; let i=index">
+      <a>
+        <img class="img-button" [src]="item.src" alt="" (click)="sendToModal(item)" data-toggle="modal"
+          data-target="#TDModal">
+      </a>
+      <div class="center">
+        <h6>{{item.prodCode}}</h6>
       </div>
     </div>
-    <br>
-    <br>
   </div>
-  <!-- </div> -->
 </div>
 
 <!-- MODAL -->

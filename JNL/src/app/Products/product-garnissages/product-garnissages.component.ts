@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService, DataExchangeService } from 'src/app/_services';
-import { IGarnissage } from 'src/app/_models';
+import { IGarnissage, Browser } from 'src/app/_models';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
@@ -49,6 +49,7 @@ export class ProductGarnissagesComponent implements OnInit {
   material: any;
   type: any;
   filterElements: IFilterElements[] = [];
+  browser: Browser;
 
 
   constructor(private productService: ProductsService,
@@ -59,7 +60,11 @@ export class ProductGarnissagesComponent implements OnInit {
     this.dataex.currentLanguage
     .subscribe(lang => {
     this.language = lang || 'EN';
-      this.productService.getGarnissages()
+      this.dataex.currentBrowser
+      .subscribe(browser => {
+        this.browser = browser;
+      });
+    this.productService.getGarnissages()
       .subscribe(res => {
         this.products = this.mapProducts(res, lang);
         this.products = this.sortProducts(this.products);
@@ -424,7 +429,7 @@ export class ProductGarnissagesComponent implements OnInit {
 
   openDialog(garn: IProdGarnissage): Observable<boolean> {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '40vw';
+    dialogConfig.width = this.getDialogWidth();
     dialogConfig.maxWidth = '960px';
     // dialogConfig.maxHeight = '825px';
     dialogConfig.data = garn;
@@ -438,5 +443,13 @@ export class ProductGarnissagesComponent implements OnInit {
       map(result => {
       return result;
     }));
+  }
+
+  getDialogWidth(): string {
+    let width = '40vw';
+    if (!this.browser.isDesktopDevice) {
+      width = '98%';
+    }
+    return width;
   }
 }

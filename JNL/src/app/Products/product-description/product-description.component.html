@@ -1,8 +1,5 @@
-<br class="d-print-none">
 <div id="container">
-  <div id="description" [ngClass]="(this.toggle === false) ? 'hide-item' :'show-item'" *ngIf="productDesc">
-    <br>
-    <br>
+  <div id="description" [ngClass]="(this.toggle) ? 'hide-item' :'show-item'" *ngIf="productDesc">
     <p>{{productDesc[0].descriptionFr}}</p>
     <div class="parts" *ngFor="let part of parts; let i = index;"><b>{{part}}:</b>
       <div class="materials">
@@ -15,7 +12,7 @@
                 <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal"
                   data-target="#finisageModal">
                   <a>
-                    <img id="fin-img" class="samples"
+                    <img class="samples"
                       src="assets\Images\Products\{{brand}}\Samples\{{fin.img}}">
                   </a>
                   <span class="fin-text">{{fin.name}}</span>
