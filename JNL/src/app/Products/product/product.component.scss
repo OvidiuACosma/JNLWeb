@@ -101,7 +101,11 @@
 	.gold {
 		/* color: #DBBB76; */
 		color: inherit;
-	}
+  }
+
+  .tab-content {
+    height: auto;
+  }
 
 	.print-image {
 		width: 799px;
@@ -551,11 +555,13 @@
 		}
 
 		.desc {
-			width: 1200px;
+      width: 1200px;
+      height: auto;
 		}
 
 		.prod-desc {
-			width: 1200px;
+      width: 1200px;
+      height: auto;
 		}
 	}
 }

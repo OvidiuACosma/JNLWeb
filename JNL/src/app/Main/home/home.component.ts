@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
       this.language = lang || 'EN';
       this.getText();
       this.getAlt();
-      this.ScrollTop();
+      this.scrollTop();
     });
     // activate carousel
     $(document).ready(function() {
@@ -73,19 +73,24 @@ export class HomeComponent implements OnInit {
 
   navigateToActualite(actualite: string) {
     this.router.navigate(['actualites', {a: actualite}]);
-    this.ScrollTop();
+    this.scrollTop();
   }
 
   navigateTo(target: string, fragment: string = '') {
     if (fragment === '') {
       this.router.navigate([target]);
-      this.ScrollTop();
+      this.scrollTop();
     } else {
       this.router.navigate([target], {fragment: fragment});
     }
   }
 
-  ScrollTop() {
+  navigateToMarque(marque: string) {
+    this.scrollTop();
+    this.router.navigate(['/marque', marque]);
+  }
+
+  scrollTop() {
     window.scrollTo(0, 0);
   }
 

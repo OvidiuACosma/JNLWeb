@@ -117,7 +117,8 @@ export class RequestFormComponent implements OnInit {
                       We will consider it and return to you\n
                       with an answer in short time.\n
                       Thank you!`);
-        this.openDialog();
+        // TODO: style the dialog-answer
+        // this.openDialog();
         this.rebuildForm();
       });
     }
