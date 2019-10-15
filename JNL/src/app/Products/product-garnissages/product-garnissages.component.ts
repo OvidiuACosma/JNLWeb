@@ -283,7 +283,7 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   selectFilter(c = '', displayName = '') {
-    console.log('selectFilter(', c, ',', displayName);
+    // console.log('selectFilter(', c, ',', displayName);
     this.scrollAfterFilter('content');
     let filteredElements: IFilterElements[];
     let filterItems: number[];
@@ -391,7 +391,7 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   applyFilters(filteredItems: boolean[], filteredElements: IFilterElements[]) {
-    console.log('filteredItems:', filteredItems, 'filteredElements:', filteredElements);
+    // console.log('filteredItems:', filteredItems, 'filteredElements:', filteredElements);
     let filterItemsList: string[] = [];
     this.productsFiltered = _.clone(this.products);
     for (let l = 0; l < filteredItems.length; l++) {

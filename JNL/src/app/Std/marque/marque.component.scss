@@ -36,7 +36,19 @@
 		display: flex;
 		justify-content: space-between;
 
-		@media only screen and (max-width: 768px) {
+    @media only screen and (min-width: 577px) and (max-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+      margin: 20px auto;
+      width: 100%;
+
+      > button {
+        width: 25%;
+				font-size: 12px;
+			}
+    }
+
+		@media only screen and (max-width: 576px) {
 			flex-direction: column;
 			width: 100%;
 			margin: 20px auto;
@@ -79,9 +91,22 @@
 				width: 80vw;
       		}
 
-      		h2 {
-				font-size: 3.5vw;
-      		}
+    	h2 {
+      		font-size: 3.5vw;
+      		margin-bottom: 4vw;
+
+		  @media only screen and (min-width: 1200px) {
+				font-size: 42px;
+      }
+
+      @media only screen and (min-width: 577px) and (max-width: 768px) {
+				font-size: 26px;
+      }
+
+      @media only screen and (max-width: 576px) {
+				font-size: 16px;
+	  }
+    }
 
 			> p {
 				font-size: 1.4vw;
@@ -90,24 +115,39 @@
 				margin: auto;
 				font-family: Helvetica-Light;
 				margin-top: 1.37vw;
-				margin-bottom: 4vw;
+        margin-bottom: 4vw;
+
+        @media only screen and (min-width: 1200px) {
+					font-size: 16.8px;
+					line-height: 24px;
+        }
 
 				@media only screen and (max-width: 768px) {
 					width: auto;
 					font-size: 13px;
 					line-height: 20px;
 				}
+
+				@media only screen and (max-width: 576px) {
+          font-size: 12px;
+          line-height: 16px;
+        }
 			}
 
 			> div > button {
 				display: flex;
-				align-items: center;
 				justify-content: center;
 				width: 13vw;
 				height: 3.5vw;
-				margin: auto;
+        margin: auto;
 
-				@media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 768px) {
+					height: 6.5vw;
+					width: 32%;
+					margin-top: 2vw;
+				}
+
+				@media only screen and (max-width: 576px) {
 					height: 6.5vw;
 					width: 63vw;
 					margin-top: 2vw;
@@ -195,7 +235,7 @@
 		margin-bottom: 5.5vw;
 
 		@media only screen and (max-width: 768px) {
-			width: 82vw;
+			width: 90vw;
 		}
 
 		> li {
@@ -283,11 +323,15 @@
       font-size: 1.8vw;
 
       @media only screen and (max-width: 768px) {
+        font-size: 24px;
+      }
+
+      @media only screen and (max-width: 576px) {
         font-size: 14px;
-        }
+      }
 
 	  	@media only screen and (min-width: 1200px) {
-			font-size: 21.6px;
+			  font-size: 21.6px;
 	  	}
     }
 
@@ -327,9 +371,13 @@
 		margin-top: 0;
 
 		@media only screen and (max-width: 768px) {
-      		width: auto;
-      		font-size: 11px;
+      width: auto;
+      font-size: 12px;
 			line-height: 16px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      font-size: 11px;
 		}
 	}
 

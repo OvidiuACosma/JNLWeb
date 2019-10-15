@@ -9,6 +9,12 @@
     font-size: 4.2vw;
   }
 
+  h1 {
+    @media only screen and (min-width: 577px) and (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+
 	> p {
     padding-left: 18.9vw;
     padding-right: 18.9vw;
@@ -35,7 +41,7 @@
     padding-top: 70.8px;
     font-size: 16.8px;
     margin-bottom: 72px;
-  
+
     > p {
       padding-left: 0;
       padding-right: 0;
