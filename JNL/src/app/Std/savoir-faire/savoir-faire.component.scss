@@ -531,6 +531,17 @@
 	}
 
 	@media only screen and (min-width: 1200px) {
+		#savoir {
+			width: 1200px;
+			height: 588px;
+			margin-left: auto;
+			margin-right: auto;
+			video {
+				width: 1044px; 
+				height: auto;
+			}
+		}
+
 		#atelier {
 			h2 {
 				font-size: 42px;
@@ -539,6 +550,7 @@
 
 			h3 {
 				font-size: 16.6px;
+				margin-bottom: 18px;
 			}
 
 			h4 {

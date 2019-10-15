@@ -815,15 +815,6 @@
 			padding-left: 3.6px;
 		}
 
-		.single-filter {
-			font-size: 15.6px;
-			line-height: 18px;
-
-			> span > i {
-				line-height: 16.8px;
-			}
-		}
-
 		.header-arrow {
 			margin-top: 20.4px;
 			margin-bottom: 12px;
@@ -846,6 +837,19 @@
 
 		.subfilters {
 			line-height: 22px;
+
+			.single-filter {
+				font-size: 15.6px;
+				line-height: 18px;
+	
+				> span {
+					font-size: 16.8px;
+					line-height: 24px;
+					i {
+						line-height: 16.8px;
+					}
+				}
+			}
 
 			> li {
 				width: 204px;

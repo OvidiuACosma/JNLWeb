@@ -233,10 +233,6 @@ h6 {
 
 @media only screen and (min-width: 1200px) {
   #container {
-    h2 {
-      font-size: 28.8px;
-    }
-
     h5 {
       font-size: 20.2px;
     }
@@ -246,12 +242,8 @@ h6 {
     }
 
     .image-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      margin: auto;
       padding: 0 24px;
-      width: 54vw;
+      width: 1000px;
     }
 
     .img-button {
@@ -262,6 +254,12 @@ h6 {
     #staticText {
       width: 367px;
     }
+  }
+
+  #TDModal {
+    .modal-title {
+      font-size: 28.8px !important;
+    }
 
     .modal-arrow {
       height: 24px;
@@ -270,6 +268,12 @@ h6 {
 
     .prod-code {
       margin-top: 24px;
+    }
+
+    h5 {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      font-size: 20.2px;
     }
   }
 }

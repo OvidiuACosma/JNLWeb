@@ -77,14 +77,11 @@
 
 			@media only screen and (max-width: 768px) {
 				width: 80vw;
-      }
+      		}
 
-      h2 {
-		font-size: 3.5vw;
-		@media only screen and (min-width: 1200px) {
-				font-size: 42px;
-			}
-      }
+      		h2 {
+				font-size: 3.5vw;
+      		}
 
 			> p {
 				font-size: 1.4vw;
@@ -99,11 +96,6 @@
 					width: auto;
 					font-size: 13px;
 					line-height: 20px;
-				}
-
-				@media only screen and (min-width: 1200px) {
-					font-size: 16.8px;
-					line-height: 24px;
 				}
 			}
 
@@ -229,6 +221,7 @@
 
 				@media only screen and (min-width: 1200px) {
 					font-size: 18px;
+					line-height: 20.4px;
 				}
 
 				&:hover {
@@ -334,8 +327,8 @@
 		margin-top: 0;
 
 		@media only screen and (max-width: 768px) {
-      width: auto;
-      font-size: 11px;
+      		width: auto;
+      		font-size: 11px;
 			line-height: 16px;
 		}
 	}
@@ -483,13 +476,139 @@
 
 			@media only screen and (max-width: 768px) {
 				font-size: 14px;
-        line-height: 30px;
+                line-height: 30px;
 			}
 		}
 
 		&:hover {
 			cursor: pointer;
 		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.d-large {
+		width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.marque-main {
+		.full-image {
+			width: 960px;
+		}
+
+		.heritage {
+			margin-top: 36.72px;
+			margin-bottom: 67.7px;
+			
+			div {
+				width: 834px;
+				h2 {
+					font-size: 42px;
+				}
+
+				div {
+					button {
+					  width: 156px;
+					  height: 42px;
+					}
+				}
+
+				p {
+					font-size: 16.8px;
+					line-height: 24px;
+					width: 660px;
+					margin-top: 16.5px;
+					margin-bottom: 60px;
+				}
+			}
+
+			.home-links-flex {
+				width: 833px;
+			}
+		}
+
+		.brand-content-cols2 {
+			width: 962px;
+			margin-bottom: 75px;
+		
+			> div {
+				width: 422px;
+				img {
+					width: 421px;
+					margin-bottom: 20.4px;
+				}
+			}
+		
+			.style-title {
+			  font-size: 21.6px;
+			}
+		
+			h4 {
+				font-size: 16.8px;
+				line-height: 14.4px;
+			}
+		
+			p {
+				padding: 15.6px;
+				width: 373px;
+			}
+		
+			div {
+				// Right col
+				&:nth-child(2) {
+					width: 470px;
+
+					img {
+						width: 396px;
+						margin-top: 33.5px;
+						margin-bottom: 42.7px;
+					}
+		
+					p {
+						width: 405.6px;
+					}
+				}
+			}
+		}
+
+		.other-brands {
+			// width: 1200px;
+			h4 {
+			  margin-top: 20.4px;
+			  font-size: 14.4px;
+			}
+		  
+			.other-brands-links {
+			  margin: auto auto 65.8px;
+			  width: 996px;
+			  height: 72px;
+		  
+		  
+				button {
+				width: 324px !important;
+				font-size: 21.6px;
+				line-height: 60px;
+			  	}
+		    }
+		}
+
+		.other-links {
+			margin-bottom: 58px;
+		
+			div {
+				width: 324px;
+		
+				img {
+					width: 324px;
+				}
+		
+				h4 {
+					margin-top: 12px;
+				}
+			}
+		}	
 	}
 }
 

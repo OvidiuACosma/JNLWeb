@@ -46,7 +46,7 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
     });
 
     $(document).ready(function() {
-      console.log('test marques');
+      // console.log('test marques');
         $('.js-fadein').animate({
             opacity : 1
           }, 700);
