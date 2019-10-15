@@ -8,10 +8,20 @@
     width: 50vw;
   }
 
+  h1 {
+    @media only screen and (min-width: 577px) and (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+
 	h2 {
     font-size: 3.5vw;
 
     @media only screen and (max-width: 768px) {
+			font-size: 26px;
+    }
+
+    @media only screen and (max-width: 576px) {
 			font-size: 20px;
 		}
 	}
@@ -22,7 +32,12 @@
 		font-size: 1.4vw;
 		margin-bottom: 1.5vw;
 		text-align: center;
-		margin-top: 0.6vw;
+    margin-top: 0.6vw;
+
+    @media only screen and (min-width: 577px) and (max-width: 768px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
 	}
 
 	h4 {
@@ -36,11 +51,15 @@
 
 	button {
 		outline: none;
-	}
+  }
 
 	.pointer {
 		cursor: pointer;
-	}
+  }
+
+  .carousel-control-next, .carousel-control-prev {
+    width: 10%;
+  }
 
 	.group_selected {
 		text-decoration: underline !important;
@@ -152,9 +171,12 @@
 					width: 80vw;
 					padding-right: 0 !important;
 					padding-bottom: 5vw;
-          font-family: Helvetica-Light;
-          font-size: 11px;
+          font-size: 12px;
           line-height: 16px;
+        }
+
+        @media only screen and (max-width: 576px) {
+          font-size: 11px;
 				}
 			}
 
@@ -192,6 +214,12 @@
       line-height: 2.05vw;
 
       @media only screen and (max-width: 768px) {
+        padding-left: 0;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      @media only screen and (max-width: 576px) {
         font-size: 11px;
         line-height: 16px;
       }
@@ -258,7 +286,12 @@
 					width: auto;
 					margin: auto;
 					margin-top: 0.8vw;
-					margin-bottom: 2.2vw;
+          margin-bottom: 2.2vw;
+
+          @media only screen and (min-width: 577px) and (max-width: 768px) {
+            font-size: 12px;
+            line-height: 16px;
+          }
 				}
 
 				> h4 {
@@ -275,7 +308,13 @@
 					font-size: 1.1vw;
 					line-height: 1.6vw;
           text-align: justify;
-          @media only screen AND (max-width: 768px) {
+
+          @media only screen and (max-width: 768px) {
+            font-size: 12px;
+            line-height: 16px;
+          }
+
+          @media only screen and (max-width: 576px) {
             font-size: 10px;
             line-height: 16px;
           }
@@ -330,6 +369,11 @@
 
           @media only screen and (max-width: 768px) {
             width: auto;
+            font-size: 12px;
+            line-height: 16px;
+          }
+
+          @media only screen and (max-width: 576px) {
             font-size: 11px;
             line-height: 14px;
           }
@@ -351,7 +395,15 @@
 
 	.left {
 		flex-direction: row;
-		text-align: right;
+    text-align: right;
+
+    @media only screen and (max-width: 768px) {
+      padding-left: 55px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      padding-left: 25px;
+    }
 	}
 
 	.right {
@@ -380,7 +432,7 @@
 
   .modal-content {
     @media only screen and (max-width: 768px) {
-      height: 50vw;
+      height: auto;
     }
   }
 
@@ -542,10 +594,16 @@
 	#projets h3,
 	#archives h3 {
     font-size: 1.4vw;
+
     @media only screen and (max-width: 768px) {
-      margin-left: auto;
-      margin-right: auto;
+      margin: 10px auto;
       width: 80vw;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @media only screen and (max-width: 576px) {
+
       font-size: 13px;
       line-height: 18px;
     }
@@ -558,7 +616,13 @@
 	#archives h4 {
 		font-size: 1.8vw;
     line-height: 2vw;
+
     @media only screen and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @media only screen and (max-width: 576px) {
       font-size: 12px;
       line-height: 16px;
     }
@@ -571,23 +635,28 @@
 
 	#histoire {
 		margin-top: 1.38vw;
-	}
 
-	#histoire > h1 {
-		margin-bottom: 0;
-	}
-
-	#histoire > h4 {
-    margin-top: 2.74vw;
-    margin-bottom: 4vw;
-    width: 60.84vw;
-    font-size: 1.4vw;
-
-    @media only screen and (max-width: 768px) {
-      font-size: 11px;
-      line-height: 16px;
+    > h1 {
+      margin-bottom: 0;
     }
-	}
+
+    > h4 {
+      margin-top: 2.74vw;
+      margin-bottom: 4vw;
+      width: 60.84vw;
+      font-size: 1.4vw;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      @media only screen and (max-width: 576px) {
+        font-size: 11px;
+        line-height: 16px;
+      }
+    }
+  }
 
 	#projets > p {
 		font-family: Helvetica-Light;
@@ -644,8 +713,9 @@
 	.slide-image-archive {
 		width: 55.5vw;
     object-fit: cover;
+
     @media only screen and (max-width: 768px) {
-      width: 70vw;
+      width: 80%;
     }
 	}
 
@@ -943,11 +1013,6 @@
 		.carousel-item-image {
 			margin-right: 0vw;
 			padding-left: 0vw;
-		}
-
-		#impg2 > div > p {
-			max-height: 100%;
-			padding-left: 0;
 		}
 	}
 

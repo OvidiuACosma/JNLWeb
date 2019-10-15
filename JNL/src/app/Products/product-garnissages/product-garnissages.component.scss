@@ -29,9 +29,9 @@
 		padding-left: 2vw;
 		padding-right: 1vw;
 		margin-right: 4vw;
-		height: 94vh;
-		overflow-y: auto;
-    overflow-x: hidden;
+		height: auto;
+		// overflow-y: auto;
+    // overflow-x: hidden;
 
 
     @media only screen and (max-width: 768px) {
@@ -45,9 +45,9 @@
 
 	.products {
 		width: 73vw;
-		height: 94vh;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+		height: auto;
+    // overflow-y: scroll;
+    // -webkit-overflow-scrolling: touch;
 
 
     @media only screen and (max-width: 768px) {
