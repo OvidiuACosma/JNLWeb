@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, AfterViewInit, AfterViewChecke
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService } from '../../_services';
 import { Browser, User } from '../../_models';
+import { AuthGuard } from 'src/app/_guards';
 
 @Component({
   selector: 'app-search',
@@ -23,11 +24,12 @@ export class SearchComponent implements OnInit {
   isHome: boolean;
   browser: Browser;
   currentUser: User;
-  userType: string = null;
+  loginText: string;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
-              private textService: TranslationService) {}
+              private textService: TranslationService,
+              private authGuard: AuthGuard) {}
 
   ngOnInit() {
     this.dataex.currentNavBarStatus
@@ -54,6 +56,7 @@ export class SearchComponent implements OnInit {
       this.resetUser(userLocal);
       this.getUser();
     }
+    this.getLogInText();
   }
 
   getText(lang: string) {
@@ -72,10 +75,12 @@ export class SearchComponent implements OnInit {
     this.dataex.currentUser
     .subscribe(user => {
       this.currentUser = user;
-      if (user) {
-        this.userType = user.type;
-      }
+      this.getLogInText();
     });
+  }
+
+  getLogInText() {
+    this.loginText = this.isLoggedIn() ? 'log out' : 'log in';
   }
 
   resetUser(user: User) {
@@ -156,6 +161,27 @@ export class SearchComponent implements OnInit {
   closeLangSelection() {
     if (this.isLangSelectMode) {
       this.toggleLangStatus();
+    }
+  }
+
+  isLoggedIn(): boolean {
+    return this.authGuard.isLoggedIn();
+  }
+
+  logIn(option: string) {
+    switch (option.toLowerCase()) {
+      case 'log in': {
+        this.authGuard.logIn();
+        this.getUser();
+        break;
+      }
+      case 'log out': {
+        localStorage.removeItem('currentUser');
+        // remove username in header component
+        this.dataex.setCurrentUser(new User());
+        this.getLogInText();
+        break;
+      }
     }
   }
 }

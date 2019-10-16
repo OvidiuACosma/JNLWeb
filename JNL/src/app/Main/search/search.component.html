@@ -1,29 +1,26 @@
 <div class="search-bar">
-  <div id="bar" class="d-print-none">
+  <div class=" bar d-print-none">
     <div id="top-bar">
       <div class="menu-button">
         <div class="menu-button-flex">
-            <img class="menu-button-img" src="{{navBarButtonSrc}}"
-              (click)="toggleNav()" (mouseover)="toggleNav()" alt="menu button">
-              <!-- [ngClass]="navBarStatus ? 'menu-button-img-active' : ''" -->
-            <!-- <p class="menu-text" (click)="toggleNav()" (mouseover)="toggleNav()">{{navBarButtonText}}</p> -->
-          </div>
+          <img class="menu-button-img" src="{{navBarButtonSrc}}"
+            (click)="toggleNav()" (mouseover)="toggleNav()" alt="menu button">
         </div>
-        <div id="menu-logo">
-          <div class="menu-logo-img" *ngIf="!isHome">
-            <img class="image-link" id="logo"
-              alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
-              (click)="goHome()"/>
-          </div>
-          <!-- <div class="space">&nbsp;</div> -->
+      </div>
+      <div id="menu-logo">
+        <div class="menu-logo-img" *ngIf="!isHome">
+          <img class="image-link" id="logo"
+            alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
+            (click)="goHome()"/>
+        </div>
       </div>
 
       <div id="top_buttons" *ngIf="text" (mouseleave)="closeLangSelection()"
         [ngStyle]="isHome ? {'color': '#666'} : {'color': 'black'}">
-        <span *ngIf="userType==='A'">
+        <span *ngIf="currentUser && currentUser.type==='A'">
           <a (click)="navigateTo('register')" class="top-button">register</a>
         </span>
-        <span class="dash" *ngIf="userType==='A'">&#8213;</span>
+        <span class="dash" *ngIf="currentUser && currentUser.type==='A'">&#8213;</span>
         <span>
           <a (click)="navigateTo('product/favorites/0')" class="top-button">
             <i class="far fa-heart heart"></i>
@@ -40,7 +37,8 @@
         </span>
         <span class="dash">&#8213;</span>
         <span>
-          <a (click)="navigateTo('contact')" class="top-button">{{text.contact}}</a>
+          <!-- <a (click)="navigateTo('contact')" class="top-button">{{text.contact}}</a> -->
+          <a (click)="logIn(loginText)" class="top-button">{{loginText}}</a>
         </span>
         <span class="dash">&#8213;</span>
         <span>

@@ -16,21 +16,26 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     this.returnUrl = state.url;
+    if (!this.isLoggedIn()) {
+      this.logIn();
+    }
     return this.isLoggedIn();
   }
 
   public isLoggedIn() {
     if (localStorage.getItem('currentUser')) {
-      // logged in so return true
       return true;
     }
-    // not logged in
+    return false;
+  }
+
+  public logIn() {
     this.openDialog().subscribe( answer => {
       return answer;
     });
   }
 
-  openDialog(): Observable<boolean> {
+  public openDialog(): Observable<boolean> {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '30vw';
     dialogConfig.data = this.returnUrl;
