@@ -562,6 +562,11 @@
 			}
 		}
 
+		#atelier,
+		#fabrication {
+			padding-top: 70.8px;
+		}
+
 		#atelier {
 			h2 {
 				font-size: 42px;
@@ -577,20 +582,44 @@
 				margin-bottom: 21px;
 				font-size: 17.1px;
 				line-height: 24px;
+				width: 717px;
 			}
 		}
 
-		.ateliers-flex > div > div {
-      font-size: 15.6px;
-
-      > span {
-        font-size: 11.65px;
-      }
+		.ateliers-flex {
+			width: 822px;
+	
+			div {
+		  		width: 375px;
+		  		// margin-top: 157px;
+				div {
+					font-size: 15.6px;
+					img {
+			  			width: 375px;
+					}
+					span {
+			  			font-size: 12px;
+					}
+		  		}
+			}
 		}
 
 		.ateliers-flex > div:nth-child(2) > div:first-child {
 			margin-bottom: 12px;
 			font-size: 15.6px;
+		}
+
+		#af1 {
+			margin-top: 105.1px;
+			}
+		
+		#af1 > div > img {
+				width: 380.5px;
+				margin-bottom: 48px;
+		}
+		
+		#af2 {
+			margin-top: 82.2px;
 		}
 
 		#fabrication {
@@ -606,17 +635,31 @@
 		.steps-text {
 			font-size: 16.8px;
 
-      > div > p {
-        font-size: 21.6px;
-      }
-    }
+      		> div > p {
+        		font-size: 21.6px;
+      		}
+    	}
 
 		#services {
+			margin-top: 31.2px;
+			margin-bottom: 31.2px;
+			img {
+				width: 310px;
+			}
 			h4 {
 				margin-bottom: 21px;
+				width: 716.5px;
 				font-size: 17.1px;
 				line-height: 24px;
 			}
 		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.d-large {
+		width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

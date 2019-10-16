@@ -145,11 +145,6 @@
 			&.col-img {
 				// width: 30vw;
 
-				@media only screen and (min-width: 1200) {
-          /* TODO: adjust in px - fixed size for width 1200 and up */
-					width: 150vh;
-				}
-
 				@media only screen and (max-width: 768px) {
 					margin: 15px 0;
 					order: 1;
@@ -839,7 +834,7 @@
 	#carousel-projets > a {
 		width: 3.1vw;
 		min-width: 20px;
-		padding-top: 20%;
+		// padding-top: 10%;
 	}
 
 	.modal-backdrop {
@@ -1021,6 +1016,14 @@
 			font-size: 36px;
 		}
 
+		#histoire,
+		#equipe,
+		#engagement,
+		#projets,
+		#archives {
+			padding-top: 70.8px;
+		}
+
 		#histoire h3,
 		#equipe h3,
 		#engagement h3,
@@ -1038,45 +1041,95 @@
 			line-height: 24px;
 		}
 
+		#histoire {
+			h4 {
+				margin-top: 32.9px;
+				margin-bottom: 48px;
+				width: 730px;
+			}
+		}
+
 		.image-parag {
+			width: 912px;
 			div {
 				p {
+					padding-right: 48px;
 					font-size: 19.2px;
 					line-height: 28.8px;
 				}
-			}
-		}
 
-		#equipe{
-			div {
-				div {
-					h3 {
-						font-size: 14.4px;
-						margin-top: 9.6px;
-						margin-bottom: 26.4px;
-					}
-					 p {
-						font-size: 10px;
-						line-height: 16px;
-					 }
+				img {
+					width: 360px;
 				}
 			}
-
 		}
 
-		.staff > div > div > p {
-			font-size: 13.2px;
-			line-height: 15.6px;
-			padding-left: 12px;
-			padding-right: 12px;
-			margin-bottom: 6px;
-			width: 132px;
+		#equipe {
+			width: 753.4px;
+			margin-left: auto;
+			margin-right: auto;
+			div {
+				div {
+					width: 345.5px;
+					font-size: 16.8px;
+					h3 {
+						margin-top: 9.6px;
+						margin-bottom: 26.4px;
+					  }
+		
+					h4 {
+						margin-top: 26.4px;
+						margin-bottom: 12px;
+					}
+		
+					p {
+						font-size: 13.2px;
+						line-height: 19.2px;
+					}
+		
+					img {
+						margin-top: 48px;
+						width: 346.8px;
+					}
+
+					.group-img {
+						width: 344.4px !important;
+					}
+				}
+			}
+		}
+	
+
+		.staff {
+			width: 753.4px;
+			margin-top: 60px;
+			div > div {
+				margin-bottom: 24px;
+				p {
+				font-size: 13.2px;
+				line-height: 15.6px;
+				padding-left: 12px;
+				padding-right: 12px;
+				margin-bottom: 6px;
+				width: 132px;
+				}
+				>img {
+					max-width: 216px;
+					max-height: 216px;
+				}
+			}
 		}
 
-		#impg2 > div > p {
+
+		#impg2 {
+			margin-top: 55.8px;
+    		width: 927px;
+
+			div > p {
 			padding-left: 86px;
 			font-size: 17px;
 			line-height: 24.6px;
+			}
 		}
 
 		.carousel-project {
@@ -1086,8 +1139,23 @@
 			}
 		}
 
-		#archives > div > div > span {
+		#archives > div {
+			width: 927px;
+			div {
+				height: 243px;
+				width: 280px;
+				span {
 				font-size: 36px;
+				}
 			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.d-large {
+		width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

@@ -246,40 +246,99 @@
 			font-family: Helvetica-Light;
 		}
 	}
+}
 
+@media only screen and (min-width: 1200px) {
+	.d-large {
+		width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-	@media only screen and (min-width: 1200px) {
-		h2 {
-			font-size: 42px;
+	.les-services-main {
+	  padding-top: 70.8px;
+	
+	  .submenu {
+		width: 456px;
+		margin: auto auto 48px;
+	  }
+
+	  h2 {
+		font-size: 42px;
+	  }
+	
+	  h4 {
+		 width: 700px;
+		font-size: 21.6px;
+		margin-top: 39.6px;
+	  }
+	
+		video {
+			width: 871.6px;
+			height: 618px;
+		}
+	
+		.first-image {
+			width: 912px;
+			margin-top: 19.2px;
+			margin-bottom: 50.4px;
+		}
+	
+		.sur-flex {
+			width: 912px;
+			margin-top: 62.4px;
+			div {
+		  		width: 374.4px;
+		  		div {
+					font-size: 16.8px;
+					line-height: 24px;
+					img {
+					  width: 374.4px;
+					}
+				}
+			}
 		}
 
+		> div:nth-child(2) > div:first-child {
+			margin-bottom: 18px;
+		  }
+
+		#services {
+			width: 960px;
+		}
+		
+		.services-your-project {
+			font-size: 16.8px;
+			padding-top: 44.4px;
+	
+			> p {
+				width: 540px;
+				font-size: 16.8px;
+				line-height: 24px;
+			}
+		}
+	
 		#expertise,
 		#surMesure,
 		#votreProjet {
 			padding-top: 70.8px;
 		}
-
+	
 		#expertise {
-			margin-top: 31px;
+			margin-top: 30.84px;
 		}
-
+	
 		#expertise > h4,
 		#surMesure > h4,
 		#votreProjet > h4 {
 			font-size: 21.6px;
 			line-height: 26.4px;
 		}
-
-		.sur-flex > div > div {
-			font-size: 16.8px;
-			line-height: 24px;
-		}
-
-		.services-your-project {
-			p {
-				font-size: 16.8px;
-				line-height: 24px;
-			}
+	
+		#surMesure {
+			margin-top: 69px;
+			margin-bottom: 65.8px;
+			width: 960px;
 		}
 	}
 }
