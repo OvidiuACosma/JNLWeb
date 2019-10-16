@@ -1,21 +1,21 @@
 <div class="search-bar">
   <div class=" bar d-print-none">
-    <div id="top-bar">
+    <div class="top-bar">
       <div class="menu-button">
         <div class="menu-button-flex">
           <img class="menu-button-img" src="{{navBarButtonSrc}}"
             (click)="toggleNav()" (mouseover)="toggleNav()" alt="menu button">
         </div>
       </div>
-      <div id="menu-logo">
+      <div class="menu-logo">
         <div class="menu-logo-img" *ngIf="!isHome">
-          <img class="image-link" id="logo"
+          <img class="image-link"
             alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
             (click)="goHome()"/>
         </div>
       </div>
 
-      <div id="top_buttons" *ngIf="text" (mouseleave)="closeLangSelection()"
+      <div class="top-buttons" *ngIf="text" (mouseleave)="closeLangSelection()"
         [ngStyle]="isHome ? {'color': '#666'} : {'color': 'black'}">
         <span *ngIf="currentUser && currentUser.type==='A'">
           <a (click)="navigateTo('register')" class="top-button">register</a>
@@ -66,16 +66,16 @@
   </div>
 
   <!--MOBILE VERSION-->
-  <div id="mob-searchbar">
+  <div class="mob-searchbar">
     <span class="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
       <i class="material-icons">menu</i>
     </span>
     <span class="menu-logo-img">
-      <img class="image-link" id="logo" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
+      <img class="image-link" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
     </span>
     <span>
       <a class="top-button" *ngIf="!searchMode" (click)="goSearchMode()">
-        <i class="fa fa-search" aria-hidden="true" id="loupe"></i>
+        <i class="fa fa-search loupe"></i>
       </a>
       <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus"
         *ngIf="searchMode" (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">

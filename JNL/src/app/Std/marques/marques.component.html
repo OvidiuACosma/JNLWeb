@@ -1,5 +1,5 @@
 <div class="les-marques-main d-large" *ngIf="text">
-  <div>
+  <div *ngIf="altText">
     <h1>{{text.title}}</h1>
 
     <div class="submenu d-none d-sm-flex hide-mobile">
@@ -14,7 +14,8 @@
         <img src="assets/Images/Marques/MK_logo_JNL.png">
       </a>
       <h3>{{text.JNL}}</h3>
-      <img class="marques-image" alt="{{altText['img0']['alt'][language]}}" src="assets/Images/Marques/{{altText['img0']['src']}}" [@simpleFadeAnimation]="'in'">
+      <img class="marques-image" alt="{{altText['img0']['alt'][language]}}"
+        src="assets/Images/Marques/{{altText['img0']['src']}}">
     </div>
 
     <div id="vanhamme" class="marque" (click)="navigateToMarque('vanhamme')">
@@ -22,7 +23,8 @@
         <img src="assets/Images/Marques/MK_logo_VH.png">
       </a>
       <h3>{{text.Vanhamme}}</h3>
-      <img class="marques-image" alt="{{altText['img1']['alt'][language]}}" src="assets/Images/Marques/{{altText['img1']['src']}}">
+      <img class="marques-image" alt="{{altText['img1']['alt'][language]}}"
+        src="assets/Images/Marques/{{altText['img1']['src']}}">
     </div>
 
 
@@ -31,7 +33,8 @@
         <img src="assets/Images/Marques/MK_logo_Ungaro.png">
       </a>
       <h3>{{text.Ungaro}}</h3>
-      <img class="marques-image" alt="{{altText['img2']['alt'][language]}}" src="assets/Images/Marques/{{altText['img2']['src']}}">
+      <img class="marques-image" alt="{{altText['img2']['alt'][language]}}"
+        src="assets/Images/Marques/{{altText['img2']['src']}}">
     </div>
 
     <div id="studio" class="marque" (click)="navigateToMarque('studio')">
@@ -39,7 +42,8 @@
         <img src="assets/Images/Marques/MK_logo_Studio.png">
       </a>
       <h3>{{text.Studio}}</h3>
-      <img class="marques-image" alt="{{altText['img3']['alt'][language]}}" src="assets/Images/Marques/{{altText['img3']['src']}}">
+      <img class="marques-image" alt="{{altText['img3']['alt'][language]}}"
+        src="assets/Images/Marques/{{altText['img3']['src']}}">
     </div>
   </div>
 </div>

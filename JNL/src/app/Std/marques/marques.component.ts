@@ -1,30 +1,18 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
-import { trigger, state, style, animate, transition } from '@angular/animations';
-declare var $: any;
+import { concatMap, mergeMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-marques',
   templateUrl: './marques.component.html',
-  styleUrls: ['./marques.component.scss'],
-  animations: [
-    trigger('simpleFadeAnimation', [
-      state('in', style({opacity: 1})),
-      transition(':enter', [
-        style({opacity: 0}),
-        animate(1200)
-      ])
-    ])
-  ]
+  styleUrls: ['./marques.component.scss']
 })
-export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class MarquesComponent implements OnInit/*, AfterViewInit, AfterViewChecked*/ {
 
-  public marque: string;
   language: string;
   text: any;
   anchor: number;
-
   altText: any;
   page = 'marques';
 
@@ -32,69 +20,49 @@ export class MarquesComponent implements OnInit, AfterViewInit, AfterViewChecked
               private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private altService: AltImgService) { }
+              private altService: AltImgService) {}
 
   ngOnInit() {
-    // this.route.params.subscribe(params => {
-    //   this.marque = params['marque'];
-    // });
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-      this.getAlt(this.page);
-    });
-
-    $(document).ready(function() {
-      // console.log('test marques');
-        $('.js-fadein').animate({
-            opacity : 1
-          }, 700);
-    });
+    this.getData();
   }
 
-  getText(lang: string) {
-    this.textService.getTextMarques()
-    .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
+  getData() {
+    this.dataex.currentLanguage.pipe(
+      concatMap(lang => this.textService.getTextMarques().pipe(
+        mergeMap(textMarques => this.altService.getAltImages().pipe(
+          map(altImages => ({
+            lang: lang,
+            textMarques: textMarques,
+            altImages: altImages
+          }))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.language = resp.lang || 'EN';
+      this.text = resp.textMarques[0][this.language.toUpperCase()];
+      this.altText = resp.altImages[0][this.page];
     });
   }
 
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
-  }
+  // ngAfterViewInit() {
+  //   this.anchor = 1;
+  // }
 
-  getAlt(page: string) {
-    this.altService.getAltImages()
-    .subscribe(data => {
-      const res = data[0];
-      this.altText = this.getAltText(res, this.page);
-    });
-  }
-
-  getAltText(res: any, page: string): any {
-    return res[page];
-  }
-
-  ngAfterViewInit() {
-    this.anchor = 1;
-  }
-
-  ngAfterViewChecked() {
-    // this.anchor <= 2 - ensures it pass the code 2 times, otherwise no scroll to anchor happens
-    if (this.anchor <= 2) {
-      this.route.fragment.subscribe(fragment => {
-        if (fragment) {
-          this.navigateToAnchor(fragment);
-          this.anchor++;
-        } else {
-            this.scrollTop();
-            this.anchor++;
-          }
-      });
-    }
-  }
+  // ngAfterViewChecked() {
+  //   // this.anchor <= 2 - ensures it pass the code 2 times, otherwise no scroll to anchor happens
+  //   if (this.anchor <= 2) {
+  //     this.route.fragment.subscribe(fragment => {
+  //       if (fragment) {
+  //         this.navigateToAnchor(fragment);
+  //         this.anchor++;
+  //       } else {
+  //           this.scrollTop();
+  //           this.anchor++;
+  //         }
+  //     });
+  //   }
+  // }
 
   navigateToAnchor(fragment: string) {
     const element = document.getElementById(fragment);

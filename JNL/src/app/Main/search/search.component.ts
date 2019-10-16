@@ -41,7 +41,6 @@ export class SearchComponent implements OnInit {
     this.dataex.currentBrowser
     .subscribe(browser => {
       this.browser = browser;
-      console.log('Browser:', browser);
     });
     this.dataex.currentLanguage
     .subscribe(lang => {

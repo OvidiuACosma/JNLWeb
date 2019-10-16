@@ -41,9 +41,6 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ],
-  providers: []
+  ]
 })
 export class AppRoutingModule { }
-
-// export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'});

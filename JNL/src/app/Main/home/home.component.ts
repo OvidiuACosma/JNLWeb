@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataExchangeService, TranslationService, AltImgService } from '../../_services';
+import { DataExchangeService, TranslationService, AltImgService, AlertService } from '../../_services';
 declare var $: any;
 
 @Component({
@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
               private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private altService: AltImgService) {
+              private altService: AltImgService,
+              private alertService: AlertService) {
   }
 
   ngOnInit() {
@@ -30,9 +31,9 @@ export class HomeComponent implements OnInit {
       this.getAlt();
       this.scrollTop();
     });
-    // activate carousel
+    if (!this.testBrowser()) { this.alertBrowserIE(); }
     $(document).ready(function() {
-      $('.carousel').carousel();
+      // $('.carousel').carousel();
 
       $('.home-first-picture').animate({
         opacity : 1
@@ -94,7 +95,25 @@ export class HomeComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  log(index: number) {
-    console.log('Active Slide:', index);
+  testBrowser(): boolean {
+    const ua = window.navigator.userAgent;
+    let msie = ua.indexOf('MSIE ');
+
+    // IE 10 or older
+    if (msie > 0) { return false; }
+
+    // IE 11
+    msie = ua.indexOf('Trident/');
+    if (msie > 0) { return false; }
+    return true;
+  }
+
+  alertBrowserIE() {
+    let message = 'Partial Incompatibility for MS Internet Explorer detected!.\n\n';
+    message = message + 'For a full enjoyable experience,\n';
+    message = message + 'please open the page with one of the modern, evergreen browsers:\n';
+    message = message + '(Google Chrome, Microsoft Edge, Firefox, Safari).';
+    message = message.replace(/\n/g, '<br />');
+    this.alertService.error(message);
   }
 }
