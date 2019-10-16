@@ -39,7 +39,10 @@ export class SearchComponent implements OnInit {
       this.navBarButtonText = 'MENU';
     });
     this.dataex.currentBrowser
-    .subscribe(browser => this.browser = browser);
+    .subscribe(browser => {
+      this.browser = browser;
+      console.log('Browser:', browser);
+    });
     this.dataex.currentLanguage
     .subscribe(lang => {
       this.language = lang || 'EN';

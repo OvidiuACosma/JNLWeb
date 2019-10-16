@@ -1,7 +1,6 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AuthenticationService } from 'src/app/_services';
-import { Browser } from '../../_models';
 declare var $: any;
 
 @Component({
