@@ -87,7 +87,7 @@
 		display: none;
 	}
 
-	#bar {
+	.bar {
 		width: 100%;
 		display: block;
 		/* display: flex;
@@ -95,7 +95,11 @@
 		font-family: Helvetica-Light;
 		min-height: var(--search-bar-height);
 		height: var(--search-bar-height);
-		overflow: hidden;
+    overflow: hidden;
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+      }
 	}
 
 	#search_bar_div:hover {
@@ -304,10 +308,6 @@
   }
 
 	@media only screen and (max-width: 768px) {
-		/*TOP BAR*/
-		#bar {
-			display: none;
-		}
 
 		#mob-searchbar {
 			width: 100vw;
@@ -367,12 +367,12 @@
 			width: 33.4px;
 			height: 33.4px;
 		}
-	
+
 		.menu-text {
 			font-size: 10.1px;
 			padding: 13.33px 0 0 0;
 		}
-	
+
 		#menu-logo {
 			padding-left: 66px;
 		}
