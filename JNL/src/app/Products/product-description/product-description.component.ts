@@ -13,6 +13,7 @@ export class ProductDescriptionComponent implements OnInit {
   @Input() product: Product;
   brand: string;
   public productDesc: any[];
+  public description: string;
   public parts = new Set();
   public materials: string[] = [];
   public showLevel = null;
@@ -46,6 +47,7 @@ export class ProductDescriptionComponent implements OnInit {
               if (a.orderIndex < b.orderIndex) { return 1; }
               return 0;
             });
+            this.getDescription();
             this.getParts();
           });
       });
@@ -65,6 +67,11 @@ export class ProductDescriptionComponent implements OnInit {
         const resources = data[0];
         this.stdText = resources[lang.toUpperCase()];
       });
+  }
+
+  getDescription() {
+    this.description = this.productDesc[0].descriptionFr;
+    // this.description = this.language === 'FR' ? this.productDesc[0].descriptionFr : this.productDesc[0].descriptionEn;
   }
 
   getParts() {

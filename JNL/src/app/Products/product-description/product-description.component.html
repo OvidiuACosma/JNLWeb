@@ -1,12 +1,12 @@
 <div id="container">
   <div id="description" [ngClass]="(this.toggle) ? 'hide-item' :'show-item'" *ngIf="productDesc">
-    <p>{{productDesc[0].descriptionFr}}</p>
+    <p *ngIf="description">{{description}}</p>
     <div class="parts" *ngFor="let part of parts; let i = index;"><b>{{part}}:</b>
       <div class="materials">
         <span *ngFor="let mat of getMaterials(part); let i2 = index;" (click)="toggleFin('idx'+i+'idx'+i2)"
           [ngClass]="{'pointer': hasFinitions(part, mat)}">{{mat}}
           <img *ngIf="hasFinitions(part, mat)" src="\assets\Images\Common\mobile_arrow_down.png" class="mat-arrow">
-          <div class="finitions" *ngIf="getFinitions(part, mat)">
+          <div class="finitions" *ngIf="hasFinitions(part, mat)">
             <div *ngFor="let fin of getFinitions(part, mat)">
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
                 <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal"
