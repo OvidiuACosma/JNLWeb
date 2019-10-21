@@ -203,12 +203,12 @@
 		@media only screen and (max-width: 768px) {
 			padding-top: 0;
 			width: 100% !important;
-      text-align: center;
-      font-size: 12px;
-    }
+      		text-align: center;
+      		font-size: 12px;
+    	}
 
-    @media only screen and (max-width: 576px) {
-      font-size: 10px;
+    	@media only screen and (max-width: 576px) {
+      		font-size: 10px;
 		}
 
 		> p {
@@ -252,16 +252,16 @@
 			font-size: 1.25vw;
 			width: 59.3vw;
 			margin: auto;
-      margin-top: 1.09vw;
+     		margin-top: 1.09vw;
 
-      @media only screen and (max-width: 768px) {
-        font-size: 14px;
-        line-height: 18px;
-      }
+      		@media only screen and (max-width: 768px) {
+        		font-size: 14px;
+        		line-height: 18px;
+      		}
 
-      @media only screen and (max-width: 576px) {
-        font-size: 11px;
-        line-height: 16px;
+      		@media only screen and (max-width: 576px) {
+        		font-size: 11px;
+        		line-height: 16px;
 			}
 		}
 
