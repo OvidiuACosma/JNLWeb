@@ -33,7 +33,7 @@ export class RequestFormComponent implements OnInit {
 
   @Input() requestType: number;
   // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites;
-  public requestForm: FormGroup;
+  requestForm: FormGroup;
   language: string;
   text: any;
   countryNames: any;
@@ -99,7 +99,9 @@ export class RequestFormComponent implements OnInit {
   setRequestForm(): FormGroup {
     const requestForm = new RequestForm();
     requestForm.type = this.requestType;
+
     // TODO: populate form fields from user if logged in
+
     const requestFormGroup: FormGroup = this.fb.group(requestForm);
     requestFormGroup.get('email').setValidators([Validators.email]);
     requestFormGroup.get('message').setValidators([Validators.required]);

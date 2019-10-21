@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataExchangeService, AuthenticationService } from './_services';
 import { AuthGuard } from './_guards';
-import { CopyToClipboardDirective } from './_directives';
 
 
 
@@ -10,9 +9,8 @@ import { CopyToClipboardDirective } from './_directives';
   imports: [
     CommonModule
   ],
-  exports: [
-    CopyToClipboardDirective
-  ],
+  declarations: [],
+  exports: [],
   providers: [
     AuthGuard,
     AuthenticationService

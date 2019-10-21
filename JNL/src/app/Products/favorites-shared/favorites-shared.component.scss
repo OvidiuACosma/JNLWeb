@@ -1,0 +1,112 @@
+.fav-main {
+  margin: auto;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+
+	h3 {
+    margin: 1.5vw 0;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: Helvetica-Light;
+		color: #dbbb76;
+		font-size: 1.6vw;
+	}
+
+  .content {
+    display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+    margin: 1vw auto auto;
+    padding-top: 3vw;
+		left: 0;
+    height: auto;
+    width: 99vw;
+    text-align: center;
+    overflow-x: hidden;
+	}
+
+	ul {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		list-style-type: none;
+		padding: 0 !important;
+
+    .flex-div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: left;
+      float: left;
+      width: auto;
+      margin: auto;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    li {
+      display: inline-block;
+      margin-bottom: 3vh;
+      margin: auto;
+      margin-left: 1.5vw;
+      margin-right: 1.5vw;
+      width: 20vw;
+
+      > div {
+        font-family: Helvetica-Light;
+        font-size: 1.2vw;
+        text-align: left;
+      }
+    }
+  }
+
+	.card-product {
+		width: 21vw;
+		cursor: pointer;
+		color: black;
+	}
+
+	.pic-frame {
+		width: 21vw;
+		height: 20vw;
+		background-color: white;
+		border: 0.88px solid transparent;
+	}
+
+	.center-product {
+    display: flex;
+		margin: auto;
+		margin-bottom: 0;
+		vertical-align: middle;
+		overflow: visible;
+	}
+
+	.search-img {
+    margin: auto;
+    padding: 0;
+		object-fit: contain;
+		max-width: 19vw;
+		max-height: 19vw;
+		vertical-align: middle;
+		transition: 0.5s;
+	}
+
+	.search-img:hover {
+		transform: scale(1.2);
+	}
+
+	.product-name {
+    margin-bottom: 0;
+    min-height: 1.5vw;
+		max-width: 19.45vw;
+		text-align: center;
+    transition: all 0.3s ease;
+	}
+
+	.product-name:hover {
+		color: #dbbb76;
+		transition: all 0.3s ease;
+	}
+}

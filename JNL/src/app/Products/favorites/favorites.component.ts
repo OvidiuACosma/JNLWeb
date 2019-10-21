@@ -1,9 +1,31 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, FavoritesService, ProductsService } from '../../_services';
-import { IFavorites, IFavoritesProducts, ProductEF, User } from '../../_models';
+import { IFavorites, IFavoritesProducts, ProductEF } from '../../_models';
 import { concatMap, map, mergeMap } from 'rxjs/operators';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+export interface IDialogData {
+  title: string;
+  text: string;
+}
+
+@Component({
+  selector: 'app-dialog-answer',
+  templateUrl: 'dialog-answer.html',
+  styleUrls: ['./favorites.component.scss']
+})
+export class DialogAnswerComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogAnswerComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: IDialogData) {}
+
+  okClick(): void {
+    this.dialogRef.close();
+  }
+}
 
 @Component({
   selector: 'app-favorites',
@@ -19,8 +41,8 @@ export class FavoritesComponent implements OnInit  {
   currentFavoriteList: IFavorites;
   favoritesProducts: IFavoritesProducts[];
   favoritesProductsDetails: ProductEF[];
+  sharedFavoritesListLink: string;
   listId = 0;
-
   removeAll = false;
 
   constructor(private route: ActivatedRoute,
@@ -28,7 +50,8 @@ export class FavoritesComponent implements OnInit  {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private favoritesService: FavoritesService,
-              private productsService: ProductsService) {
+              private productsService: ProductsService,
+              public dialog: MatDialog) {
     }
 
   ngOnInit() {
@@ -38,21 +61,17 @@ export class FavoritesComponent implements OnInit  {
       this.getText(lang);
     });
 
-    this.route.params
-    .pipe(
-      mergeMap( p => (this.dataex.currentUser)
-        .pipe(
-          concatMap( user => this.favoritesService.getFavoritesOfRelation(user.userName)
-            .pipe(
+    this.route.params.pipe(
+      mergeMap( p => (this.dataex.currentUser).pipe(
+          concatMap( user => this.favoritesService.getFavoritesOfRelation(user.userName).pipe(
               map(resp => ({
                 p: p,
                 user: user,
                 fav: resp
-              }))
+              })
             )
-          )
-        )
-      )
+          ))
+      ))
     )
     .subscribe(response => {
       this.favoritesList = response.fav;
@@ -76,6 +95,8 @@ export class FavoritesComponent implements OnInit  {
   }
 
   setFavoriteList(favListId: number) {
+    this.sharedFavoritesListLink = null;
+    this.currentFavoriteList = this.favoritesList.find(f => f.id === favListId);
     this.getProductsOfFavoriteList(favListId);
   }
 
@@ -148,11 +169,36 @@ export class FavoritesComponent implements OnInit  {
     });
   }
 
-  scrollTop() {
-    window.scrollTo(0, 0);
+  shareFavoritesList(favList: IFavorites) {
+    this.sharedFavoritesListLink = `https://www.jnl.be/product/sharedfavorites/${favList.rowguid}`;
   }
 
-  showListId() {
-    console.log('Show list id:', this.listId);
+  notify(event: string) {
+    const message = `The link ('${event}') has been copied to clipboard.`;
+    this.sharedFavoritesListLink = null;
+    // TODO: dialog confirm
+    this.openDialog('Thank you!', message);
+    console.log(message);
+  }
+
+  openDialog(answerTitle: string, answerText: string): void {
+    answerText = `${answerText} Please paste it in the document or the message you wish to share.`;
+    const dialogRef = this.dialog.open(DialogAnswerComponent, {
+      width: '350px',
+      data: {
+        title: answerTitle,
+        text: answerText
+      }
+    });
+
+    // in case the dialog provides an answer (like Input box)
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.answerText = result;
+    });
+  }
+
+  scrollTop() {
+    window.scrollTo(0, 0);
   }
 }

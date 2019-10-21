@@ -1,5 +1,5 @@
 <div class="search-bar">
-  <div class=" bar d-print-none">
+  <div class="bar d-print-none">
     <div class="top-bar">
       <div class="menu-button">
         <div class="menu-button-flex">
@@ -7,6 +7,7 @@
             (click)="toggleNav()" (mouseover)="toggleNav()" alt="menu button">
         </div>
       </div>
+
       <div class="menu-logo">
         <div class="menu-logo-img" *ngIf="!isHome">
           <img class="image-link"
@@ -17,16 +18,14 @@
 
       <div class="top-buttons" *ngIf="text" (mouseleave)="closeLangSelection()"
         [ngStyle]="isHome ? {'color': '#666'} : {'color': 'black'}">
-        <span *ngIf="currentUser && currentUser.type==='A'">
-          <a (click)="navigateTo('register')" class="top-button">register</a>
-        </span>
-        <span class="dash" *ngIf="currentUser && currentUser.type==='A'">&#8213;</span>
-        <span>
+
+        <!-- <span>
           <a (click)="navigateTo('product/favorites/0')" class="top-button">
             <i class="far fa-heart heart"></i>
           </a>
         </span>
-        <span class="dash">&#8213;</span>
+        <span class="dash">&#8213;</span> -->
+
         <span>
           <a class="top-button" *ngIf="!searchMode"
             (click)="goSearchMode()">
@@ -35,14 +34,26 @@
           <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
             (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
         </span>
-        <span class="dash">&#8213;</span>
+        <!-- <span class="dash">&#8213;</span> -->
+
         <span>
-          <!-- <a (click)="navigateTo('contact')" class="top-button">{{text.contact}}</a> -->
-          <a (click)="logIn(loginText)" class="top-button">{{loginText}}</a>
+          <a class="top-button">
+            <span *ngIf="loginText==='log in'" (click)="logIn()">
+              <i class="far fa-user"></i>
+            </span>
+            <span *ngIf="loginText==='log out'" (click)="toggleUserOptionsMenu()">
+              <i style="margin-right: 2px" class="far fa-user"></i>
+              <i class="fa fa-sort-down fa-1"></i>
+            </span>
+          </a>
+          <ul class="user-menu" *ngIf="userOptionsVisible" (mouseleave)="toggleUserOptionsMenu()">
+            <li *ngFor="let option of userOptions" (click)="userOptionClick(option)">{{option}}</li>
+          </ul>
         </span>
-        <span class="dash">&#8213;</span>
-        <span>
-          <ul *ngIf="isLangSelectMode">
+        <!-- <span class="dash">&#8213;</span> -->
+
+        <span *ngIf="isLangSelectMode">
+          <ul>
             <li *ngFor="let l of otherLanguages">
             <span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>
             </li>
@@ -53,7 +64,7 @@
               {{language}}
           </span>
           <span (click)="toggleLangStatus()">
-            <i class="fa fa-sort-down fa-1 m-right"></i>
+            <i class="fa fa-sort-down fa-1"></i>
           </span>
         </span>
         <!--<span>

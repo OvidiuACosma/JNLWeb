@@ -9,11 +9,13 @@ import { ProductGarnissagesComponent } from './product-garnissages/product-garni
 import { ProductDimensionsComponent } from './product-dimensions/product-dimensions.component';
 import { ProductCataloguesComponent } from './product-catalogues/product-catalogues.component';
 import { ProductGarnissageDetailsComponent } from './product-garnissage-details/product-garnissage-details.component';
+import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.component';
 
 
 const routes: Routes = [
   { path: '', component: ProductSearchComponent },
   { path: 'favorites/:id', component: FavoritesComponent, canActivate: [AuthGuard] },
+  { path: 'sharedfavorites/:id', component: FavoritesSharedComponent },
   // { path: 'favoritesSelList', component: FavoritesSelListComponent, canActivate: [AuthGuard] },
   { path: 'product', component: ProductComponent },
   { path: 'products', component: ProductSearchComponent },

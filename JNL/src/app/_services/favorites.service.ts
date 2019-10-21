@@ -30,6 +30,10 @@ export class FavoritesService {
       return this.http.get<IFavoritesProducts[]>(`${this.apiUrl}/LG/${favListId}`, {headers: this.headers});
     }
 
+    public getFavoritesShared(favListGuid: string): Observable<IFavorites> {
+      return this.http.get<IFavorites>(`${this.apiUrl}/shared/${favListGuid}`, {headers: this.headers});
+    }
+
 
     public postFavoritesList(favList: IFavorites): Observable<IFavorites> {
       return this.http.post<IFavorites>(`${this.apiUrl}`, favList, {headers: this.headers});

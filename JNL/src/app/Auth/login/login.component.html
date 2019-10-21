@@ -21,8 +21,11 @@
 			</div>
 		</form>
 	</div>
-	<div mat-dialog-actions style="display: flex; justify-content: center; align-content: space-between; flex-wrap: wrap; ">
-		<button type="button" (click)="onSubmit()" [disabled]="loading" class="btn btn-primary">Login</button>
-		<button type="button" (click)="close()" class="btn btn-secondary">Cancel</button>
+  <div mat-dialog-actions class="dialog-action">
+    <label mat-button (click)="onSubmit()">Login</label>
+    &nbsp;
+    <label mat-button (click)="close()">Cancel</label>
+		<!-- <button type="button" (click)="onSubmit()" [disabled]="loading" class="btn btn-primary">Login</button>
+		<button type="button" (click)="close()" class="btn btn-secondary">Cancel</button> -->
 	</div>
 </div>

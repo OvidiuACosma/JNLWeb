@@ -1,4 +1,9 @@
 .login-wrapper {
+  height: 25vw;
+
+  h2 {
+    text-align: center;
+  }
 	.container {
 		margin-top: 1vw;
 		display: flex;
@@ -19,10 +24,42 @@
 	.btn {
 		margin-left: 2px;
 		margin-right: 2px;
-	}
+  }
+
+  .form-group {
+    > label {
+      margin-bottom: .1vw;
+      font-family: Helvetica-Light;
+      font-size: 1.4vw
+    }
+  }
+
+  .dialog-action {
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 3vw;
+    text-align: center;
+    cursor: pointer;
+
+    > label {
+      margin-top: .5vw;
+      width: 8vw;
+      height: 2.6vw;
+      text-align: center;
+      border: solid 1px black;
+      border-radius: 3px;
+
+      &:hover {
+        font-weight: bold;
+        border: solid 1.5px black;
+      }
+    }
+  }
 }
 
-/* Register */
 .register-wrapper {
 	margin: 7vw 30vw;
 	padding: 2vw;

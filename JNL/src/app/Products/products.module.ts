@@ -15,8 +15,10 @@ import { ProductsService, ConfigService, AlertService, TranslationService } from
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
-import { DialogAnswerComponent } from '../Std';
 import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-list.component';
+import { CopyToClipboardDirective } from '../_directives';
+import { DialogAnswerComponent } from '../Products';
+import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.component';
 
 
 @NgModule({
@@ -39,7 +41,10 @@ import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-li
     ProductCataloguesComponent,
     ProductComponent,
     FavoritesComponent,
-    FavoritesSelListComponent
+    FavoritesSelListComponent,
+    CopyToClipboardDirective,
+    DialogAnswerComponent,
+    FavoritesSharedComponent
   ],
   exports: [
     ProductSearchComponent,
@@ -50,7 +55,9 @@ import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-li
     ProductCataloguesComponent,
     ProductComponent,
     FavoritesComponent,
-    FavoritesSelListComponent
+    FavoritesSelListComponent,
+    DialogAnswerComponent,
+    CopyToClipboardDirective
   ],
   entryComponents: [
     DialogAnswerComponent,

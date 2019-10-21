@@ -1,8 +1,9 @@
-import { Component, OnInit, Output, EventEmitter, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataExchangeService, TranslationService } from '../../_services';
+import { DataExchangeService, TranslationService, AuthenticationService } from '../../_services';
 import { Browser, User } from '../../_models';
 import { AuthGuard } from 'src/app/_guards';
+import { mergeMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -16,77 +17,100 @@ export class SearchComponent implements OnInit {
   otherLanguages: string[];
   languages: string[] = ['EN', 'FR'];
   isLangSelectMode = false;
+  textAllLanguages: any;
   text: any;
   searchMode = false;
   navBarStatus = true;
   navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
-  navBarButtonText: string;
   isHome: boolean;
   browser: Browser;
   currentUser: User;
+  userOptionsVisible = false;
+  userOptions: string[];
   loginText: string;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
-              private authGuard: AuthGuard) {}
+              private authGuard: AuthGuard,
+              private autenticationService: AuthenticationService) {}
 
   ngOnInit() {
-    this.dataex.currentNavBarStatus
-    .subscribe(status => {
-      this.navBarStatus = status;
-      this.navBarButtonSrc = '/assets/Images/Menu/menuOpen.png';
-      this.navBarButtonText = 'MENU';
-    });
-    this.dataex.currentBrowser
-    .subscribe(browser => {
-      this.browser = browser;
-    });
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.otherLanguages = this.languages.filter(f => !f.includes(this.language));
-      this.getText(this.language);
-    });
-    this.router.events.subscribe(r => {
-      this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
-    });
+    this.getData();
+  }
 
-    this.getUser();
+  getData() {
+    this.dataex.currentUser.pipe(
+      mergeMap(user => this.dataex.currentNavBarStatus.pipe(
+        mergeMap(navBarStatus => this.dataex.currentBrowser.pipe(
+          mergeMap(browser => this.router.events.pipe(
+            mergeMap(router => this.dataex.currentLanguage.pipe(
+              mergeMap(lang => this.textService.getTextSearch().pipe(
+                map(text => ({
+                  user: user,
+                  navBarStatus: navBarStatus,
+                  browser: browser,
+                  router: router,
+                  lang: lang,
+                  text: text
+                }))
+              ))
+            ))
+          ))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.currentUser = resp.user;
+      this.navBarStatus = resp.navBarStatus;
+      this.browser = resp.browser;
+      this.isHome = (this.router.url === '/' || this.router.url === '/home') ? true : false;
+      this.language = resp.lang || 'EN';
+      this.otherLanguages = this.languages.filter(f => !f.includes(this.language));
+      this.textAllLanguages = resp.text;
+      this.text = this.getText(this.language);
+    });
+    this.checkUser(this.currentUser);
+    this.getUserOptions(this.currentUser);
+  }
+
+  checkUser(user: User) {
     const userLocal: User = JSON.parse(localStorage.getItem('currentUser'));
     if (userLocal && this.currentUser !== userLocal) {
-      this.resetUser(userLocal);
+      this.dataex.setCurrentUser(userLocal);
       this.getUser();
     }
+  }
+
+  getUserOptions(user: User) {
     this.getLogInText();
+    this.userOptions = [];
+    if (this.loginText === 'log out') {
+      this.userOptions.push('Favorites');
+      if (['A', 'C', 'R'].includes(user.type)) {
+        this.userOptions.push('Price list');
+      }
+      if (user.type === 'A') {
+        this.userOptions.push('Add login');
+      }
+      this.userOptions.push('Log out');
+    }
   }
 
-  getText(lang: string) {
-    this.textService.getTextSearch()
-    .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
-    });
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
+  getText(lang: string): any {
+    return this.textAllLanguages[0][lang.toUpperCase()];
   }
 
   getUser() {
     this.dataex.currentUser
     .subscribe(user => {
       this.currentUser = user;
-      this.getLogInText();
+      this.getUserOptions(user);
     });
   }
 
   getLogInText() {
     this.loginText = this.isLoggedIn() ? 'log out' : 'log in';
-  }
-
-  resetUser(user: User) {
-    this.dataex.setCurrentUser(user);
   }
 
   goSearchMode() {
@@ -141,7 +165,7 @@ export class SearchComponent implements OnInit {
   onChangeLanguage(lang: any) {
     this.language = lang;
     this.dataex.setLanguage(lang);
-    this.getText(this.language);
+    this.text = this.getText(lang);
     if (this.isLangSelectMode) {
       this.toggleLangStatus();
     }
@@ -170,20 +194,38 @@ export class SearchComponent implements OnInit {
     return this.authGuard.isLoggedIn();
   }
 
-  logIn(option: string) {
+  logIn() {
+    this.authGuard.logIn();
+    this.getUser();
+  }
+
+  logOut() {
+    this.autenticationService.logout();
+    this.getLogInText();
+  }
+
+  toggleUserOptionsMenu() {
+    this.userOptionsVisible = !this.userOptionsVisible;
+  }
+
+  userOptionClick(option: string) {
     switch (option.toLowerCase()) {
-      case 'log in': {
-        this.authGuard.logIn();
-        this.getUser();
+      case 'log out': {
+        this.logOut();
         break;
       }
-      case 'log out': {
-        localStorage.removeItem('currentUser');
-        // remove username in header component
-        this.dataex.setCurrentUser(new User());
-        this.getLogInText();
+      case 'add login' : {
+        this.navigateTo('register');
+        break;
+      }
+      case 'price list': {
+        break;
+      }
+      case 'favorites': {
+        this.navigateTo('product/favorites/0');
         break;
       }
     }
+    this.toggleUserOptionsMenu();
   }
 }

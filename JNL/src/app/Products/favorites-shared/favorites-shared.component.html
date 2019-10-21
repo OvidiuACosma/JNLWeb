@@ -1,0 +1,27 @@
+<div class="fav-main" *ngIf="currentFavoriteList">
+  <h1>{{text.title}}</h1>
+  <h3>{{currentFavoriteList.listName}}</h3>
+  <div class="content" *ngIf="currentFavoriteList">
+    <ul>
+      <div class="flex-div" *ngIf="favoritesProductsDetails">
+        <li *ngFor="let f of favoritesProducts">
+          <div class="card-product" style="position: relative">
+            <div class="pic-frame" (click)="goToProduct(f)">
+              <figure class="center-product">
+                <img class="search-img" [src]="getProductImage(f)" alt="getAltText(f)">
+              </figure>
+            </div>
+            <div style="position: relative" (click)="goToProduct(f)">
+              <p class="product-name">
+                  {{getProductName(f)}}
+              </p>
+              <p class="product-name">
+                  {{f.productBrand}}
+              </p>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

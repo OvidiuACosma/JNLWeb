@@ -1,13 +1,14 @@
 import { Directive, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appCopyToClipboard]'
+  // tslint:disable-next-line: directive-selector
+  selector: '[copy-clipboard]'
 })
 
 export class CopyToClipboardDirective {
 
-  @Input() payload: string;
-  @Input() context: string;
+  @Input('copy-clipboard') payload: string;
+  @Input('context') context: string;
 
   @Output() copied: EventEmitter<string> = new EventEmitter<string>();
 
