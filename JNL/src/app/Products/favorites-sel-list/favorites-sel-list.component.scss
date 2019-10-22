@@ -1,15 +1,29 @@
-.fav_sel_list {
+.fav-sel-list {
+
+  h1 {
+    margin-bottom: 3vw;
+  }
 
 	table {
+    width: 100%;
 		font-family: Helvetica-Light;
-	}
+  }
+
+  .list-header {
+    padding-bottom: 1vw;
+    width: 100%;
+    font-family: Helvetica;
+    font-size: 1.8vw;
+    color: #dbbb76;
+  }
 
 	input {
-		height: 2.5vw;
-	}
+    height: 2.5vw;
+    font-size: 1.6vw;
 
-	input:focus {
-		outline: none;
+    &:focus {
+      outline: none;
+    }
 	}
 
 	.fav-list {
@@ -19,39 +33,59 @@
 	}
 
 	.link {
-		cursor: pointer;
-	}
+    cursor: pointer;
 
-	.link:hover {
-		color: rgb(97, 97, 255);
+    &:hover {
+      color: rgb(97, 97, 255);
+    }
 	}
 
 	label {
 		cursor: pointer;
 		margin-bottom: 0;
-		font-size: 1.5vw;
-	}
+    font-size: 1.5vw;
 
-	label:hover {
-		// color: rgb(97, 97, 255);
-		font-weight: bold;
+    &:hover {
+      font-weight: bold;
+    }
 	}
 
 	.label-red {
-		color: rgb(255, 97, 97);
-	}
+    color: rgb(255, 97, 97);
 
-	.label-red:hover {
-		color: red;
-		font-weight: bold;
-	}
+    &:hover {
+      color: red;
+      font-weight: bold;
+    }
+  }
+
+  form {
+    margin-top: .5vw;
+  }
+
+  thead, tbody {
+    display: block;
+  }
+
+  .tbody-scroll {
+    height: 22vw;
+    overflow-y: scroll;
+  }
+
+  .table-row {
+    line-height: 2.5vw;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
 
 	.link-red {
-		cursor: pointer;
-	}
+    cursor: pointer;
 
-	.link-red:hover {
-		color: rgb(255, 97, 97);
+    &:hover {
+      color: rgb(255, 97, 97);
+    }
 	}
 
 	.c-green {
@@ -64,7 +98,11 @@
 
 	.a-center {
 		text-align: center;
-	}
+  }
+
+  .confirm {
+    font-family: Helvetica-light;
+  }
 
 	.fade-input {
 		border-style: none;

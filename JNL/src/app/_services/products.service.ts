@@ -7,6 +7,7 @@ import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../Auth/login/login.component';
 import { map } from 'rxjs/operators';
 import { FavoritesSelListComponent } from '../Products/favorites-sel-list/favorites-sel-list.component';
+import { DataExchangeService } from './data-exchange.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,8 @@ export class ProductsService {
 
   constructor(private http: HttpClient,
               private configService: ConfigService,
-              private dialog: MatDialog) {
+              private dialog: MatDialog,
+              private dataex: DataExchangeService) {
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
     this.product = configService.getApiURI() + '/products';
     this.prodDescURL = configService.getApiURI() + '/productsdescriptions';
@@ -107,18 +109,23 @@ export class ProductsService {
   }
 
   openDialog(product: ProductEF, user: User): Observable<boolean> {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '70vw';
-    dialogConfig.data = { product, user };
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(FavoritesSelListComponent, dialogConfig);
-
-    return dialogRef.afterClosed()
-    .pipe(
-      map(result => {
-      return result;
-    }));
+    this.dataex.currentBrowser.subscribe(browser => {
+      let width = '70%';
+      if (browser.isMobile || browser.isTablet) { width = '100%'; }
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.width = width;
+      dialogConfig.maxWidth = '100%';
+      dialogConfig.data = { product, user };
+      dialogConfig.hasBackdrop = true;
+      dialogConfig.disableClose = false;
+      dialogConfig.autoFocus = true;
+      const dialogRef = this.dialog.open(FavoritesSelListComponent, dialogConfig);
+      return dialogRef.afterClosed()
+      .pipe(
+        map(result => {
+        return result;
+      }));
+    });
+    return of(false);
   }
 }

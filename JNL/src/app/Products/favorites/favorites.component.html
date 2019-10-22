@@ -1,6 +1,7 @@
 <div class="fav-main" *ngIf="currentFavoriteList">
   <h1>{{text.title}}</h1>
   <h3>{{currentFavoriteList.listName}}</h3>
+
   <div class="share-list">
     <p (click)="shareFavoritesList(currentFavoriteList)">Share this Favorites List</p>
     <p *ngIf="sharedFavoritesListLink" [copy-clipboard]="sharedFavoritesListLink" (copied)="notify($event)">
@@ -12,6 +13,7 @@
     </p>
     <p *ngIf="sharedFavoritesListLink"></p>
   </div>
+
   <div class="content" *ngIf="favoritesList">
     <div class="fav-list">
       <p>Favorites Lists</p>
@@ -30,7 +32,7 @@
         <ul class="list">
           <div class="flex-div" *ngIf="favoritesProductsDetails">
             <li *ngFor="let f of favoritesProducts">
-              <div class="card-product" style="position: relative">
+              <div class="card-product">
                 <div class="pic-frame" (click)="goToProduct(f)">
                   <figure class="center-product">
                     <img class="search-img" [src]="getProductImage(f)" alt="getAltText(f)">

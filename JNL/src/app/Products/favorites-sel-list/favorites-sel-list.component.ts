@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './favorites-sel-list.component.html',
   styleUrls: ['./favorites-sel-list.component.scss']
 })
+
 export class FavoritesSelListComponent implements OnInit {
 
   product: ProductEF;
@@ -50,7 +51,6 @@ export class FavoritesSelListComponent implements OnInit {
     this.favoritesService.getFavoritesOfRelation(this.user.userName)
     .subscribe(favList => {
       this.favoritesList = favList;
-
       this.setFavListArray(favList);
     });
   }

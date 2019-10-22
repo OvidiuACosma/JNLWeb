@@ -55,43 +55,37 @@ export class FavoritesComponent implements OnInit  {
     }
 
   ngOnInit() {
-    this.dataex.currentLanguage
-      .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-    });
+    this.getData();
+  }
 
-    this.route.params.pipe(
-      mergeMap( p => (this.dataex.currentUser).pipe(
-          concatMap( user => this.favoritesService.getFavoritesOfRelation(user.userName).pipe(
-              map(resp => ({
-                p: p,
-                user: user,
-                fav: resp
-              })
-            )
+  getData() {
+    this.dataex.currentLanguage.pipe(
+      mergeMap(lang => this.textService.getTextFavorites().pipe(
+        mergeMap(text => this.route.params.pipe(
+          mergeMap( p => (this.dataex.currentUser).pipe(
+              concatMap( user => this.favoritesService.getFavoritesOfRelation(user.userName).pipe(
+                  map(resp => ({
+                    lang: lang,
+                    text: text,
+                    p: p,
+                    user: user,
+                    fav: resp
+                  })
+                )
+              ))
           ))
+        ))
       ))
     )
-    .subscribe(response => {
-      this.favoritesList = response.fav;
-      this.listId = parseInt(response.p.id, 10);
-      const i = this.listId !== 0 ? this.listId : response.fav[0].id;
-      this.currentFavoriteList = response.fav.find(f => f.id === i);
+    .subscribe(resp => {
+      this.language = resp.lang || 'EN';
+      this.text = resp.text[0][this.language.toUpperCase()];
+      this.favoritesList = resp.fav;
+      this.listId = parseInt(resp.p.id, 10);
+      const i = this.listId !== 0 ? this.listId : resp.fav[0].id;
+      this.currentFavoriteList = resp.fav.find(f => f.id === i);
       this.setFavoriteList(i);
     });
-  }
-
-  getText(lang: string) {
-    this.textService.getTextFavorites()
-      .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res, lang);
-    });
-  }
-
-  getLanguageText(res: any, lang: string) {
-    this.text = res[lang.toUpperCase()];
   }
 
   setFavoriteList(favListId: number) {

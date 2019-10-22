@@ -249,7 +249,22 @@
         font-size: 12px;
         line-height: 16px;
       }
-		}
+    }
+
+    .material-icons {
+      font-size: 1.1vw;
+      color: #dbbb76;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      @media only screen and (max-width: 576px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
 
 		> div {
 			display: flex;
@@ -484,17 +499,6 @@
 	}
 }
 
-.product_change_tab {
-	padding: 10px;
-	width: 100%;
-
-	select {
-		width: 100%;
-		border: 1.5px solid #666;
-		padding: 10px;
-	}
-}
-
 @media only screen and (min-width: 1200px) {
 	.d-large {
 		width: 1200px;
@@ -540,7 +544,11 @@
 
 			h3 {
 				font-size: 13.2px;
-			}
+      }
+
+      .material-icons {
+        font-size: 13.2px;
+      }
 		}
 
 		.nav-dimension {
