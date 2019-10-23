@@ -155,14 +155,14 @@
 	}
 
 	.fav-div {
-    margin-top: 7.5vw !important;
-    padding-top: 3.7vw;
+    	margin-top: 7.5vw !important;
+    	padding-top: 3.7vw;
 		left: 0;
 		width: 100%;
 		text-align: center;
 		font-family: Helvetica-Light;
 		font-size: 20px;
-    background-color: #e3d9c6;
+    	background-color: #e3d9c6;
 
     @media only screen and (max-width: 768px) {
         font-size: 4.5vw;
@@ -289,5 +289,146 @@
 	.product-brand-text:hover {
 		color: #dbbb76;
 		transition: all 0.3s ease;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.dialog-answer {
+		h1 {
+		  font-size: 18px;
+		}
+	  
+		> div > p {
+		  font-size: 14.4px;
+		  line-height: 16.8px;
+		}
+	}
+	  
+	.fav-main {
+		width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+
+		h3 {
+			font-size: 19.2px; /*20px;*/
+			margin: 18px 0;
+		}
+	  
+		> div {
+		  &.share-list {
+			font-size: 18px;
+	  
+			> p {
+			  margin-bottom: 12px;
+			}
+	  
+			> p:nth-child(2), > p:nth-child(3) {
+			  font-size: 15.6px;
+			}
+		  }
+		}
+	  
+		.content {
+			width: 99%;
+			padding-top: 36px;
+		}
+	  
+		.fav-list {
+			width: 288px;
+			padding-left: 24px;
+			padding-right: 12px;
+			margin-right: 48px;
+	  
+			> p {
+				margin-top: 42px;
+				font-size: 19.2px;
+		  	}
+		}
+	  
+		.products {
+			  width: 876px;
+		}
+	  
+		.products-container {
+			margin: 12px 0 60px;
+		}
+	  
+		.list {
+			margin-top: 12px;
+		}
+	  
+		.filters {
+			margin-top: 36px;
+		}
+	  
+		.filters > ul > li {
+			margin-left: 18px;
+			margin-right: 18px;
+		  	width: 204px;
+		  	font-size: 18px;
+		}
+	  
+		.single-filter {
+			font-size: 15.6px;
+			line-height: 18px;
+		}
+	  
+		.single-filter > span > i {
+			line-height: 16.8px;
+			font-size: 12px;
+		}
+	  
+		.fav-div {
+		  	margin-top: 90px !important;
+		  	padding-top: 44.4px;
+		}
+	  
+		li {
+			width: 213.6px;
+			margin-bottom: 60px;
+		}
+	  
+		li > div {
+			font-size: 14.4px;
+		}
+	  
+		.flex-div {
+			width: 876px;
+		}
+	  
+		.flex-div > li {
+			width: 240px;
+			margin-left: 18px;
+			margin-right: 18px;
+			margin-bottom: 36px;
+		}
+	  
+		.card-product {
+			width: 252px;
+		}
+	  
+		.pic-frame {
+			width: 252px;
+			height: 240px;
+		}
+	  
+		.search-img {
+			max-width: 228px;
+			max-height: 228px;
+		}
+	  
+		.product-name {
+			max-width: 233.4px;
+			min-height: 18px;
+		}
+	  
+		.product-name > span > i {
+			padding-right: 7.2px;
+			font-size: 12px;
+		}
+	  
+		.product-brand-text {
+			  font-size: 12px;
+		}
 	}
 }

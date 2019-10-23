@@ -95,16 +95,25 @@
 		width: 1vw;
     	margin-top: 3vw;
 
-    @media only screen and (max-width: 768px) {
-      margin-top: 0;
-      margin-bottom: 15vw;
-    }
+    	@media only screen and (max-width: 768px) {
+      		margin-top: 0;
+			margin-bottom: 15vw;
+			height: 16px;
+			width: 8px;
+    	}
 	}
 
 	.carousel-arrows-projets {
 		height: 2vw;
 		width: 1vw;
 		margin-top: -11vw;
+
+		@media only screen and (max-width: 768px) {
+			margin-top: 0;
+			margin-bottom: 15vw;
+		  	height: 16px;
+		  	width: 8px;
+	  	}
 	}
 
 	.carousel-marques {
@@ -585,7 +594,7 @@
 			width: 100vw;
 			height: auto;
 			padding: 10px;
-			background-color: #d3d3d3;
+			background-color: #f3f5f5;
 			color: black;
 			display: flex;
 			flex-direction: row;
