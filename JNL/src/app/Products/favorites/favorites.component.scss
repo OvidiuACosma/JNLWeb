@@ -32,7 +32,7 @@
 			word-wrap: normal;
 			font-size: 5.6vw !important;
 		}
-  }
+    }
 
 	h3 {
 		text-transform: uppercase;
@@ -41,6 +41,9 @@
 		color: #dbbb76;
 		font-size: 1.6vw; /*20px;*/
 		margin: 1.5vw 0;
+		@media only screen and (max-width: 768px) {
+			font-size: 12.5px !important;
+		}
 	}
 
   > div {
@@ -51,7 +54,13 @@
 
     &.share-list {
       font-family: Helvetica-Light;
-      font-size: 1.5vw;
+	  font-size: 1.5vw;
+	  @media only screen and (max-width: 768px) {
+		font-size: 12px;
+	  }
+	  @media only screen and (max-width: 576px) {
+		font-size: 10px;
+	  }
 
       > p {
         margin-bottom: 1vw;
@@ -101,7 +110,13 @@
       font-size: 1.6vw;
       text-align: left;
       text-transform: uppercase;
-      color: #dbbb76;
+	  color: #dbbb76;
+	  @media only screen and (max-width: 768px) {
+		font-size: 12.5px;
+	  }
+	  @media only screen and (max-width: 576px) {
+		font-size: 10px;
+	  }
     }
 	}
 
@@ -127,14 +142,20 @@
 	}
 
 	.filters > ul > li {
-    display: inline-block;
+    	display: inline-block;
 		margin: auto;
 		margin-left: 1.5vw;
 		margin-right: 1.5vw;
-    width: 17vw;
-    font-size: 1.5vw;
+    	width: 17vw;
+    	font-size: 1.5vw;
 		cursor: pointer;
 		transition: all 0.3s ease;
+		@media only screen and (max-width: 768px) {
+        	font-size: 12px;
+		}
+		@media only screen and (max-width: 576px) {
+        	font-size: 10px;
+      	} 
 	}
 
 	.filters > ul > li:hover {
@@ -164,9 +185,9 @@
 		font-size: 20px;
     	background-color: #e3d9c6;
 
-    @media only screen and (max-width: 768px) {
-        font-size: 4.5vw;
-      }
+    	@media only screen and (max-width: 768px) {
+        	font-size: 4.5vw;
+      	}
 	}
 
 	.fav-div > h2 {
@@ -184,6 +205,9 @@
 		font-family: Helvetica-Light;
 		font-size: 1.2vw;
 		text-align: left;
+		@media only screen and (max-width: 768px) {
+        	font-size: 10px;
+		}
 	}
 
 	.flex-div {
@@ -284,6 +308,9 @@
 		font-size: 1vw;
 		/* line-height: 1.2vw; */
 		transition: all 0.3s ease;
+		@media only screen and (max-width: 768px) {
+        	font-size: 8px;
+		}
 	}
 
 	.product-brand-text:hover {
