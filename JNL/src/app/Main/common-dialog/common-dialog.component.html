@@ -1,0 +1,9 @@
+<div class="dialog-answer">
+    <h1 mat-dialog-title>{{data.title}}</h1>
+    <div mat-dialog-content>
+      <p>{{data.text}}</p>
+    </div>
+    <div mat-dialog-actions class="dialog-action">
+      <label mat-button *ngFor="let label of labels; let i=index" (click)="labelClick(label)">{{label}}</label>
+    </div>
+  </div>

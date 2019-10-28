@@ -2,14 +2,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, FavoritesService, ProductsService } from '../../_services';
-import { IFavorites, IFavoritesProducts, ProductEF } from '../../_models';
+import { IFavorites, IFavoritesProducts, ProductEF, IDialogData } from '../../_models';
 import { concatMap, map, mergeMap } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export interface IDialogData {
-  title: string;
-  text: string;
-}
 
 @Component({
   selector: 'app-dialog-answer',
@@ -172,7 +168,7 @@ export class FavoritesComponent implements OnInit  {
     this.sharedFavoritesListLink = null;
     // TODO: dialog confirm
     this.openDialog('Thank you!', message);
-    console.log(message);
+    // console.log(message);
   }
 
   openDialog(answerTitle: string, answerText: string): void {

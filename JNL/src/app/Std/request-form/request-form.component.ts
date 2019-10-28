@@ -1,13 +1,10 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RequestsService, TranslationService, DataExchangeService, ArchiveService } from '../../_services';
-import { RequestForm } from '../../_models';
+import { RequestForm, IDialogData } from '../../_models';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CommonDialogComponent } from 'src/app/Main';
 
-export interface IDialogData {
-  title: string;
-  text: string;
-}
 
 @Component({
   selector: 'app-dialog-answer',
@@ -32,15 +29,13 @@ export class DialogAnswerComponent {
 export class RequestFormComponent implements OnInit {
 
   @Input() requestType: number;
-  // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites;
+  // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites; 6 - Price List Req
   requestForm: FormGroup;
   language: string;
   text: any;
   countryNames: any;
   activity: any;
   projectType: any; // 0 - title(disabled); 1 - private interior project; 2 - hotel; 3 - showroom; 4 - other;
-  answerTitle: string;
-  answerText: string;
 
   constructor(private fb: FormBuilder,
               private requestsService: RequestsService,
@@ -59,6 +54,7 @@ export class RequestFormComponent implements OnInit {
       this.getCountries();
     });
     this.rebuildForm();
+    console.log('Req Form Type:', this.requestType);
   }
 
   getText(lang: string) {
@@ -115,27 +111,28 @@ export class RequestFormComponent implements OnInit {
     if (this.requestForm.valid) {
       this.requestsService.postRequest(this.requestForm.value)
       .subscribe(s => {
-        window.alert(`Your request has been registered.\n
-                      We will consider it and return to you\n
-                      with an answer in short time.\n
-                      Thank you!`);
-        // TODO: style the dialog-answer
-        // this.openDialog();
+        const answerTitle = 'Request Saved';
+        const answerText = `Your request has been registered.\n
+                      Our Customer Service Team will consider it and return to you
+                      with an answer in short time.\n\n
+                      Thank you!`;
+        this.openDialog(answerTitle, answerText);
         this.rebuildForm();
       });
     }
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogAnswerComponent, {
-      width: '250px',
-      data: {title: this.answerTitle, text: this.answerText}
+  openDialog(answerTitle: string, answerText: string): void {
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+      width: '375px',
+      data: {
+        title: answerTitle,
+        text: answerText,
+        buttons: [0]
+      }
     });
-
-    // in case the dialog provides an answer (like Input box)
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.answerText = result;
+      return;
     });
   }
 

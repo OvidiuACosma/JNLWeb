@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, DownloaderService } from '../../_services';
 import * as _ from 'lodash';
+import { AuthGuard } from 'src/app/_guards';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonDialogComponent } from 'src/app/Main';
+import { User } from 'src/app/_models';
 // import * as FileSaver from 'file-saver';
 
 interface ICatalog {
@@ -26,19 +30,21 @@ export class MarqueComponent implements OnInit {
   othersLink: string[];
   i: number;
   collections: number;
-  public marque: string;
+  marque: string;
   blob: any;
   url: any;
-
   altText: any;
   page = 'marque';
+  user: User;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private altService: AltImgService,
-              private downloader: DownloaderService) { }
+              private downloader: DownloaderService,
+              private authGuard: AuthGuard,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
     this.route.params.subscribe(p => {
@@ -116,10 +122,14 @@ export class MarqueComponent implements OnInit {
     }
   }
 
-  navigateTo(target: string, fragment: string = '') {
+  navigateTo(target: string, fragment: string = '', param: string = '') {
     if (fragment === '') {
-      this.router.navigate([target]);
       this.ScrollTop();
+      if (param === '') {
+        this.router.navigate([target]);
+      } else {
+        this.router.navigate([target, param]);
+      }
     } else {
       this.router.navigate([target], {fragment: fragment});
     }
@@ -127,7 +137,7 @@ export class MarqueComponent implements OnInit {
 
   navigateToMarque(newMarque: string) {
     this.router.navigate(['/marque', newMarque]);
-    window.scrollTo(0, 0);
+    this.ScrollTop();
 
     this.route.params.subscribe(params => {
       this.marque = params['marque'];
@@ -188,6 +198,73 @@ export class MarqueComponent implements OnInit {
     }
     str = _.startCase(_.toLower(str));
     return str;
+  }
+
+  priceListRequest() {
+    if (this.isLoggedIn()) {
+      this.dataex.currentUser.subscribe( user => {
+        this.user = user;
+        if (['A', 'C', 'R'].includes(user.type)) {
+          // TODO: open dialog Price List this.marque
+          console.log('Can Proceed to Price List.');
+        } else {
+          const message = 'Price List access is restricted to registered clients only.\n' +
+                          'If you are interested for the pricelist, please fill out the request form ' +
+                          'by following the link \'Contact\' below.\nOur Customer Service Team will ' +
+                          'consider it and return to you with details.\n\n' +
+                          'Thank you!';
+          this.openDialog('Price List Request', message, [3, 1]);
+        }
+      });
+
+    } else {
+      const message = 'Price List access is restricted to registered clients only.\n' +
+                      'Please Login first.\n' +
+                      'If you are not registered, you can fill out the request form ' +
+                      'by following the link \'Contact\' below.\nOur Customer Service Team will ' +
+                      'consider it and return to you with details.\n\n' +
+                      'Thank you!';
+      this.openDialog('Price List Request', message, [2, 3, 1]);
+    }
+  }
+
+  isLoggedIn(): boolean {
+    return this.authGuard.isLoggedIn();
+  }
+
+  logIn() {
+    this.authGuard.logIn();
+    // this.getUser();
+  }
+
+  openDialog(answerTitle: string, answerText: string, buttons: number[] = [0]): void {
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+      width: '400px',
+      data: {
+        title: answerTitle,
+        text: answerText,
+        buttons: buttons
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.resultAction(result);
+    });
+  }
+
+  resultAction(result: string) {
+    switch (result) {
+      case 'Login': {
+        this.logIn();
+        return;
+      }
+      case 'Contact': {
+        this.navigateTo('contact', '', '6');
+        return;
+      }
+      default: {
+        return;
+      }
+    }
   }
 
   ScrollTop() {

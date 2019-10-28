@@ -12,7 +12,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
-          PageNotFoundComponent } from './Main';
+          PageNotFoundComponent,
+          CommonDialogComponent} from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
@@ -39,7 +40,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
     PageNotFoundComponent,
     RequestFormComponent,
     DialogAnswerComponent,
-    LoginComponent
+    LoginComponent,
+    CommonDialogComponent
   ],
   exports: [
     HomeComponent,
@@ -59,7 +61,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
     PageNotFoundComponent,
     RequestFormComponent,
     DialogAnswerComponent,
-    LoginComponent
+    LoginComponent,
+    CommonDialogComponent
   ],
   imports: [
     CommonModule,
@@ -73,7 +76,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
   ],
   entryComponents: [
     DialogAnswerComponent,
-    LoginComponent
+    LoginComponent,
+    CommonDialogComponent
   ],
   providers: [
     ConfigService,

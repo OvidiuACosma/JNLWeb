@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch : 'full' },
   { path: 'home', component: HomeComponent },
 
+  { path: 'contact/:type', component: ContactComponent },
   { path: 'contact', component: ContactComponent },
 
   { path: 'product', loadChildren: './Products/products.module#ProductsModule' },

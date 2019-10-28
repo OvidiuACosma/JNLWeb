@@ -39,3 +39,9 @@ export class RequestForm {
     activity = '';
     // dateC?: Date;
 }
+
+export interface IDialogData {
+  title: string;
+  text: string;
+  buttons: number[];
+}
