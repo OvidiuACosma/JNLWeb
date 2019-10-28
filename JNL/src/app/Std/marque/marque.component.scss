@@ -206,6 +206,10 @@
 		height: 2vw;
 		width: 1vw;
 		margin-top: 0vw;
+		@media only screen and (max-width: 768px) {
+			height: 16px;
+			width: 8px;
+		}
 	}
 
 	.carousel-item {
