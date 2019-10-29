@@ -1,2 +1,9 @@
-<h1>Price List</h1>
-
+<div class="dialog-answer">
+  <h1 mat-dialog-title>Price List</h1>
+  <div mat-dialog-content>
+    <p>body</p>
+  </div>
+  <div mat-dialog-actions class="dialog-action">
+    <label mat-button *ngFor="let label of labels; let i=index" (click)="labelClick(label)">Download</label>
+  </div>
+</div>

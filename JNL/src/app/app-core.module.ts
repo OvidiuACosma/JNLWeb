@@ -13,7 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
           PageNotFoundComponent,
-          CommonDialogComponent} from './Main';
+          CommonDialogComponent,
+          PricelistDialogComponent} from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
@@ -41,7 +42,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
     RequestFormComponent,
     DialogAnswerComponent,
     LoginComponent,
-    CommonDialogComponent
+    CommonDialogComponent,
+    PricelistDialogComponent
   ],
   exports: [
     HomeComponent,
@@ -62,7 +64,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
     RequestFormComponent,
     DialogAnswerComponent,
     LoginComponent,
-    CommonDialogComponent
+    CommonDialogComponent,
+    PricelistDialogComponent
   ],
   imports: [
     CommonModule,
@@ -77,7 +80,8 @@ import { LoginComponent, RegisterComponent } from './Auth';
   entryComponents: [
     DialogAnswerComponent,
     LoginComponent,
-    CommonDialogComponent
+    CommonDialogComponent,
+    PricelistDialogComponent
   ],
   providers: [
     ConfigService,

@@ -4,7 +4,7 @@ import { DataExchangeService, TranslationService, AltImgService, DownloaderServi
 import * as _ from 'lodash';
 import { AuthGuard } from 'src/app/_guards';
 import { MatDialog } from '@angular/material/dialog';
-import { CommonDialogComponent } from 'src/app/Main';
+import { CommonDialogComponent, PricelistDialogComponent } from 'src/app/Main';
 import { User } from 'src/app/_models';
 // import * as FileSaver from 'file-saver';
 
@@ -205,8 +205,7 @@ export class MarqueComponent implements OnInit {
       this.dataex.currentUser.subscribe( user => {
         this.user = user;
         if (['A', 'C', 'R'].includes(user.type)) {
-          // TODO: open dialog Price List this.marque
-          console.log('Can Proceed to Price List.');
+          this.openPriceListDialog();
         } else {
           const message = 'Price List access is restricted to registered clients only.\n' +
                           'If you are interested for the pricelist, please fill out the request form ' +
@@ -244,6 +243,19 @@ export class MarqueComponent implements OnInit {
         title: answerTitle,
         text: answerText,
         buttons: buttons
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.resultAction(result);
+    });
+  }
+
+  openPriceListDialog(): void {
+    const dialogRef = this.dialog.open(PricelistDialogComponent, {
+      width: '400px',
+      data: {
+        title: '',
+        text: '',
       }
     });
     dialogRef.afterClosed().subscribe(result => {

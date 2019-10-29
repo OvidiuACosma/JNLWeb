@@ -28,5 +28,4 @@ export class CommonDialogComponent implements OnInit {
   labelClick(label: string): void {
     this.dialogRef.close(label);
   }
-
 }

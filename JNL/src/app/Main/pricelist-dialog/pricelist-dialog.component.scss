@@ -1,0 +1,29 @@
+.dialog-answer {
+  h1 {
+    font-size: 1.5vw;
+  }
+
+  > div > p {
+    font-family: Helvetica-light;
+    font-size: 1.2vw;
+    line-height: 1.4vw;
+    white-space: pre-line;
+  }
+
+  .dialog-action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+
+    > label {
+      margin: 1vw;
+      width: 6vw;
+      text-align: center;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
