@@ -1,5 +1,5 @@
 .login-wrapper {
-  height: 25vw;
+  // height: 25vw;
 
   h2 {
     text-align: center;
@@ -17,7 +17,8 @@
 	}
 
 	.textbox {
-		width: 25vw;
+    // width: 25vw;
+    width: 90%;
 		margin: 0 auto;
 	}
 
@@ -30,7 +31,13 @@
     > label {
       margin-bottom: .1vw;
       font-family: Helvetica-Light;
-      font-size: 1.4vw
+      font-size: 1.4vw;
+      @media only screen and (max-width: 768px) {
+        font-size: 15px;
+      }
+      @media only screen and (max-width: 576px) {
+        font-size: 14px;
+      } 
     }
   }
 
@@ -45,9 +52,11 @@
     cursor: pointer;
 
     > label {
-      margin-top: .5vw;
-      width: 8vw;
-      height: 2.6vw;
+      margin-top: 1vw;
+      // width: 8vw;
+      // height: 2.6vw;
+      width: 25%;
+      height: 28px;
       text-align: center;
       border: solid 1px black;
       border-radius: 3px;
