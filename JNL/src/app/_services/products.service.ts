@@ -95,6 +95,10 @@ export class ProductsService {
   openLoginDialog(): Observable<boolean> {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '30vw';
+    dialogConfig.minWidth =  '320px';
+    dialogConfig.maxWidth =  '450px';
+    dialogConfig.minHeight = '320px';
+    dialogConfig.maxHeight = '450px';
     dialogConfig.data = '';
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = true;
