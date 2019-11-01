@@ -118,7 +118,8 @@ export class ProductsService {
       if (browser.isMobile || browser.isTablet) { width = '100%'; }
       const dialogConfig = new MatDialogConfig();
       dialogConfig.width = width;
-      dialogConfig.maxWidth = '100%';
+      dialogConfig.maxWidth = '840px';
+      dialogConfig.maxHeight = '620px';
       dialogConfig.data = { product, user };
       dialogConfig.hasBackdrop = true;
       dialogConfig.disableClose = false;

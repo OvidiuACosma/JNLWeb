@@ -115,3 +115,38 @@
 		color: rgb(97, 97, 255);
 	}
 }
+
+@media only screen and (min-width: 1200px) {
+  .fav-sel-list {
+
+    h1 {
+      margin-bottom: 36px;
+    }
+  
+    .list-header {
+      padding-bottom: 12px;
+      font-size: 21.6px;
+    }
+  
+    input {
+      height: 30px;
+      font-size: 19.2px;
+    }
+  
+    label {
+      font-size: 18px;
+    }
+  
+    form {
+      margin-top: 6px;
+    }
+  
+    .tbody-scroll {
+      height: 264px;
+    }
+  
+    .table-row {
+      line-height: 30px;
+    }
+  }
+}
