@@ -38,6 +38,10 @@ export class AuthGuard implements CanActivate {
   public openDialog(): Observable<boolean> {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '30vw';
+    dialogConfig.minWidth =  '320px';
+    dialogConfig.maxWidth =  '450px';
+    dialogConfig.minHeight = '320px';
+    dialogConfig.maxHeight = '450px';
     dialogConfig.data = this.returnUrl;
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = true;
