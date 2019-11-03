@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AuthenticationService } from 'src/app/_services';
-declare var $: any;
 
 @Component({
   selector: 'app-menu',

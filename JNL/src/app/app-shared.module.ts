@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataExchangeService, AuthenticationService } from './_services';
+import { DataExchangeService, AuthenticationService, DialogService, DownloaderService } from './_services';
 import { AuthGuard } from './_guards';
 
 
@@ -13,7 +13,9 @@ import { AuthGuard } from './_guards';
   exports: [],
   providers: [
     AuthGuard,
-    AuthenticationService
+    AuthenticationService,
+    DownloaderService,
+    DialogService
   ]
 })
 

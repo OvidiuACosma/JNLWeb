@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataExchangeService, TranslationService, AuthenticationService } from '../../_services';
+import { DataExchangeService, TranslationService, AuthenticationService, DownloaderService } from '../../_services';
 import { Browser, User } from '../../_models';
 import { AuthGuard } from 'src/app/_guards';
 import { mergeMap, map } from 'rxjs/operators';
@@ -33,7 +33,8 @@ export class SearchComponent implements OnInit {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private authGuard: AuthGuard,
-              private autenticationService: AuthenticationService) {}
+              private autenticationService: AuthenticationService,
+              private downloaderService: DownloaderService) {}
 
   ngOnInit() {
     this.getData();
@@ -219,6 +220,7 @@ export class SearchComponent implements OnInit {
         break;
       }
       case 'price list': {
+        this.downloaderService.priceListRequest(this.language, 'all');
         break;
       }
       case 'favorites': {

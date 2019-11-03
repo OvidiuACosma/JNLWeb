@@ -42,7 +42,7 @@ export class MarqueComponent implements OnInit {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private altService: AltImgService,
-              private downloader: DownloaderService,
+              private downloaderService: DownloaderService,
               private authGuard: AuthGuard,
               public dialog: MatDialog) { }
 
@@ -124,7 +124,7 @@ export class MarqueComponent implements OnInit {
 
   navigateTo(target: string, fragment: string = '', param: string = '') {
     if (fragment === '') {
-      this.ScrollTop();
+      this.scrollTop();
       if (param === '') {
         this.router.navigate([target]);
       } else {
@@ -137,7 +137,7 @@ export class MarqueComponent implements OnInit {
 
   navigateToMarque(newMarque: string) {
     this.router.navigate(['/marque', newMarque]);
-    this.ScrollTop();
+    this.scrollTop();
 
     this.route.params.subscribe(params => {
       this.marque = params['marque'];
@@ -201,85 +201,10 @@ export class MarqueComponent implements OnInit {
   }
 
   priceListRequest() {
-    if (this.isLoggedIn()) {
-      this.dataex.currentUser.subscribe( user => {
-        this.user = user;
-        if (['A', 'C', 'R'].includes(user.type)) {
-          this.openPriceListDialog();
-        } else {
-          const message = 'Price List access is restricted to registered clients only.\n' +
-                          'If you are interested for the pricelist, please fill out the request form ' +
-                          'by following the link \'Contact\' below.\nOur Customer Service Team will ' +
-                          'consider it and return to you with details.\n\n' +
-                          'Thank you!';
-          this.openDialog('Price List Request', message, [3, 1]);
-        }
-      });
-
-    } else {
-      const message = 'Price List access is restricted to registered clients only.\n' +
-                      'Please Login first.\n' +
-                      'If you are not registered, you can fill out the request form ' +
-                      'by following the link \'Contact\' below.\nOur Customer Service Team will ' +
-                      'consider it and return to you with details.\n\n' +
-                      'Thank you!';
-      this.openDialog('Price List Request', message, [2, 3, 1]);
-    }
+    this.downloaderService.priceListRequest(this.language, this.marque);
   }
 
-  isLoggedIn(): boolean {
-    return this.authGuard.isLoggedIn();
-  }
-
-  logIn() {
-    this.authGuard.logIn();
-    // this.getUser();
-  }
-
-  openDialog(answerTitle: string, answerText: string, buttons: number[] = [0]): void {
-    const dialogRef = this.dialog.open(CommonDialogComponent, {
-      width: '400px',
-      data: {
-        title: answerTitle,
-        text: answerText,
-        buttons: buttons
-      }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.resultAction(result);
-    });
-  }
-
-  openPriceListDialog(): void {
-    const dialogRef = this.dialog.open(PricelistDialogComponent, {
-      width: '400px',
-      data: {
-        title: '',
-        text: '',
-      }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.resultAction(result);
-    });
-  }
-
-  resultAction(result: string) {
-    switch (result) {
-      case 'Login': {
-        this.logIn();
-        return;
-      }
-      case 'Contact': {
-        this.navigateTo('contact', '', '6');
-        return;
-      }
-      default: {
-        return;
-      }
-    }
-  }
-
-  ScrollTop() {
+  scrollTop() {
     window.scrollTo(0, 0);
   }
 }

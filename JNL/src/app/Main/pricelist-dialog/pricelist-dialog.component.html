@@ -1,9 +1,16 @@
 <div class="dialog-answer">
-  <h1 mat-dialog-title>Price List</h1>
+  <h1 mat-dialog-title>{{title}}</h1>
   <div mat-dialog-content>
-    <p>body</p>
+    <div class="content">
+      <select name="language" id="language" [(ngModel)]="language">
+        <option *ngFor="let lang of languages">{{lang}}</option>
+      </select>
+      <select name="tarif" id="tarif" [(ngModel)]="collection">
+        <option *ngFor="let col of collections">{{col}}</option>
+      </select>
+    </div>
   </div>
   <div mat-dialog-actions class="dialog-action">
-    <label mat-button *ngFor="let label of labels; let i=index" (click)="labelClick(label)">Download</label>
+    <label mat-button *ngFor="let label of labels; let i=index" (click)="labelClick(label)">{{label}}</label>
   </div>
 </div>

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../Auth';
+import { LoginComponent } from '../Auth/login/login.component';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { DataExchangeService } from '../_services';
+import { DataExchangeService } from '../_services/data-exchange.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

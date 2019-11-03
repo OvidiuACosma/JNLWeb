@@ -33,8 +33,6 @@ export class HomeComponent implements OnInit {
     });
     if (!this.testBrowser()) { this.alertBrowserIE(); }
     $(document).ready(function() {
-      // $('.carousel').carousel();
-
       $('.home-first-picture').animate({
         opacity : 1
       }, 700);

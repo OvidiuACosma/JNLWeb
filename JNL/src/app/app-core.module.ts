@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfigService, AlertService,
-          ArchiveService, DownloaderService, TranslationService, PagerService,
+          ArchiveService, TranslationService, PagerService,
           RequestsService, UserService } from './_services';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
@@ -12,9 +12,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
-          PageNotFoundComponent,
-          CommonDialogComponent,
-          PricelistDialogComponent} from './Main';
+          PageNotFoundComponent, CommonDialogComponent, PricelistDialogComponent} from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
@@ -87,7 +85,6 @@ import { LoginComponent, RegisterComponent } from './Auth';
     ConfigService,
     AlertService,
     ArchiveService,
-    DownloaderService,
     TranslationService,
     PagerService,
     RequestsService,
