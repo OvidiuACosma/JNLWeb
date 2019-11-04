@@ -2,12 +2,18 @@
   <h1 mat-dialog-title>{{title}}</h1>
   <div mat-dialog-content>
     <div class="content">
-      <select name="language" id="language" [(ngModel)]="language">
-        <option *ngFor="let lang of languages">{{lang}}</option>
-      </select>
-      <select name="tarif" id="tarif" [(ngModel)]="collection">
-        <option *ngFor="let col of collections">{{col}}</option>
-      </select>
+      <span>
+        <label for="language">Language&nbsp;</label>
+        <select name="language" id="language" [(ngModel)]="language">
+          <option *ngFor="let lang of languages">{{lang}}</option>
+        </select>
+      </span>
+      <span>
+        <label for="tarif">Tarif&nbsp;</label>
+        <select name="tarif" id="tarif" [(ngModel)]="collection">
+          <option *ngFor="let col of collections">{{col}}</option>
+        </select>
+      </span>
     </div>
   </div>
   <div mat-dialog-actions class="dialog-action">

@@ -1,6 +1,10 @@
 .dialog-answer {
   h1 {
     font-size: 1.5vw;
+
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 
   select {
@@ -27,6 +31,10 @@
       width: 6vw;
       text-align: center;
 
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+
       &:hover {
         font-weight: bold;
       }
@@ -38,5 +46,31 @@
     flex-direction: column;
     font-family: Helvetica-Light;
     font-size: 1.2vw;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    > span {
+      margin-top: .5vw;
+      text-align: center;
+
+      > select {
+        border-radius: 4px;
+        font-size: 1.2vw;
+
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+        }
+
+        > option {
+          font-size: 1.2vw;
+
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
   }
 }

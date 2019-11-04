@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
 
   language: string;
   text: any;
-  isCollapsed = false;
+  isCollapsed = true;
 
   constructor(private router: Router,
               private dataex: DataExchangeService,
