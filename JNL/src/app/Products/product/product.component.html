@@ -40,7 +40,7 @@
   </div>
 
   <div id="footer" class="d-print-none" *ngIf="stdText">
-    <button class="jbtn">{{stdText.priceListRequest}}</button><br>
+    <button class="jbtn" (click)="priceListRequest()">{{stdText.priceListRequest}}</button><br>
   </div>
 
   <div id="fav-download" class="d-print-none">

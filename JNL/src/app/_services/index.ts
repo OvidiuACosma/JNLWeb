@@ -7,6 +7,7 @@ export * from './data-exchange.service';
 export * from './dialog.service';
 export * from './downloader.service';
 export * from './favorites.service';
+export * from './loading.service';
 export * from './pager.service';
 export * from './products.service';
 export * from './requests.service';

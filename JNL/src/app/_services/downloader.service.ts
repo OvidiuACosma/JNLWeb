@@ -34,7 +34,8 @@ export class DownloaderService {
   }
 
   public getPriceList(language: string, collection: string): Observable<Blob> {
-    return this.http.get(`${this.apiUrl}/${collection}/${language}`, { responseType: 'blob', headers: this.headers });
+    return this.http.get(`${this.apiUrl}/${collection}/${language}`,
+                        { responseType: 'blob', headers: this.headers });
   }
 
   public priceListRequest(language: string, marque: string = 'all') {

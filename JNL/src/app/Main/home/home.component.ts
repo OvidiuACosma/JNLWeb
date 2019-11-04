@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, AlertService } from '../../_services';
+import { mergeMap, map } from 'rxjs/operators';
 declare var $: any;
 
 @Component({
@@ -24,13 +25,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText();
-      this.getAlt();
-      this.scrollTop();
-    });
+    this.getData();
+    this.scrollTop();
     if (!this.testBrowser()) { this.alertBrowserIE(); }
     $(document).ready(function() {
       $('.home-first-picture').animate({
@@ -39,28 +35,23 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getText() {
-    this.textService.getTextHome()
-    .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
+  getData() {
+      this.dataex.currentLanguage.pipe(
+        mergeMap(lang => this.textService.getTextHome().pipe(
+          mergeMap(text => this.altService.getAltImages().pipe(
+            map(alt => ({
+              lang: lang,
+              text: text,
+              alt: alt
+            })
+          ))
+        ))
+      ))
+    .subscribe(resp => {
+      this.language = resp.lang || 'EN';
+      this.text = resp.text[0][this.language.toUpperCase()];
+      this.altText = resp.alt[0][this.page];
     });
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
-  }
-
-  getAlt() {
-    this.altService.getAltImages()
-    .subscribe(data => {
-      const res = data[0];
-      this.altText = this.getAltText(res, this.page);
-    });
-  }
-
-  getAltText(res: any, page: string): any {
-    return res[page];
   }
 
   navigateToAnchor(fragment: string) {

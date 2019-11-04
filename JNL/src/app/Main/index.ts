@@ -6,3 +6,4 @@ export * from './contact/contact.component';
 export * from './page-not-found/page-not-found.component';
 export * from './common-dialog/common-dialog.component';
 export * from './pricelist-dialog/pricelist-dialog.component';
+export * from './loading/loading.component';

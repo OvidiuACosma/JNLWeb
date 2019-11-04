@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, ProductsService, TranslationService, ArchiveService } from '../../_services';
+import { DataExchangeService, ProductsService, TranslationService, ArchiveService, DownloaderService } from '../../_services';
 import { Product, Img, ProductHeroImage, ProductEF, User } from '../../_models';
 import * as _ from 'lodash';
 declare var $: any;
@@ -33,6 +33,7 @@ export class ProductComponent implements OnInit {
   language: string;
   text: any;
   stdText: any;
+
   selected = [0, 0, 0, 0, 0];
   country: any;
   countryName: any;
@@ -40,11 +41,12 @@ export class ProductComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-    private productsService: ProductsService,
-    private router: Router,
-    private dataex: DataExchangeService,
-    private textService: TranslationService,
-    private archiveService: ArchiveService) { }
+              private productsService: ProductsService,
+              private router: Router,
+              private dataex: DataExchangeService,
+              private textService: TranslationService,
+              private archiveService: ArchiveService,
+              private downloaderService: DownloaderService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -59,15 +61,15 @@ export class ProductComponent implements OnInit {
           });
       });
     this.getUser();
-    $(document).ready(function () {
-      $('#carousel-custom').carousel();
-      // TODO: check this in html
-      $('.product_change_tab select').on('change', function() {
-        const val = $(this).val();
-        // console.log('current val ' + val);
-        $('#nav-' + val + '-tab').click();
-      });
-    });
+    // $(document).ready(function () {
+    //   $('#carousel-custom').carousel();
+    //   // TODO: check this in html
+    //   $('.product_change_tab select').on('change', function() {
+    //     const val = $(this).val();
+    //     // console.log('current val ' + val);
+    //     $('#nav-' + val + '-tab').click();
+    //   });
+    // });
   }
 
   getProductData(product: Product) {
@@ -195,6 +197,29 @@ export class ProductComponent implements OnInit {
 
   getCountryList(source: any) {
     this.countryName = source[this.language.toUpperCase()]['countries'];
+  }
+
+  priceListRequest() {
+    let brand = this.brand;
+    switch (brand.toLowerCase()) {
+      case 'jnl collection': {
+        brand = 'JNL';
+        break;
+      }
+      case 'emanuel ungaro home': {
+        brand = 'Ungaro Home';
+        break;
+      }
+      case 'jnl studio': {
+        brand = 'JNL Studio';
+        break;
+      }
+      case 'vanhamme': {
+        brand = 'Vanhamme';
+        break;
+      }
+    }
+    this.downloaderService.priceListRequest(this.language, brand);
   }
 
   addToFavorites(product: ProductEF) {

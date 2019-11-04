@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, RequestsService } from '../../_services';
 import { FormControl, Validators } from '@angular/forms';
 import { RequestForm } from '../../_models';
-import { ValidatorEmail } from '../../_validators';
+import { map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu-bottom',
@@ -23,28 +23,27 @@ export class MenuBottomComponent implements OnInit {
               private requestService: RequestsService) {}
 
   ngOnInit() {
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-    });
-    this.dataex.currentBrowser
-    .subscribe(b => {
-      this.isMobile = b.isMobile;
-    });
+    this.getData();
     this.emailReset();
   }
 
-  getText(lang: string) {
-    this.textService.getTextMenu()
-    .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
+  getData() {
+    this.dataex.currentBrowser.pipe(
+      mergeMap(browser => this.dataex.currentLanguage.pipe(
+        mergeMap(lang => this.textService.getTextMenu().pipe(
+          map(text => ({
+            browser: browser,
+            lang: lang,
+            text: text
+          }))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.isMobile = !resp.browser.isMobile;
+      this.language = resp.lang || 'EN';
+      this.text = resp.text[0][this.language.toUpperCase()];
     });
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
   }
 
   emailReset() {

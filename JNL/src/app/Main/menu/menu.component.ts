@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AuthenticationService } from 'src/app/_services';
+import { mergeMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu',
@@ -20,28 +21,26 @@ export class MenuComponent implements OnInit {
               private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-    this.dataex.currentNavBarStatus
-    .subscribe(status => {
-      this.isCollapsed = !status;
-    });
-
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-    });
+    this.getData();
   }
 
-  getText(lang: string) {
-    this.textService.getTextMenu()
-    .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
+  getData() {
+    this.dataex.currentNavBarStatus.pipe(
+      mergeMap(status => this.dataex.currentLanguage.pipe(
+        mergeMap(lang => this.textService.getTextMenu().pipe(
+          map(text => ({
+            status: status,
+            lang: lang,
+            text: text
+          }))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.isCollapsed = !resp.status;
+      this.language = resp.lang || 'EN';
+      this.text = resp.text[0][this.language.toUpperCase()];
     });
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
   }
 
   toggleMenuBar() {
@@ -66,13 +65,13 @@ export class MenuComponent implements OnInit {
   }
 
   NavigateTo(target: string, fragment: string = '') {
+    this.toggleMenuBar();
     if (fragment === '') {
       this.router.navigate([target]);
       this.ScrollTop();
     } else {
       this.router.navigate([target], {fragment: fragment});
     }
-    this.toggleMenuBar();
   }
 
   ScrollTop() {

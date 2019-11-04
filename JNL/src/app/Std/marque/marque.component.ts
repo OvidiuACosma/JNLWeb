@@ -201,7 +201,26 @@ export class MarqueComponent implements OnInit {
   }
 
   priceListRequest() {
-    this.downloaderService.priceListRequest(this.language, this.marque);
+    let brand = this.marque;
+    switch (brand.toLowerCase()) {
+      case 'jnl': {
+        brand = 'JNL';
+        break;
+      }
+      case 'ungaro': {
+        brand = 'Ungaro Home';
+        break;
+      }
+      case 'studio': {
+        brand = 'JNL Studio';
+        break;
+      }
+      case 'vanhamme': {
+        brand = 'Vanhamme';
+        break;
+      }
+    }
+    this.downloaderService.priceListRequest(this.language, brand);
   }
 
   scrollTop() {
