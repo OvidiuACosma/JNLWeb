@@ -212,18 +212,35 @@ h6 {
 	}
 
 @media print {
+  #container {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    text-align: center;
+  }
+
   .image-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    margin: 2vw;
-    max-width: 40vw;
-    width: 100%;
-    border: 2px solid #ddd;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+    margin: auto;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 2vw;
+      width: 100%;
+      border: 2px solid #ddd;
+      text-align: center;
+      div {
+        border: 0px;
+      } 
+    }
   }
 
   .img-button {
+    margin-bottom: 2vw;
     width: 100%;
     /* height: auto; */
     object-fit: contain;
