@@ -71,7 +71,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     margin: .5vw 0 .5vw -3vw;
     text-align: left;
     border: solid 1px #888;
@@ -122,7 +122,7 @@
 		font-family: Helvetica-Light;
 		min-height: var(--search-bar-height);
 		height: var(--search-bar-height);
-    overflow: hidden;
+    // overflow: hidden;
 
     @media only screen and (max-width: 768px) {
         display: none;
