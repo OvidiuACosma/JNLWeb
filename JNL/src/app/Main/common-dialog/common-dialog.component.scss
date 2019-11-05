@@ -1,13 +1,22 @@
 .dialog-answer {
   h1 {
     font-size: 1.5vw;
+
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 
   > div > p {
     font-family: Helvetica-light;
     font-size: 1.2vw;
-    line-height: 1.4vw;
+    line-height: 1.6vw;
     white-space: pre-line;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 
   .dialog-action {
@@ -18,8 +27,12 @@
 
     > label {
       margin: 1vw;
-      width: 6vw;
+      // width: 6vw;
       text-align: center;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
 
       &:hover {
         font-weight: bold;
