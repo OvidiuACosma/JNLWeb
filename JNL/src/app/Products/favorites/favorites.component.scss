@@ -1,11 +1,26 @@
 .dialog-answer {
+  min-width: 300px;;
   h1 {
-    font-size: 1.5vw;
+	font-size: 1.5vw;
+	@media only screen and (max-width: 768px) {
+		font-size: 12px;
+	}
+	@media only screen and (max-width: 576px) {
+		font-size: 10px;
+	}
   }
 
   > div > p {
     font-size: 1.2vw;
-    line-height: 1.4vw;
+	line-height: 1.4vw;
+	@media only screen and (max-width: 768px) {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	// @media only screen and (max-width: 576px) {
+	// 	font-size: 10px;
+	// 	line-height: 12px;
+	// }
   }
 
   .dialog-action {
@@ -68,7 +83,13 @@
       }
 
       > p:nth-child(2), > p:nth-child(3) {
-        font-size: 1.3vw;
+		font-size: 1.3vw;
+		@media only screen and (max-width: 768px) {
+			font-size: 10px;
+		}
+		@media only screen and (max-width: 576px) {
+			font-size: 9px;
+		}
 
         > i {
           color: #dbbb76;
@@ -107,7 +128,10 @@
 		padding-right: 1vw;
 		margin-right: 4vw;
 		height: auto;
-    overflow-x: hidden;
+		overflow-x: hidden;
+		@media only screen and (max-width: 768px) {
+			width: 90vw;
+		}
 
     > p {
       margin-top: 3.5vw;
@@ -160,6 +184,7 @@
 		@media only screen and (max-width: 768px) {
 			font-size: 14px;
 			line-height: 14px;
+			width: 80vw;
 		}
 		@media only screen and (max-width: 576px) {
 			font-size: 12px;

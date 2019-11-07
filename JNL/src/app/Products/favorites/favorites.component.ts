@@ -174,7 +174,7 @@ export class FavoritesComponent implements OnInit  {
   openDialog(answerTitle: string, answerText: string): void {
     answerText = `${answerText} Please paste it in the document or the message you wish to share.`;
     const dialogRef = this.dialog.open(DialogAnswerComponent, {
-      width: '350px',
+      width: '380px',
       data: {
         title: answerTitle,
         text: answerText
