@@ -44,6 +44,7 @@ export class FavoritesService {
     }
 
     public patchFavoritesList(favList: any): Observable<IFavorites> {
+      // console.log('PATCH:', `${this.apiUrl}/patch/${favList.id}`, JSON.stringify(favList));
       return this.http.patch<IFavorites>(`${this.apiUrl}/patch/${favList.id}`, favList, {headers: this.headers});
     }
 
