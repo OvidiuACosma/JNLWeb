@@ -84,6 +84,7 @@
   color: #c1c1c1;
   background-color: #121a2d;
   overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
   transition: 1.4s;
 
   @media only screen and (max-width: 768px) {
