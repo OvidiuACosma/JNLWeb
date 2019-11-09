@@ -1,18 +1,39 @@
 .les-marques-main {
-	width: 100%;
 	display: flex;
-	padding-top: 5.9vw;
 	margin: auto;
-	margin-bottom: 6vw;
+  margin-bottom: 6vw;
+  padding-top: 5.9vw;
+  width: 100%;
 
-	> div {
-		margin: auto;
-		left: 0;
-		text-align: center;
+  @media only screen and (min-width: 1200px) {
+		margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 72px;
+    padding-top: 70.8px;
+		width: 1200px !important;
   }
+
+  .wrapper {
+    scroll-snap-type: y mandatory;
+
+    .scroll-child {
+      scroll-snap-align: start;
+    }
+  }
+
+  > div,
+    section {
+      left: 0;
+	  	margin: auto;
+      text-align: center;
+    }
 
   .submenu {
     width: 57vw;
+
+    @media only screen and (min-width: 1200px) {
+      width: 685px;
+    }
   }
 
   h1 {
@@ -21,17 +42,19 @@
     }
   }
 
-	h2 {
-		margin-bottom: 0;
-	}
-
 	h3 {
-		text-transform: uppercase;
-		font-family: Helvetica-Light;
-		color: #666;
-		font-size: 1.38vw;
-		margin-top: 0.8vw;
+    margin-top: 0.8vw;
     margin-bottom: 1.2vw;
+		font-family: Helvetica-Light;
+    font-size: 1.38vw;
+    color: #666;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: 1200px) {
+			margin-top: 9.6px;
+      margin-bottom: 14.4px;
+      font-size: 16.6px;
+    }
 
     @media only screen and (max-width: 768px) {
       margin-bottom: 2vw;
@@ -43,86 +66,47 @@
       font-size: 12px;
       line-height: 16px;
     }
-	}
+  }
+
+  .marque {
+    padding-top: 1.2vw;
+    cursor: pointer;
+
+    @media only screen and (min-width: 1200px) {
+      padding-top: 14.4px;
+    }
+
+    > a {
+      > img {
+        width: 20vw;
+        height: auto;
+        opacity: 0.85;
+        transition: all 0.3s ease;
+
+        @media only screen and (min-width: 1200px) {
+          width: 240px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          margin-bottom: 2vw;
+          width: 22vw;
+        }
+      }
+    }
+
+    .marque > a > img:hover {
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+  }
 
 	.marques-image {
-		width: 76.17vw;
-		margin-bottom: 4vw;
-	}
+    margin-bottom: 4vw;
+    width: 76.17vw;
 
-	#jnl,
-	#vanhamme,
-	#ungaro,
-	#studio {
-		padding-top: 1.2vw;
-		cursor: pointer;
-	}
-
-	#jnl > a > img,
-	#vanhamme > a > img,
-	#ungaro > a > img,
-	#studio > a > img {
-		width: 20vw;
-		height: auto;
-		opacity: 0.85;
-    transition: all 0.3s ease;
-
-    @media only screen and (max-width: 768px) {
-      margin-bottom: 2vw;
-      width: 22vw;
+    @media only screen and (min-width: 1200px) {
+      margin-bottom: 48px;
+      width: 914px;
     }
-	}
-
-	.marque > a > img:hover {
-		opacity: 1;
-		transition: all 0.3s ease;
-	}
-
-	@media only screen and (max-width: 768px) {
-		.location {
-			font-size: 4.7vw;
-		}
-	}
-}
-
-@media only screen and (min-width: 1200px) {
-	.d-large {
-		width: 1200px !important;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.les-marques-main {
-		padding-top: 70.8px;
-		margin-bottom: 72px;
-
-		h3 {
-			font-size: 16.6px;
-			margin-top: 9.6px;
-			margin-bottom: 14.4px;
-		}
-
-		.submenu {
-			width: 685px;
-		}
-
-		.marques-image {
-			width: 914px;
-			margin-bottom: 48px;
-		}
-
-		#jnl,
-		#vanhamme,
-		#ungaro,
-		#studio {
-			padding-top: 14.4px;
-		}
-
-		#jnl > a > img,
-		#vanhamme > a > img,
-		#ungaro > a > img,
-		#studio > a > img {
-		width: 240px;
-		}
-	}
+  }
 }

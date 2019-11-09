@@ -14,7 +14,9 @@ const routes: Routes = [
   { path: 'contact/:type', component: ContactComponent },
   { path: 'contact', component: ContactComponent },
 
-  { path: 'product', loadChildren: './Products/products.module#ProductsModule' },
+  // { path: 'product', loadChildren: './Products/products.module#ProductsModule' },
+  { path: 'product', loadChildren: () => import('./Products/products.module').then(m => m.ProductsModule) },
+  { path: 'extras', loadChildren: () => import('./Extras/extras.module').then(m => m.ExtrasModule) },
 
   { path: 'actualites', component: ActualiteComponent },
   { path: 'jnlGroup', component: JnlGroupComponent },
@@ -23,9 +25,6 @@ const routes: Routes = [
   { path: 'press', component: PressComponent },
   { path: 'savoirFaire', component: SavoirFaireComponent },
   { path: 'services', component: ServicesComponent },
-
-  { path: 'extras', loadChildren: './Extras/extras.module#ExtrasModule' },
-
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
 
   { path: '**', component: PageNotFoundComponent }

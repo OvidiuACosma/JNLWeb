@@ -1,49 +1,51 @@
-<div class="les-marques-main d-large" *ngIf="text">
-  <div *ngIf="altText">
+<div class="les-marques-main" *ngIf="text">
+  <div>
     <h1>{{text.title}}</h1>
 
-    <div class="submenu d-none d-sm-flex hide-mobile">
+    <div class="submenu d-none hide-mobile">
       <a (click)="navigateTo('marques', 'jnl')">JNL COLLECTION</a>
       <a (click)="navigateTo('marques', 'vanhamme')">VANHAMME</a>
       <a (click)="navigateTo('marques', 'ungaro')">EMANUEL UNGARO HOME</a>
       <a (click)="navigateTo('marques', 'studio')">JNL STUDIO</a>
     </div>
 
-    <div id="jnl" class="marque" (click)="navigateToMarque('jnl')">
-      <a (click)="navigateTo('marques', 'jnl')">
-        <img src="assets/Images/Marques/MK_logo_JNL.png">
-      </a>
-      <h3>{{text.JNL}}</h3>
-      <img class="marques-image" alt="{{altText['img0']['alt'][language]}}"
-        src="assets/Images/Marques/{{altText['img0']['src']}}">
-    </div>
+    <div class="wrapper" *ngIf="altText">
+      <section id="jnl" class="marque scroll-child" (click)="navigateToMarque('jnl')">
+        <a (click)="navigateTo('marques', 'jnl')">
+          <img src="assets/Images/Marques/MK_logo_JNL.png">
+        </a>
+        <h3>{{text.JNL}}</h3>
+        <img class="marques-image" alt="{{altText['img0']['alt'][language]}}"
+          src="assets/Images/Marques/{{altText['img0']['src']}}">
+      </section>
 
-    <div id="vanhamme" class="marque" (click)="navigateToMarque('vanhamme')">
-      <a (click)="navigateTo('marques', 'vanhamme')">
-        <img src="assets/Images/Marques/MK_logo_VH.png">
-      </a>
-      <h3>{{text.Vanhamme}}</h3>
-      <img class="marques-image" alt="{{altText['img1']['alt'][language]}}"
-        src="assets/Images/Marques/{{altText['img1']['src']}}">
-    </div>
+      <section id="vanhamme" class="marque scroll-child" (click)="navigateToMarque('vanhamme')">
+        <a (click)="navigateTo('marques', 'vanhamme')">
+          <img src="assets/Images/Marques/MK_logo_VH.png">
+        </a>
+        <h3>{{text.Vanhamme}}</h3>
+        <img class="marques-image" alt="{{altText['img1']['alt'][language]}}"
+          src="assets/Images/Marques/{{altText['img1']['src']}}">
+      </section>
 
 
-    <div id="ungaro" class="marque" (click)="navigateToMarque('ungaro')">
-      <a (click)="navigateTo('marques', 'ungaro')">
-        <img src="assets/Images/Marques/MK_logo_Ungaro.png">
-      </a>
-      <h3>{{text.Ungaro}}</h3>
-      <img class="marques-image" alt="{{altText['img2']['alt'][language]}}"
-        src="assets/Images/Marques/{{altText['img2']['src']}}">
-    </div>
+      <section id="ungaro" class="marque scroll-child" (click)="navigateToMarque('ungaro')">
+        <a (click)="navigateTo('marques', 'ungaro')">
+          <img src="assets/Images/Marques/MK_logo_Ungaro.png">
+        </a>
+        <h3>{{text.Ungaro}}</h3>
+        <img class="marques-image" alt="{{altText['img2']['alt'][language]}}"
+          src="assets/Images/Marques/{{altText['img2']['src']}}">
+      </section>
 
-    <div id="studio" class="marque" (click)="navigateToMarque('studio')">
-      <a (click)="navigateTo('marques', 'studio')">
-        <img src="assets/Images/Marques/MK_logo_Studio.png">
-      </a>
-      <h3>{{text.Studio}}</h3>
-      <img class="marques-image" alt="{{altText['img3']['alt'][language]}}"
-        src="assets/Images/Marques/{{altText['img3']['src']}}">
+      <section id="studio" class="marque scroll-child" (click)="navigateToMarque('studio')">
+        <a (click)="navigateTo('marques', 'studio')">
+          <img src="assets/Images/Marques/MK_logo_Studio.png">
+        </a>
+        <h3>{{text.Studio}}</h3>
+        <img class="marques-image" alt="{{altText['img3']['alt'][language]}}"
+          src="assets/Images/Marques/{{altText['img3']['src']}}">
+      </section>
     </div>
   </div>
 </div>
