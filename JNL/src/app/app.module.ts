@@ -10,6 +10,7 @@ import { CoreModule } from './app-core.module';
 import { ExtrasModule } from './Extras/extras.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsModule } from './Products/products.module';
+import { Angulartics2Module } from 'angulartics2';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProductsModule } from './Products/products.module';
     CoreModule,
     BrowserAnimationsModule,
     ExtrasModule,
-    ProductsModule
+    ProductsModule,
+    Angulartics2Module.forRoot()
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en-BE' },

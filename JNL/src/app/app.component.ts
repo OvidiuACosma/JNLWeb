@@ -1,6 +1,7 @@
 import { Component, Inject, LOCALE_ID, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { WINDOW } from './_services';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,10 @@ export class AppComponent {
 
   constructor(@Inject(LOCALE_ID) public locale: string,
               @Inject(DOCUMENT) private document: Document,
-              @Inject(WINDOW) private window: Window) {}
+              @Inject(WINDOW) private window: Window,
+              angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {
+    angulartics2GoogleAnalytics.startTracking();
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
