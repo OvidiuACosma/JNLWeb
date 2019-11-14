@@ -14,18 +14,18 @@
 		width: 100%;
 		background-color: #fff;
 		top: 0;
-		z-index: 801;
+		// z-index: 801;
 
 		@media only screen and (max-width: 768px) {
 			position: relative;
-			margin-left: 0 !important;
+      margin-left: 0 !important;
     }
 
     > .menu {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 1001;
+      z-index: 3000;
     }
 
 		> .main {
@@ -84,17 +84,12 @@
     width: 100%;
 		background-color: #fff;
 		top: 0;
-		z-index: 801;
+		// z-index: 801;
   }
 
   .search-bar {
+    position: relative;
     background-color: transparent;
     left: 0;
-  }
-
-  .container-main {
-    position: relative;
-    margin-left: 0;
-    width: 100%;
   }
 }

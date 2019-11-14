@@ -37,7 +37,11 @@
 	padding-top: 1.3vw;
 	width: 2vw;
 	height: auto;
-	object-fit: contain;
+  object-fit: contain;
+  @media only screen and (max-width: 768px) {
+    padding-top: 6.4px;
+    width: 28.8px;
+  }
 }
 
 .menu_image {
@@ -74,7 +78,8 @@
   display: flex;
   flex-direction: column;
 	justify-content: flex-start;
-	width: 34vw;
+  width: 34vw;
+  max-width: 450px;
 	height: 100%;
   font-family: Helvetica;
 	text-align: center;
@@ -180,25 +185,9 @@
 	}
 }
 
-#menu-image-div {
-	display: flex;
-	width: 50vw;
-}
-
 a:focus,
 img:focus {
 	outline: none;
-}
-
-
-@media only screen and (max-width: 768px) {
-	.menu-close {
-		width: 5vw;
-	}
-
-	#menu-image-div {
-		display: none;
-	}
 }
 
 @media only screen and (min-width: 1200px) {
@@ -208,6 +197,7 @@ img:focus {
     }
 
     > a {
+      margin-right: 16.6px;
       font-size: 13.8px;
     }
   }
