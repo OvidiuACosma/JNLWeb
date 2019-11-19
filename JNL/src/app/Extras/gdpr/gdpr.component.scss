@@ -1,0 +1,89 @@
+.gdpr {
+    padding-top: 5.9vw;
+    margin-bottom: 8vw;
+	font-family: Helvetica-Light;
+	font-size: 1.4vw;
+    @media only screen and (max-width: 768px) {
+        font-size: 11px;
+    }
+}
+
+#gdpr-en,
+#gdpr-fr {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 6vw;
+}
+
+p {
+    text-align: justify;
+}
+
+ul {
+    list-style-type: square;
+    padding-inline-start: 0px !important;
+}
+
+ol {
+   padding-inline-start: 0px !important;
+    li {
+        span {
+            line-height: 60px;
+        }
+    }
+}
+
+ol {
+    li {
+        ol {
+            padding-inline-start: 0px !important;
+            list-style-type: none;
+            counter-reset: section;
+            counter-increment: section;
+            counter-reset: subsection;
+             //margin-left: 20px;
+            > li {
+                counter-increment: subsection; 
+                display: list-item; 
+            }
+            > li::before { 
+                content: counter(section) "." counter(subsection) ". ";
+            }
+        }
+    }
+}
+
+li {  
+    font-family: Helvetica;
+    font-weight: bold;
+    p {
+        font-family: Helvetica-Light;
+        font-weight: normal;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .d-large {
+        width: 1200px !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gdpr {
+        padding-top: 70.8px;
+        font-size: 16.8px;
+        margin-bottom: 96px;
+    }
+
+    #gdpr-en,
+    #gdpr-fr {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataExchangeService } from 'src/app/_services';
 
 @Component({
   selector: 'app-gdpr',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GDPRComponent implements OnInit {
 
-  constructor() { }
+  language: string;
+
+  constructor(private dataex: DataExchangeService) { }
 
   ngOnInit() {
+    this.dataex.currentLanguage
+    .subscribe(lang => {
+      this.language = lang || 'EN';
+    });
   }
 
 }
