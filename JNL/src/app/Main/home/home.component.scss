@@ -411,6 +411,9 @@
 		width: 25.4vw;
 		height: 33.33vw;
 		object-fit: cover;
+		@media only screen and (max-width: 768px) {
+			object-fit: contain;
+		}
 	}
 
 	.more-links {

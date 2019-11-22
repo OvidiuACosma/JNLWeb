@@ -1,5 +1,9 @@
 <div id="top-container" class="d-large">
-  <br class="d-none d-print-block">
+  <div class="d-none d-print-block header-print">
+    <span>WWW.JNL.BE</span>
+    <hr>
+  </div>
+  <div id="clear" class="d-none d-print-block"></div>
   <div id="header" *ngIf="prodDesc">
     <h1>{{model}}</h1>
     <h4>{{brand}}</h4>
@@ -102,17 +106,24 @@
   </div>
 
   <!-- PRODUCT SHEET TO PRINT-->
-  <div class="d-none d-print-block" *ngIf="product">
-    <div class="text-left">
+  <div class="d-none d-print-block print" *ngIf="product">
+    <div>
       <span>DESCRIPTION</span>
       <hr>
     </div>
     <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
+    <div class="footer-print">
+      <hr>
+      <div class="footer-data">
+        <img class="logo-print" src="assets/Images/Common/JNLLogoB.png" />
+        <span>email:info@jnl.be</span>
+      </div>
+    </div>
   </div>
 
-  <div class="d-none d-print-inline-block break" *ngIf="product">
+  <div class="d-none d-print-inline-block break print" *ngIf="product">
     <br>
-    <div class="text-left">
+    <div class="drawings-header">
       <span>DRAWINGS</span>
       <hr>
     </div>

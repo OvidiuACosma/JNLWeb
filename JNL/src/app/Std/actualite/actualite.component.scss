@@ -2,7 +2,18 @@
   padding-top: 5.9vw;
 
   h1 {
-    margin-bottom: .7vw;
+	width: 76vw;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .7vw;
+  }
+
+  a:link {
+		text-decoration: underline !important;
+  }
+
+  .hover:hover {
+	  cursor:pointer;
   }
 
 	.logo {
@@ -83,8 +94,10 @@
 	}
 
 	#links {
+		position: relative;
 		width: 100vw;
 		display: flex;
+		margin-top: 5vw;
     	margin-bottom: 5vw;
     	> button {
       		margin: auto;
@@ -102,7 +115,8 @@
 		padding-top: 70.8px;
 
   		h1 {
-    		margin-bottom: 8.4px;
+			margin-bottom: 8.4px;
+			width: 912px;
   		}
 
 		.logo {

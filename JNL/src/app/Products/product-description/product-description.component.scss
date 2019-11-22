@@ -314,9 +314,26 @@ h5 {
 }
 
 @media print {
+  #container {
+    padding-top: 0;
+  }
+
   #description {
     width: 100%;
     text-align: left;
+    p {
+      padding-bottom: 20px;
+      font-size: 14px;
+    }
+  
+    .parts {
+      font-size: 14px;
+    }
+  
+    .materials {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
   }
 }
 

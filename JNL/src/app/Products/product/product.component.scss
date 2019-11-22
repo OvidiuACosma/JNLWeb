@@ -450,7 +450,7 @@
 	}
 
 	@media print {
-		width: auto;
+		//  width: auto;
 		border: 0;
 		margin: 0 5%;
 		padding: 0;
@@ -460,7 +460,58 @@
 		}
 
 		hr {
-			width: 90vw;
+			border-width: 2px;
+			border-color: black;
+			width: 100%;
+		}
+
+		.print {
+			width: 86% !important;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.header-print {
+			// position: fixed;
+			top: 0;
+			width: 86%;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			text-align: right;
+			span {
+				font-size: 16px;
+				letter-spacing: 6px;
+				line-height: 18px;
+			}
+		}
+
+		.drawings-header {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.footer-print {
+			position: fixed;
+			bottom: 0;
+			width: 78%;
+			padding-bottom: 20px;
+			// margin-left: auto;
+			// margin-right: auto;
+		}
+
+		.footer-data {
+			display: flex;
+			justify-content: space-between;
+			span {
+				font-size: 16px;
+			}
+		}
+
+		.logo-print {
+			height: 24px;
 		}
 	}
 

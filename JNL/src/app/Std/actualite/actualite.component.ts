@@ -72,4 +72,14 @@ export class ActualiteComponent implements OnInit {
       this.navigateTo('home');
     }
   }
+
+  download() {
+    const catalogUrl = 'https://managerdelannee.be/wp-content/uploads/1-FR-Alain-Lahy.pdf';
+    const a = document.createElement('a');
+    a.href = catalogUrl;
+    a.target = '_blank';
+    a.rel = 'noreferrer';
+    a.setAttribute('visibility', 'hidden');
+    a.click();
+  }
 }
