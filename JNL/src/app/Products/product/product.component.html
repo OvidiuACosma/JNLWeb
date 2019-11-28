@@ -112,22 +112,23 @@
       <hr>
     </div>
     <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
-    <div class="footer-print">
-      <hr>
-      <div class="footer-data">
-        <img class="logo-print" src="assets/Images/Common/JNLLogoB.png" />
-        <span>email:info@jnl.be</span>
-      </div>
-    </div>
   </div>
 
-  <div class="d-none d-print-inline-block break print" *ngIf="product">
+  <div class="d-none d-print-inline-block break" *ngIf="product">
     <br>
     <div class="drawings-header">
       <span>DRAWINGS</span>
       <hr>
     </div>
     <app-product-dimensions [product]="product"></app-product-dimensions>
+  </div>
+
+  <div class="d-none d-print-block footer-print">
+    <hr>
+    <div class="footer-data">
+      <img class="logo-print" src="assets/Images/Common/JNLLogoB.png" />
+      <span>email: info@jnl.be</span>
+    </div>
   </div>
 
   <!-- REQUEST FORM -->
