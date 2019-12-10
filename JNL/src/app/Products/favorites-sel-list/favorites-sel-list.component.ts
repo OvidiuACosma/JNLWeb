@@ -84,7 +84,8 @@ export class FavoritesSelListComponent implements OnInit {
                                               favoritesId: favList.id,
                                               productBrand: this.product.brand,
                                               productId: this.product.id,
-                                              creationDate: null  };
+                                              creationDate: null,
+                                              type: null };
     this.favoritesService.postFavoritesLG(favProduct)
     .subscribe(res => {
       this.addedToList = 'Product added to Favorites List: ' + favList.listName;

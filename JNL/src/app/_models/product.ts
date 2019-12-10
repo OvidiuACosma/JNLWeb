@@ -57,3 +57,17 @@ export interface IGarnissage {
   colorRef: string;
   ordIndex: number;
 }
+
+export interface IProdGarnissage {
+  id: number;
+  codeProd: string;
+  material: string;
+  model: string;
+  dimensions: string;
+  composition: string;
+  martindale: string;
+  type: string;
+  brand: string;
+  color: string;
+  colorRef: string;
+}

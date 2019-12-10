@@ -1,16 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
-interface IProductGarnissage {
-  codeProd: string;
-  material: string;
-  model: string;
-  dimensions: string;
-  composition: string;
-  martindale: string;
-  type: string;
-  brand: string;
-}
+import { IProdGarnissage } from 'src/app/_models';
 
 
 @Component({
@@ -24,11 +14,14 @@ export class ProductGarnissageDetailsComponent implements OnInit {
   public material: any;
 
   constructor(public dialogRef: MatDialogRef<ProductGarnissageDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public garnData: IProductGarnissage) { }
+    @Inject(MAT_DIALOG_DATA) public garnData: IProdGarnissage) { }
 
   ngOnInit() {
   }
 
   navigate(direction: string) {}
 
+  addToFavorites(garnData: IProdGarnissage) {
+    // TODO: close the modal, then follow the add to favList procedure by garnData.id
+  }
 }
