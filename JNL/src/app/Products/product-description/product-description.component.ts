@@ -69,8 +69,8 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   getDescription() {
-    this.description = this.productDesc[0].descriptionFr;
-    // this.description = this.language === 'FR' ? this.productDesc[0].descriptionFr : this.productDesc[0].descriptionEn;
+    // this.description = this.productDesc[0].descriptionFr;
+    this.description = this.language === 'FR' ? this.productDesc[0].descriptionFr : this.productDesc[0].descriptionEn;
   }
 
   getParts() {
