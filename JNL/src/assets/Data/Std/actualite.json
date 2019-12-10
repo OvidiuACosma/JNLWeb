@@ -2,6 +2,18 @@
     {
         "EN": {
             "1": {
+                "articleTitle": "Maison & Objet - January 2020",
+                "articleSubtitle": "Discover our new line JNL Studio",
+               
+                "articleText1": "The JNL group is pleased to present an exclusive line of sofas, seats, and complementary elements geared towards a “nomadic” clientele looking for modular products both qualitative and respectful of the environment.<br><br>Emphasis is placed on the “practical everyday” with a range of offerings.<br><br>To achieve this, JNL Studio bet on a product adapted to all interiors, both in terms of volumes and covering choices, with an offering of sofas and chairs with removable coverings and shifting storage elements.<br><br>In response to a growing demand, symptomatic of an era where mobility is a key component of a new way of life, it will now be possible to rent this furniture for a period ranging from months to years.<br><br>Whether for a couple of elements or a full décor adapted to your living and working spaces, JNL Studio offers you a personalized service to match your needs, placing at your disposition its irreproachable craftsmanship, made more affordable.<br><br>Innovation, creativity, flexibility: such are the pillars of this new line of furniture deemed “ready-to-use” in reference to “ready-to-wear” lines of haute couture houses much like the JNL Collection label, in the sphere of interior decoration.",
+                "articleText2": "",
+
+                "pic1":  "assets/Images/Actualite/MO/ac_1_EN.jpg",
+                "pic2":  "",
+
+                "back": "Back"
+            },
+            "2": {
                 "articleTitle": "Alain Lahy is nominated for the Trends Manager of the year !",
                 "articleSubtitle": "Vote for him !",
                
@@ -10,18 +22,6 @@
 
                 "pic1":  "assets/Images/Actualite/Alain Lahy/ac_1.jpg",
                 "pic2":  "assets/Images/Actualite/Alain Lahy/ac_2.jpg",
-
-                "back": "Back"
-            },
-            "2": {
-                "articleTitle": "JNL Collection",
-                "articleSubtitle": "Subtitle 2",
-               
-                "articleText1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
-                "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
-
-                "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
 
                 "back": "Back"
             },
@@ -40,6 +40,18 @@
         },
         "FR": {
             "1": {
+                "articleTitle": "Maison & Objet - Janvier 2020",
+                "articleSubtitle": "Découvrez notre nouvelle ligne JNL Studio",
+            
+                "articleText1": "Le groupe JNL propose en exclusivité une nouvelle gamme de canapés, sièges et compléments plus spécialement destinée à une clientèle « nomade » en recherche d’un produit modulable, de qualité et respectueux de l’environnement.<br><br>L’accent est porté sur « le pratique au quotidien » mais aussi sur une grande flexibilité au niveau de l’offre.<br><br>Pour ce faire la ligne JNL Studio mise sur un produit adaptable à tous les intérieurs tant au niveau des volumes qu’au niveau du choix des revêtements, en proposant des canapés et sièges déhoussables, de même que des éléments de rangements évolutifs.<br><br>Pour répondre à une demande croissante, reflet de notre époque où la mobilité est une des clefs du d’un nouveau style de vie, il sera désormais possible de louer ce mobilier pour une période allant d’un mois à plusieurs années.<br><br>Qu’il s’agisse de quelques éléments ou d’ambiances complètes adaptées à vos lieux de vie et de travail, JNL Studio vous offre un service personnalisé en accord avec vos besoins, mettant à votre disposition un savoir-faire inégalé mais néanmoins abordable.<br><br>Inventivité, créativité, flexibilité telles sont les directions données à cette gamme de mobilier que l’on peut qualifier de « prêt-à-utiliser », en référence à la déclinaison « prêt-à-porter » d’une maison haute couture comme l’est actuellement le label JNL Collection dans l’univers de la décoration d’intérieur.",
+                "articleText2": "",
+
+                "pic1":  "assets/Images/Actualite/MO/ac_1_FR.jpg",
+                "pic2":  "",
+
+                "back": "Retour"
+            },
+            "2": {
                 "articleTitle": "Alain Lahy est nominé aux Trends Manager 2019 !",
                 "articleSubtitle": "Votez pour lui !",
             
@@ -48,18 +60,6 @@
 
                 "pic1":  "assets/Images/Actualite/Alain Lahy/ac_1.jpg",
                 "pic2":  "assets/Images/Actualite/Alain Lahy/ac_2.jpg",
-
-                "back": "Retour"
-            },
-            "2": {
-                "articleTitle": "JNL Collection",
-                "articleSubtitle": "Subtitle 2",
-            
-                "articleText1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
-                "articleText2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non odio vel ligula ultrices sollicitudin. Pellentesque dapibus interdum convallis. Aenean ultrices ante in mauris convallis faucibus. Sed ac maximus leo. Donec luctus sapien sed mauris facilisis pretium. Aliquam tempor ac ligula ac suscipit. Nunc blandit eget eros nec fermentum. Vivamus posuere elementum consectetur. Nullam tempus mauris sit amet bibendum sodales.",
-
-                "pic1":  "assets/Images/Marque/JNL/MKJ_style.jpg",
-                "pic2":  "assets/Images/Marque/JNL/MKJ_iconique.png",
 
                 "back": "Retour"
             },

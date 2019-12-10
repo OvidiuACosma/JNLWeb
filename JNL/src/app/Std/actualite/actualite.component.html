@@ -1,5 +1,5 @@
 <div id="actualites-div" class="d-large">
-  <!-- <div class="logo" *ngIf="actual==='1'"><img src="assets/Images/Actualite/HM_logo_Studio.png"></div> -->
+  <div class="logo" *ngIf="actual==='1'"><img src="assets/Images/Actualite/HM_logo_Studio.png"></div>
   <h1 *ngIf="text?.articleTitle!==''">{{text?.articleTitle}}</h1>
   <h4 class="news-subtitle" *ngIf="text?.articleSubtitle!==''">{{text?.articleSubtitle}}</h4>
 
@@ -7,7 +7,14 @@
       <img class="news-first-picture" alt="JNL Collection" src="assets/Images/Marque_V/MKV_pic1.jpg">
     </div> -->
 
-  <div *ngIf="actual==='1'">
+    <div *ngIf="actual==='1'">
+      <img *ngIf="text?.pic1!==''" alt="JNL Collection" src={{text?.pic1}} class="ac-img">
+      <p class="parag" [innerHTML]="text?.articleText1"></p>
+      <img *ngIf="text?.pic2!==''" alt="JNL Collection" src={{text?.pic2}} class="ac-img2">
+      <p *ngIf="text?.articleText2!==''" class="parag" [innerHTML]="text?.articleText2"></p>
+    </div>
+
+  <div *ngIf="actual==='2'">
     <a href="https://managerdelannee.be/vote/" target="_blank">
       <img *ngIf="text?.pic1!==''" alt="JNL Collection" src={{text?.pic1}} class="ac-img">
     </a>
@@ -16,11 +23,11 @@
     <p *ngIf="text?.articleText2!==''" class="parag" [innerHTML]="text?.articleText2"></p> -->
     <img src="assets\Images\Actualite\Alain Lahy\ac_2.jpg" class="ac-img2 hover" (click)="download()">
     <p *ngIf="language==='FR'" class="parag-2">
-      Découvrez l’article qui lui est consacré et votez pour Baobab 
-      Collection ici :<a href="https://managerdelannee.be/vote/" target="_blank">https://managerdelannee.be/vote/</a></p>
+      Découvrez l’article qui lui est consacré et votez pour Baobab Collection ici:
+      <a href="https://managerdelannee.be/vote/" target="_blank"> https://managerdelannee.be/vote/</a></p>
     <p *ngIf="language==='EN'" class="parag-2">
-      Read the article about him and add your vote for Baobab Collection here :
-      <a href="https://managerdelannee.be/vote/" target="_blank">https://managerdelannee.be/vote/</a>
+      Read the article about him and add your vote for Baobab Collection here:
+      <a href="https://managerdelannee.be/vote/" target="_blank"> https://managerdelannee.be/vote/</a>
     </p>
   </div>
 
