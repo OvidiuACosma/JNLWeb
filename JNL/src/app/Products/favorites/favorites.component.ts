@@ -58,8 +58,8 @@ export class FavoritesComponent implements OnInit  {
     this.dataex.currentLanguage.pipe(
       mergeMap(lang => this.textService.getTextFavorites().pipe(
         mergeMap(text => this.route.params.pipe(
-          mergeMap( p => (this.dataex.currentUser).pipe(
-              concatMap( user => this.favoritesService.getFavoritesOfRelation(user.userName).pipe(
+          mergeMap(p => (this.dataex.currentUser).pipe(
+              concatMap(user => this.favoritesService.getFavoritesOfRelation(user.userName).pipe(
                   map(resp => ({
                     lang: lang,
                     text: text,
@@ -112,8 +112,26 @@ export class FavoritesComponent implements OnInit  {
   }
 
   getProductImage(product: IFavoritesProducts): string {
-    const prod: ProductEF = this.findProductDetails(product.productId);
-    const src = `assets/Images/Products/${prod.brand}/${prod.familyFr}/Search/${prod.model}.jpg`;
+    // TODO: set the img search dir by type (1, 2, 3)
+    let prod: ProductEF;
+    let src: string;
+    switch (product.type) {
+      case 1: {
+        prod = this.findProductDetails(product.productId);
+        src = `assets/Images/Products/${prod.brand}/${prod.familyFr}/Search/${prod.model}.jpg`;
+        break;
+      }
+      case 2: {
+        // TODO: getPrdocutDetails
+        src = `assets/Images/Products/Garnissages/${product.productId}.jpg`;
+        break;
+      }
+      case 3: {
+        // TODO: getPrdocutDetails
+        src = ``;
+        break;
+      }
+    }
     return src;
   }
 

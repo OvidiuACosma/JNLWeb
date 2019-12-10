@@ -64,6 +64,16 @@ export class MenuComponent implements OnInit {
     this.authenticationService.logout();
   }
 
+  // logIn() {
+  //   this.authGuard.logIn();
+  //   this.getUser();
+  // }
+
+  // logOut() {
+  //   this.autenticationService.logout();
+  //   this.getLogInText();
+  // }
+
   NavigateTo(target: string, fragment: string = '') {
     this.toggleMenuBar();
     if (fragment === '') {

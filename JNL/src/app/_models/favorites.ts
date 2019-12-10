@@ -14,4 +14,5 @@ export interface IFavoritesProducts {
     creationDate: Date;
     productBrand: string;
     productId: number;
+    type: number;
 }

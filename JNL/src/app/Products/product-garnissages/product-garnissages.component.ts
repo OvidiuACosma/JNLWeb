@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService, DataExchangeService } from 'src/app/_services';
-import { IGarnissage, Browser } from 'src/app/_models';
+import { IGarnissage, IProdGarnissage, Browser } from 'src/app/_models';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
@@ -16,19 +16,6 @@ interface IFilter {
 interface IFilterElements {
   filterGroup: string;
   filterElement: IFilter[];
-}
-
-interface IProdGarnissage {
-  codeProd: string;
-  material: string;
-  model: string;
-  dimensions: string;
-  composition: string;
-  martindale: string;
-  type: string;
-  brand: string;
-  color: string;
-  colorRef: string;
 }
 
 @Component({
@@ -88,6 +75,7 @@ export class ProductGarnissagesComponent implements OnInit {
       case 'en': {
         productsMapped = products.map(m => {
           return {
+            id: m.id,
             codeProd: m.codeProd,
             material: m.materialEn,
             model: m.model,
@@ -105,6 +93,7 @@ export class ProductGarnissagesComponent implements OnInit {
       case 'fr': {
         productsMapped = products.map(m => {
           return {
+            id: m.id,
             codeProd: m.codeProd,
             material: m.materialFr,
             model: m.model,
@@ -451,5 +440,9 @@ export class ProductGarnissagesComponent implements OnInit {
       width = '98%';
     }
     return width;
+  }
+
+  addToFavorites(ga: IProdGarnissage) {
+    // TODO: follow the procedure to add to favList using ga.id
   }
 }
