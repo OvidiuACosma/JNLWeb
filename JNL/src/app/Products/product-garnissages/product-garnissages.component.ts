@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService, DataExchangeService } from 'src/app/_services';
-import { IGarnissage, IProdGarnissage, Browser } from 'src/app/_models';
+import { IGarnissage, IProdGarnissage, Browser, User } from 'src/app/_models';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
@@ -37,6 +37,7 @@ export class ProductGarnissagesComponent implements OnInit {
   type: any;
   filterElements: IFilterElements[] = [];
   browser: Browser;
+  user: User;
 
 
   constructor(private productService: ProductsService,
@@ -442,7 +443,24 @@ export class ProductGarnissagesComponent implements OnInit {
     return width;
   }
 
+  getUser() {
+    this.dataex.currentUser.subscribe( user => {
+      this.user = user;
+    });
+  }
+
   addToFavorites(ga: IProdGarnissage) {
     // TODO: follow the procedure to add to favList using ga.id
+    if (this.productService.isLoggedIn()) {
+      // this.productService.openDialog(ga, this.user);
+    } else {
+      this.productService.openLoginDialog().subscribe(answer => {
+        if (answer) {
+          // this.productService.openDialog(ga, this.user);
+        } else {
+          console.log('Not logged in. Can\'t add to favorites');
+        }
+      });
+    }
   }
 }
