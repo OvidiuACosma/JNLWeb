@@ -1,31 +1,35 @@
 <div class="wrapper_garnissage">
-    <div class="filters">
-      <ul>
-        <li *ngFor="let c of filterBy; let i=index">
-          <div class="header-arrow"  (click)="toggleFilters(i)">
-              <span class="header-filter">{{c}}
-              <img class="arrow" [src]="getArrow(i)"></span>
-          </div>
-          <ul id="filter-{{c}}" *ngIf="toggle[i]" class="subfilters">
-            <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index">
-                <span (click)="selectFilter(c, d.displayName)">
-                  <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
-                  &nbsp;{{d.displayName}}
-                </span>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+  <div class="filters">
+    <ul>
+      <li *ngFor="let c of filterBy; let i=index">
+        <div class="header-arrow" (click)="toggleFilters(i)">
+          <span class="header-filter">{{c}}
+            <img class="arrow" [src]="getArrow(i)"></span>
+        </div>
+        <ul id="filter-{{c}}" *ngIf="toggle[i]" class="subfilters">
+          <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index">
+            <span (click)="selectFilter(c, d.displayName)">
+              <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
+              &nbsp;{{d.displayName}}
+            </span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
   <div class="products scroll-container">
     <div *ngFor="let ga of productsFiltered" class="scroll-item">
-        <a>
-          <img class="img-button"
-            src="assets\Images\Products\Garnissages\{{ga.codeProd | uppercase }}.jpg"
-            alt="" (click)="openDialog(ga)">
-          <p class="product-name">{{ga.model}}</p>
-          <!--addToFavorites(ga)-->
+      <a>
+        <img class="img-button" src="assets\Images\Products\Garnissages\{{ga.codeProd | uppercase }}.jpg" alt=""
+          (click)="openDialog(ga)">
+        <div>
+          <p class="product-name">{{ga.model}}
+            <span>
+              <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
+            </span>
+          </p>
+        </div>
       </a>
     </div>
   </div>

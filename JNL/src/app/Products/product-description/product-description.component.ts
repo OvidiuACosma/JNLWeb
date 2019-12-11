@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import * as _ from 'lodash';
-import { Product, Finisage } from '../../_models';
+import { Product, Finisage, User } from '../../_models';
 
 @Component({
   selector: 'app-product-description',
@@ -18,10 +18,10 @@ export class ProductDescriptionComponent implements OnInit {
   public materials: string[] = [];
   public showLevel = null;
   public finisage: Finisage;
-  // public modalActive = false;
   toggle = false;
   language: string;
   stdText: any;
+  user: User;
 
   // data used in modal
   public currentFinList: Finisage[] = [];
@@ -156,6 +156,12 @@ export class ProductDescriptionComponent implements OnInit {
     return false;
   }
 
+  getUser() {
+    this.dataex.currentUser.subscribe( user => {
+      this.user = user;
+    });
+  }
+
   sendItemToModal(fin: any, finlist: Finisage[]) {
     // this.modalActive = true;
     this.currentFinList = finlist;
@@ -187,10 +193,24 @@ export class ProductDescriptionComponent implements OnInit {
     };
   }
 
-
   // for mobile
   toggleElement() {
     this.toggle = !this.toggle;
+  }
+
+  addToFavorites(fin: Finisage) {
+    document.getElementById('btnClose').click();
+    if (this.productsService.isLoggedIn()) {
+      // this.productsService.openDialog(fin, this.user);
+    } else {
+      this.productsService.openLoginDialog().subscribe(answer => {
+        if (answer) {
+          // this.productsService.openDialog(fin, this.user);
+        } else {
+          console.log('Not logged in. Can\'t add to favorites');
+        }
+      });
+    }
   }
 }
 

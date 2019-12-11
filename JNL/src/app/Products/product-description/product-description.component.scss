@@ -181,6 +181,23 @@ h5 {
   text-align: center;
 }
 
+.modal-title {
+  width: 83.4%;
+  span{
+    float: left;
+    i {
+      transition: all .3s ease;
+      &:hover {
+        @media only screen and (min-width: 769px) {
+          color: #dbbb76;
+          transition: all .3s ease;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
 .modal-arrow {
   height: 2vw;
   width: 1vw;

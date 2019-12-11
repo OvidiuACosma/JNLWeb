@@ -33,8 +33,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
-        <div>
-          <h4 class="modal-title" id="ModalLabel">{{finisage.material}} {{finisage.name}}</h4>
+        <div class="modal-title">
+          <h4 id="ModalLabel">
+            <span>
+                <i class="far fa-heart heart" (click)="addToFavorites(finisage)"></i>
+            </span>
+            {{finisage.material}} {{finisage.name}}</h4>
         </div>
         <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
