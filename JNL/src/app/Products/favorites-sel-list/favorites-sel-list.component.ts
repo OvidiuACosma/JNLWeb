@@ -80,12 +80,13 @@ export class FavoritesSelListComponent implements OnInit {
   }
 
   selectFavList(favList: IFavorites) {
+    // TODO: get product type and pass value to [type]
     const favProduct: IFavoritesProducts = { id: null,
                                               favoritesId: favList.id,
                                               productBrand: this.product.brand,
                                               productId: this.product.id,
                                               creationDate: null,
-                                              type: null };
+                                              type: 1 };
     this.favoritesService.postFavoritesLG(favProduct)
     .subscribe(res => {
       this.addedToList = 'Product added to Favorites List: ' + favList.listName;
