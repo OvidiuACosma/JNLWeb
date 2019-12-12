@@ -25,7 +25,7 @@
           (click)="openDialog(ga)">
         <div>
           <p class="product-name">{{ga.model}}
-            <span>
+            <span *ngIf="false">
               <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
             </span>
           </p>
