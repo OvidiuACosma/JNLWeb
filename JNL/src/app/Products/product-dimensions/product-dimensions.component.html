@@ -5,8 +5,9 @@
         <img class="img-button" [src]="item.src" alt="" (click)="sendToModal(item)" data-toggle="modal"
           data-target="#TDModal">
       </a>
-      <div class="code-text center">
-        <h6>{{item.prodCode}}</h6>
+      <div class="center">
+        <h6 class="d-print-none">{{item.prodCode}}</h6>
+        <h3 class="d-none d-print-block">{{item.prodCode}}</h3>
       </div>
     </div>
   </div>
