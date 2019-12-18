@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
         opacity : 1
       }, 700);
     });
+    this.showAnouncement();
   }
 
   getData() {
@@ -104,5 +105,21 @@ export class HomeComponent implements OnInit {
     message = message + '(Google Chrome, Microsoft Edge, Firefox, Safari).';
     message = message.replace(/\n/g, '<br />');
     this.alertService.error(message);
+  }
+
+  showAnouncement() {
+    $('#btnAnouncement').click();
+    setTimeout(function() {
+      $('#modalAnouncement').modal('hide');
+    }, 20000);
+  }
+
+  closeModal() {
+    const modal = document.getElementById('modalAnouncement');
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        document.getElementById('btnClose').click();
+      }
+    };
   }
 }

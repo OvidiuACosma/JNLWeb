@@ -186,3 +186,21 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modalAnouncement" tabindex="-1" role="dialog" (click)="closeModal()" data-backdrop="false">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-none">
+        <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-anouncement" src="assets\Images\Home\anouncement.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" id="btnAnouncement" class="btn btn-primary d-none" data-toggle="modal" data-target="#modalAnouncement">
+</button>

@@ -80,7 +80,6 @@
 	font-family: Helvetica;
 }
 
-
 .home-wrapper {
 	hr {
 		border: 0.5px solid #dbbb76;
@@ -909,4 +908,40 @@
 			width: 708px;
 		}
 	}
+}
+
+/* workaround to fix bootstrap`s modal bug in Angular
+ Without this fix the dark background will cover the modal. */
+ .modal {
+  background-color: rgba(127, 127, 127, 0.5);
+}
+
+.modal-backdrop {
+  position: relative;
+}
+
+/****************************************************************/
+
+.modal-dialog {
+	@media only screen and (max-width: 1199px) {
+		max-width: 900px;
+	}
+	@media only screen and (max-width: 991px) {
+		max-width: 700px;
+	}
+	@media only screen and (max-width: 767px) {
+		max-width: 500px;
+	}
+}
+
+.img-anouncement {
+	width:100%;
+}
+
+.modal-content {
+	border: none !important;
+}
+
+.modal-body {
+	padding: 0 !important;
 }
