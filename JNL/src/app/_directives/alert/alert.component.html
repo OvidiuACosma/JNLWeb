@@ -1,7 +1,8 @@
-<div *ngIf="message" style="margin-top: 4.531vw; padding-left: 4vw;"
+<div *ngIf="message"
     [ngClass]="{ 'alert': message,
                 'alert-success': message.type === 'success',
-                'alert-danger': message.type === 'error' }"
+                'alert-danger': message.type === 'error',
+                'alert-custom': message}"
     [innerHTML]="message.text"
     (click)="hideMessage(0)">
 </div>

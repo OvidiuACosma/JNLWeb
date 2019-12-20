@@ -39,11 +39,14 @@ export class HomeComponent implements OnInit {
       this.dataex.currentLanguage.pipe(
         mergeMap(lang => this.textService.getTextHome().pipe(
           mergeMap(text => this.altService.getAltImages().pipe(
-            map(alt => ({
-              lang: lang,
-              text: text,
-              alt: alt
-            })
+            mergeMap(alt => this.dataex.firstVisit.pipe(
+              map(firstVisit => ({
+                lang: lang,
+                text: text,
+                alt: alt,
+                firstVisit: firstVisit
+              })
+            ))
           ))
         ))
       ))
@@ -51,7 +54,20 @@ export class HomeComponent implements OnInit {
       this.language = resp.lang || 'EN';
       this.text = resp.text[0][this.language.toUpperCase()];
       this.altText = resp.alt[0][this.page];
+      this.injectAnnouncement(resp.firstVisit, this.text.announcement.toString());
     });
+  }
+
+  injectAnnouncement(firstVisit: boolean, text: string = '') {
+    if (firstVisit) {
+      const date = new Date();
+      const dateStart = new Date(2019, 11, 20);
+      const dateEnd = new Date(2020, 0, 1);
+      if (date >= dateStart && date <= dateEnd) {
+        this.alertService.error(text);
+        this.dataex.changeFirstVisit();
+      }
+    }
   }
 
   navigateToAnchor(fragment: string) {

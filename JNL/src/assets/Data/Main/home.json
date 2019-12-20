@@ -33,7 +33,9 @@
 
             "projetsCity3": "Reims",
             "projets3": "Royal Champagne Hotel & Spa",
-            "projetsDescription3": "In partnership with Sybille de Margerie, interior design architect"
+            "projetsDescription3": "In partnership with Sybille de Margerie, interior design architect",
+
+            "announcement": "JNL will be closed from December 24th until January 1st included. You may always reach us at the following  address: <a href=\"mailto:customers@jnl.be\">customers@jnl.be</a>.<br>Wishing you Happy Holidays!"
         },
         "FR": {
             "histoireTitle": "La tradition dans la création",
@@ -68,7 +70,9 @@
 
             "projetsCity3": "Reims",
             "projets3": "Royal Champagne Hotel & Spa",
-            "projetsDescription3": "Projet réalisé en collaboration avec Sybille de Margerie, architecte d’intérieur"
+            "projetsDescription3": "Projet réalisé en collaboration avec Sybille de Margerie, architecte d’intérieur",
+
+            "announcement": "JNL sera fermé du 24 décembre au 1 janvier inclus. Vous pouvez toujours nous joindre à l adresse suivante: <a href=\"mailto:customers@jnl.be\">customers@jnl.be</a>.<br>Nous vous souhaitons un Joyeux Noel et une très Bonne Année!"
         }
     }
 ]

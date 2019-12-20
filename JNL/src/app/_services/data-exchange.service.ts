@@ -13,6 +13,10 @@ export class DataExchangeService {
   private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable();
 
+  // First visit
+  private subjectFirstVisit = new BehaviorSubject<boolean>(true);
+  firstVisit = this.subjectFirstVisit.asObservable();
+
   // User
   private subjectUser = new BehaviorSubject<User>(new User());
   currentUser = this.subjectUser.asObservable();
@@ -32,10 +36,16 @@ export class DataExchangeService {
   private subjectLanguage = new BehaviorSubject<string>('EN');
   currentLanguage = this.subjectLanguage.asObservable();
 
+
   constructor(private deviceService: DeviceDetectorService) { }
+
 
   public changeMessage(message: string) {
     this.messageSource.next(message);
+  }
+
+  public changeFirstVisit() {
+    this.subjectFirstVisit.next(false);
   }
 
   public setCurrentUser(user: User) {

@@ -4,7 +4,8 @@ import { AlertService } from '../../_services';
 
 @Component({
     selector: 'app-alert',
-    templateUrl: 'alert.component.html'
+    templateUrl: 'alert.component.html',
+    styleUrls: ['alert.component.scss']
 })
 
 export class AlertComponent implements OnInit, OnDestroy {
@@ -17,7 +18,8 @@ export class AlertComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.alertService.getMessage().subscribe(message => {
       this.message = message;
-      this.hideMessage(15000);
+      console.log('Message:', message);
+      this.hideMessage(20000);
     });
   }
 
