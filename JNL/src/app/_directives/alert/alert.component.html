@@ -1,6 +1,7 @@
-<div *ngIf="message" style="padding-left: 4vw"
+<div *ngIf="message" style="margin-top: 4.531vw; padding-left: 4vw;"
     [ngClass]="{ 'alert': message,
                 'alert-success': message.type === 'success',
                 'alert-danger': message.type === 'error' }"
-    [innerHTML]="message.text">
+    [innerHTML]="message.text"
+    (click)="hideMessage(0)">
 </div>

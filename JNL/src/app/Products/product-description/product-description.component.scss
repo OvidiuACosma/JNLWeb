@@ -257,7 +257,7 @@ h5 {
 /****************************************************************/
 
 #container {
-  padding-top: 60px;
+  padding-top: 50px;
   display: flex;
 }
 
@@ -292,6 +292,10 @@ h5 {
       font-size: 13px;
       line-height: 17px;
     }
+  }
+
+  > .p-info {
+    font-size: .8vw;
   }
 }
 
@@ -402,11 +406,11 @@ h5 {
       padding-bottom: 20px;
       font-size: 14px;
     }
-  
+
     .parts {
       font-size: 14px;
     }
-  
+
     .materials {
       font-size: 14px;
       margin-bottom: 6px;
