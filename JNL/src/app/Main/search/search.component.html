@@ -3,16 +3,14 @@
     <div class="top-bar">
       <div class="menu-button">
         <div class="menu-button-flex">
-          <img class="menu-button-img" src="{{navBarButtonSrc}}"
-            (click)="toggleNav()" (mouseover)="toggleNav()" alt="menu button">
+          <img class="menu-button-img" src="{{navBarButtonSrc}}" (click)="toggleNav()" (mouseover)="toggleNav()"
+            alt="menu button">
         </div>
       </div>
 
       <div class="menu-logo">
         <div class="menu-logo-img" *ngIf="!isHome">
-          <img class="image-link"
-            alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png"
-            (click)="goHome()"/>
+          <img class="image-link" alt="JNL Logo" src="assets/Images/Common/JNLLogoB.png" (click)="goHome()" />
         </div>
       </div>
 
@@ -27,12 +25,11 @@
         <span class="dash">&#8213;</span> -->
 
         <span>
-          <a class="top-button" *ngIf="!searchMode"
-            (click)="goSearchMode()">
+          <a class="top-button" *ngIf="!searchMode" (click)="goSearchMode()">
             <i class="material-icons magnifier">search</i>
           </a>
-          <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus" *ngIf="searchMode"
-            (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
+          <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus"
+            *ngIf="searchMode" (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
         </span>
         <!-- <span class="dash">&#8213;</span> -->
 
@@ -55,13 +52,13 @@
         <span *ngIf="isLangSelectMode">
           <ul>
             <li *ngFor="let l of otherLanguages">
-            <span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>
+              <span class="top-button" (click)="onChangeLanguage(l)">{{l}}</span>
             </li>
           </ul>
         </span>
         <span class="top-button">
           <span style="margin-right: 2px" (click)="toggleLangStatus()">
-              {{language}}
+            {{language}}
           </span>
           <span (click)="toggleLangStatus()">
             <i class="fa fa-sort-down fa-1"></i>
@@ -78,18 +75,55 @@
 
   <!--MOBILE VERSION-->
   <div class="mob-searchbar">
-    <span class="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
-      <i class="material-icons">menu</i>
-    </span>
-    <span class="menu-logo-img">
-      <img class="image-link" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()"/>
-    </span>
-    <span>
-      <a class="top-button" *ngIf="!searchMode" (click)="goSearchMode()">
-        <i class="fa fa-search loupe"></i>
-      </a>
-      <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus"
-        *ngIf="searchMode" (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
-    </span>
+    <div>
+      <span class="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
+        <i class="material-icons">menu</i>
+      </span>
+    </div>
+    <div>
+      <span class="menu-logo-img">
+        <img class="image-link" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()" />
+      </span>
+    </div>
+    <div>
+      <span>
+        <a class="top-button" *ngIf="!searchMode" (click)="goSearchMode()">
+          <i class="fa fa-search loupe"></i>
+        </a>
+        <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus"
+          *ngIf="searchMode" (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
+      </span>
+
+      <!-- <span>
+        <a class="top-button">
+          <span *ngIf="loginText==='log in'" (click)="logIn()">
+            <i style="padding-right: 10px" class="far fa-user user"></i>
+          </span>
+          <span *ngIf="loginText==='log out'" (click)="toggleUserOptionsMenu()">
+            <i style="margin-right: 2px" class="far fa-user user"></i>
+            <i style="margin-right: 10px" class="fa fa-sort-down fa-1"></i>
+          </span>
+        </a>
+        <ul class="user-menu" *ngIf="userOptionsVisible" (mouseleave)="toggleUserOptionsMenu()">
+          <li *ngFor="let option of userOptions" (click)="userOptionClick(option)">{{option}}</li>
+        </ul>
+      </span>
+
+      <span *ngIf="isLangSelectMode">
+        <ul>
+          <li *ngFor="let l of otherLanguages">
+            <span class="top-button lang" (click)="onChangeLanguage(l)">{{l}}</span>
+          </li>
+        </ul>
+      </span>
+      <span class="top-button">
+        <span class="lang" style="margin-right: 2px" (click)="toggleLangStatus()">
+          {{language}}
+        </span>
+        <span (click)="toggleLangStatus()">
+          <i class="fa fa-sort-down fa-1"></i>
+        </span>
+      </span> -->
+    </div>
   </div>
 </div>

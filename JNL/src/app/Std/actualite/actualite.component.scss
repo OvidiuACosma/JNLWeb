@@ -52,6 +52,35 @@
 		}
 	}
 
+	.mb-logo {
+		margin-bottom: 10vw;
+		@media only screen and (min-width: 1200px) {
+			margin-bottom: 120px;
+		}
+	}
+
+	#anuncement-img{
+		width: 36vw;
+		@media only screen and (min-width: 1200px) {
+			width: 432px;
+		}
+		@media only screen and (max-width: 768px) {
+			width: 40vw;
+		}
+		@media only screen and (max-width: 576px) {
+			float: none;
+			margin: auto;
+			width: 80%;
+		}
+	}
+
+	.mb {
+		margin-bottom: 80px;
+		@media only screen and (max-width: 576px) {
+			margin-bottom: 20px;
+		}
+	}
+
 	.news-first-picture {
 		width: 76vw;
 		margin: auto;

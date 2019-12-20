@@ -101,9 +101,9 @@
     <hr>
     <div>
       <p>
-        <span>{{text.actualites1}}</span>
-        <img *ngIf="language==='EN' " alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1_EN.jpg">
-        <img *ngIf="language==='FR' "alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1_FR.jpg">
+        <span style="margin-bottom:0">{{text.actualites1}}</span>
+        <span class="clear"></span>
+        <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1.jpg">
         <a class="more-links" (click)="navigateToActualite('1')">+ {{text.readButton}}</a>
       </p>
       <!-- <p>
@@ -113,7 +113,8 @@
       </p> -->
       <p>
         <span>{{text.actualites3}}</span>
-        <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3.jpg">
+        <img *ngIf="language==='EN'" alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3_EN.jpg">
+        <img *ngIf="language==='FR'" alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3_FR.jpg">
         <a class="more-links" (click)="navigateToActualite('3')">+ {{text.readButton}}</a>
       </p>
     </div>
@@ -186,21 +187,3 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="modalAnouncement" tabindex="-1" role="dialog" (click)="closeModal()" data-backdrop="false">
-  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-    <div class="modal-content">
-      <div class="modal-header d-none">
-        <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img class="img-anouncement" src="assets\Images\Home\anouncement.jpg">
-      </div>
-    </div>
-  </div>
-</div>
-
-<button type="button" id="btnAnouncement" class="btn btn-primary d-none" data-toggle="modal" data-target="#modalAnouncement">
-</button>

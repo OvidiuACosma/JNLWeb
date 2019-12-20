@@ -1,5 +1,6 @@
 <div id="actualites-div" class="d-large">
-  <div class="logo" *ngIf="actual==='1'"><img src="assets/Images/Actualite/HM_logo_Studio.png"></div>
+  <div class="logo mb-logo" *ngIf="actual==='1'"><img src="assets/Images/Actualite/HM_logo_JNL.png"></div>
+  <div class="logo" *ngIf="actual==='3'"><img src="assets/Images/Actualite/HM_logo_Studio.png"></div>
   <h1 *ngIf="text?.articleTitle!==''">{{text?.articleTitle}}</h1>
   <h4 class="news-subtitle" *ngIf="text?.articleSubtitle!==''">{{text?.articleSubtitle}}</h4>
 
@@ -7,12 +8,12 @@
       <img class="news-first-picture" alt="JNL Collection" src="assets/Images/Marque_V/MKV_pic1.jpg">
     </div> -->
 
-    <div *ngIf="actual==='1'">
-      <img *ngIf="text?.pic1!==''" alt="JNL Collection" src={{text?.pic1}} class="ac-img">
-      <p class="parag" [innerHTML]="text?.articleText1"></p>
-      <img *ngIf="text?.pic2!==''" alt="JNL Collection" src={{text?.pic2}} class="ac-img2">
-      <p *ngIf="text?.articleText2!==''" class="parag" [innerHTML]="text?.articleText2"></p>
-    </div>
+  <div *ngIf="actual==='1'">
+    <img id="anuncement-img" *ngIf="text?.pic1!==''" alt="JNL Collection" src={{text?.pic1}} class="ac-img mb">
+    <p class="parag" [innerHTML]="text?.articleText1"></p>
+    <img *ngIf="text?.pic2!==''" alt="JNL Collection" src={{text?.pic2}} class="ac-img2">
+    <p *ngIf="text?.articleText2!==''" class="parag" [innerHTML]="text?.articleText2"></p>
+  </div>
 
   <div *ngIf="actual==='2'">
     <a href="https://managerdelannee.be/vote/" target="_blank">
