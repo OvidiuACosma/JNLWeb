@@ -75,33 +75,33 @@
 
   <!--MOBILE VERSION-->
   <div class="mob-searchbar">
-    <div>
+    <div class="bar-region">
       <span class="menu-button" (click)="toggleNav()" [innerHTML]="getNavbarButton()">
         <i class="material-icons">menu</i>
       </span>
     </div>
-    <div>
+    <div class="bar-region">
       <span class="menu-logo-img">
         <img class="image-link" alt="JNL Logo" src="assets/Images/Common/JNLLogo_white.png" (click)="goHome()" />
       </span>
     </div>
-    <div>
-      <span>
+    <div class="bar-region right-menu">
+      <!-- <span>
         <a class="top-button" *ngIf="!searchMode" (click)="goSearchMode()">
           <i class="fa fa-search loupe"></i>
         </a>
         <input type="search" class="searchInput" placeholder="{{text.search}}..." autofocus="autofocus"
           *ngIf="searchMode" (blur)="doSearch($event.target.value)" (keyup.enter)="$event.target.blur()">
-      </span>
+      </span> -->
 
-      <!-- <span>
+      <span>
         <a class="top-button">
           <span *ngIf="loginText==='log in'" (click)="logIn()">
-            <i style="padding-right: 10px" class="far fa-user user"></i>
+            <i style="padding-right: 15px" class="far fa-user user"></i>
           </span>
           <span *ngIf="loginText==='log out'" (click)="toggleUserOptionsMenu()">
-            <i style="margin-right: 2px" class="far fa-user user"></i>
-            <i style="margin-right: 10px" class="fa fa-sort-down fa-1"></i>
+            <i style="margin-right: 15px" class="far fa-user user"></i>
+            <!-- <i style="margin-right: 10px" class="fa fa-sort-down fa-1"></i> -->
           </span>
         </a>
         <ul class="user-menu" *ngIf="userOptionsVisible" (mouseleave)="toggleUserOptionsMenu()">
@@ -111,19 +111,19 @@
 
       <span *ngIf="isLangSelectMode">
         <ul>
-          <li *ngFor="let l of otherLanguages">
+          <li style="margin-right:1.5vw" *ngFor="let l of otherLanguages">
             <span class="top-button lang" (click)="onChangeLanguage(l)">{{l}}</span>
           </li>
         </ul>
       </span>
       <span class="top-button">
-        <span class="lang" style="margin-right: 2px" (click)="toggleLangStatus()">
+        <span class="lang" (click)="toggleLangStatus()">
           {{language}}
         </span>
-        <span (click)="toggleLangStatus()">
+        <!-- <span (click)="toggleLangStatus()">
           <i class="fa fa-sort-down fa-1"></i>
-        </span>
-      </span> -->
+        </span> -->
+      </span>
     </div>
   </div>
 </div>

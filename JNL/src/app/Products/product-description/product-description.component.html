@@ -1,6 +1,6 @@
 <div id="container">
   <div id="description" [ngClass]="(this.toggle) ? 'hide-item' :'show-item'" *ngIf="productDesc">
-    <p class="p-info">* info: some materials are followed by a golden "v". Click on them to see more details.</p>
+    <p class="p-info d-print-none">* info: some materials are followed by a golden "v". Click on them to see more details.</p>
     <p *ngIf="description">{{description}}</p>
     <div class="parts" *ngFor="let part of parts; let i = index;"><b>{{part}}:</b>
       <div class="materials">

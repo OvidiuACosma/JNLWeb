@@ -39,7 +39,8 @@
     border-radius: 3px;
 
 		@media only screen and (max-width: 768px) {
-		    padding: 0 10px;
+			padding: 0 10px;
+			margin-right: 10px;
 		}
 	}
 
@@ -310,11 +311,6 @@
 		margin: 0;
 	}
 
-	.memu-button-img {
-		padding-top: 16px;
-		width: 2.777vw; /*40px;*/
-  }
-
 	.search {
 		width: 100vw;
 		padding-top: var(--search-bar-height);
@@ -337,6 +333,10 @@
 			// z-index: 1000;
 		}
 
+		.bar-region {
+			width:33.33%
+		}
+
 		.menu-button {
 			color: white !important;
 			background-color: transparent;
@@ -346,21 +346,50 @@
 			display: flex;
 		}
 
+		.right-menu {
+			display: inline-flex;
+			flex-wrap: nowrap;
+			justify-content: flex-end;
+		}
+
 		.loupe {
 			font-size: 18px;
-			padding-right: 10px;
+			padding-right: 20px;
 		}
 
 		.user {
-			font-size: 18px;
+			font-size: 16px;
+		}
+
+		.user-menu {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			z-index: 10000;
+			top: 40px;
+			margin: 0 0 .5vw -10vw;
+			text-align: left;
+			border: solid 1px #888;
+			border-radius: 4px;
+			color: #000000;
+			background-color: rgba(200, 200, 200, .2);
+	
+			> li {
+				padding: .2vw 3vw;
+				font-size: 16px;
+			}
 		}
 
 		.lang {
 			font-family: Helvetica-Light;
+			font-size: 14px;
+			>span {
+				margin: 1vw 1.5vw;
+			}
 		}
 
 		.image-link {
-      height: 19px;
+			height: 20px;
       margin: auto;
 		}
 	}
