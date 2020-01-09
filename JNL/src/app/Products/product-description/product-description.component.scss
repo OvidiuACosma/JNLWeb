@@ -295,7 +295,16 @@ h5 {
   }
 
   > .p-info {
-    font-size: .8vw;
+    font-size: 1vw;
+    @media only screen and (min-width: 1200px) {
+      font-size: 12px;
+    }
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
+    @media only screen and (max-width: 576px) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -403,7 +412,7 @@ h5 {
     width: 100%;
     text-align: left;
     p {
-      padding-bottom: 20px;
+      padding-bottom: 12px;
       font-size: 14px;
     }
 
@@ -413,7 +422,7 @@ h5 {
 
     .materials {
       font-size: 14px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
   }
 }
