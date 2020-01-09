@@ -16,7 +16,7 @@ import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, Con
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
-import { LoginComponent, RegisterComponent } from './Auth';
+import { LoginComponent, RegisterComponent, ForgotPasswordComponent } from './Auth';
 
 
 
@@ -34,6 +34,7 @@ import { LoginComponent, RegisterComponent } from './Auth';
     SavoirFaireComponent,
     MarquesComponent,
     RegisterComponent,
+    ForgotPasswordComponent,
     MarqueComponent,
     ActualiteComponent,
     PageNotFoundComponent,
@@ -57,6 +58,7 @@ import { LoginComponent, RegisterComponent } from './Auth';
     SavoirFaireComponent,
     MarquesComponent,
     RegisterComponent,
+    ForgotPasswordComponent,
     MarqueComponent,
     ActualiteComponent,
     PageNotFoundComponent,

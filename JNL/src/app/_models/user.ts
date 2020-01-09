@@ -6,3 +6,8 @@ export class User {
     token: string;
     type: string;
 }
+
+export interface IUserResetPassword {
+  token: string;
+  password: string;
+}

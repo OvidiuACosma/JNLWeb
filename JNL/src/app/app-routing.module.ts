@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent, ContactComponent, PageNotFoundComponent } from './Main';
 import { AuthGuard } from './_guards';
-import { RegisterComponent } from './Auth';
+import { RegisterComponent, ForgotPasswordComponent } from './Auth';
 import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
           SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
 
@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'savoirFaire', component: SavoirFaireComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'resetpassword/:token', component: ForgotPasswordComponent },
 
   { path: '**', component: PageNotFoundComponent }
 ];

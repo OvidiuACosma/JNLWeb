@@ -73,4 +73,8 @@ export class LoginComponent implements OnInit {
     this.dialogRef.close(this.success);
   }
 
+  forgotPassword() {
+    // TODO: forgot passw
+    console.log('user:', this.loginForm.value.username);
+  }
 }

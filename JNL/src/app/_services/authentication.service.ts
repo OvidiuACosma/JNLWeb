@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { ConfigService } from './config.service';
 import { DataExchangeService } from './data-exchange.service';
@@ -9,9 +9,13 @@ import { User } from '../_models';
 export class AuthenticationService {
 
     apiURL: string;
+    headers: HttpHeaders;
 
-    constructor(private http: HttpClient, private configService: ConfigService, private dataExchange: DataExchangeService) {
+    constructor(private http: HttpClient,
+                private configService: ConfigService,
+                private dataExchange: DataExchangeService) {
         this.apiURL = configService.getApiURI();
+        this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
     }
 
     login(username: string, password: string) {
@@ -29,5 +33,9 @@ export class AuthenticationService {
     logout() {
         localStorage.removeItem('currentUser');
         this.dataExchange.setCurrentUser(new User());
+    }
+
+    forgotPassword(username: string) {
+      return this.http.post<string>(`$${this.apiURL}/users/forgotpassword`, {username: username}, {headers: this.headers});
     }
 }

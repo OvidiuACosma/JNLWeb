@@ -17,8 +17,9 @@
 					[ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
 				<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
 					<div *ngIf="f.password.errors.required">Password is required</div>
-				</div>
-			</div>
+        </div>
+        <label class="forgot-password" (click)="forgotPassword()">Forgot password</label>
+      </div>
 		</form>
 	</div>
   <div mat-dialog-actions class="dialog-action">

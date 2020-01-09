@@ -83,4 +83,7 @@ export class TranslationService {
     return this.http.get(`${this.urlAssets}/Std/request.json`);
   }
 
+  public getTextAuth(): Observable<any> {
+    return this.http.get(`${this.urlAssets}/Auth/auth.json`);
+  }
 }
