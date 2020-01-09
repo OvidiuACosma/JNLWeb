@@ -100,21 +100,21 @@
     <h1>{{text.actualitesTitle}}</h1>
     <hr>
     <div>
-      <p>
+      <!-- <p>
         <span style="margin-bottom:0">{{text.actualites1}}</span>
         <span class="clear"></span>
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1.jpg">
         <a class="more-links" (click)="navigateToActualite('1')">+ {{text.readButton}}</a>
-      </p>
-      <!-- <p>
+      </p> 
+      <p>
         <span>{{text.actualites2}}</span>
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic2.jpg">
         <a class="more-links" (click)="navigateToActualite('2')">+ {{text.readButton}}</a>
       </p> -->
       <p>
         <span>{{text.actualites3}}</span>
-        <img *ngIf="language==='EN'" alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3_EN.jpg">
-        <img *ngIf="language==='FR'" alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3_FR.jpg">
+        <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3.jpg">
+        <!-- <img *ngIf="language==='FR'" alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3_FR.jpg"> -->
         <a class="more-links" (click)="navigateToActualite('3')">+ {{text.readButton}}</a>
       </p>
     </div>
