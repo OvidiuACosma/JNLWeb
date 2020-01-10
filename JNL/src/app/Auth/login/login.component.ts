@@ -74,7 +74,11 @@ export class LoginComponent implements OnInit {
   }
 
   forgotPassword() {
-    // TODO: forgot passw
-    console.log('user:', this.loginForm.value.username);
+    this.authenticationService.forgotPassword(this.loginForm.value.username.toString())
+    .subscribe(resp => {
+      console.log('user:', this.loginForm.value.username);
+      // TODO: message as email was sent and the link on it to be followed.
+      // TODO: compose message - poetry
+    });
   }
 }
