@@ -97,10 +97,10 @@
       <span>
         <a class="top-button">
           <span *ngIf="loginText==='log in'" (click)="logIn()">
-            <i style="padding-right: 15px" class="far fa-user user"></i>
+            <i style="margin-right: 16px" class="far fa-user user"></i>
           </span>
           <span *ngIf="loginText==='log out'" (click)="toggleUserOptionsMenu()">
-            <i style="margin-right: 15px" class="far fa-user user"></i>
+            <i style="margin-right: 16px" class="far fa-user user"></i>
             <!-- <i style="margin-right: 10px" class="fa fa-sort-down fa-1"></i> -->
           </span>
         </a>
@@ -111,7 +111,7 @@
 
       <span *ngIf="isLangSelectMode">
         <ul>
-          <li style="margin-right:1.5vw" *ngFor="let l of otherLanguages">
+          <li style="margin-right: 16px" *ngFor="let l of otherLanguages">
             <span class="top-button lang" (click)="onChangeLanguage(l)">{{l}}</span>
           </li>
         </ul>

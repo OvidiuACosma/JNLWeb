@@ -367,15 +367,18 @@
 			position: fixed;
 			z-index: 10000;
 			top: 40px;
-			margin: 0 0 .5vw -8vw;
+			margin: 0 0 .5vw -10vw;
 			text-align: left;
 			border: solid 1px #888;
 			border-radius: 4px;
 			color: #000000;
 			background-color: rgba(200, 200, 200, .2);
+			@media only screen and (max-width: 576px) {
+				margin: 0 0 .5vw -9vw;
+			}
 	
 			> li {
-				padding: .2vw 3vw;
+				padding: .4vw 4vw;
 				font-size: 16px;
 				@media only screen and (max-width: 576px) {
 					font-size: 14px;
