@@ -43,7 +43,6 @@ export class MarqueComponent implements OnInit {
               private textService: TranslationService,
               private altService: AltImgService,
               private downloaderService: DownloaderService,
-              private authGuard: AuthGuard,
               public dialog: MatDialog) { }
 
   ngOnInit() {
