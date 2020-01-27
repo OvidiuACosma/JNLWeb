@@ -4,15 +4,13 @@ import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../Auth/login/login.component';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { DataExchangeService } from '../_services/data-exchange.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
   returnUrl = '';
 
-  constructor(public dialog: MatDialog,
-              private dataex: DataExchangeService) { }
+  constructor(public dialog: MatDialog) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     this.returnUrl = state.url;
