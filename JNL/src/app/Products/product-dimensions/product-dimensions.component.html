@@ -1,4 +1,4 @@
-<div id="container">
+<div id="container" class="d-print-none">
   <div class="image-list">
     <div *ngFor="let item of TDImages; let i=index">
       <a>
@@ -6,8 +6,25 @@
           data-target="#TDModal">
       </a>
       <div class="center">
-        <h6 class="d-print-none">{{item.prodCode}}</h6>
-        <h3 class="d-none d-print-block">{{item.prodCode}}</h3>
+        <h6>{{item.prodCode}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRINT -->
+<div class="d-none d-print-block">
+  <div style="width:88%; margin-left: auto; margin-right: auto;">
+    <span>DRAWINGS</span>
+    <hr>
+  </div>
+  <div class="image-list">
+    <div *ngFor="let item of TDImages; let i=index">
+      <a>
+        <img class="img-button" [src]="item.src">
+      </a>
+      <div class="center">
+        <h3>{{item.prodCode}}</h3>
       </div>
     </div>
   </div>
