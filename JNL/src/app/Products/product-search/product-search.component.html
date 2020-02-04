@@ -12,6 +12,7 @@
         </span>
         <input class="search-textbox" name="searchBox" type="text"
           [(ngModel)]="searchText" (change)="searchByText()"><br>
+          <span style="cursor: pointer;" *ngIf="false" (click)="navigateTo('product/productStore')">Web Store</span>
       </div>
 
       <div class="filters">

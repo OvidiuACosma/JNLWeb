@@ -19,6 +19,7 @@ import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-li
 import { CopyToClipboardDirective } from '../_directives';
 import { DialogAnswerComponent } from '../Products';
 import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.component';
+import { ProductStoreComponent } from './product-store/product-store.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.co
     FavoritesSelListComponent,
     CopyToClipboardDirective,
     DialogAnswerComponent,
-    FavoritesSharedComponent
+    FavoritesSharedComponent,
+    ProductStoreComponent
   ],
   exports: [
     ProductSearchComponent,
@@ -57,7 +59,8 @@ import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.co
     FavoritesComponent,
     FavoritesSelListComponent,
     DialogAnswerComponent,
-    CopyToClipboardDirective
+    CopyToClipboardDirective,
+    ProductStoreComponent
   ],
   entryComponents: [
     DialogAnswerComponent,

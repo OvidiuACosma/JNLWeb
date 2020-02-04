@@ -105,7 +105,7 @@
   </div>
 
   <!-- PRODUCT SHEET TO PRINT-->
-  <div class="d-none d-print-block print" *ngIf="product">
+  <div class="d-none d-print-block print break" *ngIf="product">
     <div>
       <span>DESCRIPTION</span>
       <hr>
@@ -113,7 +113,7 @@
     <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
   </div>
 
-  <div class="d-none d-print-inline-block break" *ngIf="product">
+  <div class="d-none d-print-inline-block" *ngIf="product">
     <app-product-dimensions [product]="product"></app-product-dimensions>
   </div>
 

@@ -10,6 +10,7 @@ import { ProductDimensionsComponent } from './product-dimensions/product-dimensi
 import { ProductCataloguesComponent } from './product-catalogues/product-catalogues.component';
 import { ProductGarnissageDetailsComponent } from './product-garnissage-details/product-garnissage-details.component';
 import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.component';
+import { ProductStoreComponent } from './product-store/product-store.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'productDimensions', component: ProductDimensionsComponent },
   { path: 'productCatalogues', component: ProductCataloguesComponent},
   { path: 'productGarnissages', component: ProductGarnissagesComponent},
-  { path: 'productGarnissageDetails', component: ProductGarnissageDetailsComponent}
+  { path: 'productGarnissageDetails', component: ProductGarnissageDetailsComponent},
+  { path: 'productStore', component: ProductStoreComponent}
 ];
 
 @NgModule({
