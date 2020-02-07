@@ -39,7 +39,7 @@
 
     <!-- PRODUCTS -->
     <div class="products">
-      <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
+      <span class="prod-name">&nbsp;Products found – {{productsFiltered.length || 0}}</span>
       <div class="products-container">
         <div class="family-container" *ngFor="let family of getFamiliesGroup()">
           <span class="family-name">&nbsp;{{family}}</span>

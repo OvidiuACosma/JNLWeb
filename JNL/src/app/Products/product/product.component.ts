@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, ProductsService, TranslationService, ArchiveService, DownloaderService } from '../../_services';
+import { DataExchangeService, ProductsService, TranslationService, ArchiveService, DownloaderService, UserService } from '../../_services';
 import { Product, Img, ProductHeroImage, ProductEF, User } from '../../_models';
 import * as _ from 'lodash';
 declare var $: any;
@@ -46,7 +46,8 @@ export class ProductComponent implements OnInit {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private archiveService: ArchiveService,
-              private downloaderService: DownloaderService) { }
+              private downloaderService: DownloaderService,
+              private userService: UserService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -182,7 +183,6 @@ export class ProductComponent implements OnInit {
     this.getCountries();
   }
 
-  // archive country list
   countryClick() {
     this.scroller = false;
   }
@@ -223,10 +223,10 @@ export class ProductComponent implements OnInit {
   }
 
   addToFavorites(product: ProductEF) {
-    if (this.productsService.isLoggedIn()) {
+    if (this.userService.isLoggedIn()) {
       this.productsService.openDialog(product, this.user);
     } else {
-      this.productsService.openLoginDialog().subscribe(answer => {
+      this.userService.openLoginDialog().subscribe(answer => {
         if (answer) {
           this.productsService.openDialog(product, this.user);
         } else {

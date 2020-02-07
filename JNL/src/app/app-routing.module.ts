@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent, ContactComponent, PageNotFoundComponent } from './Main';
 import { AuthGuard } from './_guards';
-import { RegisterComponent, ForgotPasswordComponent } from './Auth';
 import { ActualiteComponent, JnlGroupComponent, MarquesComponent, PressComponent,
           SavoirFaireComponent, ServicesComponent, MarqueComponent } from './Std';
+import { ForgotPasswordComponent } from './Auth/forgot-password/forgot-password.component';
+import { RegisterComponent } from './Auth/register/register.component';
 
 
 const routes: Routes = [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { IProductToSell, User } from '../../_models';
+import { User, IProductReadyToSell } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
 
@@ -30,9 +30,9 @@ interface IRouteParams {
   styleUrls: ['./product-store.component.scss']
 })
 export class ProductStoreComponent implements OnInit {
-  public products: IProductToSell[];
+  public products: IProductReadyToSell[];
   public routeParams: IRouteParams;
-  public productsFiltered: IProductToSell[];
+  public productsFiltered: IProductReadyToSell[];
   // public categoriesFr: any;
   // public categoriesEn: any;
   public familiesFr: any;
@@ -196,7 +196,7 @@ export class ProductStoreComponent implements OnInit {
     return filter;
   }
 
-  // sortProducts(p: IProductToSell[]): IProductToSell[] {
+  // sortProducts(p: IProductReadyToSell[]): IProductReadyToSell[] {
   //   p.sort(function(a, b) {
   //     if (a.indexFamily > b.indexFamily) {
   //       return 1; // reverse
@@ -467,8 +467,8 @@ export class ProductStoreComponent implements OnInit {
     }
   }
 
-  getProductsOfFamily(family: string): IProductToSell[] {
-    let productsOfFamily: IProductToSell[];
+  getProductsOfFamily(family: string): IProductReadyToSell[] {
+    let productsOfFamily: IProductReadyToSell[];
     switch (this.language.toLowerCase()) {
       case 'fr': {
         productsOfFamily = this.productsFiltered
@@ -485,12 +485,12 @@ export class ProductStoreComponent implements OnInit {
     return productsOfFamily;
   }
 
-  getProductImage(product: IProductToSell): string {
+  getProductImage(product: IProductReadyToSell): string {
     const src = `assets/Images/Products/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
     return src;
   }
 
-  getProductName(product: IProductToSell): string {
+  getProductName(product: IProductReadyToSell): string {
     let productName: string;
     switch (this.language.toLowerCase()) {
       case 'fr': {
@@ -506,12 +506,12 @@ export class ProductStoreComponent implements OnInit {
     return productName;
   }
 
-  goToProduct(product: IProductToSell) {
+  goToProduct(product: IProductReadyToSell) {
     this.router.navigate(['product/product', {b: product.brand, f: product.familyFr, m: product.model}]);
     this.scrollTop();
   }
 
-  // addToFavorites(product: IProductToSell) {
+  // addToFavorites(product: IProductReadyToSell) {
   //     if (this.productService.isLoggedIn()) {
   //       this.productService.openDialog(product, this.user);
   //     } else {

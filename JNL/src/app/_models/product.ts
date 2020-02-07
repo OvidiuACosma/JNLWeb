@@ -38,6 +38,11 @@ export interface ProductTDImage {
   prodCode: string;
 }
 
+export interface IGarnissageDto {
+  materialFr: string;
+  model: string;
+}
+
 export interface IGarnissage {
   id: number;
   codeProd: string;
@@ -72,7 +77,7 @@ export interface IProdGarnissage {
   colorRef: string;
 }
 
-export interface IProductToSell {
+export interface IProductReadyToSell {
   id: number;
   familyFr: string;
   familyEn: string;

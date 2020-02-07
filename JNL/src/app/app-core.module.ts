@@ -16,7 +16,9 @@ import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, Con
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
-import { LoginComponent, RegisterComponent, ForgotPasswordComponent } from './Auth';
+import { LoginComponent } from './Auth';
+import { ForgotPasswordComponent } from './Auth/forgot-password/forgot-password.component';
+import { RegisterComponent } from './Auth/register/register.component';
 
 
 

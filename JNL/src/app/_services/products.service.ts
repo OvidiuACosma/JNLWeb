@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
-import { Product, ProductEF, ProductHeroImage, IProductToSell, IGarnissage, User } from '../_models';
+import { Product, ProductEF, ProductHeroImage, IGarnissage, User, IGarnissageDto,
+         IProdGarnissage, IProductReadyToSell } from '../_models';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../Auth/login/login.component';
 import { map } from 'rxjs/operators';
 import { FavoritesSelListComponent } from '../Products/favorites-sel-list/favorites-sel-list.component';
 import { DataExchangeService } from './data-exchange.service';
+import { ProductGarnissageDetailsComponent } from '../Products/product-garnissage-details/product-garnissage-details.component';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class ProductsService {
   private headers: HttpHeaders;
   private prodDescURL = '';
   private product: string;
-  private productToSell: string;
+  private productReadyToSell: string;
   private prodHeroImages = '';
 
   constructor(private http: HttpClient,
@@ -28,7 +29,7 @@ export class ProductsService {
               private dataex: DataExchangeService) {
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
     this.product = configService.getApiURI() + '/products';
-    this.productToSell = configService.getApiURI() + '/products/readytosell';
+    this.productReadyToSell = configService.getApiURI() + '/products/readytosell';
     this.prodDescURL = configService.getApiURI() + '/productsdescriptions';
     this.prodHeroImages = configService.getApiURI() + '/productscollections/heroimages';
   }
@@ -41,20 +42,12 @@ export class ProductsService {
     return this.http.get<IGarnissage[]>(`${this.product}/GA`, {headers: this.headers});
   }
 
-  public getTissus(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.product}/tissus`, {headers: this.headers});
-  }
-
-  public getCuirs(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.product}/cuirs`, {headers: this.headers});
+  public getGarnissage(garnissage: IGarnissageDto): Observable<IGarnissage[]> {
+    return this.http.post<IGarnissage[]>(`${this.product}/GA`, garnissage, {headers: this.headers});
   }
 
   public getProductSearch(): Observable<any[]> {
     return this.http.get<any[]>(`${this.urlAssets}/Products/search.json`, {headers: this.headers});
-  }
-
-  public getSimiliCuirs(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.product}/similicuirs`, {headers: this.headers});
   }
 
   public getProductsListFromIds(productsIds: number[]): Observable<ProductEF[]> {
@@ -86,37 +79,10 @@ export class ProductsService {
     return this.http.get<any[]>(`${this.urlAssets}/Products/techDetImages.json`, {headers: this.headers});
   }
 
-  public getProductsToSell(): Observable<IProductToSell[]> {
-    return this.http.get<IProductToSell[]>(`${this.productToSell}`, {headers: this.headers});
+  public getProductsToSell(): Observable<IProductReadyToSell[]> {
+    return this.http.get<IProductReadyToSell[]>(`${this.productReadyToSell}`, {headers: this.headers});
   }
 
-
-  public isLoggedIn(): boolean {
-    if (localStorage.getItem('currentUser')) {
-      return true;
-    }
-    return false;
-  }
-
-  openLoginDialog(): Observable<boolean> {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '30vw';
-    dialogConfig.minWidth =  '320px';
-    dialogConfig.maxWidth =  '450px';
-    dialogConfig.minHeight = '320px';
-    dialogConfig.maxHeight = '450px';
-    dialogConfig.data = '';
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(LoginComponent, dialogConfig);
-
-    return dialogRef.afterClosed()
-    .pipe(
-      map(result => {
-      return result;
-    }));
-  }
 
   openDialog(product: ProductEF, user: User): Observable<boolean> {
     this.dataex.currentBrowser.subscribe(browser => {
@@ -138,5 +104,95 @@ export class ProductsService {
       }));
     });
     return of(false);
+  }
+
+  public openGarnissageDialog(garn: IProdGarnissage, isDesktop: boolean): Observable<boolean> {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = this.getDialogWidth(isDesktop);
+    dialogConfig.maxWidth = '960px';
+    // dialogConfig.maxHeight = '825px';
+    dialogConfig.data = garn;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
+
+    return dialogRef.afterClosed()
+    .pipe(
+      map(result => {
+      return result;
+    }));
+  }
+
+  getDialogWidth(isDesktop: boolean): string {
+    let width = '40vw';
+    if (!isDesktop) {
+      width = '98%';
+    }
+    return width;
+  }
+
+  public mapProducts(products: IGarnissage[], lang: string): IProdGarnissage[] {
+    let productsMapped: IProdGarnissage[];
+    switch (lang.toLowerCase()) {
+      case 'en': {
+        productsMapped = products.map(m => {
+          return {
+            id: m.id,
+            codeProd: m.codeProd,
+            material: m.materialEn,
+            model: m.model,
+            dimensions: m.dimensions,
+            composition: m.compositionEn,
+            martindale: m.martindale,
+            type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
+            brand: this.getBrandStringFromNumeric(m.brand),
+            color: m.colorEn,
+            colorRef: m.colorRef
+          };
+        });
+        break;
+      }
+      case 'fr': {
+        productsMapped = products.map(m => {
+          return {
+            id: m.id,
+            codeProd: m.codeProd,
+            material: m.materialFr,
+            model: m.model,
+            dimensions: m.dimensions,
+            composition: m.compositionFr,
+            martindale: m.martindale,
+            type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
+            brand: this.getBrandStringFromNumeric(m.brand),
+            color: m.colorFr,
+            colorRef: m.colorRef
+          };
+        });
+      }
+    }
+    return productsMapped;
+  }
+
+  getTypeStringFromBoolean(t: boolean = false, lang: string): string {
+    if (!!t) {
+      switch (lang.toLowerCase()) {
+        case 'en': {return 'Cushions only'; }
+        case 'fr' : {return 'Coussins seulement'; }
+      }
+    } else {
+      switch (lang.toLowerCase()) {
+        case 'en': {return 'Upholstery'; }
+        case 'fr' : {return 'Garnissage'; }
+      }
+    }
+  }
+
+  getBrandStringFromNumeric(b: number): string {
+    switch (b) {
+      case 0: { return 'JNL Collection'; }
+      case 1: { return 'Ungaro Home'; }
+      case 2: { return 'Ungaro Home'; }
+    }
   }
 }

@@ -10,14 +10,13 @@ import { ProductDimensionsComponent } from './product-dimensions/product-dimensi
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { ProductCataloguesComponent } from './product-catalogues/product-catalogues.component';
 import { ProductComponent } from './product/product.component';
-import { FavoritesComponent } from './favorites/favorites.component';
+import { FavoritesComponent, DialogAnswerComponent } from './favorites/favorites.component';
 import { ProductsService, ConfigService, AlertService, TranslationService } from '../_services';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { FavoritesSelListComponent } from './favorites-sel-list/favorites-sel-list.component';
 import { CopyToClipboardDirective } from '../_directives';
-import { DialogAnswerComponent } from '../Products';
 import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.component';
 import { ProductStoreComponent } from './product-store/product-store.component';
 import { ProductStoreItemComponent } from './product-store-item/product-store-item.component';

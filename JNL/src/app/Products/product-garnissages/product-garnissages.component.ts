@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService, DataExchangeService } from 'src/app/_services';
-import { IGarnissage, IProdGarnissage, Browser, User } from 'src/app/_models';
+import { ProductsService, DataExchangeService, UserService } from 'src/app/_services';
+import { IProdGarnissage, Browser, User } from 'src/app/_models';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
-import { map } from 'rxjs/operators';
+import { map, mergeMap, concatMap } from 'rxjs/operators';
 
 interface IFilter {
   index: number;
@@ -42,106 +40,46 @@ export class ProductGarnissagesComponent implements OnInit {
 
   constructor(private productService: ProductsService,
               private dataex: DataExchangeService,
-              private dialog: MatDialog) { }
+              private userService: UserService) { }
 
   ngOnInit() {
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-    this.language = lang || 'EN';
-      this.dataex.currentBrowser
-      .subscribe(browser => {
-        this.browser = browser;
-      });
-    this.productService.getGarnissages()
-      .subscribe(res => {
-        this.products = this.mapProducts(res, lang);
-        this.products = this.sortProducts(this.products);
-        this.productsFiltered = _.cloneDeep(this.products);
-        this.getColors(); // p.categories
-        this.getMaterials(); // p.families
-        this.getTypes();
-        this.setFilterElements();
-        // this.getFilters(res);
-      });
-    });
+    this.getData();
     this.toggle = new Array(this.filterBy.length);
     for (let i = 0; i < this.filterBy.length; i++) {
       this.toggle[i] = true;
     }
   }
 
-  mapProducts(products: IGarnissage[], lang: string): IProdGarnissage[] {
-    let productsMapped: IProdGarnissage[];
-    switch (lang.toLowerCase()) {
-      case 'en': {
-        productsMapped = products.map(m => {
-          return {
-            id: m.id,
-            codeProd: m.codeProd,
-            material: m.materialEn,
-            model: m.model,
-            dimensions: m.dimensions,
-            composition: m.compositionEn,
-            martindale: m.martindale,
-            type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
-            brand: this.getBrandStringFromNumeric(m.brand),
-            color: m.colorEn,
-            colorRef: m.colorRef
-          };
-        });
-        break;
-      }
-      case 'fr': {
-        productsMapped = products.map(m => {
-          return {
-            id: m.id,
-            codeProd: m.codeProd,
-            material: m.materialFr,
-            model: m.model,
-            dimensions: m.dimensions,
-            composition: m.compositionFr,
-            martindale: m.martindale,
-            type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
-            brand: this.getBrandStringFromNumeric(m.brand),
-            color: m.colorFr,
-            colorRef: m.colorRef
-          };
-        });
-      }
-    }
-    return productsMapped;
-  }
-
-  getTypeStringFromBoolean(t: boolean = false, lang: string): string {
-    if (!!t) {
-      switch (lang.toLowerCase()) {
-        case 'en': {return 'Cushions only'; }
-        case 'fr' : {return 'Coussins seulement'; }
-      }
-    } else {
-      switch (lang.toLowerCase()) {
-        case 'en': {return 'Upholstery'; }
-        case 'fr' : {return 'Garnissage'; }
-      }
-    }
-  }
-
-  getBrandStringFromNumeric(b: number): string {
-    switch (b) {
-      case 0: { return 'JNL Collection'; }
-      case 1: { return 'Ungaro Home'; }
-    }
+  getData() {
+    this.dataex.currentUser.pipe(
+      mergeMap(user => this.dataex.currentBrowser.pipe(
+        mergeMap(_browser => this.dataex.currentLanguage.pipe(
+          concatMap(lang => this.productService.getGarnissages().pipe(
+            map(product => ({
+              user: user,
+              browser: _browser,
+              lang: lang,
+              product: product
+            }))
+          ))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.user = resp.user;
+      this.browser = resp.browser;
+      this.language = resp.lang || 'EN';
+      this.products = this.productService.mapProducts(resp.product, this.language);
+      this.products = this.sortProducts(this.products);
+      this.productsFiltered = _.cloneDeep(this.products);
+      this.getColors(); // p.categories
+      this.getMaterials(); // p.families
+      this.getTypes();
+      this.setFilterElements();
+    });
   }
 
   sortProducts(p: IProdGarnissage[]): IProdGarnissage[] {
-    // p.sort(function(a, b) {
-    //   // if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
-    //   // if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
-    //   // if (a.brand.localeCompare(b.brand) > 0) { return 1; }
-    //   // if (a.brand.localeCompare(b.brand) < 0) { return -1; }
-    //   // if (a.model.localeCompare(b.model) > 0) { return 1; }
-    //   // return -1;
-    // });
     return p;
   }
 
@@ -206,24 +144,6 @@ export class ProductGarnissagesComponent implements OnInit {
     });
     return filter;
   }
-
-  // getFiltersLists(ga: IGarnissage[]) {
-  //   let filter: any[];
-  //   filter = ga.map(m => {
-  //     return {
-  //       color: m.colorEn
-  //     };
-  //   });
-  //   this.filtersColorList = _.uniqBy(filter, 'color');
-  //   filter = [];
-
-  //   filter = ga.map(m => {
-  //     return {
-  //       material: m.materialEn
-  //     };
-  //   });
-  //   this.filtersMaterialsList = _.uniqBy(filter, 'material');
-  // }
 
   filterByColor(color: string) {
     this.productsFiltered = this.products.filter(f => f.color === color);
@@ -290,14 +210,9 @@ export class ProductGarnissagesComponent implements OnInit {
     filterItems = this.getFilterItems();
     filteredItems = this.getFilteredItems(filteredElements, filterItems);
     this.applyFilters(filteredItems, filteredElements);
-    // if (this.searchText !== '') {
-    //   this.searchByText();
-    // }
-    // this.scroller = false;
   }
 
   scrollAfterFilter(fragment: string) {
-    // window.scrollTo(0, window.innerWidth / 100 * 9);
     const element = document.getElementById(fragment);
     if (element) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -381,7 +296,6 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   applyFilters(filteredItems: boolean[], filteredElements: IFilterElements[]) {
-    // console.log('filteredItems:', filteredItems, 'filteredElements:', filteredElements);
     let filterItemsList: string[] = [];
     this.productsFiltered = _.clone(this.products);
     for (let l = 0; l < filteredItems.length; l++) {
@@ -418,43 +332,15 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   openDialog(garn: IProdGarnissage): Observable<boolean> {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = this.getDialogWidth();
-    dialogConfig.maxWidth = '960px';
-    // dialogConfig.maxHeight = '825px';
-    dialogConfig.data = garn;
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
-
-    return dialogRef.afterClosed()
-    .pipe(
-      map(result => {
-      return result;
-    }));
-  }
-
-  getDialogWidth(): string {
-    let width = '40vw';
-    if (!this.browser.isDesktopDevice) {
-      width = '98%';
-    }
-    return width;
-  }
-
-  getUser() {
-    this.dataex.currentUser.subscribe( user => {
-      this.user = user;
-    });
+    return this.productService.openGarnissageDialog(garn, this.browser.isDesktopDevice);
   }
 
   addToFavorites(ga: IProdGarnissage) {
     // TODO: follow the procedure to add to favList using ga.id
-    if (this.productService.isLoggedIn()) {
+    if (this.userService.isLoggedIn()) {
       // this.productService.openDialog(ga, this.user);
     } else {
-      this.productService.openLoginDialog().subscribe(answer => {
+      this.userService.openLoginDialog().subscribe(answer => {
         if (answer) {
           // this.productService.openDialog(ga, this.user);
         } else {

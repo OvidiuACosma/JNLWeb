@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { ProductEF, User } from '../../_models';
+import { DataExchangeService, TranslationService, ProductsService, UserService } from '../../_services';
+import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage, IGarnissage } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
-import { MatDialog } from '@angular/material/dialog';
+import { mergeMap, map, concatMap } from 'rxjs/operators';
 
 interface IFilter {
   index: number;
@@ -33,9 +33,10 @@ interface IRouteParams {
 
 export class ProductSearchComponent implements OnInit {
 
-  public routeParams: IRouteParams;
-  public products: ProductEF[];
-  public productsFiltered: ProductEF[];
+  routeParams: IRouteParams;
+  products: ProductEF[];
+  productsFiltered: ProductEF[];
+  garnissageList: IGarnissage[];
   public categoriesFr: any;
   public categoriesEn: any;
   public familiesFr: any;
@@ -48,9 +49,9 @@ export class ProductSearchComponent implements OnInit {
   brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio']);
   filterElements: IFilterElements[] = [];
   scroller = true;
-  numbers: number[] = [];
+  // numbers: number[] = [];
   total: number;
-
+  browser: Browser;
   toggle: boolean[];
 
   constructor(private router: Router,
@@ -58,7 +59,7 @@ export class ProductSearchComponent implements OnInit {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private productService: ProductsService,
-              private dialog: MatDialog) {
+              private userService: UserService) {
     this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.ngOnInit();
@@ -67,55 +68,58 @@ export class ProductSearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataex.currentLanguage
-      .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-
-      this.productService.getProducts()
-      .subscribe(p => {
-        this.products = this.sortProducts(p);
-        this.productsFiltered = _.clone(this.products);
-        this.getCategories();
-        this.getFamilies();
-        this.getRouteParameters();
-        this.setFilterElements();
-        if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
-            this.routeParams.model || this.routeParams.searchText) {
-          this.activateItemSelection(this.routeParams);
-          this.selectFilter();
-        }
-     });
-    });
-
+    this.getData();
     this.toggle = new Array(this.filterBy.length);
     for (let i = 0; i < this.filterBy.length; i++) {
       this.toggle[i] = true;
     }
-    const numberAll = 15;
-    this.total = numberAll;
 
-    for (let index = 0; index < numberAll; index++) {
-      this.numbers.push(index);
-    }
-    this.getUser();
+    // const numberAll = 15;
+    // this.total = numberAll;
+
+    // for (let index = 0; index < numberAll; index++) {
+    //   this.numbers.push(index);
+    // }
   }
 
-  getText(lang: string) {
-    this.textService.getTextFavorites()
-      .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
-    });
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
-  }
-
-  getUser() {
-    this.dataex.currentUser.subscribe( user => {
-      this.user = user;
+  getData() {
+    this.dataex.currentUser.pipe(
+      mergeMap(user => this.dataex.currentBrowser.pipe(
+        mergeMap(_browser => this.dataex.currentLanguage.pipe(
+          concatMap(lang => this.textService.getTextFavorites().pipe(
+            mergeMap(text => this.productService.getProducts().pipe(
+              mergeMap(products => this.productService.getGarnissages().pipe(
+                map(ga => ({
+                  user: user,
+                  browser: _browser,
+                  lang: lang,
+                  text: text,
+                  products: products,
+                  ga: ga
+                }))
+              ))
+            ))
+          ))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.user = resp.user;
+      this.browser = resp.browser;
+      this.language = resp.lang || 'EN';
+      this.text = resp.text[0][this.language.toUpperCase()];
+      this.garnissageList = resp.ga;
+      this.products = this.sortProducts(resp.products);
+      this.productsFiltered = _.clone(this.products);
+      this.getCategories();
+      this.getFamilies();
+      this.getRouteParameters();
+      this.setFilterElements();
+      if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
+          this.routeParams.model || this.routeParams.searchText) {
+        this.activateItemSelection(this.routeParams);
+        this.selectFilter();
+      }
     });
   }
 
@@ -134,12 +138,12 @@ export class ProductSearchComponent implements OnInit {
       products = products.filter(f => brand.includes(f.brand));
     }
     if (!category.includes('all')) {
-      switch (this.language.toLowerCase()) {
-        case 'en': {
+      switch (this.language) {
+        case 'EN': {
           products = products.filter(f => category.includes(f.categoryEn));
           break;
         }
-        case 'fr': {
+        case 'FR': {
           products = products.filter(f => category.includes(f.categoryFr));
         }
       }
@@ -162,27 +166,29 @@ export class ProductSearchComponent implements OnInit {
 
   setFilterElements() {
     this.filterElements = [];
-    for (const f of this.filterBy) {
-      this.filterElements.push({filterGroup: f,
-        filterElement: this.getFilterElements(f)
-      });
-    }
+    this.filterElements = this.filterBy.map(m => {
+      return {
+        filterGroup: m,
+        filterElement: this.getFilterElements(m)
+      };
+    });
+
   }
 
   getFilterElements(filterGroup: string): IFilter[] {
     switch (filterGroup) {
       case 'Brand': { return this.setFilterListFromSet(this.brands); }
       case 'Type': {
-        switch (this.language.toLowerCase()) {
-          case 'fr': { return this.setFilterListFromSet(this.categoriesFr); }
-          case 'en': { return this.setFilterListFromSet(this.categoriesEn); }
+        switch (this.language) {
+          case 'FR': { return this.setFilterListFromSet(this.categoriesFr); }
+          case 'EN': { return this.setFilterListFromSet(this.categoriesEn); }
         }
         break;
       }
       case 'Family': {
-        switch (this.language.toLowerCase()) {
-          case 'fr': { return this.setFilterListFromSet(this.familiesFr); }
-          case 'en': { return this.setFilterListFromSet(this.familiesEn); }
+        switch (this.language) {
+          case 'FR': { return this.setFilterListFromSet(this.familiesFr); }
+          case 'EN': { return this.setFilterListFromSet(this.familiesEn); }
         }
         break;
       }
@@ -209,53 +215,47 @@ export class ProductSearchComponent implements OnInit {
       } else {
         if (a.indexBrand > b.indexBrand) {
           return 1; // reverse
-          // return a.indexModel - b.indexModel;
         } else {
           return -1; // preserve
         }
       }
       return -1;
-
-      // if (a.familyFr.localeCompare(b.familyFr) > 0) { return 1; }
-      // if (a.familyFr.localeCompare(b.familyFr) < 0) { return -1; }
-      // if (a.brand.localeCompare(b.brand) > 0) { return 1; }
-      // if (a.brand.localeCompare(b.brand) < 0) { return -1; }
-      // if (a.model.localeCompare(b.model) > 0) { return 1; }
-      // return -1;
     });
     return p;
   }
 
   getFilters(category: string): any {
-      const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
-      let fg: IFilter[] = fe[0].filterElement;
-      switch (category) {
-        case 'Type': {
-          switch (this.language.toLowerCase()) {
-            case 'en': {
-              fg = fg.filter(f => this.categoriesEn.has(f.displayName));
-              break;
-            }
-            case 'fr': {
-              fg = fg.filter(f => this.categoriesFr.has(f.displayName));
-            }
+    if (this.filterElements === undefined) { return; }
+    const fe: IFilterElements[] = _.filter(this.filterElements, {filterGroup: category});
+    if (!fe[0]) { return;  }
+    let fg: IFilter[] = fe[0].filterElement;
+    switch (category) {
+      case 'Type': {
+        switch (this.language) {
+          case 'EN': {
+            fg = fg.filter(f => this.categoriesEn.has(f.displayName));
+            break;
           }
-          break;
-        }
-        case 'Family': {
-          switch (this.language.toLowerCase()) {
-            case 'en': {
-              fg = fg.filter(f => this.familiesEn.has(f.displayName));
-              break;
-            }
-            case 'fr': {
-              fg = fg.filter(f => this.familiesFr.has(f.displayName));
-            }
+          case 'FR': {
+            fg = fg.filter(f => this.categoriesFr.has(f.displayName));
           }
-          break;
         }
+        break;
       }
-      return  fg;
+      case 'Family': {
+        switch (this.language) {
+          case 'EN': {
+            fg = fg.filter(f => this.familiesEn.has(f.displayName));
+            break;
+          }
+          case 'FR': {
+            fg = fg.filter(f => this.familiesFr.has(f.displayName));
+          }
+        }
+        break;
+      }
+    }
+    return  fg;
   }
 
   navigateTo(target: string, fragment: string = '') {
@@ -332,7 +332,7 @@ export class ProductSearchComponent implements OnInit {
   }
 
   getselectedItemsOfGroup(group: string): string[] {
-    let selectedItems: string[] = this.filterElements.find(f => f.filterGroup === group)
+    let selectedItems: string[] = _.find(this.filterElements, {filterGroup: group})
       .filterElement.filter(v => v.checked).map(m => m.displayName);
     if (selectedItems.length === 0) { selectedItems = ['all']; }
     return selectedItems;
@@ -361,61 +361,67 @@ export class ProductSearchComponent implements OnInit {
 
   getFilterItems(): number[] {
     const filterItems: number[] = [];
-    for (let k = 0; k < this.filterElements.length; k++) {
-      filterItems.push(this.filterElements[k].filterElement.length);
+    if (this.filterElements) {
+      for (let k = 0; k < this.filterElements.length; k++) {
+        filterItems.push(this.filterElements[k].filterElement.length);
+      }
     }
     return filterItems;
   }
 
   getFilteredItems(filteredElements: IFilterElements[], filterItems: number[]): boolean[] {
     const filteredItems: boolean[] = [];
-    for (let j = 0; j < filteredElements.length; j++) {
-      if ((filteredElements[j].filterElement.length %
-        (filterItems[j] || filteredElements[j].filterElement.length)) === 0) {
-          filteredItems.push(false);
-        } else {
-          filteredItems.push(true);
-        }
+    if (filteredElements) {
+      for (let j = 0; j < filteredElements.length; j++) {
+        if ((filteredElements[j].filterElement.length %
+          (filterItems[j] || filteredElements[j].filterElement.length)) === 0) {
+            filteredItems.push(false);
+          } else {
+            filteredItems.push(true);
+          }
+      }
     }
     return filteredItems;
   }
 
   applyFilters(filteredItems: boolean[], filteredElements: IFilterElements[]) {
-    let filterItemsList: string[] = [];
-    this.productsFiltered = _.clone(this.products);
-    for (let l = 0; l < filteredItems.length; l++) {
-      if (filteredItems[l]) {
-        filterItemsList = this.getListOfFilterItems(filteredElements[l].filterElement);
-        switch (l) {
-          case 0: {
-            this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.brand));
-            break;
-          }
-          case 1: {
-            switch (this.language) {
-              case 'EN': {
-                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryEn));
-                break;
-              }
-              case 'FR': {
-                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryFr));
-                break;
-              }
+    if (filteredItems && filteredItems.length > 0) {
+      let filterItemsList: string[] = [];
+      this.productsFiltered = _.clone(this.products);
+      for (let l = 0; l < filteredItems.length; l++) {
+        if (filteredItems[l]) {
+          filterItemsList = this.getListOfFilterItems(filteredElements[l].filterElement);
+          switch (l) {
+            case 0: {
+              this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.brand));
+              break;
             }
-            break;
-          }
-          case 2: {
-            switch (this.language) {
-              case 'EN': {
-                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.familyEn));
-                break;
+            case 1: {
+              switch (this.language) {
+                case 'EN': {
+                  this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryEn));
+                  break;
+                }
+                case 'FR': {
+                  this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryFr));
+                  break;
+                }
               }
-              case 'FR': {
-                this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.familyFr));
-                break;
-              }
+              break;
             }
-            break;
+            case 2: {
+              switch (this.language) {
+                case 'EN': {
+                  this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.familyEn));
+                  break;
+                }
+                case 'FR': {
+                  this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.familyFr));
+                  break;
+                }
+              }
+              break;
+            }
           }
         }
       }
@@ -468,11 +474,11 @@ export class ProductSearchComponent implements OnInit {
   }
 
   getFamiliesGroup(): any {
-    switch (this.language.toLowerCase()) {
-      case 'fr': {
+    switch (this.language) {
+      case 'FR': {
         return new Set(this.productsFiltered.map(f => f.familyFr));
       }
-      case 'en': {
+      case 'EN': {
         return new Set(this.productsFiltered.map(f => f.familyEn));
       }
     }
@@ -480,13 +486,13 @@ export class ProductSearchComponent implements OnInit {
 
   getProductsOfFamily(family: string): ProductEF[] {
     let productsOfFamily: ProductEF[];
-    switch (this.language.toLowerCase()) {
-      case 'fr': {
+    switch (this.language) {
+      case 'FR': {
         productsOfFamily = this.productsFiltered
         .filter(f => f.familyFr === family);
         break;
       }
-      case 'en': {
+      case 'EN': {
         productsOfFamily = this.productsFiltered
         .filter(f => f.familyEn === family);
         break;
@@ -497,18 +503,29 @@ export class ProductSearchComponent implements OnInit {
   }
 
   getProductImage(product: ProductEF): string {
-    const src = `assets/Images/Products/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
-    return src;
+    if (product.categoryFr === 'Garnissage') {
+      return this.getGarnissageProductImage(product);
+    }
+    return `assets/Images/Products/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
+  }
+
+  getGarnissageProductImage(product: ProductEF): string {
+    const garn: IGarnissageDto = {
+      materialFr: product.familyFr,
+      model: product.model
+    };
+    const garnissageCode: string = _.find(this.garnissageList, {materialFr: product.familyFr, model: product.model}).codeProd;
+    return `assets/Images/Products/Garnissages/${garnissageCode}.jpg`;
   }
 
   getProductName(product: ProductEF): string {
     let productName: string;
-    switch (this.language.toLowerCase()) {
-      case 'fr': {
+    switch (this.language) {
+      case 'FR': {
         productName = product.familyFr;
         break;
       }
-      case 'en': {
+      case 'EN': {
         productName = product.familyEn;
         break;
       }
@@ -518,15 +535,31 @@ export class ProductSearchComponent implements OnInit {
   }
 
   goToProduct(product: ProductEF) {
-    this.router.navigate(['product/product', {b: product.brand, f: product.familyFr, m: product.model}]);
-    this.scrollTop();
+    if (product.categoryFr.toLowerCase() === 'garnissage') {
+      this.openGaDialog(product);
+    } else {
+      this.router.navigate(['product/product', {b: product.brand, f: product.familyFr, m: product.model}]);
+      this.scrollTop();
+    }
+  }
+
+  openGaDialog(product: ProductEF) {
+    const garn: IGarnissageDto = {
+      materialFr: product.familyFr,
+      model: product.model
+    };
+    this.productService.getGarnissage(garn)
+    .subscribe(resp => {
+      const garnissage: IProdGarnissage = this.productService.mapProducts(resp, this.language)[0];
+      this.productService.openGarnissageDialog(garnissage, this.browser.isDesktopDevice);
+    });
   }
 
   addToFavorites(product: ProductEF) {
-      if (this.productService.isLoggedIn()) {
+      if (this.userService.isLoggedIn()) {
         this.productService.openDialog(product, this.user);
       } else {
-        this.productService.openLoginDialog().subscribe(answer => {
+        this.userService.openLoginDialog().subscribe(answer => {
           if (answer) {
             this.productService.openDialog(product, this.user);
           } else {

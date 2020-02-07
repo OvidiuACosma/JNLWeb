@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
+import { DataExchangeService, TranslationService, ProductsService, UserService } from '../../_services';
 import * as _ from 'lodash';
 import { Product, Finisage, User } from '../../_models';
 
@@ -29,8 +29,9 @@ export class ProductDescriptionComponent implements OnInit {
 
 
   constructor(private dataex: DataExchangeService,
-    private textService: TranslationService,
-    private productsService: ProductsService) { }
+              private textService: TranslationService,
+              private productsService: ProductsService,
+              private userService: UserService) { }
 
   ngOnInit() {
     this.getBrand(this.product.brand);
@@ -200,10 +201,10 @@ export class ProductDescriptionComponent implements OnInit {
 
   addToFavorites(fin: Finisage) {
     document.getElementById('btnClose').click();
-    if (this.productsService.isLoggedIn()) {
+    if (this.userService.isLoggedIn()) {
       // this.productsService.openDialog(fin, this.user);
     } else {
-      this.productsService.openLoginDialog().subscribe(answer => {
+      this.userService.openLoginDialog().subscribe(answer => {
         if (answer) {
           // this.productsService.openDialog(fin, this.user);
         } else {
