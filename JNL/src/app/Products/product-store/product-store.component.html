@@ -1,1 +1,78 @@
-<p>product-store works!</p>
+<div id="store-container" class="d-large">
+	<h1>Products Ready to sell</h1>
+	<div class="content" id="content">
+    <!-- SEARCH -->
+    <div class="search">
+      <!-- <h4>FILTERS</h4> -->
+      <div class="search-by-text">
+        <span class="search-container">
+          <div class="header-filter">SEARCH</div>
+          <div class="reset-filter" (click)="resetFilter()">reset</div>
+        </span>
+        <input class="search-textbox" name="searchBox" type="text"
+          [(ngModel)]="searchText" (change)="searchByText()"><br>
+          <!-- <span style="cursor: pointer;" (click)="navigateTo('product/productStore')">Web Store</span> -->
+      </div>
+
+      <div class="filters">
+        <ul>
+          <li *ngFor="let c of filterBy; let i=index">
+            <div class="header-arrow"  (click)="toggleFilters(i)">
+                <span class="header-filter">{{c}}</span>
+                <img class="arrow" [src]="getArrow(i)">
+            </div>
+            <ul id="filter-{{c}}" class="subfilters" [ngClass]="{'active' : toggle[i]}">
+              <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index" [ngClass]="i2 % 2 !== 0 ? 'right' : 'left'"
+                  (click)="selectFilter(c, d.displayName)">
+                    <span>
+                      <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
+                    </span>
+                    <span>&nbsp;&nbsp;</span>
+                    <span>{{d.displayName}}</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products">
+      <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
+      <div class="products-container">
+        <div class="family-container" *ngFor="let family of getFamiliesGroup()">
+          <span class="family-name">&nbsp;{{family}}</span>
+          <ul class="list">
+              <div class="flex-div">
+                <li *ngFor="let n of getProductsOfFamily(family)">
+                  <div class="card-product">
+                    <div class="pic-frame" (click)="goToProduct(n)">
+                      <figure class="center-product">
+                        <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
+                      </figure>
+                    </div>
+
+                    <div style="position: relative">
+                      <p class="product-name">
+                        <span>
+                            <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
+                        </span>
+                        <span class="product-name-text" (click)="goToProduct(n)">
+                          {{getProductName(n)}}
+                        </span>
+                      </p>
+                      <p class="product-name">
+                        <span class="product-brand-text" (click)="goToProduct(n)">
+                          {{n.brand}}
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

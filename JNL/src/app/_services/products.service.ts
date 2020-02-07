@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
-import { Product, ProductEF, ProductHeroImage, IGarnissage, User } from '../_models';
+import { Product, ProductEF, ProductHeroImage, IProductToSell, IGarnissage, User } from '../_models';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../Auth/login/login.component';
 import { map } from 'rxjs/operators';
@@ -19,6 +19,7 @@ export class ProductsService {
   private headers: HttpHeaders;
   private prodDescURL = '';
   private product: string;
+  private productToSell: string;
   private prodHeroImages = '';
 
   constructor(private http: HttpClient,
@@ -27,6 +28,7 @@ export class ProductsService {
               private dataex: DataExchangeService) {
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
     this.product = configService.getApiURI() + '/products';
+    this.productToSell = configService.getApiURI() + '/products/readytosell';
     this.prodDescURL = configService.getApiURI() + '/productsdescriptions';
     this.prodHeroImages = configService.getApiURI() + '/productscollections/heroimages';
   }
@@ -82,6 +84,10 @@ export class ProductsService {
 
   public getProdTechDetImages(): Observable<any[]> {
     return this.http.get<any[]>(`${this.urlAssets}/Products/techDetImages.json`, {headers: this.headers});
+  }
+
+  public getProductsToSell(): Observable<IProductToSell[]> {
+    return this.http.get<IProductToSell[]>(`${this.productToSell}`, {headers: this.headers});
   }
 
 

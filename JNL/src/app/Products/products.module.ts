@@ -20,6 +20,7 @@ import { CopyToClipboardDirective } from '../_directives';
 import { DialogAnswerComponent } from '../Products';
 import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.component';
 import { ProductStoreComponent } from './product-store/product-store.component';
+import { ProductStoreItemComponent } from './product-store-item/product-store-item.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ProductStoreComponent } from './product-store/product-store.component';
     CopyToClipboardDirective,
     DialogAnswerComponent,
     FavoritesSharedComponent,
-    ProductStoreComponent
+    ProductStoreComponent,
+    ProductStoreItemComponent
   ],
   exports: [
     ProductSearchComponent,

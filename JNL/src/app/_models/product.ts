@@ -71,3 +71,15 @@ export interface IProdGarnissage {
   color: string;
   colorRef: string;
 }
+
+export interface IProductToSell {
+  id: number;
+  familyFr: string;
+  familyEn: string;
+  model: string;
+  brand: string;
+  descriptionFR: string;
+  descriptionEN: string;
+  qty: number;
+  price: number;
+}

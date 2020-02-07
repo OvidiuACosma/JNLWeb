@@ -14,9 +14,11 @@
 
             "actualitesTitle": "News",
             "actualites1": "Maison & Objet - January 2020",
-            "actualites2": "Alain Lahy is nominated for the Trends Manager of the year !",
-            "actualites3": "Invitation\n",
-            "readButton": "read more",
+            "actualites2": "",
+            "actualites3": "Maison & Objet - January 2020",
+            "readButton1": "Visit our Exhibition",
+            "readButton2": "read more",
+            "readButton3": "read more",
 
             "savoirTitle": "Know-how",
             "savoirButton": "Discover the manufactory",
@@ -51,9 +53,11 @@
 
             "actualitesTitle": "ACTUALITÉS",
             "actualites1": "Maison & Objet - Janvier 2020",
-            "actualites2": "Alain Lahy est nominé aux Trends Manager 2019 !",
-            "actualites3": "Invitation\n",
-            "readButton": "lire la suite",
+            "actualites2": "",
+            "actualites3": "Maison & Objet - Janvier 2020",
+            "readButton1": "Visitez notre Mise en scène",
+            "readButton2": "lire la suite",
+            "readButton3": "lire la suite",
 
             "savoirTitle": "Le savoir faire",
             "savoirButton": "DÉCOUVRIR LES ATELIERS",

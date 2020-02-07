@@ -364,7 +364,6 @@ export class ProductSearchComponent implements OnInit {
     for (let k = 0; k < this.filterElements.length; k++) {
       filterItems.push(this.filterElements[k].filterElement.length);
     }
-    // console.log('filterItems: ', filterItems);
     return filterItems;
   }
 
