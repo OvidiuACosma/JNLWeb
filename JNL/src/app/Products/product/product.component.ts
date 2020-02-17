@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService, ArchiveService, DownloaderService, UserService } from '../../_services';
-import { Product, Img, ProductHeroImage, ProductEF, User } from '../../_models';
+import { Product, Img, ProductHeroImage, ProductEF, User, IProductToFavorites } from '../../_models';
 import * as _ from 'lodash';
 declare var $: any;
 
@@ -223,12 +223,22 @@ export class ProductComponent implements OnInit {
   }
 
   addToFavorites(product: ProductEF) {
+    const productToFavorites: IProductToFavorites = {
+      brand: product.brand,
+      id: product.id,
+      id2: 0,
+      type: 1,
+      prodCode: null,
+      family: this.language === 'EN' ? product.familyEn : this.language === 'FR' ? product.familyFr : product.familyEn,
+      model: product.model,
+      text: ''
+    };
     if (this.userService.isLoggedIn()) {
-      this.productsService.openDialog(product, this.user);
+      this.productsService.openDialog(productToFavorites, this.user);
     } else {
       this.userService.openLoginDialog().subscribe(answer => {
         if (answer) {
-          this.productsService.openDialog(product, this.user);
+          this.productsService.openDialog(productToFavorites, this.user);
         } else {
           console.log('Not logged in. Can\'t add to favorites');
         }

@@ -11,7 +11,7 @@
             <div *ngFor="let fin of getFinitions(part, mat)">
               <div *ngIf="isLevelShown('idx'+i+'idx'+i2)">
                 <div class="fin" (click)="sendItemToModal(fin, getFinitions(part, mat))" data-toggle="modal"
-                  data-target="#finisageModal">
+                  data-target="#finissageModal">
                   <a>
                     <img class="samples" src="assets\Images\Products\{{brand}}\Samples\{{fin.img}}">
                   </a>
@@ -28,21 +28,21 @@
 <br>
 
 <!-- MODAL -->
-<div class="modal fade" id="finisageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true" *ngIf="finisage" (click)="closeModal()" data-backdrop="false">
+<div class="modal fade" id="finissageModal" tabindex="-1" role="dialog"
+  *ngIf="finissage" (click)="closeModal()" data-backdrop="false">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
         <div class="modal-title">
           <h4 id="ModalLabel">
-            <span *ngIf="false">
-                <i class="far fa-heart heart" (click)="addToFavorites(finisage)"></i>
+            <span>
+                <i class="far fa-heart heart" (click)="addToFavorites(finissage)"></i>
             </span>
-            {{finisage.material}} {{finisage.name}}</h4>
+            {{finissage.material}} {{finissage.name}}</h4>
         </div>
-        <button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" id="btnClose" class="close" data-dismiss="modal">
+          <span>&times;</span>
         </button>
       </div>
       <div class="modal-body flex-container">
@@ -52,15 +52,7 @@
         </div>
         <div class="cardContainer">
           <div class="card">
-            <img src="assets\Images\Products\{{brand}}\Samples\Print\{{finisage.img}}" class="card-img-top" alt="...">
-            <!--
-            <div class="card-body">
-              <p class="card-text">
-                <ul style="list-style-type:none">
-                  <li><b>Name: </b><label>{{material.model}}</label></li>
-                  <li><b>Code: </b><label>{{material.codeProd}}</label></li>
-                </ul>
-            </div> -->
+            <img src="assets\Images\Products\{{brand}}\Samples\Print\{{finissage.img}}" class="card-img-top" alt="...">
           </div>
         </div>
         <div class="whiteSpace">

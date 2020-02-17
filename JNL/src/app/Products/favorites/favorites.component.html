@@ -30,8 +30,9 @@
     <div class="products">
       <div class="products-container">
         <ul class="list">
-          <div class="flex-div" *ngIf="favoritesProductsDetails">
-            <li *ngFor="let f of favoritesProducts">
+          <!-- <div class="flex-div" *ngIf="favoritesProductsDetails"> -->
+            <div class="flex-div" *ngIf="productsToFav">
+            <li *ngFor="let f of productsToFav">
               <div class="card-product">
                 <div class="pic-frame" (click)="goToProduct(f)">
                   <figure class="center-product">
@@ -45,12 +46,12 @@
                         (click)="remove(f)">
                     </span>
                     <span class="product-name-text" (click)="goToProduct(f)">
-                      {{getProductName(f)}}
+                      {{f.family}}&nbsp;{{f.model}}
                     </span>
                   </p>
                   <p class="product-name">
                     <span class="product-brand-text" (click)="goToProduct(f)">
-                      {{f.productBrand}}
+                      {{f.brand}}
                     </span>
                   </p>
                 </div>

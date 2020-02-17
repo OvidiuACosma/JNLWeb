@@ -4,6 +4,8 @@ import { IProdGarnissage, Browser, User } from 'src/app/_models';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { map, mergeMap, concatMap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 
 interface IFilter {
   index: number;
@@ -40,7 +42,8 @@ export class ProductGarnissagesComponent implements OnInit {
 
   constructor(private productService: ProductsService,
               private dataex: DataExchangeService,
-              private userService: UserService) { }
+              private userService: UserService,
+              private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getData();
@@ -332,7 +335,13 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   openDialog(garn: IProdGarnissage): Observable<boolean> {
-    return this.productService.openGarnissageDialog(garn, this.browser.isDesktopDevice);
+    const dialogConfig = this.productService.getGarnissageDialogConfig(garn, this.browser.isDesktopDevice);
+    const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
+    return dialogRef.afterClosed()
+    .pipe(
+      map(result => {
+      return result;
+    }));
   }
 
   addToFavorites(ga: IProdGarnissage) {

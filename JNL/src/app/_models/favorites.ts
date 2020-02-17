@@ -1,5 +1,3 @@
-import { ProductEF } from './product';
-
 export interface IFavorites {
     id: number;
     relation: string;
@@ -14,5 +12,7 @@ export interface IFavoritesProducts {
     creationDate: Date;
     productBrand: string;
     productId: number;
+    productId2: number;
+    prodCode: string;
     type: number;
 }

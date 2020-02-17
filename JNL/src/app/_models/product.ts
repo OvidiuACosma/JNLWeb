@@ -27,7 +27,10 @@ export interface ProductHeroImage {
     product: string;
 }
 
-export interface Finisage {
+export interface Finissage {
+    brand: string;
+    id: number;
+    materialId: number;
     name: string;
     material: string;
     img: string;
@@ -87,4 +90,37 @@ export interface IProductReadyToSell {
   descriptionEN: string;
   qty: number;
   price: number;
+}
+
+export interface IProductToFavorites {
+  brand: string;
+  id: number;
+  id2: number;
+  type: number;
+  prodCode: string;
+  family: string;
+  model: string;
+  text: string;
+}
+
+export interface IProductDescription {
+  id: number;
+  brand: string;
+  familyFr: string;
+  familyEn: string;
+  model: string;
+  descriptionFr: string;
+  descriptionEn: string;
+  partIndex: number;
+  partNameFr: string;
+  partNameEn: string;
+  categoryFr: string;
+  categoryEn: string;
+  materialNameFr: string;
+  materialNameEn: string;
+  materialCategory: number;
+  finisageNameFr: string;
+  finisageNameEn: string;
+  finId: number;
+  matId: number;
 }

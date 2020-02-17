@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataExchangeService, TranslationService, ProductsService, UserService } from '../../_services';
 import * as _ from 'lodash';
-import { Product, Finisage, User } from '../../_models';
+import { Product, User, IProductToFavorites, IProductDescription, Finissage } from '../../_models';
+import { mergeMap, concatMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-description',
@@ -12,20 +13,20 @@ export class ProductDescriptionComponent implements OnInit {
 
   @Input() product: Product;
   brand: string;
-  public productDesc: any[];
-  public description: string;
-  public parts = new Set();
-  public materials: string[] = [];
-  public showLevel = null;
-  public finisage: Finisage;
+  productDesc: IProductDescription[];
+  description: string;
+  parts = new Set();
+  materials: string[] = [];
+  showLevel = null;
+  finissage: Finissage;
   toggle = false;
   language: string;
   stdText: any;
   user: User;
 
   // data used in modal
-  public currentFinList: Finisage[] = [];
-  public index: number;
+  currentFinList: Finissage[] = [];
+  index: number;
 
 
   constructor(private dataex: DataExchangeService,
@@ -34,43 +35,36 @@ export class ProductDescriptionComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit() {
-    this.getBrand(this.product.brand);
-    this.dataex.currentLanguage
-      .subscribe(lang => {
-        this.language = lang || 'EN';
-        this.getStdText(this.language);
-
-        this.productsService.getProductDesc(this.product)
-          .subscribe(desc => {
-            this.productDesc = desc.sort(function (a, b) {
-              if (a.orderIndex > b.orderIndex) { return -1; }
-              if (a.orderIndex < b.orderIndex) { return 1; }
-              return 0;
-            });
-            this.getDescription();
-            this.getParts();
-          });
-      });
+    this.brand = this.product.brand === 'Vanhamme' ? 'JNL Collection' : this.product.brand;
+    this.getData();
   }
 
-  getBrand(brand: string) {
-    if (brand !== 'Vanhamme') {
-      this.brand = brand;
-    } else {
-      this.brand = 'JNL Collection';
-    }
-  }
-
-  getStdText(lang: string) {
-    this.textService.getTextProductStandard()
-      .subscribe(data => {
-        const resources = data[0];
-        this.stdText = resources[lang.toUpperCase()];
-      });
+  getData() {
+    this.productsService.getProductDesc(this.product).pipe(
+      mergeMap(prodDesc => this.dataex.currentLanguage.pipe(
+        concatMap(lang => this.textService.getTextProductStandard().pipe(
+          mergeMap(text => this.dataex.currentUser.pipe(
+            map(user => ({
+              prodDesc: prodDesc,
+              lang: lang,
+              text: text,
+              user: user
+            }))
+          ))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.productDesc = resp.prodDesc;
+      this.language = resp.lang || 'EN';
+      this.stdText = resp.text[0][this.language.toUpperCase()];
+      this.user = resp.user;
+      this.getDescription();
+      this.getParts();
+    });
   }
 
   getDescription() {
-    // this.description = this.productDesc[0].descriptionFr;
     this.description = this.language === 'FR' ? this.productDesc[0].descriptionFr : this.productDesc[0].descriptionEn;
   }
 
@@ -105,13 +99,16 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   getFinitions(part: string, material: string) {
-    const finList: Finisage[] = [];
+    const finList: Finissage[] = [];
     this.productDesc.forEach(item => {
       if (item.finisageNameFr) {
         switch (this.language.toLowerCase()) {
           case 'fr': {
             if (item.partNameFr === part && item.materialNameFr === material) {
               finList.push({
+                brand: item.brand,
+                id: item.finId,
+                materialId: item.matId,
                 name: item.finisageNameFr,
                 material: item.materialNameFr,
                 img: `${item.materialNameFr.replace('/', '-')} ${item.finisageNameFr.replace('/', '-')}.jpg`
@@ -122,6 +119,9 @@ export class ProductDescriptionComponent implements OnInit {
           case 'en': {
             if (item.partNameEn === part && item.materialNameEn === material) {
               finList.push({
+                brand: item.brand,
+                id: item.finId,
+                materialId: item.matId,
                 name: item.finisageNameEn,
                 material: item.materialNameEn,
                 img: `${item.materialNameFr.replace('/', '-')} ${item.finisageNameFr.replace('/', '-')}.jpg`
@@ -131,7 +131,7 @@ export class ProductDescriptionComponent implements OnInit {
         }
       }
     });
-    return _.uniq(finList);
+    return _.sortBy(_.uniq(finList), ['name'], ['asc']);
   }
 
   toggleFin(index: string) {
@@ -147,7 +147,7 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   hasFinitions(part: any, mat: any) {
-    const finitions: Finisage[] = this.getFinitions(part, mat);
+    const finitions: Finissage[] = this.getFinitions(part, mat);
     if (finitions.length > 0) {
       if (!(finitions.length === 1 && ((finitions[0].name.toLowerCase() === 'to define') ||
        (finitions[0].name.toLowerCase() === 'a définir')))) {
@@ -163,14 +163,13 @@ export class ProductDescriptionComponent implements OnInit {
     });
   }
 
-  sendItemToModal(fin: any, finlist: Finisage[]) {
-    // this.modalActive = true;
+  sendItemToModal(fin: Finissage, finlist: Finissage[]) {
     this.currentFinList = finlist;
-    this.finisage = fin;
+    this.finissage = fin;
   }
 
   navigate(direction: string) {
-    this.index = this.currentFinList.findIndex(i => i.name === this.finisage.name);
+    this.index = this.currentFinList.findIndex(i => i.name === this.finissage.name);
     if (direction === 'previous') {
       // this.index = (this.index - 1) % this.currentMatList.length;
       this.index--;
@@ -180,11 +179,11 @@ export class ProductDescriptionComponent implements OnInit {
     } else if (direction === 'next') {
       this.index = (this.index + 1) % this.currentFinList.length;
     }
-    this.finisage = this.currentFinList[this.index];
+    this.finissage = this.currentFinList[this.index];
   }
 
   closeModal() {
-    const modal = document.getElementById('finisageModal');
+    const modal = document.getElementById('finissageModal');
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -199,14 +198,24 @@ export class ProductDescriptionComponent implements OnInit {
     this.toggle = !this.toggle;
   }
 
-  addToFavorites(fin: Finisage) {
+  addToFavorites(product: Finissage) {
     document.getElementById('btnClose').click();
+    const productToFavorites: IProductToFavorites = {
+      brand: product.brand,
+      id: product.id,
+      id2: product.materialId,
+      type: 3,
+      prodCode: null,
+      family: product.material,
+      model: product.name,
+      text: ''
+    };
     if (this.userService.isLoggedIn()) {
-      // this.productsService.openDialog(fin, this.user);
+      this.productsService.openDialog(productToFavorites, this.user);
     } else {
       this.userService.openLoginDialog().subscribe(answer => {
         if (answer) {
-          // this.productsService.openDialog(fin, this.user);
+          this.productsService.openDialog(productToFavorites, this.user);
         } else {
           console.log('Not logged in. Can\'t add to favorites');
         }

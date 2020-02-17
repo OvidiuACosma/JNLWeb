@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ConfigService } from './config.service';
 import { IFavorites, IFavoritesProducts } from '../_models/favorites';
 import { Observable } from 'rxjs';
+import { IProductToFavorites } from '../_models';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,18 @@ export class FavoritesService {
 
     public getFavoritesShared(favListGuid: string): Observable<IFavorites> {
       return this.http.get<IFavorites>(`${this.apiUrl}/shared/${favListGuid}`, {headers: this.headers});
+    }
+
+    public getFavoritesProductsProd(products: any[], lang: string): Observable<IProductToFavorites[]> {
+      return this.http.post<IProductToFavorites[]>(`${this.apiUrl}/favProd/${lang}`, products, {headers: this.headers});
+    }
+
+    public getFavoritesProductsGa(products: any[], lang: string): Observable<IProductToFavorites[]> {
+      return this.http.post<IProductToFavorites[]>(`${this.apiUrl}/favGa/${lang}`, products, {headers: this.headers});
+    }
+
+    public getFavoritesProductsFin(products: any[], lang: string): Observable<IProductToFavorites[]> {
+      return this.http.post<IProductToFavorites[]>(`${this.apiUrl}/favFin/${lang}`, products, {headers: this.headers});
     }
 
 

@@ -1,8 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { IProdGarnissage, User } from 'src/app/_models';
+import { IProdGarnissage, User, IProductToFavorites } from 'src/app/_models';
 import { DataExchangeService } from 'src/app/_services/data-exchange.service';
 import { UserService } from 'src/app/_services/user.service';
+import { ProductsService } from 'src/app/_services/products.service';
 
 
 @Component({
@@ -14,18 +15,18 @@ import { UserService } from 'src/app/_services/user.service';
 
 export class ProductGarnissageDetailsComponent implements OnInit {
 
-  public material: any;
+  material: any;
   user: User;
 
   constructor(public dialogRef: MatDialogRef<ProductGarnissageDetailsComponent>,
               private userService: UserService,
               private dataex: DataExchangeService,
+              private productService: ProductsService,
               @Inject(MAT_DIALOG_DATA) public garnData: IProdGarnissage) { }
 
   ngOnInit() {
+    this.getUser();
   }
-
-  navigate(direction: string) {}
 
   getUser() {
     this.dataex.currentUser.subscribe( user => {
@@ -33,15 +34,26 @@ export class ProductGarnissageDetailsComponent implements OnInit {
     });
   }
 
-  addToFavorites(garnData: IProdGarnissage) {
-    // TODO: close the modal, then follow the add to favList procedure by garnData.id
+  navigate(direction: string) {}
+
+  addToFavorites(product: IProdGarnissage) {
+    const productToFavorites: IProductToFavorites = {
+      brand: product.brand.replace('Ungaro Home', 'Emanuel Ungaro Home'),
+      id: 0,
+      id2: 0,
+      type: 2,
+      prodCode: product.codeProd,
+      family: product.material,
+      model: product.model,
+      text: ''
+    };
     this.dialogRef.close();
     if (this.userService.isLoggedIn()) {
-      // this.productService.openDialog(garnData, this.user);
+      this.productService.openDialog(productToFavorites, this.user);
     } else {
       this.userService.openLoginDialog().subscribe(answer => {
         if (answer) {
-          // this.productService.openDialog(garnData, this.user);
+          this.productService.openDialog(productToFavorites, this.user);
         } else {
           console.log('Not logged in. Can\'t add to favorites');
         }

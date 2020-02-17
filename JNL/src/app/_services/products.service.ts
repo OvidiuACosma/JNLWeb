@@ -3,12 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
 import { Product, ProductEF, ProductHeroImage, IGarnissage, User, IGarnissageDto,
-         IProdGarnissage, IProductReadyToSell } from '../_models';
+         IProdGarnissage, IProductReadyToSell, IProductToFavorites, IProductDescription } from '../_models';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { FavoritesSelListComponent } from '../Products/favorites-sel-list/favorites-sel-list.component';
 import { DataExchangeService } from './data-exchange.service';
-import { ProductGarnissageDetailsComponent } from '../Products/product-garnissage-details/product-garnissage-details.component';
 
 @Injectable({
   providedIn: 'root'
@@ -62,8 +61,9 @@ export class ProductsService {
     return this.http.get<ProductEF>(`${this.product}/${product.brand}/${product.family}/${product.model}`, {headers: this.headers});
   }
 
-  public getProductDesc(product: Product): Observable<any[]> {
-    return this.http.get<any[]>(`${this.prodDescURL}/${product.brand}/${product.family}/${product.model}`, {headers: this.headers});
+  public getProductDesc(product: Product): Observable<IProductDescription[]> {
+    return this.http.get<IProductDescription[]>(`${this.prodDescURL}/${product.brand}/${product.family}/${product.model}`,
+    {headers: this.headers});
   }
 
   public getProdHeroImages(product: Product): Observable<ProductHeroImage[]> {
@@ -84,7 +84,7 @@ export class ProductsService {
   }
 
 
-  openDialog(product: ProductEF, user: User): Observable<boolean> {
+  openDialog(productToFavorites: IProductToFavorites, user: User): Observable<boolean> {
     this.dataex.currentBrowser.subscribe(browser => {
       let width = '70%';
       if (browser.isMobile || browser.isTablet) { width = '100%'; }
@@ -92,7 +92,7 @@ export class ProductsService {
       dialogConfig.width = width;
       dialogConfig.maxWidth = '840px';
       dialogConfig.maxHeight = '620px';
-      dialogConfig.data = { product, user };
+      dialogConfig.data = { productToFavorites, user };
       dialogConfig.hasBackdrop = true;
       dialogConfig.disableClose = false;
       dialogConfig.autoFocus = true;
@@ -106,7 +106,7 @@ export class ProductsService {
     return of(false);
   }
 
-  public openGarnissageDialog(garn: IProdGarnissage, isDesktop: boolean): Observable<boolean> {
+  public getGarnissageDialogConfig(garn: IProdGarnissage, isDesktop: boolean): MatDialogConfig {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = this.getDialogWidth(isDesktop);
     dialogConfig.maxWidth = '960px';
@@ -115,13 +115,7 @@ export class ProductsService {
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
-
-    return dialogRef.afterClosed()
-    .pipe(
-      map(result => {
-      return result;
-    }));
+    return dialogConfig;
   }
 
   getDialogWidth(isDesktop: boolean): string {

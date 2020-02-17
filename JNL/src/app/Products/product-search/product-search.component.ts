@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService, UserService } from '../../_services';
-import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage, IGarnissage } from '../../_models';
+import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage, IGarnissage, IProductToFavorites } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
 import { mergeMap, map, concatMap } from 'rxjs/operators';
+import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
+import { MatDialog } from '@angular/material/dialog';
 
 interface IFilter {
   index: number;
@@ -59,7 +61,8 @@ export class ProductSearchComponent implements OnInit {
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private productService: ProductsService,
-              private userService: UserService) {
+              private userService: UserService,
+              private dialog: MatDialog) {
     this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.ngOnInit();
@@ -551,17 +554,34 @@ export class ProductSearchComponent implements OnInit {
     this.productService.getGarnissage(garn)
     .subscribe(resp => {
       const garnissage: IProdGarnissage = this.productService.mapProducts(resp, this.language)[0];
-      this.productService.openGarnissageDialog(garnissage, this.browser.isDesktopDevice);
+      // this.productService.openGarnissageDialog(garnissage, this.browser.isDesktopDevice);
+      const dialogConfig = this.productService.getGarnissageDialogConfig(garnissage, this.browser.isDesktopDevice);
+      const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
+      return dialogRef.afterClosed()
+      .pipe(
+        map(result => {
+        return result;
+      }));
     });
   }
 
   addToFavorites(product: ProductEF) {
+    const productToFavorites: IProductToFavorites = {
+      brand: product.brand,
+      id: product.id,
+      id2: 0,
+      type: 1,
+      prodCode: null,
+      family: this.language === 'EN' ? product.familyEn : this.language === 'FR' ? product.familyFr : product.familyEn,
+      model: product.model,
+      text: ''
+    };
       if (this.userService.isLoggedIn()) {
-        this.productService.openDialog(product, this.user);
+        this.productService.openDialog(productToFavorites, this.user);
       } else {
         this.userService.openLoginDialog().subscribe(answer => {
           if (answer) {
-            this.productService.openDialog(product, this.user);
+            this.productService.openDialog(productToFavorites, this.user);
           } else {
             console.log('Not logged in. Can\'t add to favorites');
           }
