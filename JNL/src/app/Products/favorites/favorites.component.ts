@@ -5,7 +5,7 @@ import { DataExchangeService, TranslationService, FavoritesService, ProductsServ
 import { IFavorites, IFavoritesProducts, ProductEF, IDialogData, IProductToFavorites,
          IGarnissageDto, IProdGarnissage, Browser } from '../../_models';
 import { concatMap, map, mergeMap } from 'rxjs/operators';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
 import * as _ from 'lodash';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 
@@ -178,36 +178,34 @@ export class FavoritesComponent implements OnInit  {
         break;
       }
       case 2: {
-        this.openDialogGa(product);
+        this.showProductGa(product);
         break;
       }
       case 3: {
-        this.openDialogFin(product);
+        this.showProductFin(product);
         break;
       }
     }
   }
 
-  openDialogGa(product: IProductToFavorites) {
+  showProductGa(product: IProductToFavorites) {
     const ga: IGarnissageDto = { materialFr: product.text, model: product.model };
-    console.log('ga for api:', ga);
     this.productsService.getGarnissage(ga).subscribe(resp => {
       if (resp) {
-        console.log('resp api:', resp);
         const garn: IProdGarnissage[] = this.productsService.mapProducts(resp, this.language);
-        console.log('garn mapped:', garn);
-        const dialogConfig = this.productsService.getGarnissageDialogConfig(garn[0], this.browser.isDesktopDevice);
-        const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
-        return dialogRef.afterClosed()
-        .pipe(
-          map(result => {
-          return result;
-        }));
+        const dialogConfig = this.productsService.getGarnissageDialogConfig(garn[0], 'ga', this.browser.isDesktopDevice);
+        this.openDialogGa(dialogConfig);
       }
     });
   }
 
-  openDialogFin(product: IProductToFavorites) {
+  showProductFin(product: IProductToFavorites) {
+    const dialogConfig = this.productsService.getGarnissageDialogConfig(product, 'fin', this.browser.isDesktopDevice);
+    this.openDialogGa(dialogConfig);
+  }
+
+  openDialogGa(dialogConfig: MatDialogConfig<any>) {
+    const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
   }
 
   getProductName(product: IProductToFavorites): string {

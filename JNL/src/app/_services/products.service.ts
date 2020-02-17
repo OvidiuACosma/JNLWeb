@@ -110,12 +110,13 @@ export class ProductsService {
     return of(false);
   }
 
-  public getGarnissageDialogConfig(garn: IProdGarnissage, isDesktop: boolean): MatDialogConfig {
+  public getGarnissageDialogConfig(garn: any, type: string, isDesktop: boolean): MatDialogConfig {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = this.getDialogWidth(isDesktop);
     dialogConfig.maxWidth = '960px';
     // dialogConfig.maxHeight = '825px';
-    dialogConfig.data = garn;
+    dialogConfig.data = { dialogData: garn,
+                          type: type};
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;

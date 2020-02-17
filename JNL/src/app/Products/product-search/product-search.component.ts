@@ -555,7 +555,7 @@ export class ProductSearchComponent implements OnInit {
     .subscribe(resp => {
       const garnissage: IProdGarnissage = this.productService.mapProducts(resp, this.language)[0];
       // this.productService.openGarnissageDialog(garnissage, this.browser.isDesktopDevice);
-      const dialogConfig = this.productService.getGarnissageDialogConfig(garnissage, this.browser.isDesktopDevice);
+      const dialogConfig = this.productService.getGarnissageDialogConfig(garnissage, 'ga', this.browser.isDesktopDevice);
       const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
       return dialogRef.afterClosed()
       .pipe(

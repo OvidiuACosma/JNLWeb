@@ -2,9 +2,9 @@
   <div id="dialog-header">
     <h4>
       <span>
-        <i class="far fa-heart heart" (click)="addToFavorites(garnData)"></i>
+        <i class="far fa-heart heart" (click)="addToFavorites(data.dialogData)"></i>
       </span>
-      {{garnData.model}}
+      {{getTitle()}}
     </h4>
   </div>
   <div class="flex-container">
@@ -12,21 +12,21 @@
       <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_left.png" (click)="navigate('previous')">
     </div>
     <div class="imgContainer">
-      <img src="assets\Images\Products\Garnissages\Print\{{garnData.codeProd | uppercase }}.jpg" alt="...">
+      <img src="{{getImage()}}" alt="...">
     </div>
     <div class="whiteSpace d-none">
       <img class="arrow cursor-pointer" src="assets\Images\Common\arrow_right.png" (click)="navigate('next')">
     </div>
   </div>
   <div id="dialog-footer">
-    <ul>
-      <li><b>Code: </b><label>{{garnData.codeProd}}</label></li>
-      <li><b>Brand: </b><label>{{garnData.brand}}</label></li>
-      <li><b>Material: </b><label>{{garnData.material}}</label></li>
-      <li><b>Dimensions: </b><label>{{garnData.dimensions}}</label></li>
-      <li><b>Martindale: </b><label>{{garnData.martindale}}</label></li>
-      <li><b>Composition: </b><label>{{garnData.composition}}</label></li>
-      <li><b>Type: </b><label>{{garnData.type}}</label></li>
+    <ul *ngIf="data.type === 'ga'">
+      <li><b>Code: </b><label>{{data.dialogData.codeProd}}</label></li>
+      <li><b>Brand: </b><label>{{data.dialogData.brand}}</label></li>
+      <li><b>Material: </b><label>{{data.dialogData.material}}</label></li>
+      <li><b>Dimensions: </b><label>{{data.dialogData.dimensions}}</label></li>
+      <li><b>Martindale: </b><label>{{data.dialogData.martindale}}</label></li>
+      <li><b>Composition: </b><label>{{data.dialogData.composition}}</label></li>
+      <li><b>Type: </b><label>{{data.dialogData.type}}</label></li>
     </ul>
   </div>
 </div>

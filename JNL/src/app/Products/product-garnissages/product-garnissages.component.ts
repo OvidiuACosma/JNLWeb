@@ -335,7 +335,7 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   openDialog(garn: IProdGarnissage): Observable<boolean> {
-    const dialogConfig = this.productService.getGarnissageDialogConfig(garn, this.browser.isDesktopDevice);
+    const dialogConfig = this.productService.getGarnissageDialogConfig(garn, 'ga', this.browser.isDesktopDevice);
     const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
     return dialogRef.afterClosed()
     .pipe(
@@ -345,7 +345,6 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   addToFavorites(ga: IProdGarnissage) {
-    // TODO: follow the procedure to add to favList using ga.id
     if (this.userService.isLoggedIn()) {
       // this.productService.openDialog(ga, this.user);
     } else {
