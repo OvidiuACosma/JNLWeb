@@ -84,8 +84,17 @@ export class ProductDimensionsComponent implements OnInit {
     };
   }
 
-  toggleElement() {
-    this.toggle = !this.toggle;
+  // toggleElement() {
+  //   this.toggle = !this.toggle;
+  // }
+
+  setClasses(i: number) {
+    const classes = {
+      'break': i === 2,
+      'avoid': i === 0,
+    };
+    console.log('CLASSES: ', classes);
+    return classes;
   }
 
 }

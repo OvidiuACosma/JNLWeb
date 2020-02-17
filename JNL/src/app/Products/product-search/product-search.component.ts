@@ -517,7 +517,7 @@ export class ProductSearchComponent implements OnInit {
       materialFr: product.familyFr,
       model: product.model
     };
-    const garnissageCode: string = _.find(this.garnissageList, {materialFr: product.familyFr, model: product.model}).codeProd;
+    const garnissageCode: string = _.find(this.garnissageList, {materialFr: product.familyFr, model: product.model}).codeProd.toUpperCase();
     return `assets/Images/Products/Garnissages/${garnissageCode}.jpg`;
   }
 

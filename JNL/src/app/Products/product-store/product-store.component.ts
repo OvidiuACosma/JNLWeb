@@ -124,7 +124,8 @@ export class ProductStoreComponent implements OnInit {
   //     this.categoriesEn = new Set(products.map(c => c.categoryEn));
   // }
 
-  getFamilies(brand: string[] = ['all'], category: string[] = ['all']) {
+  // getFamilies(brand: string[] = ['all'], category: string[] = ['all']) {
+    getFamilies(brand: string[] = ['all']) {
     let products = _.clone(this.products);
     if (!brand.includes('all')) {
       products = products.filter(f => brand.includes(f.brand));
@@ -317,7 +318,8 @@ export class ProductStoreComponent implements OnInit {
   // }
 
   resetFamilies() {
-    this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
+    // this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
+    this.getFamilies(this.getselectedItemsOfGroup('Brand'));
   }
 
   getselectedItemsOfGroup(group: string): string[] {
@@ -333,10 +335,10 @@ export class ProductStoreComponent implements OnInit {
       // this.resetCategories();
       this.resetFamilies();
     }
-    if (routeParams.category) {
-      this.activateElementSelection('Type', routeParams.category);
-      this.resetFamilies();
-    }
+    // if (routeParams.category) {
+    //   this.activateElementSelection('Type', routeParams.category);
+    //   this.resetFamilies();
+    // }
     if (routeParams.family) {
       this.activateElementSelection('Family', routeParams.family);
     }
@@ -507,23 +509,10 @@ export class ProductStoreComponent implements OnInit {
   }
 
   goToProduct(product: IProductReadyToSell) {
-    this.router.navigate(['product/product', {b: product.brand, f: product.familyFr, m: product.model}]);
+    // this.router.navigate(['product/productStoreItem', {id: product.id}]);
+    this.router.navigate(['product/productStoreItem']);
     this.scrollTop();
   }
-
-  // addToFavorites(product: IProductReadyToSell) {
-  //     if (this.productService.isLoggedIn()) {
-  //       this.productService.openDialog(product, this.user);
-  //     } else {
-  //       this.productService.openLoginDialog().subscribe(answer => {
-  //         if (answer) {
-  //           this.productService.openDialog(product, this.user);
-  //         } else {
-  //           console.log('Not logged in. Can\'t add to favorites');
-  //         }
-  //       });
-  //     }
-  // }
 
   scrollTop() {
     window.scrollTo(0, 0);

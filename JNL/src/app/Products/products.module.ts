@@ -61,7 +61,8 @@ import { ProductStoreItemComponent } from './product-store-item/product-store-it
     FavoritesSelListComponent,
     DialogAnswerComponent,
     CopyToClipboardDirective,
-    ProductStoreComponent
+    ProductStoreComponent,
+    ProductStoreItemComponent
   ],
   entryComponents: [
     DialogAnswerComponent,

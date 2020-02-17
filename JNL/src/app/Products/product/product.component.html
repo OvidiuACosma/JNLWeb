@@ -105,23 +105,26 @@
   </div>
 
   <!-- PRODUCT SHEET TO PRINT-->
-  <div class="d-none d-print-block print break" *ngIf="product">
-    <div>
-      <span>DESCRIPTION</span>
-      <hr>
+
+  <div class="d-none d-print-block">
+    <div class="print">
+      <div>
+        <span>DESCRIPTION</span>
+        <hr>
+      </div>
+      <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
     </div>
-    <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
-  </div>
 
-  <div class="d-none d-print-inline-block" *ngIf="product">
-    <app-product-dimensions [product]="product"></app-product-dimensions>
-  </div>
+    <div class="d-print-block" style="break-inside: avoid;" *ngIf="product">
+      <app-product-dimensions [product]="product"></app-product-dimensions>
+    </div>
 
-  <div class="d-none d-print-block footer-print">
-    <hr>
-    <div class="footer-data">
-      <img class="logo-print" src="assets/Images/Common/JNLLogoB.png" />
-      <span>email: info@jnl.be</span>
+    <div class="d-print-inline-block footer-print">
+      <hr>
+      <div class="footer-data">
+        <img class="logo-print" src="assets/Images/Common/JNLLogoB.png" />
+        <span>email: info@jnl.be</span>
+      </div>
     </div>
   </div>
 
