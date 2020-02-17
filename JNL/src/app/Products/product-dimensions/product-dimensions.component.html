@@ -1,66 +1,26 @@
 <div id="container" class="d-print-none">
   <div class="image-list">
-    <div *ngFor="let item of TDImages; let i=index">
-      <a>
-        <img class="img-button" [src]="item.src" alt="" (click)="sendToModal(item)" data-toggle="modal"
-          data-target="#TDModal">
-      </a>
+    <div *ngFor="let item of TDImages; let i=index" class="center">
+      <img class="img-button" [src]="item.src" alt="">
       <div class="center">
-        <h6>{{item.prodCode}}</h6>
+        <h2>{{item.prodCode}}</h2>
       </div>
     </div>
   </div>
 </div>
 
 <!-- PRINT -->
-<div class="d-none d-print-block" style="break-after: page;" *ngIf="TDImages.length>0">
+<div class="d-none d-print-inline-block" *ngIf="TDImages.length>0">
   <div style="width:88%; margin-left: auto; margin-right: auto;">
     <span>DRAWINGS</span>
     <hr>
   </div>
   <div class="image-list">
-    <div *ngFor="let item of TDImages; let i=index">
-      <a>
-        <img class="img-button" [src]="item.src">
-      </a>
+    <!-- <div *ngFor="let item of TDImages; let i=index" class="center" [ngClass]="{'break': i===1}"> -->
+      <div class="d-print-inline-block center break" *ngFor="let item of TDImages; let i=index">
+      <img class="img-button" [src]="item.src">
       <div class="center">
         <h3>{{item.prodCode}}</h3>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL -->
-<div class="modal fade" id="TDModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
-  (click)="closeModal()" data-backdrop="false">
-  <div id="modal-large" class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div style="width: 30px;"></div><!-- empty div for alignment purposes-->
-        <div>
-          <h2 class="modal-title">{{family}} {{product.model}}</h2>
-        </div>
-        <button type="button" id="btClose" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-nav">
-          <div class="whiteSpace">
-            <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_left.png"
-              (click)="navigate('previous')" *ngIf="TDImages.length>1">
-          </div>
-          <div>
-            <img id="td-img" [src]=currentTDImage?.src alt="...">
-          </div>
-          <div class="whiteSpace">
-            <img class="modal-arrow cursor-pointer" src="assets\Images\Common\arrow_right.png"
-              (click)="navigate('next')" *ngIf="TDImages.length>1">
-          </div>
-        </div>
-        <div class="prod-code">
-          <h5>{{currentTDImage?.prodCode}}</h5>
-        </div>
       </div>
     </div>
   </div>

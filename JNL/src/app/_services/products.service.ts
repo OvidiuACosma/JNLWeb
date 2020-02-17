@@ -83,6 +83,10 @@ export class ProductsService {
     return this.http.get<IProductReadyToSell[]>(`${this.productReadyToSell}`, {headers: this.headers});
   }
 
+  public getProductReadyToSell(product: IProductReadyToSell): Observable<IProductReadyToSell> {
+    return this.http.get<IProductReadyToSell>(`${this.productReadyToSell}/${product.id}`, {headers: this.headers});
+  }
+
 
   openDialog(product: ProductEF, user: User): Observable<boolean> {
     this.dataex.currentBrowser.subscribe(browser => {

@@ -7,3 +7,4 @@ export * from './product-catalogues/product-catalogues.component';
 export * from './product-garnissages/product-garnissages.component';
 // export * from './product-garnissage-details/product-garnissage-details.component';
 export * from './product-store/product-store.component';
+export * from './product-store-item/product-store-item.component';

@@ -11,7 +11,6 @@
         </span>
         <input class="search-textbox" name="searchBox" type="text"
           [(ngModel)]="searchText" (change)="searchByText()"><br>
-          <!-- <span style="cursor: pointer;" (click)="navigateTo('product/productStore')">Web Store</span> -->
       </div>
 
       <div class="filters">
@@ -54,9 +53,9 @@
 
                     <div style="position: relative">
                       <p class="product-name">
-                        <span>
+                        <!-- <span>
                             <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
-                        </span>
+                        </span> -->
                         <span class="product-name-text" (click)="goToProduct(n)">
                           {{getProductName(n)}}
                         </span>
@@ -64,6 +63,11 @@
                       <p class="product-name">
                         <span class="product-brand-text" (click)="goToProduct(n)">
                           {{n.brand}}
+                        </span>
+                      </p>
+                      <p class="product-name">
+                        <span class="product-price-text" (click)="goToProduct(n)">
+                          {{n.price}} &euro;
                         </span>
                       </p>
                     </div>
