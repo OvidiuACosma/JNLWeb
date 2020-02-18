@@ -30,8 +30,7 @@
     <div class="products">
       <div class="products-container">
         <ul class="list">
-          <!-- <div class="flex-div" *ngIf="favoritesProductsDetails"> -->
-            <div class="flex-div" *ngIf="productsToFav">
+          <div class="flex-div" *ngIf="productsToFav">
             <li *ngFor="let f of productsToFav">
               <div class="card-product">
                 <div class="pic-frame" (click)="goToProduct(f)">

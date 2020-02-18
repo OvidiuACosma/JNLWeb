@@ -3,8 +3,8 @@
   <h3>{{currentFavoriteList.listName}}</h3>
   <div class="content" *ngIf="currentFavoriteList">
     <ul>
-      <div class="flex-div" *ngIf="favoritesProductsDetails">
-        <li *ngFor="let f of favoritesProducts">
+      <div class="flex-div" *ngIf="productsToFav">
+        <li *ngFor="let f of productsToFav">
           <div class="card-product" style="position: relative">
             <div class="pic-frame" (click)="goToProduct(f)">
               <figure class="center-product">
@@ -16,7 +16,7 @@
                   {{getProductName(f)}}
               </p>
               <p class="product-name">
-                  {{f.productBrand}}
+                  {{f.brand}}
               </p>
             </div>
           </div>

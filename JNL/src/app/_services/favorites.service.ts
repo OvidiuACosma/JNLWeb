@@ -44,6 +44,7 @@ export class FavoritesService {
     }
 
     public getFavoritesProductsFin(products: any[], lang: string): Observable<IProductToFavorites[]> {
+      console.log('req:', JSON.stringify(products));
       return this.http.post<IProductToFavorites[]>(`${this.apiUrl}/favFin/${lang}`, products, {headers: this.headers});
     }
 
@@ -67,5 +68,9 @@ export class FavoritesService {
 
     public deleteFavoritesLG(favId: number): Observable<IFavoritesProducts> {
       return this.http.delete<IFavoritesProducts>(`${this.apiUrl}/LG/delete/${favId}`, {headers: this.headers});
+    }
+
+    public deleteFavoritesProduct(product: IProductToFavorites, favListId: number): Observable<IFavoritesProducts> {
+      return this.http.post<IFavoritesProducts>(`${this.apiUrl}/product/delete/${favListId}`, product, {headers: this.headers});
     }
 }
