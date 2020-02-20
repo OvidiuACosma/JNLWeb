@@ -250,6 +250,10 @@ export class ProductComponent implements OnInit {
     this.scroller = false;
   }
 
+  getProductName(): string {
+    return `${this.product.family} ${this.product.model} ${this.product.brand}`;
+  }
+
   printProductSheet() {
     window.print();
   }

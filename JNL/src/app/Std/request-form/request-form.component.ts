@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RequestsService, TranslationService, DataExchangeService, ArchiveService } from '../../_services';
-import { RequestForm, IDialogData, ProductEF } from '../../_models';
+import { RequestForm, IDialogData } from '../../_models';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommonDialogComponent } from 'src/app/Main';
+import { mergeMap, map, mergeMapTo } from 'rxjs/operators';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class RequestFormComponent implements OnInit {
 
   // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites; 6 - Price List Req
   @Input() requestType: number;
-  @Input() product: any = {};
+  @Input() product: string;
   @Input() favoritesList = 0;
   requestForm: FormGroup;
   language: string;
@@ -50,14 +51,29 @@ export class RequestFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-      this.getCountries();
-    });
+    this.getData();
     this.rebuildForm();
-    console.log('Req Form Type:', this.requestType, 'Product:', this.product, 'FavList:', this.favoritesList);
+  }
+
+  getData() {
+    this.dataex.currentLanguage.pipe(
+      mergeMap(lang => this.textService.getTextRequest().pipe(
+        mergeMap(text => this.archiveService.getTextCountries().pipe(
+          map(c => ({
+            lang: lang,
+            text: text,
+            c: c
+          }))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.language = resp.lang || 'EN';
+      this.text = resp.text[0]['placeHolders'][this.language.toUpperCase()];
+      this.activity = resp.text[0]['activity'][this.language.toUpperCase()];
+      this.projectType = resp.text[0]['projectType'][this.language.toUpperCase()];
+      this.countryNames = resp.c[0][this.language.toUpperCase()]['countries'];
+    });
   }
 
   getText(lang: string) {
@@ -98,6 +114,8 @@ export class RequestFormComponent implements OnInit {
   setRequestForm(): FormGroup {
     const requestForm = new RequestForm();
     requestForm.type = this.requestType;
+    requestForm.product = this.product;
+    requestForm.favId = this.favoritesList;
 
     // TODO: populate form fields from user if logged in
 

@@ -37,7 +37,8 @@ export class RequestForm {
   relationId = '';
   subscriber = 0;
   activity = '';
-  // dateC?: Date;
+  product = '';
+  favId = 0;
 }
 
 export interface IDialogData {
