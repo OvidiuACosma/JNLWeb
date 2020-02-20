@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RequestsService, TranslationService, DataExchangeService, ArchiveService } from '../../_services';
-import { RequestForm, IDialogData } from '../../_models';
+import { RequestForm, IDialogData, ProductEF } from '../../_models';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommonDialogComponent } from 'src/app/Main';
 
@@ -10,6 +10,7 @@ import { CommonDialogComponent } from 'src/app/Main';
   selector: 'app-dialog-answer',
   templateUrl: 'dialog-answer.html'
 })
+
 export class DialogAnswerComponent {
 
   constructor(
@@ -28,8 +29,10 @@ export class DialogAnswerComponent {
 })
 export class RequestFormComponent implements OnInit {
 
-  @Input() requestType: number;
   // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites; 6 - Price List Req
+  @Input() requestType: number;
+  @Input() product: any = {};
+  @Input() favoritesList = 0;
   requestForm: FormGroup;
   language: string;
   text: any;
@@ -54,7 +57,7 @@ export class RequestFormComponent implements OnInit {
       this.getCountries();
     });
     this.rebuildForm();
-    console.log('Req Form Type:', this.requestType);
+    console.log('Req Form Type:', this.requestType, 'Product:', this.product, 'FavList:', this.favoritesList);
   }
 
   getText(lang: string) {

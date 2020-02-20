@@ -22,7 +22,8 @@ export class ProductDimensionsComponent implements OnInit {
   prodDesc: any;
   toggle = false;
 
-  constructor(private productsService: ProductsService, private dataex: DataExchangeService) { }
+  constructor(private productsService: ProductsService,
+              private dataex: DataExchangeService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -83,10 +84,6 @@ export class ProductDimensionsComponent implements OnInit {
       }
     };
   }
-
-  // toggleElement() {
-  //   this.toggle = !this.toggle;
-  // }
 
   setClasses(i: number) {
     const classes = {

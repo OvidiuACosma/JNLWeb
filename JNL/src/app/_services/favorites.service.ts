@@ -44,7 +44,6 @@ export class FavoritesService {
     }
 
     public getFavoritesProductsFin(products: any[], lang: string): Observable<IProductToFavorites[]> {
-      console.log('req:', JSON.stringify(products));
       return this.http.post<IProductToFavorites[]>(`${this.apiUrl}/favFin/${lang}`, products, {headers: this.headers});
     }
 

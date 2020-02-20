@@ -80,10 +80,10 @@
       <!-- PRODUCT DESCRIPTION-->
       <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
         <div class="prod-desc" *ngIf="product">
-          <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
+          <app-product-description [product]="product"></app-product-description>
         </div>
       </div>
-      <!-- PRODUCT MATERIALS AND FINISAGES -->
+      <!-- PRODUCT MATERIALS -->
       <div class="tab-pane fade d-print-none" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
         <div class="prod-desc">
           <app-product-garnissages></app-product-garnissages>
@@ -112,7 +112,7 @@
         <span>DESCRIPTION</span>
         <hr>
       </div>
-      <app-product-description *ngIf="detail==='description'" [product]="product"></app-product-description>
+      <app-product-description [product]="product"></app-product-description>
     </div>
 
     <div class="d-print-block" style="break-inside: avoid;" *ngIf="product">
@@ -132,6 +132,6 @@
   <div class="info_div d-print-none" *ngIf="text">
     <br>
     <h2>{{text.infoTitle}}</h2>
-    <app-request-form [requestType]='4'></app-request-form>
+    <app-request-form [requestType]='4' [product]="product"></app-request-form>
   </div>
 </div>
