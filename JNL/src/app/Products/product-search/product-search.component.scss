@@ -305,13 +305,17 @@
 
 	.flex-div > li {
 		width: 20vw;
-		margin: 0 1.5vw 1.5vw 5.5vh;
+		// margin: 0 1.5vw 1.5vw 5.5vh;
+		margin: auto;
+		margin-left: 1.5vw;
+		margin-right: 1.5vw;
+		margin-bottom: 5.5vh;
 		display: inline-block;
 		// margin-bottom: /* 3vh */;
 
 		@media only screen and (max-width: 768px) {
 			width: 50%;
-			// margin: 0;
+			margin: 0;
 			padding: 10px !important;
 		}
 	}
