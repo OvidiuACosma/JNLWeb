@@ -510,7 +510,7 @@ export class ProductStoreComponent implements OnInit {
 
   goToProduct(product: IProductReadyToSell) {
     // this.router.navigate(['product/productStoreItem', {id: product.id}]);
-    this.router.navigate(['product/productStoreItem']);
+    this.router.navigate(['product/productStoreItem', {id: product.id}]);
     this.scrollTop();
   }
 

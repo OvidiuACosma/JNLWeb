@@ -1,45 +1,46 @@
 h1 {
-    margin-bottom: 0;
+  margin-bottom: 0;
   
-    @media only screen and (max-width: 768px) {
-      font-size: 32px;
-      line-height: 40px;
-    }
-  
-    @media only screen and (max-width: 576px) {
-      font-size: 26px;
-      line-height: 32px;
-    }
+  @media only screen and (max-width: 768px) {
+    font-size: 32px;
+      ine-height: 40px;
   }
   
-  #store-container {
-    padding-top: var(--search-bar-height);
+  @media only screen and (max-width: 576px) {
+    font-size: 26px;
+    line-height: 32px;
   }
+}
   
-  #header {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
+#store-container {
+  padding-top: var(--search-bar-height);
+}
+  
+#header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+  
+@media only screen and (min-width: 1200px) {
+  .d-large {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  @media only screen and (min-width: 1200px) {
-      .d-large {
-          width: 1200px;
-          margin-left: auto;
-          margin-right: auto;
-      }
       
-      #store-container {
-          h2 {
-              font-size: 42px;
-          }
+  #store-container {
+    h2 {
+      font-size: 42px;
+    }
   
-          h4 {
-              font-size: 15.6px;
-          }
+    h4 {
+      font-size: 15.6px;
+    }
   
-          h5 {
-              font-size: 13.2px;
-          }
-      }
+    h5 {
+			font-size: 13.2px;
+			text-transform: uppercase;
+    }
   }
+}
