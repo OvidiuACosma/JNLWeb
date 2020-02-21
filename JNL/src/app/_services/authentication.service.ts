@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { ConfigService } from './config.service';
 import { DataExchangeService } from './data-exchange.service';
 import { User } from '../_models';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthenticationService {
@@ -35,7 +36,7 @@ export class AuthenticationService {
         this.dataExchange.setCurrentUser(new User());
     }
 
-    forgotPassword(username: string) {
-      return this.http.post<string>(`$${this.apiURL}/users/forgotpassword`, {username: username}, {headers: this.headers});
+    forgotPassword(username: string): Observable<string> {
+      return this.http.post<string>(`${this.apiURL}/users/forgotpassword`, {username: username}, {headers: this.headers});
     }
 }

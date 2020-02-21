@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { DataExchangeService, TranslationService, ProductsService, UserService } from '../../_services';
+import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage,
          IGarnissage, IProductToFavorites } from '../../_models';
 import * as _ from 'lodash';
@@ -8,6 +8,7 @@ import { accentFold } from '../../_helpers';
 import { mergeMap, map, concatMap } from 'rxjs/operators';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UserService } from 'src/app/_services/user.service';
 
 interface IFilter {
   index: number;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AuthenticationService, DownloaderService } from '../../_services';
 import { Browser, User } from '../../_models';
-import { AuthGuard } from 'src/app/_guards';
+import { AuthGuard } from 'src/app/_guards/auth.guard';
 import { mergeMap, map } from 'rxjs/operators';
 
 @Component({

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfigService, AlertService,
           ArchiveService, TranslationService, PagerService,
-          RequestsService, UserService, LoadingService } from './_services';
+          RequestsService, LoadingService } from './_services';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor, ErrorInterceptor, LoadingInterceptor } from './_helpers';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,13 +12,15 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent, SearchComponent, MenuComponent, MenuBottomComponent, ContactComponent,
-          PageNotFoundComponent, CommonDialogComponent, PricelistDialogComponent, LoadingComponent} from './Main';
+          PageNotFoundComponent, PricelistDialogComponent, LoadingComponent} from './Main';
 import { AlertComponent } from './_directives';
 import { PressComponent, JnlGroupComponent, ServicesComponent, SavoirFaireComponent, MarquesComponent,
           MarqueComponent, ActualiteComponent, RequestFormComponent, DialogAnswerComponent } from './Std';
-import { LoginComponent } from './Auth';
+import { LoginComponent } from './Auth/login/login.component';
 import { ForgotPasswordComponent } from './Auth/forgot-password/forgot-password.component';
 import { RegisterComponent } from './Auth/register/register.component';
+import { UserService } from './_services/user.service';
+import { CommonDialogComponent } from './Main/common-dialog/common-dialog.component';
 
 
 

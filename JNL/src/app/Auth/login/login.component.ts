@@ -5,6 +5,7 @@ import { AuthenticationService } from '../../_services/authentication.service';
 import { first } from 'rxjs/operators';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AlertService } from 'src/app/_services/alert.service';
+import { DialogService } from 'src/app/_services/dialog.service';
 
 @Component({
   selector: 'app-login',
@@ -24,25 +25,20 @@ export class LoginComponent implements OnInit {
               private router: Router,
               private authenticationService: AuthenticationService,
               private alertService: AlertService,
+              private dialogService: DialogService,
               public dialogRef: MatDialogRef<LoginComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: string) {}
+              @Inject(MAT_DIALOG_DATA) public data: string
+              ) {}
 
   ngOnInit() {
-
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
-    // reset login status
     this.authenticationService.logout();
-
-    // get return url from route parameters or default to '/'
-    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     this.returnUrl = this.data;
   }
 
-  // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
@@ -76,9 +72,13 @@ export class LoginComponent implements OnInit {
   forgotPassword() {
     this.authenticationService.forgotPassword(this.loginForm.value.username.toString())
     .subscribe(resp => {
-      console.log('user:', this.loginForm.value.username);
-      // TODO: message as email was sent and the link on it to be followed.
-      // TODO: compose message - poetry
+      const answerTitle = 'Reset password email sent';
+      const answerText = `Your request has been registered.\n
+                    An email with a link to reset your password has been sent to you.\n
+                    Follow the link to change your password.\n\n
+                    Thank you!`;
+      this.dialogService.openDialog(answerTitle, answerText, [0]);
     });
+      // TODO: compose message - poetry - API
   }
 }

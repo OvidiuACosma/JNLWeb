@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
-import { AuthGuard } from '../_guards';
+import { AuthGuard } from '../_guards/auth.guard';
 import { ProductComponent } from './product/product.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { ProductGarnissagesComponent } from './product-garnissages/product-garnissages.component';

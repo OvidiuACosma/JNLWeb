@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataExchangeService, TranslationService, ProductsService, UserService } from '../../_services';
+import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import * as _ from 'lodash';
 import { Product, User, IProductToFavorites, IProductDescription, Finissage } from '../../_models';
 import { mergeMap, concatMap, map } from 'rxjs/operators';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-product-description',

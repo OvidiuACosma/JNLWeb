@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, DownloaderService } from '../../_services';
 import * as _ from 'lodash';
-import { AuthGuard } from 'src/app/_guards';
 import { MatDialog } from '@angular/material/dialog';
-import { CommonDialogComponent, PricelistDialogComponent } from 'src/app/Main';
 import { User } from 'src/app/_models';
 // import * as FileSaver from 'file-saver';
 

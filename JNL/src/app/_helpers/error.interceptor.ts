@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-
-import { AuthenticationService, DialogService, LoadingService } from '../_services';
+import { AuthenticationService, LoadingService } from '../_services';
+import { DialogService } from '../_services/dialog.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -15,6 +15,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request)
     .pipe(retry(1),
     catchError((err: HttpErrorResponse) => {
+      console.log('Error interceptor:', err);
       let showMessage = false;
       let message = '';
       if (err.error instanceof ErrorEvent) {

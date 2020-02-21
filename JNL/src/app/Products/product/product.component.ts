@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, ProductsService, TranslationService, ArchiveService, DownloaderService, UserService } from '../../_services';
+import { DataExchangeService, ProductsService, TranslationService,
+         ArchiveService, DownloaderService } from '../../_services';
 import { Product, Img, ProductHeroImage, ProductEF, User, IProductToFavorites } from '../../_models';
 import * as _ from 'lodash';
+import { UserService } from 'src/app/_services/user.service';
 declare var $: any;
 
 @Component({

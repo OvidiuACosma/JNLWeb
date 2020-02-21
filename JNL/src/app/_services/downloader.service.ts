@@ -5,8 +5,10 @@ import { AuthGuard } from '../_guards/auth.guard';
 import { DataExchangeService } from './data-exchange.service';
 import { PricelistDialogComponent } from '../Main/pricelist-dialog/pricelist-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogService } from './dialog.service';
 import { ConfigService } from './config.service';
+import { UserService } from './user.service';
+import { Router } from '@angular/router';
+import { CommonDialogComponent } from '../Main/common-dialog/common-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +24,9 @@ export class DownloaderService {
   constructor(private http: HttpClient,
               private authGuard: AuthGuard,
               private dataex: DataExchangeService,
-              private dialogService: DialogService,
               public dialog: MatDialog,
+              private userService: UserService,
+              private router:  Router,
               private configService: ConfigService) {
     this.apiUrl = configService.getApiURI() + '/Requests/PriceList';
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
@@ -51,7 +54,7 @@ export class DownloaderService {
                           'by following the link \'Contact\' below.\nOur Customer Service Team will ' +
                           'consider it and return to you with details.\n\n' +
                           'Thank you!';
-          this.dialogService.openDialog('Price List Request', message, [3, 1]);
+          this.openDialog('Price List Request', message, [3, 1]);
         }
       });
 
@@ -62,8 +65,57 @@ export class DownloaderService {
                       'by following the link \'Contact\' below.\nOur Customer Service Team will ' +
                       'consider it and return to you with details.\n\n' +
                       'Thank you!';
-      this.dialogService.openDialog('Price List Request', message, [2, 3, 1]);
+      this.openDialog('Price List Request', message, [2, 3, 1]);
     }
+  }
+
+  openDialog(answerTitle: string, answerText: string, buttons: number[] = [0]) {
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+      width: '400px',
+      data: {
+        title: answerTitle,
+        text: answerText,
+        buttons: buttons
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.resultAction(result);
+    });
+    return;
+  }
+
+  resultAction(result: string) {
+    switch (result) {
+      case 'Login': {
+        this.userService.openLoginDialog().subscribe(answer => {
+        });
+        break;
+      }
+      case 'Contact': {
+        this.navigateTo('contact', '', '6');
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  }
+
+  navigateTo(target: string, fragment: string = '', param: string = '') {
+    if (fragment === '') {
+      this.scrollTop();
+      if (param === '') {
+        this.router.navigate([target]);
+      } else {
+        this.router.navigate([target, param]);
+      }
+    } else {
+      this.router.navigate([target], {fragment: fragment});
+    }
+  }
+
+  scrollTop() {
+    window.scrollTo(0, 0);
   }
 
   isLoggedIn(): boolean {
@@ -147,7 +199,6 @@ export class DownloaderService {
       fileLink.click();
 
       // window.open(this.url); // OK
-
       // window.open(this.url, '_blank'); // blocked by AdBlock
     });
   }

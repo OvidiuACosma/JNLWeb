@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { AlertService, UserService, DataExchangeService, TranslationService } from 'src/app/_services';
+import { AlertService, DataExchangeService, TranslationService } from 'src/app/_services';
 import { IUserResetPassword } from 'src/app/_models';
 import { mergeMap, map } from 'rxjs/operators';
+import { UserService } from 'src/app/_services/user.service';
 
 function duplicatePassword(input: FormControl) {
   if (!input.root.get('newPassword')) {

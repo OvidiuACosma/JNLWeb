@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataExchangeService } from 'src/app/_services';
 import { ActivatedRoute } from '@angular/router';
+import { concatMap, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact',
@@ -18,14 +19,22 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo(0, 0);
-    this.route.params.subscribe(p => {
-      if (p.type) {
-        this.type = p['type'];
+    this.getData();
+  }
+
+  getData() {
+    this.route.params.pipe(
+      mergeMap(p => this.dataex.currentLanguage.pipe(
+        map(lang => ({
+          p: p,
+          lang: lang
+        }))
+      ))
+    ).subscribe(resp => {
+      this.language = resp.lang || 'EN';
+      if (resp.p.type) {
+        this.type = resp.p['type'];
       }
-    });
-    this.dataex.currentLanguage
-    .subscribe(lang => {
-      this.language = lang || 'EN';
     });
   }
 }

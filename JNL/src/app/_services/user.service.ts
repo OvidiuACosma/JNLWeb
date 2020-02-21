@@ -4,7 +4,7 @@ import { User, IUserResetPassword } from '../_models';
 import { ConfigService } from './config.service';
 import { Observable } from 'rxjs';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../Auth';
+import { LoginComponent } from '../Auth/login/login.component';
 import { map } from 'rxjs/operators';
 
 @Injectable()

@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../Auth/login/login.component';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { UserService } from '../_services/user.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
   returnUrl = '';
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+              private userService: UserService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     this.returnUrl = state.url;
@@ -28,29 +27,11 @@ export class AuthGuard implements CanActivate {
   }
 
   public logIn() {
-    this.openDialog().subscribe( answer => {
+    this.userService.openLoginDialog().subscribe(answer => {
       return answer;
     });
+    // this.openDialog().subscribe( answer => {
+    //   return answer;
+    // });
   }
-
-  public openDialog(): Observable<boolean> {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '30vw';
-    dialogConfig.minWidth =  '320px';
-    dialogConfig.maxWidth =  '450px';
-    dialogConfig.minHeight = '320px';
-    dialogConfig.maxHeight = '450px';
-    dialogConfig.data = this.returnUrl;
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(LoginComponent, dialogConfig);
-
-    return dialogRef.afterClosed()
-    .pipe(
-      map(result => {
-      return result;
-    }));
-  }
-
 }

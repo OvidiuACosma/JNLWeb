@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RequestsService, TranslationService, DataExchangeService, ArchiveService } from '../../_services';
 import { RequestForm, IDialogData } from '../../_models';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CommonDialogComponent } from 'src/app/Main';
-import { mergeMap, map, mergeMapTo } from 'rxjs/operators';
+import { CommonDialogComponent } from 'src/app/Main/common-dialog/common-dialog.component';
+import { mergeMap, map } from 'rxjs/operators';
 
 
 @Component({
