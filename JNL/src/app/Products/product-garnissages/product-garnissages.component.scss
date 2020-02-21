@@ -1,7 +1,22 @@
+.wrapper {
+  margin: auto;
+  padding-top: 5.9vw;
+
+  h1 {
+    @media only screen and (max-width: 768px) {
+      font-size: 32px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+}
+
 .wrapper_garnissage {
 	width: 80vw;
 	margin: auto;
-	padding-top: 6vw;
+	padding-top: 3vw;
 	padding-bottom: 4vw;
 	display: flex;
   flex-direction: row;

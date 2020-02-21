@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService, UserService } from '../../_services';
-import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage, IGarnissage, IProductToFavorites } from '../../_models';
+import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage,
+         IGarnissage, IProductToFavorites } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
 import { mergeMap, map, concatMap } from 'rxjs/operators';
@@ -76,13 +77,6 @@ export class ProductSearchComponent implements OnInit {
     for (let i = 0; i < this.filterBy.length; i++) {
       this.toggle[i] = true;
     }
-
-    // const numberAll = 15;
-    // this.total = numberAll;
-
-    // for (let index = 0; index < numberAll; index++) {
-    //   this.numbers.push(index);
-    // }
   }
 
   getData() {
@@ -133,6 +127,9 @@ export class ProductSearchComponent implements OnInit {
     }
       this.categoriesFr = new Set(products.map(c => c.categoryFr));
       this.categoriesEn = new Set(products.map(c => c.categoryEn));
+      // OVIDIU: add Garnissage / Upholstery, which will behave as a link, not as filter
+      this.categoriesEn.add('Upholstery');
+      this.categoriesFr.add('Garnissage');
   }
 
   getFamilies(brand: string[] = ['all'], category: string[] = ['all']) {
@@ -175,7 +172,6 @@ export class ProductSearchComponent implements OnInit {
         filterElement: this.getFilterElements(m)
       };
     });
-
   }
 
   getFilterElements(filterGroup: string): IFilter[] {
@@ -285,6 +281,10 @@ export class ProductSearchComponent implements OnInit {
   }
 
   selectFilter(c = '', displayName = '') {
+    if (c.toLowerCase() === 'type' &&
+        ['garnissage', 'upholstery'].includes(displayName.toLowerCase())) {
+          this.router.navigate(['product/productGarnissages']);
+    }
     this.scrollAfterFilter('content');
     let filteredElements: IFilterElements[];
     let filterItems: number[];

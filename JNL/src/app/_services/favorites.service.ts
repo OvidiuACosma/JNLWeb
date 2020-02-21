@@ -68,4 +68,8 @@ export class FavoritesService {
     public deleteFavoritesLG(favId: number): Observable<IFavoritesProducts> {
       return this.http.delete<IFavoritesProducts>(`${this.apiUrl}/LG/delete/${favId}`, {headers: this.headers});
     }
+
+    public deleteFavoritesProduct(product: IProductToFavorites, favListId: number): Observable<IFavoritesProducts> {
+      return this.http.post<IFavoritesProducts>(`${this.apiUrl}/product/delete/${favListId}`, product, {headers: this.headers});
+    }
 }

@@ -12,7 +12,6 @@ declare var $: any;
 })
 export class ProductComponent implements OnInit {
 
-  detail = 'description';
   prodDesc: ProductEF;
   brand = '';
   family = '';
@@ -62,15 +61,6 @@ export class ProductComponent implements OnInit {
           });
       });
     this.getUser();
-    // $(document).ready(function () {
-    //   $('#carousel-custom').carousel();
-    //   // TODO: check this in html
-    //   $('.product_change_tab select').on('change', function() {
-    //     const val = $(this).val();
-    //     // console.log('current val ' + val);
-    //     $('#nav-' + val + '-tab').click();
-    //   });
-    // });
   }
 
   getProductData(product: Product) {
@@ -161,10 +151,6 @@ export class ProductComponent implements OnInit {
     this.heroImages = _.cloneDeep(heroImagesTmp);
     this.imgCount = this.heroImages.length;
     $('.carousel').carousel('cycle');
-  }
-
-  setDetail(index: number) {
-    this.detail = this.tabList[index];
   }
 
   getStdText(lang: string) {
@@ -262,6 +248,10 @@ export class ProductComponent implements OnInit {
       this.selected[nr] = 1;
     }
     this.scroller = false;
+  }
+
+  getProductName(): string {
+    return `${this.product.family} ${this.product.model} ${this.product.brand}`;
   }
 
   printProductSheet() {

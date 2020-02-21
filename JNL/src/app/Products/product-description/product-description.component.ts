@@ -42,7 +42,7 @@ export class ProductDescriptionComponent implements OnInit {
   getData() {
     this.productsService.getProductDesc(this.product).pipe(
       mergeMap(prodDesc => this.dataex.currentLanguage.pipe(
-        concatMap(lang => this.textService.getTextProductStandard().pipe(
+        mergeMap(lang => this.textService.getTextProductStandard().pipe(
           mergeMap(text => this.dataex.currentUser.pipe(
             map(user => ({
               prodDesc: prodDesc,

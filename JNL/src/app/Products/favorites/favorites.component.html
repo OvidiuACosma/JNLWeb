@@ -30,8 +30,7 @@
     <div class="products">
       <div class="products-container">
         <ul class="list">
-          <!-- <div class="flex-div" *ngIf="favoritesProductsDetails"> -->
-            <div class="flex-div" *ngIf="productsToFav">
+          <div class="flex-div" *ngIf="productsToFav">
             <li *ngFor="let f of productsToFav">
               <div class="card-product">
                 <div class="pic-frame" (click)="goToProduct(f)">
@@ -65,6 +64,6 @@
 
   <div class="fav-div">
     <h2>{{text.infoTitle}}</h2>
-    <app-request-form [requestType]='5'></app-request-form>
+    <app-request-form [requestType]="5" [favoritesList]="listId"></app-request-form>
   </div>
 </div>

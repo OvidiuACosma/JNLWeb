@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService, DataExchangeService, UserService } from 'src/app/_services';
 import { IProdGarnissage, Browser, User } from 'src/app/_models';
 import * as _ from 'lodash';
@@ -26,6 +26,7 @@ interface IFilterElements {
 
 export class ProductGarnissagesComponent implements OnInit {
 
+  @Input() withTitle = true;
   language: string;
   products: IProdGarnissage[];
   productsFiltered: IProdGarnissage[];
