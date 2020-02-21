@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, ProductsService, TranslationService, UserService } from '../../_services';
+import { ActivatedRoute } from '@angular/router';
+import { DataExchangeService, ProductsService, TranslationService } from '../../_services';
 import { IProductReadyToSell } from '../../_models';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-product-store-item',
