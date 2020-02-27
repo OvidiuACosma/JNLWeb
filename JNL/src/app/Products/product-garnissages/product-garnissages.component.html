@@ -1,5 +1,6 @@
 <div class="wrapper" *ngIf="withTitle">
-  <h1>Garnissage</h1>
+  <h1 *ngIf="language==='EN'">Upholstery</h1>
+  <h1 *ngIf="language==='FR'">Garnissage</h1>
 </div>
 <div class="wrapper_garnissage">
   <div class="filters">
