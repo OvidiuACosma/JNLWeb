@@ -74,24 +74,14 @@ export class ProductDimensionsComponent implements OnInit {
     this.currentTDImage = this.TDImages[this.index];
   }
 
-  closeModal() {
-    const modal = document.getElementById('TDModal');
+  // closeModal() {
+  //   const modal = document.getElementById('TDModal');
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        document.getElementById('btClose').click();
-      }
-    };
-  }
-
-  setClasses(i: number) {
-    const classes = {
-      'break': i === 2,
-      'avoid': i === 0,
-    };
-    console.log('CLASSES: ', classes);
-    return classes;
-  }
-
+  //   // When the user clicks anywhere outside of the modal, close it
+  //   window.onclick = function (event) {
+  //     if (event.target === modal) {
+  //       document.getElementById('btClose').click();
+  //     }
+  //   };
+  // }
 }

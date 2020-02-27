@@ -79,6 +79,10 @@ export class ProductsService {
     return this.http.get<any[]>(`${this.urlAssets}/Products/techDetImages.json`, {headers: this.headers});
   }
 
+  public getProdReadyToSellImages(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.urlAssets}/Products/readyToSellImages.json`, {headers: this.headers});
+  }
+
   public getProductsToSell(): Observable<IProductReadyToSell[]> {
     return this.http.get<IProductReadyToSell[]>(`${this.productReadyToSell}`, {headers: this.headers});
   }
@@ -86,6 +90,11 @@ export class ProductsService {
   public getProductReadyToSell(productId: number): Observable<IProductReadyToSell> {
     return this.http.get<IProductReadyToSell>(`${this.productReadyToSell}/${productId}`, {headers: this.headers});
   }
+
+  public getProdReadyToSellTDImages(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.urlAssets}/Products/readyToSellTDImages.json`, {headers: this.headers});
+  }
+
 
 
   openDialog(productToFavorites: IProductToFavorites, user: User): Observable<boolean> {

@@ -86,8 +86,8 @@ export interface IProductReadyToSell {
   familyEn: string;
   model: string;
   brand: string;
-  descriptionFR: string;
-  descriptionEN: string;
+  descriptionFr: string;
+  descriptionEn: string;
   qty: number;
   price: number;
 }

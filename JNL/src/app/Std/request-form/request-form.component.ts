@@ -30,7 +30,7 @@ export class DialogAnswerComponent {
 })
 export class RequestFormComponent implements OnInit {
 
-  // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites; 6 - Price List Req
+  // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites; 6 - Price List Req; 7 - Ready to Sell
   @Input() requestType: number;
   @Input() product: string;
   @Input() favoritesList = 0;
