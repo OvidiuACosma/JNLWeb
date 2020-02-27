@@ -20,13 +20,13 @@ export class ProductStoreItemComponent implements OnInit {
   qty: number;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private productsService: ProductsService,
-    // private router: Router,
-    private dataex: DataExchangeService,
-    private textService: TranslationService,
-    // private archiveService: ArchiveService,
-    // private downloaderService: DownloaderService,
-    private userService: UserService) { }
+              private productsService: ProductsService,
+              // private router: Router,
+              private dataex: DataExchangeService,
+              private textService: TranslationService,
+              // private archiveService: ArchiveService,
+              // private downloaderService: DownloaderService,
+              private userService: UserService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage

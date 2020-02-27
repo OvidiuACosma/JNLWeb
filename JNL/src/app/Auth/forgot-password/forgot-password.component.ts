@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { AlertService, DataExchangeService, TranslationService } from 'src/app/_services';
+import { DataExchangeService, TranslationService } from 'src/app/_services';
 import { IUserResetPassword } from 'src/app/_models';
 import { mergeMap, map } from 'rxjs/operators';
 import { UserService } from 'src/app/_services/user.service';
+import { AuthGuard } from 'src/app/_guards/auth.guard';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonDialogComponent } from 'src/app/Main/common-dialog/common-dialog.component';
 
 function duplicatePassword(input: FormControl) {
   if (!input.root.get('newPassword')) {
@@ -29,11 +32,13 @@ export class ForgotPasswordComponent implements OnInit {
   text: any;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private formBuilder: FormBuilder,
               private userService: UserService,
-              private alertService: AlertService,
+              private authGuard: AuthGuard,
               private dataex: DataExchangeService,
-              private translationService: TranslationService) { }
+              private translationService: TranslationService,
+              private dialog: MatDialog) { }
 
   ngOnInit() {
     this.route.params.subscribe(p => {
@@ -83,8 +88,32 @@ export class ForgotPasswordComponent implements OnInit {
     };
     this.userService.resetPassword(userResetPassword)
     .subscribe(response => {
-      this.alertService.success(response);
+      this.confirmPasswordReset();
     });
     this.loading = false;
+  }
+
+  confirmPasswordReset() {
+    const answerTitle = 'Reset password';
+    const answerText = `Your password has been reset.\n
+                        Please login using your new password.\n
+                        Thank you!`;
+    this.openDialog(answerTitle, answerText, [0]);
+  }
+
+  openDialog(answerTitle: string, answerText: string, buttons: number[] = [0]) {
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+      width: '400px',
+      data: {
+        title: answerTitle,
+        text: answerText,
+        buttons: buttons
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.authGuard.logIn();
+      this.router.navigate(['']);
+    });
+    return;
   }
 }
