@@ -93,30 +93,23 @@ span {
     font-family: Helvetica-Light;
     font-size: 20px;
 
-    @media only screen and (max-width: 768px) {
-      font-size: 4.5vw;
-      width: 100vw;
-    }
-
     > h2 {
       margin-top: 0;
-    }
-
-    > div > p {
+      font-family: Helvetica;
+      font-size: 3.5vw;
       @media only screen and (max-width: 768px) {
-        font-size: 4.5vw;
+        font-size: 4.2vw;
       }
-    }
-
-    > p {
-      @media only screen and (max-width: 768px) {
-        font-size: 1em;
-        width: 80vw;
-        margin-left: auto;
-        margin-right: auto;
+      @media only screen and (max-width: 576px) {
+        font-size: 5.6vw;
+        width: 100vw;
+      }
+      @media only screen and (min-width: 1200px) {
+        font-size: 42px;
       }
     }
   }
+
   .slide-image {
     max-width: 56.52vw;
     max-height: 37.43vw;
@@ -377,6 +370,55 @@ span {
     }
   }
 
+  .garn-details {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: auto;
+    margin: auto;
+    padding: 3.5vw 0;
+    @media only screen and (max-width: 768px) {
+      justify-content: center;
+      width: 100vw;
+      padding: 42px 0;
+    }
+    @media only screen and (max-width: 576px) {
+      justify-content: center;
+      width: 100vw;
+      padding: 42px 0;
+    }
+    @media only screen and (min-width: 1200px) {
+      width: 840px;
+      padding: 42px 0;
+    }
+  }
+
+  .garn-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    img {
+      object-fit: contain;
+      width: 20vw;
+      height: auto;
+      margin-right: 30px;
+      @media only screen and (max-width: 768px) {
+        width: 30vw;
+      }
+      @media only screen and (min-width: 1200px) {
+        width: 240px;
+      }
+    }
+    div>h2 {
+      font-size: 14px;
+      line-height: 20px;
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
   .td-details {
     display: flex;
     flex-direction: column;
@@ -406,6 +448,13 @@ span {
       } 
     }
   }
+
+  .print-image {
+    width: 799px;
+    height: auto;
+    object-fit: contain;
+    text-align: center;
+  }
 }
 
   
@@ -417,10 +466,6 @@ span {
   }
       
   #store-container {
-    // h2 {
-    //   font-size: 42px;
-    // }
-  
     h4 {
       font-size: 15.6px;
     }
@@ -449,13 +494,6 @@ span {
       height: 50px;
     }
 
-    // .print-btn {
-    //   display:flex;
-    //   justify-content: center;
-    //   font-size: 13.2px;
-    //   line-height: 14px;
-    // }
-
     .nav-dimension {
       width: 588px;
     }
@@ -474,7 +512,6 @@ span {
 
     .prod-desc {
       width: 1200px;
-      // height: auto;
     }
 
     .desc-details {
@@ -487,6 +524,28 @@ span {
       .img-button {
         width: 720px;
         margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media print {
+  #store-container{
+    hr {
+      margin-top: 0 !important;
+      margin-bottom: 0.5rem !important;
+      border-width: 2px;
+      border-color: black;
+      width: 100%;
+    }
+
+    .desc-details {
+      width: 80vw;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      p {
+        padding-top: 0;
       }
     }
   }

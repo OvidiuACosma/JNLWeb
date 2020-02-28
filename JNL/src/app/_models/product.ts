@@ -92,6 +92,13 @@ export interface IProductReadyToSell {
   price: number;
 }
 
+export interface IGarnissageRts {
+  id: number;
+  productId: number;
+  garnissageId: string;
+}
+
+
 export interface IProductToFavorites {
   brand: string;
   id: number;
