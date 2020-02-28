@@ -33,8 +33,6 @@ export class ProductStoreComponent implements OnInit {
   public products: IProductReadyToSell[];
   public routeParams: IRouteParams;
   public productsFiltered: IProductReadyToSell[];
-  // public categoriesFr: any;
-  // public categoriesEn: any;
   public familiesFr: any;
   public familiesEn: any;
   public searchText = '';
@@ -69,10 +67,8 @@ export class ProductStoreComponent implements OnInit {
 
       this.productService.getProductsToSell()
       .subscribe(p => {
-        // this.products = this.sortProducts(p);
         this.products = p;
         this.productsFiltered = _.clone(this.products);
-        // this.getCategories();
         this.getFamilies();
         this.getRouteParameters();
         this.setFilterElements();
@@ -115,32 +111,11 @@ export class ProductStoreComponent implements OnInit {
     });
   }
 
-  // getCategories(brand: string[] = ['all']) {
-  //   let products = _.clone(this.products);
-  //   if (!brand.includes('all')) {
-  //     products = products.filter(f => brand.includes(f.brand));
-  //   }
-  //     this.categoriesFr = new Set(products.map(c => c.categoryFr));
-  //     this.categoriesEn = new Set(products.map(c => c.categoryEn));
-  // }
-
-  // getFamilies(brand: string[] = ['all'], category: string[] = ['all']) {
     getFamilies(brand: string[] = ['all']) {
     let products = _.clone(this.products);
     if (!brand.includes('all')) {
       products = products.filter(f => brand.includes(f.brand));
     }
-    // if (!category.includes('all')) {
-    //   switch (this.language.toLowerCase()) {
-    //     case 'en': {
-    //       products = products.filter(f => category.includes(f.categoryEn));
-    //       break;
-    //     }
-    //     case 'fr': {
-    //       products = products.filter(f => category.includes(f.categoryFr));
-    //     }
-    //   }
-    // }
     this.familiesFr = new Set(products.map(f => f.familyFr));
     this.familiesEn = new Set(products.map(f => f.familyEn));
   }
@@ -197,25 +172,6 @@ export class ProductStoreComponent implements OnInit {
     return filter;
   }
 
-  // sortProducts(p: IProductReadyToSell[]): IProductReadyToSell[] {
-  //   p.sort(function(a, b) {
-  //     if (a.indexFamily > b.indexFamily) {
-  //       return 1; // reverse
-  //     } else  if (a.indexFamily < b.indexFamily) {
-  //       return -1; // preserve
-  //     } else {
-  //       if (a.indexBrand > b.indexBrand) {
-  //         return 1; // reverse
-  //         // return a.indexModel - b.indexModel;
-  //       } else {
-  //         return -1; // preserve
-  //       }
-  //     }
-  //     return -1;
-  //   });
-  //   return p;
-  // }
-
   getFilters(category: string): any {
       const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
       let fg: IFilter[] = fe[0].filterElement;
@@ -257,15 +213,14 @@ export class ProductStoreComponent implements OnInit {
     }
   }
 
-  // TODO: CHANGE function for FAV
-  removeItem(index: number) {
-    this.scroller = false;
-    this.total--;
-    // TODO: REMOVE FROM DB ?
-  }
+  // // TODO: CHANGE function for FAV
+  // removeItem(index: number) {
+  //   this.scroller = false;
+  //   this.total--;
+  //   // TODO: REMOVE FROM DB ?
+  // }
 
   resetFilter() {
-    // this.getCategories(['all']);
     this.getFamilies(['all']);
     this.setFilterElements();
     this.productsFiltered = _.clone(this.products);
@@ -299,7 +254,6 @@ export class ProductStoreComponent implements OnInit {
       this.toggleItemSelection(c, displayName);
       // filter the list of filter elements brand -> category -> familiy
       if (c === 'Brand') {
-        // this.resetCategories();
         this.resetFamilies();
       }
       if (c === 'Type') {
@@ -313,12 +267,7 @@ export class ProductStoreComponent implements OnInit {
       !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
   }
 
-  // resetCategories() {
-  //   this.getCategories(this.getselectedItemsOfGroup('Brand'));
-  // }
-
   resetFamilies() {
-    // this.getFamilies(this.getselectedItemsOfGroup('Brand'), this.getselectedItemsOfGroup('Type'));
     this.getFamilies(this.getselectedItemsOfGroup('Brand'));
   }
 
@@ -332,13 +281,8 @@ export class ProductStoreComponent implements OnInit {
   activateItemSelection(routeParams: IRouteParams) {
     if (routeParams.brand) {
       this.activateElementSelection('Brand', routeParams.brand);
-      // this.resetCategories();
       this.resetFamilies();
     }
-    // if (routeParams.category) {
-    //   this.activateElementSelection('Type', routeParams.category);
-    //   this.resetFamilies();
-    // }
     if (routeParams.family) {
       this.activateElementSelection('Family', routeParams.family);
     }
@@ -418,8 +362,6 @@ export class ProductStoreComponent implements OnInit {
     if (this.searchText !== '') {
       this.productsFiltered = this.productsFiltered.filter(f =>
         accentFold(f.brand.toLowerCase()).includes(searchText) ||
-        // accentFold(f.categoryEn.toLowerCase()).includes(searchText) ||
-        // accentFold(f.categoryFr.toLowerCase()).includes(searchText) ||
         accentFold(f.familyEn.toLowerCase()).includes(searchText) ||
         accentFold(f.familyFr.toLowerCase()).includes(searchText) ||
         accentFold(f.model.toLowerCase()).includes(searchText)
@@ -488,7 +430,7 @@ export class ProductStoreComponent implements OnInit {
   }
 
   getProductImage(product: IProductReadyToSell): string {
-    const src = `assets/Images/Products/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
+    const src = `assets/Images/Products/Ready To Sell/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
     return src;
   }
 
@@ -509,7 +451,6 @@ export class ProductStoreComponent implements OnInit {
   }
 
   goToProduct(product: IProductReadyToSell) {
-    // this.router.navigate(['product/productStoreItem', {id: product.id}]);
     this.router.navigate(['product/productStoreItem', {id: product.id}]);
     this.scrollTop();
   }

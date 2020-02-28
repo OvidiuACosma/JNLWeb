@@ -4,6 +4,11 @@
     <h4>{{brand}}</h4>
     <h5>{{family | uppercase}}</h5>
   </div>
+
+  <div class="d-none d-print-block text-center">
+    <img [src]="heroImageToPrint?.src" class="print-image">
+  </div>
+
   <div id='carousel-custom' class='carousel slide carousel-fade d-print-none' data-ride='carousel' data-pause="false">
     <div class="carousel-inner">
       <div class='carousel-item' *ngFor="let img of heroImages; let i = index"
@@ -26,7 +31,7 @@
 
   <div class="gallery-thumbs d-print-none">
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
-      *ngIf="galleryImages.length>1">
+      *ngIf="galleryImages?.length>1">
       <li *ngFor="let image of galleryImages; let j = index">
         <img [src]="image.src" alt="{{image.alt}}" (click)="switchImageList(j)" class="img-responsive pointer">
       </li>
@@ -36,7 +41,7 @@
   <div class="product-info">
     <span class="price">{{price}} &euro;</span>
     <span>only {{qty}} left in stock</span>
-    <div class="print-btn pointer" (click)="printProductSheet()">
+    <div class="print-btn pointer d-print-none" (click)="printProductSheet()">
       <i class="material-icons">print</i>
       <h3>&nbsp;&nbsp;PRINT</h3>
     </div>
@@ -68,7 +73,16 @@
       <div class="tab-pane fade d-print-none" id="nav-garn" role="tabpanel" aria-labelledby="nav-garn-tab">
         <div class="prod-desc">
           <div class="garn-details">
-            GARNISSAGES
+            <div *ngFor="let item of prodGarns; let i=index">
+              <div class="garn-card">
+                <a>
+                  <img alt="" src="assets\Images\Products\Garnissages\{{item.codeProd | uppercase }}.jpg">
+                  <div>
+                    <h2>{{item.model}}</h2>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -90,9 +104,23 @@
 
 
   <!-- REQUEST FORM -->
-  <div class="info_div">
+  <div class="info_div d-print-none">
     <br>
-    <!-- <h2>{{text.infoTitle}}</h2>  -->
+    <h2>{{text?.infoTitle}}</h2>
     <app-request-form [requestType]='7' [product]="getProductName()"></app-request-form>
   </div>
+
+  <!-- PRODUCT SHEET TO PRINT-->
+    <div class="prod-desc d-none d-print-block">
+      <!-- <div>
+        <span>DESCRIPTION</span>
+        <hr>
+      </div> -->
+      <div class="desc-details">
+        <span>DESCRIPTION</span>
+        <hr>
+        <p>{{description}}</p>
+      </div>
+    </div>
+
 </div>

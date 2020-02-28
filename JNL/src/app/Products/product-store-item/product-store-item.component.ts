@@ -2,17 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService } from '../../_services';
 import { UserService } from 'src/app/_services/user.service';
-import { IProductReadyToSell, Img, ProductTDImage } from 'src/app/_models';
-
-interface IProdDesc {
-  id: number;
-  brand: string;
-  family: string;
-  model: string;
-  description: string;
-  price: number;
-  qty: number;
-}
+import { IProductReadyToSell, IGarnissageRts, Img, ProductTDImage, IGarnissage } from 'src/app/_models';
+import * as _ from 'lodash';
+declare var $: any;
 
 @Component({
   selector: 'app-product-store-item',
@@ -21,7 +13,6 @@ interface IProdDesc {
 })
 export class ProductStoreItemComponent implements OnInit {
   language: string;
-  product: IProdDesc;
   id: any;
   images: string[] = [];
   brand = '';
@@ -31,25 +22,27 @@ export class ProductStoreItemComponent implements OnInit {
   qty: number;
   description = '';
   prodDesc: IProductReadyToSell;
+  garnissageIds: string[] = [];
+  prodGarns: IGarnissage[] = [];
   imgCount: number;
   heroImages: Img[] = [];
   galleryImages: Img[] = [];
+  heroImageToPrint: Img;
   public TDImages: ProductTDImage[] = [];
+  text: any;
+  stdText: any;
 
   constructor(private activatedRoute: ActivatedRoute,
     private productsService: ProductsService,
-    // private router: Router,
     private dataex: DataExchangeService,
     private textService: TranslationService,
-    // private archiveService: ArchiveService,
-    // private downloaderService: DownloaderService,
     private userService: UserService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
       .subscribe(lang => {
         this.language = lang || 'EN';
-        // this.getStdText(this.language);
+        this.getStdText(this.language);
 
         this.activatedRoute.paramMap
           .subscribe(params => {
@@ -70,9 +63,29 @@ export class ProductStoreItemComponent implements OnInit {
         this.description = this.language === 'EN' ? desc.descriptionEn : desc.descriptionFr;
         this.price = desc.price;
         this.qty = desc.qty;
+        this.getProdGarnissages(id);
         this.getImages();
         this.getTDImages();
       });
+  }
+
+  getProdGarnissages(id: number) {
+    this.productsService.getProdReadyToSellGarnissages(id)
+      .subscribe(garn => {
+        this.garnissageIds = garn.filter(f => f.productId === id).map(m => m.garnissageId);
+        this.getProdGarnissageDetails(this.garnissageIds);
+      });
+  }
+
+  getProdGarnissageDetails(garns: string[]) {
+    this.productsService.getGarnissages()
+    .subscribe(garn => {
+      for (let i = 0; i < garns.length; i++) {
+        const ga = garn.find(f => f.codeProd === garns[i]);
+        this.prodGarns.push(ga);
+      }
+      // console.log('GARN: ', this.prodGarns);
+    });
   }
 
   getImages() {
@@ -91,6 +104,7 @@ export class ProductStoreItemComponent implements OnInit {
           };
         }
         this.imgCount = this.images.length;
+        this.heroImageToPrint = this.heroImages[0];
       });
   }
 
@@ -107,6 +121,47 @@ export class ProductStoreItemComponent implements OnInit {
         }
       });
   }
+
+  switchImageList(idx: number) {
+    $('.carousel').carousel('pause');
+    const heroImagesTmp = _.cloneDeep(this.galleryImages);
+    if (idx > 0) {
+      let firstElement: Img[];
+      for (let j = 0; j < idx; j++) {
+        firstElement = heroImagesTmp.splice(0, 1);
+        heroImagesTmp.push(firstElement[0]);
+      }
+    }
+    this.heroImages = _.cloneDeep(heroImagesTmp);
+    this.imgCount = this.heroImages.length;
+    $('.carousel').carousel('cycle');
+  }
+
+  getStdText(lang: string) {
+    this.textService.getTextProductStandard()
+      .subscribe(data => {
+        const resources = data[0];
+        this.stdText = resources[lang.toUpperCase()];
+      });
+
+    // standard text for the form
+    this.textService.getTextFavorites()
+      .subscribe(data => {
+        const res = data[0];
+        this.text = res[lang.toUpperCase()];
+      });
+    // this.getCountries();
+  }
+
+  // openDialog(garn: IProdGarnissage): Observable<boolean> {
+  //   const dialogConfig = this.productService.getGarnissageDialogConfig(garn, 'ga', this.browser.isDesktopDevice);
+  //   const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
+  //   return dialogRef.afterClosed()
+  //   .pipe(
+  //     map(result => {
+  //     return result;
+  //   }));
+  // }
 
   getProductName(): string {
     return `${this.family} ${this.model} ${this.brand}`;
