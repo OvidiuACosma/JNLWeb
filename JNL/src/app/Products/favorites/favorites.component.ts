@@ -2,7 +2,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, FavoritesService, ProductsService } from '../../_services';
-import { IFavorites, IFavoritesProducts, ProductEF, IDialogData, IProductToFavorites,
+import { IFavorites, IFavoritesProducts, IDialogData, IProductToFavorites,
          IGarnissageDto, IProdGarnissage, Browser } from '../../_models';
 import { concatMap, map, mergeMap } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';

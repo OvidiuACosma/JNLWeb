@@ -4,7 +4,7 @@
 
   <div class="share-list">
     <p (click)="shareFavoritesList(currentFavoriteList)">Share this Favorites List</p>
-    <p *ngIf="sharedFavoritesListLink" [copy-clipboard]="sharedFavoritesListLink" (copied)="notify($event)">
+    <p *ngIf="sharedFavoritesListLink" appCopyClipboard [copy-clipboard]="sharedFavoritesListLink" (copied)="notify($event)">
       Copy the link:
       &nbsp;
       <i class="far fa-copy gold"></i>
