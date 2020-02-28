@@ -33,10 +33,20 @@ export class ProductStoreItemComponent implements OnInit {
   stdText: any;
 
   constructor(private activatedRoute: ActivatedRoute,
+<<<<<<< HEAD
     private productsService: ProductsService,
     private dataex: DataExchangeService,
     private textService: TranslationService,
     private userService: UserService) { }
+=======
+              private productsService: ProductsService,
+              // private router: Router,
+              private dataex: DataExchangeService,
+              private textService: TranslationService,
+              // private archiveService: ArchiveService,
+              // private downloaderService: DownloaderService,
+              private userService: UserService) { }
+>>>>>>> bd1432bee5bd94e576da9b11080714e2ec1a9283
 
   ngOnInit() {
     this.dataex.currentLanguage
