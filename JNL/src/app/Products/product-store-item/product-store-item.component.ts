@@ -84,15 +84,14 @@ export class ProductStoreItemComponent implements OnInit {
         this.images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
           && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
         for (let i = 0; i < this.images.length; i++) {
-          const alt = `${this.prodDesc.brand} ${this.family} ${this.prodDesc.model}`;
           this.heroImages[i] = {
             src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/${this.images[i]}`,
-            alt: alt
+            alt: `${this.prodDesc.brand} ${this.family} ${this.prodDesc.model}`
           };
-          this.galleryImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/Thumbs/${this.images[i]}`,
-            alt: alt
-          };
+          // this.galleryImages[i] = {
+          //   src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/Thumbs/${this.images[i]}`,
+          //   alt: alt
+          // };
         }
         this.imgCount = this.images.length;
         this.heroImageToPrint = this.heroImages[0];
@@ -115,7 +114,7 @@ export class ProductStoreItemComponent implements OnInit {
 
   switchImageList(idx: number) {
     $('.carousel').carousel('pause');
-    const heroImagesTmp = _.cloneDeep(this.galleryImages);
+    const heroImagesTmp = _.cloneDeep(this.heroImages);
     if (idx > 0) {
       let firstElement: Img[];
       for (let j = 0; j < idx; j++) {

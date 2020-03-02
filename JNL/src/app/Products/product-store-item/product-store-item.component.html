@@ -31,8 +31,8 @@
 
   <div class="gallery-thumbs d-print-none">
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
-      *ngIf="galleryImages?.length>1">
-      <li *ngFor="let image of galleryImages; let j = index">
+      *ngIf="heroImages?.length>1">
+      <li *ngFor="let image of heroImages; let j = index">
         <img [src]="image.src" alt="{{image.alt}}" (click)="switchImageList(j)" class="img-responsive pointer">
       </li>
     </ol>
