@@ -129,9 +129,9 @@
   </div>
 
   <!-- REQUEST FORM -->
-  <div class="info_div d-print-none" *ngIf="text">
+  <div class="info_div d-print-none" *ngIf="stdText">
     <br>
-    <h2>{{text.infoTitle}}</h2>
+    <h2>{{stdText.infoTitle}}</h2>
     <app-request-form [requestType]='4' [product]="getProductName()"></app-request-form>
   </div>
 </div>

@@ -32,7 +32,6 @@ export class ProductComponent implements OnInit {
   imgCount = 0;
   scroller = true;
   language: string;
-  text: any;
   stdText: any;
 
   selected = [0, 0, 0, 0, 0];
@@ -163,11 +162,11 @@ export class ProductComponent implements OnInit {
       });
 
     // standard text for the form
-    this.textService.getTextFavorites()
-      .subscribe(data => {
-        const res = data[0];
-        this.text = res[lang.toUpperCase()];
-      });
+    // this.textService.getTextFavorites()
+    //   .subscribe(data => {
+    //     const res = data[0];
+    //     this.text = res[lang.toUpperCase()];
+    //   });
     this.getCountries();
   }
 

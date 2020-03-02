@@ -10,8 +10,8 @@
             "downloads": "Downloads",
             "tissus": "Fabrics",
             "cuirs": "Leathers",
-            "simili": "Faux Leathers"
-
+            "simili": "Faux Leathers",
+            "infoTitle": "Information Request"
         },
 
         "FR": {
@@ -24,7 +24,8 @@
             "downloads": "Downloads",
             "tissus": "Tissus",
             "cuirs": "Cuirs",
-            "simili": "Simili Cuirs"
+            "simili": "Simili Cuirs",
+            "infoTitle": "Information Request"
         }
     }
 ]

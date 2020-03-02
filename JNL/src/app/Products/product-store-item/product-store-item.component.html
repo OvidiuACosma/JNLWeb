@@ -1,7 +1,7 @@
-<div id="store-container" class="d-large">
+<div id="store-container" class="d-large" *ngIf="prodDesc">
   <div id="header">
-    <h1>{{model}}</h1>
-    <h4>{{brand}}</h4>
+    <h1>{{prodDesc.model}}</h1>
+    <h4>{{prodDesc.brand}}</h4>
     <h5>{{family | uppercase}}</h5>
   </div>
 
@@ -31,16 +31,21 @@
 
   <div class="gallery-thumbs d-print-none">
     <ol class="carousel-thumbnails hidden-sm-block hidden-xs-block visible-md-block visible-lg-block"
-      *ngIf="galleryImages?.length>1">
-      <li *ngFor="let image of galleryImages; let j = index">
+      *ngIf="heroImages?.length>1">
+      <li *ngFor="let image of heroImages; let j = index">
         <img [src]="image.src" alt="{{image.alt}}" (click)="switchImageList(j)" class="img-responsive pointer">
       </li>
     </ol>
   </div>
 
   <div class="product-info">
+<<<<<<< HEAD
     <span class="price">{{price}} &euro;</span>
     <span class="d-print-none">only {{qty}} left in stock</span>
+=======
+    <span class="price">{{prodDesc.price}} &euro;</span>
+    <span>only {{prodDesc.qty}} left in stock</span>
+>>>>>>> b407a161ebf290cf917c01eec14cc30918235b50
     <div class="print-btn pointer d-print-none" (click)="printProductSheet()">
       <i class="material-icons">print</i>
       <h3>&nbsp;&nbsp;PRINT</h3>
@@ -51,18 +56,27 @@
   <div class="desc d-print-none">
     <nav class="nav-justified nav-dimension center">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
+<<<<<<< HEAD
         <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
           aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>
         <a class="nav-item nav-link" id="nav-garn-tab" data-toggle="tab" href="#nav-garn" role="tab"
           *ngIf="prodGarns?.length>0" aria-controls="nav-garn" aria-selected="false">UPHOLSTERY</a>
         <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
           *ngIf="TDImages?.length>0" aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
+=======
+        <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab"
+          href="#nav-desc" role="tab">DESCRIPTION</a>
+        <a class="nav-item nav-link" id="nav-garn-tab" data-toggle="tab"
+          href="#nav-garn" role="tab">UPHOLSTERY</a>
+        <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab"
+          href="#nav-dim" role="tab">DRAWINGS</a>
+>>>>>>> b407a161ebf290cf917c01eec14cc30918235b50
       </div>
     </nav>
 
     <div class="tab-content" id="nav-tabContent">
       <!-- PRODUCT DESCRIPTION-->
-      <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
+      <div class="tab-pane fade show active" id="nav-desc" role="tabpanel">
         <div class="prod-desc">
           <div class="desc-details">
             <p>{{description}}</p>
@@ -70,7 +84,7 @@
         </div>
       </div>
       <!-- PRODUCT GARNISSAGES -->
-      <div class="tab-pane fade d-print-none" id="nav-garn" role="tabpanel" aria-labelledby="nav-garn-tab">
+      <div class="tab-pane fade d-print-none" id="nav-garn" role="tabpanel" *ngIf="prodGarns">
         <div class="prod-desc">
           <div class="garn-details">
             <div *ngFor="let item of prodGarns; let i=index">
@@ -87,7 +101,7 @@
         </div>
       </div>
       <!-- PRODUCT TECHNICAL DRAWINGS -->
-      <div class="tab-pane fade d-print-none" id="nav-dim" role="tabpanel" aria-labelledby="nav-dim-tab">
+      <div class="tab-pane fade d-print-none" id="nav-dim" role="tabpanel">
         <div class="prod-desc">
           <div class="td-details">
             <div *ngFor="let item of TDImages; let i=index" class="center">
@@ -106,7 +120,7 @@
   <!-- REQUEST FORM -->
   <div class="info_div d-print-none">
     <br>
-    <h2>{{text?.infoTitle}}</h2>
+    <h2>{{stdText?.infoTitle}}</h2>
     <app-request-form [requestType]='7' [product]="getProductName()"></app-request-form>
   </div>
 

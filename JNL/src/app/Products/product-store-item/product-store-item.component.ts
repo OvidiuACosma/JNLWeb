@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService } from '../../_services';
-import { UserService } from 'src/app/_services/user.service';
-import { IProductReadyToSell, IGarnissageRts, Img, ProductTDImage, IGarnissage } from 'src/app/_models';
+import { IProductReadyToSell, Img, ProductTDImage, IGarnissage } from 'src/app/_models';
 import * as _ from 'lodash';
+import { mergeMap, mergeMapTo, concatMap, map } from 'rxjs/operators';
 declare var $: any;
 
 @Component({
@@ -11,70 +11,68 @@ declare var $: any;
   templateUrl: './product-store-item.component.html',
   styleUrls: ['./product-store-item.component.scss']
 })
+
 export class ProductStoreItemComponent implements OnInit {
   language: string;
   id: any;
   images: string[] = [];
-  brand = '';
   family = '';
-  model = '';
-  price: number;
-  qty: number;
   description = '';
   prodDesc: IProductReadyToSell;
-  garnissageIds: string[] = [];
   prodGarns: IGarnissage[] = [];
   imgCount: number;
   heroImages: Img[] = [];
   galleryImages: Img[] = [];
   heroImageToPrint: Img;
-  public TDImages: ProductTDImage[] = [];
-  text: any;
+  TDImages: ProductTDImage[] = [];
   stdText: any;
 
   constructor(private activatedRoute: ActivatedRoute,
+<<<<<<< HEAD
     private productsService: ProductsService,
     private dataex: DataExchangeService,
     private textService: TranslationService,
     private userService: UserService) { }
+=======
+              private productsService: ProductsService,
+              private dataex: DataExchangeService,
+              private textService: TranslationService) { }
+>>>>>>> b407a161ebf290cf917c01eec14cc30918235b50
 
   ngOnInit() {
-    this.dataex.currentLanguage
-      .subscribe(lang => {
-        this.language = lang || 'EN';
-        this.getStdText(this.language);
-
-        this.activatedRoute.paramMap
-          .subscribe(params => {
-            this.id = params.get('id');
-            this.getProductData(parseInt(this.id, 10));
-          });
-      });
-    // this.getUser();
+    this.getData();
   }
 
-  getProductData(id: number) {
-    this.productsService.getProductReadyToSell(id)
-      .subscribe(desc => {
-        this.prodDesc = desc;
-        this.brand = desc.brand;
-        this.family = this.language === 'EN' ? desc.familyEn : desc.familyFr;
-        this.model = desc.model;
-        this.description = this.language === 'EN' ? desc.descriptionEn : desc.descriptionFr;
-        this.price = desc.price;
-        this.qty = desc.qty;
-        this.getProdGarnissages(id);
-        this.getImages();
-        this.getTDImages();
-      });
-  }
+  getData() {
+    this.dataex.currentLanguage.pipe(
+      mergeMap(lang => this.textService.getTextProductStandard().pipe(
+        mergeMap(text => this.activatedRoute.paramMap.pipe(
+          concatMap(params => this.productsService.getProductReadyToSell(Number(params.get('id'))).pipe(
+            concatMap(product => this.productsService.getProdReadyToSellGarnissages(product.id).pipe(
+              map(ga => ({
+                lang: lang,
+                text: text,
+                params: params,
+                product: product,
+                ga: ga
+              }))
+            ))
+          ))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.language = resp.lang || 'EN';
+      this.stdText = resp.text[0][this.language.toUpperCase()];
+      this.prodDesc = resp.product;
+      this.family = this.language === 'EN' ? resp.product.familyEn : resp.product.familyFr;
+      this.description = this.language === 'EN' ? resp.product.descriptionEn : resp.product.descriptionFr;
 
-  getProdGarnissages(id: number) {
-    this.productsService.getProdReadyToSellGarnissages(id)
-      .subscribe(garn => {
-        this.garnissageIds = garn.filter(f => f.productId === id).map(m => m.garnissageId);
-        this.getProdGarnissageDetails(this.garnissageIds);
-      });
+      this.getProdGarnissageDetails(resp.ga.map(m => m.garnissageId));
+
+      this.getImages();
+      this.getTDImages();
+    });
   }
 
   getProdGarnissageDetails(garns: string[]) {
@@ -84,24 +82,23 @@ export class ProductStoreItemComponent implements OnInit {
         const ga = garn.find(f => f.codeProd === garns[i]);
         this.prodGarns.push(ga);
       }
-      // console.log('GARN: ', this.prodGarns);
     });
   }
 
   getImages() {
     this.productsService.getProdReadyToSellImages()
       .subscribe(params => {
-        this.images = params.filter(f => f.Brand === this.brand && f.Family === this.prodDesc.familyFr
-          && f.Image.substring(0, f.Image.indexOf('_')) === this.model).map(m => m.Image);
+        this.images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
+          && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
         for (let i = 0; i < this.images.length; i++) {
           this.heroImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.brand}/${this.prodDesc.familyFr}/${this.images[i]}`,
-            alt: `${this.brand} ${this.family} ${this.model}`
+            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/${this.images[i]}`,
+            alt: `${this.prodDesc.brand} ${this.family} ${this.prodDesc.model}`
           };
-          this.galleryImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.brand}/${this.prodDesc.familyFr}/Thumbs/${this.images[i]}`,
-            alt: `${this.brand} ${this.family} ${this.model}`
-          };
+          // this.galleryImages[i] = {
+          //   src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/Thumbs/${this.images[i]}`,
+          //   alt: alt
+          // };
         }
         this.imgCount = this.images.length;
         this.heroImageToPrint = this.heroImages[0];
@@ -111,11 +108,11 @@ export class ProductStoreItemComponent implements OnInit {
   getTDImages() {
     this.productsService.getProdReadyToSellTDImages()
       .subscribe(params => {
-        this.images = params.filter(f => f.Brand === this.brand && f.Family === this.prodDesc.familyFr
-          && f.Image.substring(0, f.Image.indexOf('_')) === this.model).map(m => m.Image);
+        this.images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
+          && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
         for (let i = 0; i < this.images.length; i++) {
           this.TDImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.brand}/${this.prodDesc.familyFr}/TD/${this.images[i]}`,
+            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/TD/${this.images[i]}`,
             prodCode: this.images[i].substring(this.images[i].indexOf('_') + 1, this.images[i].indexOf('.'))
           };
         }
@@ -124,7 +121,7 @@ export class ProductStoreItemComponent implements OnInit {
 
   switchImageList(idx: number) {
     $('.carousel').carousel('pause');
-    const heroImagesTmp = _.cloneDeep(this.galleryImages);
+    const heroImagesTmp = _.cloneDeep(this.heroImages);
     if (idx > 0) {
       let firstElement: Img[];
       for (let j = 0; j < idx; j++) {
@@ -135,22 +132,6 @@ export class ProductStoreItemComponent implements OnInit {
     this.heroImages = _.cloneDeep(heroImagesTmp);
     this.imgCount = this.heroImages.length;
     $('.carousel').carousel('cycle');
-  }
-
-  getStdText(lang: string) {
-    this.textService.getTextProductStandard()
-      .subscribe(data => {
-        const resources = data[0];
-        this.stdText = resources[lang.toUpperCase()];
-      });
-
-    // standard text for the form
-    this.textService.getTextFavorites()
-      .subscribe(data => {
-        const res = data[0];
-        this.text = res[lang.toUpperCase()];
-      });
-    // this.getCountries();
   }
 
   // openDialog(garn: IProdGarnissage): Observable<boolean> {
@@ -164,7 +145,7 @@ export class ProductStoreItemComponent implements OnInit {
   // }
 
   getProductName(): string {
-    return `${this.family} ${this.model} ${this.brand}`;
+    return `${this.family} ${this.prodDesc.model} ${this.prodDesc.brand}`;
   }
 
   printProductSheet() {
