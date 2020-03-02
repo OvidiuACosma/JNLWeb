@@ -40,7 +40,7 @@
 
   <div class="product-info">
     <span class="price">{{price}} &euro;</span>
-    <span>only {{qty}} left in stock</span>
+    <span class="d-print-none">only {{qty}} left in stock</span>
     <div class="print-btn pointer d-print-none" (click)="printProductSheet()">
       <i class="material-icons">print</i>
       <h3>&nbsp;&nbsp;PRINT</h3>
@@ -54,9 +54,9 @@
         <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
           aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>
         <a class="nav-item nav-link" id="nav-garn-tab" data-toggle="tab" href="#nav-garn" role="tab"
-          aria-controls="nav-garn" aria-selected="false">UPHOLSTERY</a>
+          *ngIf="prodGarns?.length>0" aria-controls="nav-garn" aria-selected="false">UPHOLSTERY</a>
         <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
-          aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
+          *ngIf="TDImages?.length>0" aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
       </div>
     </nav>
 
@@ -111,16 +111,29 @@
   </div>
 
   <!-- PRODUCT SHEET TO PRINT-->
-    <div class="prod-desc d-none d-print-block">
-      <!-- <div>
-        <span>DESCRIPTION</span>
-        <hr>
-      </div> -->
-      <div class="desc-details">
-        <span>DESCRIPTION</span>
-        <hr>
-        <p>{{description}}</p>
+  <div class="prod-desc d-none d-print-block">
+    <div class="desc-details">
+      <span>DESCRIPTION</span>
+      <hr>
+      <p>{{description}}</p>
+    </div>
+  </div>
+
+  <div class="prod-desc d-none d-print-block" *ngIf="prodGarns?.length>0">
+    <div class="garn-details">
+      <span>GARNISSAGES</span>
+      <hr>
+      <div *ngFor="let item of prodGarns; let i=index">
+        <div class="garn-card">
+          <a>
+            <img alt="" src="assets\Images\Products\Garnissages\{{item.codeProd | uppercase }}.jpg">
+            <div>
+              <h2>{{item.model}}</h2>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
+  </div>
 
 </div>
