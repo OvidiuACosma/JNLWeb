@@ -6,12 +6,12 @@ import { Directive, Input, Output, EventEmitter, HostListener } from '@angular/c
 
 export class CopyToClipboardDirective {
 
+  // tslint:disable-next-line: no-input-rename
   @Input('copy-clipboard') public payload: string;
 
   @Output() public copied: EventEmitter<string> = new EventEmitter<string>();
 
-  @HostListener('click', ['$event'])
-  public onClick(event: MouseEvent): void {
+  @HostListener('click', ['$event']) public onClick(event: MouseEvent): void {
     event.preventDefault();
     if (!this.payload) { return; }
 
