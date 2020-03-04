@@ -4,7 +4,6 @@ import { DataExchangeService, ProductsService, TranslationService } from '../../
 import { IProductReadyToSell, Img, ProductTDImage, IGarnissage } from 'src/app/_models';
 import * as _ from 'lodash';
 import { mergeMap, mergeMapTo, concatMap, map } from 'rxjs/operators';
-declare var $: any;
 
 @Component({
   selector: 'app-product-store-item',
@@ -15,7 +14,7 @@ declare var $: any;
 export class ProductStoreItemComponent implements OnInit {
   language: string;
   id: any;
-  images: string[] = [];
+  // images: string[] = [];
   family = '';
   description = '';
   prodDesc: IProductReadyToSell;
@@ -28,16 +27,9 @@ export class ProductStoreItemComponent implements OnInit {
   stdText: any;
 
   constructor(private activatedRoute: ActivatedRoute,
-<<<<<<< HEAD
-    private productsService: ProductsService,
-    private dataex: DataExchangeService,
-    private textService: TranslationService,
-    private userService: UserService) { }
-=======
               private productsService: ProductsService,
               private dataex: DataExchangeService,
               private textService: TranslationService) { }
->>>>>>> b407a161ebf290cf917c01eec14cc30918235b50
 
   ngOnInit() {
     this.getData();
@@ -69,7 +61,6 @@ export class ProductStoreItemComponent implements OnInit {
       this.description = this.language === 'EN' ? resp.product.descriptionEn : resp.product.descriptionFr;
 
       this.getProdGarnissageDetails(resp.ga.map(m => m.garnissageId));
-
       this.getImages();
       this.getTDImages();
     });
@@ -88,19 +79,15 @@ export class ProductStoreItemComponent implements OnInit {
   getImages() {
     this.productsService.getProdReadyToSellImages()
       .subscribe(params => {
-        this.images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
+        const images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
           && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
-        for (let i = 0; i < this.images.length; i++) {
+        for (let i = 0; i < images.length; i++) {
           this.heroImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/${this.images[i]}`,
+            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/${images[i]}`,
             alt: `${this.prodDesc.brand} ${this.family} ${this.prodDesc.model}`
           };
-          // this.galleryImages[i] = {
-          //   src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/Thumbs/${this.images[i]}`,
-          //   alt: alt
-          // };
         }
-        this.imgCount = this.images.length;
+        this.imgCount = this.heroImages.length;
         this.heroImageToPrint = this.heroImages[0];
       });
   }
@@ -108,31 +95,17 @@ export class ProductStoreItemComponent implements OnInit {
   getTDImages() {
     this.productsService.getProdReadyToSellTDImages()
       .subscribe(params => {
-        this.images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
+        const images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
           && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
-        for (let i = 0; i < this.images.length; i++) {
+        for (let i = 0; i < images.length; i++) {
           this.TDImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/TD/${this.images[i]}`,
-            prodCode: this.images[i].substring(this.images[i].indexOf('_') + 1, this.images[i].indexOf('.'))
+            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/TD/${images[i]}`,
+            prodCode: images[i].substring(images[i].indexOf('_') + 1, images[i].indexOf('.'))
           };
         }
       });
   }
 
-  switchImageList(idx: number) {
-    $('.carousel').carousel('pause');
-    const heroImagesTmp = _.cloneDeep(this.heroImages);
-    if (idx > 0) {
-      let firstElement: Img[];
-      for (let j = 0; j < idx; j++) {
-        firstElement = heroImagesTmp.splice(0, 1);
-        heroImagesTmp.push(firstElement[0]);
-      }
-    }
-    this.heroImages = _.cloneDeep(heroImagesTmp);
-    this.imgCount = this.heroImages.length;
-    $('.carousel').carousel('cycle');
-  }
 
   // openDialog(garn: IProdGarnissage): Observable<boolean> {
   //   const dialogConfig = this.productService.getGarnissageDialogConfig(garn, 'ga', this.browser.isDesktopDevice);
