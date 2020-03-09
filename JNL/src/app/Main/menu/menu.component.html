@@ -7,8 +7,8 @@
     <div id="side_nav_links" *ngIf="text">
         <div>
             <span (click)="NavigateTo('product/productSearch')">{{text.produits}}</span>
-            <a (click)="NavigateTo('product/productSearch')">Product Finder</a>
-            <a (click)="NavigateTo('product/productStore')">Ready To Sell</a>
+            <!-- <a (click)="NavigateTo('product/productSearch')">Product Finder</a>
+            <a (click)="NavigateTo('product/productStore')">Ready To Sell</a> -->
         </div>
 
         <div>
@@ -46,6 +46,11 @@
             <span (click)="NavigateTo('press')">{{text.presse}}</span>
             <a (click)="NavigateTo('press', 'catalogues')">{{text.catalogues}}</a>
             <a (click)="NavigateTo('press', 'banqueImages')">{{text.banque}}</a>
+        </div>
+
+        <div>
+          <span (click)="NavigateTo('product/productStore')">BUY NOW</span>
+          <a (click)="NavigateTo('product/productStore')">Products Ready To Ship</a>
         </div>
 
         <div>

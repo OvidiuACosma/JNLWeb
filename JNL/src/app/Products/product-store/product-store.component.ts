@@ -176,18 +176,6 @@ export class ProductStoreComponent implements OnInit {
       const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
       let fg: IFilter[] = fe[0].filterElement;
       switch (category) {
-        // case 'Type': {
-        //   switch (this.language.toLowerCase()) {
-        //     case 'en': {
-        //       fg = fg.filter(f => this.categoriesEn.has(f.displayName));
-        //       break;
-        //     }
-        //     case 'fr': {
-        //       fg = fg.filter(f => this.categoriesFr.has(f.displayName));
-        //     }
-        //   }
-        //   break;
-        // }
         case 'Family': {
           switch (this.language.toLowerCase()) {
             case 'en': {
@@ -212,13 +200,6 @@ export class ProductStoreComponent implements OnInit {
       this.router.navigate([target], {fragment: fragment});
     }
   }
-
-  // // TODO: CHANGE function for FAV
-  // removeItem(index: number) {
-  //   this.scroller = false;
-  //   this.total--;
-  //   // TODO: REMOVE FROM DB ?
-  // }
 
   resetFilter() {
     this.getFamilies(['all']);
