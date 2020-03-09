@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService } from '../../_services';
-import { IProductReadyToSell, Img, ProductTDImage, IGarnissage } from 'src/app/_models';
+import { IProductReadyToSell, Img, ProductTDImage, IGarnissage, IProdGarnissage } from 'src/app/_models';
 import * as _ from 'lodash';
+import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { mergeMap, mergeMapTo, concatMap, map } from 'rxjs/operators';
 
 @Component({
@@ -14,22 +17,24 @@ import { mergeMap, mergeMapTo, concatMap, map } from 'rxjs/operators';
 export class ProductStoreItemComponent implements OnInit {
   language: string;
   id: any;
-  // images: string[] = [];
   family = '';
   description = '';
   prodDesc: IProductReadyToSell;
-  prodGarns: IGarnissage[] = [];
+  prodGarns: IProdGarnissage[] = [];
   imgCount: number;
   heroImages: Img[] = [];
   galleryImages: Img[] = [];
   heroImageToPrint: Img;
   TDImages: ProductTDImage[] = [];
   stdText: any;
+  // prodGarns2: IProdGarnissage[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService,
               private dataex: DataExchangeService,
-              private textService: TranslationService) { }
+              private textService: TranslationService,
+              private dialog: MatDialog,
+              ) { }
 
   ngOnInit() {
     this.getData();
@@ -67,12 +72,14 @@ export class ProductStoreItemComponent implements OnInit {
   }
 
   getProdGarnissageDetails(garns: string[]) {
+    const gaList: IGarnissage[] = [];
     this.productsService.getGarnissages()
     .subscribe(garn => {
       for (let i = 0; i < garns.length; i++) {
         const ga = garn.find(f => f.codeProd === garns[i]);
-        this.prodGarns.push(ga);
+        gaList.push(ga);
       }
+      this.prodGarns = this.productsService.mapProducts(gaList, this.language);
     });
   }
 
@@ -106,16 +113,15 @@ export class ProductStoreItemComponent implements OnInit {
       });
   }
 
-
-  // openDialog(garn: IProdGarnissage): Observable<boolean> {
-  //   const dialogConfig = this.productService.getGarnissageDialogConfig(garn, 'ga', this.browser.isDesktopDevice);
-  //   const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
-  //   return dialogRef.afterClosed()
-  //   .pipe(
-  //     map(result => {
-  //     return result;
-  //   }));
-  // }
+  openDialog(garn: IProdGarnissage) {
+    const dialogConfig = this.productsService.getGarnissageDialogConfig(garn, 'ga', true);
+    const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
+    return dialogRef.afterClosed()
+    .pipe(
+      map(result => {
+      return result;
+    }));
+  }
 
   getProductName(): string {
     return `${this.family} ${this.prodDesc.model} ${this.prodDesc.brand}`;

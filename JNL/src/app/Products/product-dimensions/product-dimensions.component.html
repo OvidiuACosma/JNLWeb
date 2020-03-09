@@ -16,9 +16,8 @@
     <hr>
   </div>
   <div class="image-list">
-    <!-- <div *ngFor="let item of TDImages; let i=index" class="center" [ngClass]="{'break': i===1}"> -->
       <div class="d-print-inline-block center break" *ngFor="let item of TDImages; let i=index">
-      <img class="img-button" [src]="item.src">
+        <img class="img-button" [src]="item.src">
       <div class="center">
         <h3>{{item.prodCode}}</h3>
       </div>

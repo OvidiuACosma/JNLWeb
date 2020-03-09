@@ -177,47 +177,6 @@ span {
     }
   }
 
-  // .carousel-thumbnails {
-  //   position: static;
-  //   margin: 10px 0 0;
-  //   width: 100%;
-  //   text-align: center;
-  //   white-space: nowrap;
-
-  //   @media only screen and (max-width: 768px) {
-  //     overflow-x: scroll;
-  //     -webkit-overflow-scrolling: touch;
-  //   }
-  // }
-
-  // .carousel-thumbnails li {
-  //   background-color: transparent;
-  //   -webkit-border-radius: 0;
-  //   border-radius: 0;
-  //   display: inline-block;
-  //   height: auto;
-  //   /* margin: 2px !important; */
-  //   width: auto;
-  // }
-
-  // .carousel-thumbnails li img {
-  //   display: block;
-  //   margin: 0 2px !important;
-  //   border: 1px solid #959595;
-  //   width: 4.166vw;
-  //   height: 4.166vw;
-  //   object-fit: contain;
-  //   text-align: center;
-  //   @media only screen and (max-width: 768px) {
-  //     width: 50px;
-  //     height: 50px;
-  //   }
-  //   @media only screen and (max-width: 576px) {
-  //     width: 40px;
-  //     height: 40px;
-  //   }
-  // }
-
   .gallery-thumbs {
     margin-bottom: 4vw;
 
@@ -400,15 +359,9 @@ span {
     margin: auto;
     padding: 3.5vw 0;
     @media only screen and (max-width: 768px) {
-      // justify-content: center;
       width: 100vw;
       padding: 42px 0;
     }
-    // @media only screen and (max-width: 576px) {
-    //   justify-content: center;
-    //   width: 100vw;
-    //   padding: 42px 0;
-    // }
     @media only screen and (min-width: 1200px) {
       width: 840px;
       padding: 42px 0;
@@ -555,13 +508,13 @@ span {
   #store-container{
     hr {
       margin-top: 0 !important;
-      margin-bottom: 0.5rem !important;
+      margin-bottom: 5px !important;
       border-width: 2px;
       border-color: black;
       width: 100%;
     }
 
-    .desc-details, .garn-details {
+    .desc-details {
       width: 80vw;
       margin-left: auto;
       margin-right: auto;
@@ -569,6 +522,80 @@ span {
       p {
         padding-top: 0;
       }
+    }
+
+    .garn-header {
+      width: 80vw;
+      margin-left: auto; 
+      margin-right: auto; 
+      text-align: left;
+    }
+
+    .garn-details {
+      justify-content: flex-start;
+      width: 80vw;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .garn-card {
+      img {
+        object-fit: contain;
+        width: 240px;
+        height: auto;
+        margin-right: 30px;
+      }
+      span {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+
+    .td-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 90%;
+      margin: auto;
+      padding-top: 20px;
+  
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 2px solid #ddd;
+        margin-bottom: 40px;
+        text-align: center;
+        div {
+          border: 0px !important;
+        } 
+      }
+    }
+  
+    .img-button {
+      margin-bottom: 2vw;
+      object-fit: contain;
+    }
+
+    .footer-print {
+      position: fixed;
+      bottom: 0;
+      right: 10%;
+      padding-bottom: 20px;
+      width: 80%;
+    }
+
+    .footer-data {
+      display: flex;
+      justify-content: space-between;
+      span {
+        font-size: 16px;
+      }
+    }
+
+    .logo-print {
+      height: 24px;
     }
   }
 }

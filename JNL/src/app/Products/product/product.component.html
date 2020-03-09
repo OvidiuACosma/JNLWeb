@@ -104,8 +104,14 @@
     </div>
   </div>
 
-  <!-- PRODUCT SHEET TO PRINT-->
+  <!-- REQUEST FORM -->
+  <div class="info_div d-print-none" *ngIf="stdText">
+    <br>
+    <h2>{{stdText.infoTitle}}</h2>
+    <app-request-form [requestType]='4' [product]="getProductName()"></app-request-form>
+  </div>
 
+  <!-- PRODUCT SHEET TO PRINT-->
   <div class="d-none d-print-block">
     <div class="print">
       <div>
@@ -126,12 +132,5 @@
         <span>email: info@jnl.be</span>
       </div>
     </div>
-  </div>
-
-  <!-- REQUEST FORM -->
-  <div class="info_div d-print-none" *ngIf="stdText">
-    <br>
-    <h2>{{stdText.infoTitle}}</h2>
-    <app-request-form [requestType]='4' [product]="getProductName()"></app-request-form>
   </div>
 </div>
