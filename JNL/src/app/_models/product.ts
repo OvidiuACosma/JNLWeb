@@ -90,6 +90,7 @@ export interface IProductReadyToSell {
   descriptionEn: string;
   qty: number;
   price: number;
+  pricePro: number;
 }
 
 export interface IGarnissageRts {

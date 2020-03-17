@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-family: Helvetica-Light;
+  font-family: Helvetica;
   font-size: 1.5vw;
 
   @media only screen and (max-width: 768px) {
@@ -23,14 +23,14 @@ h2 {
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
 h3 {
   text-transform: uppercase;
   font-family: Helvetica-Light;
-  color: #dbbb76;
+  // color: #dbbb76;
 }
 
 h4 {
@@ -74,6 +74,40 @@ span {
   font-family: Helvetica-Light;
   font-size: 12px;
 }
+
+hr {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  border-width: 1px;
+  border-color: black;
+  width: 100%;
+}
+
+#rts-main {
+  margin: 15px;
+}
+
+#rts-title {
+  background-color: #00a2ff;
+  width:30%;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto;
+  line-height: 40px;
+}
+
+#rts-price {
+  background-color: #00a2ff;
+  // width:30%;
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: bold;
+  // margin: auto;
+  line-height: 40px;
+  margin-bottom: 0 !important;
+}
+
   
 #store-container {
   padding-top: var(--search-bar-height);
@@ -118,9 +152,9 @@ span {
   }
 
   .carousel {
-    margin-bottom: 4vw;
+    // margin-bottom: 4vw;
     @media only screen and (max-width: 768px) {
-      margin-bottom: 6vw;
+      // margin-bottom: 6vw;
     }
 
     ol {
@@ -154,9 +188,9 @@ span {
   }
 
   .carousel-inner {
-    margin: auto;
-    width: 56.72vw;
-    height: 37.43vw;
+    // margin: auto;
+    // width: 56.72vw;
+    // height: 37.43vw;
     text-align: center !important;
   }
 
@@ -192,12 +226,13 @@ span {
   .product-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 3vw;
-    .price {
-      font-size: 18px;
-      line-height: 22px;
-    }
+    align-items: flex-start;
+    height: inherit !important;
+    // margin-bottom: 3vw;
+    // .price {
+    //   font-size: 18px;
+    //   line-height: 22px;
+    // }
   }
 
   .print-btn {
@@ -449,15 +484,15 @@ span {
 			font-size: 13.2px;
     }
 
-    .slide-image {
-      max-width: 679px;
-      max-height: 450px;
-    }
+    // .slide-image {
+    //   max-width: 679px;
+    //   max-height: 450px;
+    // }
 
-    .carousel-inner {
-      width: 681px;
-      height: 445px;
-    }
+    // .carousel-inner {
+    //   width: 681px;
+    //   height: 445px;
+    // }
 
     .carousel-arrows {
       height: 24px;
