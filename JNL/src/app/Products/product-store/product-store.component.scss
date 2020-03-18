@@ -682,13 +682,15 @@
     min-height: 1.5vw;
     text-align: center;
     line-height: 1.6vw;
-
     @media only screen and (min-width: 769px) {
       max-width: 19.45vw;
     }
-
 		@media only screen and (max-width: 768px) {
 			font-size: 16px;
+		}
+
+		.product-price-text {
+			background-color: #00a2ff;
 		}
 
 		> span > i {
@@ -865,7 +867,8 @@
 			width: 240px;
 			margin-left: 18px;
 			margin-right: 18px;
-			margin-bottom: 66px;
+			// margin-bottom: 66px;
+			margin-bottom: 46px;
 		}
 
 		.prod-name {
@@ -901,7 +904,10 @@
 					font-size: 12px;
 				}
 				.product-price-text {
-					font-size: 18px;
+					font-size: 20px;
+					margin-top: 20px;
+					padding: 10px;
+					font-weight: bold;
 			  }
 				.product-name-text {
 					font-size: 14.4px;

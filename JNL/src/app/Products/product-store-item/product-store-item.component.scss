@@ -76,11 +76,10 @@ span {
 }
 
 hr {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin: 0 auto 0 0;
   border-width: 1px;
   border-color: black;
-  width: 100%;
+  width: 90%;
 }
 
 #rts-main {
@@ -101,10 +100,10 @@ hr {
   background-color: #00a2ff;
   // width:30%;
   font-family: Helvetica;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   // margin: auto;
-  line-height: 40px;
+  line-height: 48px;
   margin-bottom: 0 !important;
 }
 
