@@ -87,7 +87,6 @@ hr {
 }
 
 #rts-title {
-  background-color: #00a2ff;
   width:30%;
   font-family: Helvetica;
   font-size: 18px;
@@ -97,7 +96,6 @@ hr {
 }
 
 #rts-price {
-  background-color: #00a2ff;
   // width:30%;
   font-family: Helvetica;
   font-size: 26px;
@@ -145,7 +143,7 @@ hr {
 
   .slide-image {
     max-width: 56.52vw;
-    max-height: 37.43vw;
+    max-height: 34.666vw;
     object-fit: contain;
     text-align: center;
   }
@@ -483,10 +481,10 @@ hr {
 			font-size: 13.2px;
     }
 
-    // .slide-image {
-    //   max-width: 679px;
-    //   max-height: 450px;
-    // }
+    .slide-image {
+      max-width: 679px;
+      max-height: 416px;
+    }
 
     // .carousel-inner {
     //   width: 681px;

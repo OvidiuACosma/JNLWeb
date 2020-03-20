@@ -87,7 +87,7 @@ export class ProductStoreItemComponent implements OnInit {
     this.productsService.getProdReadyToSellImages()
       .subscribe(params => {
         const images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
-          && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
+          && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.id.toString()).map(m => m.Image);
         for (let i = 0; i < images.length; i++) {
           this.heroImages[i] = {
             src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/${images[i]}`,
@@ -121,6 +121,10 @@ export class ProductStoreItemComponent implements OnInit {
       map(result => {
       return result;
     }));
+  }
+
+  scrollToForm() {
+    document.getElementById('req-form').scrollIntoView();
   }
 
   getProductName(): string {

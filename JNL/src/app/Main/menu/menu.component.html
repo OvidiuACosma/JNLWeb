@@ -48,13 +48,9 @@
             <a (click)="NavigateTo('press', 'banqueImages')">{{text.banque}}</a>
         </div>
 
-        <!-- <div>
-          <span (click)="NavigateTo('product/productStore')">BUY NOW</span>
-          <a (click)="NavigateTo('product/productStore')">Products Ready To Ship</a>
-        </div> -->
-
         <div>
-            <span (click)="NavigateTo('contact')">{{text.contact}}</span>
+          <span (click)="NavigateTo('product/productStore')">{{text.buyNow}}</span>
+          <a (click)="NavigateTo('product/productStore')">{{text.readyToShip}}</a>
         </div>
 
         <div *ngIf="isLoggedIn()">
@@ -80,10 +76,14 @@
             <br>
         </div>
 
-        <div class="hide-mobile">
+        <div>
+            <span (click)="NavigateTo('contact')">{{text.contact}}</span>
+        </div>
+
+        <!-- <div class="hide-mobile">
             <a (click)="NavigateTo('extras/legal')">{{text.mentions}}</a>
             <a (click)="NavigateTo('extras/gdpr')">{{text.politique}}</a><br>
             <a (click)="NavigateTo('extras/credits')">{{text.credits}}</a>
-        </div>
+        </div> -->
     </div>
 </nav>
