@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService } from '../../_services';
-import { IProductReadyToSell, Img, IGarnissage, IProdGarnissage } from 'src/app/_models';
+import { IProductReadyToSell, Img, IGarnissage, IProdGarnissage, User } from 'src/app/_models';
 import * as _ from 'lodash';
-import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { mergeMap, concatMap, map } from 'rxjs/operators';
@@ -26,6 +25,7 @@ export class ProductStoreItemComponent implements OnInit {
   galleryImages: Img[] = [];
   heroImageToPrint: Img;
   stdText: any;
+  user: User;
 
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService,
@@ -39,18 +39,21 @@ export class ProductStoreItemComponent implements OnInit {
   }
 
   getData() {
-    this.dataex.currentLanguage.pipe(
-      mergeMap(lang => this.textService.getTextProductStandard().pipe(
-        mergeMap(text => this.activatedRoute.paramMap.pipe(
-          concatMap(params => this.productsService.getProductReadyToSell(Number(params.get('id'))).pipe(
-            concatMap(product => this.productsService.getProdReadyToSellGarnissages(product.id).pipe(
-              map(ga => ({
-                lang: lang,
-                text: text,
-                params: params,
-                product: product,
-                ga: ga
-              }))
+    this.dataex.currentUser.pipe(
+      mergeMap(user => this.dataex.currentLanguage.pipe(
+        mergeMap(lang => this.textService.getTextProductStandard().pipe(
+          mergeMap(text => this.activatedRoute.paramMap.pipe(
+            concatMap(params => this.productsService.getProductReadyToSell(Number(params.get('id')), user.type || 'w').pipe(
+              concatMap(product => this.productsService.getProdReadyToSellGarnissages(product.id).pipe(
+                map(ga => ({
+                  user: user,
+                  lang: lang,
+                  text: text,
+                  params: params,
+                  product: product,
+                  ga: ga
+                }))
+              ))
             ))
           ))
         ))

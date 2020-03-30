@@ -90,8 +90,6 @@ export interface IProductReadyToSell {
   descriptionEn: string;
   qty: number;
   price: number;
-  pricePro: number;
-  priceRu: number;
   index: number;
 }
 

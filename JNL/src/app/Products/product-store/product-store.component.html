@@ -40,37 +40,38 @@
 
     <!-- PRODUCTS -->
     <div class="products">
-      <span class="prod-name">&nbsp;Products found – {{productsFiltered.length}}</span>
+      <span class="prod-name">&nbsp;Products found – {{productsFiltered?.length}}</span>
       <div class="products-container">
         <div class="family-container" *ngFor="let family of getFamiliesGroup()">
           <span class="family-name">&nbsp;{{family}}</span>
           <ul class="list">
               <div class="flex-div">
-                <li *ngFor="let n of getProductsOfFamily(family)">
+                <li *ngFor="let product of getProductsOfFamily(family)">
                   <div class="card-product">
-                    <div class="pic-frame" (click)="goToProduct(n)">
+                    <div class="pic-frame" (click)="goToProduct(product)">
                       <figure class="center-product">
-                        <img class="search-img" [src]="getProductImage(n)" alt="{{n.brand}} {{n.familyFr}} {{n.model}}">
+                        <img class="search-img" [src]="getProductImage(product)"
+                          alt="{{product.brand}} {{product.familyFr}} {{product.model}}">
                       </figure>
                     </div>
 
                     <div style="position: relative">
                       <p class="product-name">
                         <!-- <span>
-                            <i class="far fa-heart heart" (click)="addToFavorites(n)"></i>
+                            <i class="far fa-heart heart" (click)="addToFavorites(product)"></i>
                         </span> -->
-                        <span class="product-name-text" (click)="goToProduct(n)">
-                          {{getProductName(n)}}
+                        <span class="product-name-text" (click)="goToProduct(product)">
+                          {{getProductName(product)}}
                         </span>
                       </p>
                       <p class="product-name">
-                        <span class="product-brand-text" (click)="goToProduct(n)">
-                          {{n.brand}}
+                        <span class="product-brand-text" (click)="goToProduct(product)">
+                          {{product.brand}}
                         </span>
                       </p>
                       <p class="product-name">
-                        <span class="product-price-text" (click)="goToProduct(n)">
-                          {{n.price}} &euro;
+                        <span class="product-price-text" (click)="goToProduct(product)">
+                          {{product.price}} &euro;
                         </span>
                       </p>
                     </div>

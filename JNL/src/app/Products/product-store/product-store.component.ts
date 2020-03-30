@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { User, IProductReadyToSell } from '../../_models';
+import { User, IProductReadyToSell, Browser } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
+import { mergeMap, concatMap, map } from 'rxjs/operators';
 
 interface IFilter {
   index: number;
@@ -29,89 +30,81 @@ interface IRouteParams {
   templateUrl: './product-store.component.html',
   styleUrls: ['./product-store.component.scss']
 })
+
 export class ProductStoreComponent implements OnInit {
-  public products: IProductReadyToSell[];
-  public routeParams: IRouteParams;
-  public productsFiltered: IProductReadyToSell[];
-  public familiesFr: any;
-  public familiesEn: any;
-  public searchText = '';
+
+  products: IProductReadyToSell[];
+  routeParams: IRouteParams;
+  productsFiltered: IProductReadyToSell[];
+  familiesFr: any;
+  familiesEn: any;
+  searchText = '';
   language: string;
   text: any;
   user: User;
   filterBy: string[] = ['Brand', 'Family'];
   brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio']);
   filterElements: IFilterElements[] = [];
-  scroller = true;
-  numbers: number[] = [];
-  total: number;
-
+  browser: Browser;
   toggle: boolean[];
 
   constructor(private router: Router,
     private route: ActivatedRoute,
     private dataex: DataExchangeService,
     private textService: TranslationService,
-    private productService: ProductsService) { this.router.events.subscribe((e: any) => {
-      if (e instanceof NavigationEnd) {
-        this.ngOnInit();
+    private productService: ProductsService) {
+      this.router.events.subscribe((e: any) => {
+        if (e instanceof NavigationEnd) {
+          this.ngOnInit();
+        }
+      });
+  }
+
+  ngOnInit() {
+    this.getData();
+    this.toggle = this.filterBy.map(m => true);
+  }
+
+  getData() {
+    this.dataex.currentUser.pipe(
+      mergeMap(user => this.dataex.currentBrowser.pipe(
+        mergeMap(_browser => this.dataex.currentLanguage.pipe(
+          concatMap(lang => this.textService.getTextFavorites().pipe(
+            concatMap(text => this.productService.getProductsReadyToSell(user.type || 'w').pipe(
+              mergeMap(products => this.productService.getGarnissages().pipe(
+                map(ga => ({
+                  user: user,
+                  browser: _browser,
+                  lang: lang,
+                  text: text,
+                  products: products,
+                  ga: ga
+                }))
+              ))
+            ))
+          ))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      this.user = resp.user;
+      this.browser = resp.browser;
+      this.language = resp.lang || 'EN';
+      this.text = resp.text[0][this.language.toUpperCase()];
+      this.products = resp.products;
+      this.productsFiltered = _.clone(this.products);
+      this.getFamilies();
+      this.getRouteParameters();
+      this.setFilterElements();
+      if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
+          this.routeParams.model || this.routeParams.searchText) {
+        this.activateItemSelection(this.routeParams);
+        this.selectFilter();
       }
     });
   }
 
-  ngOnInit() {
-    this.dataex.currentLanguage
-      .subscribe(lang => {
-      this.language = lang || 'EN';
-      this.getText(lang);
-
-      this.productService.getProductsToSell()
-      .subscribe(p => {
-        this.products = p;
-        this.productsFiltered = _.clone(this.products);
-        this.getFamilies();
-        this.getRouteParameters();
-        this.setFilterElements();
-        if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
-            this.routeParams.model || this.routeParams.searchText) {
-          this.activateItemSelection(this.routeParams);
-          this.selectFilter();
-        }
-     });
-    });
-
-    this.toggle = new Array(this.filterBy.length);
-    for (let i = 0; i < this.filterBy.length; i++) {
-      this.toggle[i] = true;
-    }
-    const numberAll = 15;
-    this.total = numberAll;
-
-    for (let index = 0; index < numberAll; index++) {
-      this.numbers.push(index);
-    }
-    this.getUser();
-  }
-
-  getText(lang: string) {
-    this.textService.getTextFavorites()
-      .subscribe(data => {
-      const res = data[0];
-      this.getLanguageText(res);
-    });
-  }
-
-  getLanguageText(res: any) {
-    this.text = res[this.language.toUpperCase()];
-  }
-
-  getUser() {
-    this.dataex.currentUser.subscribe( user => {
-      this.user = user;
-    });
-  }
-
-    getFamilies(brand: string[] = ['all']) {
+  getFamilies(brand: string[] = ['all']) {
     let products = _.clone(this.products);
     if (!brand.includes('all')) {
       products = products.filter(f => brand.includes(f.brand));
@@ -133,26 +126,19 @@ export class ProductStoreComponent implements OnInit {
   }
 
   setFilterElements() {
-    this.filterElements = [];
-    for (const f of this.filterBy) {
-      this.filterElements.push({filterGroup: f,
-        filterElement: this.getFilterElements(f)
-      });
-    }
+    this.filterElements = this.filterBy.map(m => {
+      return {
+        filterGroup: m,
+        filterElement: this.getFilterElements(m)
+      }
+    });
   }
 
   getFilterElements(filterGroup: string): IFilter[] {
     switch (filterGroup) {
       case 'Brand': { return this.setFilterListFromSet(this.brands); }
-      // case 'Type': {
-      //   switch (this.language.toLowerCase()) {
-      //     case 'fr': { return this.setFilterListFromSet(this.categoriesFr); }
-      //     case 'en': { return this.setFilterListFromSet(this.categoriesEn); }
-      //   }
-      //   break;
-      // }
       case 'Family': {
-        switch (this.language.toLowerCase()) {
+        switch (this.language?.toLowerCase()) {
           case 'fr': { return this.setFilterListFromSet(this.familiesFr); }
           case 'en': { return this.setFilterListFromSet(this.familiesEn); }
         }
@@ -174,10 +160,10 @@ export class ProductStoreComponent implements OnInit {
 
   getFilters(category: string): any {
       const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
-      let fg: IFilter[] = fe[0].filterElement;
+      let fg: IFilter[] = fe[0]?.filterElement;
       switch (category) {
         case 'Family': {
-          switch (this.language.toLowerCase()) {
+          switch (this.language?.toLowerCase()) {
             case 'en': {
               fg = fg.filter(f => this.familiesEn.has(f.displayName));
               break;
@@ -227,17 +213,12 @@ export class ProductStoreComponent implements OnInit {
     if (this.searchText !== '') {
       this.searchByText();
     }
-    this.scroller = false;
   }
 
   toggleSelection(c: string, displayName: string) {
     if (c !== '') {
       this.toggleItemSelection(c, displayName);
-      // filter the list of filter elements brand -> category -> familiy
-      if (c === 'Brand') {
-        this.resetFamilies();
-      }
-      if (c === 'Type') {
+      if (c === 'Brand' || c === 'Type') {
         this.resetFamilies();
       }
     }
@@ -255,7 +236,7 @@ export class ProductStoreComponent implements OnInit {
   getselectedItemsOfGroup(group: string): string[] {
     let selectedItems: string[] = this.filterElements.find(f => f.filterGroup === group)
       .filterElement.filter(v => v.checked).map(m => m.displayName);
-    if (selectedItems.length === 0) { selectedItems = ['all']; }
+    if (selectedItems?.length === 0) { selectedItems = ['all']; }
     return selectedItems;
   }
 
@@ -276,18 +257,14 @@ export class ProductStoreComponent implements OnInit {
   }
 
   getFilterItems(): number[] {
-    const filterItems: number[] = [];
-    for (let k = 0; k < this.filterElements.length; k++) {
-      filterItems.push(this.filterElements[k].filterElement.length);
-    }
-    return filterItems;
+    return this.filterElements.map(m => m.filterElement?.length);
   }
 
   getFilteredItems(filteredElements: IFilterElements[], filterItems: number[]): boolean[] {
     const filteredItems: boolean[] = [];
-    for (let j = 0; j < filteredElements.length; j++) {
-      if ((filteredElements[j].filterElement.length %
-        (filterItems[j] || filteredElements[j].filterElement.length)) === 0) {
+    for (let j = 0; j < filteredElements?.length; j++) {
+      if ((filteredElements[j].filterElement?.length %
+        (filterItems[j] || filteredElements[j].filterElement?.length)) === 0) {
           filteredItems.push(false);
         } else {
           filteredItems.push(true);
@@ -299,7 +276,7 @@ export class ProductStoreComponent implements OnInit {
   applyFilters(filteredItems: boolean[], filteredElements: IFilterElements[]) {
     let filterItemsList: string[] = [];
     this.productsFiltered = _.clone(this.products);
-    for (let l = 0; l < filteredItems.length; l++) {
+    for (let l = 0; l < filteredItems?.length; l++) {
       if (filteredItems[l]) {
         filterItemsList = this.getListOfFilterItems(filteredElements[l].filterElement);
         switch (l) {
@@ -307,19 +284,6 @@ export class ProductStoreComponent implements OnInit {
             this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.brand));
             break;
           }
-          // case 1: {
-          //   switch (this.language) {
-          //     case 'EN': {
-          //       this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryEn));
-          //       break;
-          //     }
-          //     case 'FR': {
-          //       this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.categoryFr));
-          //       break;
-          //     }
-          //   }
-          //   break;
-          // }
           case 1: {
             switch (this.language) {
               case 'EN': {
@@ -342,10 +306,10 @@ export class ProductStoreComponent implements OnInit {
     const searchText = accentFold(this.searchText.toLowerCase());
     if (this.searchText !== '') {
       this.productsFiltered = this.productsFiltered.filter(f =>
-        accentFold(f.brand.toLowerCase()).includes(searchText) ||
-        accentFold(f.familyEn.toLowerCase()).includes(searchText) ||
-        accentFold(f.familyFr.toLowerCase()).includes(searchText) ||
-        accentFold(f.model.toLowerCase()).includes(searchText)
+        accentFold(f.brand?.toLowerCase()).includes(searchText) ||
+        accentFold(f.familyEn?.toLowerCase()).includes(searchText) ||
+        accentFold(f.familyFr?.toLowerCase()).includes(searchText) ||
+        accentFold(f.model?.toLowerCase()).includes(searchText)
       );
     } else {
       this.selectFilter();
@@ -362,7 +326,6 @@ export class ProductStoreComponent implements OnInit {
   }
 
   scrollAfterFilter(fragment: string) {
-  // window.scrollTo(0, window.innerWidth / 100 * 9);
     const element = document.getElementById(fragment);
     if (element) {
       element.scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -371,7 +334,6 @@ export class ProductStoreComponent implements OnInit {
 
   toggleFilters(index: number) {
     this.toggle[index] = !this.toggle[index];
-    this.scroller = false;
   }
 
   getArrow(i: number): string {
@@ -382,7 +344,7 @@ export class ProductStoreComponent implements OnInit {
   }
 
   getFamiliesGroup(): any {
-    switch (this.language.toLowerCase()) {
+    switch (this.language?.toLowerCase()) {
       case 'fr': {
         return new Set(this.productsFiltered.map(f => f.familyFr));
       }
@@ -394,7 +356,7 @@ export class ProductStoreComponent implements OnInit {
 
   getProductsOfFamily(family: string): IProductReadyToSell[] {
     let productsOfFamily: IProductReadyToSell[];
-    switch (this.language.toLowerCase()) {
+    switch (this.language?.toLowerCase()) {
       case 'fr': {
         productsOfFamily = this.productsFiltered
         .filter(f => f.familyFr === family);
@@ -417,7 +379,7 @@ export class ProductStoreComponent implements OnInit {
 
   getProductName(product: IProductReadyToSell): string {
     let productName: string;
-    switch (this.language.toLowerCase()) {
+    switch (this.language?.toLowerCase()) {
       case 'fr': {
         productName = product.familyFr;
         break;

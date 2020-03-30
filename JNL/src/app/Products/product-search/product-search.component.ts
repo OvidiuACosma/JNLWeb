@@ -207,21 +207,7 @@ export class ProductSearchComponent implements OnInit {
   }
 
   sortProducts(p: ProductEF[]): ProductEF[] {
-    p.sort(function(a, b) {
-      if (a.indexFamily > b.indexFamily) {
-        return 1; // reverse
-      } else  if (a.indexFamily < b.indexFamily) {
-        return -1; // preserve
-      } else {
-        if (a.indexBrand > b.indexBrand) {
-          return 1; // reverse
-        } else {
-          return -1; // preserve
-        }
-      }
-      return -1;
-    });
-    return p;
+    return _.sortBy(p, ['indexFamily', 'indexBrand'], ['asc', 'asc']);
   }
 
   getFilters(category: string): any {
