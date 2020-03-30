@@ -11,7 +11,10 @@
             "tissus": "Fabrics",
             "cuirs": "Leathers",
             "simili": "Faux Leathers",
-            "infoTitle": "Information Request"
+            "infoTitle": "Information Request",
+            "readyToShip": "Ready to ship",
+            "orderHere": "Order here",
+            "buyInfo": "Click here to buy the product! The JNL customer service will get back to you by email within 24 hours to finalize the order. Or contact us directly at +32 10 22 24 44"
         },
 
         "FR": {
@@ -25,7 +28,10 @@
             "tissus": "Tissus",
             "cuirs": "Cuirs",
             "simili": "Simili Cuirs",
-            "infoTitle": "Information Request"
+            "infoTitle": "Information Request",
+            "readyToShip": "Prêt-à-expédier",
+            "orderHere": "Commander ici",
+            "buyInfo": "Cliquez ici pour acheter le produit! Un conseiller JNL reviendra vers vous par mail sous 24h pour finaliser la commande. Ou contactez nous directement au +32 10 22 24 44"
         }
     }
 ]

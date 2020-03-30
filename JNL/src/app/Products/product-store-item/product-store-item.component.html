@@ -1,53 +1,5 @@
 <div id="store-container" class="d-large" *ngIf="prodDesc">
-  <div id="rts-main">
-    <div class="d-flex" style="width:100%">
-      <div style="width:68%;">
-        <p id="rts-title">Ready to Ship</p>
-      </div>
-      <div></div>
-    </div>
-    <div class="d-flex" style="width:100%; margin-top:20px;">
-      <div style="width:66%;">
-        <div id='carousel-custom' class='carousel slide carousel-fade d-print-none' data-ride='carousel'
-          data-pause="false">
-          <div class="carousel-inner" style="border: 1px solid;">
-            <div class='carousel-item' *ngFor="let img of heroImages; let i = index"
-              [ngClass]="i === 0 ? 'item active' : 'item'">
-              <div class="carousel-item-image" *ngIf="heroImages">
-                <img [src]="img.src" alt="{{img.alt}}" class="slide-image">
-              </div>
-            </div>
-          </div>
-
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-custom" *ngFor="let img of heroImages; let j = index"
-              [ngClass]="j === 0 ? 'item active' : 'item'" attr.data-slide-to="{{j}}">
-              <div class="thumbnail">
-                <img class="img-responsive" [src]="img.src">
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <div class="product-info" style="padding-left:20px; width:34%;">
-        <div class="d-flex" style="width:100%;">
-          <div style="width:60%; text-align: left;">
-            <span>{{family}}</span>
-            <h2>{{prodDesc.model}}</h2>
-          </div>
-          <div style="width:40%; text-align: center;">
-            <p id="rts-price">{{prodDesc.price}} &euro;</p>
-          </div>
-        </div>
-        <hr>
-        <div style="height: 30px;">
-          <span>Collection</span>
-          <span>{{prodDesc.brand}}</span>
-        </div>
-        <hr>
-      </div>
-    </div>
-    <!-- <div id="header">
+  <div id="header">
     <h1>{{prodDesc.model}}</h1>
     <h4>{{prodDesc.brand}}</h4>
     <h5>{{family | uppercase}}</h5>
@@ -77,8 +29,8 @@
     </a>
 
     <ol class="carousel-indicators">
-      <li data-target="#carousel-custom" 
-      *ngFor="let img of heroImages; let j = index" [ngClass]="j === 0 ? 'item active' : 'item'" attr.data-slide-to="{{j}}">
+      <li data-target="#carousel-custom" *ngFor="let img of heroImages; let j = index"
+        [ngClass]="j === 0 ? 'item active' : 'item'" attr.data-slide-to="{{j}}">
         <div class="thumbnail">
           <img class="img-responsive" [src]="img.src">
         </div>
@@ -93,7 +45,6 @@
       <i class="material-icons">print</i>
       <h3>&nbsp;&nbsp;PRINT</h3>
     </div>
-  </div> -->
   </div>
 
   <!-- TABS -->
@@ -102,8 +53,10 @@
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
           aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>
+        <a class="nav-item nav-link" id="nav-garn-tab" data-toggle="tab" href="#nav-garn" role="tab"
+          *ngIf="prodGarns?.length>0" aria-controls="nav-garn" aria-selected="false">UPHOLSTERY</a>
         <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
-          *ngIf="TDImages?.length>0" aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
+          aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
       </div>
     </nav>
 
@@ -116,17 +69,34 @@
           </div>
         </div>
       </div>
-
+      <!-- PRODUCT GARNISSAGES -->
+      <div class="tab-pane fade d-print-none" id="nav-garn" role="tabpanel" *ngIf="prodGarns">
+        <div class="prod-desc">
+          <div class="garn-details">
+            <div *ngFor="let ga of prodGarns; let i=index">
+              <div class="garn-card">
+                <a>
+                  <img alt="" src="assets\Images\Products\Garnissages\{{ga.codeProd | uppercase }}.jpg"
+                    (click)="openDialog(ga)">
+                  <div>
+                    <h2>{{ga.model}}</h2>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- PRODUCT TECHNICAL DRAWINGS -->
       <div class="tab-pane fade d-print-none" id="nav-dim" role="tabpanel">
         <div class="prod-desc">
           <div class="td-details">
-            <div *ngFor="let item of TDImages; let i=index" class="center">
-              <img class="img-button" [src]="item.src" alt="">
-              <div class="center">
+            <img class="img-button"
+              src="assets\Images\Products\Ready To Sell\{{prodDesc.brand}}\{{prodDesc.familyFr}}\TD\{{prodDesc.id}}.jpg"
+              alt="">
+              <!-- <div class="center">
                 <h2>{{item.prodCode}}</h2>
-              </div>
-            </div>
+              </div> -->
           </div>
         </div>
       </div>
@@ -149,17 +119,34 @@
     </div>
   </div>
 
-  <div class="d-none d-print-inline-block" *ngIf="TDImages">
+  <div class="prod-desc d-none d-print-block" *ngIf="prodGarns?.length>0" style="margin-top: 30px; break-after: page;">
+    <div class="garn-header">
+      <span>GARNISSAGES</span>
+      <hr>
+    </div>
+    <div class="garn-details">
+      <div *ngFor="let item of prodGarns; let i=index">
+        <div class="garn-card">
+          <img src="assets\Images\Products\Garnissages\{{item.codeProd | uppercase }}.jpg">
+          <span>{{item.model}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-none d-print-inline-block">
     <div class="garn-header">
       <span>DRAWINGS</span>
       <hr>
     </div>
     <div class="td-details">
-      <div class="center" *ngFor="let item of TDImages; let i=index">
-        <img class="img-button" [src]="item.src">
-        <div class="center">
+      <div class="center">
+        <img class="img-button"
+          src="assets\Images\Products\Ready To Sell\{{prodDesc.brand}}\{{prodDesc.familyFr}}\TD\{{prodDesc.id}}.jpg"
+          alt="">
+        <!-- <div class="center">
           <h2>{{item.prodCode}}</h2>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

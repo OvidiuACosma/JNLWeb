@@ -91,6 +91,8 @@ export interface IProductReadyToSell {
   qty: number;
   price: number;
   pricePro: number;
+  priceRu: number;
+  index: number;
 }
 
 export interface IGarnissageRts {

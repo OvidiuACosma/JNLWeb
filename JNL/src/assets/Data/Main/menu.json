@@ -37,7 +37,10 @@
 
             "suivre": "We are social",
             "newsletter": "Newsletter",
-            "email": "Enter your email"
+            "email": "Enter your email",
+
+            "buyNow": "Buy now",
+            "readyToShip": "Products ready to ship"
 
         },
         "FR": {
@@ -77,7 +80,10 @@
 
             "suivre": "Nous Suivre",
             "newsletter": "Newsletter",
-            "email": "Votre e-mail"
+            "email": "Votre e-mail",
+
+            "buyNow": "Acheter maintenant",
+            "readyToShip": "Produits prêt-à-expédier"
         }
     }
 ]

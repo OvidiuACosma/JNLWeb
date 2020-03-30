@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService } from '../../_services';
-import { IProductReadyToSell, Img, ProductTDImage, IGarnissage, IProdGarnissage } from 'src/app/_models';
+import { IProductReadyToSell, Img, IGarnissage, IProdGarnissage } from 'src/app/_models';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
-import { mergeMap, mergeMapTo, concatMap, map } from 'rxjs/operators';
+import { mergeMap, concatMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-store-item',
@@ -25,9 +25,7 @@ export class ProductStoreItemComponent implements OnInit {
   heroImages: Img[] = [];
   galleryImages: Img[] = [];
   heroImageToPrint: Img;
-  TDImages: ProductTDImage[] = [];
   stdText: any;
-  // prodGarns2: IProdGarnissage[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService,
@@ -67,7 +65,6 @@ export class ProductStoreItemComponent implements OnInit {
 
       this.getProdGarnissageDetails(resp.ga.map(m => m.garnissageId));
       this.getImages();
-      this.getTDImages();
     });
   }
 
@@ -87,7 +84,7 @@ export class ProductStoreItemComponent implements OnInit {
     this.productsService.getProdReadyToSellImages()
       .subscribe(params => {
         const images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
-          && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
+          && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.id.toString()).map(m => m.Image);
         for (let i = 0; i < images.length; i++) {
           this.heroImages[i] = {
             src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/${images[i]}`,
@@ -96,20 +93,6 @@ export class ProductStoreItemComponent implements OnInit {
         }
         this.imgCount = this.heroImages.length;
         this.heroImageToPrint = this.heroImages[0];
-      });
-  }
-
-  getTDImages() {
-    this.productsService.getProdReadyToSellTDImages()
-      .subscribe(params => {
-        const images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
-          && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.model).map(m => m.Image);
-        for (let i = 0; i < images.length; i++) {
-          this.TDImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/TD/${images[i]}`,
-            prodCode: images[i].substring(images[i].indexOf('_') + 1, images[i].indexOf('.'))
-          };
-        }
       });
   }
 

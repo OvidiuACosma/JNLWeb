@@ -91,10 +91,6 @@ export class ProductsService {
     return this.http.get<IProductReadyToSell>(`${this.productReadyToSell}/${productId}`, {headers: this.headers});
   }
 
-  public getProdReadyToSellTDImages(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.urlAssets}/Products/readyToSellTDImages.json`, {headers: this.headers});
-  }
-
   public getProdReadyToSellGarnissages(productId: number): Observable<IGarnissageRts[]> {
     return this.http.get<IGarnissageRts[]>(`${this.product}/GARTS/${productId}`, {headers: this.headers});
   }
