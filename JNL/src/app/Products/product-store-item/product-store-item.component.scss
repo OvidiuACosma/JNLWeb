@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-family: Helvetica;
+  font-family: Helvetica-Light;
   font-size: 1.5vw;
 
   @media only screen and (max-width: 768px) {
@@ -23,14 +23,14 @@ h2 {
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 h3 {
   text-transform: uppercase;
   font-family: Helvetica-Light;
-  // color: #dbbb76;
+  color: #dbbb76;
 }
 
 h4 {
@@ -74,37 +74,6 @@ span {
   font-family: Helvetica-Light;
   font-size: 12px;
 }
-
-hr {
-  margin: 0 auto 0 0;
-  border-width: 1px;
-  border-color: black;
-  width: 90%;
-}
-
-#rts-main {
-  margin: 15px;
-}
-
-#rts-title {
-  width:30%;
-  font-family: Helvetica;
-  font-size: 18px;
-  font-weight: bold;
-  margin: auto;
-  line-height: 40px;
-}
-
-#rts-price {
-  // width:30%;
-  font-family: Helvetica;
-  font-size: 26px;
-  font-weight: bold;
-  // margin: auto;
-  line-height: 48px;
-  margin-bottom: 0 !important;
-}
-
   
 #store-container {
   padding-top: var(--search-bar-height);
@@ -143,15 +112,15 @@ hr {
 
   .slide-image {
     max-width: 56.52vw;
-    max-height: 34.666vw;
+    max-height: 37.43vw;
     object-fit: contain;
     text-align: center;
   }
 
   .carousel {
-    // margin-bottom: 4vw;
+    margin-bottom: 4vw;
     @media only screen and (max-width: 768px) {
-      // margin-bottom: 6vw;
+      margin-bottom: 6vw;
     }
 
     ol {
@@ -185,9 +154,9 @@ hr {
   }
 
   .carousel-inner {
-    // margin: auto;
-    // width: 56.72vw;
-    // height: 37.43vw;
+    margin: auto;
+    width: 56.72vw;
+    height: 37.43vw;
     text-align: center !important;
   }
 
@@ -223,13 +192,12 @@ hr {
   .product-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    height: inherit !important;
-    // margin-bottom: 3vw;
-    // .price {
-    //   font-size: 18px;
-    //   line-height: 22px;
-    // }
+    align-items: center;
+    margin-bottom: 3vw;
+    .price {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   .print-btn {
@@ -483,13 +451,13 @@ hr {
 
     .slide-image {
       max-width: 679px;
-      max-height: 416px;
+      max-height: 450px;
     }
 
-    // .carousel-inner {
-    //   width: 681px;
-    //   height: 445px;
-    // }
+    .carousel-inner {
+      width: 681px;
+      height: 445px;
+    }
 
     .carousel-arrows {
       height: 24px;
