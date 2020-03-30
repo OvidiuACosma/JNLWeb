@@ -53,11 +53,11 @@ export class MenuComponent implements OnInit {
   }
 
   isLoggedIn(): boolean {
-      if (localStorage.getItem('currentUser')) {
-        return true;
-      }
-      return false;
+    if (localStorage.getItem('currentUser')) {
+      return true;
     }
+    return false;
+  }
 
   signOut() {
     this.NavigateTo('home');
