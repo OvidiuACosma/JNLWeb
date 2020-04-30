@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataExchangeService, ProductsService, TranslationService } from '../../_services';
-import { IProductReadyToSell, Img, IGarnissage, IProdGarnissage, User } from 'src/app/_models';
+import { IProductReadyToSell, Img, IGarnissage, IProdGarnissage, User, Browser } from 'src/app/_models';
 import * as _ from 'lodash';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
@@ -26,6 +26,7 @@ export class ProductStoreItemComponent implements OnInit {
   heroImageToPrint: Img;
   stdText: any;
   user: User;
+  browser: Browser;
 
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService,
@@ -40,19 +41,22 @@ export class ProductStoreItemComponent implements OnInit {
 
   getData() {
     this.dataex.currentUser.pipe(
-      mergeMap(user => this.dataex.currentLanguage.pipe(
-        mergeMap(lang => this.textService.getTextProductStandard().pipe(
-          mergeMap(text => this.activatedRoute.paramMap.pipe(
-            concatMap(params => this.productsService.getProductReadyToSell(Number(params.get('id')), user.type || 'w').pipe(
-              concatMap(product => this.productsService.getProdReadyToSellGarnissages(product.id).pipe(
-                map(ga => ({
-                  user: user,
-                  lang: lang,
-                  text: text,
-                  params: params,
-                  product: product,
-                  ga: ga
-                }))
+      mergeMap(user => this.dataex.currentBrowser.pipe(
+        mergeMap(_browser => this.dataex.currentLanguage.pipe(
+          mergeMap(lang => this.textService.getTextProductStandard().pipe(
+            mergeMap(text => this.activatedRoute.paramMap.pipe(
+              concatMap(params => this.productsService.getProductReadyToSell(Number(params.get('id')), user.type || 'w').pipe(
+                concatMap(product => this.productsService.getProdReadyToSellGarnissages(product.id).pipe(
+                  map(ga => ({
+                    user: user,
+                    browser: _browser,
+                    lang: lang,
+                    text: text,
+                    params: params,
+                    product: product,
+                    ga: ga
+                  }))
+                ))
               ))
             ))
           ))
@@ -60,6 +64,7 @@ export class ProductStoreItemComponent implements OnInit {
       ))
     )
     .subscribe(resp => {
+      this.browser = resp.browser;
       this.language = resp.lang || 'EN';
       this.stdText = resp.text[0][this.language.toUpperCase()];
       this.prodDesc = resp.product;
@@ -112,6 +117,8 @@ export class ProductStoreItemComponent implements OnInit {
   getProductName(): string {
     return `${this.family} ${this.prodDesc.model} ${this.prodDesc.brand}`;
   }
+
+  orderHere() {}
 
   printProductSheet() {
     window.print();

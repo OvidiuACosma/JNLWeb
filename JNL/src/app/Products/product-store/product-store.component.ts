@@ -1,21 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { User, IProductReadyToSell, Browser, ProductEF, IProductToFavorites } from '../../_models';
+import { User, IProductReadyToSell, Browser, ProductEF, IProductToFavorites,
+         IProductsFiltersCached, IFilterElements, IFilter} from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
-import { mergeMap, concatMap, map } from 'rxjs/operators';
-
-interface IFilter {
-  index: number;
-  checked: boolean;
-  displayName: string;
-}
-
-interface IFilterElements {
-  filterGroup: string;
-  filterElement: IFilter[];
-}
+import { mergeMap, map } from 'rxjs/operators';
 
 interface IRouteParams {
   brand: string;
@@ -47,18 +37,13 @@ export class ProductStoreComponent implements OnInit {
   filterElements: IFilterElements[] = [];
   browser: Browser;
   toggle: boolean[];
+  productsFiltersCached: IProductsFiltersCached;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
     private dataex: DataExchangeService,
     private textService: TranslationService,
-    private productService: ProductsService) {
-      this.router.events.subscribe((e: any) => {
-        if (e instanceof NavigationEnd) {
-          this.ngOnInit();
-        }
-      });
-  }
+    private productService: ProductsService) { }
 
   ngOnInit() {
     this.getData();
@@ -69,16 +54,16 @@ export class ProductStoreComponent implements OnInit {
     this.dataex.currentUser.pipe(
       mergeMap(user => this.dataex.currentBrowser.pipe(
         mergeMap(_browser => this.dataex.currentLanguage.pipe(
-          concatMap(lang => this.textService.getTextFavorites().pipe(
-            concatMap(text => this.productService.getProductsReadyToSell(user.type || 'w').pipe(
-              mergeMap(products => this.productService.getGarnissages().pipe(
-                map(ga => ({
+          mergeMap(lang => this.textService.getTextFavorites().pipe(
+            mergeMap(text => this.productService.getProductsReadyToSell(user.type || 'w').pipe( // concatMap
+              mergeMap(products => this.dataex.currentProductsRtsFilters.pipe(
+                map(pFilters => ({
                   user: user,
                   browser: _browser,
                   lang: lang,
                   text: text,
                   products: products,
-                  ga: ga
+                  pFilters: pFilters
                 }))
               ))
             ))
@@ -97,11 +82,8 @@ export class ProductStoreComponent implements OnInit {
       this.getFamilies();
       this.getRouteParameters();
       this.setFilterElements();
-      if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
-          this.routeParams.model || this.routeParams.searchText) {
-        this.activateItemSelection(this.routeParams);
-        this.selectFilter();
-      }
+      this.productsFiltersCached = resp.pFilters;
+      this.applyFiltersCached(resp.pFilters);
     });
   }
 
@@ -168,9 +150,30 @@ export class ProductStoreComponent implements OnInit {
     return filter;
   }
 
+  applyFiltersCached(productsFiltersCached: IProductsFiltersCached) {
+    if (_.filter(productsFiltersCached.filteredItems, value => value).length) {
+      this.updateFilterElementsFromCache(productsFiltersCached.filteredElements);
+      this.selectFilter('', '', true);
+    }
+    if (productsFiltersCached.searchText !== '') {
+      this.searchText = productsFiltersCached.searchText;
+      this.searchByText();
+    }
+  }
+
+  updateFilterElementsFromCache(filteredElementsCached: IFilterElements[]) {
+    filteredElementsCached.forEach(element => {
+      element.filterElement.forEach(fe => {
+        this.filterElements.find(f => f.filterGroup === element.filterGroup).filterElement
+                           .find(f => f.displayName === fe.displayName).checked = fe.checked;
+      });
+    });
+  }
+
   getFilters(category: string): IFilter[] {
       const fe: IFilterElements[] = _.filter(this.filterElements, { 'filterGroup': category });
-      let fg: IFilter[] = fe[0]?.filterElement;
+      if (!fe[0]) { return;  }
+      let fg: IFilter[] = fe[0].filterElement;
       switch (category) {
         case 'Family': {
           switch (this.language?.toLowerCase()) {
@@ -198,12 +201,13 @@ export class ProductStoreComponent implements OnInit {
   }
 
   resetFilter() {
+    this.searchText = '';
     this.getFamilies(['all']);
     this.setFilterElements();
     this.productsFiltered = _.clone(this.products);
   }
 
-  selectFilter(c = '', displayName = '') {
+  selectFilter(c = '', displayName = '', fromCached = false) {
     this.scrollAfterFilter('content');
     let filteredElements: IFilterElements[];
     let filterItems: number[];
@@ -220,15 +224,16 @@ export class ProductStoreComponent implements OnInit {
     filterItems = this.getFilterItems();
     filteredItems = this.getFilteredItems(filteredElements, filterItems);
     this.applyFilters(filteredItems, filteredElements);
-    if (this.searchText !== '') {
-      this.searchByText();
+    if (this.searchText !== '') { this.searchByText(); }
+    if (!fromCached) {
+      this.cacheFilters(this.searchText, filteredItems, filteredElements);
     }
   }
 
   toggleSelection(c: string, displayName: string) {
     if (c !== '') {
       this.toggleItemSelection(c, displayName);
-      if (c === 'Brand' || c === 'Type') {
+      if (c === 'Brand') {
         this.resetFamilies();
       }
     }
@@ -237,6 +242,14 @@ export class ProductStoreComponent implements OnInit {
   toggleItemSelection(c: string, displayName: string) {
     this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked =
       !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
+  }
+
+  cacheFilters(searchText: string, filteredItems: boolean[], filteredElements: IFilterElements[]) {
+    this.productsFiltersCached = {
+      searchText: searchText,
+      filteredItems: filteredItems,
+      filteredElements: filteredElements};
+    this.dataex.setProductsRtsFilters(this.productsFiltersCached);
   }
 
   resetFamilies() {
@@ -321,6 +334,7 @@ export class ProductStoreComponent implements OnInit {
         accentFold(f.familyFr?.toLowerCase()).includes(searchText) ||
         accentFold(f.model?.toLowerCase()).includes(searchText)
       );
+      this.cacheFilters(searchText, this.productsFiltersCached.filteredItems, this.productsFiltersCached.filteredElements);
     } else {
       this.selectFilter();
     }

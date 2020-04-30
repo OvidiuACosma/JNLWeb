@@ -175,6 +175,7 @@ export class ProductGarnissagesComponent implements OnInit {
 
   getFilters(category: string): any {
     const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
+    if (!fe[0]) { return; }
     let fg: IFilter[] = fe[0].filterElement;
     switch (category) {
       case 'Type': {

@@ -62,10 +62,7 @@ export class ProductSearchComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
-    this.toggle = new Array(this.filterBy.length);
-    for (let i = 0; i < this.filterBy.length; i++) {
-      this.toggle[i] = true;
-    }
+    this.toggle = this.filterBy.map(m => true);
   }
 
   getData() {
@@ -105,7 +102,7 @@ export class ProductSearchComponent implements OnInit {
       this.getRouteParameters();
       this.setFilterElements();
       this.productsFiltersCached = resp.pFilters;
-      this.applyFiltersCached(resp.pFilters);
+        this.applyFiltersCached(resp.pFilters);
       if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
           this.routeParams.model || this.routeParams.searchText) {
         this.activateItemSelection(this.routeParams);
@@ -209,7 +206,7 @@ export class ProductSearchComponent implements OnInit {
   applyFiltersCached(productsFiltersCached: IProductsFiltersCached) {
     if (_.filter(productsFiltersCached.filteredItems, value => value).length) {
       this.updateFilterElementsFromCache(productsFiltersCached.filteredElements);
-      this.selectFilter();
+      this.selectFilter('', '', true);
       // this.applyFilters(productsFiltersCached.filteredItems, productsFiltersCached.filteredElements);
     }
     if (productsFiltersCached.searchText !== '') {
@@ -234,7 +231,7 @@ export class ProductSearchComponent implements OnInit {
   getFilters(category: string): IFilter[] {
     if (this.filterElements === undefined) { return; }
     const fe: IFilterElements[] = _.filter(this.filterElements, {filterGroup: category});
-    if (!fe[0]) { return;  }
+    if (!fe[0]) { return; }
     let fg: IFilter[] = fe[0].filterElement;
     switch (category) {
       case 'Type': {
@@ -289,7 +286,7 @@ export class ProductSearchComponent implements OnInit {
     this.productsFiltered = _.clone(this.products);
   }
 
-  selectFilter(c = '', displayName = '') {
+  selectFilter(c = '', displayName = '', fromCached = false) {
     if (c.toLowerCase() === 'type' &&
         ['garnissage', 'upholstery'].includes(displayName.toLowerCase())) {
           this.router.navigate(['product/productGarnissages']);
@@ -313,7 +310,9 @@ export class ProductSearchComponent implements OnInit {
     if (this.searchText !== '') {
       this.searchByText();
     }
-    this.cacheFilters(this.searchText, filteredItems, filteredElements);
+    if (!fromCached) {
+      this.cacheFilters(this.searchText, filteredItems, filteredElements);
+    }
     this.scroller = false;
   }
 

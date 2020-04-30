@@ -53,10 +53,10 @@
             <a (click)="NavigateTo('press', 'banqueImages')">{{text.banque}}</a>
         </div>
 
-        <!-- <div>
+        <div>
           <span (click)="NavigateTo('product/productStore')">{{text.buyNow}}</span>
           <a (click)="NavigateTo('product/productStore')">{{text.readyToShip}}</a>
-        </div> -->
+        </div>
 
         <div *ngIf="isLoggedIn()">
           <span (click)="signOut()">Sign Out</span>

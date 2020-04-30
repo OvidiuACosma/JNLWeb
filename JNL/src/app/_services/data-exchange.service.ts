@@ -50,7 +50,7 @@ export class DataExchangeService {
     filteredItems: [],
     filteredElements: []
   });
-  currentProductsRtsFilters = this.subjectProductsFilters.asObservable();
+  currentProductsRtsFilters = this.subjectProductsRtsFilters.asObservable();
 
   constructor(private deviceService: DeviceDetectorService) { }
 

@@ -71,7 +71,7 @@
                       </p>
                       <p class="product-name">
                         <span class="product-price-text" (click)="goToProduct(product)">
-                          {{product.price}} &euro;
+                          {{product.price | number: '1.0-0'}} &euro;
                         </span>
                       </p>
                     </div>

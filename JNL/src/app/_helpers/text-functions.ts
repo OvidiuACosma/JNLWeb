@@ -1,4 +1,4 @@
-export function accentFold(string: string) {
+export function accentFold(string: string = '') {
     return string.replace(
       /([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])/g,
       function (str, a, c, e, i, n, o, s, u, y, ae) {

@@ -799,22 +799,23 @@
 	}
 
 	.product-price-text {
-    // padding: 0.5vw 1vw;
+    margin-top: 1.3vw;
     border-top: solid .5px black;
     border-bottom: solid .5px black;
-		font-weight: 600;
+    display: inline-block;
+		font-family: Helvetica;
 		font-size: 1.3vw;
-    line-height: 4.2vw;
+    line-height: 1.8vw;
 
 		@media only screen and (max-width: 768px) {
-			// padding: 5px 10px;
+			margin-top: 24px;
       font-size: 18px;
-      line-height: 48px;
+      line-height: 30px;
     }
     @media only screen and (max-width: 576px) {
-			// padding: 4px 8px;
+			margin-top: 16px;
       font-size: 14px;
-      line-height: 42px;
+      line-height: 20px;
 		}
 	}
 }
@@ -970,9 +971,9 @@
 					  font-size: 12px;
 				}
 				.product-price-text {
-					padding: 6px 12px;
-					font-size: 14px;
-					line-height: 42px;
+					margin-top: 18px;
+					font-size: 16px;
+					line-height: 24px;
 			  }
 			}
 		}
