@@ -2,12 +2,12 @@
 	padding-top: var(--search-bar-height);
 	// margin: auto;
 	// padding-top: 5.9vw;
-	
+
 	h1 {
 		@media only screen and (max-width: 768px) {
 			font-size: 32px;
 		}
-	
+
 		@media only screen and (max-width: 576px) {
 			font-size: 20px;
 		}
@@ -65,21 +65,21 @@
 	}
 
 	#store-header{
-		width: 38vw; 
+		width: 42vw;
 		height:10vw;
-		margin: auto auto 10px auto;  
-		// background-color: #00a2ff; 
+		margin: auto auto 10px auto;
+		// background-color: #00a2ff;
 		text-align: center;
 		@media only screen and (max-width: 768px) {
-      width: 400px; 
+      width: 400px;
 		 	height: 90px;
 		}
 		@media only screen and (max-width: 576px) {
-      width: 320px; 
+      width: 320px;
 		 	height: 60px;
     }
 		h1 {
-			padding-top: 1.666vw; 
+			padding-top: 1.666vw;
 			margin-bottom: 0.666vw;
 		}
 		p {
@@ -451,6 +451,7 @@
       > span {
         font-size: 1.4vw;
         line-height: 2vw;
+        white-space: pre;
 
         @media only screen and (max-width: 768px) {
           font-size: 24px;
@@ -798,20 +799,22 @@
 	}
 
 	.product-price-text {
-		// background-color: #00a2ff;
-		font-weight: bold;
-		padding: 0.5vw 1vw;
-		font-size: 1.66vw;
-		line-height: 3.66vw;
+    // padding: 0.5vw 1vw;
+    border-top: solid .5px black;
+    border-bottom: solid .5px black;
+		font-weight: 600;
+		font-size: 1.3vw;
+    line-height: 4.2vw;
+
 		@media only screen and (max-width: 768px) {
-			padding: 5px 10px;
-      font-size: 20px;
-      line-height: 34px;
+			// padding: 5px 10px;
+      font-size: 18px;
+      line-height: 48px;
     }
     @media only screen and (max-width: 576px) {
-			padding: 4px 8px;
-      font-size: 18px;
-      line-height: 30px;
+			// padding: 4px 8px;
+      font-size: 14px;
+      line-height: 42px;
 		}
 	}
 }
@@ -827,12 +830,12 @@
 		padding-top: 70.8px;
 
 		#store-header{
-			width: 456px; 
+			width: 490px;
 			height: 120px;
-			margin: auto;  
+			margin: auto;
 			text-align: center;
 			h1 {
-				padding-top: 20px; 
+				padding-top: 20px;
 				margin-bottom: 8px;
 			}
 			p {
@@ -900,7 +903,7 @@
 			.single-filter {
 				font-size: 15.6px;
 				line-height: 18px;
-	
+
 				> span {
 					font-size: 16.8px;
 					line-height: 24px;
@@ -968,8 +971,8 @@
 				}
 				.product-price-text {
 					padding: 6px 12px;
-					font-size: 20px;
-					line-height: 44px;
+					font-size: 14px;
+					line-height: 42px;
 			  }
 			}
 		}

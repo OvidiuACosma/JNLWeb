@@ -46,6 +46,7 @@ export class FavoritesComponent implements OnInit  {
   productsToFavProd: IProductToFavorites[];
   productsToFavGa: IProductToFavorites[];
   productsToFavFin: IProductToFavorites[];
+  productsToFavRts: IProductToFavorites[];
   productsToFav: IProductToFavorites[] = [];
 
   constructor(private route: ActivatedRoute,
@@ -106,7 +107,8 @@ export class FavoritesComponent implements OnInit  {
       const favProd = this.getFavoritesProductsByType(products, 1);
       const favPGa = this.getFavoritesProductsByType(products, 2);
       const favFin = this.getFavoritesProductsByTypeFin(products, 3);
-      this.getProductsDetails(favProd, favPGa, favFin);
+      const favRts = this.getFavoritesProductsByType(products, 4);
+      this.getProductsDetails(favProd, favPGa, favFin, favRts);
     });
   }
 
@@ -127,15 +129,18 @@ export class FavoritesComponent implements OnInit  {
               });
   }
 
-  getProductsDetails(favProd: any[], favPGa: any[], favFin: any[]) {
+  getProductsDetails(favProd: any[], favPGa: any[], favFin: any[], favRts: any[]) {
     this.favoritesService.getFavoritesProductsProd(favProd, this.language).pipe(
       mergeMap(fProd => this.favoritesService.getFavoritesProductsGa(favPGa, this.language).pipe(
         mergeMap(fGa => this.favoritesService.getFavoritesProductsFin(favFin, this.language).pipe(
-          map(fFin => ({
-            fProd: fProd,
-            fGa: fGa,
-            fFin: fFin
-          }))
+         mergeMap(fFin => this.favoritesService.getFavoritesProductsRts(favRts, this.language).pipe(
+            map(fRts => ({
+              fProd: fProd,
+              fGa: fGa,
+              fFin: fFin,
+              fRts: fRts
+            }))
+          ))
         ))
       ))
     )
@@ -143,8 +148,11 @@ export class FavoritesComponent implements OnInit  {
       this.productsToFavProd = resp.fProd;
       this.productsToFavGa = resp.fGa;
       this.productsToFavFin = resp.fFin;
+      this.productsToFavRts = resp.fRts;
+      console.log('Products to RTS:', this.productsToFavRts);
       this.productsToFav = [];
       if (this.productsToFavProd) { this.productsToFav.push(...this.productsToFavProd); }
+      if (this.productsToFavRts) { this.productsToFav.push(...this.productsToFavRts); }
       if (this.productsToFavGa) { this.productsToFav.push(...this.productsToFavGa); }
       if (this.productsToFavFin) { this.productsToFav.push(...this.productsToFavFin); }
     });
@@ -161,12 +169,21 @@ export class FavoritesComponent implements OnInit  {
       case 3: {
         return `assets/Images/Products/${product.brand}/Samples/Print/${product.text}.jpg`;
       }
+      case 4: {
+        return `assets/Images/Products/Ready To Sell/${product.brand}/${product.text}/Search/${product.id}.jpg`;
+      }
     }
     return '';
   }
 
   getAltText(product: IProductToFavorites): string {
     return `${product.brand} ${product.family} ${product.model}`;
+  }
+
+  goToFavoriteList(favListId: number) {
+    if (this.listId !== favListId) {
+      this.router.navigate([`product/favorites/${favListId}`]);
+    }
   }
 
   goToProduct(product: IProductToFavorites) {
@@ -182,6 +199,10 @@ export class FavoritesComponent implements OnInit  {
       }
       case 3: {
         this.showProductFin(product);
+        break;
+      }
+      case 4: {
+        this.router.navigate(['product/productStoreItem', {id: product.id}]);
         break;
       }
     }

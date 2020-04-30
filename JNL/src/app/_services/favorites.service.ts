@@ -47,6 +47,9 @@ export class FavoritesService {
       return this.http.post<IProductToFavorites[]>(`${this.apiUrl}/favFin/${lang}`, products, {headers: this.headers});
     }
 
+    public getFavoritesProductsRts(products: any[], lang: string): Observable<IProductToFavorites[]> {
+      return this.http.post<IProductToFavorites[]>(`${this.apiUrl}/favProdRts/${lang}`, products, {headers: this.headers});
+    }
 
     public postFavoritesList(favList: IFavorites): Observable<IFavorites> {
       return this.http.post<IFavorites>(`${this.apiUrl}`, favList, {headers: this.headers});

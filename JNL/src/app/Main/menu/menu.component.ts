@@ -64,27 +64,23 @@ export class MenuComponent implements OnInit {
     this.authenticationService.logout();
   }
 
-  // logIn() {
-  //   this.authGuard.logIn();
-  //   this.getUser();
-  // }
-
-  // logOut() {
-  //   this.autenticationService.logout();
-  //   this.getLogInText();
-  // }
-
   NavigateTo(target: string, fragment: string = '') {
     this.toggleMenuBar();
     if (fragment === '') {
       this.router.navigate([target]);
-      this.ScrollTop();
+      this.scrollTop();
     } else {
       this.router.navigate([target], {fragment: fragment});
     }
   }
 
-  ScrollTop() {
+  navigateToMarque(marque: string) {
+    this.toggleMenuBar();
+    this.scrollTop();
+    this.router.navigate(['/marque', marque]);
+  }
+
+  scrollTop() {
     window.scrollTo(0, 0);
   }
 

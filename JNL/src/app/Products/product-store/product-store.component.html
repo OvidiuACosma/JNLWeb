@@ -1,6 +1,6 @@
 <div id="store-container" class="d-large">
 	<div id="store-header">
-    <h1>Ready to ship</h1>
+    <h1>Products Ready to ship</h1>
     <p>A selection of products to buy now at lower prices</p>
   </div>
 	<div class="content" id="content">
@@ -24,8 +24,8 @@
                 <img class="arrow" [src]="getArrow(i)">
             </div>
             <ul id="filter-{{c}}" class="subfilters" [ngClass]="{'active' : toggle[i]}">
-              <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index" [ngClass]="i2 % 2 !== 0 ? 'right' : 'left'"
-                  (click)="selectFilter(c, d.displayName)">
+              <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index"
+                [ngClass]="i2 % 2 !== 0 ? 'right' : 'left'" (click)="selectFilter(c, d.displayName)">
                     <span>
                       <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
                     </span>
@@ -57,9 +57,9 @@
 
                     <div style="position: relative">
                       <p class="product-name">
-                        <!-- <span>
+                        <span>
                             <i class="far fa-heart heart" (click)="addToFavorites(product)"></i>
-                        </span> -->
+                        </span>
                         <span class="product-name-text" (click)="goToProduct(product)">
                           {{getProductName(product)}}
                         </span>

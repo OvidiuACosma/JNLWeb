@@ -20,7 +20,7 @@
       <div class="filters">
         <ul>
           <li *ngFor="let favItem of favoritesList; let i=index" class="single-filters"
-            (click)="setFavoriteList(favItem.id)">
+            (click)="goToFavoriteList(favItem.id)">
             {{favItem.listName}}
           </li>
         </ul>

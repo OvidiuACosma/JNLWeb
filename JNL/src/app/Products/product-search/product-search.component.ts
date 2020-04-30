@@ -2,24 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage,
-         IGarnissage, IProductToFavorites } from '../../_models';
+         IGarnissage, IProductToFavorites, IFilterElements, IFilter, IProductsFiltersCached } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
-import { mergeMap, map, concatMap } from 'rxjs/operators';
+import { mergeMap, map } from 'rxjs/operators';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { MatDialog } from '@angular/material/dialog';
-import { UserService } from 'src/app/_services/user.service';
-
-interface IFilter {
-  index: number;
-  checked: boolean;
-  displayName: string;
-}
-
-interface IFilterElements {
-  filterGroup: string;
-  filterElement: IFilter[];
-}
 
 interface IRouteParams {
   brand: string;
@@ -28,6 +16,7 @@ interface IRouteParams {
   model: string;
   searchText: string;
 }
+
 
 @Component({
   selector: 'app-product-search',
@@ -41,11 +30,11 @@ export class ProductSearchComponent implements OnInit {
   products: ProductEF[];
   productsFiltered: ProductEF[];
   garnissageList: IGarnissage[];
-  public categoriesFr: any;
-  public categoriesEn: any;
-  public familiesFr: any;
-  public familiesEn: any;
-  public searchText = '';
+  categoriesFr: any;
+  categoriesEn: any;
+  familiesFr: any;
+  familiesEn: any;
+  searchText = '';
   language: string;
   text: any;
   user: User;
@@ -53,17 +42,16 @@ export class ProductSearchComponent implements OnInit {
   brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio']);
   filterElements: IFilterElements[] = [];
   scroller = true;
-  // numbers: number[] = [];
   total: number;
   browser: Browser;
   toggle: boolean[];
+  productsFiltersCached: IProductsFiltersCached;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private productService: ProductsService,
-              private userService: UserService,
               private dialog: MatDialog) {
     this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
@@ -84,17 +72,20 @@ export class ProductSearchComponent implements OnInit {
     this.dataex.currentUser.pipe(
       mergeMap(user => this.dataex.currentBrowser.pipe(
         mergeMap(_browser => this.dataex.currentLanguage.pipe(
-          concatMap(lang => this.textService.getTextFavorites().pipe(
+          mergeMap(lang => this.textService.getTextFavorites().pipe(
             mergeMap(text => this.productService.getProducts().pipe(
               mergeMap(products => this.productService.getGarnissages().pipe(
-                map(ga => ({
-                  user: user,
-                  browser: _browser,
-                  lang: lang,
-                  text: text,
-                  products: products,
-                  ga: ga
-                }))
+                mergeMap(ga => this.dataex.currentProductsFilters.pipe(
+                  map(pFilters => ({
+                    user: user,
+                    browser: _browser,
+                    lang: lang,
+                    text: text,
+                    products: products,
+                    ga: ga,
+                    pFilters: pFilters
+                  }))
+                ))
               ))
             ))
           ))
@@ -113,6 +104,8 @@ export class ProductSearchComponent implements OnInit {
       this.getFamilies();
       this.getRouteParameters();
       this.setFilterElements();
+      this.productsFiltersCached = resp.pFilters;
+      this.applyFiltersCached(resp.pFilters);
       if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
           this.routeParams.model || this.routeParams.searchText) {
         this.activateItemSelection(this.routeParams);
@@ -121,10 +114,15 @@ export class ProductSearchComponent implements OnInit {
     });
   }
 
+  getFiltersList(products: ProductEF[]): string[] {
+    const filtersList: string[] = _.uniq(products.map(m => m.brand));
+    return filtersList;
+  }
+
   getCategories(brand: string[] = ['all']) {
     let products = _.clone(this.products);
     if (!brand.includes('all')) {
-      products = products.filter(f => brand.includes(f.brand));
+      products = _.filter(products, f => brand.includes(f.brand));
     }
       this.categoriesFr = new Set(products.map(c => c.categoryFr));
       this.categoriesEn = new Set(products.map(c => c.categoryEn));
@@ -161,7 +159,9 @@ export class ProductSearchComponent implements OnInit {
                       model: params.get('m'),
                       searchText: params.get('s')
       };
-      this.searchText = this.routeParams.searchText || '';
+      if (this.routeParams?.searchText) {
+        this.searchText = this.routeParams.searchText;
+      }
     });
   }
 
@@ -206,11 +206,32 @@ export class ProductSearchComponent implements OnInit {
     return filter;
   }
 
+  applyFiltersCached(productsFiltersCached: IProductsFiltersCached) {
+    if (_.filter(productsFiltersCached.filteredItems, value => value).length) {
+      this.updateFilterElementsFromCache(productsFiltersCached.filteredElements);
+      this.selectFilter();
+      // this.applyFilters(productsFiltersCached.filteredItems, productsFiltersCached.filteredElements);
+    }
+    if (productsFiltersCached.searchText !== '') {
+      this.searchText = productsFiltersCached.searchText;
+      this.searchByText();
+    }
+  }
+
+  updateFilterElementsFromCache(filteredElementsCached: IFilterElements[]) {
+    filteredElementsCached.forEach(element => {
+      element.filterElement.forEach(fe => {
+        this.filterElements.find(f => f.filterGroup === element.filterGroup).filterElement
+                           .find(f => f.displayName === fe.displayName).checked = fe.checked;
+      });
+    });
+  }
+
   sortProducts(p: ProductEF[]): ProductEF[] {
     return _.sortBy(p, ['indexFamily', 'indexBrand'], ['asc', 'asc']);
   }
 
-  getFilters(category: string): any {
+  getFilters(category: string): IFilter[] {
     if (this.filterElements === undefined) { return; }
     const fe: IFilterElements[] = _.filter(this.filterElements, {filterGroup: category});
     if (!fe[0]) { return;  }
@@ -261,6 +282,7 @@ export class ProductSearchComponent implements OnInit {
   }
 
   resetFilter() {
+    this.searchText = '';
     this.getCategories(['all']);
     this.getFamilies(['all']);
     this.setFilterElements();
@@ -291,6 +313,7 @@ export class ProductSearchComponent implements OnInit {
     if (this.searchText !== '') {
       this.searchByText();
     }
+    this.cacheFilters(this.searchText, filteredItems, filteredElements);
     this.scroller = false;
   }
 
@@ -311,6 +334,14 @@ export class ProductSearchComponent implements OnInit {
   toggleItemSelection(c: string, displayName: string) {
     this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked =
       !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
+  }
+
+  cacheFilters(searchText: string, filteredItems: boolean[], filteredElements: IFilterElements[]) {
+    this.productsFiltersCached = {
+      searchText: searchText,
+      filteredItems: filteredItems,
+      filteredElements: filteredElements};
+    this.dataex.setProductsFilters(this.productsFiltersCached);
   }
 
   resetCategories() {
@@ -375,7 +406,7 @@ export class ProductSearchComponent implements OnInit {
   }
 
   applyFilters(filteredItems: boolean[], filteredElements: IFilterElements[]) {
-    if (filteredItems && filteredItems.length > 0) {
+    if (filteredItems?.length > 0) {
       let filterItemsList: string[] = [];
       this.productsFiltered = _.clone(this.products);
       for (let l = 0; l < filteredItems.length; l++) {
@@ -429,6 +460,7 @@ export class ProductSearchComponent implements OnInit {
         accentFold(f.familyFr.toLowerCase()).includes(searchText) ||
         accentFold(f.model.toLowerCase()).includes(searchText)
       );
+      this.cacheFilters(searchText, this.productsFiltersCached.filteredItems, this.productsFiltersCached.filteredElements);
     } else {
       this.selectFilter();
     }
@@ -553,27 +585,8 @@ export class ProductSearchComponent implements OnInit {
   }
 
   addToFavorites(product: ProductEF) {
-    const productToFavorites: IProductToFavorites = {
-      brand: product.brand,
-      id: product.id,
-      id2: 0,
-      type: 1,
-      prodCode: null,
-      family: this.language === 'EN' ? product.familyEn : this.language === 'FR' ? product.familyFr : product.familyEn,
-      model: product.model,
-      text: ''
-    };
-      if (this.userService.isLoggedIn()) {
-        this.productService.openDialog(productToFavorites, this.user);
-      } else {
-        this.userService.openLoginDialog().subscribe(answer => {
-          if (answer) {
-            this.productService.openDialog(productToFavorites, this.user);
-          } else {
-            console.log('Not logged in. Can\'t add to favorites');
-          }
-        });
-      }
+    const productToFavorites: IProductToFavorites = this.productService.getProductToFavorites(product, this.language, 1);
+    this.productService.addToFavorites(productToFavorites, this.user);
   }
 
   scrollTop() {

@@ -210,28 +210,9 @@ export class ProductComponent implements OnInit {
   }
 
   addToFavorites(product: ProductEF) {
-    const productToFavorites: IProductToFavorites = {
-      brand: product.brand,
-      id: product.id,
-      id2: 0,
-      type: 1,
-      prodCode: null,
-      family: this.language === 'EN' ? product.familyEn : this.language === 'FR' ? product.familyFr : product.familyEn,
-      model: product.model,
-      text: ''
-    };
-    if (this.userService.isLoggedIn()) {
-      this.productsService.openDialog(productToFavorites, this.user);
-    } else {
-      this.userService.openLoginDialog().subscribe(answer => {
-        if (answer) {
-          this.productsService.openDialog(productToFavorites, this.user);
-        } else {
-          console.log('Not logged in. Can\'t add to favorites');
-        }
-      });
-    }
-}
+    const productToFavorites: IProductToFavorites = this.productsService.getProductToFavorites(product, this.language, 1);
+    this.productsService.addToFavorites(productToFavorites, this.user);
+  }
 
   NavigateTo(target: string, fragment: string = '') {
     if (fragment === '') {

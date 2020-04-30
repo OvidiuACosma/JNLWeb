@@ -132,3 +132,20 @@ export interface IProductDescription {
   finId: number;
   matId: number;
 }
+
+export interface IFilter {
+  index: number;
+  checked: boolean;
+  displayName: string;
+}
+
+export interface IFilterElements {
+  filterGroup: string;
+  filterElement: IFilter[];
+}
+
+export interface IProductsFiltersCached {
+  searchText: string;
+  filteredItems: boolean[];
+  filteredElements: IFilterElements[];
+}

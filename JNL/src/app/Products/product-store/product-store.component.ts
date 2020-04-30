@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
-import { User, IProductReadyToSell, Browser } from '../../_models';
+import { User, IProductReadyToSell, Browser, ProductEF, IProductToFavorites } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
 import { mergeMap, concatMap, map } from 'rxjs/operators';
@@ -92,6 +92,7 @@ export class ProductStoreComponent implements OnInit {
       this.language = resp.lang || 'EN';
       this.text = resp.text[0][this.language.toUpperCase()];
       this.products = resp.products;
+      this.filterBrands(this.products);
       this.productsFiltered = _.clone(this.products);
       this.getFamilies();
       this.getRouteParameters();
@@ -100,6 +101,15 @@ export class ProductStoreComponent implements OnInit {
           this.routeParams.model || this.routeParams.searchText) {
         this.activateItemSelection(this.routeParams);
         this.selectFilter();
+      }
+    });
+  }
+
+  filterBrands(products: IProductReadyToSell[]) {
+    const productsBrands = _.uniq(products.map(m => m.brand));
+    this.brands.forEach(element => {
+      if (!productsBrands.includes(element)) {
+        this.brands.delete(element);
       }
     });
   }
@@ -130,7 +140,7 @@ export class ProductStoreComponent implements OnInit {
       return {
         filterGroup: m,
         filterElement: this.getFilterElements(m)
-      }
+      };
     });
   }
 
@@ -158,8 +168,8 @@ export class ProductStoreComponent implements OnInit {
     return filter;
   }
 
-  getFilters(category: string): any {
-      const fe: IFilterElements[] = this.filterElements.filter(f => f.filterGroup === category);
+  getFilters(category: string): IFilter[] {
+      const fe: IFilterElements[] = _.filter(this.filterElements, { 'filterGroup': category });
       let fg: IFilter[] = fe[0]?.filterElement;
       switch (category) {
         case 'Family': {
@@ -204,7 +214,7 @@ export class ProductStoreComponent implements OnInit {
     // Determine filtering parameters
     filteredElements = _.cloneDeep(this.filterElements);
     _.map(filteredElements, element => {
-      element.filterElement = _.filter(element.filterElement, fe => fe.checked);
+      element.filterElement = _.filter(element.filterElement, { 'checked': true });
       return element;
     });
     filterItems = this.getFilterItems();
@@ -396,6 +406,11 @@ export class ProductStoreComponent implements OnInit {
   goToProduct(product: IProductReadyToSell) {
     this.router.navigate(['product/productStoreItem', {id: product.id}]);
     this.scrollTop();
+  }
+
+  addToFavorites(product: ProductEF) {
+    const productToFavorites: IProductToFavorites = this.productService.getProductToFavorites(product, this.language, 4);
+    this.productService.addToFavorites(productToFavorites, this.user);
   }
 
   scrollTop() {

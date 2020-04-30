@@ -347,17 +347,17 @@ export class ProductGarnissagesComponent implements OnInit {
     }));
   }
 
-  addToFavorites(ga: IProdGarnissage) {
-    if (this.userService.isLoggedIn()) {
-      // this.productService.openDialog(ga, this.user);
-    } else {
-      this.userService.openLoginDialog().subscribe(answer => {
-        if (answer) {
-          // this.productService.openDialog(ga, this.user);
-        } else {
-          console.log('Not logged in. Can\'t add to favorites');
-        }
-      });
-    }
-  }
+  // addToFavorites(ga: IProdGarnissage) {
+  //   if (this.userService.isLoggedIn()) {
+  //     // this.productService.openDialog(ga, this.user);
+  //   } else {
+  //     this.userService.openLoginDialog().subscribe(answer => {
+  //       if (answer) {
+  //         // this.productService.openDialog(ga, this.user);
+  //       } else {
+  //         console.log('Not logged in. Can\'t add to favorites');
+  //       }
+  //     });
+  //   }
+  // }
 }

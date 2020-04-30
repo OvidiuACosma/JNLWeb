@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, AlertService } from '../../_services';
 import { mergeMap, map } from 'rxjs/operators';
 declare var $: any;
@@ -16,8 +16,7 @@ export class HomeComponent implements OnInit {
   altText: any;
   page = 'home';
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,
+  constructor(private router: Router,
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private altService: AltImgService,

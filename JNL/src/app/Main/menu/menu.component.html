@@ -17,6 +17,11 @@
             <a (click)="NavigateTo('marques', 'vanhamme')">Vanhamme</a>
             <a (click)="NavigateTo('marques', 'ungaro')">Emanuel Ungaro Home</a>
             <a (click)="NavigateTo('marques', 'studio')">JNL Studio</a>
+            <!-- <span>{{text.marques}}</span>
+            <a (click)="navigateToMarque('jnl')">JNL Collection</a>
+            <a (click)="navigateToMarque('vanhamme')">Vanhamme</a>
+            <a (click)="navigateToMarque('ungaro')">Emanuel Ungaro Home</a>
+            <a (click)="navigateToMarque('studio')">JNL Studio</a> -->
         </div>
 
         <div>
@@ -48,10 +53,10 @@
             <a (click)="NavigateTo('press', 'banqueImages')">{{text.banque}}</a>
         </div>
 
-        <div>
+        <!-- <div>
           <span (click)="NavigateTo('product/productStore')">{{text.buyNow}}</span>
           <a (click)="NavigateTo('product/productStore')">{{text.readyToShip}}</a>
-        </div>
+        </div> -->
 
         <div *ngIf="isLoggedIn()">
           <span (click)="signOut()">Sign Out</span>

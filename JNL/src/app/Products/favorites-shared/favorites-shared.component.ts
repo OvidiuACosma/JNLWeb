@@ -36,6 +36,7 @@ export class FavoritesSharedComponent implements OnInit {
     }
 
   ngOnInit() {
+    console.log('getdata');
     this.getData();
   }
 
@@ -58,6 +59,7 @@ export class FavoritesSharedComponent implements OnInit {
       ))
     )
     .subscribe(resp => {
+      console.log('resp:', resp);
       this.language = resp.lang || 'EN';
       this.text = resp.text[0][this.language.toUpperCase()];
       this.currentFavoriteList = resp.fav[0];

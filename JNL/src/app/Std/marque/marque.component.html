@@ -26,7 +26,7 @@
           <!-- Indicators -->
           <ol class='carousel-indicators carousel-marque-indicators'>
             <li data-target='#carousel-custom' *ngFor="let itemC of getIndicatorsText(); let x = index"
-              [ngClass]="x == 0 ? 'active' : ''" attr.data-slide-to='{{x}}'>
+              [ngClass]="x === 0 ? 'active' : ''" attr.data-slide-to='{{x}}'>
               <span>{{itemC}}</span>
             </li>
           </ol>

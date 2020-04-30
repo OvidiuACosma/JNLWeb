@@ -4,7 +4,7 @@ import { DataExchangeService, TranslationService, AltImgService, DownloaderServi
 import * as _ from 'lodash';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/app/_models';
-// import * as FileSaver from 'file-saver';
+import { mergeMap, map } from 'rxjs/operators';
 
 interface ICatalog {
   brand: string;
@@ -44,6 +44,7 @@ export class MarqueComponent implements OnInit {
               public dialog: MatDialog) { }
 
   ngOnInit() {
+    // this.getData();
     this.route.params.subscribe(p => {
       this.marque = p['marque'];
       this.i = this.collectionsLink.indexOf(this.marque);
@@ -62,6 +63,23 @@ export class MarqueComponent implements OnInit {
       this.getAlt(this.page);
     });
     this.getCatalogLinks();
+  }
+
+  getData() {
+    this.route.params.pipe(
+      mergeMap(p => this.dataex.currentLanguage.pipe(
+        mergeMap(lang => this.textService.getTextMarque().pipe(
+          map(text => ({
+            p: p,
+            lang: lang,
+            text: text
+          }))
+        ))
+      ))
+    )
+    .subscribe(resp => {
+      // TODO: continue here.
+    });
   }
 
   getText(lang: string) {
@@ -148,17 +166,6 @@ export class MarqueComponent implements OnInit {
   }
 
   download(marque: string, type: string) {
-    // NOT WORKING FOR IE
-    // this.downloader.getFile(marque, type).subscribe(data => {
-    //   this.blob = new Blob([data], {
-    //     type: 'application/pdf'
-    //   });
-    //   const fileName = marque[0].toUpperCase() + marque.slice(1) + ' ' + type[0].toUpperCase() + type.slice(1) + '.pdf';
-    //   FileSaver.saveAs(this.blob, fileName);
-    // });
-      // this.url = window.URL.createObjectURL(this.blob);
-      // window.open(this.url, '_blank');
-
       marque = this.collectionsText[this.collectionsLink.indexOf(marque)];
       const catalogUrl = this.catalogs.find(f => f.brand === marque).catalogLink;
       const a = document.createElement('a');

@@ -23,13 +23,14 @@
                 <img class="arrow" [src]="getArrow(i)">
             </div>
             <ul id="filter-{{c}}" class="subfilters" [ngClass]="{'active' : toggle[i]}">
-              <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index" [ngClass]="i2 % 2 !== 0 ? 'right' : 'left'"
-                  (click)="selectFilter(c, d.displayName)">
-                    <span>
-                      <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
-                    </span>
-                    <span>&nbsp;&nbsp;</span>
-                    <span>{{d.displayName}}</span>
+              <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index"
+                [ngClass]="i2 % 2 !== 0 ? 'right' : 'left'"
+                (click)="selectFilter(c, d.displayName)">
+                <span>
+                  <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
+                </span>
+                <span>&nbsp;&nbsp;</span>
+                <span>{{d.displayName}}</span>
               </li>
             </ul>
           </li>

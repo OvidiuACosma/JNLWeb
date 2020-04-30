@@ -8,6 +8,7 @@ import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { FavoritesSelListComponent } from '../Products/favorites-sel-list/favorites-sel-list.component';
 import { DataExchangeService } from './data-exchange.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient,
               private configService: ConfigService,
+              private userService: UserService,
               private dialog: MatDialog,
               private dataex: DataExchangeService) {
     this.headers = new HttpHeaders({'Content-type': 'application/json; charset=utf-8'});
@@ -201,5 +203,33 @@ export class ProductsService {
       case 1: { return 'Ungaro Home'; }
       case 2: { return 'Ungaro Home'; }
     }
+  }
+
+  getProductToFavorites(product: any, language: string, type: number): IProductToFavorites {
+    const productToFavorites: IProductToFavorites = {
+      brand: product.brand,
+      id: product.id,
+      id2: 0,
+      type: type,
+      prodCode: null,
+      family: language === 'EN' ? product.familyEn : language === 'FR' ? product.familyFr : product.familyEn,
+      model: product.model,
+      text: ''
+    };
+    return productToFavorites;
+  }
+
+  addToFavorites(product: IProductToFavorites, user: User) {
+      if (this.userService.isLoggedIn()) {
+        this.openDialog(product, user);
+      } else {
+        this.userService.openLoginDialog().subscribe(answer => {
+          if (answer) {
+            this.openDialog(product, user);
+          } else {
+            console.log('Not logged in. Can\'t add to favorites');
+          }
+        });
+      }
   }
 }

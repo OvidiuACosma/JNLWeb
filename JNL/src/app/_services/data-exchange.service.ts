@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User, Browser } from '../_models';
+import { User, Browser, IProductsFiltersCached } from '../_models';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 
@@ -36,6 +36,21 @@ export class DataExchangeService {
   private subjectLanguage = new BehaviorSubject<string>('EN');
   currentLanguage = this.subjectLanguage.asObservable();
 
+  // Products Cached Filters
+  private subjectProductsFilters = new BehaviorSubject<IProductsFiltersCached>({
+    searchText: '',
+    filteredItems: [],
+    filteredElements: []
+  });
+  currentProductsFilters = this.subjectProductsFilters.asObservable();
+
+  // Products Ready to Sell Cached Filters
+  private subjectProductsRtsFilters = new BehaviorSubject<IProductsFiltersCached>({
+    searchText: '',
+    filteredItems: [],
+    filteredElements: []
+  });
+  currentProductsRtsFilters = this.subjectProductsFilters.asObservable();
 
   constructor(private deviceService: DeviceDetectorService) { }
 
@@ -62,5 +77,13 @@ export class DataExchangeService {
 
   public setLanguage(language: string) {
     this.subjectLanguage.next(language);
+  }
+
+  public setProductsFilters(productsFilters: IProductsFiltersCached) {
+    this.subjectProductsFilters.next(productsFilters);
+  }
+
+  public setProductsRtsFilters(productsRtsFilters: IProductsFiltersCached) {
+    this.subjectProductsRtsFilters.next(productsRtsFilters);
   }
 }

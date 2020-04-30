@@ -58,29 +58,9 @@ export class ProductGarnissageDetailsComponent implements OnInit {
   }
 
   addToFavorites(product: any) {
-    let productToFavorites: IProductToFavorites;
-    switch (this.data.type) {
-      case 'ga': {
-        productToFavorites = this.getProdToFavoritesGa(product);
-        break;
-      }
-      case 'fin': {
-        productToFavorites = this.getProdToFavoritesFin(product);
-        break;
-      }
-    }
+    const productToFavorites: IProductToFavorites = this.getProdToFavoritesGa(product);
     this.dialogRef.close();
-    if (this.userService.isLoggedIn()) {
-      this.productService.openDialog(productToFavorites, this.user);
-    } else {
-      this.userService.openLoginDialog().subscribe(answer => {
-        if (answer) {
-          this.productService.openDialog(productToFavorites, this.user);
-        } else {
-          console.log('Not logged in. Can\'t add to favorites');
-        }
-      });
-    }
+    this.productService.addToFavorites(productToFavorites, this.user);
   }
 
   getProdToFavoritesGa(product: IProdGarnissage): IProductToFavorites {
@@ -91,20 +71,6 @@ export class ProductGarnissageDetailsComponent implements OnInit {
       type: 2,
       prodCode: product.codeProd,
       family: product.material,
-      model: product.model,
-      text: ''
-    };
-    return productToFavorites;
-  }
-
-  getProdToFavoritesFin(product: any): IProductToFavorites {
-    const productToFavorites: IProductToFavorites = {
-      brand: product.brand,
-      id: product.id,
-      id2: product.id2,
-      type: 3,
-      prodCode: '',
-      family: product.family,
       model: product.model,
       text: ''
     };

@@ -201,27 +201,22 @@ export class ProductDescriptionComponent implements OnInit {
 
   addToFavorites(product: Finissage) {
     document.getElementById('btnClose').click();
+    const productToFavorites: IProductToFavorites = this.getProdToFavoritesFin(product);
+    this.productsService.addToFavorites(productToFavorites, this.user);
+  }
+
+  getProdToFavoritesFin(product: Finissage): IProductToFavorites {
     const productToFavorites: IProductToFavorites = {
       brand: product.brand,
       id: product.id,
       id2: product.materialId,
       type: 3,
-      prodCode: null,
+      prodCode: '',
       family: product.material,
       model: product.name,
       text: ''
     };
-    if (this.userService.isLoggedIn()) {
-      this.productsService.openDialog(productToFavorites, this.user);
-    } else {
-      this.userService.openLoginDialog().subscribe(answer => {
-        if (answer) {
-          this.productsService.openDialog(productToFavorites, this.user);
-        } else {
-          console.log('Not logged in. Can\'t add to favorites');
-        }
-      });
-    }
+    return productToFavorites;
   }
 }
 
