@@ -149,3 +149,13 @@ export interface IProductsFiltersCached {
   filteredItems: boolean[];
   filteredElements: IFilterElements[];
 }
+
+export interface IProductShareByEmail {
+  product: string;
+  productUrl: string;
+  imageUrl: string;
+  senderName: string;
+  senderEmail: string;
+  recipientEmails: string[];
+  message: string;
+}

@@ -290,6 +290,7 @@ export class ProductSearchComponent implements OnInit {
     if (c.toLowerCase() === 'type' &&
         ['garnissage', 'upholstery'].includes(displayName.toLowerCase())) {
           this.router.navigate(['product/productGarnissages']);
+          return;
     }
     this.scrollAfterFilter('content');
     let filteredElements: IFilterElements[];

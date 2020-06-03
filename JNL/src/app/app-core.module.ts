@@ -21,6 +21,7 @@ import { ForgotPasswordComponent } from './Auth/forgot-password/forgot-password.
 import { RegisterComponent } from './Auth/register/register.component';
 import { UserService } from './_services/user.service';
 import { CommonDialogComponent } from './Main/common-dialog/common-dialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -71,7 +72,8 @@ import { CommonDialogComponent } from './Main/common-dialog/common-dialog.compon
     LoginComponent,
     CommonDialogComponent,
     PricelistDialogComponent,
-    LoadingComponent
+    LoadingComponent,
+    FontAwesomeModule
   ],
   imports: [
     CommonModule,
@@ -81,7 +83,8 @@ import { CommonDialogComponent } from './Main/common-dialog/common-dialog.compon
     OverlayModule,
     ScrollingModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    FontAwesomeModule
   ],
   entryComponents: [
     DialogAnswerComponent,

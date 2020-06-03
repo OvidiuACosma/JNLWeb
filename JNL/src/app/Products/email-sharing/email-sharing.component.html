@@ -1,0 +1,55 @@
+<div class="dialog-answer">
+  <div class="close-x">
+    <svg (click)="close()" viewBox="0 0 250 250">
+      <rect x="120.1" y="-43.6" transform="matrix(0.7087 -0.7055 0.7055 0.7087 -51.1131 123.9573)" width="8.8" height="334.9"></rect>
+      <rect x="120.2" y="-43.6" transform="matrix(0.7055 0.7087 -0.7087 0.7055 124.4345 -51.8261)" width="8.8" height="334.9"></rect>
+    </svg>
+  </div>
+  <h2 mat-dialog-title>Email This Item</h2>
+  <div class="golden-line">&nbsp;</div>
+  <div mat-dialog-content class="container">
+    <form [formGroup]="productForm" (submit)="onSubmit()">
+      <div class="product-container">
+        <div>
+          <img class="product-image" [src]="productForm.value.imageUrl" alt=""/>
+        </div>
+        <div class="product-name">{{productForm.value.product}}</div>
+      </div>
+      <div>
+        <input class="input" type="text" formControlName="senderName" placeholder="Enter your name *"
+          [ngClass]="{'submitted': submitted && f.senderName.errors}">
+        <div class="validation-error" *ngIf="submitted && f.senderName.errors">
+          <div *ngIf="f.senderName.errors.required">Name is required!</div>
+        </div>
+      </div>
+      <div>
+        <input class="input" type="text" formControlName="senderEmail" placeholder="Enter your email *"
+          [ngClass]="{'submitted': submitted && f.senderEmail.errors}">
+        <div class="validation-error" *ngIf="submitted && f.senderEmail.errors">
+          <div *ngIf="f.senderEmail.errors.required">Email is required!</div>
+          <div *ngIf="!f.senderEmail.errors.required && f.senderEmail.errors.email">Email format is not correct!</div>
+        </div>
+      </div>
+      <div>
+        <input class="input" type="text" formControlName="recipientEmails"
+          placeholder="Enter recipient emails (maximum 3), separated by commas *"
+          [ngClass]="{'submitted': submitted && f.recipientEmails.errors}">
+        <div class="validation-error" *ngIf="submitted && f.recipientEmails.errors">
+          <div *ngIf="f.recipientEmails.errors.required">At least one email is required!</div>
+          <div *ngIf="!f.recipientEmails.errors.required && f.recipientEmails.errors.emailFormat">Email format is not correct!</div>
+          <div *ngIf="!f.recipientEmails.errors.required && f.recipientEmails.errors.emailsCount">Maximum 3 emails, comma separated!</div>
+        </div>
+      </div>
+      <div>
+        <textarea formControlName="message" name="message" placeholder="Add a personalized message (optional)"
+          maxlength="500" rows="6"></textarea>
+      </div>
+    </form>
+  </div>
+  <br>
+  <div mat-dialog-actions class="dialog-action">
+    <div class="send-button" (click)="onSubmit()">SEND</div>
+    <div class="bottom-info">You will receive a copy of this email</div>
+  </div>
+</div>
+

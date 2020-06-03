@@ -30,7 +30,7 @@ export class DialogAnswerComponent {
 })
 export class RequestFormComponent implements OnInit {
 
-  // 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites; 6 - Price List Req; 7 - Ready to Sell
+  // requestType: 1 - Newsletter; 2 - Contact; 3 - Projects; 4 - Product; 5 - Favorites; 6 - Price List Req; 7 - Ready to Sell
   @Input() requestType: number;
   @Input() product: string;
   @Input() favoritesList = 0;
@@ -124,8 +124,22 @@ export class RequestFormComponent implements OnInit {
     requestFormGroup.get('message').setValidators([Validators.required]);
     requestFormGroup.get('name').setValidators([Validators.required]);
     requestFormGroup.get('surname').setValidators([Validators.required]);
+    requestFormGroup.get('country').setValidators([Validators.required]);
+    if (this.requestType === 7) {
+      requestFormGroup.get('address').setValidators([Validators.required]);
+      requestFormGroup.get('city').setValidators([Validators.required]);
+      requestFormGroup.get('zip').setValidators([Validators.required]);
+    }
     requestFormGroup.updateValueAndValidity();
     return requestFormGroup;
+  }
+
+  getPlaceholderText(e: string): string {
+    let text = e;
+    if (this.requestType === 7) {
+      text = text + ' *';
+    }
+    return text;
   }
 
   onSubmit() {

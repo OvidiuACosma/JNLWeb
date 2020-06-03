@@ -13,12 +13,13 @@
     <img [src]="heroImageToPrint?.src" class="print-image">
   </div>
 
-  <div id='carousel-custom' class='carousel slide carousel-fade d-print-none' data-ride='carousel' data-pause="false">
+  <div id='carousel-custom' class='carousel slide carousel-fade d-print-none'
+       data-ride='carousel' data-pause="false">
     <div class="carousel-inner">
       <div class='carousel-item' *ngFor="let heroImage of heroImages; let i = index"
-        [ngClass]="i === 0 ? 'item active' : 'item'">
+        [ngClass]="i === 0 ? 'item active' : 'item'" id="{{'carouselItem' + i}}">
         <div class="carousel-item-image" *ngIf="heroImages">
-          <img [src]="heroImage.src" alt="{{heroImage.alt}}" class="slide-image">
+          <img id="imgProduct" [src]="heroImage.src" alt="{{heroImage.alt}}" class="slide-image">
         </div>
       </div>
     </div>

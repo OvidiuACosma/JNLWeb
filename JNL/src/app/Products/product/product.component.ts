@@ -39,7 +39,6 @@ export class ProductComponent implements OnInit {
   countryName: any;
   user: User;
 
-
   constructor(private activatedRoute: ActivatedRoute,
               private productsService: ProductsService,
               private router: Router,
@@ -120,6 +119,7 @@ export class ProductComponent implements OnInit {
       this.user = user;
     });
   }
+
   switchImageList(idx: number) {
     // if (this.newHeroImages.length === 0) {
     //   this.heroImages.length = 0;
@@ -160,13 +160,6 @@ export class ProductComponent implements OnInit {
         const resources = data[0];
         this.stdText = resources[lang.toUpperCase()];
       });
-
-    // standard text for the form
-    // this.textService.getTextFavorites()
-    //   .subscribe(data => {
-    //     const res = data[0];
-    //     this.text = res[lang.toUpperCase()];
-    //   });
     this.getCountries();
   }
 
@@ -240,4 +233,16 @@ export class ProductComponent implements OnInit {
     window.print();
   }
 
+  getActiveImage() {
+    for (let i = 0; i < this.heroImages.length; i++) {
+      const element = document.getElementById(`carouselItem${i}`);
+      if (element) {
+        if (element.attributes.getNamedItem('class').value.includes('item active')) {
+            console.log('element:', element.children[0].children[0].attributes.getNamedItem('src').value);
+          }
+      } else {
+        console.log('no element.');
+      }
+    }
+  }
 }

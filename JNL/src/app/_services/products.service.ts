@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
 import { Product, ProductEF, ProductHeroImage, IGarnissage, User, IGarnissageDto,
-         IProdGarnissage, IProductReadyToSell, IGarnissageRts, IProductToFavorites, IProductDescription } from '../_models';
+         IProdGarnissage, IProductReadyToSell, IGarnissageRts, IProductToFavorites, IProductDescription, IProductShareByEmail } from '../_models';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { FavoritesSelListComponent } from '../Products/favorites-sel-list/favorites-sel-list.component';
@@ -95,6 +95,10 @@ export class ProductsService {
 
   public getProdReadyToSellGarnissages(productId: number): Observable<IGarnissageRts[]> {
     return this.http.get<IGarnissageRts[]>(`${this.product}/GARTS/${productId}`, {headers: this.headers});
+  }
+
+  public shareProductByEmail(product: IProductShareByEmail): Observable<string> {
+    return this.http.post<string>(`${this.product}/sharebyemail`, product, {headers: this.headers});
   }
 
 
