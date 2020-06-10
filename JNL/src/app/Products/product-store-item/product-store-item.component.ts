@@ -96,11 +96,11 @@ export class ProductStoreItemComponent implements OnInit, AfterViewChecked {
   getImages() {
     this.productsService.getProdReadyToSellImages()
       .subscribe(params => {
-        const images = params.filter(f => f.Brand === this.prodDesc.brand && f.Family === this.prodDesc.familyFr
+        const images = params.filter(f => f.Brand === this.prodDesc.brand
           && f.Image.substring(0, f.Image.indexOf('_')) === this.prodDesc.id.toString()).map(m => m.Image);
         for (let i = 0; i < images.length; i++) {
           this.heroImages[i] = {
-            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${this.prodDesc.familyFr}/${images[i]}`,
+            src: `assets/Images/Products/Ready To Sell/${this.prodDesc.brand}/${images[i]}`,
             alt: `${this.prodDesc.brand} ${this.family} ${this.prodDesc.model}`
           };
         }
@@ -227,7 +227,8 @@ export class ProductStoreItemComponent implements OnInit, AfterViewChecked {
   }
 
   getCarouselProductImage(product: IProductReadyToSell): string {
-    const src = `assets/Images/Products/Ready To Sell/${product.brand}/${product.familyFr}/Search/${product.id}.jpg`;
+    // const src = `assets/Images/Products/Ready To Sell/${product.brand}/${product.familyFr}/Search/${product.id}.jpg`;
+    const src = `assets/Images/Products/Ready To Sell/${product.brand}/Search/${product.id}.jpg`;
     return src;
   }
 

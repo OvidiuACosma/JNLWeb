@@ -397,7 +397,7 @@ export class ProductStoreComponent implements OnInit {
   }
 
   getProductImage(product: IProductReadyToSell): string {
-    const src = `assets/Images/Products/Ready To Sell/${product.brand}/${product.familyFr}/Search/${product.id}.jpg`;
+    const src = `assets/Images/Products/Ready To Sell/${product.brand}/Search/${product.id}.jpg`;
     return src;
   }
 
