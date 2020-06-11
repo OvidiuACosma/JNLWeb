@@ -8,7 +8,7 @@
         <div>
             <span (click)="NavigateTo('product/productSearch')">{{text.produits}}</span>
             <a (click)="NavigateTo('product/productSearch')">Product Finder</a>
-            <a (click)="NavigateTo('product/productStore')">Ready To Sell</a>
+            <!-- <a (click)="NavigateTo('product/productStore')">Ready To Sell</a> -->
         </div>
 
         <div>
@@ -53,10 +53,10 @@
             <a (click)="NavigateTo('press', 'banqueImages')">{{text.banque}}</a>
         </div>
 
-        <div>
+        <!-- <div>
           <span (click)="NavigateTo('product/productStore')">{{text.buyNow}}</span>
           <a (click)="NavigateTo('product/productStore')">{{text.readyToShip}}</a>
-        </div>
+        </div> -->
 
         <div *ngIf="isLoggedIn()">
           <span (click)="signOut()">Sign Out</span>
