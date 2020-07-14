@@ -127,13 +127,13 @@ span {
   .carousel-wrapper {
     margin-top: 1em;
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     width: 97%;
   }
 
   .carousel {
     margin-bottom: 4vw;
-    width: 70%;
+    // width: 70%;
 
     @media only screen and (max-width: 768px) {
       margin-bottom: 6vw;
@@ -193,6 +193,7 @@ span {
   }
 
   .carousel-product-details {
+    margin: auto;
     padding: 1em 0 0 1em;
     width: 30%;
 
@@ -557,7 +558,7 @@ span {
   margin-bottom: 15vw;
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
 }
 
@@ -570,7 +571,7 @@ span {
 .carousel-scroll-arrow{
   margin-top: auto;
   margin-bottom: auto;
-  width: 5vw;
+  width: 5%;
   z-index: 1;
   cursor: pointer;
 }
@@ -579,7 +580,7 @@ span {
   display: flex;
   flex-direction: row;
   position: relative;
-  width: 90vw;
+  width: 90%;
   text-align: left;
   overflow-x: visible;
   transition: all .5s ease-out;
@@ -587,8 +588,8 @@ span {
 
 .carousel-scroll-item {
   position: relative;
-  width: 20vw;
-  min-width: 20vw;
+  width: 21%;
+  min-width: 20%;
   height: auto;
   margin-right: 15px;
   margin-left: 15px;

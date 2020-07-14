@@ -15,9 +15,10 @@
     <img [src]="heroImageToPrint?.src" class="print-image">
   </div>
 
-  <div class="carousel-wrapper d-print-none">
+  <div class="carousel-wrapper d-print-none" [ngStyle]="{'flex-direction': browser?.isMobile ? 'column' : 'row'}">
     <div id='carouselproduct' class='carousel slide carousel-fade d-print-none'
-         data-ride='carousel' data-pause="false">
+        [ngStyle]="{'width': browser?.isMobile ? '100%' : '70%'}"
+        data-ride='carousel' data-pause="false">
       <div class="carousel-inner">
         <div class='carousel-item' *ngFor="let img of heroImages; let i = index; trackBy: trackByFn"
           [ngClass]="i === 0 ? 'item active' : 'item'" id="{{'carouselItem' + i}}">
@@ -138,8 +139,8 @@
     <div class="carousel-scroll-arrow" (click)="moveElements(1)">
       <img alt="" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
     </div>
-      <div>
-        <div class="carousel-scroll-inner" [style.left.vw]="getLeftPosition()" >
+      <!-- <div> -->
+        <div class="carousel-scroll-inner" [style.left.%]="getLeftPosition()" >
           <div class="carousel-scroll-item" *ngFor="let product of carouselScrollProducts">
             <a href="#">
                 <img class="carousel-scroll-image" [src]="getCarouselProductImage(product)"
@@ -147,7 +148,7 @@
             </a>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     <div class="carousel-scroll-arrow" (click)="moveElements(-1)">
       <img alt="" src="assets\Images\Common\arrow_right.png" class="carousel-arrows">
     </div>
@@ -197,7 +198,7 @@
           alt="">
         <div class="center">
           <h2>{{item.prodCode}}</h2>
-        </div> 
+        </div>
       </div>
     </div>
   </div> -->

@@ -222,8 +222,11 @@ export class ProductStoreItemComponent implements OnInit, AfterViewChecked {
   }
 
   moveElements(sign: number) {
+    // TODO: set ecart dynamic
     const ecart = 20;
-    this.carouselScrollPosition += sign * ecart;
+    const movement = this.carouselScrollPosition + sign * ecart;
+    const max = this.carouselScrollProducts.length * ecart * (-1);
+    this.carouselScrollPosition = movement >= 0 ? 0 : movement <= max ? max : movement;
   }
 
   getCarouselProductImage(product: IProductReadyToSell): string {
