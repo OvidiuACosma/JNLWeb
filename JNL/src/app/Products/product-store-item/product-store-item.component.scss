@@ -122,10 +122,15 @@ span {
     max-height: 37.43vw;
     object-fit: contain;
     text-align: center;
+    @media only screen and (max-width: 576px) {
+      max-width: 76vw;
+      max-height: 50vw;
+    }
   }
 
   .carousel-wrapper {
-    margin-top: 1em;
+    // margin-top: 1em;
+    margin: 1em auto 0 auto;
     display: flex;
     // flex-direction: row;
     width: 97%;
@@ -152,6 +157,10 @@ span {
           width: 4.166vw;
           height: 4.166vw;
           object-fit: cover;
+          @media only screen and (max-width: 768px) {
+            width: 40px;
+            height: 40px;
+          }
           @media only screen and (min-width: 1200px) {
             width: 50px;
             height: 50px;
@@ -173,14 +182,34 @@ span {
     width: 56.72vw;
     height: 37.43vw;
     text-align: center !important;
+    @media only screen and (max-width: 576px) {
+      width: 76vw;
+      height: 50vw;
+    }
   }
 
   .carousel-control-prev {
     justify-content: flex-end;
+    width: 10%;
+    padding-bottom: 10vw;
+    @media only screen and (max-width: 768px) {
+      padding-bottom: 14vw;
+    }
+    @media only screen and (min-width: 1200px) {
+      padding-bottom: 100px;
+    }
   }
 
   .carousel-control-next {
     justify-content: flex-start;
+    width: 10%;
+    padding-bottom: 10vw;
+    @media only screen and (max-width: 768px) {
+      padding-bottom: 14vw;
+    }
+    @media only screen and (min-width: 1200px) {
+      padding-bottom: 100px;
+    }
   }
 
   .carousel-arrows {
@@ -194,7 +223,7 @@ span {
 
   .carousel-product-details {
     margin: auto;
-    padding: 1em 0 0 1em;
+    padding: 1em 1em 0 1em;
     width: 30%;
 
     .family {
@@ -432,6 +461,7 @@ span {
 
   .desc {
     width: 100vw;
+    margin-top: 30px;
   }
 
   .prod-desc {
@@ -566,6 +596,9 @@ span {
   margin: 2.5vw auto 7vw;
   font-family: Helvetica;
   font-size: 2.8vw;
+  @media only screen and (min-width: 1200px) {
+    font-size: 33.6px;
+  }
 }
 
 .carousel-scroll-arrow{

@@ -46,7 +46,8 @@
         </li>
       </ol>
     </div>
-    <div class="carousel-product-details" *ngIf="!browser?.isMobile">
+    <!-- <div class="carousel-product-details" *ngIf="!browser?.isMobile"> -->
+    <div class="carousel-product-details" [ngStyle]="{'width': browser?.isMobile ? '100%' : '30%'}">
       <div class="family">{{family}}</div>
       <div class="model-price">
         <div class="model">{{prodDesc.model | uppercase}}</div>
@@ -134,8 +135,8 @@
   </div>
 
   <!-- Carousel Scroll -->
-  <div class="carousel-scroll-title d-print-none" *ngIf="carouselScrollProducts">More from JNL</div>
-  <div class="carousel-scroll d-print-none" *ngIf="carouselScrollProducts">
+  <div class="carousel-scroll-title d-print-none" *ngIf="carouselScrollProducts && !browser?.isMobile">More From JNL</div>
+  <div class="carousel-scroll d-print-none" *ngIf="carouselScrollProducts  && !browser?.isMobile">
     <div class="carousel-scroll-arrow" (click)="moveElements(1)">
       <img alt="" src="assets\Images\Common\arrow_left.png" class="carousel-arrows">
     </div>
