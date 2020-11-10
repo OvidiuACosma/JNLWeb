@@ -36,8 +36,7 @@ export class ProductDescriptionComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit() {
-    // this.brand = this.product.brand === 'Vanhamme' ? 'JNL Collection' : this.product.brand;
-    this.brand = this.product.brand === 'Vanhamme' || 'JNL Studio' ? 'JNL Collection' : this.product.brand;
+    this.brand = (this.product.brand === 'Vanhamme') || (this.product.brand === 'JNL Studio') ? 'JNL Collection' : this.product.brand;
     this.getData();
   }
 
