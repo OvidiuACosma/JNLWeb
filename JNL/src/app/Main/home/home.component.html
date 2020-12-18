@@ -103,8 +103,10 @@
       <p>
         <span>{{text.actualites1}}</span>
         <!-- <span class="clear"></span> -->
-        <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1_EN.jpg" *ngIf="language==='EN'">
-        <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1_FR.jpg" *ngIf="language==='FR'">
+        <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1_EN.jpg"
+          *ngIf="language==='EN'">
+        <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic1_FR.jpg"
+          *ngIf="language==='FR'">
         <a class="more-links" href="#">+</a>
         <!-- <a class="more-links" (click)="navigateToActualite('1')">+ {{text.readButton1}}</a> -->
       </p>
@@ -113,15 +115,15 @@
         <!-- <span class="clear"></span> -->
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic2.jpg">
         <!-- <a class="more-links" (click)="navigateToActualite('2')">+ {{text.readButton2}}</a> -->
-        <a class="more-links" href="https://indd.adobe.com/view/d0c913b4-e316-4639-80fa-6b8e17d461da"
-          rel="noreferrer" target="_blank">+ {{text.readButton2}}</a>
+        <a class="more-links" href="https://indd.adobe.com/view/d0c913b4-e316-4639-80fa-6b8e17d461da" rel="noreferrer"
+          target="_blank">+ {{text.readButton2}}</a>
       </p>
       <p>
         <span>{{text.actualites3}}</span>
         <img alt="JNL Collection" class="actualites_img" src="/assets/Images/Home/HM_pic3.jpg">
         <!-- <a class="more-links" (click)="navigateToActualite('3')">+ {{text.readButton3}}</a> -->
-        <a class="more-links" href="https://indd.adobe.com/view/230ce39e-f9f8-42d5-970d-34e874cd55b5"
-          rel="noreferrer" target="_blank">+ {{text.readButton3}}</a>
+        <a class="more-links" href="https://indd.adobe.com/view/230ce39e-f9f8-42d5-970d-34e874cd55b5" rel="noreferrer"
+          target="_blank">+ {{text.readButton3}}</a>
       </p>
       <!-- <p>
         <span style="margin-bottom:0">{{text.actualites3}}</span>
@@ -149,8 +151,7 @@
       <h1>{{text.projetsTitle}}</h1>
     </div>
     <!-- <div id='carousel-projets' class='carousel slide carousel-fade carousel-projets' data-ride='carousel' -->
-    <div id='carousel-projets' class='carousel slide carousel-projets' data-ride='carousel'
-      data-pause="false">
+    <div id='carousel-projets' class='carousel slide carousel-projets' data-ride='carousel' data-pause="false">
       <div class="carousel-inner">
         <div class='carousel-item active'>
           <div class="carousel-project">
@@ -197,6 +198,18 @@
           class="carousel-arrows carousel-arrows-projets">
         <span class="sr-only">Next</span>
       </a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="announcementModal" tabindex="-1" (click)="closeModalFromBackdrop()" data-backdrop="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <span (click)="closeModal()">continue to the website...</span>
+        <img alt="JNL Collection" src="assets\Images\Home\announcement.jpg">
+      </div>
     </div>
   </div>
 </div>
