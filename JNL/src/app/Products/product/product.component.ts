@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataExchangeService, ProductsService, TranslationService,
-         ArchiveService, DownloaderService } from '../../_services';
+import {
+  DataExchangeService, ProductsService, TranslationService,
+  ArchiveService, DownloaderService
+} from '../../_services';
 import { Product, Img, ProductHeroImage, ProductEF, User, IProductToFavorites } from '../../_models';
 import * as _ from 'lodash';
 import { UserService } from 'src/app/_services/user.service';
@@ -21,9 +23,9 @@ export class ProductComponent implements OnInit {
   category = '';
   tabList: string[] = ['description', 'matFin', 'dimensions', 'catalogues', 'pdf'];
   product: Product;
+  heroImage: Img;
   heroImages: Img[] = [];
   heroImageToPrint: Img;
-  newHeroImages: Img[] = [];
   galleryThumbs: Img[] = [];
   galleryImages: Img[] = [];
   prodHeroImages: ProductHeroImage[];
@@ -40,13 +42,13 @@ export class ProductComponent implements OnInit {
   user: User;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private productsService: ProductsService,
-              private router: Router,
-              private dataex: DataExchangeService,
-              private textService: TranslationService,
-              private archiveService: ArchiveService,
-              private downloaderService: DownloaderService,
-              private userService: UserService) { }
+    private productsService: ProductsService,
+    private router: Router,
+    private dataex: DataExchangeService,
+    private textService: TranslationService,
+    private archiveService: ArchiveService,
+    private downloaderService: DownloaderService,
+    private userService: UserService) { }
 
   ngOnInit() {
     this.dataex.currentLanguage
@@ -71,26 +73,7 @@ export class ProductComponent implements OnInit {
         this.category = this.prodDesc.categoryFr;
         if (this.language === 'FR') { this.family = this.prodDesc.familyFr; } else { this.family = this.prodDesc.familyEn; }
         this.model = this.prodDesc.model;
-        this.getHeroImages();
         this.getGalleryImages();
-      });
-  }
-
-  getHeroImages() {
-    this.productsService.getProdHeroImages(this.product)
-      .subscribe(imgDesc => {
-        this.prodHeroImages = imgDesc;
-        this.imgs = this.prodHeroImages.sort(function (a, b) {
-          return a.imageIndex - b.imageIndex;
-        }).map(img => img.imageName);
-        this.imgCount = this.imgs.length;
-        for (let i = 0; i < this.imgs.length; i++) {
-          this.heroImages[i] = {
-            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.imgs[i]}`,
-            alt: `${this.product.brand} ${this.family} ${this.product.model}`
-          };
-        }
-        this.heroImageToPrint = this.heroImages[0];
       });
   }
 
@@ -99,59 +82,32 @@ export class ProductComponent implements OnInit {
       .subscribe(params => {
         this.gallery = params.filter(f => f.Brand === this.product.brand && f.Family === this.product.family
           && f.Image.substring(0, f.Image.indexOf('_')) === this.product.model).map(m => m.Image);
+
+        for (let i = 0; i < this.gallery.length; i++) {
+          this.heroImages[i] = {
+            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.gallery[i]}`,
+            alt: `${this.product.brand} ${this.family} ${this.product.model}`
+          };
+        }
         for (let i = 0; i < this.gallery.length; i++) {
           this.galleryThumbs[i] = {
             src: `assets/Images/Products/${this.product.brand}/${this.product.family}/Thumbs/${this.gallery[i]}`,
             alt: `${this.product.brand} ${this.family} ${this.product.model}`
           };
         }
-        for (let i = 0; i < this.gallery.length; i++) {
-          this.galleryImages[i] = {
-            src: `assets/Images/Products/${this.product.brand}/${this.product.family}/${this.gallery[i]}`,
-            alt: `${this.product.brand} ${this.family} ${this.product.model}`
-          };
-        }
+        this.heroImage = this.heroImages[0];
+        this.heroImageToPrint = this.heroImages[0];
       });
   }
 
   getUser() {
-    this.dataex.currentUser.subscribe( user => {
+    this.dataex.currentUser.subscribe(user => {
       this.user = user;
     });
   }
 
-  switchImageList(idx: number) {
-    // if (this.newHeroImages.length === 0) {
-    //   this.heroImages.length = 0;
-    //   this.newHeroImages = this.galleryImages.slice(idx).concat(this.galleryImages.slice(0, idx));
-    //   for (let i = 0; i < this.newHeroImages.length; i++) {
-    //     this.heroImages.push(this.newHeroImages[i]);
-    //   }
-    //   $('.carousel').carousel(0);
-    //   $('.carousel').carousel('cycle');
-    // } else {
-      // this.heroImages.length = 0;
-      // this.newHeroImages = this.galleryImages.slice();
-      // for (let i = 0; i < this.newHeroImages.length; i++) {
-      //   this.heroImages.push(this.newHeroImages[i]);
-      // }
-      // this.imgCount = this.heroImages.length;
-      // $('.carousel').carousel(idx);
-      // $('.carousel').carousel('cycle');
-    // }
-
-    $('.carousel').carousel('pause');
-    const heroImagesTmp = _.cloneDeep(this.galleryImages);
-    if (idx > 0) {
-      let firstElement: Img[];
-      for (let j = 0; j < idx; j++) {
-        firstElement = heroImagesTmp.splice(0, 1);
-        heroImagesTmp.push(firstElement[0]);
-      }
-    }
-    this.heroImages = _.cloneDeep(heroImagesTmp);
-    this.imgCount = this.heroImages.length;
-    $('.carousel').carousel('cycle');
+  switchImage(idx: number) {
+    this.heroImage = this.heroImages[idx];
   }
 
   getStdText(lang: string) {
@@ -238,8 +194,8 @@ export class ProductComponent implements OnInit {
       const element = document.getElementById(`carouselItem${i}`);
       if (element) {
         if (element.attributes.getNamedItem('class').value.includes('item active')) {
-            console.log('element:', element.children[0].children[0].attributes.getNamedItem('src').value);
-          }
+          console.log('element:', element.children[0].children[0].attributes.getNamedItem('src').value);
+        }
       } else {
         console.log('no element.');
       }

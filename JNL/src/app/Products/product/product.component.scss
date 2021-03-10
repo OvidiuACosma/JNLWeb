@@ -119,9 +119,17 @@
     max-height: 37.43vw;
     object-fit: contain;
     text-align: center;
+    @media only screen and (max-width: 768px) {
+      max-width: 70vw;
+     max-height: 46.2vw;
+    }
+    @media only screen and (max-width: 576px) {
+      max-width: 80vw;
+      max-height: 52.8vw;
+    }
   }
 
-  .carousel {
+  .hero-image-container {
     margin-bottom: 4vw;
 
     @media only screen and (max-width: 768px) {
@@ -129,35 +137,18 @@
     }
   }
 
-  .carousel-inner .carousel-item {
-    -webkit-transition-duration: 1s;
-    -moz-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
-  }
-
-  .carousel-inner {
+  .hero-image {
     margin: auto;
     width: 56.72vw;
     height: 37.43vw;
-    /* border: .7px solid black; */
     text-align: center !important;
-  }
-
-  .carousel-control-prev {
-    justify-content: flex-end;
-  }
-
-  .carousel-control-next {
-    justify-content: flex-start;
-  }
-
-  .carousel-arrows {
-    height: 2vw;
-    width: 1vw;
     @media only screen and (max-width: 768px) {
-      height: 16px;
-      width: 8px;
+      width: 70vw;
+      height: 46.2vw;
+    }
+    @media only screen and (max-width: 576px) {
+      width: 80vw;
+      height: 52.8vw;
     }
   }
 
@@ -194,7 +185,7 @@
     text-align: center;
   }
 
-  .galery-thumbs {
+  .gallery-thumbs {
     margin-bottom: 4vw;
 
     @media only screen and (max-width: 768px) {
@@ -566,14 +557,9 @@
       max-height: 450px;
     }
 
-    .carousel-inner {
+    .hero-image {
       width: 681px;
       height: 445px;
-    }
-
-    .carousel-arrows {
-      height: 24px;
-      width: 12px;
     }
 
     .carousel-thumbnails li img {

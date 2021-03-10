@@ -340,7 +340,7 @@ export class ProductGarnissagesComponent implements OnInit {
   openDialog(garn: IProdGarnissage): Observable<boolean> {
     const dialogConfig = this.productService.getGarnissageDialogConfig(garn, 'ga', this.browser.isDesktopDevice);
     const dialogRef = this.dialog.open(ProductGarnissageDetailsComponent, dialogConfig);
-    console.log('GARN: ', garn);
+    // console.log('GARN: ', garn);
     return dialogRef.afterClosed()
     .pipe(
       map(result => {
