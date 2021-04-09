@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, RequestsService } from '../../_services';
 import { FormControl, Validators } from '@angular/forms';
 import { RequestForm } from '../../_models';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu-bottom',

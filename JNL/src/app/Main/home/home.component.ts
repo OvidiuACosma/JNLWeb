@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, AltImgService, AlertService } from '../../_services';
-import { mergeMap, map } from 'rxjs/operators';
+import { mergeMap, map, take } from 'rxjs/operators';
 declare var $: any;
 
 @Component({

@@ -4,28 +4,27 @@
   <div class="content" id="content">
     <!-- SEARCH -->
     <div class="search">
-      <!-- <h4>FILTERS</h4> -->
       <div class="search-by-text">
         <span class="search-container">
           <div class="header-filter">SEARCH</div>
-          <div class="reset-filter" (click)="resetFilter()">reset</div>
+          <div class="reset-filter" (click)="resetFilter()">reset filters</div>
         </span>
         <input class="search-textbox" name="searchBox" type="text"
-          [(ngModel)]="searchText" (change)="searchByText()"><br>
+          [(ngModel)]="searchText" (keyup)="selectFilter()"><br>
         <!-- <span style="cursor: pointer;" (click)="navigateTo('product/productStore')">Web Store</span> -->
       </div>
 
       <div class="filters">
         <ul>
-          <li *ngFor="let c of filterBy; let i=index">
+          <li *ngFor="let category of filterCategories; let i=index">
             <div class="header-arrow"  (click)="toggleFilters(i)">
-                <span class="header-filter">{{c}}</span>
+                <span class="header-filter">{{category}}</span>
                 <img class="arrow" [src]="getArrow(i)">
             </div>
-            <ul id="filter-{{c}}" class="subfilters" [ngClass]="{'active' : toggle[i]}">
-              <li class="single-filter" *ngFor="let d of getFilters(c); let i2=index"
+            <ul id="filter-{{category}}" class="subfilters" [ngClass]="{'active' : toggle[i]}">
+              <li class="single-filter" *ngFor="let d of getFilters(category); let i2=index"
                 [ngClass]="i2 % 2 !== 0 ? 'right' : 'left'"
-                (click)="selectFilter(c, d.displayName)">
+                (click)="filterItemChecked(category, d.displayName)">
                 <span>
                   <i [ngClass]="d.checked ? 'fas fa-square' :'far fa-square'"></i>
                 </span>
@@ -75,22 +74,6 @@
                   </div>
                 </li>
               <!-- </ng-container> -->
-
-              <!-- <li *ngFor="let m of [0]">  -->
-                      <!-- , 1, 2 -->
-                      <!--  [ngClass]="(m  >= 4 - this.total % 4 || this.total % 4 == 0) ? 'remove-item' :'non-remove'" -->
-                <!-- <div>
-                  <div class="pic-frame">
-                    <div>
-                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="fav-button">
-                    </div>
-                    <div class="center-product">
-                      <img alt="JNL Collection" src="\assets\Images\Favorites\F_none.png" class="search-img">
-                    </div>
-                  </div>
-                  <span>&nbsp;</span>
-                </div>
-              </li> -->
             </div>
             <!-- </cdk-virtual-scroll-viewport> -->
           </ul>

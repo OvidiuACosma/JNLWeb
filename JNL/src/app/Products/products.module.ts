@@ -21,6 +21,7 @@ import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.co
 import { ProductStoreComponent } from './product-store/product-store.component';
 import { ProductStoreItemComponent } from './product-store-item/product-store-item.component';
 import { EmailSharingComponent } from './email-sharing/email-sharing.component';
+import { ProductSearchDummyComponent } from '.';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { EmailSharingComponent } from './email-sharing/email-sharing.component';
     FavoritesSharedComponent,
     ProductStoreComponent,
     ProductStoreItemComponent,
-    EmailSharingComponent
+    EmailSharingComponent,
+    ProductSearchDummyComponent
   ],
   exports: [
     ProductSearchComponent,
@@ -64,7 +66,8 @@ import { EmailSharingComponent } from './email-sharing/email-sharing.component';
     DialogAnswerComponent,
     CopyToClipboardDirective,
     ProductStoreComponent,
-    ProductStoreItemComponent
+    ProductStoreItemComponent,
+    ProductSearchDummyComponent
   ],
   entryComponents: [
     DialogAnswerComponent,

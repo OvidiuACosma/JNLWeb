@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataExchangeService } from 'src/app/_services';
 import { ActivatedRoute } from '@angular/router';
-import { concatMap, map, mergeMap } from 'rxjs/operators';
+import { take, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact',
@@ -30,7 +30,8 @@ export class ContactComponent implements OnInit {
           lang: lang
         }))
       ))
-    ).subscribe(resp => {
+    )
+    .subscribe(resp => {
       this.language = resp.lang || 'EN';
       if (resp.p.type) {
         this.type = resp.p['type'];

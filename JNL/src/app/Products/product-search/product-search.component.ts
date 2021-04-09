@@ -1,21 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataExchangeService, TranslationService, ProductsService } from '../../_services';
 import { ProductEF, User, IGarnissageDto, Browser, IProdGarnissage,
-         IGarnissage, IProductToFavorites, IFilterElements, IFilter, IProductsFiltersCached } from '../../_models';
+         IProductToFavorites, IFilterElements, IFilter,
+         IProductsFiltersCached } from '../../_models';
 import * as _ from 'lodash';
 import { accentFold } from '../../_helpers';
-import { mergeMap, map } from 'rxjs/operators';
+import { mergeMap, map, takeUntil } from 'rxjs/operators';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { MatDialog } from '@angular/material/dialog';
-
-interface IRouteParams {
-  brand: string;
-  category: string;
-  family: string;
-  model: string;
-  searchText: string;
-}
+import { Subject, Subscription } from 'rxjs';
 
 
 @Component({
@@ -24,12 +18,10 @@ interface IRouteParams {
   styleUrls: ['./product-search.component.scss']
 })
 
-export class ProductSearchComponent implements OnInit {
+export class ProductSearchComponent implements OnInit, OnDestroy {
 
-  routeParams: IRouteParams;
   products: ProductEF[];
   productsFiltered: ProductEF[];
-  garnissageList: IGarnissage[];
   categoriesFr: any;
   categoriesEn: any;
   familiesFr: any;
@@ -38,7 +30,7 @@ export class ProductSearchComponent implements OnInit {
   language: string;
   text: any;
   user: User;
-  filterBy: string[] = ['Brand', 'Type', 'Family'];
+  filterCategories: string[] = ['Brand', 'Type', 'Family'];
   brands = new Set(['JNL Collection', 'Vanhamme', 'Emanuel Ungaro Home', 'JNL Studio']);
   filterElements: IFilterElements[] = [];
   scroller = true;
@@ -46,74 +38,77 @@ export class ProductSearchComponent implements OnInit {
   browser: Browser;
   toggle: boolean[];
   productsFiltersCached: IProductsFiltersCached;
+  subscription: Subscription;
+  unsubscriber = new Subject();
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
               private dataex: DataExchangeService,
               private textService: TranslationService,
               private productService: ProductsService,
-              private dialog: MatDialog) {
-    this.router.events.subscribe((e: any) => {
-      if (e instanceof NavigationEnd) {
-        this.ngOnInit();
-      }
-    });
+              private dialog: MatDialog) {}
+
+  ngOnInit(): void {
+    this.getData();
+    this.toggle = this.filterCategories.map(m => true);
   }
 
-  ngOnInit() {
-    this.getData();
-    this.toggle = this.filterBy.map(m => true);
+  ngOnDestroy(): void {
+    this.unsubscriber.next();
+    this.unsubscriber.complete();
+    this.cacheFilters();
   }
 
   getData() {
-    this.dataex.currentUser.pipe(
+    this.subscription = this.dataex.currentUser.pipe(
       mergeMap(user => this.dataex.currentBrowser.pipe(
         mergeMap(_browser => this.dataex.currentLanguage.pipe(
           mergeMap(lang => this.textService.getTextFavorites().pipe(
             mergeMap(text => this.productService.getProducts().pipe(
-              mergeMap(products => this.productService.getGarnissages().pipe(
-                mergeMap(ga => this.dataex.currentProductsFilters.pipe(
-                  map(pFilters => ({
-                    user: user,
-                    browser: _browser,
-                    lang: lang,
-                    text: text,
-                    products: products,
-                    ga: ga,
-                    pFilters: pFilters
-                  }))
-                ))
+              mergeMap(products => this.dataex.currentProductsFilters.pipe(
+                map(pFilters => ({
+                  user: user,
+                  browser: _browser,
+                  lang: lang,
+                  text: text,
+                  products: products,
+                  pFilters: pFilters
+                }))
               ))
             ))
           ))
         ))
       ))
     )
+    .pipe(takeUntil(this.unsubscriber))
     .subscribe(resp => {
       this.user = resp.user;
       this.browser = resp.browser;
       this.language = resp.lang || 'EN';
       this.text = resp.text[0][this.language.toUpperCase()];
-      this.garnissageList = resp.ga;
       this.products = this.sortProducts(resp.products);
       this.productsFiltered = _.clone(this.products);
-      this.getCategories();
-      this.getFamilies();
-      this.getRouteParameters();
       this.setFilterElements();
       this.productsFiltersCached = resp.pFilters;
-        this.applyFiltersCached(resp.pFilters);
-      if (this.routeParams.brand || this.routeParams.category || this.routeParams.family ||
-          this.routeParams.model || this.routeParams.searchText) {
-        this.activateItemSelection(this.routeParams);
-        this.selectFilter();
-      }
+      this.searchText = this.productsFiltersCached.searchText || '';
+      this.applyFiltersCached(this.productsFiltersCached);
     });
   }
 
-  getFiltersList(products: ProductEF[]): string[] {
-    const filtersList: string[] = _.uniq(products.map(m => m.brand));
-    return filtersList;
+  sortProducts(p: ProductEF[]): ProductEF[] {
+    return _.sortBy(p, ['indexFamily', 'indexBrand'], ['asc', 'asc']);
+  }
+
+  setFilterElements() {
+    this.getCategories(['all']);
+    this.getFamilies(['all'], ['all']);
+    this.searchText = '';
+    this.filterElements = [];
+    this.filterElements = this.filterCategories.map(m => {
+      return {
+        filterGroup: m,
+        filterElement: this.getFilterElements(m)
+      };
+    });
   }
 
   getCategories(brand: string[] = ['all']) {
@@ -148,30 +143,6 @@ export class ProductSearchComponent implements OnInit {
     this.familiesEn = new Set(products.map(f => f.familyEn));
   }
 
-  getRouteParameters() {
-    this.route.paramMap.subscribe(params => {
-      this.routeParams = { brand: params.get('b'),
-                      category: params.get('c'),
-                      family: params.get('f'),
-                      model: params.get('m'),
-                      searchText: params.get('s')
-      };
-      if (this.routeParams?.searchText) {
-        this.searchText = this.routeParams.searchText;
-      }
-    });
-  }
-
-  setFilterElements() {
-    this.filterElements = [];
-    this.filterElements = this.filterBy.map(m => {
-      return {
-        filterGroup: m,
-        filterElement: this.getFilterElements(m)
-      };
-    });
-  }
-
   getFilterElements(filterGroup: string): IFilter[] {
     switch (filterGroup) {
       case 'Brand': { return this.setFilterListFromSet(this.brands); }
@@ -204,33 +175,27 @@ export class ProductSearchComponent implements OnInit {
   }
 
   applyFiltersCached(productsFiltersCached: IProductsFiltersCached) {
-    if (_.filter(productsFiltersCached.filteredItems, value => value).length) {
-      this.updateFilterElementsFromCache(productsFiltersCached.filteredElements);
-      this.selectFilter('', '', true);
-      // this.applyFilters(productsFiltersCached.filteredItems, productsFiltersCached.filteredElements);
-    }
-    if (productsFiltersCached.searchText !== '') {
-      this.searchText = productsFiltersCached.searchText;
-      this.searchByText();
-    }
+    this.updateFilterElementsFromCache(productsFiltersCached.filteredElements);
+    this.toggleSelection('', '');
+    this.selectFilter();
+    this.resetCategories();
+    this.resetFamilies();
   }
 
   updateFilterElementsFromCache(filteredElementsCached: IFilterElements[]) {
     filteredElementsCached.forEach(element => {
       element.filterElement.forEach(fe => {
-        this.filterElements.find(f => f.filterGroup === element.filterGroup).filterElement
-                           .find(f => f.displayName === fe.displayName).checked = fe.checked;
+        if (fe.checked) {
+          this.filterElements.find(f => f.filterGroup === element.filterGroup).filterElement
+                            .find(f => f.displayName === fe.displayName).checked = fe.checked;
+        }
       });
     });
   }
 
-  sortProducts(p: ProductEF[]): ProductEF[] {
-    return _.sortBy(p, ['indexFamily', 'indexBrand'], ['asc', 'asc']);
-  }
-
   getFilters(category: string): IFilter[] {
     if (this.filterElements === undefined) { return; }
-    const fe: IFilterElements[] = _.filter(this.filterElements, {filterGroup: category});
+    const fe: IFilterElements[] = _.filter(this.filterElements, { 'filterGroup': category});
     if (!fe[0]) { return; }
     let fg: IFilter[] = fe[0].filterElement;
     switch (category) {
@@ -271,63 +236,41 @@ export class ProductSearchComponent implements OnInit {
     }
   }
 
-  // TODO: CHANGE function for FAV
-  removeItem(index: number) {
-    this.scroller = false;
-    this.total--;
-    // TODO: REMOVE FROM DB ?
-  }
-
   resetFilter() {
     this.searchText = '';
     this.getCategories(['all']);
-    this.getFamilies(['all']);
+    this.getFamilies(['all'], ['all']);
     this.setFilterElements();
     this.productsFiltered = _.clone(this.products);
   }
 
-  selectFilter(c = '', displayName = '', fromCached = false) {
+  selectFilter() {
+    const filteredElements = this.getFilteredElements();
+    this.applyFilters(this.getFilteredItems(filteredElements, this.getFilterItems()), filteredElements);
+    this.searchByText();
+  }
+
+  filterItemChecked(c = '', displayName = '') {
+    if (this.isGarnissage(c, displayName)) {
+      this.router.navigate(['product/productGarnissages']);
+    } else {
+      this.toggleSelection(c, displayName);
+      this.readjustOptionsFilters(c);
+      this.selectFilter();
+    }
+  }
+
+  isGarnissage(c: string, displayName: string): boolean {
     if (c.toLowerCase() === 'type' &&
         ['garnissage', 'upholstery'].includes(displayName.toLowerCase())) {
-          this.router.navigate(['product/productGarnissages']);
-          return;
+      return true;
     }
-    this.scrollAfterFilter('content');
-    let filteredElements: IFilterElements[];
-    let filterItems: number[];
-    let filteredItems: boolean[];
-
-    this.toggleSelection(c, displayName);
-
-    // Determine filtering parameters
-    filteredElements = _.cloneDeep(this.filterElements);
-    _.map(filteredElements, element => {
-      element.filterElement = _.filter(element.filterElement, fe => fe.checked);
-      return element;
-    });
-    filterItems = this.getFilterItems();
-    filteredItems = this.getFilteredItems(filteredElements, filterItems);
-    this.applyFilters(filteredItems, filteredElements);
-    if (this.searchText !== '') {
-      this.searchByText();
-    }
-    if (!fromCached) {
-      this.cacheFilters(this.searchText, filteredItems, filteredElements);
-    }
-    this.scroller = false;
+    return false;
   }
 
   toggleSelection(c: string, displayName: string) {
     if (c !== '') {
       this.toggleItemSelection(c, displayName);
-      // filter the list of filter elements brand -> category -> familiy
-      if (c === 'Brand') {
-        this.resetCategories();
-        this.resetFamilies();
-      }
-      if (c === 'Type') {
-        this.resetFamilies();
-      }
     }
   }
 
@@ -336,11 +279,29 @@ export class ProductSearchComponent implements OnInit {
       !this.filterElements.find(f => f.filterGroup === c).filterElement.find(f => f.displayName === displayName).checked;
   }
 
-  cacheFilters(searchText: string, filteredItems: boolean[], filteredElements: IFilterElements[]) {
+  readjustOptionsFilters(c: string): void {
+    if (c === 'Family') { return; }
+    if (c === 'Brand') {
+      this.resetCategories();
+    }
+    this.resetFamilies();
+  }
+
+  getFilteredElements(): IFilterElements[] {
+    let filteredElements: IFilterElements[];
+    filteredElements = _.cloneDeep(this.filterElements);
+    _.map(filteredElements, element => {
+      element.filterElement = _.filter(element.filterElement, fe => fe.checked);
+      return element;
+    });
+    return filteredElements;
+  }
+
+  cacheFilters() {
     this.productsFiltersCached = {
-      searchText: searchText,
-      filteredItems: filteredItems,
-      filteredElements: filteredElements};
+      searchText: this.searchText,
+      filteredItems: this.getFilteredItems(this.getFilteredElements(), this.getFilterItems()),
+      filteredElements: this.getFilteredElements()};
     this.dataex.setProductsFilters(this.productsFiltersCached);
   }
 
@@ -359,27 +320,6 @@ export class ProductSearchComponent implements OnInit {
     return selectedItems;
   }
 
-  activateItemSelection(routeParams: IRouteParams) {
-    if (routeParams.brand) {
-      this.activateElementSelection('Brand', routeParams.brand);
-      this.resetCategories();
-      this.resetFamilies();
-    }
-    if (routeParams.category) {
-      this.activateElementSelection('Type', routeParams.category);
-      this.resetFamilies();
-    }
-    if (routeParams.family) {
-      this.activateElementSelection('Family', routeParams.family);
-    }
-    // filter the list of filters
-  }
-
-  activateElementSelection(group: string, param: string) {
-    this.filterElements.find(f => f.filterGroup === group)
-    .filterElement.find(f => f.displayName === param).checked = true;
-  }
-
   getFilterItems(): number[] {
     const filterItems: number[] = [];
     if (this.filterElements) {
@@ -393,6 +333,7 @@ export class ProductSearchComponent implements OnInit {
   getFilteredItems(filteredElements: IFilterElements[], filterItems: number[]): boolean[] {
     const filteredItems: boolean[] = [];
     if (filteredElements) {
+
       for (let j = 0; j < filteredElements.length; j++) {
         if ((filteredElements[j].filterElement.length %
           (filterItems[j] || filteredElements[j].filterElement.length)) === 0) {
@@ -451,19 +392,14 @@ export class ProductSearchComponent implements OnInit {
 
   searchByText() {
     const searchText = accentFold(this.searchText.toLowerCase());
-    if (this.searchText !== '') {
-      this.productsFiltered = this.productsFiltered.filter(f =>
-        accentFold(f.brand.toLowerCase()).includes(searchText) ||
-        accentFold(f.categoryEn.toLowerCase()).includes(searchText) ||
-        accentFold(f.categoryFr.toLowerCase()).includes(searchText) ||
-        accentFold(f.familyEn.toLowerCase()).includes(searchText) ||
-        accentFold(f.familyFr.toLowerCase()).includes(searchText) ||
-        accentFold(f.model.toLowerCase()).includes(searchText)
-      );
-      this.cacheFilters(searchText, this.productsFiltersCached.filteredItems, this.productsFiltersCached.filteredElements);
-    } else {
-      this.selectFilter();
-    }
+    this.productsFiltered = this.productsFiltered.filter(f =>
+      accentFold(f.brand.toLowerCase()).includes(searchText) ||
+      accentFold(f.categoryEn.toLowerCase()).includes(searchText) ||
+      accentFold(f.categoryFr.toLowerCase()).includes(searchText) ||
+      accentFold(f.familyEn.toLowerCase()).includes(searchText) ||
+      accentFold(f.familyFr.toLowerCase()).includes(searchText) ||
+      accentFold(f.model.toLowerCase()).includes(searchText)
+    );
     this.scrollAfterFilter('content');
   }
 
@@ -525,19 +461,7 @@ export class ProductSearchComponent implements OnInit {
   }
 
   getProductImage(product: ProductEF): string {
-    if (product.categoryFr === 'Garnissage') {
-      return this.getGarnissageProductImage(product);
-    }
     return `assets/Images/Products/${product.brand}/${product.familyFr}/Search/${product.model}.jpg`;
-  }
-
-  getGarnissageProductImage(product: ProductEF): string {
-    const garn: IGarnissageDto = {
-      materialFr: product.familyFr,
-      model: product.model
-    };
-    const garnissageCode: string = _.find(this.garnissageList, {materialFr: product.familyFr, model: product.model}).codeProd.toUpperCase();
-    return `assets/Images/Products/Garnissages/${garnissageCode}.jpg`;
   }
 
   getProductName(product: ProductEF): string {

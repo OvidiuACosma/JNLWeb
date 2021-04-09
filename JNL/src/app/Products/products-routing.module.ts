@@ -12,6 +12,7 @@ import { ProductGarnissageDetailsComponent } from './product-garnissage-details/
 import { FavoritesSharedComponent } from './favorites-shared/favorites-shared.component';
 import { ProductStoreComponent } from './product-store/product-store.component';
 import { ProductStoreItemComponent } from './product-store-item/product-store-item.component';
+import { ProductSearchDummyComponent } from '.';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'products', component: ProductSearchComponent },
   { path: 'productSearch', component: ProductSearchComponent },
+  { path: 'pSearch', component: ProductSearchDummyComponent },
   { path: 'productDescription', component: ProductDescriptionComponent },
   { path: 'productDimensions', component: ProductDimensionsComponent },
   { path: 'productCatalogues', component: ProductCataloguesComponent},
@@ -37,8 +39,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ],
-  providers: []
+  ]
 })
 
 export class ProductsRoutingModule { }

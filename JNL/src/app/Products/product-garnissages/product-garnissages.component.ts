@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService, DataExchangeService } from 'src/app/_services';
-import { IProdGarnissage, Browser, User } from 'src/app/_models';
+import { IProdGarnissage, Browser, User, IFilterElements, IFilter } from 'src/app/_models';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { map, mergeMap, concatMap } from 'rxjs/operators';
@@ -8,16 +8,16 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { UserService } from 'src/app/_services/user.service';
 
-interface IFilter {
-  index: number;
-  checked: boolean;
-  displayName: string;
-}
+// interface IFilter {
+//   index: number;
+//   checked: boolean;
+//   displayName: string;
+// }
 
-interface IFilterElements {
-  filterGroup: string;
-  filterElement: IFilter[];
-}
+// interface IFilterElements {
+//   filterGroup: string;
+//   filterElement: IFilter[];
+// }
 
 @Component({
   selector: 'app-product-garnissages',

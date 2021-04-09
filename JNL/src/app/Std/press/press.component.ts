@@ -131,7 +131,7 @@ export class PressComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   goAllProductsOfBrand(marque: string) {
     const brand = this.collectionsText[this.collectionsLink.findIndex(x => x === marque)];
-    this.router.navigate(['product/productSearch', { b: brand }]);
+    this.router.navigate(['product/pSearch', { b: brand }]);
   }
 
   ngAfterViewInit() {
