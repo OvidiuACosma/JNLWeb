@@ -96,6 +96,10 @@
 		width: 87.13vw;
 	}
 
+	.carousel {
+		touch-action: pan-y pinch-zoom;
+	}
+
 	.carousel-arrows {
 		height: 2vw;
 		width: 1vw;
