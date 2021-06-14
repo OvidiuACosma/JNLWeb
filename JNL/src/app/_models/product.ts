@@ -131,6 +131,7 @@ export interface IProductDescription {
   finisageNameEn: string;
   finId: number;
   matId: number;
+  tarifIndex: number;
 }
 
 export interface IFilter {

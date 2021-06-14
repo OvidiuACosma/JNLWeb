@@ -68,6 +68,11 @@ export class ProductsService {
     {headers: this.headers});
   }
 
+  public getProductDescShort(product: Product): Observable<IProductDescription[]> {
+    return this.http.get<IProductDescription[]>(`${this.prodDescURL}/short/${product.brand}/${product.family}/${product.model}`,
+    {headers: this.headers});
+  }
+
   public getProdHeroImages(product: Product): Observable<ProductHeroImage[]> {
     return this.http.get<ProductHeroImage[]>(`${this.prodHeroImages}/${product.brand}/${product.family} ${product.model}`,
            {headers: this.headers});
