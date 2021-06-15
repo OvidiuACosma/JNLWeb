@@ -8,16 +8,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { UserService } from 'src/app/_services/user.service';
 
-// interface IFilter {
-//   index: number;
-//   checked: boolean;
-//   displayName: string;
-// }
-
-// interface IFilterElements {
-//   filterGroup: string;
-//   filterElement: IFilter[];
-// }
 
 @Component({
   selector: 'app-product-garnissages',
@@ -199,7 +189,6 @@ export class ProductGarnissagesComponent implements OnInit {
   }
 
   selectFilter(c = '', displayName = '') {
-    // console.log('selectFilter(', c, ',', displayName);
     this.scrollAfterFilter('content');
     let filteredElements: IFilterElements[];
     let filterItems: number[];
@@ -307,6 +296,7 @@ export class ProductGarnissagesComponent implements OnInit {
     for (let l = 0; l < filteredItems.length; l++) {
       if (filteredItems[l]) {
         filterItemsList = this.getListOfFilterItems(filteredElements[l].filterElement);
+        console.log('filterItemsList:', filterItemsList, 'l:', l, 'productsFiltered:', this.productsFiltered);
         switch (l) {
           case 0: {
             this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.color));
