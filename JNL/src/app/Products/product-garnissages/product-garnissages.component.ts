@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ProductsService, DataExchangeService } from 'src/app/_services';
-import { IProdGarnissage, Browser, User, IFilterElements, IFilter } from 'src/app/_models';
+import { IProdGarnissage, Browser, User, IFilterElements, IFilter, IGarnissageColors } from 'src/app/_models';
 import * as _ from 'lodash';
-import { Observable } from 'rxjs';
-import { map, mergeMap, concatMap } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { map, mergeMap, takeUntil } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductGarnissageDetailsComponent } from '../product-garnissage-details/product-garnissage-details.component';
 import { UserService } from 'src/app/_services/user.service';
@@ -15,12 +15,13 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./product-garnissages.component.scss']
 })
 
-export class ProductGarnissagesComponent implements OnInit {
+export class ProductGarnissagesComponent implements OnInit, OnDestroy {
 
   @Input() withTitle = true;
   language: string;
   products: IProdGarnissage[];
   productsFiltered: IProdGarnissage[];
+  gaColors: IGarnissageColors[];
   toggle: boolean[];
   filterBy: string[] = ['Color', 'Material', 'Type', 'Brand'];
   brands = new Set(['JNL Collection', 'Ungaro Home']);
@@ -30,6 +31,7 @@ export class ProductGarnissagesComponent implements OnInit {
   filterElements: IFilterElements[] = [];
   browser: Browser;
   user: User;
+  unsubscriber = new Subject();
 
 
   constructor(private productService: ProductsService,
@@ -45,26 +47,36 @@ export class ProductGarnissagesComponent implements OnInit {
     }
   }
 
+  ngOnDestroy(): void {
+    this.unsubscriber.next();
+    this.unsubscriber.complete();
+  }
+
   getData() {
     this.dataex.currentUser.pipe(
       mergeMap(user => this.dataex.currentBrowser.pipe(
         mergeMap(_browser => this.dataex.currentLanguage.pipe(
-          concatMap(lang => this.productService.getGarnissages().pipe(
-            map(product => ({
-              user: user,
-              browser: _browser,
-              lang: lang,
-              product: product
-            }))
+          mergeMap(lang => this.productService.getGarnissages().pipe(
+            mergeMap(product => this.productService.getGarnissagesColors().pipe(
+              map(ga => ({
+                user: user,
+                browser: _browser,
+                lang: lang,
+                product: product,
+                ga: ga
+              }))
+            ))
           ))
         ))
       ))
     )
+    .pipe(takeUntil(this.unsubscriber))
     .subscribe(resp => {
       this.user = resp.user;
       this.browser = resp.browser;
       this.language = resp.lang || 'EN';
-      this.products = this.productService.mapProducts(resp.product, this.language);
+      this.gaColors = resp.ga;
+      this.products = this.productService.mapProducts(resp.product, this.language, this.gaColors);
       this.products = this.sortProducts(this.products);
       this.productsFiltered = _.cloneDeep(this.products);
       this.getColors(); // p.categories
@@ -83,7 +95,8 @@ export class ProductGarnissagesComponent implements OnInit {
     if (!brand.includes('all')) {
       products = products.filter(f => brand.includes(f.brand));
     }
-      this.color = new Set(products.map(c => c.color));
+      // this.color = new Set(products.map(c => c.color));
+      this.color = new Set([].concat(...products.map(c => c.gaColors)));
   }
 
   getMaterials(brand: string[] = ['all'], color: string[] = ['all']) {
@@ -296,10 +309,10 @@ export class ProductGarnissagesComponent implements OnInit {
     for (let l = 0; l < filteredItems.length; l++) {
       if (filteredItems[l]) {
         filterItemsList = this.getListOfFilterItems(filteredElements[l].filterElement);
-        console.log('filterItemsList:', filterItemsList, 'l:', l, 'productsFiltered:', this.productsFiltered);
         switch (l) {
           case 0: {
-            this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.color));
+            // this.productsFiltered = this.productsFiltered.filter(f => filterItemsList.includes(f.color));
+            this.productsFiltered = this.productsFiltered.filter(f => f.gaColors.some(c => filterItemsList.includes(c)));
             break;
           }
           case 1: {

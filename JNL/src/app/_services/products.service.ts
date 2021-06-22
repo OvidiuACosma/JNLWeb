@@ -3,12 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { ConfigService } from './config.service';
 import { Product, ProductEF, ProductHeroImage, IGarnissage, User, IGarnissageDto,
-         IProdGarnissage, IProductReadyToSell, IGarnissageRts, IProductToFavorites, IProductDescription, IProductShareByEmail } from '../_models';
+         IProdGarnissage, IProductReadyToSell, IGarnissageRts, IProductToFavorites,
+         IProductDescription, IProductShareByEmail, IGarnissageColors } from '../_models';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { FavoritesSelListComponent } from '../Products/favorites-sel-list/favorites-sel-list.component';
 import { DataExchangeService } from './data-exchange.service';
 import { UserService } from './user.service';
+import * as _ from 'lodash';
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +44,10 @@ export class ProductsService {
 
   public getGarnissages(): Observable<IGarnissage[]> {
     return this.http.get<IGarnissage[]>(`${this.product}/GA`, {headers: this.headers});
+  }
+
+  public getGarnissagesColors(): Observable<IGarnissageColors[]> {
+    return this.http.get<IGarnissageColors[]>(`${this.product}/GAColors`, {headers: this.headers});
   }
 
   public getGarnissage(garnissage: IGarnissageDto): Observable<IGarnissage[]> {
@@ -150,7 +157,7 @@ export class ProductsService {
     return width;
   }
 
-  public mapProducts(products: IGarnissage[], lang: string): IProdGarnissage[] {
+  public mapProducts(products: IGarnissage[], lang: string, gaColors: IGarnissageColors[] = []): IProdGarnissage[] {
     let productsMapped: IProdGarnissage[];
     switch (lang.toLowerCase()) {
       case 'en': {
@@ -166,7 +173,8 @@ export class ProductsService {
             type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
             brand: this.getBrandStringFromNumeric(m.brand),
             color: m.colorEn,
-            colorRef: m.colorRef
+            colorRef: m.colorRef,
+            gaColors: this.getGaColors(m.gaColors, lang, gaColors)
           };
         });
         break;
@@ -184,7 +192,8 @@ export class ProductsService {
             type: this.getTypeStringFromBoolean(m.gaCoussinOnly, lang),
             brand: this.getBrandStringFromNumeric(m.brand),
             color: m.colorFr,
-            colorRef: m.colorRef
+            colorRef: m.colorRef,
+            gaColors: this.getGaColors(m.gaColors, lang, gaColors)
           };
         });
       }
@@ -212,6 +221,35 @@ export class ProductsService {
       case 1: { return 'Ungaro Home'; }
       case 2: { return 'Ungaro Home'; }
     }
+  }
+
+  getGaColors(colorsList: string, lang: string, gaColors: IGarnissageColors[]): string[] {
+    let gaColorsText: string[] = [];
+    if (gaColors.length) {
+      gaColorsText = colorsList.split(',').map(m => this.getColorName(m, lang, gaColors));
+    }
+    return gaColorsText;
+  }
+
+  getColorName(id: string, lang: string, gaColors: IGarnissageColors[]): string {
+    const idNumber = Number(id) || 0;
+    let gaColor: string;
+    switch (lang) {
+      case 'EN': {
+        gaColor = _.find(gaColors, { 'id': idNumber }).color || '';
+        break;
+      }
+      case 'FR': {
+        gaColor = _.find(gaColors, { 'id': idNumber }).colorFr || '';
+        break;
+      }
+      default: {
+        gaColor = _.find(gaColors, { 'id': idNumber }).color || '';
+        break;
+      }
+    }
+
+    return gaColor;
   }
 
   getProductToFavorites(product: any, language: string, type: number): IProductToFavorites {

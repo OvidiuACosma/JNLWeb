@@ -64,6 +64,13 @@ export interface IGarnissage {
   colorFr: string;
   colorRef: string;
   ordIndex: number;
+  gaColors: string;
+}
+
+export interface IGarnissageColors {
+  id: number;
+  color: string;
+  colorFr: string;
 }
 
 export interface IProdGarnissage {
@@ -78,6 +85,7 @@ export interface IProdGarnissage {
   brand: string;
   color: string;
   colorRef: string;
+  gaColors: string[];
 }
 
 export interface IProductReadyToSell {
