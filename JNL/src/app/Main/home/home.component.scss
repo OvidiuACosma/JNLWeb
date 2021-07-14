@@ -441,6 +441,10 @@
     }
 	}
 
+	.white {
+		color: white;
+	}
+
 	#savoir {
 		margin: auto;
 		margin-top: 10.08vw;
@@ -661,17 +665,17 @@
         p {
           display: none;
 
-          // &:first-child {
-          //   display: block;
-          //   width: 100%;
-          //   text-align: center;
-					// }
-					
-					&:nth-child(2) {
-						display: block;
+          &:first-child {
+            display: block;
             width: 100%;
             text-align: center;
 					}
+					
+					// &:nth-child(2) {
+					// 	display: block;
+          //   width: 100%;
+          //   text-align: center;
+					// }
 
           > span {
             font-size: 11px;

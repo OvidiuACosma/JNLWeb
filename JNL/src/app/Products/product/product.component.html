@@ -56,6 +56,8 @@
           aria-controls="nav-home" aria-selected="true">DESCRIPTION</a>
         <a class="nav-item nav-link" id="nav-matFin-tab" data-toggle="tab" href="#nav-matFin" role="tab"
           aria-controls="nav-matFin" aria-selected="false" *ngIf="category==='Assise'">UPHOLSTERY</a>
+        <!-- <a class="nav-item nav-link" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab"
+          aria-controls="nav-home" aria-selected="true">COMPOSITION</a> -->
         <a class="nav-item nav-link" id="nav-dim-tab" data-toggle="tab" href="#nav-dim" role="tab"
           aria-controls="nav-dim" aria-selected="false">DRAWINGS</a>
         <a class="nav-item nav-link" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab"
@@ -64,25 +66,31 @@
     </nav>
 
     <div class="tab-content" id="nav-tabContent">
-      <!-- PRODUCT DESCRIPTION-->
+       <!-- PRODUCT PARTS DESCRIPTION -->
       <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
         <div class="prod-desc" *ngIf="product">
           <app-product-description [product]="product"></app-product-description>
         </div>
       </div>
-      <!-- PRODUCT MATERIALS -->
+      <!-- PRODUCT MATERIALS --> 
       <div class="tab-pane fade d-print-none" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
         <div class="prod-desc">
           <app-product-garnissages [withTitle]="false"></app-product-garnissages>
         </div>
       </div>
-      <!-- PRODUCT TECHNICAL DRAWINGS -->
+      <!--PRODUCT COMPOSITION
+      <div class="tab-pane fade show" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
+        <div class="prod-desc" *ngIf="product">
+          <app-product-description [product]="product"></app-product-description>
+        </div>
+      </div> -->
+      <!--PRODUCT TECHNICAL DRAWINGS -->
       <div class="tab-pane fade d-print-none" id="nav-dim" role="tabpanel" aria-labelledby="nav-dim-tab">
         <div class="prod-desc">
           <app-product-dimensions [product]="product"></app-product-dimensions>
         </div>
       </div>
-      <!-- PRODUCT DOWNLOADS -->
+       <!-- PRODUCT DOWNLOADS -->
       <div class="tab-pane fade d-print-none" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
         <div class="prod-desc">
           <app-product-catalogues></app-product-catalogues>
@@ -90,6 +98,41 @@
       </div>
     </div>
   </div>
+
+
+   <!-- <div class="tab-content" id="nav-tabContent">
+       PRODUCT PARTS DESCRIPTION
+      <div class="tab-pane fade show active" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+        <div class="prod-desc" *ngIf="product">
+          <app-product-parts [product]="product"></app-product-parts>
+        </div>
+      </div>
+      PRODUCT MATERIALS 
+      <div class="tab-pane fade d-print-none" id="nav-matFin" role="tabpanel" aria-labelledby="nav-matFin-tab">
+        <div class="prod-desc">
+          <app-product-garnissages [withTitle]="false"></app-product-garnissages>
+        </div>
+      </div>
+      PRODUCT COMPOSITION
+      <div class="tab-pane fade show" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
+        <div class="prod-desc" *ngIf="product">
+          <app-product-description [product]="product"></app-product-description>
+        </div>
+      </div>
+      PRODUCT TECHNICAL DRAWINGS
+      <div class="tab-pane fade d-print-none" id="nav-dim" role="tabpanel" aria-labelledby="nav-dim-tab">
+        <div class="prod-desc">
+          <app-product-dimensions [product]="product"></app-product-dimensions>
+        </div>
+      </div>
+       PRODUCT DOWNLOADS
+      <div class="tab-pane fade d-print-none" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
+        <div class="prod-desc">
+          <app-product-catalogues></app-product-catalogues>
+        </div>
+      </div>
+    </div>
+  </div>-->
 
   <!-- REQUEST FORM -->
   <div class="info_div d-print-none" *ngIf="stdText">

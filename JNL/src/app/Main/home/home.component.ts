@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.showModal();
+    this.showModal();
     this.getData();
     this.scrollTop();
     if (!this.testBrowser()) { this.alertBrowserIE(); }
@@ -122,23 +122,23 @@ export class HomeComponent implements OnInit {
     this.alertService.error(message);
   }
 
-  // showModal() {
-  //   $('#announcementModal').modal('show');
-  //   setTimeout(this.closeModal, 10000);
-  // }
+  showModal() {
+    $('#announcementModal').modal('show');
+    setTimeout(this.closeModal, 10000);
+  }
 
-  // closeModal() {
-  //   $('#announcementModal').modal('hide');
-  // }
+  closeModal() {
+    $('#announcementModal').modal('hide');
+  }
 
-  // closeModalFromBackdrop() {
-  //   const modal = document.getElementById('announcementModal');
+  closeModalFromBackdrop() {
+    const modal = document.getElementById('announcementModal');
 
-  //   // When the user clicks anywhere outside of the modal, close it
-  //   window.onclick = function (event) {
-  //     if (event.target === modal) {
-  //       $('#announcementModal').modal('hide');
-  //     }
-  //   };
-  // }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        $('#announcementModal').modal('hide');
+      }
+    };
+  }
 }

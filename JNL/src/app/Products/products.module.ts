@@ -22,6 +22,7 @@ import { ProductStoreComponent } from './product-store/product-store.component';
 import { ProductStoreItemComponent } from './product-store-item/product-store-item.component';
 import { EmailSharingComponent } from './email-sharing/email-sharing.component';
 import { ProductSearchDummyComponent } from '.';
+import { ProductPartsComponent } from './product-parts/product-parts.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { ProductSearchDummyComponent } from '.';
     ProductStoreComponent,
     ProductStoreItemComponent,
     EmailSharingComponent,
-    ProductSearchDummyComponent
+    ProductSearchDummyComponent,
+    ProductPartsComponent
   ],
   exports: [
     ProductSearchComponent,

@@ -1,0 +1,429 @@
+hr{
+    height: 0;
+    border-top: 1px solid #DBBB76;
+  }
+  
+  h2 {
+    font-size: 2.4vw;
+  }
+  
+  h5 {
+    text-transform: uppercase;
+    font-size: 1.68vw;
+    font-weight: 100;
+    font-family: Helvetica-Light;
+  }
+  
+  .hide-item, .show-item {
+    display: block;
+  }
+  
+  .modal-dialog {
+    @media only screen and (min-width: 577px) and (max-width: 768px) {
+      max-width: 600px;
+    }
+  }
+  
+  .arrow {
+    display: none;
+  }
+  
+  .parts {
+    font-family: Helvetica;
+    font-size: 1.1vw;
+  
+    @media only screen and (max-width: 768px) {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  
+    @media only screen and (max-width: 576px) {
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  
+  .materials {
+    font-family: Helvetica-light;
+    font-size: 1vw;
+    margin-bottom: .5vw;
+  
+    @media only screen and (max-width: 768px) {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  
+    @media only screen and (max-width: 576px) {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+  
+  .finitions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: Helvetica-light;
+    font-size: .7vw;
+    font-style: italic;
+    cursor: default !important;
+    color: initial !important;
+  
+    @media only screen and (max-width: 768px) {
+      margin-top: 5px;
+      justify-content: left;
+    }
+  
+    > div {
+      > div {
+        > .fin {
+            width: 4.687vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding-right: 0.52vw;
+  
+            @media only screen and (max-width: 768px) {
+              margin: 1px;
+              height: auto;
+              width: 70px;
+            }
+  
+            @media only screen and (max-width: 576px) {
+              margin: 2px;
+              width: 60px;
+            }
+  
+          > a {
+            > img {
+              @media only screen and (max-width: 768px) {
+                object-fit: cover;
+                height: 65px;
+                width: 65px;
+                text-align: left;
+              }
+  
+              @media only screen and (max-width: 576px) {
+                object-fit: cover;
+                height: 55px;
+                width: 55px;
+                text-align: center;
+              }
+            }
+          }
+  
+          > span {
+            @media only screen and (max-width: 768px) {
+              font-size: 10px;
+              line-height: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .modal-body {
+    margin-bottom: 1vw;
+    @media only screen and (max-width: 768px) {
+      padding: 5px 0;
+    }
+  }
+  
+  .pointer:hover {
+    cursor: pointer;
+    color: #DBBB76;
+  }
+  
+  .pointer {
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+  }
+  
+  .mat-arrow {
+    margin-bottom: .2vw;
+    height: .7vw;
+    width: 1.1vw;
+  
+    @media only screen and (max-width: 768px) {
+      height: 8px;
+      width: 12px;
+    }
+  }
+  
+  .samples {
+    width: 4.166vw;
+    height: 4.166vw;
+    object-fit: cover;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+  
+    .close {
+      @media only screen and (max-width: 768px) {
+        padding: 5px 8px;
+      }
+    }
+  }
+  
+  .close {
+    margin-left: 0 !important;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  .modal-title {
+    width: 83.4%;
+    span{
+      float: left;
+      i {
+        transition: all .3s ease;
+        &:hover {
+          @media only screen and (min-width: 769px) {
+            color: #dbbb76;
+            transition: all .3s ease;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  
+  .modal-arrow {
+    height: 2vw;
+    width: 1vw;
+  
+    @media only screen and (max-width: 768px) {
+      height: 16px;
+      width: 8px;
+    }
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .whiteSpace {
+    flex: 1;
+    margin: auto;
+  
+    @media only screen and (max-width: 768px) {
+      margin: auto;
+    }
+  }
+  
+  .cardContainer {
+    flex: 10;
+  }
+  
+  .card {
+    margin: auto;
+    border: 0 !important;
+  }
+  
+  .card-body {
+    height: 30px;
+  
+    @media only screen and (max-width: 768px) {
+      padding: 0;
+    }
+  }
+  
+  /* workaround to fix bootstrap`s modal bug in Angular
+   Without this fix the dark background will cover the modal. */
+  .modal {
+    background-color: rgba(127, 127, 127, 0.5);
+  }
+  
+  .modal-backdrop {
+    position: relative;
+  }
+  
+  /****************************************************************/
+  
+  #container {
+    padding-top: 50px;
+    display: flex;
+  }
+  
+  #staticText {
+    width: 30.55vw;
+  }
+  
+  #description {
+    margin: auto;
+    margin-bottom: 36px;
+    width: 40vw;
+  
+    @media only screen and (max-width: 768px) {
+      width: 80%;
+    }
+  
+    > p {
+      font-family: Helvetica-Light;
+      font-size: 1.1vw;
+      text-align: justify;
+  
+      @media only screen and (max-width: 768px) {
+        margin-top: 18px;
+        margin-bottom: 44px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+  
+      @media only screen and (max-width: 576px) {
+        margin-top: 15px;
+        margin-bottom: 40px;
+        font-size: 13px;
+        line-height: 17px;
+      }
+    }
+  
+    > .p-info {
+      font-size: 1vw;
+      @media only screen and (min-width: 1200px) {
+        font-size: 12px;
+      }
+      @media only screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+      @media only screen and (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+  
+    .arrow {
+        /* display: inline; */
+        margin: auto;
+        margin-left: 0;
+        display: block;
+        width: 13px;
+        height: 13px;
+    }
+  
+    .hide-item {
+        display: none !important;
+    }
+  
+    #staticText {
+        width: 88.3vw;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: baseline;
+    }
+  
+    #staticText > h5 {
+        font-size: 4.16vw;
+        text-align: center;
+        width: 75.22vw;
+    }
+  
+    #container {
+        flex-direction: column;
+    }
+  }
+  
+  /* workaround to fix bootstrap`s modal bug in Angular
+              Without this fix the dark background will cover the modal. */
+  .modal {
+      background-color: rgba(127, 127, 127, 0.5);
+  
+      .modal-header {
+          display: flex;
+          justify-content: space-between;
+      }
+  
+      .modal-backdrop {
+          position: relative;
+      }
+  }
+  
+  @media only screen and (min-width: 1200px){
+    #description {
+      p {
+      font-size: 13.2px;
+      }
+  
+      .parts {
+        font-size: 13.2px;
+      }
+  
+      .materials {
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+  
+      .finitions {
+        font-size: 8.4px;
+      }
+  
+      .fin {
+        width: 75px;
+        margin-right: 5px;
+      }
+  
+      .mat-arrow {
+        height: 9.6px;
+        width: 9.6px;
+        margin-bottom: 2.4px;
+      }
+  
+      .samples {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+      }
+    }
+  
+    #finisageModal {
+      .modal-arrow {
+        height: 24px;
+        width: 12px;
+      }
+    }
+  }
+  
+  @media print {
+    #container {
+      padding-top: 0;
+    }
+  
+    #description {
+      width: 100%;
+      text-align: left;
+      p {
+        padding-bottom: 12px;
+        font-size: 14px;
+      }
+  
+      .parts {
+        font-size: 14px;
+      }
+  
+      .materials {
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+  
